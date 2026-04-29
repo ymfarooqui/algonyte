@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-brand-ink font-sans antialiased;
+}
+
+@layer components {
+  .container-page {
+    @apply mx-auto w-full max-w-page px-6 sm:px-8;
+  }
+  .section {
+    @apply py-20 sm:py-24;
+  }
+  .h-display {
+    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-brand-ink;
+  }
+  .h-section {
+    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-brand-ink;
+  }
+  .lede {
+    @apply text-lg sm:text-xl text-brand-muted leading-relaxed;
+  }
+  .btn-primary {
+    @apply inline-flex items-center justify-center rounded-full bg-brand-deep px-6 py-3 text-base font-medium text-white shadow-sm transition hover:bg-brand-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white px-6 py-3 text-base font-medium text-brand-deep transition hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
+  }
+  .card {
+    @apply rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition hover:shadow-md;
+  }
+  .eyebrow {
+    @apply text-sm font-medium uppercase tracking-wider text-brand-deep;
+  }
+}
