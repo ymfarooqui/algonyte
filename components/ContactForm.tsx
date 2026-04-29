@@ -43,13 +43,29 @@ export default function ContactForm() {
     }
 
     const data = Object.fromEntries(new FormData(e.currentTarget).entries());
+
+    const email = String(data.email ?? "").trim();
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailPattern.test(email)) {
+      setStatus("error");
+      setErrorMsg("Please enter a valid email address so we can reply.");
+      return;
+    }
+
     try {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
         body: JSON.stringify(data),
       });
-      if (!res.ok) throw new Error(`Request failed (${res.status})`);
+      if (!res.ok) {
+        const body = await res.json().catch(() => null);
+        const detail =
+          body?.errors?.[0]?.message ||
+          body?.error ||
+          `Request failed (${res.status})`;
+        throw new Error(detail);
+      }
       setStatus("success");
       (e.target as HTMLFormElement).reset();
     } catch (err) {
