@@ -1,7 +1,7 @@
-const faqs = [
+export const faqs = [
   {
     q: "Do you only audit websites?",
-    a: "No. ClearPath Digital also builds affordable websites and helps improve existing websites through refreshes, optimization, and ongoing care.",
+    a: "No. Farooqui Digital also builds affordable websites and helps improve existing websites through refreshes, optimization, and ongoing care.",
   },
   {
     q: "Do you build custom websites from scratch?",
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: "Do you guarantee more sales?",
-    a: "No. ClearPath Digital does not guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.",
+    a: "No. Farooqui Digital does not guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.",
   },
 ];
 

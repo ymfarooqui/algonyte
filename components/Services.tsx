@@ -129,7 +129,7 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="#contact" className="btn-primary mt-7 self-start">
+              <a href="/contact" className="btn-primary mt-7 self-start">
                 {s.cta}
               </a>
             </article>

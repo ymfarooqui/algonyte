@@ -1,5 +1,5 @@
 {
-  "name": "clearpath-digital",
+  "name": "farooqui-digital",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@vercel/analytics": "^2.0.1",
     "next": "^15.1.6",
     "react": "^19.0.0",
     "react-dom": "^19.0.0"

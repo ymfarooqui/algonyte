@@ -13,18 +13,18 @@ export default function FinalCta() {
             </h2>
             <p className="mt-5 text-white/80 text-lg leading-relaxed">
               Whether you need a simple website, a better user experience, or a full diagnostic
-              audit, ClearPath Digital can help you build a site that is easier to use, easier to
+              audit, Farooqui Digital can help you build a site that is easier to use, easier to
               trust, and easier to act on.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-medium text-brand-deep hover:bg-brand-accent"
               >
                 Get a Free Website Review
               </a>
               <a
-                href="#contact"
+                href="/contact"
                 className="inline-flex items-center justify-center rounded-full border border-white/40 px-6 py-3 text-base font-medium text-white hover:bg-white/10"
               >
                 Request a Quote

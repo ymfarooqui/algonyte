@@ -1,4 +1,4 @@
-# ClearPath / BrightFlow / ClearFlow Landing Page Build Brief
+# Farooqui / BrightFlow / ClearFlow Landing Page Build Brief
 
 ## Purpose
 This document is a complete landing page and website build brief for a small digital services business that offers:
@@ -16,7 +16,7 @@ The business is evolving from an audit-only concept into a broader website servi
 
 The user is considering these three names:
 
-## Option 1: ClearPath Digital
+## Option 1: Farooqui Digital
 Best overall option.
 
 Why it works:
@@ -42,7 +42,7 @@ Good modern/creative option.
 Why it works:
 - Sounds positive, polished, and energetic
 - Good for usability and conversion-focused work
-- Slightly more abstract than ClearPath Digital
+- Slightly more abstract than Farooqui Digital
 - Could work well for a design-forward brand
 
 Recommended tagline:
@@ -68,10 +68,10 @@ Recommended tagline:
 
 Use:
 
-# ClearPath Digital
+# Farooqui Digital
 
 Positioning:
-> ClearPath Digital builds affordable, easy-to-use websites and helps businesses improve the websites they already have through usability audits, performance checks, and conversion-focused recommendations.
+> Farooqui Digital builds affordable, easy-to-use websites and helps businesses improve the websites they already have through usability audits, performance checks, and conversion-focused recommendations.
 
 Core message:
 > We help small businesses turn confusing, outdated, or underperforming websites into clear customer pathways.
@@ -228,7 +228,7 @@ Best for:
 - Small businesses without technical staff
 - Businesses that update their site often
 - Businesses running campaigns
-- Clients who had a website built by ClearPath Digital
+- Clients who had a website built by Farooqui Digital
 
 Client-facing description:
 > Keep your website clean, stable, and customer-ready with ongoing checkups, small updates, and quality reviews.
@@ -266,17 +266,17 @@ Refinement of calls-to-action, headings, form labels, and page messaging to make
 # Landing Page Copy
 
 ## Page Title
-ClearPath Digital | Affordable Websites & Website Audits for Small Businesses
+Farooqui Digital | Affordable Websites & Website Audits for Small Businesses
 
 ## Meta Description
-ClearPath Digital builds affordable, easy-to-use websites and improves existing sites through usability audits, performance checks, and conversion-focused recommendations.
+Farooqui Digital builds affordable, easy-to-use websites and improves existing sites through usability audits, performance checks, and conversion-focused recommendations.
 
 ---
 
 # Header Navigation
 
 Logo:
-ClearPath Digital
+Farooqui Digital
 
 Navigation:
 - Services
@@ -297,7 +297,7 @@ Get a Free Website Review
 Affordable websites built for clear customer journeys.
 
 ## Subheadline
-ClearPath Digital builds simple, professional websites for small businesses and helps improve existing sites through usability audits, performance checks, and conversion-focused recommendations.
+Farooqui Digital builds simple, professional websites for small businesses and helps improve existing sites through usability audits, performance checks, and conversion-focused recommendations.
 
 ## CTA Buttons
 Primary:
@@ -319,7 +319,7 @@ Your website should make it easy for customers to choose you.
 ## Body
 Many small business websites are hard to navigate, slow to load, unclear on mobile, or missing the simple details that help visitors take action. When customers cannot quickly understand what you offer or how to contact you, they leave.
 
-ClearPath Digital helps you fix that.
+Farooqui Digital helps you fix that.
 
 We build websites with clarity from the start and audit existing websites to uncover the friction, confusion, and performance issues that may be costing you leads.
 
@@ -352,7 +352,7 @@ Ongoing checkups, small updates, regression testing, and performance monitoring 
 Most websites are built. Few are tested like a customer would use them.
 
 ## Body
-ClearPath Digital combines website building with a QA and usability mindset. That means your site is not just designed to look good. It is reviewed for clarity, ease of use, performance, and real customer behavior.
+Farooqui Digital combines website building with a QA and usability mindset. That means your site is not just designed to look good. It is reviewed for clarity, ease of use, performance, and real customer behavior.
 
 ## Key Points
 - Built with usability in mind from day one
@@ -539,7 +539,7 @@ Best fit for:
 A QA mindset behind every website.
 
 ## Body
-ClearPath Digital was built from a quality assurance background. That means every website is approached with a tester's eye for clarity, flow, usability, and hidden friction.
+Farooqui Digital was built from a quality assurance background. That means every website is approached with a tester's eye for clarity, flow, usability, and hidden friction.
 
 Instead of simply asking, "Does this look good?" we ask:
 - Can customers find what they need?
@@ -554,7 +554,7 @@ Instead of simply asking, "Does this look good?" we ask:
 # FAQ Section
 
 ## Question: Do you only audit websites?
-No. ClearPath Digital also builds affordable websites and helps improve existing websites through refreshes, optimization, and ongoing care.
+No. Farooqui Digital also builds affordable websites and helps improve existing websites through refreshes, optimization, and ongoing care.
 
 ## Question: Do you build custom websites from scratch?
 Yes, but the focus is on practical, affordable websites for small businesses. The goal is clarity, usability, and reliability rather than unnecessary complexity.
@@ -569,7 +569,7 @@ Yes. Monthly Website Care plans are available for checkups, small updates, regre
 A clean website can still be improved. In that case, the focus shifts to usability, clarity, speed, accessibility, conversion flow, and competitive positioning.
 
 ## Question: Do you guarantee more sales?
-No. ClearPath Digital does not guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.
+No. Farooqui Digital does not guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.
 
 ---
 
@@ -579,7 +579,7 @@ No. ClearPath Digital does not guarantee revenue outcomes. The goal is to identi
 Ready to give your customers a clearer path?
 
 ## Body
-Whether you need a simple website, a better user experience, or a full diagnostic audit, ClearPath Digital can help you build a site that is easier to use, easier to trust, and easier to act on.
+Whether you need a simple website, a better user experience, or a full diagnostic audit, Farooqui Digital can help you build a site that is easier to use, easier to trust, and easier to act on.
 
 Primary CTA:
 Get a Free Website Review
@@ -743,7 +743,7 @@ Dropdown options for "What do you need help with?":
 
 Use this prompt:
 
-> Build a responsive landing page for ClearPath Digital, a small business website service that builds affordable, easy-to-use websites and provides website audits, optimization, and ongoing care. Use a clean light-blue palette, modern cards, strong CTAs, and sections for hero, problem, services, add-ons, how it works, QA mindset, FAQ, and contact. Keep the copy professional, clear, and focused on small businesses. Use semantic HTML and CSS, no heavy frameworks unless requested.
+> Build a responsive landing page for Farooqui Digital, a small business website service that builds affordable, easy-to-use websites and provides website audits, optimization, and ongoing care. Use a clean light-blue palette, modern cards, strong CTAs, and sections for hero, problem, services, add-ons, how it works, QA mindset, FAQ, and contact. Keep the copy professional, clear, and focused on small businesses. Use semantic HTML and CSS, no heavy frameworks unless requested.
 
 ---
 
