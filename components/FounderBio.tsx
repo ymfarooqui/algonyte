@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function FounderBio() {
   return (
     <section className="section bg-white">
@@ -5,12 +7,13 @@ export default function FounderBio() {
         <p className="eyebrow mb-3">Who&rsquo;s behind it</p>
         <h2 className="h-section">Run by a QA professional, not an agency.</h2>
         <div className="mt-6 grid gap-6 sm:grid-cols-[auto,1fr] sm:items-start">
-          <div
-            aria-hidden
-            className="hidden sm:inline-flex h-24 w-24 rounded-2xl bg-brand-accent items-center justify-center text-3xl font-semibold text-brand-deep"
-          >
-            YF
-          </div>
+          <Image
+            src="/yf-headshot.jpg"
+            alt="Yaseen Farooqui, founder of Farooqui Digital"
+            width={160}
+            height={160}
+            className="h-32 w-32 sm:h-36 sm:w-36 rounded-2xl object-cover ring-1 ring-slate-200"
+          />
           <div className="space-y-4 text-brand-muted leading-relaxed">
             <p className="text-brand-ink">
               <span className="font-semibold">Yaseen Farooqui</span>. Founder, builder, and the
