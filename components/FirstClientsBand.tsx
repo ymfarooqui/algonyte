@@ -11,9 +11,9 @@ export default function FirstClientsBand() {
           Introductory pricing for the first wave of small businesses.
         </h2>
         <p className="mt-5 text-white/80 text-lg leading-relaxed">
-          Farooqui Digital is taking on a small group of early clients at lower rates in exchange
-          for honest feedback and a testimonial. You get more attention per project. We get our
-          first case studies. Fair trade.
+          We&rsquo;re taking on a small group of early clients at lower rates in exchange for
+          honest feedback and a testimonial. You get more attention per project. We get our first
+          case studies. Fair trade.
         </p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">
           <Link

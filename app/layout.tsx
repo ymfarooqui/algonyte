@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: `${siteConfig.name} | Affordable Websites & Website Audits`,
     description: siteConfig.description,
-    creator: siteConfig.twitter,
+    ...(siteConfig.twitter ? { creator: siteConfig.twitter } : {}),
   },
   robots: {
     index: true,

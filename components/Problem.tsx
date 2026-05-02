@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 
 type Para = { text: string; bold: boolean };
@@ -66,8 +67,12 @@ export default function Problem() {
       const vh = window.innerHeight;
       const elCenter = rect.top + rect.height / 2;
       const distance = Math.abs(elCenter - vh / 2);
-      const fadeRange = vh * 0.45;
-      const next = Math.max(0, Math.min(1, 1 - distance / fadeRange));
+      const plateau = vh * 0.3;
+      const fadeRange = vh * 0.9;
+      const next =
+        distance <= plateau
+          ? 1
+          : Math.max(0, Math.min(1, 1 - (distance - plateau) / fadeRange));
       const eased = next * next * (3 - 2 * next);
       setProgress(eased);
     };
@@ -90,11 +95,16 @@ export default function Problem() {
   );
 
   const lineOpacity = (globalLineIdx: number) => {
-    const span = 1 / totalLines;
-    const start = globalLineIdx * span;
-    const end = start + span * 0.7;
+    // Stagger line starts at half the per-line span so the bottom line begins
+    // fading in while the top line is still progressing — heavy overlap.
+    const spanFactor = 2.4;
+    const stagger = 1 / (totalLines + spanFactor - 1);
+    const start = globalLineIdx * stagger;
+    const end = start + stagger * spanFactor;
     return Math.max(0, Math.min(1, (progress - start) / (end - start)));
   };
+
+  const imageOpacity = Math.max(0, Math.min(1, (progress - 0.15) / 0.6));
 
   return (
     <section id="problem" className="section bg-white">
@@ -143,6 +153,26 @@ export default function Problem() {
               </p>
             );
           })}
+        </div>
+
+        <div
+          className="mt-12"
+          style={{
+            opacity: imageOpacity,
+            transform: `translateY(${(1 - imageOpacity) * 20}px)`,
+            filter: `blur(${(1 - imageOpacity) * 6}px)`,
+            transition:
+              "opacity 400ms ease-out, transform 400ms ease-out, filter 400ms ease-out",
+          }}
+        >
+          <Image
+            src="/before-and-after.png"
+            alt="Before and after website comparison: cluttered low-performing site at 32 vs clear high-performing site at 92"
+            width={1200}
+            height={800}
+            sizes="(max-width: 768px) 100vw, 800px"
+            className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
+          />
         </div>
       </div>
     </section>

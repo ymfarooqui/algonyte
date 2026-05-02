@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 const addOns = [
   {
     name: "User Interaction Simulation",
@@ -46,9 +48,24 @@ export default function AddOns() {
   return (
     <section id="addons" className="section bg-white">
       <div className="container-page">
-        <div className="max-w-2xl">
-          <p className="eyebrow mb-3">Add-ons</p>
-          <h2 className="h-section">Add extra insight where it matters most.</h2>
+        <div className="grid gap-10 lg:grid-cols-[1fr,auto] lg:items-center">
+          <div className="max-w-2xl">
+            <p className="eyebrow mb-3">Add-ons</p>
+            <h2 className="h-section">Add extra insight where it matters most.</h2>
+            <p className="mt-4 text-brand-muted leading-relaxed">
+              Stack any of these onto a build, audit, or care plan to go deeper where you need it.
+            </p>
+          </div>
+          <div className="hidden lg:block">
+            <Image
+              src="/updates-backups.png"
+              alt="Website maintenance dashboard showing regular updates, security monitoring, performance checks, and daily backups"
+              width={520}
+              height={390}
+              sizes="(min-width: 1024px) 380px, 100vw"
+              className="w-full max-w-md h-auto rounded-2xl shadow-md ring-1 ring-slate-200"
+            />
+          </div>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">

@@ -1,7 +1,7 @@
 export const faqs = [
   {
     q: "Do you only audit websites?",
-    a: "No. Farooqui Digital also builds affordable websites and helps improve existing websites through refreshes, optimization, and ongoing care.",
+    a: "No. We also build affordable websites and help improve existing websites through refreshes, optimization, and ongoing care.",
   },
   {
     q: "Do you build custom websites from scratch?",
@@ -21,7 +21,7 @@ export const faqs = [
   },
   {
     q: "Do you guarantee more sales?",
-    a: "No. Farooqui Digital does not guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.",
+    a: "No. We don't guarantee revenue outcomes. The goal is to identify and reduce friction that may prevent visitors from becoming customers.",
   },
 ];
 

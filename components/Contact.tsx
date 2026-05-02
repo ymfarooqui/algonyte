@@ -8,8 +8,8 @@ export default function Contact() {
           <p className="eyebrow mb-3">Contact</p>
           <h2 className="h-section">Tell us about your website.</h2>
           <p className="lede mt-5">
-            Share a few details and we&rsquo;ll send back honest, practical recommendations,
-            whether that&rsquo;s a new website, a refresh, an audit, or ongoing care.
+            Share a few details and we&rsquo;ll come back with a straight answer on what would
+            actually help, whether that&rsquo;s a new website, a refresh, an audit, or ongoing care.
           </p>
           <ul className="mt-8 space-y-3 text-brand-ink/90">
             <li className="flex gap-3">

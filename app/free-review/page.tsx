@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import ContactForm from "@/components/ContactForm";
 
@@ -32,7 +33,7 @@ export default function FreeReviewPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20 grid gap-12 lg:grid-cols-2 lg:items-center">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Free Website Review</p>
             <h1 className="h-display">
@@ -43,6 +44,17 @@ export default function FreeReviewPage() {
               A short, honest look at your website. We tell you what is working, what is hurting
               conversion, and what to fix first. No sales pitch attached.
             </p>
+          </div>
+          <div className="relative">
+            <Image
+              src="/magnifying-glass.png"
+              alt="Magnifying glass examining a website with audit overview score and issue indicators"
+              width={1200}
+              height={900}
+              priority
+              sizes="(max-width: 1024px) 100vw, 50vw"
+              className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
+            />
           </div>
         </div>
       </section>
@@ -84,6 +96,27 @@ export default function FreeReviewPage() {
 
           <div>
             <ContactForm />
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-brand-soft">
+        <div className="container-page max-w-5xl">
+          <p className="eyebrow mb-3">Sample deliverable</p>
+          <h2 className="h-section">A clear, scannable read on what is working and what isn&rsquo;t.</h2>
+          <p className="mt-4 text-brand-muted leading-relaxed max-w-2xl">
+            Paid audits go deeper, but every free review starts with the same kind of plain-English
+            scoring and prioritized fixes you can act on this week.
+          </p>
+          <div className="mt-8">
+            <Image
+              src="/seo-audit-report.png"
+              alt="Sample SEO audit report showing overall score, key statistics, performance overview, and prioritized recommendations"
+              width={1400}
+              height={900}
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
+            />
           </div>
         </div>
       </section>

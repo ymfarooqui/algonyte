@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import FounderBio from "@/components/FounderBio";
 
 const title = "About";
 const description =
-  "Farooqui Digital builds affordable, easy-to-use websites for small businesses, with clear customer journeys and no agency bloat.";
+  "Farooqui Digital builds affordable, easy-to-use websites for small businesses with clear customer journeys and direct communication.";
 
 export const metadata: Metadata = {
   title,
@@ -24,8 +25,8 @@ const values = [
     body: "Small businesses deserve transparent pricing without retainer traps or padded scopes. You see the price, the deliverable, and the timeline up front.",
   },
   {
-    title: "No agency bloat",
-    body: "No layers of account managers, change-order games, or 12-week timelines for a five-page site. Just the work, done well.",
+    title: "Direct, not layered",
+    body: "No account managers, change-order games, or 12-week timelines for a five-page site. You work with the person doing the work.",
   },
 ];
 
@@ -41,7 +42,7 @@ export default function AboutPage() {
               <span className="text-brand-deep">built around the customer.</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              Farooqui Digital helps small businesses get online and stay effective online,
+              We help small businesses get online and stay effective online,
               without the cost, complexity, or runaround of a traditional agency.
             </p>
           </div>
@@ -55,10 +56,10 @@ export default function AboutPage() {
             <h2 className="h-section">Built from years of watching real users get stuck.</h2>
             <div className="mt-6 space-y-4 text-brand-muted leading-relaxed">
               <p>
-                Farooqui Digital grew out of a simple observation: most small business websites
-                aren&apos;t broken because they look bad. They&apos;re broken because the path
-                from visitor to customer is unclear. Buttons hide, copy buries the offer, and
-                mobile experiences quietly turn people away.
+                We grew out of a simple observation: most small business websites aren&apos;t
+                broken because they look bad. They&apos;re broken because the path from visitor
+                to customer is unclear. Buttons hide, copy buries the offer, and mobile
+                experiences quietly turn people away.
               </p>
               <p>
                 We started Farooqui Digital to fix that, at a price small businesses can actually afford.
@@ -105,6 +106,23 @@ export default function AboutPage() {
       </section>
 
       <FounderBio />
+
+      <section className="section bg-white">
+        <div className="container-page max-w-5xl">
+          <p className="eyebrow mb-3">Background at a glance</p>
+          <h2 className="h-section">Built on experience. Focused on results.</h2>
+          <div className="mt-8">
+            <Image
+              src="/trust-credibility.png"
+              alt="Snapshot of professional experience, skills, certifications, and work ethic"
+              width={1400}
+              height={900}
+              sizes="(max-width: 1024px) 100vw, 1024px"
+              className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
+            />
+          </div>
+        </div>
+      </section>
     </>
   );
 }

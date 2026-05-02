@@ -12,7 +12,7 @@ export default function FounderBio() {
             alt="Yaseen Farooqui, founder of Farooqui Digital"
             width={160}
             height={160}
-            className="h-32 w-32 sm:h-36 sm:w-36 rounded-2xl object-cover ring-1 ring-slate-200"
+            className="h-32 w-32 sm:h-36 sm:w-36 rounded-2xl object-cover object-top ring-1 ring-slate-200"
           />
           <div className="space-y-4 text-brand-muted leading-relaxed">
             <p className="text-brand-ink">
@@ -26,9 +26,9 @@ export default function FounderBio() {
               take the next step without friction.
             </p>
             <p>
-              I started Farooqui Digital to bring that QA mindset to small business websites.
+              I started Farooqui Digital to bring that quality mindset to small business websites.
               Affordable, tested, and built around the customer journey instead of the trend
-              cycle. No layers between you and the work. No agency bloat.
+              cycle. You talk directly to the person doing the work.
             </p>
           </div>
         </div>
