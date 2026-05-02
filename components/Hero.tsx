@@ -12,18 +12,16 @@ export default function Hero() {
             <span className="text-brand-deep">clear customer journeys.</span>
           </h1>
           <p className="lede mt-6 max-w-2xl">
-            Farooqui Digital builds simple, professional websites for small businesses and helps
-            improve existing sites through usability audits, performance checks, and
-            conversion-focused recommendations.
+            Already have a website? Find out if it&rsquo;s costing you customers.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <a href="/contact" className="btn-primary">Get a Free Website Review</a>
+            <a href="/free-review" className="btn-primary">Get a Free Website Review</a>
             <a href="/services" className="btn-secondary">View Services</a>
           </div>
 
           <p className="mt-6 text-sm text-brand-muted">
-            Easy-to-use websites. Clear recommendations. No agency bloat.
+            Clear recommendations. No agency bloat.
           </p>
         </div>
       </div>

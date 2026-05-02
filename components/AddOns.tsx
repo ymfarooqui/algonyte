@@ -34,6 +34,12 @@ const addOns = [
     body:
       "Clearer headlines, calls-to-action, labels, and page messaging to reduce hesitation and improve trust.",
   },
+  {
+    name: "On-Page SEO Quick Pass",
+    price: "$149",
+    body:
+      "A focused tune-up of titles, meta descriptions, headings, and image alt text on your most important pages.",
+  },
 ];
 
 export default function AddOns() {

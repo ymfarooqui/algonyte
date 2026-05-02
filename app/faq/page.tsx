@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import Faq, { faqs } from "@/components/Faq";
-import FinalCta from "@/components/FinalCta";
 
 const title = "FAQ";
 const description =
@@ -28,7 +27,6 @@ export default function FaqPage() {
   return (
     <>
       <Faq />
-      <FinalCta />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

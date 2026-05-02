@@ -4,9 +4,9 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "/services", label: "Services" },
-  { href: "/how-it-works", label: "How It Works" },
+  { href: "/", label: "Home" },
   { href: "/why-us", label: "Why Us" },
+  { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/faq", label: "FAQ" },
   { href: "/contact", label: "Contact" },
@@ -33,7 +33,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/contact" className="hidden md:inline-flex btn-primary !py-2 !px-4 text-sm">
+        <Link href="/free-review" className="hidden md:inline-flex btn-primary !py-2 !px-4 text-sm">
           Get a Free Website Review
         </Link>
 
@@ -58,7 +58,7 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2">
+            <Link href="/free-review" onClick={() => setOpen(false)} className="btn-primary mt-2">
               Get a Free Website Review
             </Link>
           </nav>

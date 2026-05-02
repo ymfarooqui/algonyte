@@ -1,3 +1,7 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+
 const points = [
   "Built with usability in mind from day one",
   "Tested across key customer paths",
@@ -16,18 +20,48 @@ const questions = [
 ];
 
 export default function WhyUs() {
+  const ref = useRef<HTMLDivElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    if (typeof IntersectionObserver === "undefined") {
+      setVisible(true);
+      return;
+    }
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setVisible(true);
+            io.disconnect();
+          }
+        });
+      },
+      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
+    );
+    io.observe(el);
+    return () => io.disconnect();
+  }, []);
+
   return (
     <section id="why-us" className="section bg-white">
-      <div className="container-page grid gap-12 lg:grid-cols-2 lg:items-start">
+      <div
+        ref={ref}
+        className={`container-page grid gap-12 lg:grid-cols-2 lg:items-start transition-all duration-[900ms] ease-out motion-reduce:transition-none ${
+          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        }`}
+      >
         <div>
           <p className="eyebrow mb-3">Why this is different</p>
           <h2 className="h-section">
             Most websites are built. Few are tested like a customer would use them.
           </h2>
           <p className="lede mt-6">
-            Farooqui Digital combines website building with a QA and usability mindset. That means
-            your site is not just designed to look good. It is reviewed for clarity, ease of use,
-            performance, and real customer behavior.
+            Farooqui Digital combines website building with a QA and usability mindset. Your
+            site does not just look good. It works for clarity, ease of use, performance, and real
+            customer behavior.
           </p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (

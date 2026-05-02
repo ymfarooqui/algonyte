@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import WhyUs from "@/components/WhyUs";
-import FinalCta from "@/components/FinalCta";
 
 const title = "Why Farooqui Digital";
 const description =
@@ -18,7 +17,6 @@ export default function WhyUsPage() {
   return (
     <>
       <WhyUs />
-      <FinalCta />
     </>
   );
 }

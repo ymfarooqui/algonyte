@@ -43,6 +43,23 @@ const services: Service[] = [
     featured: true,
   },
   {
+    name: "Local SEO & Search Setup",
+    price: "$349–$699",
+    blurb:
+      "Get your business found by the right local customers. The on-page SEO basics, Google Business Profile setup, and search foundations most small business sites are missing.",
+    includes: [
+      "Google Business Profile setup or cleanup",
+      "On-page SEO for top 5 pages",
+      "Titles, meta descriptions, and headings",
+      "Local schema markup",
+      "Sitemap and Search Console setup",
+      "Image alt text and content cleanup",
+      "Keyword research for your local market",
+      "Prioritized next-step recommendations",
+    ],
+    cta: "Get Found on Google",
+  },
+  {
     name: "Website Refresh & Optimization",
     price: "$399–$999",
     blurb:

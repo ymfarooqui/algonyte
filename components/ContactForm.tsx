@@ -77,7 +77,7 @@ export default function ContactForm() {
   if (status === "success") {
     return (
       <div className="rounded-2xl border border-brand-primary/30 bg-white p-8 shadow-sm">
-        <h3 className="text-xl font-semibold text-brand-deep">Thanks &mdash; message received.</h3>
+        <h3 className="text-xl font-semibold text-brand-deep">Thanks. Message received.</h3>
         <p className="mt-3 text-brand-muted leading-relaxed">
           We&rsquo;ll review what you sent and get back to you within 1&ndash;2 business days with
           honest, practical next steps.

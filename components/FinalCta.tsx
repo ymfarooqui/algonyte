@@ -18,7 +18,7 @@ export default function FinalCta() {
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <a
-                href="/contact"
+                href="/free-review"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-base font-medium text-brand-deep hover:bg-brand-accent"
               >
                 Get a Free Website Review

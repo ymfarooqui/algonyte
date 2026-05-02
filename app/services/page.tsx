@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Services from "@/components/Services";
 import AddOns from "@/components/AddOns";
+import ProcessStrip from "@/components/ProcessStrip";
 import FinalCta from "@/components/FinalCta";
 
 const title = "Services & Pricing";
@@ -20,6 +21,7 @@ export default function ServicesPage() {
     <>
       <Services />
       <AddOns />
+      <ProcessStrip />
       <FinalCta />
     </>
   );

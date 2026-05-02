@@ -1,7 +1,10 @@
 import Hero from "@/components/Hero";
 import Problem from "@/components/Problem";
 import Solution from "@/components/Solution";
-import FinalCta from "@/components/FinalCta";
+import WhyUsPreview from "@/components/WhyUsPreview";
+import AudienceStrip from "@/components/AudienceStrip";
+import ServicesTeaser from "@/components/ServicesTeaser";
+import FirstClientsBand from "@/components/FirstClientsBand";
 
 export default function Home() {
   return (
@@ -9,7 +12,10 @@ export default function Home() {
       <Hero />
       <Problem />
       <Solution />
-      <FinalCta />
+      <WhyUsPreview />
+      <AudienceStrip />
+      <ServicesTeaser />
+      <FirstClientsBand />
     </>
   );
 }
