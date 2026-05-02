@@ -6,7 +6,7 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white"
     >
-      <div className="container-page pt-20 pb-24 sm:pt-28 sm:pb-32 grid gap-12 lg:grid-cols-2 lg:items-center">
+      <div className="container-page pt-20 pb-24 sm:pt-28 sm:pb-32 grid gap-10 lg:grid-cols-2 lg:items-center">
         <div className="max-w-2xl">
           <p className="eyebrow mb-4">Affordable websites · Audits · Optimization · Care</p>
           <h1 className="h-display">
@@ -16,6 +16,18 @@ export default function Hero() {
           <p className="lede mt-6">
             Already have a website? Find out if it&rsquo;s costing you customers.
           </p>
+
+          <div className="mt-8 lg:hidden">
+            <Image
+              src="/website-performance.png"
+              alt="Website performance dashboard showing speed and quality scores"
+              width={1200}
+              height={900}
+              priority
+              sizes="100vw"
+              className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
+            />
+          </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
             <a href="/free-review" className="btn-primary">Get a Free Website Review</a>
@@ -27,14 +39,14 @@ export default function Hero() {
           </p>
         </div>
 
-        <div className="relative">
+        <div className="relative hidden lg:block">
           <Image
             src="/website-performance.png"
             alt="Website performance dashboard showing speed and quality scores"
             width={1200}
             height={900}
             priority
-            sizes="(max-width: 1024px) 100vw, 50vw"
+            sizes="50vw"
             className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
           />
         </div>
