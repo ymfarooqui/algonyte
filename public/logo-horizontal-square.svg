@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 80" role="img" aria-label="Farooqui Digital">
+  <rect x="8" y="8" width="64" height="64" rx="14" fill="#0F4C81"/>
+  <circle cx="40" cy="40" r="11" fill="#FFFFFF"/>
+  <text x="92" y="52"
+        font-family="Inter, 'Helvetica Neue', Arial, sans-serif"
+        font-size="28"
+        font-weight="600"
+        letter-spacing="-0.5"
+        fill="#0F4C81">Farooqui Digital</text>
+</svg>

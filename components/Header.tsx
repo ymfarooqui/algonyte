@@ -19,22 +19,9 @@ export default function Header() {
     <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/85 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center gap-2 text-brand-deep font-semibold tracking-tight">
-          <svg
-            aria-hidden
-            viewBox="0 0 64 64"
-            className="h-7 w-7"
-            fill="none"
-          >
-            <rect width="64" height="64" rx="14" fill="#0F4C81" />
-            <path
-              d="M12 44 C 22 44, 22 20, 32 20 S 42 44, 52 44"
-              stroke="#38BDF8"
-              strokeWidth="5"
-              strokeLinecap="round"
-              fill="none"
-            />
-            <circle cx="25" cy="25" r="4" fill="#E0F7FF" />
-          </svg>
+          <span aria-hidden className="inline-block h-7 w-7 rounded-md bg-brand-deep relative">
+            <span className="absolute inset-0 m-auto h-3 w-3 rounded-full bg-brand-primary" />
+          </span>
           Farooqui Digital
         </Link>
 
