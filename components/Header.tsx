@@ -25,7 +25,7 @@ export default function Header() {
           Farooqui Digital
         </Link>
 
-        <nav className="hidden md:flex items-center gap-7 text-sm text-brand-ink/80">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-brand-ink/80">
           {links.map((l) => (
             <Link key={l.label} href={l.href} className="hover:text-brand-deep">
               {l.label}
@@ -33,7 +33,7 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/free-review" className="hidden md:inline-flex btn-primary !py-2 !px-4 text-sm">
+        <Link href="/free-review" className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
           Get a Free Website Review
         </Link>
 
@@ -41,7 +41,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200"
         >
           <span className="sr-only">Menu</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -51,7 +51,7 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="md:hidden border-t border-slate-200 bg-white">
+        <div className="lg:hidden border-t border-slate-200 bg-white">
           <nav className="container-page flex flex-col py-4 gap-3 text-sm">
             {links.map((l) => (
               <Link key={l.label} href={l.href} onClick={() => setOpen(false)} className="py-1">

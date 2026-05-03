@@ -1,12 +1,14 @@
 "use client";
 
 import { useState, FormEvent } from "react";
+import { useSearchParams } from "next/navigation";
 
 type Status = "idle" | "submitting" | "success" | "error";
 
 const helpOptions = [
   "I need a new website",
   "I want to improve my current website",
+  "I need local SEO and search help",
   "I want a full website audit",
   "I need ongoing website care",
   "I am not sure yet",
@@ -27,6 +29,9 @@ const fieldClass =
 export default function ContactForm() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
+  const searchParams = useSearchParams();
+  const helpParam = searchParams?.get("help") ?? "";
+  const helpDefault = helpOptions.includes(helpParam) ? helpParam : "";
 
   async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -94,7 +99,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-5" noValidate>
+    <form id="contact-form" onSubmit={onSubmit} className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-5" noValidate>
       <div className="grid gap-5 sm:grid-cols-2">
         <div>
           <label className={labelClass} htmlFor="name">Name</label>
@@ -125,7 +130,7 @@ export default function ContactForm() {
 
       <div>
         <label className={labelClass} htmlFor="help">What do you need help with?</label>
-        <select id="help" name="help" className={fieldClass} defaultValue="">
+        <select key={helpDefault} id="help" name="help" className={fieldClass} defaultValue={helpDefault}>
           <option value="" disabled>Select an option</option>
           {helpOptions.map((o) => (
             <option key={o} value={o}>{o}</option>

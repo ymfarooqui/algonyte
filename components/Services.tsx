@@ -9,6 +9,7 @@ type Service = {
   blurb: string;
   includes: string[];
   cta: string;
+  help: string;
   featured?: boolean;
 };
 
@@ -28,6 +29,7 @@ const services: Service[] = [
       "Launch checklist",
     ],
     cta: "Start My Website",
+    help: "I need a new website",
   },
   {
     name: "Business Website Build",
@@ -45,6 +47,7 @@ const services: Service[] = [
       "30-day post-launch checkup",
     ],
     cta: "Build My Business Site",
+    help: "I need a new website",
     featured: true,
   },
   {
@@ -63,6 +66,7 @@ const services: Service[] = [
       "Prioritized next-step recommendations",
     ],
     cta: "Get Found on Google",
+    help: "I need local SEO and search help",
   },
   {
     name: "Website Refresh & Optimization",
@@ -79,6 +83,7 @@ const services: Service[] = [
       "Prioritized recommendations",
     ],
     cta: "Improve My Website",
+    help: "I want to improve my current website",
   },
   {
     name: "Full Website Experience Audit",
@@ -96,6 +101,7 @@ const services: Service[] = [
       "Prioritized roadmap",
     ],
     cta: "Audit My Website",
+    help: "I want a full website audit",
   },
   {
     name: "Monthly Website Care",
@@ -112,6 +118,7 @@ const services: Service[] = [
       "Priority recommendations",
     ],
     cta: "Keep My Site Healthy",
+    help: "I need ongoing website care",
   },
 ];
 
@@ -158,9 +165,14 @@ export default function Services() {
                   </li>
                 ))}
               </ul>
-              <a href="/contact" className="btn-primary mt-7 self-start">
-                {s.cta}
-              </a>
+              <div className="mt-auto pt-7">
+                <a
+                  href={`/contact?help=${encodeURIComponent(s.help)}#contact-form`}
+                  className="btn-primary"
+                >
+                  {s.cta}
+                </a>
+              </div>
             </motion.article>
           ))}
         </div>
