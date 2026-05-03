@@ -1,6 +1,5 @@
 "use client";
 
-import { Suspense } from "react";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
 import ContactForm from "./ContactForm";
@@ -38,9 +37,7 @@ export default function Contact() {
             </motion.li>
           </ul>
         </motion.div>
-        <Suspense fallback={null}>
-          <ContactForm />
-        </Suspense>
+        <ContactForm />
       </div>
     </section>
   );

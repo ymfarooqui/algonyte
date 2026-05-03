@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { Suspense, useState, FormEvent } from "react";
 import { useSearchParams } from "next/navigation";
 
 type Status = "idle" | "submitting" | "success" | "error";
@@ -27,6 +27,14 @@ const fieldClass =
   "w-full rounded-lg border border-slate-300 bg-white px-3.5 py-2.5 text-brand-ink placeholder:text-slate-400 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/30";
 
 export default function ContactForm() {
+  return (
+    <Suspense fallback={null}>
+      <ContactFormInner />
+    </Suspense>
+  );
+}
+
+function ContactFormInner() {
   const [status, setStatus] = useState<Status>("idle");
   const [errorMsg, setErrorMsg] = useState<string>("");
   const searchParams = useSearchParams();
