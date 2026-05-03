@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
 
 const pillars = [
   {
@@ -76,11 +78,17 @@ export default function Solution() {
 
   return (
     <section className="section bg-brand-soft">
-      <div className="container-page">
+      <motion.div
+        className="container-page"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.container(0.12, 0.1)}
+      >
         <div className="flex flex-wrap items-end justify-between gap-4">
-          <h2 className="h-section max-w-3xl">
+          <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
             Build it right. Improve what exists. Keep it working.
-          </h2>
+          </motion.h2>
           <div className="hidden sm:flex gap-2">
             <button
               type="button"
@@ -114,10 +122,11 @@ export default function Solution() {
           aria-label="Services"
         >
           {pillars.map((p) => (
-            <div
+            <motion.div
               key={p.title}
               data-card
               className="card snap-center shrink-0 w-[92%] sm:w-[94%] lg:w-[96%] p-8 sm:p-12 lg:p-16 min-h-[14rem] sm:min-h-[18rem] lg:min-h-[22rem] flex flex-col justify-center"
+              variants={reveal.fadeUp}
             >
               <h3 className="text-2xl sm:text-3xl lg:text-4xl font-semibold text-brand-deep">
                 {p.title}
@@ -125,7 +134,7 @@ export default function Solution() {
               <p className="mt-4 sm:mt-6 text-base sm:text-lg lg:text-xl text-brand-muted leading-relaxed max-w-3xl">
                 {p.body}
               </p>
-            </div>
+            </motion.div>
           ))}
         </div>
 
@@ -145,7 +154,7 @@ export default function Solution() {
             ))}
           </div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

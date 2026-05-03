@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
 
 const addOns = [
   {
@@ -47,16 +51,22 @@ const addOns = [
 export default function AddOns() {
   return (
     <section id="addons" className="section bg-white">
-      <div className="container-page">
+      <motion.div
+        className="container-page"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.container(0.1, 0.1)}
+      >
         <div className="grid gap-10 lg:grid-cols-[1fr,auto] lg:items-center">
-          <div className="max-w-2xl">
+          <motion.div className="max-w-2xl" variants={reveal.fadeUp}>
             <p className="eyebrow mb-3">Add-ons</p>
             <h2 className="h-section">Add extra insight where it matters most.</h2>
             <p className="mt-4 text-brand-muted leading-relaxed">
               Stack any of these onto a build, audit, or care plan to go deeper where you need it.
             </p>
-          </div>
-          <div className="hidden lg:block">
+          </motion.div>
+          <motion.div className="hidden lg:block" variants={reveal.fadeUp}>
             <Image
               src="/updates-backups.png"
               alt="Website maintenance dashboard showing regular updates, security monitoring, performance checks, and daily backups"
@@ -65,21 +75,21 @@ export default function AddOns() {
               sizes="(min-width: 1024px) 380px, 100vw"
               className="w-full max-w-md h-auto rounded-2xl shadow-md ring-1 ring-slate-200"
             />
-          </div>
+          </motion.div>
         </div>
 
         <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {addOns.map((a) => (
-            <div key={a.name} className="card">
+            <motion.div key={a.name} className="card" variants={reveal.dropTile}>
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="text-base font-semibold text-brand-ink">{a.name}</h3>
                 <span className="text-brand-deep font-semibold">{a.price}</span>
               </div>
               <p className="mt-3 text-sm text-brand-muted leading-relaxed">{a.body}</p>
-            </div>
+            </motion.div>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

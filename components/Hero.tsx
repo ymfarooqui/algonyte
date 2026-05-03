@@ -13,10 +13,6 @@ export default function Hero() {
             Affordable websites built for{" "}
             <span className="text-brand-deep">clear customer journeys.</span>
           </h1>
-          <p className="lede mt-6">
-            Already have a website? Find out if it&rsquo;s costing you customers.
-          </p>
-
           <div className="mt-8 lg:hidden">
             <Image
               src="/website-performance.png"
@@ -27,6 +23,9 @@ export default function Hero() {
               sizes="100vw"
               className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
             />
+            <p className="lede mt-6">
+              Already have a website? Find out if it&rsquo;s costing you customers.
+            </p>
           </div>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -49,6 +48,9 @@ export default function Hero() {
             sizes="50vw"
             className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
           />
+          <p className="lede mt-6">
+            Already have a website? Find out if it&rsquo;s costing you customers.
+          </p>
         </div>
       </div>
 

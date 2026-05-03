@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
-import Faq, { faqs } from "@/components/Faq";
+import Faq from "@/components/Faq";
 import FinalCta from "@/components/FinalCta";
+import { faqs } from "@/lib/faqs";
 
 const title = "FAQ";
 const description =

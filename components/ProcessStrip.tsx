@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
+
 const steps = [
   { title: "Share", body: "Send your site, goals, or what you want built." },
   { title: "Review or build", body: "We build, audit, or improve based on your package." },
@@ -8,14 +13,20 @@ const steps = [
 export default function ProcessStrip() {
   return (
     <section id="process" className="section bg-white">
-      <div className="container-page">
-        <div className="max-w-2xl">
+      <motion.div
+        className="container-page"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.container(0.13, 0.1)}
+      >
+        <motion.div className="max-w-2xl" variants={reveal.fadeUp}>
           <p className="eyebrow mb-3">How it works</p>
           <h2 className="h-section">A simple process from first look to finished roadmap.</h2>
-        </div>
+        </motion.div>
         <ol className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {steps.map((s, i) => (
-            <li key={s.title} className="card">
+            <motion.li key={s.title} className="card" variants={reveal.dropTile}>
               <span
                 aria-hidden
                 className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-deep text-white font-semibold"
@@ -24,10 +35,10 @@ export default function ProcessStrip() {
               </span>
               <h3 className="mt-4 text-lg font-semibold text-brand-ink">{s.title}</h3>
               <p className="mt-2 text-brand-muted leading-relaxed text-sm">{s.body}</p>
-            </li>
+            </motion.li>
           ))}
         </ol>
-      </div>
+      </motion.div>
     </section>
   );
 }

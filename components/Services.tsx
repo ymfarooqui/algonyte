@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
+
 type Service = {
   name: string;
   price: string;
@@ -113,15 +118,21 @@ const services: Service[] = [
 export default function Services() {
   return (
     <section id="services" className="section bg-brand-soft">
-      <div className="container-page">
-        <div className="max-w-2xl">
+      <motion.div
+        className="container-page"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.container(0.1, 0.1)}
+      >
+        <motion.div className="max-w-2xl" variants={reveal.fadeUp}>
           <p className="eyebrow mb-3">Services & Pricing</p>
           <h2 className="h-section">Services designed for where your website is today.</h2>
-        </div>
+        </motion.div>
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {services.map((s) => (
-            <article
+            <motion.article
               key={s.name}
               className={
                 "card flex flex-col " +
@@ -129,6 +140,7 @@ export default function Services() {
                   ? "ring-2 ring-brand-primary/60 relative"
                   : "")
               }
+              variants={reveal.dropTile}
             >
               {s.featured && (
                 <span className="absolute -top-3 right-6 rounded-full bg-brand-deep px-3 py-1 text-xs font-medium text-white">
@@ -149,10 +161,10 @@ export default function Services() {
               <a href="/contact" className="btn-primary mt-7 self-start">
                 {s.cta}
               </a>
-            </article>
+            </motion.article>
           ))}
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 }

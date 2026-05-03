@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Image from "next/image";
 import Link from "next/link";
 import FounderBio from "@/components/FounderBio";
 
@@ -106,23 +105,6 @@ export default function AboutPage() {
       </section>
 
       <FounderBio />
-
-      <section className="section bg-white">
-        <div className="container-page max-w-5xl">
-          <p className="eyebrow mb-3">Background at a glance</p>
-          <h2 className="h-section">Built on experience. Focused on results.</h2>
-          <div className="mt-8">
-            <Image
-              src="/trust-credibility.png"
-              alt="Snapshot of professional experience, skills, certifications, and work ethic"
-              width={1400}
-              height={900}
-              sizes="(max-width: 1024px) 100vw, 1024px"
-              className="w-full h-auto rounded-2xl shadow-lg ring-1 ring-slate-200"
-            />
-          </div>
-        </div>
-      </section>
     </>
   );
 }

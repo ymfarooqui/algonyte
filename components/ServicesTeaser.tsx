@@ -1,9 +1,19 @@
+"use client";
+
 import Link from "next/link";
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
 
 export default function ServicesTeaser() {
   return (
     <section className="section">
-      <div className="container-page">
+      <motion.div
+        className="container-page"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.fadeUpLg}
+      >
         <Link
           href="/services"
           className="group relative block overflow-hidden rounded-3xl border border-brand-deep/10 bg-gradient-to-br from-brand-accent via-white to-white p-10 sm:p-14 transition hover:shadow-lg"
@@ -39,7 +49,7 @@ export default function ServicesTeaser() {
             </div>
           </div>
         </Link>
-      </div>
+      </motion.div>
     </section>
   );
 }

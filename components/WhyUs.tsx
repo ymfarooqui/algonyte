@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { motion } from "motion/react";
+import { reveal, inView } from "@/lib/motion";
 
 const points = [
   "Built with usability in mind from day one",
@@ -20,60 +21,45 @@ const questions = [
 ];
 
 export default function WhyUs() {
-  const ref = useRef<HTMLDivElement | null>(null);
-  const [visible, setVisible] = useState(false);
-
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    if (typeof IntersectionObserver === "undefined") {
-      setVisible(true);
-      return;
-    }
-    const io = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setVisible(true);
-            io.disconnect();
-          }
-        });
-      },
-      { threshold: 0.15, rootMargin: "0px 0px -10% 0px" }
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, []);
-
   return (
     <section id="why-us" className="section bg-white">
-      <div
-        ref={ref}
-        className={`container-page grid gap-12 lg:grid-cols-2 lg:items-start transition-all duration-[900ms] ease-out motion-reduce:transition-none ${
-          visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-        }`}
+      <motion.div
+        className="container-page grid gap-12 lg:grid-cols-2 lg:items-start"
+        initial="hidden"
+        whileInView="visible"
+        viewport={inView}
+        variants={reveal.container(0.1, 0.1)}
       >
         <div>
-          <p className="eyebrow mb-3">Why this is different</p>
-          <h2 className="h-section">
+          <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
+            Why this is different
+          </motion.p>
+          <motion.h2 className="h-section" variants={reveal.fadeUp}>
             Most websites are built. Few are tested like a customer would use them.
-          </h2>
-          <p className="lede mt-6">
+          </motion.h2>
+          <motion.p className="lede mt-6" variants={reveal.fadeUp}>
             We combine website building with a quality and usability mindset. Your
             site does not just look good. It works for clarity, ease of use, performance, and real
             customer behavior.
-          </p>
+          </motion.p>
           <ul className="mt-8 space-y-3">
             {points.map((p) => (
-              <li key={p} className="flex gap-3 text-brand-ink">
+              <motion.li
+                key={p}
+                className="flex gap-3 text-brand-ink"
+                variants={reveal.fadeUp}
+              >
                 <span aria-hidden className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-brand-primary" />
                 <span>{p}</span>
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
 
-        <div className="rounded-2xl bg-brand-accent/60 p-8 sm:p-10">
+        <motion.div
+          className="rounded-2xl bg-brand-accent/60 p-8 sm:p-10"
+          variants={reveal.fadeUpLg}
+        >
           <h3 className="text-xl font-semibold text-brand-deep">A quality mindset behind every website.</h3>
           <p className="mt-4 text-brand-ink/80">
             We come from a quality assurance background. Every website is approached with a
@@ -88,8 +74,8 @@ export default function WhyUs() {
               </li>
             ))}
           </ul>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 }
