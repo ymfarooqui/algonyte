@@ -40,7 +40,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  icons: { icon: "/favicon.svg" },
+  icons: { icon: "/favicon-v2.svg" },
 };
 
 const organizationJsonLd = {
@@ -49,7 +49,7 @@ const organizationJsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
-  logo: `${siteConfig.url}/favicon.svg`,
+  logo: `${siteConfig.url}/favicon-v2.svg`,
   slogan: siteConfig.tagline,
 };
 
