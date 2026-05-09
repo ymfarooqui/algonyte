@@ -13,7 +13,7 @@ export const reveal = {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.75, ease: EASE },
+      transition: { duration: 0.55, ease: EASE },
     },
   },
   fadeUpLg: {
@@ -22,7 +22,7 @@ export const reveal = {
       opacity: 1,
       y: 0,
       filter: "blur(0px)",
-      transition: { duration: 0.95, ease: EASE },
+      transition: { duration: 0.7, ease: EASE },
     },
   },
   dropTile: {
@@ -32,7 +32,7 @@ export const reveal = {
       y: 0,
       scale: 1,
       filter: "blur(0px)",
-      transition: { duration: 0.75, ease: EASE },
+      transition: { duration: 0.55, ease: EASE },
     },
   },
 };

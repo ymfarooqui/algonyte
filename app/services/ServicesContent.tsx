@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 import FinalCTA from "@/components/sections/FinalCTA";
 import ServicesFlowVisual from "@/components/ServicesFlowVisual";
 import ServicesHeroStack from "@/components/ServicesHeroStack";
@@ -161,6 +162,7 @@ const faqs = [
 ];
 
 export default function ServicesContent() {
+  const { s } = useAnimSpeed();
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
@@ -212,7 +214,7 @@ export default function ServicesContent() {
             className="relative hidden lg:block"
             initial={{ opacity: 0, y: 24, scale: 0.98 }}
             animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: 0.9, delay: 0.25, ease: EASE }}
+            transition={{ duration: s(0.9), delay: s(0.25), ease: EASE }}
           >
             <ServicesHeroStack />
           </motion.div>

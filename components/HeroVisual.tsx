@@ -2,6 +2,7 @@
 
 import { motion, useInView, useMotionValue, useTransform, animate } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -24,12 +25,13 @@ function Money({ value, prefix, className }: { value: number; prefix: string; cl
   const inView = useInView(ref, { once: true, amount: 0.6 });
   const mv = useMotionValue(0);
   const rounded = useTransform(mv, (v) => `${prefix}$${Math.round(v).toLocaleString()}`);
+  const { s } = useAnimSpeed();
 
   useEffect(() => {
     if (!inView) return;
-    const controls = animate(mv, value, { duration: 1.4, ease: EASE });
+    const controls = animate(mv, value, { duration: s(1.4), ease: EASE });
     return controls.stop;
-  }, [inView, mv, value]);
+  }, [inView, mv, value, s]);
 
   return (
     <motion.span ref={ref} className={className}>
@@ -59,13 +61,14 @@ function CheckIcon({ className }: { className?: string }) {
 }
 
 function Arrow() {
+  const { s } = useAnimSpeed();
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
       <motion.div
         initial={{ scale: 0, opacity: 0 }}
         whileInView={{ scale: 1, opacity: 1 }}
         viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
+        transition={{ duration: s(0.5), delay: s(0.4), ease: EASE }}
         className="h-10 w-10 rounded-full bg-brand-primary text-white shadow-lg shadow-brand-primary/40 flex items-center justify-center"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5 md:rotate-0 rotate-90" fill="none" aria-hidden>
@@ -80,6 +83,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.05 });
   const [revealed, setRevealed] = useState(0);
+  const { s, mult } = useAnimSpeed();
 
   useEffect(() => {
     if (!inView) return;
@@ -88,9 +92,9 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
       i += 1;
       setRevealed(i);
       if (i >= STEPS.length) clearInterval(id);
-    }, 380);
+    }, 380 * mult);
     return () => clearInterval(id);
-  }, [inView]);
+  }, [inView, mult]);
 
   return (
     <div
@@ -105,7 +109,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, ease: EASE }}
+        transition={{ duration: s(0.7), ease: EASE }}
         className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
@@ -121,7 +125,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
               key={m.name}
               initial={{ opacity: 0, x: -10 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.45, delay: 0.15 + i * 0.18, ease: EASE }}
+              transition={{ duration: s(0.45), delay: s(0.15 + i * 0.18), ease: EASE }}
               className="flex items-center gap-3 rounded-xl bg-rose-50/70 ring-1 ring-rose-100 px-3 py-2.5"
             >
               <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-600">
@@ -130,7 +134,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
                   className="absolute inset-0 rounded-full ring-2 ring-rose-400/60"
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={inView ? { opacity: [0, 1, 0], scale: [0.8, 1.4, 1.6] } : {}}
-                  transition={{ duration: 1.4, delay: 0.3 + i * 0.18, repeat: Infinity, repeatDelay: 1.6 }}
+                  transition={{ duration: s(1.4), delay: s(0.3 + i * 0.18), repeat: Infinity, repeatDelay: s(1.6) }}
                 />
               </span>
               <div className="min-w-0 flex-1">
@@ -151,7 +155,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.9, ease: EASE }}
+            transition={{ duration: s(0.6), delay: s(0.9), ease: EASE }}
             className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-3 flex items-center gap-3"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-rose-500 ring-1 ring-rose-200 text-lg">
@@ -172,7 +176,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.7, delay: 0.15, ease: EASE }}
+        transition={{ duration: s(0.7), delay: s(0.15), ease: EASE }}
         className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
@@ -193,14 +197,14 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
             aria-hidden
             className="absolute left-[14px] top-2 bottom-2 w-px bg-gradient-to-b from-emerald-200 via-emerald-200 to-transparent"
           />
-          {STEPS.map((s, i) => {
+          {STEPS.map((step, i) => {
             const on = i < revealed;
             return (
-              <li key={s.title} className="relative flex items-start gap-3">
+              <li key={step.title} className="relative flex items-start gap-3">
                 <motion.span
                   initial={{ scale: 0.4, opacity: 0 }}
                   animate={on ? { scale: 1, opacity: 1 } : { scale: 0.4, opacity: 0 }}
-                  transition={{ duration: 0.45, ease: EASE }}
+                  transition={{ duration: s(0.45), ease: EASE }}
                   className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm shadow-emerald-500/30"
                 >
                   <CheckIcon className="h-4 w-4" />
@@ -209,21 +213,21 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
                       className="absolute inset-0 rounded-full ring-2 ring-emerald-400"
                       initial={{ opacity: 0.8, scale: 1 }}
                       animate={{ opacity: 0, scale: 1.9 }}
-                      transition={{ duration: 1, ease: "easeOut" }}
+                      transition={{ duration: s(1), ease: "easeOut" }}
                     />
                   )}
                 </motion.span>
                 <motion.div
                   initial={{ opacity: 0, x: -6 }}
                   animate={on ? { opacity: 1, x: 0 } : { opacity: 0, x: -6 }}
-                  transition={{ duration: 0.4, ease: EASE }}
+                  transition={{ duration: s(0.4), ease: EASE }}
                   className="flex-1 min-w-0 flex items-center justify-between gap-3 pt-0.5"
                 >
                   <p className="min-w-0 text-sm font-semibold text-slate-900 leading-tight">
-                    {s.title}
+                    {step.title}
                   </p>
                   <span className="shrink-0 text-[10px] font-mono text-emerald-700 bg-emerald-50 ring-1 ring-emerald-100 rounded px-1.5 py-0.5 tabular-nums">
-                    {s.t}
+                    {step.t}
                   </span>
                 </motion.div>
               </li>
@@ -235,7 +239,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
           <motion.div
             initial={{ opacity: 0, y: 8 }}
             animate={revealed >= STEPS.length ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, ease: EASE }}
+            transition={{ duration: s(0.6), ease: EASE }}
             className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3 flex items-center gap-3"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-emerald-600 ring-1 ring-emerald-200">

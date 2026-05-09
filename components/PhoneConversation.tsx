@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -142,13 +143,14 @@ function Bubble({ msg, index }: { msg: Msg; index: number }) {
   const isThem = msg.from === "them";
   const isBooking = msg.from === "me" && "kind" in msg && msg.kind === "booking";
   const showAvatar = !isThem && !isBooking;
+  const { s } = useAnimSpeed();
 
   return (
     <motion.div
       initial={{ opacity: 0, y: 8 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: 0.45, delay: index * 0.12, ease: EASE }}
+      transition={{ duration: s(0.45), delay: s(index * 0.12), ease: EASE }}
       className={`flex items-end gap-1.5 ${isThem ? "justify-start" : "justify-end"}`}
     >
       {isThem && (
@@ -270,17 +272,18 @@ function Annotation({
   a: (typeof annotations)[number];
   index: number;
 }) {
-  const s = annotationStyles[a.color];
+  const style = annotationStyles[a.color];
+  const { s } = useAnimSpeed();
   return (
     <motion.li
       initial={{ opacity: 0, x: 10 }}
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5, delay: 0.2 + index * 0.15, ease: EASE }}
+      transition={{ duration: s(0.5), delay: s(0.2 + index * 0.15), ease: EASE }}
       className="relative flex items-start gap-3"
     >
       <span
-        className={`relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full ring-1 ${s.bg} ${s.text} ${s.ring}`}
+        className={`relative z-10 flex h-9 w-9 shrink-0 items-center justify-center rounded-full ring-1 ${style.bg} ${style.text} ${style.ring}`}
       >
         {a.icon}
       </span>

@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useRef } from "react";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -29,6 +30,7 @@ const INBOX = [
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
 function Bubbles() {
+  const { s } = useAnimSpeed();
   const dots = [
     { top: "8%", left: "6%", size: 14, opacity: 0.35 },
     { top: "22%", left: "92%", size: 10, opacity: 0.3 },
@@ -46,7 +48,7 @@ function Bubbles() {
           key={i}
           initial={{ opacity: 0, scale: 0.6 }}
           animate={{ opacity: d.opacity, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.05 * i, ease: EASE }}
+          transition={{ duration: s(0.8), delay: s(0.05 * i), ease: EASE }}
           style={{
             top: d.top,
             left: d.left,
@@ -61,6 +63,7 @@ function Bubbles() {
 }
 
 function Waveform() {
+  const { s } = useAnimSpeed();
   const bars = [4, 8, 6, 12, 9, 14, 10, 16, 11, 18, 12, 14, 9, 11, 6, 8, 4];
   return (
     <div className="flex h-6 items-center gap-[2px]">
@@ -69,9 +72,9 @@ function Waveform() {
           key={i}
           animate={{ scaleY: [1, h / 6, 1] }}
           transition={{
-            duration: 1.4,
+            duration: s(1.4),
             repeat: Infinity,
-            delay: i * 0.05,
+            delay: s(i * 0.05),
             ease: "easeInOut",
           }}
           style={{ height: `${h * 1.2}px` }}
@@ -89,6 +92,7 @@ export default function ServicesHeroStack({
 }) {
   const ref = useRef<HTMLDivElement>(null);
   const inView = useInView(ref, { once: true, amount: 0.2 });
+  const { s } = useAnimSpeed();
 
   return (
     <div
@@ -103,7 +107,7 @@ export default function ServicesHeroStack({
       <motion.div
         initial={{ opacity: 0, y: 20, rotate: -3 }}
         animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
-        transition={{ duration: 0.8, delay: 0.1, ease: EASE }}
+        transition={{ duration: s(0.8), delay: s(0.1), ease: EASE }}
         className="absolute left-[6%] top-[4%] w-[58%] rounded-2xl bg-white p-3 shadow-xl ring-1 ring-slate-200/70 sm:p-4"
       >
         <div className="flex items-center gap-2">
@@ -137,7 +141,7 @@ export default function ServicesHeroStack({
       <motion.div
         initial={{ opacity: 0, y: 24, rotate: 4 }}
         animate={inView ? { opacity: 1, y: 0, rotate: 2 } : {}}
-        transition={{ duration: 0.85, delay: 0.25, ease: EASE }}
+        transition={{ duration: s(0.85), delay: s(0.25), ease: EASE }}
         className="absolute right-[4%] top-[14%] w-[60%] rounded-2xl bg-white p-3 shadow-xl ring-1 ring-slate-200/70 sm:p-4"
       >
         <div className="flex items-center justify-between">
@@ -180,8 +184,8 @@ export default function ServicesHeroStack({
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={inView ? { opacity: 1, scale: 1 } : {}}
                 transition={{
-                  duration: 0.4,
-                  delay: 0.5 + i * 0.06,
+                  duration: s(0.4),
+                  delay: s(0.5 + i * 0.06),
                   ease: EASE,
                 }}
                 className={`h-6 rounded-md ${
@@ -207,7 +211,7 @@ export default function ServicesHeroStack({
       <motion.div
         initial={{ opacity: 0, y: 28 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: 0.9, delay: 0.4, ease: EASE }}
+        transition={{ duration: s(0.9), delay: s(0.4), ease: EASE }}
         className="absolute bottom-[4%] left-[10%] w-[78%] rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-slate-200/70 sm:p-5"
       >
         <p className="text-xs font-semibold text-brand-ink">Unified inbox</p>
@@ -218,8 +222,8 @@ export default function ServicesHeroStack({
               initial={{ opacity: 0, x: -10 }}
               animate={inView ? { opacity: 1, x: 0 } : {}}
               transition={{
-                duration: 0.5,
-                delay: 0.6 + i * 0.15,
+                duration: s(0.5),
+                delay: s(0.6 + i * 0.15),
                 ease: EASE,
               }}
               className="flex items-center gap-2.5 rounded-xl bg-slate-50 px-2.5 py-2 ring-1 ring-slate-100"

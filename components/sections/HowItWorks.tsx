@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const steps = [
   {
@@ -24,6 +25,7 @@ const steps = [
 const EASE = [0.22, 1, 0.36, 1] as const;
 
 export default function HowItWorks() {
+  const { s } = useAnimSpeed();
   return (
     <section className="section bg-brand-soft">
       <motion.div
@@ -52,7 +54,7 @@ export default function HowItWorks() {
             initial={{ scaleX: 0, opacity: 0 }}
             whileInView={{ scaleX: 1, opacity: 1 }}
             viewport={inView}
-            transition={{ duration: 1.1, delay: 0.5, ease: EASE }}
+            transition={{ duration: s(1.1), delay: s(0.5), ease: EASE }}
           />
           {steps.map((s) => (
             <motion.div

@@ -2,6 +2,7 @@
 
 import { motion, useInView } from "motion/react";
 import { useEffect, useRef, useState } from "react";
+import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 const AUTOPLAY_MS = 5500;
@@ -20,6 +21,7 @@ type Stage = {
 /* ---------------- mini UI cards (the "screens" inside each stage) ---------------- */
 
 function FormCard() {
+  const { s } = useAnimSpeed();
   const fields = ["Full name", "Phone number", "Service needed", "Zip code", "Best time to call"];
   return (
     <div className="flex h-full flex-col gap-2.5">
@@ -42,7 +44,7 @@ function FormCard() {
       </div>
       <motion.div
         animate={{ scale: [1, 1.04, 1] }}
-        transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+        transition={{ duration: s(2), repeat: Infinity, ease: "easeInOut" }}
         className="mt-auto flex items-center justify-center rounded-md bg-brand-deep py-2 text-[10px] font-semibold uppercase tracking-wider text-white"
       >
         Submit
@@ -52,12 +54,13 @@ function FormCard() {
 }
 
 function ChatReplyCard() {
+  const { s } = useAnimSpeed();
   return (
     <div className="flex h-full flex-col justify-around gap-2">
       <motion.div
         initial={{ opacity: 0, x: -8 }}
         animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: 0.5, ease: EASE }}
+        transition={{ duration: s(0.5), ease: EASE }}
         className="self-start max-w-[80%] rounded-2xl rounded-bl-sm bg-slate-100 px-3 py-2"
       >
         <p className="text-[10px] text-slate-700">Hi, do you do roof inspections?</p>
@@ -65,7 +68,7 @@ function ChatReplyCard() {
       <motion.div
         initial={{ opacity: 0, y: 6 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6, duration: 0.5, ease: EASE }}
+        transition={{ delay: s(0.6), duration: s(0.5), ease: EASE }}
         className="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-brand-deep px-3 py-2"
       >
         <p className="text-[10px] text-white leading-snug">
@@ -81,6 +84,7 @@ function ChatReplyCard() {
 }
 
 function QualifyCard() {
+  const { s } = useAnimSpeed();
   const items = [
     { label: "Service area", ok: true },
     { label: "Budget fit", ok: true },
@@ -95,7 +99,7 @@ function QualifyCard() {
             key={it.label}
             initial={{ opacity: 0, x: -8 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: 0.15 + i * 0.18, duration: 0.4, ease: EASE }}
+            transition={{ delay: s(0.15 + i * 0.18), duration: s(0.4), ease: EASE }}
             className="flex items-center gap-2 rounded-md bg-slate-50 px-2 py-2 ring-1 ring-slate-100"
           >
             <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
@@ -122,6 +126,7 @@ function QualifyCard() {
 }
 
 function CalendarCard() {
+  const { s } = useAnimSpeed();
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   return (
     <div className="flex h-full flex-col gap-1.5">
@@ -150,7 +155,7 @@ function CalendarCard() {
             key={`s1-${d}`}
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 + i * 0.06, duration: 0.4, ease: EASE }}
+            transition={{ delay: s(0.2 + i * 0.06), duration: s(0.4), ease: EASE }}
             className={`rounded-sm ${
               i === 2 ? "bg-brand-primary shadow-sm shadow-brand-primary/40" : "bg-slate-100"
             }`}
@@ -174,12 +179,13 @@ function CalendarCard() {
 }
 
 function ConfirmCard() {
+  const { s } = useAnimSpeed();
   return (
     <div className="flex h-full flex-col justify-evenly gap-2">
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.2, duration: 0.5, ease: EASE }}
+        transition={{ delay: s(0.2), duration: s(0.5), ease: EASE }}
         className="flex items-start gap-2 rounded-md bg-emerald-50 ring-1 ring-emerald-100 px-2 py-2"
       >
         <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
@@ -195,7 +201,7 @@ function ConfirmCard() {
       <motion.div
         initial={{ opacity: 0, y: -6 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.5, duration: 0.5, ease: EASE }}
+        transition={{ delay: s(0.5), duration: s(0.5), ease: EASE }}
         className="flex items-start gap-2 rounded-md bg-sky-50 ring-1 ring-sky-100 px-2 py-2"
       >
         <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-sky-500 text-white">
@@ -221,6 +227,7 @@ function ConfirmCard() {
 }
 
 function GrowthCard() {
+  const { s } = useAnimSpeed();
   const bars = [25, 38, 32, 52, 48, 70, 88];
   return (
     <div className="flex h-full flex-col gap-1.5">
@@ -241,7 +248,7 @@ function GrowthCard() {
             key={i}
             initial={{ height: 0 }}
             animate={{ height: `${h}%` }}
-            transition={{ delay: 0.1 + i * 0.07, duration: 0.6, ease: EASE }}
+            transition={{ delay: s(0.1 + i * 0.07), duration: s(0.6), ease: EASE }}
             className={`flex-1 rounded-sm ${
               i === bars.length - 1 ? "bg-brand-primary" : "bg-brand-deep/30"
             }`}
@@ -437,7 +444,7 @@ function OrbitTile({
         zIndex: z,
       }}
       animate={{ x, y, scale, opacity, filter: `blur(${blur}px)` }}
-      transition={{ duration: 1, ease: EASE }}
+      transition={{ duration: 0.7, ease: EASE }}
     >
       <div
         className={`relative flex h-full flex-col rounded-3xl bg-white p-6 ring-1 transition-shadow ${
@@ -585,14 +592,47 @@ export default function ServicesFlowVisual({
   const inView = useInView(ref, { once: false, amount: 0.25 });
   const [active, setActive] = useState(0);
   const [paused, setPaused] = useState(false);
+  const scrollerRef = useRef<HTMLDivElement>(null);
+  const { mult } = useAnimSpeed();
 
   useEffect(() => {
     if (!inView || paused) return;
     const id = setInterval(() => {
       setActive((a) => (a + 1) % STAGES.length);
-    }, AUTOPLAY_MS);
+    }, AUTOPLAY_MS * mult);
     return () => clearInterval(id);
-  }, [inView, paused]);
+  }, [inView, paused, mult]);
+
+  // Sync mobile scroller position when active changes from autoplay/dots
+  useEffect(() => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const child = el.children[active] as HTMLElement | undefined;
+    if (!child) return;
+    const target = child.offsetLeft - (el.clientWidth - child.clientWidth) / 2;
+    if (Math.abs(el.scrollLeft - target) > 4) {
+      el.scrollTo({ left: target, behavior: "smooth" });
+    }
+  }, [active]);
+
+  // Update active when user swipes
+  const handleScroll = () => {
+    const el = scrollerRef.current;
+    if (!el) return;
+    const center = el.scrollLeft + el.clientWidth / 2;
+    let nearest = 0;
+    let best = Infinity;
+    for (let i = 0; i < el.children.length; i++) {
+      const c = el.children[i] as HTMLElement;
+      const cCenter = c.offsetLeft + c.clientWidth / 2;
+      const d = Math.abs(cCenter - center);
+      if (d < best) {
+        best = d;
+        nearest = i;
+      }
+    }
+    if (nearest !== active) setActive(nearest);
+  };
 
   return (
     <div
@@ -600,12 +640,59 @@ export default function ServicesFlowVisual({
       className={`relative ${className}`}
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
+      onTouchStart={() => setPaused(true)}
     >
       <div className="relative overflow-hidden rounded-3xl border border-slate-200 bg-gradient-to-br from-brand-accent via-white to-brand-soft px-2 py-6 sm:px-6 sm:py-8">
-        <Ring active={active} setActive={setActive} />
+        {/* Mobile: swipeable carousel */}
+        <div className="sm:hidden">
+          <div
+            ref={scrollerRef}
+            onScroll={handleScroll}
+            className="flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-smooth px-[10%] pb-2 [-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden"
+          >
+            {STAGES.map((stage, i) => (
+              <div
+                key={stage.id}
+                className="flex w-[80%] shrink-0 snap-center flex-col rounded-3xl bg-white p-5 shadow-md ring-1 ring-slate-200/70"
+              >
+                <div className="flex items-center justify-between">
+                  <span className="flex h-9 w-9 items-center justify-center rounded-xl bg-brand-deep text-white">
+                    <span className="block h-5 w-5">{stage.icon}</span>
+                  </span>
+                  <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
+                    Step {String(i + 1).padStart(2, "0")} / {STAGES.length}
+                  </span>
+                </div>
+                <h3 className="mt-4 text-lg font-semibold text-brand-deep leading-tight">
+                  {stage.label}
+                </h3>
+                <p className="mt-2 text-sm text-brand-muted leading-relaxed">
+                  {stage.blurb}
+                </p>
+                <div className="mt-4 h-[180px] rounded-xl bg-brand-soft p-3 ring-1 ring-slate-100">
+                  {stage.card}
+                </div>
+                <div className="mt-4 flex items-baseline gap-2">
+                  <span className="text-2xl font-bold text-brand-deep tabular-nums leading-none">
+                    {stage.stat.value}
+                  </span>
+                  <span className="text-[11px] text-brand-muted">{stage.stat.label}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="mt-3 text-center text-[11px] font-medium uppercase tracking-wider text-brand-muted">
+            Swipe to explore
+          </p>
+        </div>
+
+        {/* Desktop: orbital ring */}
+        <div className="hidden sm:block">
+          <Ring active={active} setActive={setActive} />
+        </div>
 
         {/* progress dots */}
-        <div className="relative z-10 mt-20 sm:mt-24 flex items-center justify-center gap-1.5">
+        <div className="relative z-10 mt-4 sm:mt-24 flex items-center justify-center gap-1.5">
           {STAGES.map((_, i) => (
             <button
               key={i}
