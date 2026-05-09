@@ -4,11 +4,10 @@ import Link from "next/link";
 import { useState } from "react";
 
 const links = [
-  { href: "/", label: "Home" },
-  { href: "/why-us", label: "Why Us" },
   { href: "/services", label: "Services" },
+  { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/faq", label: "FAQ" },
+  { href: "/insights", label: "Insights" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -33,8 +32,8 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/free-review" className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
-          Get a Free Website Review
+        <Link href="/contact" className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
+          Book a Free Audit
         </Link>
 
         <button
@@ -58,8 +57,8 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/free-review" onClick={() => setOpen(false)} className="btn-primary mt-2">
-              Get a Free Website Review
+            <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2">
+              Book a Free Audit
             </Link>
           </nav>
         </div>

@@ -15,7 +15,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `${siteConfig.name} | Affordable Websites & Website Audits for Small Businesses`,
+    default: `${siteConfig.name} | AI Business Automation`,
     template: `%s | ${siteConfig.name}`,
   },
   description: siteConfig.description,
@@ -25,13 +25,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: `${siteConfig.name} | Affordable Websites & Website Audits`,
+    title: `${siteConfig.name} | AI Business Automation`,
     description: siteConfig.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `${siteConfig.name} | Affordable Websites & Website Audits`,
+    title: `${siteConfig.name} | AI Business Automation`,
     description: siteConfig.description,
     ...(siteConfig.twitter ? { creator: siteConfig.twitter } : {}),
   },

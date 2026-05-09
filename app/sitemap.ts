@@ -3,12 +3,11 @@ import { siteConfig } from "@/lib/site";
 
 const routes = [
   { path: "/", priority: 1 },
-  { path: "/why-us", priority: 0.9 },
   { path: "/services", priority: 0.9 },
-  { path: "/free-review", priority: 0.85 },
+  { path: "/pricing", priority: 0.9 },
   { path: "/about", priority: 0.7 },
-  { path: "/faq", priority: 0.6 },
   { path: "/contact", priority: 0.8 },
+  { path: "/insights", priority: 0.5 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

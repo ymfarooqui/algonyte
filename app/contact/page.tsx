@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Contact from "@/components/Contact";
+import ContactContent from "./ContactContent";
 
 const title = "Contact";
 const description =
-  "Get in touch with Farooqui Digital for a free website review or to start a project.";
+  "Tell us about your business. We'll come back with a straight answer on whether we can help.";
 
 export const metadata: Metadata = {
   title,
@@ -14,5 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function ContactPage() {
-  return <Contact />;
+  return <ContactContent />;
 }

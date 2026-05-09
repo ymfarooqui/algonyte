@@ -6,19 +6,18 @@ import { useSearchParams } from "next/navigation";
 type Status = "idle" | "submitting" | "success" | "error";
 
 const helpOptions = [
-  "I need a new website",
-  "I want to improve my current website",
-  "I need local SEO and search help",
-  "I want a full website audit",
-  "I need ongoing website care",
-  "I am not sure yet",
+  "I want the platform set up for my business",
+  "I want a custom AI assistant",
+  "I want help with marketing and ads",
+  "I want a custom build or integration",
+  "I'm not sure yet, just want to talk",
 ];
 
 const budgetOptions = [
-  "Under $500",
-  "$500–$1,000",
-  "$1,000–$2,000",
-  "$2,000+",
+  "Under $1,000 a month",
+  "$1,000 to $2,500 a month",
+  "$2,500 to $5,000 a month",
+  "$5,000+ a month",
   "Not sure yet",
 ];
 
@@ -92,7 +91,7 @@ function ContactFormInner() {
       <div className="rounded-2xl border border-brand-primary/30 bg-white p-8 shadow-sm">
         <h3 className="text-xl font-semibold text-brand-deep">Thanks. Message received.</h3>
         <p className="mt-3 text-brand-muted leading-relaxed">
-          We&rsquo;ll review what you sent and reply within 1&ndash;2 business days with
+          We&rsquo;ll review what you sent and reply within one business day with
           clear next steps.
         </p>
         <button
@@ -125,7 +124,7 @@ function ContactFormInner() {
           <input id="business" name="business" type="text" className={fieldClass} />
         </div>
         <div>
-          <label className={labelClass} htmlFor="website">Website URL</label>
+          <label className={labelClass} htmlFor="website">Website (if you have one)</label>
           <input
             id="website"
             name="website"
@@ -166,7 +165,7 @@ function ContactFormInner() {
         disabled={status === "submitting"}
         className="btn-primary w-full sm:w-auto disabled:opacity-60 disabled:cursor-not-allowed"
       >
-        {status === "submitting" ? "Sending…" : "Send message"}
+        {status === "submitting" ? "Sending…" : "Send it"}
       </button>
 
       {status === "error" && (

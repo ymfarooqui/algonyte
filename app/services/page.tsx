@@ -1,12 +1,9 @@
 import type { Metadata } from "next";
-import Services from "@/components/Services";
-import AddOns from "@/components/AddOns";
-import ProcessStrip from "@/components/ProcessStrip";
-import FinalCta from "@/components/FinalCta";
+import ServicesContent from "./ServicesContent";
 
-const title = "Services & Pricing";
+const title = "Services";
 const description =
-  "Affordable website builds, audits, refreshes, and ongoing care plans for small businesses.";
+  "Our platform, custom builds, AI agents, and ongoing advisory. Pick how hands-on you want us to be.";
 
 export const metadata: Metadata = {
   title,
@@ -17,12 +14,5 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
-  return (
-    <>
-      <Services />
-      <AddOns />
-      <ProcessStrip />
-      <FinalCta />
-    </>
-  );
+  return <ServicesContent />;
 }
