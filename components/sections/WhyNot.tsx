@@ -18,6 +18,16 @@ const items = [
   },
 ];
 
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: items.map((item) => ({
+    "@type": "Question",
+    name: item.q,
+    acceptedAnswer: { "@type": "Answer", text: item.a },
+  })),
+};
+
 export default function WhyNot() {
   return (
     <section className="section bg-white">
@@ -49,6 +59,10 @@ export default function WhyNot() {
           ))}
         </motion.dl>
       </motion.div>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
     </section>
   );
 }
