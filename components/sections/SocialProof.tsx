@@ -17,6 +17,11 @@ const metrics: Metric[] = [
   { prefix: "$", to: 60, suffix: "K+", label: "Saved per year on busywork" },
 ];
 
+type Testimonial = { quote: string; name: string; role: string };
+
+// Add real client quotes here. The testimonial section renders only if this array has entries.
+const testimonials: Testimonial[] = [];
+
 export default function SocialProof() {
   return (
     <section className="section bg-brand-soft">
@@ -54,23 +59,30 @@ export default function SocialProof() {
           ))}
         </motion.div>
 
-        <motion.div
-          className="mt-8 grid gap-5 md:grid-cols-2"
-          variants={reveal.container(0.15, 0.2)}
-        >
-          {[0, 1].map((i) => (
-            <motion.figure key={i} className="card" variants={reveal.fadeUp}>
-              <blockquote className="text-brand-ink leading-relaxed">
-                &ldquo;[PLACEHOLDER quote. Keep it specific. What changed,
-                what they stopped doing, what the number was before and after.]&rdquo;
-              </blockquote>
-              <figcaption className="mt-5 text-sm">
-                <span className="font-semibold text-brand-deep">[Client Name]</span>
-                <span className="text-brand-muted">, Role at Company</span>
-              </figcaption>
-            </motion.figure>
-          ))}
-        </motion.div>
+        {testimonials.length > 0 && (
+          <motion.div
+            className="mt-8 grid gap-5 md:grid-cols-2"
+            variants={reveal.container(0.15, 0.2)}
+          >
+            {testimonials.map((t) => (
+              <motion.figure
+                key={t.name}
+                className="card"
+                variants={reveal.fadeUp}
+              >
+                <blockquote className="text-brand-ink leading-relaxed">
+                  &ldquo;{t.quote}&rdquo;
+                </blockquote>
+                <figcaption className="mt-5 text-sm">
+                  <span className="font-semibold text-brand-deep">
+                    {t.name}
+                  </span>
+                  <span className="text-brand-muted">, {t.role}</span>
+                </figcaption>
+              </motion.figure>
+            ))}
+          </motion.div>
+        )}
       </motion.div>
     </section>
   );

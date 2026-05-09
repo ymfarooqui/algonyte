@@ -17,9 +17,9 @@ export default function ContactContent() {
           <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
             Contact
           </motion.p>
-          <motion.h2 className="h-section" variants={reveal.fadeUp}>
+          <motion.h1 className="h-section" variants={reveal.fadeUp}>
             Tell us a bit about your business.
-          </motion.h2>
+          </motion.h1>
           <motion.p className="lede mt-5" variants={reveal.fadeUp}>
             Send us a few details. We&rsquo;ll come back with a straight
             answer on whether we can help, and if so, what we&rsquo;d do

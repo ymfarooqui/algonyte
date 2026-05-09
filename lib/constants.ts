@@ -1,5 +1,8 @@
 // Placeholder values. Replace before launch.
 
+export const isPlaceholder = (value: string | undefined): boolean =>
+  !value || value.startsWith("[PLACEHOLDER");
+
 export const social = {
   linkedin: "[PLACEHOLDER_LINKEDIN_URL]",
 };

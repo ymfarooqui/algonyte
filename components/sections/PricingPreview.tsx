@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
-import { plans } from "@/lib/constants";
+import { plans, isPlaceholder } from "@/lib/constants";
 
 export default function PricingPreview() {
   return (
@@ -76,10 +76,10 @@ export default function PricingPreview() {
                   ))}
                 </ul>
                 <a
-                  href={p.checkoutUrl}
+                  href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
                   className={`mt-7 ${featured ? "btn-primary" : "btn-secondary"}`}
                 >
-                  Get Started
+                  {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                 </a>
               </motion.div>
             );

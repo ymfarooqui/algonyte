@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
-import { plans } from "@/lib/constants";
+import { plans, isPlaceholder } from "@/lib/constants";
 
 export const metadata: Metadata = {
   title: "Pricing",
@@ -109,10 +109,10 @@ export default function PricingPage() {
                     ))}
                   </ul>
                   <a
-                    href={p.checkoutUrl}
+                    href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
                     className={`mt-7 ${featured ? "btn-primary" : "btn-secondary"}`}
                   >
-                    Get Started
+                    {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                   </a>
                 </div>
               );

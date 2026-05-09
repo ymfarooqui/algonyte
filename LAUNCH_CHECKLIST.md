@@ -9,14 +9,13 @@ For each item: who does it (you / me / both) and where in the codebase it lives.
 
 ### 1. Wire the GHL checkout URLs
 - **Where:** `lib/constants.ts` → `plans[].checkoutUrl`
-- **Today:** `[PLACEHOLDER_GHL_CHECKOUT_STARTER/GROWTH/PRO_AI]` — clicking "Get Started" goes nowhere.
+- **Today:** `[PLACEHOLDER_GHL_CHECKOUT_STARTER/GROWTH/PRO_AI]`. While placeholders are in place, the pricing CTAs label themselves "Talk to us" and route to `/contact` so nothing 404s. Real URLs will switch the buttons back to "Get Started".
 - **You:** Set up the three SaaS plans in GHL with Stripe, get the checkout URLs.
 - **Me:** Drop them into the constants once you have them.
 
-### 2. Wire the contact form backend
-- **Where:** `app/contact/ContactForm.tsx` reads `NEXT_PUBLIC_FORMSPREE_ENDPOINT`. Without it, the form errors on submit.
-- **You:** Pick the backend. Options: Formspree (already coded), GHL form endpoint, your own webhook.
-- **Me:** Wire whichever you pick. If you want GHL, I'll swap the form to post directly to a GHL form endpoint.
+### 2. Contact form backend
+- **Status:** Done locally. `.env.local` has `NEXT_PUBLIC_FORMSPREE_ENDPOINT` set.
+- **You (deploy):** Re-add the same env var in Vercel → Settings → Environment Variables before deploying, since `.env.local` is gitignored.
 
 ### 3. Decide on the trust-block company names
 - **Where:** `components/sections/AboutSnippet.tsx` — Amazon / Walmart / Meta / Microsoft / Shopify / Klarna with three example claims.
@@ -51,8 +50,8 @@ For each item: who does it (you / me / both) and where in the codebase it lives.
 - **Me:** Add it next to the form on `/contact`.
 
 ### 9. Open Graph image
-- **Where:** `app/opengraph-image.tsx` exists from the old positioning. When someone shares the link on LinkedIn/Slack/iMessage, this is the preview.
-- **Me:** Rewrite it to match the new positioning. Just need your sign-off on direction.
+- **Status:** Rewritten to the new positioning ("Your business should run while you sleep" + automation tagline).
+- **Optional:** swap the gradient background or add a screenshot of the dashboard once you have one.
 
 ### 10. LinkedIn URL
 - **Where:** `lib/constants.ts` → `social.linkedin`

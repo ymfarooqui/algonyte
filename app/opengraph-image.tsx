@@ -61,11 +61,12 @@ export default function OpengraphImage() {
               maxWidth: 980,
             }}
           >
-            <span>Affordable websites built for</span>
-            <span style={{ color: "#0F4C81" }}>clear customer journeys.</span>
+            <span>Your business should run</span>
+            <span style={{ color: "#0F4C81" }}>while you sleep.</span>
           </div>
           <div style={{ fontSize: 28, color: "#6B7280", maxWidth: 900 }}>
-            Website builds, audits, and ongoing care for small businesses.
+            AI assistants, CRM, and automation that answer leads, follow up,
+            and book the meeting for you.
           </div>
         </div>
 
