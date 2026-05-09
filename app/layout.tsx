@@ -58,6 +58,11 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
   icons: { icon: "/favicon-v2.svg" },
+  verification: {
+    other: {
+      "msvalidate.01": "5011186F99ABF374290EEA288F6863B0",
+    },
+  },
 };
 
 const organizationJsonLd = {
