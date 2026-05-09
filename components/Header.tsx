@@ -2,13 +2,12 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { BookingButton } from "@/components/BookingModal";
 
 const links = [
   { href: "/services", label: "Services" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
-  { href: "/insights", label: "Insights" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -32,9 +31,9 @@ export default function Header() {
           ))}
         </nav>
 
-        <Link href="/contact" className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
-          Book a Free Audit
-        </Link>
+        <BookingButton className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
+          Get a walkthrough
+        </BookingButton>
 
         <button
           aria-label="Toggle menu"
@@ -57,9 +56,12 @@ export default function Header() {
                 {l.label}
               </Link>
             ))}
-            <Link href="/contact" onClick={() => setOpen(false)} className="btn-primary mt-2">
-              Book a Free Audit
-            </Link>
+            <BookingButton
+              className="btn-primary mt-2"
+              onBeforeOpen={() => setOpen(false)}
+            >
+              Get a walkthrough
+            </BookingButton>
           </nav>
         </div>
       )}

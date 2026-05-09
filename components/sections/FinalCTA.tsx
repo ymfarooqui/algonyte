@@ -2,6 +2,7 @@
 
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
+import { BookingButton } from "@/components/BookingModal";
 
 export default function FinalCTA() {
   return (
@@ -20,19 +21,15 @@ export default function FinalCTA() {
           Want to see what this could look like for you?
         </motion.h2>
         <motion.p className="lede mt-6 max-w-2xl mx-auto" variants={reveal.fadeUp}>
-          Book a 20-minute call. We&rsquo;ll look at how leads come into your
+          Grab 30 minutes with us. We&rsquo;ll look at how leads come into your
           business today and show you where you&rsquo;re leaving money on the
           table.
         </motion.p>
         <motion.div className="mt-8" variants={reveal.fadeUp}>
-          <a href="/contact" className="btn-primary">
-            Book a 20-minute call
-          </a>
+          <BookingButton className="btn-primary">
+            Show me what this looks like for my business
+          </BookingButton>
         </motion.div>
-        <motion.p className="mt-5 text-sm text-brand-muted" variants={reveal.fadeUp}>
-          We don&rsquo;t do sales pitches. If we&rsquo;re not the right fit
-          we&rsquo;ll tell you.
-        </motion.p>
       </motion.div>
       <div
         aria-hidden

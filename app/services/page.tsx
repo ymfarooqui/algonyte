@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import ServicesContent from "./ServicesContent";
 
-const title = "Services";
+const title = "AI Lead Automation Services — Missed Call Text Back, AI Receptionist & CRM";
 const description =
-  "Our platform, custom builds, AI agents, and ongoing advisory. Pick how hands-on you want us to be.";
+  "Lead automation for service businesses: missed call text back, AI chat, voice agents, automated follow-up, and CRM. Built for trades, auto, and home services across Chicago, Detroit, and the Midwest.";
 
 export const metadata: Metadata = {
   title,

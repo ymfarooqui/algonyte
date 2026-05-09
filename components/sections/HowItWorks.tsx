@@ -17,7 +17,7 @@ const steps = [
   {
     n: "03",
     title: "Book the meeting",
-    body: "When they're ready, the meeting goes straight on your calendar. All you do is show up.",
+    body: "When they're ready, the meeting goes straight on your calendar. So your day fills up while you stay focused on the actual jobs.",
   },
 ];
 
@@ -77,6 +77,22 @@ export default function HowItWorks() {
             </motion.div>
           ))}
         </div>
+
+        {/* TODO: drop /public/dashboard-screenshot.png (real GHL inbox or pipeline view) and uncomment.
+        <motion.div
+          className="mt-14 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-lg max-w-5xl mx-auto"
+          variants={reveal.fadeUpLg}
+        >
+          <Image
+            src="/dashboard-screenshot.png"
+            alt="The inbox where every new lead, text, and call lands in one place"
+            width={1600}
+            height={1000}
+            sizes="(min-width: 1024px) 64rem, 100vw"
+            className="w-full h-auto"
+          />
+        </motion.div>
+        */}
       </motion.div>
     </section>
   );

@@ -5,6 +5,12 @@ import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
 import { plans, isPlaceholder } from "@/lib/constants";
 
+const anchors: Record<string, string> = {
+  starter: "Less than one missed job per month.",
+  growth: "About 1/4 the cost of a part-time hire.",
+  "pro-ai": "About 1/3 the cost of a full-time receptionist.",
+};
+
 export default function PricingPreview() {
   return (
     <section className="section bg-brand-soft">
@@ -21,6 +27,13 @@ export default function PricingPreview() {
         <motion.h2 className="h-section max-w-2xl" variants={reveal.fadeUp}>
           Three plans. The price you see is what you pay.
         </motion.h2>
+        <motion.p
+          className="mt-4 max-w-2xl text-brand-muted"
+          variants={reveal.fadeUp}
+        >
+          Flat monthly rate. No per-minute charges, no overage fees, no usage
+          caps that quietly turn into a bigger bill.
+        </motion.p>
 
         <motion.div
           className="mt-12 grid gap-5 md:grid-cols-3"
@@ -52,10 +65,15 @@ export default function PricingPreview() {
                   </span>
                   <span className="text-brand-muted text-sm">/mo</span>
                 </div>
+                {anchors[p.id] && (
+                  <p className="mt-1 text-xs text-brand-deep/70 font-medium">
+                    {anchors[p.id]}
+                  </p>
+                )}
                 <p className="mt-4 text-brand-muted text-sm leading-relaxed min-h-[3.5rem]">
                   {p.tagline}
                 </p>
-                <ul className="mt-5 space-y-2 text-sm">
+                <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
                   {p.features.map((f) => (
                     <li key={f} className="flex items-start gap-2">
                       <svg
@@ -77,7 +95,7 @@ export default function PricingPreview() {
                 </ul>
                 <a
                   href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
-                  className={`mt-7 ${featured ? "btn-primary" : "btn-secondary"}`}
+                  className="btn-primary w-full"
                 >
                   {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                 </a>

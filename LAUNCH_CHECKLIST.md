@@ -1,124 +1,124 @@
 # Launch Checklist — Farooqui Digital
 
-What's left before we take the new site live, grouped by what blocks launch vs. what doesn't.
-For each item: who does it (you / me / both) and where in the codebase it lives.
+Last updated: 2026-05-09
 
 ---
 
-## Must-have (page is broken or misleading without these)
+## Status: **Live in production.** ✅
+
+All pre-deploy must-do items are complete. Site is deployed on Vercel, DNS is live via Cloudflare, contact form works, legal pages are published. The remaining items below are post-launch follow-ups — none of them block ongoing operation.
+
+---
+
+## Should-do soon after launch (week 1)
 
 ### 1. Wire the GHL checkout URLs
 - **Where:** `lib/constants.ts` → `plans[].checkoutUrl`
-- **Today:** `[PLACEHOLDER_GHL_CHECKOUT_STARTER/GROWTH/PRO_AI]`. While placeholders are in place, the pricing CTAs label themselves "Talk to us" and route to `/contact` so nothing 404s. Real URLs will switch the buttons back to "Get Started".
-- **You:** Set up the three SaaS plans in GHL with Stripe, get the checkout URLs.
-- **Me:** Drop them into the constants once you have them.
+- **Today:** Pricing CTAs gracefully fall back to "Talk to us" → `/contact` while placeholders are present, so the site is not broken — but you can't capture self-serve subscriptions until these are real.
+- **You:** Set up the three SaaS plans in GHL with Stripe ($549 / $749 / $1,299), get the checkout URLs.
+- **Me:** Drop them into the constants once you have them. While you're at it, configure the **$399 setup fee** as a one-time charge on the first invoice for Starter and Growth (Pro AI rolls setup into month 1).
 
-### 2. Contact form backend
-- **Status:** Done locally. `.env.local` has `NEXT_PUBLIC_FORMSPREE_ENDPOINT` set.
-- **You (deploy):** Re-add the same env var in Vercel → Settings → Environment Variables before deploying, since `.env.local` is gitignored.
+### 2. SocialProof metrics — finish softening
+- **Where:** `components/sections/SocialProof.tsx`
+- **Today:** $60K stat is now anchored to "one client's first year" ✅. The other two (72% faster reply / 60-sec response) are still presented as raw facts. If those came from research/aspirational data rather than your own measurements, soften them the same way.
+- **You:** Confirm the source for 72% and 60 sec, or label them similarly.
 
-### 3. Decide on the trust-block company names
-- **Where:** `components/sections/AboutSnippet.tsx` — Amazon / Walmart / Meta / Microsoft / Shopify / Klarna with three example claims.
-- **Risk:** Verifiable but uses other companies' names without permission. Fine as commentary, but a lawyer might want a "Source: company press releases" footnote, or a swap to actual clients/partners once you have any.
+### 3. Decide on the trust-block companies
+- **Where:** `components/sections/AboutSnippet.tsx` — two marquee rows of 12 brand logos plus three example claims (Amazon / Walmart / Klarna).
+- **Risk:** Verifiable claims, but uses other companies' names without permission. A lawyer might want a "Source: company press releases" footnote, or a swap to actual clients/partners once you have any.
 - **You:** Decide whether to keep, swap, or have me add citations.
 
-### 4. Real testimonials (or remove the block)
-- **Where:** `components/sections/SocialProof.tsx` — two `[PLACEHOLDER quote]` cards.
-- **You:** Get 1–2 quotes from real clients with specific results, OR tell me to remove the testimonial cards entirely and keep just the metrics.
-
-### 5. The metrics on SocialProof
-- **Where:** Same file. Currently 72% / 60 sec / $60K+ — these came from the original brief, not from your real data.
-- **You:** Confirm or adjust. If you don't have real numbers yet, swap to softer language ("Up to" or "Aiming for").
-
-### 6. Privacy Policy and Terms
-- **Today:** Don't exist. Footer no longer links to them, but you need them for: GHL/Stripe terms, Google Ads, Meta Ads, anywhere collecting form data.
-- **You:** Generate via Termly / iubenda / Privacy Policy Generator (~$10–30) or have a lawyer review.
-- **Me:** Drop the resulting text into `app/privacy/page.tsx` and `app/terms/page.tsx`, re-link in footer.
-
----
-
-## Should-have (page works, but missing important stuff)
-
-### 7. GHL chat widget
-- **Today:** Not embedded anywhere. Brief asked for it.
-- **You:** Get the chat widget script src from GHL.
-- **Me:** Embed in `app/layout.tsx` head with the right theme/accent.
-
-### 8. Calendar embed on /contact
-- **Today:** Not embedded. /contact only has the form.
-- **You:** Set up an "AI Automation Audit" appointment type in GHL, get the inline embed URL.
-- **Me:** Add it next to the form on `/contact`.
-
-### 9. Open Graph image
-- **Status:** Rewritten to the new positioning ("Your business should run while you sleep" + automation tagline).
-- **Optional:** swap the gradient background or add a screenshot of the dashboard once you have one.
-
-### 10. LinkedIn URL
+### 4. LinkedIn URL
 - **Where:** `lib/constants.ts` → `social.linkedin`
 - **Today:** Footer LinkedIn icon hidden because it's a placeholder.
 - **You:** Send me the URL.
 
-### 11. /insights — content or hide
-- **Today:** Page exists with three "[Post title]" placeholders. Looks bare.
-- **Options:**
-  - (a) Write 1–3 short posts before launch
-  - (b) Remove "Insights" from the nav until you have content; keep the page for SEO
-- **Recommendation:** (b)
-- **You:** Pick.
-
-### 12. Email setup
-- **Where:** `lib/constants.ts` → `contact.email = "hello@farooquidigital.com"`
-- **You:** Confirm this address actually exists and you're checking it. If not, change it or set it up.
-
-### 13. Domain + hosting
-- **Today:** Local-only.
-- **You:** Deploy to Vercel (assuming, since `@vercel/analytics` is in `package.json`), point `farooquidigital.com` DNS at it.
-- **Me:** Walk through Vercel deploy if you want, or you can do it from the dashboard in five minutes.
+### 5. Calendar embed verification
+- **Today:** `/book` uses calendar `client-calls-demos-4063` on leadconnectorhq.com. `/contact` only has the form.
+- **You:** Confirm the existing calendar URL is the one you want, or set up an "AI Automation Audit" type in GHL and send the new inline URL.
+- **Me:** Optionally add the calendar next to the form on `/contact` if you want it there too.
 
 ---
 
-## Nice-to-have (post-launch is fine)
+## Post-launch follow-ups (week 2+)
 
-### 14. Real headshot
-Current `/public/yf-headshot.jpg` works. If you have something better, swap it.
+### 6. Search Console + sitemap submission
+- Add the site to Google Search Console (verify via Vercel meta tag or DNS TXT)
+- Submit `https://farooquidigital.com/sitemap.xml`
+- Vercel Analytics + GA4 (`G-449SQXFKS9`) are already wired ✅
 
-### 15. Cookie banner
-Only needed if you run ads or want clean GDPR posture. Vercel Analytics is cookieless.
+### 7. Lighthouse + cross-browser pass
+Run Lighthouse against the production URL. Aim for 90+ across the board. Test specifically on iPhone Safari and Android Chrome — that's where most of your traffic will land.
 
-### 16. Search Console + Analytics
-- Add the site to Google Search Console (verify via Vercel meta tag or DNS)
-- Vercel Analytics is already wired via `@vercel/analytics`
-- Optional: PostHog or Plausible if you want CTA event tracking
+### 8. /insights — write content or keep noindexed
+- **Today:** Page is a "Coming soon" placeholder. Already removed from nav, `noindex`-ed, and removed from sitemap ✅.
+- **You:** Write 1–3 short posts when you have bandwidth. When you do, flip the `robots` flag back to `index: true` in `app/insights/page.tsx` and re-add the route to `app/sitemap.ts`.
 
-### 17. Lighthouse + cross-browser pass
-Once on the Vercel preview URL, run Lighthouse. Aim for 90+/95+. Test specifically on iPhone Safari and Android Chrome.
+### 9. Cookie banner (only if you start running ads)
+Vercel Analytics is cookieless and GA4 is anonymized — you don't *need* a banner today. If you start running Meta Pixel / Google Ads remarketing, you'll want one for clean GDPR/CCPA posture.
 
-### 18. Schema.org for the plans
-Add `Product`/`Offer` JSON-LD for each pricing plan. Helps Google show pricing in search. Low priority.
+### 10. Real headshot (optional)
+Current `/public/yf-headshot.jpg` works, alt text is rich. Swap if you have something better.
 
-### 19. Setup fee in checkout
-Brief calls for a $399 setup fee on Starter and Growth. Make sure the Stripe products in GHL have this configured as a one-time charge on the first invoice.
+### 11. CTA event tracking (optional)
+Add PostHog or Plausible events on the booking button + pricing-tile CTAs if you want to measure conversion funnels with more granularity than GA4.
+
+### 12. Image stubs ready to fill
+- `HowItWorks` has a commented stub for `/public/dashboard-screenshot.png` (real GHL inbox or pipeline view)
+- `SocialProof` has a commented stub for `/public/clients/car-hub-macomb.jpg` (photo of the dealership)
+- Drop the file at the path in the TODO and uncomment the block — alt text already written.
 
 ---
 
-## Recommended order
+## Done — ready to ship as of this revision ✅
 
-1. **Today:** items 4 / 5 / 11 / 12 — decisions you can make in 10 minutes (testimonials, metrics, insights nav, email).
-2. **This week:** items 1 / 2 / 7 / 8 — GHL setup work (checkout URLs, form backend, chat widget, calendar embed).
-3. **Before going live:** items 3 / 6 / 9 / 10 / 13 — trust block sign-off, legal pages, OG image, LinkedIn URL, deploy.
-4. **First week post-launch:** items 14–19 — analytics, polish, performance pass.
+### Legal & infrastructure
+- **Privacy Policy** at `/privacy` — full GDPR/CCPA-aware text, GHL+Stripe+Vercel+Formspree disclosures, 24/36-month retention, contact at `yaseen@farooquidigital.com`, address `545 N McClurg Ct, Chicago, IL 60611`
+- **Terms of Service** at `/terms` — Illinois governing law, AI output disclaimer, subscription/cancellation/refund terms, IP, indemnity, liability cap
+- **Footer** links Privacy + Terms
+- **Vercel deploy** live, `NEXT_PUBLIC_FORMSPREE_ENDPOINT` env var configured ✅
+- **DNS** live via Cloudflare → Vercel ✅
+- **Contact form** verified working end-to-end ✅
+- **GHL chat widget** embedded in layout (widget-id `69fee264ba1fcefce9ee914b`) ✅
+
+### Content & positioning
+- Pivoted positioning + content to AI lead-automation across home, services, pricing, about
+- Pricing features rebuilt around the named offerings (Missed Call Text Back, Voice AI 24/7, etc.)
+- Comparison table on `/pricing` and homepage `PricingPreview` reflect the new offerings
+- Real Car Hub Macomb testimonial replaces placeholder quotes
+- $60K metric softened to "Saved in one client's first year"
+- "We don't do sales pitches" stripped from all pages and meta descriptions
+- HowItWorks step 3 copy fixed (no longer implies the customer is the one showing up)
+
+### Visual & layout
+- Hero photo iteratively cropped + styled — final at 1482×791, rounded with shadow + ring
+- Hero photo now visible on mobile (between lede and CTAs)
+- Phone mockup wired into ProblemHook from `/public/phone-mockup.png`
+- Brand logos rebuilt: Microsoft 4-color squares, Google multicolor G, Walmart yellow spark mark
+- Marquee split into two distinct rows of 6
+- Homepage trimmed from 11 → 8 sections; SocialProof reordered above PricingPreview so trust precedes price
+- Header nav simplified to Services · Pricing · About + "Get a walkthrough" CTA
+- Pricing tile CTAs and services tile CTAs unified (`btn-primary w-full`, bottom-aligned)
+- AboutSnippet eyebrow removed, closing CTA centered
+
+### SEO & schema
+- Organization + LocalBusiness JSON-LD in layout ✅
+- Person JSON-LD for founder on `/about` ✅
+- Service + Offer + AggregateOffer JSON-LD on `/pricing` (per-plan, with monthly + setup fee specs) ✅
+- All page metadata (title, description, canonical, OG, Twitter) configured ✅
+- OG image generated via `app/opengraph-image.tsx` ✅
+- `/insights` noindexed and removed from sitemap (placeholder page) ✅
+- Headshot alt text rich with role + brand keywords ✅
 
 ---
 
 ## Reference: where things live
 
-- **Site config:** `lib/site.ts` (name, URL, description, tagline)
-- **Plans + placeholders:** `lib/constants.ts`
-- **Animations / motion presets:** `lib/motion.ts`
-- **Routes:** `app/{about,contact,insights,pricing,services}/page.tsx`
+- **Site config:** `lib/site.ts`
+- **Plans, checkout placeholders, calendar URL:** `lib/constants.ts`
+- **Animations:** `lib/motion.ts`
+- **Routes:** `app/{about,book,contact,insights,pricing,privacy,services,terms}/page.tsx`
 - **Homepage sections:** `components/sections/`
-- **Layout pieces:** `components/Header.tsx`, `components/Footer.tsx`
-- **Reusable bits:** `components/CountUp.tsx`
-- **Sitemap:** `app/sitemap.ts`
-- **Robots:** `app/robots.ts`
-- **Open Graph image:** `app/opengraph-image.tsx`
+- **Header / Footer:** `components/Header.tsx`, `components/Footer.tsx`
+- **Sitemap / Robots / OG image:** `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx`
+- **JSON-LD schemas:** Organization + LocalBusiness in `app/layout.tsx`; Person in `app/about/page.tsx`; Service/Offer/AggregateOffer in `app/pricing/page.tsx`

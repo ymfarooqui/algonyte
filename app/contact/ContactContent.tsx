@@ -31,13 +31,6 @@ export default function ContactContent() {
                 aria-hidden
                 className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary"
               />
-              No sales pitch.
-            </motion.li>
-            <motion.li className="flex gap-3" variants={reveal.fadeUp}>
-              <span
-                aria-hidden
-                className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary"
-              />
               Clear pricing and scope before any work starts.
             </motion.li>
             <motion.li className="flex gap-3" variants={reveal.fadeUp}>

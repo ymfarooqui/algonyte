@@ -1,9 +1,10 @@
 import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
+import { siteConfig } from "@/lib/site";
 
-const title = "About";
+const title = "About Farooqui Digital — Founded by Yaseen Farooqui";
 const description =
-  "Farooqui Digital is an AI and CRM platform for small businesses. Marketing, ads, AI assistants, and the integrations to tie it all together.";
+  "We build AI lead automation systems for service businesses across the Midwest. Based in the Chicago and Detroit metros, serving clients nationwide. Real workflows, real numbers, no fluff.";
 
 export const metadata: Metadata = {
   title,
@@ -13,6 +14,26 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: "Yaseen Farooqui",
+  jobTitle: "Founder",
+  worksFor: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+  url: `${siteConfig.url}/about`,
+  image: `${siteConfig.url}/yf-headshot.jpg`,
+  description:
+    "Founder of Farooqui Digital. Builds AI lead automation systems for service businesses across the Midwest and US.",
+};
+
 export default function AboutPage() {
-  return <AboutContent />;
+  return (
+    <>
+      <AboutContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+    </>
+  );
 }

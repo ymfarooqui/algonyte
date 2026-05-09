@@ -1,16 +1,8 @@
-// Placeholder values. Replace before launch.
-
 export const isPlaceholder = (value: string | undefined): boolean =>
   !value || value.startsWith("[PLACEHOLDER");
 
-export const social = {
-  linkedin: "[PLACEHOLDER_LINKEDIN_URL]",
-};
-
-export const contact = {
-  email: "hello@farooquidigital.com",
-  bookCallHref: "/contact",
-};
+export const calendarSrc =
+  "https://api.leadconnectorhq.com/widget/bookings/client-calls-demos-4063";
 
 export const plans = [
   {
@@ -18,12 +10,13 @@ export const plans = [
     name: "Starter",
     price: 549,
     tagline:
-      "The basics. Track your leads, follow up automatically, send review requests.",
+      "Stop losing leads, fast. Every missed call, text, and DM gets answered and booked automatically.",
     features: [
-      "CRM and pipeline",
-      "Automatic email and text follow-up",
-      "Review request automation",
-      "Reporting dashboard",
+      "Missed call text back",
+      "Instant SMS and DM reply",
+      "Lead qualification",
+      "Auto booking to your calendar",
+      "Google review requests",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_STARTER]",
   },
@@ -32,12 +25,13 @@ export const plans = [
     name: "Growth",
     price: 749,
     tagline:
-      "Everything in Starter, plus a chat assistant that answers leads for you day or night.",
+      "Everything in Starter, plus a 24/7 chat agent and the channels your leads actually use.",
     features: [
       "Everything in Starter",
-      "Chat assistant (24/7)",
+      "24/7 AI chat agent",
+      "Appointment reminders and follow-ups",
+      "WhatsApp and Instagram DM",
       "Branching workflows",
-      "Priority support",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_GROWTH]",
     featured: true,
@@ -47,12 +41,14 @@ export const plans = [
     name: "Pro AI",
     price: 1299,
     tagline:
-      "Everything in Growth, plus a voice assistant that calls people back and custom work to fit your business.",
+      "The full done-for-you system. Voice, text, DMs, follow-ups, all handled.",
     features: [
       "Everything in Growth",
-      "Voice callback assistant",
+      "Voice AI 24/7 phone agent",
+      "Cold lead re-engagement",
+      "Custom AI training on your business",
       "Custom integrations",
-      "A dedicated strategist",
+      "Dedicated strategist",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_PRO_AI]",
   },

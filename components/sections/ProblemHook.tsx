@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
 import CountUp from "@/components/CountUp";
@@ -51,6 +52,17 @@ export default function ProblemHook() {
             </motion.p>
           </motion.div>
         </div>
+
+        <motion.div className="mt-16 max-w-2xl mx-auto" variants={reveal.fadeUpLg}>
+          <Image
+            src="/phone-mockup.png"
+            alt="AI replying to a new lead by text within seconds, sending a booking link, and confirming the appointment"
+            width={1086}
+            height={1448}
+            sizes="(min-width: 1024px) 42rem, 90vw"
+            className="w-full h-auto drop-shadow-xl"
+          />
+        </motion.div>
       </motion.div>
     </section>
   );

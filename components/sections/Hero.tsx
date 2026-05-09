@@ -1,15 +1,9 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "motion/react";
 import { reveal } from "@/lib/motion";
-
-const events = [
-  { label: "New lead captured", time: "00:00:02" },
-  { label: "AI agent responded", time: "00:00:14" },
-  { label: "Lead qualified", time: "00:00:48" },
-  { label: "Appointment booked", time: "00:01:38" },
-  { label: "Confirmation sent", time: "00:01:40" },
-];
+import { BookingButton } from "@/components/BookingModal";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -26,9 +20,6 @@ export default function Hero() {
           animate="visible"
           variants={reveal.container(0.12, 0.05)}
         >
-          <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-            AI-Powered Business Automation
-          </motion.p>
           <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
             Your business should run{" "}
             <span className="text-brand-deep">while you sleep.</span>
@@ -38,13 +29,25 @@ export default function Hero() {
             books them on your calendar. You don&rsquo;t have to do anything.
           </motion.p>
 
+          <motion.div className="mt-8 lg:hidden" variants={reveal.fadeUp}>
+            <Image
+              src="/hero.png"
+              alt="Before and after: leads going cold vs. AI following up and booking them"
+              width={1536}
+              height={1024}
+              priority
+              sizes="100vw"
+              className="w-full h-auto rounded-2xl shadow-xl ring-1 ring-slate-200/60"
+            />
+          </motion.div>
+
           <motion.div
             className="mt-8 flex flex-wrap gap-3"
             variants={reveal.fadeUp}
           >
-            <a href="/contact" className="btn-primary">
-              Book a Free Automation Audit
-            </a>
+            <BookingButton className="btn-primary">
+              Show me what this looks like for my business
+            </BookingButton>
             <a href="/pricing" className="btn-secondary">
               See the Plans
             </a>
@@ -78,57 +81,15 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 0.9, delay: 0.25, ease: EASE }}
         >
-          <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-lg">
-            <div className="flex items-center justify-between">
-              <p className="eyebrow">Live System</p>
-              <span className="inline-flex items-center gap-2 text-xs text-brand-muted">
-                <span className="relative inline-flex h-2 w-2">
-                  <span className="absolute inset-0 rounded-full bg-emerald-500/50 animate-ping" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
-                </span>
-                Active
-              </span>
-            </div>
-            <motion.div
-              className="mt-5 space-y-3"
-              initial="hidden"
-              animate="visible"
-              variants={reveal.container(0.18, 0.6)}
-            >
-              {events.map((row) => (
-                <motion.div
-                  key={row.label}
-                  variants={reveal.dropTile}
-                  className="flex items-center justify-between rounded-lg bg-brand-soft px-4 py-3"
-                >
-                  <div className="flex items-center gap-3">
-                    <svg
-                      width="14"
-                      height="14"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="3"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      className="text-emerald-500"
-                    >
-                      <path d="M20 6L9 17l-5-5" />
-                    </svg>
-                    <span className="text-sm font-medium text-brand-ink">
-                      {row.label}
-                    </span>
-                  </div>
-                  <span className="font-mono text-xs text-brand-muted">
-                    {row.time}
-                  </span>
-                </motion.div>
-              ))}
-            </motion.div>
-            <p className="mt-6 text-sm text-brand-muted">
-              All of this happened while you were busy.
-            </p>
-          </div>
+          <Image
+            src="/hero.png"
+            alt="Before and after: leads going cold vs. AI following up and booking them"
+            width={1482}
+            height={791}
+            priority
+            sizes="50vw"
+            className="w-full h-auto rounded-2xl shadow-2xl ring-1 ring-slate-200/60"
+          />
         </motion.div>
       </div>
 

@@ -14,13 +14,19 @@ type Metric = {
 const metrics: Metric[] = [
   { to: 72, suffix: "%", label: "Faster reply to a new lead" },
   { to: 60, suffix: " sec", label: "From form to first response" },
-  { prefix: "$", to: 60, suffix: "K+", label: "Saved per year on busywork" },
+  { prefix: "$", to: 60, suffix: "K+", label: "Saved in one client's first year" },
 ];
 
 type Testimonial = { quote: string; name: string; role: string };
 
-// Add real client quotes here. The testimonial section renders only if this array has entries.
-const testimonials: Testimonial[] = [];
+const testimonials: Testimonial[] = [
+  {
+    quote:
+      "We booked an additional 10 jobs in the first week. Leads that used to slip through after hours are now showing up on the calendar before we open.",
+    name: "Car Hub Macomb",
+    role: "Auto sales & service, Macomb MI",
+  },
+];
 
 export default function SocialProof() {
   return (
@@ -70,6 +76,16 @@ export default function SocialProof() {
                 className="card"
                 variants={reveal.fadeUp}
               >
+                {/* TODO: drop /public/clients/car-hub-macomb.jpg (photo of the dealership / lot / owner) and uncomment.
+                <Image
+                  src="/clients/car-hub-macomb.jpg"
+                  alt="Car Hub Macomb"
+                  width={800}
+                  height={500}
+                  sizes="(min-width: 768px) 32rem, 100vw"
+                  className="w-full h-48 object-cover rounded-lg mb-5"
+                />
+                */}
                 <blockquote className="text-brand-ink leading-relaxed">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>

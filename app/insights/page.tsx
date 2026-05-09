@@ -1,10 +1,17 @@
 import type { Metadata } from "next";
 
+const insightsTitle = "Insights — AI Lead Automation, Missed Calls, and Follow-Up";
+const insightsDescription =
+  "Field notes on AI lead automation for service businesses: missed call recovery, AI receptionist setups, follow-up workflows, and what actually moves the numbers.";
+
 export const metadata: Metadata = {
-  title: "Insights",
-  description:
-    "Short writeups on AI, lead follow-up, and what actually works for small businesses.",
+  title: insightsTitle,
+  description: insightsDescription,
   alternates: { canonical: "/insights" },
+  openGraph: { title: insightsTitle, description: insightsDescription, url: "/insights", type: "website" },
+  twitter: { card: "summary_large_image", title: insightsTitle, description: insightsDescription },
+  // Page is a "coming soon" placeholder. Block from search until we publish real posts to avoid thin-content penalties.
+  robots: { index: false, follow: true },
 };
 
 export default function InsightsPage() {

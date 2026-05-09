@@ -2,22 +2,102 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { plans, isPlaceholder } from "@/lib/constants";
+import { siteConfig } from "@/lib/site";
+
+const pricingTitle = "AI Lead Automation Pricing — Plans From $549/mo, No Per-Minute Fees";
+const pricingDescription =
+  "Flat monthly pricing for AI lead automation: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 14-day money-back guarantee.";
 
 export const metadata: Metadata = {
-  title: "Pricing",
-  description:
-    "Three plans for the Farooqui Digital platform. Starts at $549 a month. If it's not working in 14 days we refund you.",
+  title: pricingTitle,
+  description: pricingDescription,
   alternates: { canonical: "/pricing" },
+  openGraph: { title: pricingTitle, description: pricingDescription, url: "/pricing", type: "website" },
+  twitter: { card: "summary_large_image", title: pricingTitle, description: pricingDescription },
+};
+
+const setupFeeUSD: Record<string, number | null> = {
+  starter: 399,
+  growth: 399,
+  "pro-ai": null,
+};
+
+const planOfferJsonLd = plans.map((p) => ({
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "@id": `${siteConfig.url}/pricing#${p.id}`,
+  name: `${p.name} — AI Lead Automation`,
+  description: p.tagline,
+  serviceType: "AI Lead Automation",
+  provider: {
+    "@type": "Organization",
+    name: siteConfig.name,
+    url: siteConfig.url,
+  },
+  areaServed: [
+    { "@type": "AdministrativeArea", name: "Midwest United States" },
+    { "@type": "Country", name: "United States" },
+  ],
+  offers: {
+    "@type": "Offer",
+    name: p.name,
+    price: p.price,
+    priceCurrency: "USD",
+    url: `${siteConfig.url}/pricing#${p.id}`,
+    availability: "https://schema.org/InStock",
+    category: "subscription",
+    priceSpecification: [
+      {
+        "@type": "UnitPriceSpecification",
+        price: p.price,
+        priceCurrency: "USD",
+        unitCode: "MON",
+        referenceQuantity: {
+          "@type": "QuantitativeValue",
+          value: 1,
+          unitCode: "MON",
+        },
+      },
+      ...(setupFeeUSD[p.id]
+        ? [
+            {
+              "@type": "UnitPriceSpecification",
+              name: "One-time setup fee",
+              price: setupFeeUSD[p.id],
+              priceCurrency: "USD",
+            },
+          ]
+        : []),
+    ],
+  },
+}));
+
+const aggregateOfferJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "AggregateOffer",
+  "@id": `${siteConfig.url}/pricing#aggregate`,
+  url: `${siteConfig.url}/pricing`,
+  name: "Farooqui Digital — AI Lead Automation Plans",
+  priceCurrency: "USD",
+  lowPrice: Math.min(...plans.map((p) => p.price)),
+  highPrice: Math.max(...plans.map((p) => p.price)),
+  offerCount: plans.length,
+  availability: "https://schema.org/InStock",
 };
 
 const compareRows = [
-  { label: "CRM and pipeline", values: [true, true, true] },
-  { label: "Automated email + SMS follow-up", values: [true, true, true] },
-  { label: "Reputation management", values: [true, true, true] },
-  { label: "Reporting dashboard", values: [true, true, true] },
-  { label: "AI Chat Agent (24/7)", values: [false, true, true] },
-  { label: "Advanced workflows", values: [false, true, true] },
-  { label: "AI Voice Callback", values: [false, false, true] },
+  { label: "Missed call text back", values: [true, true, true] },
+  { label: "Instant SMS + DM reply", values: [true, true, true] },
+  { label: "Lead qualification", values: [true, true, true] },
+  { label: "Auto booking to calendar", values: [true, true, true] },
+  { label: "Google review requests", values: [true, true, true] },
+  { label: "24/7 AI chat agent", values: [false, true, true] },
+  { label: "Appointment reminders + follow-ups", values: [false, true, true] },
+  { label: "WhatsApp + Instagram DM", values: [false, true, true] },
+  { label: "Branching workflows", values: [false, true, true] },
+  { label: "Voice AI 24/7 phone agent", values: [false, false, true] },
+  { label: "Cold lead re-engagement", values: [false, false, true] },
+  { label: "Custom AI training", values: [false, false, true] },
   { label: "Custom integrations", values: [false, false, true] },
   { label: "Dedicated strategist", values: [false, false, true] },
 ];
@@ -88,7 +168,7 @@ export default function PricingPage() {
                   <p className="mt-4 text-brand-muted text-sm leading-relaxed">
                     {p.tagline}
                   </p>
-                  <ul className="mt-5 space-y-2 text-sm">
+                  <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
                     {p.features.map((f) => (
                       <li key={f} className="flex items-start gap-2">
                         <svg
@@ -110,7 +190,7 @@ export default function PricingPage() {
                   </ul>
                   <a
                     href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
-                    className={`mt-7 ${featured ? "btn-primary" : "btn-secondary"}`}
+                    className="btn-primary w-full"
                   >
                     {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                   </a>
@@ -201,6 +281,18 @@ export default function PricingPage() {
       </section>
 
       <FinalCTA />
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(aggregateOfferJsonLd) }}
+      />
+      {planOfferJsonLd.map((schema) => (
+        <script
+          key={schema["@id"]}
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+        />
+      ))}
     </>
   );
 }

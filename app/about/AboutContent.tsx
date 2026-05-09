@@ -137,10 +137,10 @@ export default function AboutContent() {
             <motion.div className="relative" variants={reveal.fadeUpLg}>
               <Image
                 src="/yf-headshot.jpg"
-                alt="Yaseen Farooqui"
+                alt="Yaseen Farooqui, founder of Farooqui Digital, AI lead automation for service businesses"
                 width={480}
                 height={480}
-                className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover aspect-square"
+                className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover object-top aspect-square"
               />
             </motion.div>
             <motion.div variants={reveal.container(0.1, 0.1)}>
@@ -217,7 +217,7 @@ export default function AboutContent() {
             <Link href="/services" className="btn-primary">
               See what we do
             </Link>
-            <Link href="/contact" className="btn-secondary">
+            <Link href="/book" className="btn-secondary">
               Book a call
             </Link>
           </motion.div>

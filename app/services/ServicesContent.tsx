@@ -40,12 +40,12 @@ const services = [
     eyebrow: "Most popular",
     title: "The full platform",
     body:
-      "We set up the whole system. CRM, chat and voice assistants, automatic follow-up, and one dashboard to see it all. Pick a plan that fits and we take it from there.",
+      "We set up the whole system. Missed-call text back, instant SMS and DM reply, a 24/7 voice agent, auto booking, and follow-ups across every channel. Pick a plan that fits and we take it from there.",
     bullets: [
-      "Chat that answers leads day or night",
-      "Voice callbacks for the calls you miss",
-      "One inbox for every lead and message",
-      "Review requests and pipeline tracking",
+      "Missed call text back and instant SMS / DM reply",
+      "Voice AI 24/7 phone agent that qualifies and books",
+      "WhatsApp and Instagram DM in one inbox",
+      "Appointment reminders, cold lead re-engagement, Google review requests",
     ],
     cta: { label: "See the plans", href: "/pricing" },
   },
@@ -68,14 +68,14 @@ const services = [
     eyebrow: "AI assistants",
     title: "Custom AI agents",
     body:
-      "We train chat or voice assistants on your business. Your scripts, your edge cases, your tone. They handle inbound and outbound the way you would.",
+      "We train chat or voice agents on your business. Your scripts, your edge cases, your tone. They handle inbound and outbound the way you would.",
     bullets: [
-      "Trained on your scripts and FAQs",
-      "Learns from your existing documents",
+      "Custom AI training on your services, pricing, and tone",
+      "Lead qualification tuned to your edge cases",
       "Handles inbound and outbound calls",
       "Tested on real conversations before launch",
     ],
-    cta: { label: "Book a discovery call", href: "/contact" },
+    cta: { label: "Book a discovery call", href: "/book" },
   },
   {
     icon: Icon.advisory,
@@ -158,7 +158,7 @@ export default function ServicesContent() {
                   {s.title}
                 </h2>
                 <p className="mt-3 text-brand-muted leading-relaxed">{s.body}</p>
-                <ul className="mt-5 space-y-2 text-sm">
+                <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
                   {s.bullets.map((b) => (
                     <li key={b} className="flex items-start gap-2">
                       <svg
@@ -178,10 +178,7 @@ export default function ServicesContent() {
                     </li>
                   ))}
                 </ul>
-                <Link
-                  href={s.cta.href}
-                  className="mt-6 inline-flex self-start text-brand-deep font-medium hover:underline"
-                >
+                <Link href={s.cta.href} className="btn-primary w-full">
                   {s.cta.label}
                 </Link>
               </motion.div>
