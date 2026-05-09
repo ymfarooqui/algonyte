@@ -4,7 +4,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
-import FinalCTA from "@/components/sections/FinalCTA";
 
 const values = [
   {
@@ -137,7 +136,7 @@ export default function AboutContent() {
             <motion.div className="relative" variants={reveal.fadeUpLg}>
               <Image
                 src="/yf-headshot.jpg"
-                alt="Yaseen Farooqui, founder of Farooqui Digital, AI lead automation for service businesses"
+                alt="Yaseen Farooqui, founder of Farooqui Digital, AI receptionist for service businesses"
                 width={480}
                 height={480}
                 className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover object-top aspect-square"
@@ -224,7 +223,6 @@ export default function AboutContent() {
         </motion.div>
       </section>
 
-      <FinalCTA />
     </>
   );
 }

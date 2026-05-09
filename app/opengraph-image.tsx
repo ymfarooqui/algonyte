@@ -65,8 +65,8 @@ export default function OpengraphImage() {
             <span style={{ color: "#0F4C81" }}>while you sleep.</span>
           </div>
           <div style={{ fontSize: 28, color: "#6B7280", maxWidth: 900 }}>
-            AI assistants, CRM, and automation that answer leads, follow up,
-            and book the meeting for you.
+            AI receptionists, CRM, and follow-up that answer leads, qualify
+            them, and book the meeting for you.
           </div>
         </div>
 

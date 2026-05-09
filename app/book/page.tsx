@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import BookContent from "./BookContent";
 
-const title = "Book a Free Lead Automation Walkthrough — 30 Minutes";
+const title = "Book a Free AI Receptionist Walkthrough in 30 Minutes";
 const description =
   "Pick a time for a 30-minute walkthrough. We'll show you how AI can answer, qualify, and book your leads 24/7.";
 

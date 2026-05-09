@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
-const insightsTitle = "Insights — AI Lead Automation, Missed Calls, and Follow-Up";
+const insightsTitle = "Insights: AI Receptionist, Missed Calls, and Follow-Up";
 const insightsDescription =
-  "Field notes on AI lead automation for service businesses: missed call recovery, AI receptionist setups, follow-up workflows, and what actually moves the numbers.";
+  "Field notes on AI receptionists for service businesses: missed call recovery, voice agent setups, follow-up workflows, and what actually moves the numbers.";
 
 export const metadata: Metadata = {
   title: insightsTitle,

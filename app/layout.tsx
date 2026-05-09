@@ -5,6 +5,7 @@ import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
+import MotionRoot from "@/components/MotionRoot";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -17,11 +18,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: `AI Lead Automation for Service Businesses | ${siteConfig.name}`,
+    default: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
     template: `%s | ${siteConfig.name}`,
   },
   description:
-    "AI lead automation for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7. Plans from $549/mo.",
+    "AI receptionist for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7. Plans from $549/mo.",
   keywords: [
     "AI lead automation",
     "missed call text back",
@@ -30,11 +31,11 @@ export const metadata: Metadata = {
     "lead follow up automation",
     "small business CRM",
     "AI for service businesses",
-    "Chicago AI automation",
-    "Detroit AI automation",
-    "Michigan AI automation",
-    "Oak Brook AI automation",
-    "Midwest AI automation",
+    "Chicago AI receptionist",
+    "Detroit AI receptionist",
+    "Michigan AI receptionist",
+    "Oak Brook AI receptionist",
+    "Midwest AI receptionist",
   ],
   applicationName: siteConfig.name,
   alternates: { canonical: "/" },
@@ -42,13 +43,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: `AI Lead Automation for Service Businesses | ${siteConfig.name}`,
+    title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
     description: siteConfig.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `AI Lead Automation for Service Businesses | ${siteConfig.name}`,
+    title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
     description: siteConfig.description,
     ...(siteConfig.twitter ? { creator: siteConfig.twitter } : {}),
   },
@@ -84,7 +85,7 @@ const localBusinessJsonLd = {
   description: siteConfig.description,
   logo: `${siteConfig.url}/favicon-v2.svg`,
   image: `${siteConfig.url}/favicon-v2.svg`,
-  priceRange: "$549–$1,299/mo",
+  priceRange: "$549-$1,299/mo",
   areaServed: [
     { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
     { "@type": "City", name: "Oak Brook", containedInPlace: { "@type": "State", name: "Illinois" } },
@@ -129,11 +130,13 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
-        <BookingProvider>
-          <Header />
-          <main>{children}</main>
-          <Footer />
-        </BookingProvider>
+        <MotionRoot>
+          <BookingProvider>
+            <Header />
+            <main>{children}</main>
+            <Footer />
+          </BookingProvider>
+        </MotionRoot>
         <Analytics />
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"

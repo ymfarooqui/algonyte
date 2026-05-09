@@ -6,15 +6,15 @@ import { reveal, inView } from "@/lib/motion";
 const items = [
   {
     q: "Why not a $29/mo AI receptionist?",
-    a: "Those tools answer one channel — usually voice — and stop there. We build the full system: lead capture across channels, qualifying questions, follow-up over days, and the booking on your calendar. The cheap tool is a feature; this is the workflow.",
+    a: "Those tools answer one channel, usually voice, and stop there. We build the full system: lead capture across channels, qualifying questions, follow-up over days, and the booking on your calendar. The cheap tool is a feature; this is the workflow.",
   },
   {
     q: "Why not hire a virtual assistant?",
-    a: "A VA costs $1,500–$3,000/mo, sleeps, takes vacation, and quits. Our system runs 24/7, replies in under a minute, and never forgets to follow up. If you need a human in the loop, we wire alerts to you.",
+    a: "A VA costs $1,500-$3,000/mo, sleeps, takes vacation, and quits. Our system runs 24/7, replies in under a minute, and never forgets to follow up. If you need a human in the loop, we wire alerts to you.",
   },
   {
     q: "Why not just keep doing it myself?",
-    a: "Most owners we work with are losing 20–40% of leads to slow replies. The math: one missed job per month covers Starter. Two covers Growth. The plan pays for itself before the second invoice clears.",
+    a: "Most owners we work with are losing 20 to 40% of leads to slow replies. The math: one missed job per month covers Starter. Two covers Growth. The plan pays for itself before the second invoice clears.",
   },
 ];
 

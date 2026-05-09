@@ -32,7 +32,7 @@ export default function Header() {
         </nav>
 
         <BookingButton className="hidden lg:inline-flex btn-primary !py-2 !px-4 text-sm whitespace-nowrap">
-          Get a walkthrough
+          Book a Demo
         </BookingButton>
 
         <button
@@ -60,7 +60,7 @@ export default function Header() {
               className="btn-primary mt-2"
               onBeforeOpen={() => setOpen(false)}
             >
-              Get a walkthrough
+              Book a Demo
             </BookingButton>
           </nav>
         </div>

@@ -45,8 +45,6 @@ export default function PricingPreview() {
               <motion.div
                 key={p.id}
                 variants={reveal.fadeUpLg}
-                whileHover={{ y: -6 }}
-                transition={{ type: "spring", stiffness: 240, damping: 22 }}
                 className={`card relative flex flex-col ${
                   featured
                     ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"

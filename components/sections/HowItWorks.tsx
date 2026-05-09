@@ -16,8 +16,8 @@ const steps = [
   },
   {
     n: "03",
-    title: "Book the meeting",
-    body: "When they're ready, the meeting goes straight on your calendar. So your day fills up while you stay focused on the actual jobs.",
+    title: "Schedule the appointment",
+    body: "When they're ready, the appointment goes straight on your calendar. So your day fills up while you stay focused on the actual jobs.",
   },
 ];
 
@@ -58,8 +58,6 @@ export default function HowItWorks() {
             <motion.div
               key={s.n}
               variants={reveal.fadeUp}
-              whileHover={{ y: -4 }}
-              transition={{ type: "spring", stiffness: 260, damping: 24 }}
               className="card relative"
             >
               <div className="flex items-center justify-between">

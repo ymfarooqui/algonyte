@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
 
-const title = "Contact — AI Lead Automation Consult | Chicago, Detroit, Midwest";
+const title = "Contact: AI Receptionist Consult | Chicago, Detroit, Midwest";
 const description =
-  "Talk to Farooqui Digital about AI lead automation. We work with service businesses in Chicago, Detroit, Oak Brook, and across the Midwest and US. Straight answers.";
+  "Talk to Farooqui Digital about an AI receptionist for your business. We work with service businesses in Chicago, Detroit, Oak Brook, and across the Midwest and US. Straight answers.";
 
 export const metadata: Metadata = {
   title,

@@ -1,12 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { plans, isPlaceholder } from "@/lib/constants";
 import { siteConfig } from "@/lib/site";
 
-const pricingTitle = "AI Lead Automation Pricing — Plans From $549/mo, No Per-Minute Fees";
+const pricingTitle = "AI Receptionist Pricing | Plans From $549/mo, No Per-Minute Fees";
 const pricingDescription =
-  "Flat monthly pricing for AI lead automation: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 14-day money-back guarantee.";
+  "Flat monthly pricing for AI receptionist plans: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 14-day money-back guarantee.";
 
 export const metadata: Metadata = {
   title: pricingTitle,
@@ -26,9 +25,9 @@ const planOfferJsonLd = plans.map((p) => ({
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": `${siteConfig.url}/pricing#${p.id}`,
-  name: `${p.name} — AI Lead Automation`,
+  name: `${p.name} AI Receptionist`,
   description: p.tagline,
-  serviceType: "AI Lead Automation",
+  serviceType: "AI Receptionist",
   provider: {
     "@type": "Organization",
     name: siteConfig.name,
@@ -77,7 +76,7 @@ const aggregateOfferJsonLd = {
   "@type": "AggregateOffer",
   "@id": `${siteConfig.url}/pricing#aggregate`,
   url: `${siteConfig.url}/pricing`,
-  name: "Farooqui Digital — AI Lead Automation Plans",
+  name: "Farooqui Digital AI Receptionist Plans",
   priceCurrency: "USD",
   lowPrice: Math.min(...plans.map((p) => p.price)),
   highPrice: Math.max(...plans.map((p) => p.price)),
@@ -216,8 +215,52 @@ export default function PricingPage() {
         <div className="container-page">
           <p className="eyebrow mb-4">Compare Plans</p>
           <h2 className="h-section mb-10">What&rsquo;s included.</h2>
-          <div className="overflow-x-auto -mx-6 sm:mx-0 rounded-2xl border border-slate-200 bg-white">
-            <table className="w-full min-w-[640px] border-collapse">
+          <div className="md:hidden space-y-3">
+            {compareRows.map((row) => (
+              <div
+                key={row.label}
+                className="rounded-2xl border border-slate-200 bg-white p-4"
+              >
+                <p className="text-sm font-medium text-brand-ink">{row.label}</p>
+                <dl className="mt-3 grid grid-cols-3 gap-2">
+                  {plans.map((p, i) => (
+                    <div
+                      key={p.id}
+                      className="flex flex-col items-center gap-1 rounded-lg bg-brand-soft py-2"
+                    >
+                      <dt className="text-[11px] font-semibold uppercase tracking-wider text-brand-muted">
+                        {p.name}
+                      </dt>
+                      <dd>
+                        {row.values[i] ? (
+                          <span className="text-brand-deep" aria-label="Included">
+                            <svg
+                              width="18"
+                              height="18"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="2.5"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M20 6L9 17l-5-5" />
+                            </svg>
+                          </span>
+                        ) : (
+                          <span className="text-slate-300" aria-label="Not included">
+                            ·
+                          </span>
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
+          </div>
+          <div className="hidden md:block rounded-2xl border border-slate-200 bg-white">
+            <table className="w-full border-collapse">
               <thead>
                 <tr className="border-b border-slate-200">
                   <th className="text-left py-4 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
@@ -282,16 +325,10 @@ export default function PricingPage() {
               </div>
             ))}
           </dl>
-          <p className="mt-10 text-brand-muted">
-            Still have questions?{" "}
-            <Link href="/contact" className="text-brand-deep font-medium hover:underline">
-              Get in touch →
-            </Link>
-          </p>
         </div>
       </section>
 
-      <FinalCTA />
+      <FinalCTA title="Get started." />
 
       <script
         type="application/ld+json"

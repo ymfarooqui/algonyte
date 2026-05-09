@@ -4,7 +4,11 @@ import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
 import { BookingButton } from "@/components/BookingModal";
 
-export default function FinalCTA() {
+export default function FinalCTA({
+  title = "Want to see what this could look like for you?",
+}: {
+  title?: string;
+} = {}) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-accent to-white">
       <motion.div
@@ -18,7 +22,7 @@ export default function FinalCTA() {
           className="h-section max-w-3xl mx-auto"
           variants={reveal.fadeUpLg}
         >
-          Want to see what this could look like for you?
+          {title}
         </motion.h2>
         <motion.p className="lede mt-6 max-w-2xl mx-auto" variants={reveal.fadeUp}>
           Grab 30 minutes with us. We&rsquo;ll look at how leads come into your
