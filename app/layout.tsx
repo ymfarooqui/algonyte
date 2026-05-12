@@ -141,7 +141,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="69fee264ba1fcefce9ee914b"
+          data-widget-id="6a026c16d31db4433a30fb5e"
           strategy="lazyOnload"
         />
         <script
