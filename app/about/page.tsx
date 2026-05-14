@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
 import { siteConfig } from "@/lib/site";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+
+const breadcrumb = breadcrumbJsonLd([{ name: "About", path: "/about" }]);
 
 const title = "About Farooqui Digital | Founded by Yaseen Farooqui";
 const description =
@@ -33,6 +36,10 @@ export default function AboutPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
     </>
   );

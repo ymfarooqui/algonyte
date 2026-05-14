@@ -60,6 +60,9 @@ export const metadata: Metadata = {
   },
   icons: { icon: "/favicon-v2.svg" },
   verification: {
+    ...(process.env.GOOGLE_SITE_VERIFICATION
+      ? { google: process.env.GOOGLE_SITE_VERIFICATION }
+      : {}),
     other: {
       "msvalidate.01": "5011186F99ABF374290EEA288F6863B0",
     },
@@ -90,6 +93,7 @@ const localBusinessJsonLd = {
     { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
     { "@type": "City", name: "Oak Brook", containedInPlace: { "@type": "State", name: "Illinois" } },
     { "@type": "City", name: "Detroit", containedInPlace: { "@type": "State", name: "Michigan" } },
+    { "@type": "City", name: "Macomb", containedInPlace: { "@type": "State", name: "Michigan" } },
     { "@type": "State", name: "Michigan" },
     { "@type": "State", name: "Illinois" },
     { "@type": "AdministrativeArea", name: "Midwest United States" },

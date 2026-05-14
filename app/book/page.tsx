@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import BookContent from "./BookContent";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Book a Free AI Receptionist Walkthrough in 30 Minutes";
 const description =
@@ -13,6 +14,16 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
+const breadcrumb = breadcrumbJsonLd([{ name: "Book", path: "/book" }]);
+
 export default function BookPage() {
-  return <BookContent />;
+  return (
+    <>
+      <BookContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+    </>
+  );
 }

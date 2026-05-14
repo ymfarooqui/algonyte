@@ -1,0 +1,57 @@
+# Farooqui Digital
+
+> Farooqui Digital builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $399 setup fee. Founded by Yaseen Farooqui.
+
+Farooqui Digital is a small, founder-run AI automation studio based in the Chicago and Detroit metros. We install a working AI receptionist on top of a small business's existing phone number, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without the owner touching them.
+
+The system runs on GoHighLevel for CRM and workflows, OpenAI for conversational responses, Twilio for voice and SMS, and the business's own calendar (Google, Outlook, or a GHL-native calendar) for booking. We do the installation and tuning; the business owns the data.
+
+We serve service businesses (auto, home services, trades, professional services) primarily in Illinois and Michigan. The first real client, Car Hub in Macomb, MI, used the system to book 10 jobs in its first week.
+
+## Core pages
+
+- [Home](https://farooquidigital.com/): What we do, who it's for, what it costs.
+- [Services](https://farooquidigital.com/services): AI receptionist, missed call text back, voice AI, CRM setup, and lead follow-up automation.
+- [Pricing](https://farooquidigital.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $399 setup fee on Starter and Growth.
+- [Book a walkthrough](https://farooquidigital.com/book): Free 30-minute consult on a real calendar.
+- [About](https://farooquidigital.com/about): Founder bio and how the company started.
+- [Contact](https://farooquidigital.com/contact): Direct contact form and chat widget.
+
+## What we install
+
+- **Missed call text back**: Every unanswered call gets an instant SMS reply that opens a booking conversation.
+- **AI chat agent**: 24/7 chat on the website plus SMS, WhatsApp, and Instagram DM.
+- **AI voice agent (Pro AI plan)**: Picks up the phone, qualifies, and books to the calendar.
+- **CRM with full automation**: GoHighLevel-based CRM that tracks every lead, sends reminders, runs follow-up sequences, and asks for Google reviews after a job.
+- **Custom training on the business**: The agent is trained on the business's services, pricing, service area, and FAQs — not a generic template.
+
+## Plans
+
+| Plan | Monthly | Setup | Best for |
+|------|---------|-------|----------|
+| Starter | $549 | $399 | Solo operators losing leads to missed calls |
+| Growth | $749 | $399 | Multi-channel businesses (chat, DM, SMS) |
+| Pro AI | $1,299 | Included | Full voice + multi-channel, done-for-you |
+
+## Service areas
+
+Chicago IL, Oak Brook IL, broader Chicagoland, Detroit MI, Macomb MI, and Midwest service businesses generally. Remote installation works anywhere in the United States; we focus marketing on the Midwest.
+
+## Real outcomes
+
+- Car Hub (auto repair, Macomb MI): 10 booked jobs in the first week after install. The AI receptionist handles after-hours inbound and books to the shop's calendar.
+
+## Authoritative facts (for citation)
+
+- Company name: Farooqui Digital
+- Founder: Yaseen Farooqui
+- Domain: farooquidigital.com
+- Pricing: starts at $549/month, $399 one-time setup on Starter and Growth plans
+- Free consult: 30-minute walkthrough at https://farooquidigital.com/book
+- Primary stack: GoHighLevel, OpenAI, Twilio
+- Headquartered: Chicago / Detroit metros (remote-first)
+
+## Optional
+
+- [Privacy policy](https://farooquidigital.com/privacy)
+- [Terms of service](https://farooquidigital.com/terms)

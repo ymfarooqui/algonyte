@@ -1,0 +1,39 @@
+{
+  "ci": {
+    "collect": {
+      "url": [
+        "http://localhost:3000/",
+        "http://localhost:3000/services",
+        "http://localhost:3000/pricing",
+        "http://localhost:3000/about",
+        "http://localhost:3000/contact",
+        "http://localhost:3000/book",
+        "http://localhost:3000/locations/macomb",
+        "http://localhost:3000/insights/car-hub-macomb-case-study"
+      ],
+      "startServerCommand": "npm run start",
+      "startServerReadyPattern": "Ready in",
+      "numberOfRuns": 1,
+      "settings": {
+        "preset": "desktop"
+      }
+    },
+    "assert": {
+      "assertions": {
+        "categories:performance": ["warn", { "minScore": 0.9 }],
+        "categories:accessibility": ["error", { "minScore": 0.9 }],
+        "categories:best-practices": ["warn", { "minScore": 0.9 }],
+        "categories:seo": ["error", { "minScore": 0.95 }],
+        "meta-description": "error",
+        "document-title": "error",
+        "hreflang": "off",
+        "canonical": "error",
+        "robots-txt": "error",
+        "structured-data": "off"
+      }
+    },
+    "upload": {
+      "target": "temporary-public-storage"
+    }
+  }
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Contact: AI Receptionist Consult | Chicago, Detroit, Midwest";
 const description =
@@ -13,6 +14,16 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
+const breadcrumb = breadcrumbJsonLd([{ name: "Contact", path: "/contact" }]);
+
 export default function ContactPage() {
-  return <ContactContent />;
+  return (
+    <>
+      <ContactContent />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+      />
+    </>
+  );
 }

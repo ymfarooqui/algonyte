@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { plans, isPlaceholder } from "@/lib/constants";
 import { siteConfig } from "@/lib/site";
+import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+
+const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
 const pricingTitle = "AI Receptionist Pricing | Plans From $549/mo, No Per-Minute Fees";
 const pricingDescription =
@@ -337,6 +340,10 @@ export default function PricingPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
       />
       {planOfferJsonLd.map((schema) => (
         <script
