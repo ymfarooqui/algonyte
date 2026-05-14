@@ -3,9 +3,9 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
-const title = "Local SEO | Rank in the Google Map Pack for Service Businesses";
+const title = "Local SEO | Rank in the Google Map Pack";
 const description =
-  "Local SEO that gets service businesses into the Google Map Pack and onto AI search results. Google Business Profile, citation cleanup, on-page, and content built for your service area.";
+  "Local SEO for service businesses: Google Map Pack ranking, citation cleanup, on-page, schema, and llms.txt for AI search. Initial setup in 14 to 21 days.";
 
 export const metadata: Metadata = {
   title,

@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Reputation Manager | More 5-Star Google Reviews on Autopilot";
 const description =
-  "Automated review requests after every job, intelligent routing for unhappy customers, and a dashboard that shows what's actually moving your Google rating. Setup in 7 to 14 days.";
+  "Automated post-job review requests with smart routing for unhappy customers. Move your Google rating in 60 days. Setup in 7 to 14 days.";
 
 export const metadata: Metadata = {
   title,

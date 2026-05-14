@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Lead Generator | Paid Ads + AI Follow-Up That Actually Books";
 const description =
-  "Lead generation that captures intent and books appointments, not form fills. Paid ads on Google and Meta, landing pages that convert, AI follow-up over SMS and email until the lead is on your calendar.";
+  "Paid ads on Google and Meta plus AI follow-up that books appointments, not form fills. Landing pages, SMS sequences, closed-loop tracking to booked-job.";
 
 export const metadata: Metadata = {
   title,
