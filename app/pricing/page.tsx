@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { plans, isPlaceholder } from "@/lib/constants";
 import { siteConfig } from "@/lib/site";
@@ -17,6 +18,62 @@ export const metadata: Metadata = {
   openGraph: { title: pricingTitle, description: pricingDescription, url: "/pricing", type: "website" },
   twitter: { card: "summary_large_image", title: pricingTitle, description: pricingDescription },
 };
+
+const addOns = [
+  {
+    id: "lead-generator",
+    name: "Lead Generator",
+    price: "From $1,500",
+    cadence: "/mo + ad spend",
+    note: "3-month minimum",
+    tagline:
+      "Paid ads on Google and Meta, landing pages built to convert, and AI follow-up that books appointments not form fills.",
+    bullets: [
+      "Google Search + Local Service Ads",
+      "Meta (Facebook + Instagram)",
+      "Landing pages built to convert",
+      "AI follow-up over SMS and email",
+      "Closed-loop tracking to booked-job",
+      "Monthly review with real numbers",
+    ],
+    href: "/lead-generator",
+  },
+  {
+    id: "reputation-manager",
+    name: "Reputation Manager",
+    price: "$299",
+    cadence: "/mo",
+    note: "Included on Growth + Pro AI",
+    tagline:
+      "Automated post-job review requests with smart routing for unhappy customers. Move your Google rating in 60 days.",
+    bullets: [
+      "Trigger on job completion",
+      "Smart routing for negative responses",
+      "Multi-platform (Google, Yelp, Facebook)",
+      "Polite drip for slow responders",
+      "Dashboard with the metric that matters",
+    ],
+    href: "/reputation-manager",
+  },
+  {
+    id: "seo",
+    name: "Local SEO",
+    price: "From $1,500",
+    cadence: "/mo",
+    note: "6-month minimum",
+    tagline:
+      "Local SEO that gets you into the Google Map Pack and onto AI search results. GBP, citations, schema, content, llms.txt.",
+    bullets: [
+      "Google Business Profile optimization",
+      "Citation cleanup + consistency",
+      "On-page + technical fixes",
+      "Location + industry pages",
+      "AI search (llms.txt, schema, FAQs)",
+      "Monthly rank + traffic review",
+    ],
+    href: "/seo",
+  },
+];
 
 const setupFeeUSD: Record<string, number | null> = {
   starter: 399,
@@ -210,6 +267,61 @@ export default function PricingPage() {
                 </div>
               );
             })}
+          </div>
+        </div>
+      </section>
+
+      <section className="pb-20">
+        <div className="container-page">
+          <p className="eyebrow mb-4">Add-on services</p>
+          <h2 className="h-section max-w-3xl">
+            Growth services that plug into any plan.
+          </h2>
+          <p className="mt-4 max-w-2xl text-brand-muted">
+            The receptionist closes the leak. These open the faucet. Each
+            runs as a managed monthly engagement on top of your subscription.
+          </p>
+          <div className="mt-10 grid gap-5 md:grid-cols-3">
+            {addOns.map((a) => (
+              <div key={a.id} className="card flex flex-col">
+                <h3 className="text-xl font-semibold text-brand-deep">{a.name}</h3>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-semibold text-brand-ink">
+                    {a.price}
+                  </span>
+                  <span className="text-brand-muted text-sm">{a.cadence}</span>
+                </div>
+                <p className="mt-1 text-xs text-brand-deep/70 font-medium">
+                  {a.note}
+                </p>
+                <p className="mt-4 text-brand-muted text-sm leading-relaxed min-h-[3.5rem]">
+                  {a.tagline}
+                </p>
+                <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
+                  {a.bullets.map((b) => (
+                    <li key={b} className="flex items-start gap-2">
+                      <svg
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="mt-0.5 flex-shrink-0 text-brand-deep"
+                      >
+                        <path d="M20 6L9 17l-5-5" />
+                      </svg>
+                      <span className="text-brand-muted">{b}</span>
+                    </li>
+                  ))}
+                </ul>
+                <Link href={a.href} className="btn-secondary w-full text-center">
+                  Learn more
+                </Link>
+              </div>
+            ))}
           </div>
         </div>
       </section>

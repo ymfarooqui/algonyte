@@ -3,6 +3,7 @@ import StatsStrip from "@/components/sections/StatsStrip";
 import ProblemHook from "@/components/sections/ProblemHook";
 import HowItWorks from "@/components/sections/HowItWorks";
 import SocialProof from "@/components/sections/SocialProof";
+import ProductGrid from "@/components/sections/ProductGrid";
 import PricingPreview from "@/components/sections/PricingPreview";
 import WhyNot from "@/components/sections/WhyNot";
 import AboutSnippet from "@/components/sections/AboutSnippet";
@@ -15,6 +16,7 @@ export default function Home() {
       <ProblemHook />
       <HowItWorks />
       <SocialProof />
+      <ProductGrid />
       <PricingPreview />
       <WhyNot />
       <AboutSnippet />

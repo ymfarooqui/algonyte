@@ -140,6 +140,28 @@ export default function LeadGeneratorPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
+          <p className="eyebrow mb-4">The proof</p>
+          <h2 className="h-section">What we&rsquo;ll show you on the call.</h2>
+          <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
+            <p>
+              We&rsquo;re selective about who we run paid ads for. We&rsquo;d
+              rather walk you through a real client account on the
+              walkthrough — current ad spend, cost-per-booked-job, what we
+              changed, what it cost, what it returned — than pitch you a
+              testimonial graphic.
+            </p>
+            <p>
+              If you&rsquo;re comparing us against a generic ads agency, the
+              30-minute call will make the difference obvious. If you&rsquo;d
+              rather see the numbers in writing first, ask on the call and
+              we&rsquo;ll send them.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section className="section bg-brand-soft/40">
+        <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
