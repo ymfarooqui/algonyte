@@ -5,7 +5,9 @@ import { useState } from "react";
 import { BookingButton } from "@/components/BookingModal";
 
 const links = [
-  { href: "/services", label: "Services" },
+  { href: "/ai-receptionist", label: "AI Receptionist" },
+  { href: "/lead-generator", label: "Lead Generator" },
+  { href: "/seo", label: "SEO" },
   { href: "/pricing", label: "Pricing" },
   { href: "/about", label: "About" },
 ];

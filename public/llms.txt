@@ -11,7 +11,11 @@ We serve service businesses (auto, home services, trades, professional services)
 ## Core pages
 
 - [Home](https://farooquidigital.com/): What we do, who it's for, what it costs.
-- [Services](https://farooquidigital.com/services): AI receptionist, missed call text back, voice AI, CRM setup, and lead follow-up automation.
+- [AI Receptionist](https://farooquidigital.com/ai-receptionist): Single-purpose landing page. Answer, qualify, and book every lead 24/7. Live in 5-7 days.
+- [Lead Generator](https://farooquidigital.com/lead-generator): Paid ads on Google and Meta with AI follow-up that books appointments, not form fills.
+- [Reputation Manager](https://farooquidigital.com/reputation-manager): Automated post-job review requests with smart routing for unhappy customers.
+- [SEO](https://farooquidigital.com/seo): Local SEO and AI-search optimization for service businesses. Map Pack, citations, schema, llms.txt.
+- [Services overview](https://farooquidigital.com/services): All four products plus integrations.
 - [Pricing](https://farooquidigital.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $399 setup fee on Starter and Growth.
 - [Book a walkthrough](https://farooquidigital.com/book): Free 30-minute consult on a real calendar.
 - [About](https://farooquidigital.com/about): Founder bio and how the company started.

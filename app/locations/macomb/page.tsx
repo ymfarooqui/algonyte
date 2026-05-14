@@ -96,18 +96,12 @@ export default function MacombLocationPage() {
               and inbox so missed calls, after-hours leads, and form fills get
               answered, qualified, and booked without you touching them.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+            <div className="mt-8">
               <Link
                 href="/book"
-                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-6 py-3 text-white font-medium hover:bg-brand-deep/90 transition-colors"
+                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
               >
-                Book a 30-minute walkthrough
-              </Link>
-              <Link
-                href="/pricing"
-                className="inline-flex items-center justify-center rounded-full border border-slate-300 px-6 py-3 font-medium hover:border-slate-400 transition-colors"
-              >
-                See pricing
+                Book a 30-minute walkthrough →
               </Link>
             </div>
           </div>
