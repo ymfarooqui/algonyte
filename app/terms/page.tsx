@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Terms of Service | Farooqui Digital",
   description:
-    "The terms that govern your use of the Farooqui Digital website, automation services, and subscriptions.",
+    "The terms that govern your use of the Farooqui Digital website, AI receptionist services, automation builds, and monthly subscription plans.",
   alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };

@@ -6,7 +6,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
-const pricingTitle = "AI Receptionist Pricing | Plans From $549/mo, No Per-Minute Fees";
+const pricingTitle = "AI Receptionist Pricing | Plans From $549/mo";
 const pricingDescription =
   "Flat monthly pricing for AI receptionist plans: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 14-day money-back guarantee.";
 

@@ -3,9 +3,9 @@ import ServicesContent from "./ServicesContent";
 import { faqs } from "./faqs";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
-const title = "AI Receptionist Services | Missed Call Text Back, Voice Agents & CRM";
+const title = "AI Receptionist Services | Voice, Chat, CRM";
 const description =
-  "AI receptionist for service businesses: missed call text back, AI chat, voice agents, automated follow-up, and CRM. Built for trades, auto, and home services across Chicago, Detroit, and the Midwest.";
+  "AI receptionist for service businesses: missed call text back, AI chat, voice agents, follow-up, and CRM. Built for trades, auto, and home services.";
 
 export const metadata: Metadata = {
   title,

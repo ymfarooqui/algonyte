@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Car Hub Macomb Case Study: 10 Booked Jobs in Week One";
 const description =
-  "How Car Hub, an independent auto shop in Macomb Township, MI, booked 10 jobs the first week after installing our AI receptionist. Setup, workflow, and what we learned.";
+  "How Car Hub, an independent auto shop in Macomb Township, MI, booked 10 jobs in the first week after installing our AI receptionist. Setup and lessons.";
 const publishedAt = "2026-05-13";
 
 export const metadata: Metadata = {

@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "AI Receptionist in Macomb, MI | Stop Missing Service Calls";
 const description =
-  "AI receptionist for service businesses in Macomb, MI and Macomb County. Answer, qualify, and book leads 24/7 across Macomb Township, Sterling Heights, Clinton Township, and Shelby Township. Plans from $549/mo.";
+  "AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $549/mo.";
 
 export const metadata: Metadata = {
   title,

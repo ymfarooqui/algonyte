@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 export const metadata: Metadata = {
   title: "Privacy Policy | Farooqui Digital",
   description:
-    "How Farooqui Digital collects, uses, and protects information you share through our website, forms, and services.",
+    "How Farooqui Digital collects, uses, stores, and protects information you share through our website, contact forms, booking flows, and AI receptionist services.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };

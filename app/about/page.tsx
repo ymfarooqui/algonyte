@@ -7,7 +7,7 @@ const breadcrumb = breadcrumbJsonLd([{ name: "About", path: "/about" }]);
 
 const title = "About Farooqui Digital | Founded by Yaseen Farooqui";
 const description =
-  "We build AI receptionists for service businesses across the Midwest. Based in the Chicago and Detroit metros, serving clients nationwide. Real workflows, real numbers, no fluff.";
+  "We build AI receptionists for service businesses across the Midwest. Based in the Chicago and Detroit metros. Real workflows, real numbers, no fluff.";
 
 export const metadata: Metadata = {
   title,

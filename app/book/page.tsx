@@ -4,7 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Book a Free AI Receptionist Walkthrough in 30 Minutes";
 const description =
-  "Pick a time for a 30-minute walkthrough. We'll show you how AI can answer, qualify, and book your leads 24/7.";
+  "Pick a time for a free 30-minute walkthrough. We'll show you how an AI receptionist can answer, qualify, and book your leads 24/7 across phone, SMS, and chat.";
 
 export const metadata: Metadata = {
   title,

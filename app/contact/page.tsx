@@ -4,7 +4,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const title = "Contact: AI Receptionist Consult | Chicago, Detroit, Midwest";
 const description =
-  "Talk to Farooqui Digital about an AI receptionist for your business. We work with service businesses in Chicago, Detroit, Oak Brook, and across the Midwest and US. Straight answers.";
+  "Talk to Farooqui Digital about an AI receptionist for your business. We work with service businesses in Chicago, Detroit, and across the Midwest.";
 
 export const metadata: Metadata = {
   title,
