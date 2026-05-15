@@ -58,7 +58,7 @@ const faqJsonLd = {
       name: "How fast can you get a Macomb-area business live?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Most installs are live in 7 to 14 days. We use your existing phone number with call forwarding, plug into your calendar, and train the agent on your services, pricing, and service area before any leads hit it.",
+        text: "Most installs are live in 5 to 7 days. We use your existing phone number with call forwarding, plug into your calendar, and train the agent on your services, pricing, and service area before any leads hit it.",
       },
     },
     {

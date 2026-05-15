@@ -75,7 +75,7 @@ export default function LeadGeneratorPage() {
             <p className="lede mt-6 max-w-2xl">
               Paid ads on Google and Meta, landing pages built to convert, and
               AI follow-up that works the lead over SMS and email until
-              there&rsquo;s a time on your calendar. Live in 7 to 14 days.
+              there&rsquo;s a time on your calendar. Live in 5 to 7 days.
             </p>
             <div className="mt-8">
               <Link

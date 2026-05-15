@@ -1,6 +1,6 @@
 # Farooqui Digital
 
-> Farooqui Digital builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $399 setup fee. Founded by Yaseen Farooqui.
+> Farooqui Digital builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $549 setup fee. Founded by Yaseen Farooqui.
 
 Farooqui Digital is a small, founder-run AI automation studio based in the Chicago and Detroit metros. We install a working AI receptionist on top of a small business's existing phone number, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without the owner touching them.
 
@@ -15,8 +15,9 @@ We serve service businesses (auto, home services, trades, professional services)
 - [Lead Generator](https://farooquidigital.com/lead-generator): Paid ads on Google and Meta with AI follow-up that books appointments, not form fills.
 - [Reputation Manager](https://farooquidigital.com/reputation-manager): Automated post-job review requests with smart routing for unhappy customers.
 - [SEO](https://farooquidigital.com/seo): Local SEO and AI-search optimization for service businesses. Map Pack, citations, schema, llms.txt.
+- [Founding Member Program](https://farooquidigital.com/founding): 3 limited spots with 50% off setup ($275) and 30% off monthly for 6 months. Founding clients give honest feedback and a testimonial in return.
 - [Services overview](https://farooquidigital.com/services): All four products plus integrations.
-- [Pricing](https://farooquidigital.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $399 setup fee on Starter and Growth.
+- [Pricing](https://farooquidigital.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $549 setup fee on Starter and Growth.
 - [Book a walkthrough](https://farooquidigital.com/book): Free 30-minute consult on a real calendar.
 - [About](https://farooquidigital.com/about): Founder bio and how the company started.
 - [Contact](https://farooquidigital.com/contact): Direct contact form and chat widget.
@@ -33,8 +34,8 @@ We serve service businesses (auto, home services, trades, professional services)
 
 | Plan | Monthly | Setup | Best for |
 |------|---------|-------|----------|
-| Starter | $549 | $399 | Solo operators losing leads to missed calls |
-| Growth | $749 | $399 | Multi-channel businesses (chat, DM, SMS) |
+| Starter | $549 | $549 | Solo operators losing leads to missed calls |
+| Growth | $749 | $549 | Multi-channel businesses (chat, DM, SMS) |
 | Pro AI | $1,299 | Included | Full voice + multi-channel, done-for-you |
 
 ## Service areas
@@ -50,7 +51,9 @@ Chicago IL, Oak Brook IL, broader Chicagoland, Detroit MI, Macomb MI, and Midwes
 - Company name: Farooqui Digital
 - Founder: Yaseen Farooqui
 - Domain: farooquidigital.com
-- Pricing: starts at $549/month, $399 one-time setup on Starter and Growth plans
+- Pricing: starts at $549/month, $549 one-time setup on Starter and Growth plans
+- Founding offer: 3 spots only — $275 setup (50% off) and 30% off monthly for 6 months. Apply via /founding.
+- All plans month to month; cancel anytime
 - Free consult: 30-minute walkthrough at https://farooquidigital.com/book
 - Primary stack: GoHighLevel, OpenAI, Twilio
 - Headquartered: Chicago / Detroit metros (remote-first)

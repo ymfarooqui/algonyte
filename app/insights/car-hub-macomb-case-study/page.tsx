@@ -203,7 +203,7 @@ export default function CarHubCaseStudy() {
               Want the same setup for your shop?
             </h2>
             <p className="mt-3">
-              We install in 7 to 14 days, keep your existing phone number and
+              We install in 5 to 7 days, keep your existing phone number and
               calendar, and train the agent on your specific business. Plans
               start at $549/month.
             </p>

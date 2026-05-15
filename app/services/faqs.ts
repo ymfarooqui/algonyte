@@ -13,6 +13,6 @@ export const faqs = [
   },
   {
     q: "How long does setup take?",
-    a: "Platform clients are usually live in 7 to 14 days. Custom builds and integrations depend on scope, and we tell you the timeline before you sign.",
+    a: "Platform clients are usually live in 5 to 7 days. Custom builds and integrations depend on scope, and we tell you the timeline before you sign.",
   },
 ];

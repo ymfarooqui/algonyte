@@ -10,6 +10,7 @@ const routes: { path: string; priority: number; changeFrequency: Freq; lastModif
   { path: "/lead-generator", priority: 0.85, changeFrequency: "monthly", lastModified: "2026-05-14" },
   { path: "/reputation-manager", priority: 0.85, changeFrequency: "monthly", lastModified: "2026-05-14" },
   { path: "/seo", priority: 0.85, changeFrequency: "monthly", lastModified: "2026-05-14" },
+  { path: "/founding", priority: 0.95, changeFrequency: "weekly", lastModified: "2026-05-14" },
   { path: "/pricing", priority: 0.9, changeFrequency: "monthly" },
   { path: "/book", priority: 0.9, changeFrequency: "monthly" },
   { path: "/contact", priority: 0.8, changeFrequency: "yearly" },

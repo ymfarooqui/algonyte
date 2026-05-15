@@ -76,8 +76,8 @@ const addOns = [
 ];
 
 const setupFeeUSD: Record<string, number | null> = {
-  starter: 399,
-  growth: 399,
+  starter: 549,
+  growth: 549,
   "pro-ai": null,
 };
 
@@ -164,7 +164,7 @@ const compareRows = [
 const faqs = [
   {
     q: "Is there a setup fee?",
-    a: "Yes, $399 one time on Starter and Growth. Pro AI rolls setup into the first month.",
+    a: "Yes, $549 one time on Starter and Growth. Pro AI rolls setup into the first month. Founding members get 50% off setup ($275).",
   },
   {
     q: "Can I cancel whenever?",
@@ -194,6 +194,25 @@ const faqJsonLd = {
 export default function PricingPage() {
   return (
     <>
+      <section className="bg-brand-deep">
+        <div className="container-page py-5">
+          <Link
+            href="/founding"
+            className="group flex flex-col items-center justify-center gap-2 text-white text-center sm:flex-row sm:gap-4 sm:text-left"
+          >
+            <span className="inline-flex items-center gap-2 rounded-full bg-brand-primary/20 px-3 py-1 text-xs font-semibold uppercase tracking-wider text-brand-primary">
+              Limited · 3 spots
+            </span>
+            <span className="text-sm sm:text-base">
+              <strong>Founding Member Program:</strong> 50% off setup + 30% off monthly for 6 months.
+            </span>
+            <span className="text-sm font-medium text-brand-primary group-hover:underline">
+              See details →
+            </span>
+          </Link>
+        </div>
+      </section>
+
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <p className="eyebrow mb-4">Pricing</p>
@@ -205,6 +224,9 @@ export default function PricingPage() {
             Pick what fits where you are now. Move up when you outgrow it.
             Every plan starts with a 30-minute onboarding call, and if
             it&rsquo;s not the right fit in 14 days we refund you.
+          </p>
+          <p className="mt-4 text-brand-deep font-medium">
+            Month to month. Cancel anytime. No long-term contracts.
           </p>
         </div>
       </section>

@@ -106,9 +106,9 @@ export default function PricingPreview() {
           className="mt-10 text-sm text-brand-muted text-center max-w-2xl mx-auto"
           variants={reveal.fadeUp}
         >
-          Every plan starts with a 30-minute onboarding call. If it&rsquo;s
-          not working out in the first 14 days, we refund you. Starter and
-          Growth have a one-time $399 setup fee.
+          Every plan is month to month — <strong className="text-brand-deep">cancel anytime.</strong>{" "}
+          14-day refund if it&rsquo;s not working out. Starter and Growth
+          have a one-time $549 setup fee.
         </motion.p>
         <motion.div className="mt-4 text-center" variants={reveal.fadeUp}>
           <Link

@@ -1,4 +1,5 @@
 import Hero from "@/components/sections/Hero";
+import FoundingStrip from "@/components/sections/FoundingStrip";
 import StatsStrip from "@/components/sections/StatsStrip";
 import ProblemHook from "@/components/sections/ProblemHook";
 import HowItWorks from "@/components/sections/HowItWorks";
@@ -12,6 +13,7 @@ export default function Home() {
   return (
     <>
       <Hero />
+      <FoundingStrip />
       <StatsStrip />
       <ProblemHook />
       <HowItWorks />

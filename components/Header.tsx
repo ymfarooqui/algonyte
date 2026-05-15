@@ -9,6 +9,7 @@ const links = [
   { href: "/lead-generator", label: "Lead Generator" },
   { href: "/seo", label: "SEO" },
   { href: "/pricing", label: "Pricing" },
+  { href: "/founding", label: "Founding" },
   { href: "/about", label: "About" },
 ];
 

@@ -173,7 +173,7 @@ export default function ServicesContent() {
             >
               {[
                 "8 channels covered",
-                "Live in 7 to 14 days",
+                "Live in 5 to 7 days",
                 "Month-to-month",
                 "Built on your stack",
               ].map((item) => (
