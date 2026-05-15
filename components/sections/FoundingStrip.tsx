@@ -16,23 +16,21 @@ export default function FoundingStrip() {
         </div>
 
         <div className="relative mx-auto max-w-2xl rounded-3xl border-2 border-brand-primary/60 bg-brand-deep/40 p-8 sm:p-12 shadow-[0_0_60px_rgba(56,189,248,0.25)]">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 z-10">
-            <div className="relative">
-              <span className="block rounded-full bg-brand-primary px-6 py-2 text-sm font-bold uppercase tracking-wider text-brand-deep shadow-lg">
-                ★ White-Glove Onboarding
+          <div className="pointer-events-none absolute inset-x-0 top-16 sm:top-20 z-10 -rotate-6">
+            <div
+              className="mx-auto w-[112%] -translate-x-[6%] bg-brand-primary py-2.5 text-center text-brand-deep font-bold uppercase tracking-wider shadow-2xl"
+              style={{
+                clipPath:
+                  "polygon(0% 50%, 4% 0%, 96% 0%, 100% 50%, 96% 100%, 4% 100%)",
+              }}
+            >
+              <span className="text-sm sm:text-base">
+                ★ White-Glove Onboarding Included ★
               </span>
-              <span
-                aria-hidden
-                className="absolute -left-2 top-full block h-2 w-2 rotate-45 bg-brand-primary/60"
-              />
-              <span
-                aria-hidden
-                className="absolute -right-2 top-full block h-2 w-2 rotate-45 bg-brand-primary/60"
-              />
             </div>
           </div>
 
-          <div className="text-center mt-4">
+          <div className="text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
               3 Spots. That&rsquo;s It.
             </h3>
