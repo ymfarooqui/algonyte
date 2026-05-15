@@ -111,7 +111,70 @@ export default function FoundingPage() {
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">Founding pricing by plan</p>
           <h2 className="h-section">What you actually pay for 6 months.</h2>
-          <div className="mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white">
+          {/* Mobile: stacked cards */}
+          <div className="md:hidden mt-8 space-y-3">
+            {plans.map((p) => {
+              const founding = foundingMonthly(p.price);
+              const savings = (p.price - founding) * 6;
+              return (
+                <div
+                  key={p.id}
+                  className="rounded-2xl border border-slate-200 bg-white p-5"
+                >
+                  <p className="text-base font-semibold text-brand-deep">{p.name}</p>
+                  <dl className="mt-4 grid grid-cols-3 gap-3 text-center">
+                    <div>
+                      <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
+                        Normal
+                      </dt>
+                      <dd className="mt-1 text-sm text-brand-muted">${p.price}/mo</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-deep">
+                        Founding
+                      </dt>
+                      <dd className="mt-1 text-sm font-bold text-brand-deep">${founding}/mo</dd>
+                    </div>
+                    <div>
+                      <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-deep">
+                        You save
+                      </dt>
+                      <dd className="mt-1 text-sm font-semibold text-brand-deep">
+                        ${savings.toLocaleString()}
+                        <span className="block text-[10px] text-brand-muted font-normal">over 6 mo</span>
+                      </dd>
+                    </div>
+                  </dl>
+                </div>
+              );
+            })}
+            <div className="rounded-2xl border border-slate-200 bg-brand-soft/40 p-5">
+              <p className="text-base font-semibold text-brand-deep">Setup</p>
+              <dl className="mt-4 grid grid-cols-3 gap-3 text-center">
+                <div>
+                  <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
+                    Normal
+                  </dt>
+                  <dd className="mt-1 text-sm text-brand-muted">$549 one-time</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-deep">
+                    Founding
+                  </dt>
+                  <dd className="mt-1 text-sm font-bold text-brand-deep">$275 one-time</dd>
+                </div>
+                <div>
+                  <dt className="text-[10px] font-semibold uppercase tracking-wider text-brand-deep">
+                    You save
+                  </dt>
+                  <dd className="mt-1 text-sm font-semibold text-brand-deep">$274</dd>
+                </div>
+              </dl>
+            </div>
+          </div>
+
+          {/* Desktop: table */}
+          <div className="hidden md:block mt-8 overflow-hidden rounded-2xl border border-slate-200 bg-white">
             <table className="w-full text-left">
               <thead className="bg-brand-soft text-sm">
                 <tr>
