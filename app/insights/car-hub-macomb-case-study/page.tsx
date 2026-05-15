@@ -39,7 +39,7 @@ const articleJsonLd = {
     "@type": "Organization",
     name: siteConfig.name,
     url: siteConfig.url,
-    logo: { "@type": "ImageObject", url: `${siteConfig.url}/favicon-v2.svg` },
+    logo: { "@type": "ImageObject", url: `${siteConfig.url}/logo-mark.png` },
   },
   mainEntityOfPage: `${siteConfig.url}/insights/car-hub-macomb-case-study`,
   about: {

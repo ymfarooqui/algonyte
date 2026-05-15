@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { BookingButton } from "@/components/BookingModal";
 
@@ -19,10 +20,15 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/85 backdrop-blur">
       <div className="container-page flex h-16 items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 text-brand-deep font-semibold tracking-tight">
-          <span aria-hidden className="inline-block h-7 w-7 rounded-md bg-brand-deep relative">
-            <span className="absolute inset-0 m-auto h-3 w-3 rounded-full bg-brand-primary" />
-          </span>
+        <Link href="/" className="flex items-center gap-2 text-brand-deep font-semibold tracking-tight" aria-label="Algonyte Labs home">
+          <Image
+            src="/logo-mark.png"
+            alt=""
+            width={36}
+            height={36}
+            priority
+            className="h-8 w-8 object-contain"
+          />
           Algonyte Labs
         </Link>
 

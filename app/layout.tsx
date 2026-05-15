@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     follow: true,
     googleBot: { index: true, follow: true, "max-image-preview": "large" },
   },
-  icons: { icon: "/favicon-v2.svg" },
+  icons: { icon: "/logo-mark.png" },
   verification: {
     ...(process.env.GOOGLE_SITE_VERIFICATION
       ? { google: process.env.GOOGLE_SITE_VERIFICATION }
@@ -75,7 +75,7 @@ const organizationJsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
-  logo: `${siteConfig.url}/favicon-v2.svg`,
+  logo: `${siteConfig.url}/logo-mark.png`,
   slogan: siteConfig.tagline,
 };
 
@@ -86,8 +86,8 @@ const localBusinessJsonLd = {
   name: siteConfig.name,
   url: siteConfig.url,
   description: siteConfig.description,
-  logo: `${siteConfig.url}/favicon-v2.svg`,
-  image: `${siteConfig.url}/favicon-v2.svg`,
+  logo: `${siteConfig.url}/logo-mark.png`,
+  image: `${siteConfig.url}/logo-mark.png`,
   priceRange: "$549-$1,299/mo",
   areaServed: [
     { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
