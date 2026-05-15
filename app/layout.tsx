@@ -19,7 +19,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
-    template: `%s | ${siteConfig.name}`,
   },
   description:
     "AI receptionist for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7. Plans from $549/mo.",
