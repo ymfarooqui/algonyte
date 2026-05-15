@@ -18,27 +18,23 @@ export default function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-white/10 bg-brand-deep/95 backdrop-blur">
-      <div className="container-page flex h-20 items-center justify-between">
-        <Link
-          href="/"
-          className="flex items-center gap-3 text-white font-semibold tracking-tight"
-          aria-label="Algonyte Labs home"
-        >
+    <header className="sticky top-0 z-50 border-b border-slate-200/60 bg-white/85 backdrop-blur">
+      <div className="container-page flex h-16 items-center justify-between">
+        <Link href="/" className="flex items-center gap-2 text-brand-deep font-semibold tracking-tight" aria-label="Algonyte Labs home">
           <Image
             src="/logo-mark.png"
             alt=""
-            width={56}
-            height={56}
+            width={36}
+            height={36}
             priority
-            className="h-12 w-12 sm:h-14 sm:w-14 object-contain"
+            className="h-8 w-8 object-contain"
           />
-          <span className="text-lg sm:text-xl">Algonyte Labs</span>
+          Algonyte Labs
         </Link>
 
-        <nav className="hidden lg:flex items-center gap-6 text-sm text-white/80">
+        <nav className="hidden lg:flex items-center gap-6 text-sm text-brand-ink/80">
           {links.map((l) => (
-            <Link key={l.label} href={l.href} className="hover:text-brand-primary transition-colors">
+            <Link key={l.label} href={l.href} className="hover:text-brand-deep">
               {l.label}
             </Link>
           ))}
@@ -52,7 +48,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-white/20 text-white"
+          className="lg:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-slate-200"
         >
           <span className="sr-only">Menu</span>
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -62,15 +58,10 @@ export default function Header() {
       </div>
 
       {open && (
-        <div className="lg:hidden border-t border-white/10 bg-brand-deep">
-          <nav className="container-page flex flex-col py-4 gap-3 text-sm text-white/90">
+        <div className="lg:hidden border-t border-slate-200 bg-white">
+          <nav className="container-page flex flex-col py-4 gap-3 text-sm">
             {links.map((l) => (
-              <Link
-                key={l.label}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="py-1 hover:text-brand-primary"
-              >
+              <Link key={l.label} href={l.href} onClick={() => setOpen(false)} className="py-1">
                 {l.label}
               </Link>
             ))}
