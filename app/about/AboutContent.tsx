@@ -41,14 +41,14 @@ export default function AboutContent() {
         >
           <div className="max-w-3xl">
             <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-              About Farooqui Digital
+              About Algonyte Labs
             </motion.p>
             <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
               We run the hard parts of your business{" "}
               <span className="text-brand-deep">so you don&rsquo;t have to.</span>
             </motion.h1>
             <motion.p className="lede mt-6 max-w-2xl" variants={reveal.fadeUp}>
-              Farooqui Digital is a small team that handles AI, marketing, and
+              Algonyte Labs is a small team that handles AI, marketing, and
               the systems behind them for businesses that don&rsquo;t have time
               to figure it out themselves.
             </motion.p>
@@ -136,7 +136,7 @@ export default function AboutContent() {
             <motion.div className="relative" variants={reveal.fadeUpLg}>
               <Image
                 src="/yf-headshot.jpg"
-                alt="Yaseen Farooqui, founder of Farooqui Digital, AI receptionist for service businesses"
+                alt="Yaseen Farooqui, founder of Algonyte Labs, AI receptionist for service businesses"
                 width={480}
                 height={480}
                 className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover object-top aspect-square"
@@ -156,7 +156,7 @@ export default function AboutContent() {
                 <motion.p variants={reveal.fadeUp}>
                   I&rsquo;m a QA and automation engineer who has spent years
                   building AI systems for big insurance carriers and tech
-                  platforms. I started Farooqui Digital because the same tools
+                  platforms. I started Algonyte Labs because the same tools
                   these companies use can work for any business that gets leads
                   and books appointments.
                 </motion.p>

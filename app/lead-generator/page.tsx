@@ -22,7 +22,7 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/lead-generator#service`,
   serviceType: "Lead Generation",
-  name: "Lead Generator by Farooqui Digital",
+  name: "Lead Generator by Algonyte Labs",
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description,
   areaServed: { "@type": "Country", name: "United States" },

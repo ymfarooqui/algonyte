@@ -22,7 +22,7 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/ai-receptionist#service`,
   serviceType: "AI Receptionist",
-  name: "AI Receptionist by Farooqui Digital",
+  name: "AI Receptionist by Algonyte Labs",
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description,
   areaServed: { "@type": "Country", name: "United States" },

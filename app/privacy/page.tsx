@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy | Farooqui Digital",
+  title: "Privacy Policy | Algonyte Labs",
   description:
-    "How Farooqui Digital collects, uses, stores, and protects information you share through our website, contact forms, booking flows, and AI receptionist services.",
+    "How Algonyte Labs collects, uses, stores, and protects information you share through our website, contact forms, booking flows, and AI receptionist services.",
   alternates: { canonical: "/privacy" },
   robots: { index: true, follow: true },
 };
 
 const LAST_UPDATED = "May 9, 2026";
-const ENTITY = "Farooqui Digital";
+const ENTITY = "Algonyte Labs";
 const ADDRESS = "545 N McClurg Ct, Chicago, IL 60611";
-const PRIVACY_EMAIL = "yaseen@farooquidigital.com";
+const PRIVACY_EMAIL = "yaseen@algonyte.com";
+
 
 export default function PrivacyPage() {
   return (
@@ -23,10 +24,10 @@ export default function PrivacyPage() {
 
         <div className="mt-12 space-y-6 text-brand-ink/90 leading-relaxed [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-brand-deep [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-brand-deep [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_a]:text-brand-deep [&_a]:font-medium [&_a]:underline">
           <p>
-            This Privacy Policy explains how {ENTITY} (&ldquo;Farooqui Digital,&rdquo;
+            This Privacy Policy explains how {ENTITY} (&ldquo;Algonyte Labs,&rdquo;
             &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) collects, uses, and shares
             information when you visit{" "}
-            <a href="https://farooquidigital.com">farooquidigital.com</a>, fill out a form, book a
+            <a href="https://algonyte.com">algonyte.com</a>, fill out a form, book a
             call, chat with us, or purchase a subscription.
           </p>
 

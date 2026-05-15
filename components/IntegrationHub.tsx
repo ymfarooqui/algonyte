@@ -94,7 +94,7 @@ export default function IntegrationHub({
       ref={ref}
       className={`relative aspect-square w-full max-w-md mx-auto ${className}`}
       role="img"
-      aria-label="Farooqui Digital connects to the tools you already use: phone, calendar, chat, payments, reporting, automations, and more."
+      aria-label="Algonyte Labs connects to the tools you already use: phone, calendar, chat, payments, reporting, automations, and more."
     >
       {/* Connector lines (SVG layer) */}
       <svg
@@ -195,9 +195,9 @@ export default function IntegrationHub({
             <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" />
           </svg>
           <p className="text-[9px] font-semibold uppercase tracking-wider text-white leading-tight sm:text-[10px]">
-            Farooqui
+            Algonyte
             <br />
-            Digital
+            Labs
           </p>
         </div>
       </motion.div>

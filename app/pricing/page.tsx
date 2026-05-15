@@ -137,7 +137,7 @@ const aggregateOfferJsonLd = {
   "@type": "AggregateOffer",
   "@id": `${siteConfig.url}/pricing#aggregate`,
   url: `${siteConfig.url}/pricing`,
-  name: "Farooqui Digital AI Receptionist Plans",
+  name: "Algonyte Labs AI Receptionist Plans",
   priceCurrency: "USD",
   lowPrice: Math.min(...plans.map((p) => p.price)),
   highPrice: Math.max(...plans.map((p) => p.price)),

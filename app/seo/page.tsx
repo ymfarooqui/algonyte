@@ -22,7 +22,7 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/seo#service`,
   serviceType: "Search Engine Optimization",
-  name: "Local SEO by Farooqui Digital",
+  name: "Local SEO by Algonyte Labs",
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description,
   areaServed: { "@type": "Country", name: "United States" },

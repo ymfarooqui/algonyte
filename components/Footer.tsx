@@ -4,9 +4,9 @@ export default function Footer() {
   return (
     <footer className="border-t border-slate-200 bg-white">
       <div className="container-page py-8 grid grid-cols-1 sm:grid-cols-3 items-center gap-4 text-center sm:text-left">
-        <p className="font-semibold text-brand-deep">Farooqui Digital</p>
+        <p className="font-semibold text-brand-deep">Algonyte Labs</p>
         <p className="text-xs text-brand-muted sm:text-center">
-          &copy; {new Date().getFullYear()} Farooqui Digital. All rights reserved.
+          &copy; {new Date().getFullYear()} Algonyte Labs. All rights reserved.
         </p>
         <nav className="flex justify-center sm:justify-end gap-5 text-sm text-brand-muted">
           <Link href="/privacy" className="hover:text-brand-deep">

@@ -22,7 +22,7 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/reputation-manager#service`,
   serviceType: "Reputation Management",
-  name: "Reputation Manager by Farooqui Digital",
+  name: "Reputation Manager by Algonyte Labs",
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description,
   areaServed: { "@type": "Country", name: "United States" },

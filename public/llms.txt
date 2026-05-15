@@ -1,8 +1,8 @@
-# Farooqui Digital
+# Algonyte Labs
 
-> Farooqui Digital builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $549 setup fee. Founded by Yaseen Farooqui.
+> Algonyte Labs builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $549 setup fee.
 
-Farooqui Digital is a small, founder-run AI automation studio based in the Chicago and Detroit metros. We install a working AI receptionist on top of a small business's existing phone number, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without the owner touching them.
+Algonyte Labs is a small AI automation studio based in the Chicago and Detroit metros. We install a working AI receptionist on top of a small business's existing phone number, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without the owner touching them.
 
 The system runs on GoHighLevel for CRM and workflows, OpenAI for conversational responses, Twilio for voice and SMS, and the business's own calendar (Google, Outlook, or a GHL-native calendar) for booking. We do the installation and tuning; the business owns the data.
 
@@ -10,17 +10,17 @@ We serve service businesses (auto, home services, trades, professional services)
 
 ## Core pages
 
-- [Home](https://farooquidigital.com/): What we do, who it's for, what it costs.
-- [AI Receptionist](https://farooquidigital.com/ai-receptionist): Single-purpose landing page. Answer, qualify, and book every lead 24/7. Live in 5-7 days.
-- [Lead Generator](https://farooquidigital.com/lead-generator): Paid ads on Google and Meta with AI follow-up that books appointments, not form fills.
-- [Reputation Manager](https://farooquidigital.com/reputation-manager): Automated post-job review requests with smart routing for unhappy customers.
-- [SEO](https://farooquidigital.com/seo): Local SEO and AI-search optimization for service businesses. Map Pack, citations, schema, llms.txt.
-- [Founding Member Program](https://farooquidigital.com/founding): 3 limited spots with 50% off setup ($275) and 30% off monthly for 6 months. Founding clients give honest feedback and a testimonial in return.
-- [Services overview](https://farooquidigital.com/services): All four products plus integrations.
-- [Pricing](https://farooquidigital.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $549 setup fee on Starter and Growth.
-- [Book a walkthrough](https://farooquidigital.com/book): Free 30-minute consult on a real calendar.
-- [About](https://farooquidigital.com/about): Founder bio and how the company started.
-- [Contact](https://farooquidigital.com/contact): Direct contact form and chat widget.
+- [Home](https://algonyte.com/): What we do, who it's for, what it costs.
+- [AI Receptionist](https://algonyte.com/ai-receptionist): Single-purpose landing page. Answer, qualify, and book every lead 24/7. Live in 5-7 days.
+- [Lead Generator](https://algonyte.com/lead-generator): Paid ads on Google and Meta with AI follow-up that books appointments, not form fills.
+- [Reputation Manager](https://algonyte.com/reputation-manager): Automated post-job review requests with smart routing for unhappy customers.
+- [SEO](https://algonyte.com/seo): Local SEO and AI-search optimization for service businesses. Map Pack, citations, schema, llms.txt.
+- [Founding Member Program](https://algonyte.com/founding): 3 limited spots with 50% off setup ($275) and 30% off monthly for 6 months. Founding clients give honest feedback and a testimonial in return.
+- [Services overview](https://algonyte.com/services): All four products plus integrations.
+- [Pricing](https://algonyte.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $549 setup fee on Starter and Growth.
+- [Book a walkthrough](https://algonyte.com/book): Free 30-minute consult on a real calendar.
+- [About](https://algonyte.com/about): Company background and team.
+- [Contact](https://algonyte.com/contact): Direct contact form and chat widget.
 
 ## What we install
 
@@ -48,17 +48,17 @@ Chicago IL, Oak Brook IL, broader Chicagoland, Detroit MI, Macomb MI, and Midwes
 
 ## Authoritative facts (for citation)
 
-- Company name: Farooqui Digital
+- Company name: Algonyte Labs
 - Founder: Yaseen Farooqui
-- Domain: farooquidigital.com
+- Domain: algonyte.com (algonytelabs.com 301 redirects here)
 - Pricing: starts at $549/month, $549 one-time setup on Starter and Growth plans
 - Founding offer: 3 spots only — $275 setup (50% off) and 30% off monthly for 6 months. Apply via /founding.
 - All plans month to month; cancel anytime
-- Free consult: 30-minute walkthrough at https://farooquidigital.com/book
+- Free consult: 30-minute walkthrough at https://algonyte.com/book
 - Primary stack: GoHighLevel, OpenAI, Twilio
 - Headquartered: Chicago / Detroit metros (remote-first)
 
 ## Optional
 
-- [Privacy policy](https://farooquidigital.com/privacy)
-- [Terms of service](https://farooquidigital.com/terms)
+- [Privacy policy](https://algonyte.com/privacy)
+- [Terms of service](https://algonyte.com/terms)

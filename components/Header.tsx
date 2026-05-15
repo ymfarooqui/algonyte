@@ -23,7 +23,7 @@ export default function Header() {
           <span aria-hidden className="inline-block h-7 w-7 rounded-md bg-brand-deep relative">
             <span className="absolute inset-0 m-auto h-3 w-3 rounded-full bg-brand-primary" />
           </span>
-          Farooqui Digital
+          Algonyte Labs
         </Link>
 
         <nav className="hidden lg:flex items-center gap-6 text-sm text-brand-ink/80">

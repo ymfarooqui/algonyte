@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "About", path: "/about" }]);
 
-const title = "About Farooqui Digital | Founded by Yaseen Farooqui";
+const title = "About Algonyte Labs | AI Automation Studio";
 const description =
   "We build AI receptionists for service businesses across the Midwest. Based in the Chicago and Detroit metros. Real workflows, real numbers, no fluff.";
 
@@ -26,7 +26,7 @@ const personJsonLd = {
   url: `${siteConfig.url}/about`,
   image: `${siteConfig.url}/yf-headshot.jpg`,
   description:
-    "Founder of Farooqui Digital. Builds AI receptionists for service businesses across the Midwest and US.",
+    "Founder of Algonyte Labs. Builds AI receptionists for service businesses across the Midwest and US.",
 };
 
 export default function AboutPage() {
