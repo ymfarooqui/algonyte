@@ -29,7 +29,7 @@ export default function Hero() {
             className="mt-6 text-sm font-medium uppercase tracking-wider text-brand-deep/80"
             variants={reveal.fadeUp}
           >
-            {["AI Receptionist", "Voice Agents", "CRM + Pipeline", "Reputation Manager"].map(
+            {["Web Presence", "AI Receptionist", "Voice Agents", "Local SEO", "Reputation Manager"].map(
               (item, i) => (
                 <span key={item} className="whitespace-nowrap">
                   {i > 0 && (

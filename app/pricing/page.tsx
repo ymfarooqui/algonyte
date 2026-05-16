@@ -21,7 +21,26 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: pricingTitle, description: pricingDescription },
 };
 
-const addOns = [
+const foundation = {
+  id: "web-presence",
+  name: "Web Presence",
+  price: "From $279",
+  cadence: "one-time + $99/mo",
+  note: "Website build + hosting + SEO indexing",
+  tagline:
+    "We build your website, host it, and get it indexed on Google. Flat $99/mo across every build tier covers hosting, maintenance, and edits.",
+  bullets: [
+    "Foundation build — $279 one-time (5 pages)",
+    "Growth build — $549 one-time (8 pages + booking)",
+    "Command build — $799 one-time (12 pages + automation)",
+    "$99/mo hosting, backups, SSL, edits",
+    "On-page SEO + schema + GBP setup",
+    "Add Local SEO or Ads program when ready",
+  ],
+  href: "/web-presence",
+};
+
+const growthPrograms = [
   {
     id: "lead-generator",
     name: "Lead Generator",
@@ -41,6 +60,24 @@ const addOns = [
     href: "/lead-generator",
   },
   {
+    id: "local-seo",
+    name: "Local SEO Program",
+    price: "From $1,500",
+    cadence: "/mo",
+    note: "6-month minimum",
+    tagline:
+      "Active Local SEO retainer to move you up the Map Pack and onto AI search. GBP work, citations, content cadence, ranking reports.",
+    bullets: [
+      "Google Business Profile optimization",
+      "Citation cleanup + monthly consistency",
+      "On-page + technical fixes",
+      "Location + industry pages (1-2 / mo)",
+      "AI search (llms.txt, schema, FAQs)",
+      "Monthly rank + traffic review",
+    ],
+    href: "/book",
+  },
+  {
     id: "reputation-manager",
     name: "Reputation Manager",
     price: "$299",
@@ -57,23 +94,26 @@ const addOns = [
     ],
     href: "/reputation-manager",
   },
+];
+
+const paths = [
   {
-    id: "seo",
-    name: "Local SEO",
-    price: "From $1,500",
-    cadence: "/mo",
-    note: "6-month minimum",
-    tagline:
-      "Local SEO that gets you into the Google Map Pack and onto AI search results. GBP, citations, schema, content, llms.txt.",
-    bullets: [
-      "Google Business Profile optimization",
-      "Citation cleanup + consistency",
-      "On-page + technical fixes",
-      "Location + industry pages",
-      "AI search (llms.txt, schema, FAQs)",
-      "Monthly rank + traffic review",
-    ],
-    href: "/seo",
+    label: "New to the internet",
+    body: "You don't have a site, or the one you have is broken. Start with Web Presence — $279 build, $99/mo hosting.",
+    cta: "See Web Presence →",
+    href: "/web-presence",
+  },
+  {
+    label: "Phone won't stop ringing",
+    body: "Leads are coming in but you can't keep up. Start with the AI Receptionist — answers, qualifies, books 24/7.",
+    cta: "See plans below ↓",
+    href: "#plans",
+  },
+  {
+    label: "Not enough leads",
+    body: "Site's fine, phone's quiet. Add Lead Generator (paid ads) or the Local SEO Program (organic).",
+    cta: "See growth programs ↓",
+    href: "#growth",
   },
 ];
 
@@ -180,6 +220,18 @@ const faqs = [
     q: "Do I need to bring tools I already use?",
     a: "Nope, the platform comes with everything. If there's a tool you can't live without, we can connect it on Growth or Pro AI.",
   },
+  {
+    q: "What does the $99/mo on Web Presence actually cover?",
+    a: "Managed hosting (SSL, CDN, daily backups, security patches), domain and email forwarding, 1 hour of content edits per month, Google Search Console + indexing monitoring, a quarterly health check, and a direct line when something breaks. Same across all three build tiers — only the one-time build fee changes.",
+  },
+  {
+    q: "Who owns the website when I leave?",
+    a: "You do. The domain, the code, the content, the Google Business Profile, and any Stripe or Square accounts are all yours and stay yours. If you ever leave, we hand you the keys and help you migrate hosting. No hostage situations.",
+  },
+  {
+    q: "Is the Local SEO Program the same as Web Presence?",
+    a: "No. Web Presence is the build and the lights-on hosting ($279+ one-time + $99/mo). The Local SEO Program is an active monthly retainer ($1,500/mo) where we run citations, content, GBP work, and ranking reports. Web Presence gets your site indexed; the Local SEO Program is what moves you up the Map Pack.",
+  },
 ];
 
 const faqJsonLd = {
@@ -203,13 +255,13 @@ export default function PricingPage() {
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <p className="eyebrow mb-4">Pricing</p>
           <h1 className="h-display max-w-3xl">
-            Three plans.{" "}
-            <span className="text-brand-deep">No hidden fees.</span>
+            One platform.{" "}
+            <span className="text-brand-deep">Five products. No hidden fees.</span>
           </h1>
           <p className="lede mt-6 max-w-2xl">
             Pick what fits where you are now. Move up when you outgrow it.
-            Every plan starts with a 30-minute onboarding call, and if
-            it&rsquo;s not the right fit in 30 days we refund you.
+            Every engagement starts with a 30-minute onboarding call, and if
+            it&rsquo;s not the right fit in 30 days we refund the subscription.
           </p>
           <p className="mt-4 text-brand-deep font-medium">
             Month to month. Cancel anytime. No long-term contracts.
@@ -217,8 +269,37 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section className="pb-12 sm:pb-16 -mt-8">
         <div className="container-page">
+          <p className="eyebrow mb-4">Not sure where to start?</p>
+          <div className="grid gap-4 md:grid-cols-3">
+            {paths.map((p) => (
+              <Link
+                key={p.label}
+                href={p.href}
+                className="group rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:border-brand-deep/30 hover:shadow-md"
+              >
+                <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/70">
+                  {p.label}
+                </p>
+                <p className="mt-2 text-brand-muted leading-relaxed text-sm">
+                  {p.body}
+                </p>
+                <p className="mt-4 text-sm font-medium text-brand-deep">
+                  {p.cta}
+                </p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="plans" className="pb-20">
+        <div className="container-page">
+          <p className="eyebrow mb-4">AI Receptionist plans</p>
+          <h2 className="h-section max-w-3xl mb-8">
+            Answer, qualify, and book every lead 24/7.
+          </h2>
           <div className="grid gap-5 md:grid-cols-3">
             {plans.map((p) => {
               const featured = "featured" in p && p.featured;
@@ -281,18 +362,93 @@ export default function PricingPage() {
         </div>
       </section>
 
-      <section className="pb-20">
+      <section id="foundation" className="pb-20">
         <div className="container-page">
-          <p className="eyebrow mb-4">Add-on services</p>
+          <p className="eyebrow mb-4">Start here — your foundation</p>
           <h2 className="h-section max-w-3xl">
-            Growth services that plug into any plan.
+            Don&rsquo;t have a real website yet? Start here.
           </h2>
           <p className="mt-4 max-w-2xl text-brand-muted">
-            The receptionist closes the leak. These open the faucet. Each
-            runs as a managed monthly engagement on top of your subscription.
+            Web Presence is infrastructure: the site, the hosting, the
+            indexing. Pay for the build once, keep the lights on for $99/mo.
+            Layer the growth programs below when you&rsquo;re ready to scale.
           </p>
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
-            {addOns.map((a) => (
+          <div className="mt-10 grid gap-5 lg:grid-cols-[2fr_3fr] items-start">
+            <div className="card flex flex-col">
+              <h3 className="text-2xl font-semibold text-brand-deep">{foundation.name}</h3>
+              <div className="mt-3 flex items-baseline gap-2">
+                <span className="text-4xl font-semibold text-brand-ink">
+                  {foundation.price}
+                </span>
+                <span className="text-brand-muted text-sm">{foundation.cadence}</span>
+              </div>
+              <p className="mt-1 text-xs text-brand-deep/70 font-medium">
+                {foundation.note}
+              </p>
+              <p className="mt-4 text-brand-muted text-sm leading-relaxed">
+                {foundation.tagline}
+              </p>
+              <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
+                {foundation.bullets.map((b) => (
+                  <li key={b} className="flex items-start gap-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      className="mt-0.5 flex-shrink-0 text-brand-deep"
+                    >
+                      <path d="M20 6L9 17l-5-5" />
+                    </svg>
+                    <span className="text-brand-muted">{b}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link href={foundation.href} className="btn-primary w-full text-center">
+                See build tiers
+              </Link>
+            </div>
+            <div className="rounded-2xl border border-brand-deep/20 bg-gradient-to-br from-brand-accent/40 via-white to-white p-6 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-deep/70">
+                Why a separate foundation tier?
+              </p>
+              <div className="mt-4 space-y-4 text-sm text-brand-muted leading-relaxed">
+                <p>
+                  Most agencies bundle hosting into a $1,500/mo retainer.
+                  That&rsquo;s a tax on people who just need a working site.
+                </p>
+                <p>
+                  We split it: the build is the build, the hosting is the
+                  hosting, the SEO retainer is the retainer. You only pay for
+                  the parts you actually need today, and the $99/mo never
+                  moves when you grow into the engine programs below.
+                </p>
+                <p className="text-brand-deep font-medium">
+                  Cancel the engine programs whenever. The site stays online.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="growth" className="pb-20">
+        <div className="container-page">
+          <p className="eyebrow mb-4">Growth programs</p>
+          <h2 className="h-section max-w-3xl">
+            Layer these on once the site is live.
+          </h2>
+          <p className="mt-4 max-w-2xl text-brand-muted">
+            Each runs as a managed monthly engagement on top of your
+            subscription. Start with one, add the others when the first one
+            pays for itself.
+          </p>
+          <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {growthPrograms.map((a) => (
               <div key={a.id} className="card flex flex-col">
                 <h3 className="text-xl font-semibold text-brand-deep">{a.name}</h3>
                 <div className="mt-3 flex items-baseline gap-2">

@@ -5,8 +5,8 @@ import { reveal, inView } from "@/lib/motion";
 
 const items = [
   {
-    q: "Why not a $29/mo AI receptionist?",
-    a: "Those tools answer one channel, usually voice, and stop there. We build the full system: lead capture across channels, qualifying questions, follow-up over days, and the booking on your calendar. The cheap tool is a feature; this is the workflow.",
+    q: "Why not a $99/mo AI receptionist?",
+    a: "The $99 standalone bots you see advertised answer one channel — usually voice — and stop there. No qualifying logic, no follow-up, no calendar integration, no CRM. Our AI Receptionist starts at $549/mo because it's the whole workflow: phone, SMS, chat, DM, qualifying questions, multi-day follow-up, and the booking on your calendar. (Note: $99/mo also happens to be our Web Presence hosting fee — that's the lights-on cost for your website, not an AI bot. Different product.)",
   },
   {
     q: "Why not hire a virtual assistant?",

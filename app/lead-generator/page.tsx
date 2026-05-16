@@ -81,12 +81,18 @@ export default function LeadGeneratorPage() {
               AI follow-up that works the lead over SMS and email until
               there&rsquo;s a time on your calendar. Live in 5 to 7 days.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/book"
                 className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
               >
                 Book a 30-minute walkthrough →
+              </Link>
+              <Link
+                href="/web-presence"
+                className="text-sm text-brand-deep underline decoration-brand-deep/30 underline-offset-4 hover:decoration-brand-deep transition-colors"
+              >
+                Don&rsquo;t have a website yet? Start here →
               </Link>
             </div>
           </div>

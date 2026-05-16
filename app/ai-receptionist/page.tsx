@@ -95,12 +95,18 @@ export default function AIReceptionistPage() {
               in Macomb Township booked 10 jobs in the first week after install
               — calls they would have missed.
             </p>
-            <div className="mt-8">
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
                 href="/book"
                 className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
               >
                 Book a 30-minute walkthrough →
+              </Link>
+              <Link
+                href="/web-presence"
+                className="text-sm text-brand-deep underline decoration-brand-deep/30 underline-offset-4 hover:decoration-brand-deep transition-colors"
+              >
+                Don&rsquo;t have a website yet? Start here →
               </Link>
             </div>
           </div>

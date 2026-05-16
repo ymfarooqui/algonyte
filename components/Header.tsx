@@ -10,7 +10,7 @@ import CursorSpotlight from "@/components/CursorSpotlight";
 const links = [
   { href: "/ai-receptionist", label: "AI Receptionist" },
   { href: "/lead-generator", label: "Lead Generator" },
-  { href: "/seo", label: "SEO" },
+  { href: "/web-presence", label: "Web Presence" },
   { href: "/pricing", label: "Pricing" },
   { href: "/founding", label: "Founding" },
   { href: "/about", label: "About" },
