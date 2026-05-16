@@ -10,7 +10,7 @@ const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
 const pricingTitle = "AI Receptionist Pricing | Plans From $549/mo";
 const pricingDescription =
-  "Flat monthly pricing for AI receptionist plans: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 14-day money-back guarantee.";
+  "Flat monthly pricing for AI receptionist plans: $549 Starter, $749 Growth, $1,299 Pro AI. No per-minute charges, no overages. 30-day money-back guarantee.";
 
 export const metadata: Metadata = {
   title: pricingTitle,
@@ -172,8 +172,8 @@ const faqs = [
     a: "Yes. Every plan is month to month. You can cancel from the dashboard or send us an email.",
   },
   {
-    q: "What's the 14-day refund?",
-    a: "If you decide we're not a good fit in the first two weeks, we give you your money back on the subscription. The setup fee covers the work we already did, so that part stays.",
+    q: "What's the 30-day refund?",
+    a: "If you decide we're not a good fit in the first 30 days, we give you your money back on the subscription. The setup fee covers the work we already did, so that part stays.",
   },
   {
     q: "Do I need to bring tools I already use?",
@@ -207,7 +207,7 @@ export default function PricingPage() {
           <p className="lede mt-6 max-w-2xl">
             Pick what fits where you are now. Move up when you outgrow it.
             Every plan starts with a 30-minute onboarding call, and if
-            it&rsquo;s not the right fit in 14 days we refund you.
+            it&rsquo;s not the right fit in 30 days we refund you.
           </p>
           <p className="mt-4 text-brand-deep font-medium">
             Month to month. Cancel anytime. No long-term contracts.

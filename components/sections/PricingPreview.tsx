@@ -107,7 +107,7 @@ export default function PricingPreview() {
           variants={reveal.fadeUp}
         >
           Every plan is month to month — <strong className="text-brand-deep">cancel anytime.</strong>{" "}
-          14-day refund if it&rsquo;s not working out. Starter and Growth
+          30-day refund if it&rsquo;s not working out. Starter and Growth
           have a one-time $549 setup fee.
         </motion.p>
         <motion.div className="mt-4 text-center" variants={reveal.fadeUp}>
