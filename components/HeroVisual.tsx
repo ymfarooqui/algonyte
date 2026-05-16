@@ -106,7 +106,12 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
       <Arrow />
 
       {/* BEFORE */}
-      <div className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: s(0.7), ease: EASE }}
+        className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
+      >
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide">
             BEFORE
@@ -165,10 +170,15 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
 
       {/* AFTER */}
-      <div className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5">
+      <motion.div
+        initial={{ opacity: 0, y: 16 }}
+        animate={inView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: s(0.7), delay: s(0.15), ease: EASE }}
+        className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
+      >
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-700 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide">
             AFTER
@@ -240,17 +250,13 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
             </span>
             <div className="flex-1">
               <p className="text-xs font-medium text-emerald-900">Followed up instantly. Revenue earned.</p>
-              <span className="block text-lg font-bold text-emerald-600 tabular-nums leading-tight min-h-[1.6rem]">
-                {revealed >= STEPS.length ? (
-                  <Money value={950} prefix="+" />
-                ) : (
-                  <span aria-hidden>&nbsp;</span>
-                )}
-              </span>
+              {revealed >= STEPS.length && (
+                <Money value={950} prefix="+" className="text-lg font-bold text-emerald-600 tabular-nums" />
+              )}
             </div>
           </motion.div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

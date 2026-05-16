@@ -1,3 +1,7 @@
+"use client";
+
+import { motion } from "motion/react";
+import { reveal } from "@/lib/motion";
 import { BookingButton } from "@/components/BookingModal";
 import HeroVisual from "@/components/HeroVisual";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
@@ -10,13 +14,21 @@ export default function Hero() {
     >
       <PageHeroBackdrop />
 
-      <div className="relative container-page pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32">
+      <motion.div
+        className="relative container-page pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32"
+        initial="hidden"
+        animate="visible"
+        variants={reveal.container(0.12, 0.05)}
+      >
         <div className="max-w-3xl mx-auto text-center px-2 sm:px-0">
-          <h1 className="h-display hero-rise-lg">
+          <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
             Your business should run{" "}
             <span className="text-brand-deep">while you sleep.</span>
-          </h1>
-          <p className="mt-6 text-sm font-medium uppercase tracking-wider text-brand-deep/80 hero-rise hero-rise-d1">
+          </motion.h1>
+          <motion.p
+            className="mt-6 text-sm font-medium uppercase tracking-wider text-brand-deep/80"
+            variants={reveal.fadeUp}
+          >
             {["AI Receptionist", "Voice Agents", "CRM + Pipeline", "Reputation Manager"].map(
               (item, i) => (
                 <span key={item} className="whitespace-nowrap">
@@ -30,24 +42,36 @@ export default function Hero() {
                 </span>
               )
             )}
-          </p>
+          </motion.p>
         </div>
 
-        <div className="mt-12 mx-auto max-w-4xl hero-rise hero-rise-d2">
+        <motion.div
+          className="mt-12 mx-auto max-w-4xl"
+          variants={reveal.fadeUp}
+        >
           <HeroVisual />
-        </div>
+        </motion.div>
 
         <div className="mt-10 mx-auto max-w-2xl text-center px-2 sm:px-0">
-          <p className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink leading-tight [text-wrap:balance] hero-rise hero-rise-d2">
+          <motion.p
+            className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink leading-tight [text-wrap:balance]"
+            variants={reveal.fadeUp}
+          >
             AI Bots that answer your leads, follow up, and book them on your
             calendar.
-          </p>
-          <p className="mt-3 text-lg text-brand-muted hero-rise hero-rise-d3">
+          </motion.p>
+          <motion.p
+            className="mt-3 text-lg text-brand-muted"
+            variants={reveal.fadeUp}
+          >
             Without you ever having to lift a finger.
-          </p>
+          </motion.p>
         </div>
 
-        <div className="mt-8 flex flex-wrap justify-center gap-3 hero-rise hero-rise-d4">
+        <motion.div
+          className="mt-8 flex flex-wrap justify-center gap-3"
+          variants={reveal.fadeUp}
+        >
           <BookingButton className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand-deep px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-brand-deep/30 ring-1 ring-brand-deep/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-ink hover:shadow-xl hover:shadow-brand-deep/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2">
             <span
               aria-hidden
@@ -69,8 +93,9 @@ export default function Hero() {
               />
             </svg>
           </BookingButton>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
+
     </section>
   );
 }
