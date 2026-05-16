@@ -59,6 +59,17 @@ Each must be 800+ words of unique content (no template-with-city-swap). Add to s
 - Refresh `llms.txt` if pricing or service area changes.
 - Verify schema still validates (Schema.org sometimes deprecates fields).
 
+## Per-page build checklist
+
+Apply to every new page before shipping:
+
+- [ ] **Every `<Image>` and `<img>` has a descriptive `alt`** — never empty (`alt=""`) on content images. Bing flags empties as "missing alt". Use empty alt **only** for purely decorative images that already have an adjacent text label, and even then prefer a real description.
+- [ ] Per-page `metadata` (title, description, canonical, openGraph).
+- [ ] BreadcrumbList schema via `lib/breadcrumbs.ts`.
+- [ ] Add route to `app/sitemap.ts`.
+- [ ] 800+ words of unique content (no template-with-city-swap).
+- [ ] Validate at https://validator.schema.org and https://pagespeed.web.dev.
+
 ## Open questions for Yaseen
 
 1. GSC: do you want DNS TXT verification, or should I add the meta tag once you give me the token?
