@@ -30,10 +30,10 @@ export default function Header() {
         <div className="absolute -right-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl" />
       </div>
 
-      <div className="container-page relative flex items-center justify-between gap-4">
+      <div className="container-page relative flex items-center justify-between gap-4 md:grid md:grid-cols-[auto_1fr_auto]">
         <Link
           href="/"
-          className="-ml-4 sm:-ml-6 flex items-center gap-2"
+          className="-ml-4 sm:-ml-6 flex items-center gap-2 md:justify-self-start"
           aria-label="Algonyte Labs home"
         >
           <div className="h-28 w-28 sm:h-32 sm:w-32 overflow-hidden flex items-center justify-center drop-shadow-[0_0_24px_rgba(168,85,247,0.5)]">
@@ -46,7 +46,7 @@ export default function Header() {
               className="h-full w-full object-contain scale-[2.1] translate-y-3"
             />
           </div>
-          <div className="flex flex-col items-center leading-none">
+          <div className="flex md:hidden flex-col items-center leading-none">
             <span className="text-3xl sm:text-4xl font-bold tracking-[0.18em] text-white">
               ALGONYTE
             </span>
@@ -66,11 +66,34 @@ export default function Header() {
           </div>
         </Link>
 
+        <Link
+          href="/"
+          aria-label="Algonyte Labs home"
+          className="hidden md:flex flex-col items-center leading-none justify-self-center w-full max-w-3xl"
+        >
+          <span className="block w-full text-center text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.35em] lg:tracking-[0.45em] text-white">
+            ALGONYTE
+          </span>
+          <div className="mt-3 flex items-center gap-3 w-full">
+            <span
+              aria-hidden
+              className="h-px flex-1 bg-gradient-to-r from-transparent via-brand-violet to-brand-violet"
+            />
+            <span className="text-base lg:text-lg font-semibold tracking-[0.5em] text-white whitespace-nowrap">
+              LABS
+            </span>
+            <span
+              aria-hidden
+              className="h-px flex-1 bg-gradient-to-l from-transparent via-brand-primary to-brand-primary"
+            />
+          </div>
+        </Link>
+
         <button
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="inline-flex h-12 w-12 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-primary hover:text-brand-primary transition-colors"
+          className="md:justify-self-end inline-flex h-12 w-12 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-primary hover:text-brand-primary transition-colors"
         >
           <span className="sr-only">Menu</span>
           <svg

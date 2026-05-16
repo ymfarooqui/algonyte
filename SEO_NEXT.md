@@ -15,7 +15,7 @@ Last updated: 2026-05-13
 ### 1. Submit + verify (10 min, blocking everything downstream)
 
 - [ ] Claim Google Search Console property via DNS TXT (preferred) or set `GOOGLE_SITE_VERIFICATION` in Vercel env.
-- [ ] Submit `https://farooquidigital.com/sitemap.xml` in GSC.
+- [ ] Submit `https://algonyte.com/sitemap.xml` in GSC.
 - [ ] Submit same sitemap in Bing Webmaster (already verified).
 - [ ] Request indexing for `/locations/macomb` and `/insights/car-hub-macomb-case-study`.
 - [ ] Validate both new pages: https://validator.schema.org and https://pagespeed.web.dev.

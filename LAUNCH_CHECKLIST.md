@@ -1,4 +1,4 @@
-# Launch Checklist — Farooqui Digital
+# Launch Checklist — Algonyte Labs
 
 Last updated: 2026-05-09
 
@@ -44,7 +44,7 @@ All pre-deploy must-do items are complete. Site is deployed on Vercel, DNS is li
 
 ### 6. Search Console + sitemap submission
 - Add the site to Google Search Console (verify via Vercel meta tag or DNS TXT)
-- Submit `https://farooquidigital.com/sitemap.xml`
+- Submit `https://algonyte.com/sitemap.xml`
 - Vercel Analytics + GA4 (`G-449SQXFKS9`) are already wired ✅
 
 ### 7. Lighthouse + cross-browser pass
@@ -73,7 +73,7 @@ Add PostHog or Plausible events on the booking button + pricing-tile CTAs if you
 ## Done — ready to ship as of this revision ✅
 
 ### Legal & infrastructure
-- **Privacy Policy** at `/privacy` — full GDPR/CCPA-aware text, GHL+Stripe+Vercel+Formspree disclosures, 24/36-month retention, contact at `yaseen@farooquidigital.com`, address `545 N McClurg Ct, Chicago, IL 60611`
+- **Privacy Policy** at `/privacy` — full GDPR/CCPA-aware text, GHL+Stripe+Vercel+Formspree disclosures, 24/36-month retention, contact at `yaseen@algonyte.com`, address `545 N McClurg Ct, Chicago, IL 60611`
 - **Terms of Service** at `/terms` — Illinois governing law, AI output disclaimer, subscription/cancellation/refund terms, IP, indemnity, liability cap
 - **Footer** links Privacy + Terms
 - **Vercel deploy** live, `NEXT_PUBLIC_FORMSPREE_ENDPOINT` env var configured ✅
