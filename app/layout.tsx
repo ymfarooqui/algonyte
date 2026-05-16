@@ -6,6 +6,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 import MotionRoot from "@/components/MotionRoot";
+import ChatWidget from "@/components/ChatWidget";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
@@ -148,12 +149,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </BookingProvider>
         </MotionRoot>
         <Analytics />
-        <Script
-          src="https://widgets.leadconnectorhq.com/loader.js"
-          data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="69fee264ba1fcefce9ee914b"
-          strategy="lazyOnload"
-        />
+        <ChatWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}

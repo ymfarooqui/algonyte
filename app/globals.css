@@ -66,6 +66,23 @@ body {
   }
 }
 
+/* Above-the-fold entrance: transform-only so paint is not blocked.
+   Content is fully opaque from the first frame — preserves LCP. */
+@keyframes hero-rise {
+  from { transform: translate3d(0, 18px, 0); }
+  to   { transform: translate3d(0, 0, 0); }
+}
+.hero-rise {
+  animation: hero-rise 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-rise-lg {
+  animation: hero-rise 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-rise-d1 { animation-delay: 0.08s; }
+.hero-rise-d2 { animation-delay: 0.16s; }
+.hero-rise-d3 { animation-delay: 0.24s; }
+.hero-rise-d4 { animation-delay: 0.32s; }
+
 /* Aurora background — slow drifting radial blobs. Apply via .aurora on a
    relatively-positioned ancestor; child .aurora-layer divs are absolutely
    positioned full-bleed and animated. Tuned for the brand violet/primary. */

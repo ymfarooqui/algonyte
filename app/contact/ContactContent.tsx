@@ -67,7 +67,11 @@ function ContactBody() {
                 </motion.li>
                 <motion.li className="flex gap-3" variants={reveal.fadeUp}>
                   <span aria-hidden className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                  We reply within one business day.
+                  Onboarded in days, not months.
+                </motion.li>
+                <motion.li className="flex gap-3" variants={reveal.fadeUp}>
+                  <span aria-hidden className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
+                  Zero obligation walkthrough.
                 </motion.li>
               </>
             )}

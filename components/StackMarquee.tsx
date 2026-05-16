@@ -148,8 +148,7 @@ function Chip({ item, variant }: { item: Item; variant: "in" | "out" }) {
           // eslint-disable-next-line @next/next/no-img-element
           <img
             src={item.logo}
-            alt=""
-            aria-hidden
+            alt={`${item.label} logo`}
             className="h-5 w-5 object-contain"
           />
         ) : (

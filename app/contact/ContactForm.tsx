@@ -17,7 +17,7 @@ export default function ContactForm() {
           title="CRM Software Registration"
           style={{
             width: "100%",
-            height: "1830px",
+            height: "794px",
             border: "none",
             borderRadius: "3px",
           }}
@@ -29,7 +29,7 @@ export default function ContactForm() {
           data-deactivation-type="neverDeactivate"
           data-deactivation-value=""
           data-form-name="CRM Software Registration"
-          data-height="1830"
+          data-height="794"
           data-layout-iframe-id={`inline-${FORM_ID}`}
           data-form-id={FORM_ID}
         />
@@ -54,7 +54,7 @@ export default function ContactForm() {
 
       <Script
         src="https://link.msgsndr.com/js/form_embed.js"
-        strategy="lazyOnload"
+        strategy="afterInteractive"
       />
     </div>
   );
