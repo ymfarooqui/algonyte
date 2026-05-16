@@ -47,7 +47,7 @@ export function BookingProvider({ children }: { children: ReactNode }) {
             onClick={close}
             className="absolute inset-0 bg-brand-ink/60 backdrop-blur-sm"
           />
-          <div className="relative w-full max-w-3xl max-h-[90vh] overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-brand-ink/10">
+          <div className="relative w-full max-w-3xl max-h-[90vh] flex flex-col overflow-hidden rounded-2xl bg-white shadow-2xl ring-1 ring-brand-ink/10">
             <button
               aria-label="Close booking dialog"
               onClick={close}
@@ -57,14 +57,16 @@ export function BookingProvider({ children }: { children: ReactNode }) {
                 <path d="M6 6l12 12M18 6L6 18" />
               </svg>
             </button>
-            <iframe
-              src={calendarSrc}
-              title="Book a call"
-              loading="lazy"
-              style={{ width: "100%", border: "none", height: "min(85vh, 760px)" }}
-              scrolling="no"
-            />
-            <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+            <div className="flex-1 overflow-y-auto overscroll-contain">
+              <iframe
+                src={calendarSrc}
+                title="Book a call"
+                loading="lazy"
+                className="block w-full"
+                style={{ border: "none", minHeight: "760px" }}
+              />
+              <Script src="https://link.msgsndr.com/js/form_embed.js" strategy="lazyOnload" />
+            </div>
           </div>
         </div>
       )}

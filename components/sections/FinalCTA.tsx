@@ -3,6 +3,7 @@
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
 import { BookingButton } from "@/components/BookingModal";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 export default function FinalCTA({
   title = "Want to see what this could look like for you?",
@@ -11,8 +12,10 @@ export default function FinalCTA({
 } = {}) {
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-white via-brand-accent to-white">
+      <div className="grain" aria-hidden />
+      <CursorSpotlight />
       <motion.div
-        className="container-page py-24 sm:py-28 text-center"
+        className="relative container-page py-24 sm:py-28 text-center"
         initial="hidden"
         whileInView="visible"
         viewport={inView}
@@ -35,10 +38,6 @@ export default function FinalCTA({
           </BookingButton>
         </motion.div>
       </motion.div>
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl"
-      />
     </section>
   );
 }

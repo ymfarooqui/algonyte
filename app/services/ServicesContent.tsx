@@ -9,6 +9,7 @@ import ServicesFlowVisual from "@/components/ServicesFlowVisual";
 import ServicesHeroStack from "@/components/ServicesHeroStack";
 import StackMarquee from "@/components/StackMarquee";
 import { faqs } from "./faqs";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
@@ -148,6 +149,7 @@ export default function ServicesContent() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
           <motion.div
             initial="hidden"
@@ -201,10 +203,6 @@ export default function ServicesContent() {
             <ServicesHeroStack />
           </motion.div>
         </div>
-        <div
-          aria-hidden
-          className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl"
-        />
       </section>
 
       <section className="relative bg-gradient-to-b from-white to-brand-soft">

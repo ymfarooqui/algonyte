@@ -126,6 +126,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             gtag('config', 'G-449SQXFKS9');
           `}
         </Script>
+        <Script id="microsoft-clarity" strategy="afterInteractive">
+          {`
+            (function(c,l,a,r,i,t,y){
+              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "wra8lxf0p0");
+          `}
+        </Script>
         <noscript>
           <style>{`[style*="opacity:0"]{opacity:1!important;filter:none!important;transform:none!important}`}</style>
         </noscript>
@@ -142,7 +151,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Script
           src="https://widgets.leadconnectorhq.com/loader.js"
           data-resources-url="https://widgets.leadconnectorhq.com/chat-widget/loader.js"
-          data-widget-id="6a026c16d31db4433a30fb5e"
+          data-widget-id="69fee264ba1fcefce9ee914b"
           strategy="lazyOnload"
         />
         <script

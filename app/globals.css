@@ -12,6 +12,13 @@ html {
 
 body {
   @apply bg-white text-brand-ink font-sans antialiased;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  @apply bg-brand-primary/30 text-brand-ink;
 }
 
 @layer components {
@@ -22,24 +29,105 @@ body {
     @apply py-20 sm:py-24;
   }
   .h-display {
-    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-brand-ink;
+    @apply text-4xl sm:text-5xl lg:text-6xl font-semibold tracking-tight text-brand-ink leading-[1.05];
+    text-wrap: balance;
   }
   .h-section {
-    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-brand-ink;
+    @apply text-3xl sm:text-4xl font-semibold tracking-tight text-brand-ink leading-[1.1];
+    text-wrap: balance;
   }
   .lede {
     @apply text-lg sm:text-xl text-brand-muted leading-relaxed;
+    text-wrap: pretty;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-brand-deep px-6 py-3 text-base font-medium text-white shadow-sm transition hover:bg-brand-ink focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full bg-brand-deep px-6 py-3 text-base font-medium text-white shadow-sm transition-all duration-200 hover:bg-brand-ink hover:-translate-y-0.5 hover:shadow-md focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white px-6 py-3 text-base font-medium text-brand-deep transition hover:bg-brand-accent focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
+    @apply inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white px-6 py-3 text-base font-medium text-brand-deep transition-all duration-200 hover:bg-brand-accent hover:border-brand-deep/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2;
   }
   .card {
-    @apply rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition duration-200 hover:-translate-y-1 hover:shadow-md;
+    @apply rounded-2xl border border-slate-200 bg-white p-7 shadow-sm transition-all duration-200 ease-out hover:-translate-y-1 hover:shadow-lg hover:border-slate-300;
   }
   .eyebrow {
     @apply text-sm font-medium uppercase tracking-wider text-brand-deep;
   }
+  .prose-link {
+    @apply text-brand-deep underline-offset-4 transition-colors duration-150 hover:text-brand-primary hover:underline;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Aurora background — slow drifting radial blobs. Apply via .aurora on a
+   relatively-positioned ancestor; child .aurora-layer divs are absolutely
+   positioned full-bleed and animated. Tuned for the brand violet/primary. */
+@keyframes aurora-drift-a {
+  0%, 100% { transform: translate3d(-10%, -10%, 0) scale(1); }
+  33%      { transform: translate3d(20%, 10%, 0) scale(1.2); }
+  66%      { transform: translate3d(-5%, 25%, 0) scale(0.95); }
+}
+@keyframes aurora-drift-b {
+  0%, 100% { transform: translate3d(15%, 20%, 0) scale(1.1); }
+  50%      { transform: translate3d(-20%, -10%, 0) scale(1); }
+}
+@keyframes aurora-drift-c {
+  0%, 100% { transform: translate3d(30%, -20%, 0) scale(1); }
+  50%      { transform: translate3d(0%, 15%, 0) scale(1.25); }
+}
+
+.aurora {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  filter: blur(60px) saturate(1.1);
+}
+.aurora-layer {
+  position: absolute;
+  inset: -20%;
+  border-radius: 9999px;
+  opacity: 0.55;
+  will-change: transform;
+}
+.aurora-a { background: radial-gradient(closest-side, #A855F7 0%, transparent 70%); animation: aurora-drift-a 22s ease-in-out infinite; }
+.aurora-b { background: radial-gradient(closest-side, #22D3EE 0%, transparent 70%); animation: aurora-drift-b 28s ease-in-out infinite; opacity: 0.45; }
+.aurora-c { background: radial-gradient(closest-side, #6366F1 0%, transparent 70%); animation: aurora-drift-c 34s ease-in-out infinite; opacity: 0.4; }
+
+/* Film-grain overlay. Inline SVG turbulence — no network request, no JS.
+   Use as a pointer-events-none overlay div on any section. */
+.grain {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.045;
+  mix-blend-mode: multiply;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.6 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+  background-size: 200px 200px;
+}
+.grain-light {
+  mix-blend-mode: screen;
+  opacity: 0.06;
+}
+
+/* Cursor-following spotlight. The parent sets `--mx` / `--my` (px) via JS,
+   and this overlay paints a radial gradient at that position. */
+.spotlight {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(
+    600px circle at var(--mx, 50%) var(--my, 50%),
+    rgba(168, 85, 247, 0.18),
+    rgba(34, 211, 238, 0.08) 35%,
+    transparent 60%
+  );
+  transition: background 120ms linear;
 }

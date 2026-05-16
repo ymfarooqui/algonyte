@@ -1,5 +1,12 @@
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+// We intentionally avoid `filter: blur(...)` in reveal variants. Browsers
+// spin up a GPU compositor layer for the duration of a filter animation;
+// when the filter returns to `blur(0px)` the layer is torn down, causing
+// a one-frame repaint flicker on the revealed element (and any nested
+// hover/transition state). Opacity + translate delivers the same premium
+// feel without the post-animation flicker.
+
 export const reveal = {
   container: (stagger = 0.11, delay = 0.1) => ({
     hidden: {},
@@ -8,30 +15,27 @@ export const reveal = {
     },
   }),
   fadeUp: {
-    hidden: { opacity: 0, y: 18, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: 18 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: { duration: 0.55, ease: EASE },
     },
   },
   fadeUpLg: {
-    hidden: { opacity: 0, y: 24, filter: "blur(8px)" },
+    hidden: { opacity: 0, y: 24 },
     visible: {
       opacity: 1,
       y: 0,
-      filter: "blur(0px)",
       transition: { duration: 0.7, ease: EASE },
     },
   },
   dropTile: {
-    hidden: { opacity: 0, y: -56, scale: 0.9, filter: "blur(6px)" },
+    hidden: { opacity: 0, y: -56, scale: 0.92 },
     visible: {
       opacity: 1,
       y: 0,
       scale: 1,
-      filter: "blur(0px)",
       transition: { duration: 0.55, ease: EASE },
     },
   },

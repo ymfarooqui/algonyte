@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 const title = "AI Receptionist | Answer, Qualify, and Book Every Lead 24/7";
 const description =
@@ -73,6 +76,7 @@ export default function AIReceptionistPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">AI Receptionist</p>
@@ -209,6 +213,8 @@ export default function AIReceptionistPage() {
         </div>
       </section>
 
+      <IntegrationsStrip />
+
       <section className="section">
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">FAQ</p>
@@ -224,8 +230,9 @@ export default function AIReceptionistPage() {
         </div>
       </section>
 
-      <section className="section bg-brand-deep text-white">
-        <div className="container-page max-w-3xl text-center">
+      <section className="relative overflow-hidden section bg-brand-deep text-white">
+        <CursorSpotlight />
+        <div className="relative container-page max-w-3xl text-center">
           <h2 className="h-section text-white">Stop losing leads this week.</h2>
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
             30-minute walkthrough. We&rsquo;ll show you exactly what the system

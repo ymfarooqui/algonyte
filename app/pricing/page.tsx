@@ -5,6 +5,7 @@ import FoundingStrip from "@/components/sections/FoundingStrip";
 import { plans, isPlaceholder } from "@/lib/constants";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
@@ -198,6 +199,7 @@ export default function PricingPage() {
       <FoundingStrip />
 
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <p className="eyebrow mb-4">Pricing</p>
           <h1 className="h-display max-w-3xl">
@@ -230,9 +232,11 @@ export default function PricingPage() {
                   }`}
                 >
                   {featured && (
-                    <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                      Most Popular
-                    </span>
+                    <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
+                      <span className="pointer-events-auto rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
+                        Most Popular
+                      </span>
+                    </div>
                   )}
                   <h2 className="text-xl font-semibold text-brand-deep">{p.name}</h2>
                   <div className="mt-3 flex items-baseline gap-1">

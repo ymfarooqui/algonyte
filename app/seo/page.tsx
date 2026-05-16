@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 const title = "Local SEO | Rank in the Google Map Pack";
 const description =
@@ -65,6 +67,7 @@ export default function SEOPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Local SEO</p>
@@ -159,8 +162,9 @@ export default function SEOPage() {
         </div>
       </section>
 
-      <section className="section bg-brand-deep text-white">
-        <div className="container-page max-w-3xl text-center">
+      <section className="relative overflow-hidden section bg-brand-deep text-white">
+        <CursorSpotlight />
+        <div className="relative container-page max-w-3xl text-center">
           <h2 className="h-section text-white">Stop being invisible on Google.</h2>
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
             30-minute walkthrough. We&rsquo;ll pull your current GBP and Map

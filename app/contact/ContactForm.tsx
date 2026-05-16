@@ -1,21 +1,38 @@
 "use client";
 
+import Script from "next/script";
 import { useBooking } from "@/components/BookingModal";
+
+const FORM_ID = "k6lR7kdiOU2ngqNmphOQ";
 
 export default function ContactForm() {
   const { open } = useBooking();
 
   return (
-    <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm space-y-6">
-      <div>
-        <h2 className="text-xl font-semibold text-brand-ink">
-          Start the conversation
-        </h2>
-        <p className="mt-2 text-brand-ink/80">
-          Tap the chat in the bottom-right corner and tell us a bit about your
-          business. We&rsquo;ll come back the same business day with a straight
-          answer on whether we can help.
-        </p>
+    <div className="rounded-2xl border border-slate-200 bg-white p-4 sm:p-6 shadow-sm space-y-6">
+      <div className="overflow-hidden rounded-xl">
+        <iframe
+          src={`https://api.leadconnectorhq.com/widget/form/${FORM_ID}`}
+          id={`inline-${FORM_ID}`}
+          title="CRM Software Registration"
+          style={{
+            width: "100%",
+            height: "1830px",
+            border: "none",
+            borderRadius: "3px",
+          }}
+          data-layout="{'id':'INLINE'}"
+          data-trigger-type="alwaysShow"
+          data-trigger-value=""
+          data-activation-type="alwaysActivated"
+          data-activation-value=""
+          data-deactivation-type="neverDeactivate"
+          data-deactivation-value=""
+          data-form-name="CRM Software Registration"
+          data-height="1830"
+          data-layout-iframe-id={`inline-${FORM_ID}`}
+          data-form-id={FORM_ID}
+        />
       </div>
 
       <div className="rounded-xl bg-brand-soft p-5">
@@ -34,6 +51,11 @@ export default function ContactForm() {
           Book a call
         </button>
       </div>
+
+      <Script
+        src="https://link.msgsndr.com/js/form_embed.js"
+        strategy="lazyOnload"
+      />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Hero from "@/components/sections/Hero";
 import FoundingStrip from "@/components/sections/FoundingStrip";
 import StatsStrip from "@/components/sections/StatsStrip";
+import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
 import ProblemHook from "@/components/sections/ProblemHook";
 import HowItWorks from "@/components/sections/HowItWorks";
 import SocialProof from "@/components/sections/SocialProof";
@@ -15,6 +16,7 @@ export default function Home() {
       <Hero />
       <FoundingStrip />
       <StatsStrip />
+      <IntegrationsStrip />
       <ProblemHook />
       <HowItWorks />
       <SocialProof />

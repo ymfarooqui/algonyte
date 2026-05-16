@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 const insightsTitle = "Insights: AI Receptionist, Missed Calls, and Follow-Up";
 const insightsDescription =
@@ -18,6 +19,7 @@ export default function InsightsPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <p className="eyebrow mb-4">Insights</p>
           <h1 className="h-display max-w-3xl">

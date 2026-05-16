@@ -2,8 +2,10 @@
 
 import Link from "next/link";
 import Image from "next/image";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "next/navigation";
 import { BookingButton } from "@/components/BookingModal";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 const links = [
   { href: "/ai-receptionist", label: "AI Receptionist" },
@@ -16,27 +18,57 @@ const links = [
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [prevPathname, setPrevPathname] = useState<string | null>(null);
+  const pathname = usePathname();
+  const headerRef = useRef<HTMLElement | null>(null);
+
+  // Reset the open menu when the route changes. Following React's
+  // "adjusting state on prop change" pattern (setState during render is
+  // preferred over setState inside useEffect).
+  if (pathname !== prevPathname) {
+    setPrevPathname(pathname);
+    if (open) setOpen(false);
+  }
+
+  useEffect(() => {
+    if (!open) return;
+    const onDown = (e: PointerEvent) => {
+      const el = headerRef.current;
+      if (el && !el.contains(e.target as Node)) setOpen(false);
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("pointerdown", onDown);
+    document.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("pointerdown", onDown);
+      document.removeEventListener("keydown", onKey);
+    };
+  }, [open]);
 
   return (
     <header
+      ref={headerRef}
       className="sticky top-0 z-50 border-b border-white/10 backdrop-blur"
       style={{
         background:
           "linear-gradient(90deg, #0A0A14 0%, #0F0B1F 50%, #0A0A14 100%)",
       }}
     >
+      <CursorSpotlight />
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         <div className="absolute -left-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-violet/20 blur-3xl" />
         <div className="absolute -right-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl" />
       </div>
 
-      <div className="container-page relative flex items-center justify-between gap-4 md:grid md:grid-cols-[auto_1fr_auto]">
+      <div className="container-page relative grid grid-cols-[auto_1fr_auto] items-center gap-3 sm:gap-4">
         <Link
           href="/"
-          className="-ml-4 sm:-ml-6 flex items-center gap-2 md:justify-self-start"
+          className="-ml-2 sm:-ml-4 md:-ml-6 flex items-center justify-self-start"
           aria-label="Algonyte Labs home"
         >
-          <div className="h-28 w-28 sm:h-32 sm:w-32 overflow-hidden flex items-center justify-center drop-shadow-[0_0_24px_rgba(168,85,247,0.5)]">
+          <div className="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 overflow-hidden flex items-center justify-center drop-shadow-[0_0_24px_rgba(168,85,247,0.5)]">
             <Image
               src="/logo-mark.png"
               alt=""
@@ -46,40 +78,22 @@ export default function Header() {
               className="h-full w-full object-contain scale-[2.1] translate-y-3"
             />
           </div>
-          <div className="flex md:hidden flex-col items-center leading-none">
-            <span className="text-3xl sm:text-4xl font-bold tracking-[0.18em] text-white">
-              ALGONYTE
-            </span>
-            <div className="mt-3 flex items-center gap-2">
-              <span
-                aria-hidden
-                className="h-px w-10 sm:w-14 bg-gradient-to-r from-transparent via-brand-violet to-brand-violet"
-              />
-              <span className="text-sm sm:text-base font-semibold tracking-[0.4em] text-white">
-                LABS
-              </span>
-              <span
-                aria-hidden
-                className="h-px w-10 sm:w-14 bg-gradient-to-l from-transparent via-brand-primary to-brand-primary"
-              />
-            </div>
-          </div>
         </Link>
 
         <Link
           href="/"
           aria-label="Algonyte Labs home"
-          className="hidden md:flex flex-col items-center leading-none justify-self-center w-full max-w-3xl"
+          className="flex flex-col items-center justify-self-center leading-none w-full min-w-0 max-w-3xl"
         >
-          <span className="block w-full text-center text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.35em] lg:tracking-[0.45em] text-white">
+          <span className="block w-full text-center text-2xl sm:text-3xl md:text-5xl lg:text-6xl xl:text-7xl font-bold tracking-[0.18em] sm:tracking-[0.24em] md:tracking-[0.35em] lg:tracking-[0.45em] text-white">
             ALGONYTE
           </span>
-          <div className="mt-3 flex items-center gap-3 w-full">
+          <div className="mt-2 sm:mt-3 flex items-center gap-2 sm:gap-3 w-full">
             <span
               aria-hidden
               className="h-px flex-1 bg-gradient-to-r from-transparent via-brand-violet to-brand-violet"
             />
-            <span className="text-base lg:text-lg font-semibold tracking-[0.5em] text-white whitespace-nowrap">
+            <span className="text-[11px] sm:text-sm md:text-base lg:text-lg font-semibold tracking-[0.35em] sm:tracking-[0.4em] md:tracking-[0.5em] text-white whitespace-nowrap">
               LABS
             </span>
             <span
@@ -93,7 +107,7 @@ export default function Header() {
           aria-label="Toggle menu"
           aria-expanded={open}
           onClick={() => setOpen((v) => !v)}
-          className="md:justify-self-end inline-flex h-12 w-12 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-primary hover:text-brand-primary transition-colors"
+          className="justify-self-end inline-flex h-11 w-11 sm:h-12 sm:w-12 items-center justify-center rounded-md border border-white/20 text-white hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-transparent transition-colors"
         >
           <span className="sr-only">Menu</span>
           <svg
@@ -127,7 +141,7 @@ export default function Header() {
                 key={l.label}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-1 hover:text-brand-primary transition-colors"
+                className="py-1 hover:text-brand-primary focus:outline-none focus-visible:text-brand-primary transition-colors"
               >
                 {l.label}
               </Link>

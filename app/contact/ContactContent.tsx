@@ -30,10 +30,10 @@ function ContactBody() {
           <motion.p className="lede mt-5" variants={reveal.fadeUp}>
             {isFounding ? (
               <>
-                Open the chat in the bottom-right corner and tell us:
-                business name, what you do, where you operate, and why
-                you want a founding spot. We&rsquo;ll come back the same
-                business day with a yes, no, or a few clarifying questions.
+                Fill out the form and tell us: business name, what you do,
+                where you operate, and why you want a founding spot.
+                We&rsquo;ll come back the same business day with a yes, no,
+                or a few clarifying questions.
               </>
             ) : (
               <>

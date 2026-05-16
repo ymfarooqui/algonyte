@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 const values = [
   {
@@ -33,6 +34,7 @@ export default function AboutContent() {
   return (
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+        <PageHeroBackdrop />
         <motion.div
           className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20"
           initial="hidden"
@@ -154,25 +156,27 @@ export default function AboutContent() {
                 variants={reveal.container(0.1, 0.1)}
               >
                 <motion.p variants={reveal.fadeUp}>
-                  I&rsquo;m a QA and automation engineer who has spent years
-                  building AI systems for big insurance carriers and tech
-                  platforms. I started Algonyte Labs because the same tools
-                  these companies use can work for any business that gets leads
-                  and books appointments.
+                  Yaseen is a Digital Strategy Specialist focused on
+                  AI-Enablement and Quality and Release, who has spent years
+                  building AI systems for large insurance carriers, enterprise
+                  tech platforms, and businesses across retail and service
+                  industries. He founded Algonyte Labs to bring the same tools
+                  these companies rely on to any business that gets leads and
+                  books appointments.
                 </motion.p>
                 <motion.p variants={reveal.fadeUp}>
-                  I&rsquo;m the face of the company, but I&rsquo;m not the
-                  whole company. We have engineers, marketers, and AI
-                  specialists who do the actual work. When you sign on, you
-                  get a team.
+                  Yaseen is the face of the company, but he isn&rsquo;t the
+                  whole company. Behind him is a team of engineers, marketers,
+                  and AI specialists who do the actual work. When you sign on,
+                  you get all of them.
                 </motion.p>
                 <motion.p
                   className="text-brand-ink font-medium"
                   variants={reveal.fadeUp}
                 >
                   This isn&rsquo;t a marketing agency that added &ldquo;AI&rdquo;
-                  to the name. The systems we build are the same ones running
-                  in production today.
+                  to the name. The systems Algonyte Labs builds are the same
+                  ones running in production today.
                 </motion.p>
               </motion.div>
             </motion.div>
@@ -200,11 +204,13 @@ export default function AboutContent() {
             variants={reveal.container(0.1, 0.1)}
           >
             {values.map((v) => (
-              <motion.div key={v.title} variants={reveal.fadeUp} className="card">
-                <h3 className="text-lg font-semibold text-brand-deep">
-                  {v.title}
-                </h3>
-                <p className="mt-2 text-brand-muted leading-relaxed">{v.body}</p>
+              <motion.div key={v.title} variants={reveal.fadeUp} className="h-full">
+                <div className="card h-full">
+                  <h3 className="text-lg font-semibold text-brand-deep">
+                    {v.title}
+                  </h3>
+                  <p className="mt-2 text-brand-muted leading-relaxed">{v.body}</p>
+                </div>
               </motion.div>
             ))}
           </motion.div>

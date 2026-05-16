@@ -1,11 +1,13 @@
 import Link from "next/link";
+import CursorSpotlight from "@/components/CursorSpotlight";
 
 const perks = ["50% Off Setup", "30% Off Monthly", "Priority Support"];
 
 export default function FoundingStrip() {
   return (
-    <section className="bg-brand-deep py-16 sm:py-24">
-      <div className="container-page">
+    <section className="relative overflow-hidden bg-brand-deep py-16 sm:py-24">
+      <CursorSpotlight />
+      <div className="relative container-page">
         <div className="text-center mb-10">
           <p className="inline-block text-xs font-semibold uppercase tracking-[0.2em] text-brand-primary">
             Limited

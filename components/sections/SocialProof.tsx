@@ -50,17 +50,19 @@ export default function SocialProof() {
           variants={reveal.container(0.15, 0.1)}
         >
           {metrics.map((m) => (
-            <motion.div key={m.label} variants={reveal.fadeUpLg} className="card text-center">
-              <CountUp
-                to={m.to}
-                prefix={m.prefix}
-                suffix={m.suffix}
-                durationMs={1700}
-                className="block text-5xl sm:text-6xl font-semibold text-brand-deep leading-none tabular-nums"
-              />
-              <p className="mt-4 text-sm text-brand-muted uppercase tracking-wide">
-                {m.label}
-              </p>
+            <motion.div key={m.label} variants={reveal.fadeUpLg}>
+              <div className="card text-center h-full">
+                <CountUp
+                  to={m.to}
+                  prefix={m.prefix}
+                  suffix={m.suffix}
+                  durationMs={1700}
+                  className="block text-5xl sm:text-6xl font-semibold text-brand-deep leading-none tabular-nums"
+                />
+                <p className="mt-4 text-sm text-brand-muted uppercase tracking-wide">
+                  {m.label}
+                </p>
+              </div>
             </motion.div>
           ))}
         </motion.div>

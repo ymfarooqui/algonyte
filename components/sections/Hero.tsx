@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { reveal } from "@/lib/motion";
 import { BookingButton } from "@/components/BookingModal";
 import HeroVisual from "@/components/HeroVisual";
+import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 export default function Hero() {
   return (
@@ -11,13 +12,15 @@ export default function Hero() {
       id="home"
       className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white"
     >
+      <PageHeroBackdrop />
+
       <motion.div
-        className="container-page pt-20 pb-24 sm:pt-28 sm:pb-32"
+        className="relative container-page pt-16 pb-20 sm:pt-24 sm:pb-28 lg:pt-28 lg:pb-32"
         initial="hidden"
         animate="visible"
         variants={reveal.container(0.12, 0.05)}
       >
-        <div className="max-w-3xl mx-auto text-center">
+        <div className="max-w-3xl mx-auto text-center px-2 sm:px-0">
           <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
             Your business should run{" "}
             <span className="text-brand-deep">while you sleep.</span>
@@ -49,9 +52,9 @@ export default function Hero() {
           <HeroVisual />
         </motion.div>
 
-        <div className="mt-10 mx-auto max-w-2xl text-center">
+        <div className="mt-10 mx-auto max-w-2xl text-center px-2 sm:px-0">
           <motion.p
-            className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink"
+            className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink leading-tight [text-wrap:balance]"
             variants={reveal.fadeUp}
           >
             AI Bots that answer your leads, follow up, and book them on your
@@ -93,10 +96,6 @@ export default function Hero() {
         </motion.div>
       </motion.div>
 
-      <div
-        aria-hidden
-        className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl"
-      />
     </section>
   );
 }

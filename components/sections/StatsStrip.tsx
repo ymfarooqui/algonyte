@@ -11,9 +11,15 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <section className="border-y border-slate-200 bg-white">
+    <section className="relative overflow-hidden border-y border-brand-deep/10 bg-gradient-to-b from-white via-brand-accent/40 to-white">
+      {/* subtle ambient glow on either side */}
+      <div aria-hidden className="pointer-events-none absolute inset-0">
+        <div className="absolute -left-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-violet/20 blur-3xl" />
+        <div className="absolute -right-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl" />
+      </div>
+
       <motion.div
-        className="container-page grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-slate-200"
+        className="relative container-page grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-brand-deep/10"
         initial="hidden"
         whileInView="visible"
         viewport={inView}
@@ -23,12 +29,12 @@ export default function StatsStrip() {
           <motion.div
             key={s.label}
             variants={reveal.fadeUpLg}
-            className="px-6 py-10 text-center"
+            className="px-6 py-12 sm:py-14 text-center"
           >
-            <div className="text-5xl sm:text-6xl font-semibold text-brand-deep leading-none tabular-nums">
+            <div className="bg-brand-gradient bg-clip-text text-transparent text-5xl sm:text-6xl font-semibold leading-none tabular-nums">
               {s.value}
             </div>
-            <p className="mt-3 text-sm text-brand-muted uppercase tracking-wide">
+            <p className="mt-4 text-sm font-medium text-brand-deep/70 uppercase tracking-[0.18em]">
               {s.label}
             </p>
           </motion.div>

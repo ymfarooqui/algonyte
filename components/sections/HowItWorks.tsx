@@ -7,18 +7,18 @@ import { useAnimSpeed } from "@/lib/useAnimSpeed";
 const steps = [
   {
     n: "01",
-    title: "Catch the lead",
-    body: "Anyone who fills out your form, calls, or messages you gets pulled into one place automatically.",
+    title: "Every inquiry, in one place",
+    body: "Calls, texts, form fills, and DMs land in a single inbox the moment they come in — nothing gets buried.",
   },
   {
     n: "02",
-    title: "Reply for you",
-    body: "An AI assistant texts or calls them right away, asks the questions you'd ask, and figures out if they're worth your time.",
+    title: "A reply within seconds",
+    body: "An AI assistant responds in your voice, answers the common questions, and gathers the details you'd want to know.",
   },
   {
     n: "03",
-    title: "Schedule the appointment",
-    body: "When they're ready, the appointment goes straight on your calendar. So your day fills up while you stay focused on the actual jobs.",
+    title: "Booked on your calendar",
+    body: "When they're ready to move forward, the appointment drops onto your calendar — no back-and-forth, no chasing.",
   },
 ];
 
@@ -39,7 +39,7 @@ export default function HowItWorks() {
           How It Works
         </motion.p>
         <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
-          Three things happen. You don&rsquo;t do any of them.
+          Every lead handled, end to end.
         </motion.h2>
 
         <div className="relative mt-12 grid gap-6 md:grid-cols-3 md:gap-5">
@@ -57,23 +57,21 @@ export default function HowItWorks() {
             transition={{ duration: s(1.1), delay: s(0.5), ease: EASE }}
           />
           {steps.map((s) => (
-            <motion.div
-              key={s.n}
-              variants={reveal.fadeUp}
-              className="card relative"
-            >
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
-                  Step {s.n}
-                </span>
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-brand-deep font-semibold text-sm">
-                  {s.n}
-                </span>
+            <motion.div key={s.n} variants={reveal.fadeUp} className="h-full">
+              <div className="card relative h-full">
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
+                    Step {s.n}
+                  </span>
+                  <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent text-brand-deep font-semibold text-sm">
+                    {s.n}
+                  </span>
+                </div>
+                <h3 className="mt-5 text-2xl font-semibold text-brand-deep">
+                  {s.title}
+                </h3>
+                <p className="mt-3 text-brand-muted leading-relaxed">{s.body}</p>
               </div>
-              <h3 className="mt-5 text-2xl font-semibold text-brand-deep">
-                {s.title}
-              </h3>
-              <p className="mt-3 text-brand-muted leading-relaxed">{s.body}</p>
             </motion.div>
           ))}
         </div>

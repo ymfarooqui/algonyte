@@ -42,19 +42,20 @@ export default function PricingPreview() {
           {plans.map((p) => {
             const featured = "featured" in p && p.featured;
             return (
-              <motion.div
-                key={p.id}
-                variants={reveal.fadeUpLg}
-                className={`card relative flex flex-col ${
-                  featured
-                    ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"
-                    : ""
-                }`}
-              >
+              <motion.div key={p.id} variants={reveal.fadeUpLg} className="h-full">
+                <div
+                  className={`card relative flex h-full flex-col ${
+                    featured
+                      ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"
+                      : ""
+                  }`}
+                >
                 {featured && (
-                  <span className="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
-                    Most Popular
-                  </span>
+                  <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
+                    <span className="pointer-events-auto rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
+                      Most Popular
+                    </span>
+                  </div>
                 )}
                 <h3 className="text-xl font-semibold text-brand-deep">{p.name}</h3>
                 <div className="mt-3 flex items-baseline gap-1">
@@ -97,6 +98,7 @@ export default function PricingPreview() {
                 >
                   {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                 </a>
+                </div>
               </motion.div>
             );
           })}
