@@ -65,3 +65,16 @@ for (const [path, name] of pages) {
 
 await browser.close();
 console.log(JSON.stringify(report, null, 2));
+
+if (process.env.CI) {
+  const failures = report.filter((r) => r.error || r.hasHOverflow);
+  if (failures.length > 0) {
+    console.error(
+      `\nMobile audit failed: ${failures.length} page(s) with overflow or errors`,
+    );
+    for (const f of failures) {
+      console.error(`  ${f.path}: ${f.error ?? `scrollWidth=${f.scrollWidth} > viewport=${f.viewportWidth}`}`);
+    }
+    process.exit(1);
+  }
+}
