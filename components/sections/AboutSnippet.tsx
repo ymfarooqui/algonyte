@@ -49,8 +49,8 @@ function LogoMarquee({
   const loop = [...items, ...items];
   return (
     <div className="overflow-hidden relative" aria-hidden="true">
-      <div className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-white to-transparent z-10" />
-      <div className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-white to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-brand-soft to-transparent z-10" />
+      <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-brand-soft to-transparent z-10" />
       <motion.div
         className="flex gap-4 w-max"
         animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
@@ -63,7 +63,7 @@ function LogoMarquee({
         {loop.map((c, i) => (
           <div
             key={`${c.slug}-${i}`}
-            className="flex items-center justify-center rounded-2xl border border-slate-200 bg-white py-6 px-10 min-w-[200px] h-28 shadow-sm hover:shadow-md transition-shadow"
+            className="logo-card flex items-center justify-center rounded-2xl bg-brand-soft py-6 px-10 min-w-[200px] h-28 shadow-soft"
           >
             <img
               src={`/logos/${c.slug}.svg`}
@@ -123,7 +123,7 @@ export default function AboutSnippet() {
               variants={reveal.fadeUp}
               className="flex gap-4"
             >
-              <span className="mt-2 h-2 w-2 rounded-full bg-brand-deep flex-shrink-0" />
+              <span className="mt-2 h-2 w-2 rounded-full bg-brand-primary flex-shrink-0" />
               <p className="text-brand-muted leading-relaxed">
                 <span className="font-semibold text-brand-deep">
                   {ex.company}.

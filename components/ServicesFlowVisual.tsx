@@ -699,7 +699,7 @@ export default function ServicesFlowVisual({
               onClick={() => setActive(i)}
               aria-label={`Go to stage ${i + 1}`}
               aria-pressed={i === active}
-              className={`h-1.5 rounded-full transition-all ${
+              className={`h-1.5 rounded-full transition-[width,background-color] duration-200 ease-out ${
                 i === active
                   ? "w-6 bg-brand-deep"
                   : "w-1.5 bg-brand-deep/20 hover:bg-brand-deep/40"

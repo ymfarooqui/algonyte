@@ -10,7 +10,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white"
+      className="relative overflow-hidden bg-gradient-to-b from-brand-accent/60 via-brand-soft to-brand-soft"
     >
       <PageHeroBackdrop />
 
@@ -23,10 +23,10 @@ export default function Hero() {
         <div className="max-w-3xl mx-auto text-center px-2 sm:px-0">
           <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
             Your business should run{" "}
-            <span className="text-brand-deep">while you sleep.</span>
+            <em className="not-italic text-brand-primary">while you sleep.</em>
           </motion.h1>
           <motion.p
-            className="mt-6 text-sm font-medium uppercase tracking-wider text-brand-deep/80"
+            className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-muted"
             variants={reveal.fadeUp}
           >
             {["Web Presence", "AI Receptionist", "Voice Agents", "Local SEO", "Reputation Manager"].map(
@@ -35,7 +35,7 @@ export default function Hero() {
                   {i > 0 && (
                     <span
                       aria-hidden
-                      className="inline-block h-1 w-1 rounded-full bg-brand-deep/50 mx-3 translate-y-[1px] align-middle"
+                      className="inline-block h-px w-4 bg-brand-line mx-3 translate-y-[-2px] align-middle"
                     />
                   )}
                   {item}
@@ -54,45 +54,41 @@ export default function Hero() {
 
         <div className="mt-10 mx-auto max-w-2xl text-center px-2 sm:px-0">
           <motion.p
-            className="text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink leading-tight [text-wrap:balance]"
+            className="lede"
             variants={reveal.fadeUp}
           >
-            AI Bots that answer your leads, follow up, and book them on your
-            calendar.
-          </motion.p>
-          <motion.p
-            className="mt-3 text-lg text-brand-muted"
-            variants={reveal.fadeUp}
-          >
-            Without you ever having to lift a finger.
+            AI bots that answer your leads, follow up, and book them on your
+            calendar — without you ever lifting a finger.
           </motion.p>
         </div>
 
         <motion.div
-          className="mt-8 flex flex-wrap justify-center gap-3"
+          className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3"
           variants={reveal.fadeUp}
         >
-          <BookingButton className="group relative inline-flex items-center justify-center gap-2 rounded-full bg-brand-deep px-8 py-4 text-base sm:text-lg font-semibold text-white shadow-lg shadow-brand-deep/30 ring-1 ring-brand-deep/20 transition-all duration-200 hover:-translate-y-0.5 hover:bg-brand-ink hover:shadow-xl hover:shadow-brand-deep/40 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2">
-            <span
-              aria-hidden
-              className="absolute -inset-px rounded-full bg-gradient-to-r from-brand-primary/0 via-brand-primary/40 to-brand-primary/0 opacity-0 blur-md transition-opacity duration-300 group-hover:opacity-100"
-            />
-            <span className="relative">Show me what this looks like for my business</span>
+          <BookingButton className="group btn-primary">
+            Show me what this looks like for my business
             <svg
               viewBox="0 0 24 24"
-              className="relative h-5 w-5 transition-transform duration-200 group-hover:translate-x-1"
+              className="h-4 w-4 transition-transform duration-200 ease-out group-hover:translate-x-0.5"
               fill="none"
               aria-hidden
             >
               <path
                 d="M5 12h14M13 6l6 6-6 6"
                 stroke="currentColor"
-                strokeWidth="2.2"
+                strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
             </svg>
           </BookingButton>
+          <a href="/pricing" className="btn-link">
+            See pricing
+            <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden>
+              <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
         </motion.div>
       </motion.div>
 

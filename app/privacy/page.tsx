@@ -19,7 +19,7 @@ export default function PrivacyPage() {
     <section className="section">
       <div className="container-page max-w-3xl">
         <p className="eyebrow mb-4">Legal</p>
-        <h1 className="h-display">Privacy Policy</h1>
+        <h1 className="h-display">Privacy policy</h1>
         <p className="mt-4 text-sm text-brand-muted">Last updated: {LAST_UPDATED}</p>
 
         <div className="mt-12 space-y-6 text-brand-ink/90 leading-relaxed [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-brand-deep [&_h2]:mt-12 [&_h2]:mb-4 [&_h3]:text-lg [&_h3]:font-semibold [&_h3]:text-brand-deep [&_h3]:mt-8 [&_h3]:mb-3 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_a]:text-brand-deep [&_a]:font-medium [&_a]:underline">

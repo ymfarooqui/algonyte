@@ -129,19 +129,19 @@ type Item = { label: string; icon?: React.ReactNode; logo?: string };
 function Chip({ item, variant }: { item: Item; variant: "in" | "out" }) {
   return (
     <li
-      className={`flex shrink-0 items-center gap-2.5 rounded-xl border bg-white px-4 py-2.5 text-sm font-medium ${
+      className={`flex shrink-0 items-center gap-2.5 rounded-xl bg-brand-soft shadow-soft px-4 py-2.5 text-sm font-medium ${
         variant === "in"
-          ? "border-brand-deep/15 text-brand-deep"
-          : "border-slate-200 text-brand-ink"
+          ? "text-brand-deep"
+          : "text-brand-ink"
       }`}
     >
       <span
         className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg ${
           item.logo
-            ? "bg-white"
+            ? "bg-brand-paper"
             : variant === "in"
-              ? "bg-brand-accent text-brand-deep"
-              : "bg-brand-soft text-brand-deep"
+              ? "bg-brand-accent text-brand-primary"
+              : "bg-brand-paper text-brand-primary"
         }`}
       >
         {item.logo ? (
@@ -202,9 +202,9 @@ function Row({
 export default function StackMarquee() {
   return (
     <div className="space-y-3">
-      <div className="flex items-center gap-3 text-[11px] font-semibold uppercase tracking-wider text-brand-muted">
+      <div className="flex items-center gap-3 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-muted">
         <span>Channels in</span>
-        <span className="h-px flex-1 bg-slate-200" />
+        <span className="h-px flex-1 bg-brand-line" />
         <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none">
           <path
             d="M5 12h14M13 6l6 6-6 6"
@@ -217,7 +217,7 @@ export default function StackMarquee() {
       </div>
       <Row items={channels} direction="left" variant="in" duration={42} />
 
-      <div className="flex items-center gap-3 pt-3 text-[11px] font-semibold uppercase tracking-wider text-brand-muted">
+      <div className="flex items-center gap-3 pt-3 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-muted">
         <svg viewBox="0 0 24 24" className="h-3 w-3" fill="none">
           <path
             d="M19 12H5M11 6 5 12l6 6"
@@ -227,7 +227,7 @@ export default function StackMarquee() {
             strokeLinejoin="round"
           />
         </svg>
-        <span className="h-px flex-1 bg-slate-200" />
+        <span className="h-px flex-1 bg-brand-line" />
         <span>Tools out</span>
       </div>
       <Row items={tools} direction="right" variant="out" duration={48} />

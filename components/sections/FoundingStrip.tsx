@@ -17,7 +17,7 @@ export default function FoundingStrip() {
           </h2>
         </div>
 
-        <div className="relative mx-auto max-w-2xl rounded-3xl border-2 border-brand-primary/60 bg-brand-deep/40 p-8 sm:p-12 pb-20 sm:pb-24 shadow-[0_0_60px_rgba(56,189,248,0.25)]">
+        <div className="relative mx-auto max-w-2xl rounded-3xl border border-brand-primary/40 bg-brand-deep/40 p-8 sm:p-12 pb-20 sm:pb-24 shadow-[0_0_80px_rgba(31,79,74,0.35)]">
           <div className="text-center">
             <h3 className="text-3xl sm:text-4xl font-bold text-white">
               3 Spots. That&rsquo;s It.
@@ -32,11 +32,11 @@ export default function FoundingStrip() {
             </p>
           </div>
 
-          <div className="mt-10 space-y-3">
+          <div className="mt-10 space-y-2.5">
             {perks.map((perk) => (
               <div
                 key={perk}
-                className="rounded-xl border-2 border-brand-primary/50 bg-white/10 py-4 text-center text-white font-semibold text-lg"
+                className="rounded-xl border border-brand-primary/30 bg-white/5 py-4 text-center text-white font-medium text-lg backdrop-blur-sm"
               >
                 {perk}
               </div>

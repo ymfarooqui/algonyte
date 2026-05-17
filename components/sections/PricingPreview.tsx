@@ -13,7 +13,7 @@ const anchors: Record<string, string> = {
 
 export default function PricingPreview() {
   return (
-    <section className="section bg-brand-soft">
+    <section className="section bg-brand-paper">
       <motion.div
         className="container-page"
         initial="hidden"
@@ -44,37 +44,37 @@ export default function PricingPreview() {
             return (
               <motion.div key={p.id} variants={reveal.fadeUpLg} className="h-full">
                 <div
-                  className={`card relative flex h-full flex-col ${
+                  className={`relative flex h-full flex-col rounded-2xl p-7 ${
                     featured
-                      ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"
-                      : ""
+                      ? "bg-brand-deep text-brand-soft shadow-deep -translate-y-2 sm:-translate-y-4"
+                      : "lift-card bg-brand-soft shadow-soft"
                   }`}
                 >
                 {featured && (
                   <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                    <span className="pointer-events-auto rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
+                    <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
                       Most Popular
                     </span>
                   </div>
                 )}
-                <h3 className="text-xl font-semibold text-brand-deep">{p.name}</h3>
-                <div className="mt-3 flex items-baseline gap-1">
-                  <span className="text-5xl font-semibold text-brand-ink">
+                <h3 className={`text-xl font-medium tracking-tight ${featured ? "text-brand-soft" : "text-brand-deep"}`}>{p.name}</h3>
+                <div className="mt-4 flex items-baseline gap-1.5">
+                  <span className={`text-5xl font-medium tracking-tightest tabular-nums ${featured ? "text-brand-soft" : "text-brand-deep"}`}>
                     ${p.price}
                   </span>
-                  <span className="text-brand-muted text-sm">/mo</span>
+                  <span className={`text-sm ${featured ? "text-brand-soft/60" : "text-brand-muted"}`}>/mo</span>
                 </div>
                 {anchors[p.id] && (
-                  <p className="mt-1 text-xs text-brand-deep/70 font-medium">
+                  <p className={`mt-1.5 text-xs font-medium ${featured ? "text-brand-primary" : "text-brand-primary"}`}>
                     {anchors[p.id]}
                   </p>
                 )}
-                <p className="mt-4 text-brand-muted text-sm leading-relaxed min-h-[3.5rem]">
+                <p className={`mt-5 text-sm leading-relaxed min-h-[3.5rem] ${featured ? "text-brand-soft/70" : "text-brand-muted"}`}>
                   {p.tagline}
                 </p>
-                <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
+                <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
                   {p.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2">
+                    <li key={f} className="flex items-start gap-2.5">
                       <svg
                         width="16"
                         height="16"
@@ -84,17 +84,21 @@ export default function PricingPreview() {
                         strokeWidth="2.5"
                         strokeLinecap="round"
                         strokeLinejoin="round"
-                        className="mt-0.5 flex-shrink-0 text-brand-deep"
+                        className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-primary" : "text-brand-primary"}`}
                       >
                         <path d="M20 6L9 17l-5-5" />
                       </svg>
-                      <span className="text-brand-muted">{f}</span>
+                      <span className={featured ? "text-brand-soft/85" : "text-brand-muted"}>{f}</span>
                     </li>
                   ))}
                 </ul>
                 <a
                   href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
-                  className="btn-primary w-full"
+                  className={
+                    featured
+                      ? "btn-primary-featured w-full"
+                      : "btn-primary w-full"
+                  }
                 >
                   {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                 </a>

@@ -68,22 +68,24 @@ export default function ProductGrid() {
           </p>
           <Link
             href={foundation.href}
-            className="group mt-4 block rounded-2xl border border-brand-deep/20 bg-gradient-to-br from-brand-accent/40 via-white to-white p-6 sm:p-8 transition-all hover:border-brand-deep/40 hover:shadow-md"
+            className="group lift-card lift-sm relative mt-4 block overflow-hidden rounded-2xl bg-gradient-to-br from-brand-accent via-brand-soft to-brand-soft p-6 sm:p-9 shadow-soft"
           >
-            <div className="flex items-start justify-between gap-3">
-              <h3 className="text-2xl font-semibold text-brand-deep">
+            {/* Petrol accent stripe along the left edge */}
+            <span aria-hidden className="absolute left-0 top-6 bottom-6 w-[3px] bg-brand-primary rounded-r-full" />
+            <div className="flex items-start justify-between gap-3 pl-3">
+              <h3 className="text-2xl sm:text-3xl font-medium text-brand-deep tracking-tight">
                 {foundation.title}
               </h3>
-              <span className="rounded-full bg-brand-deep px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-white">
+              <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-primary bg-brand-accent rounded-md px-2.5 py-1">
                 {foundation.badge}
               </span>
             </div>
-            <p className="mt-3 max-w-2xl text-brand-muted leading-relaxed">
+            <p className="mt-3 max-w-2xl text-brand-muted leading-relaxed pl-3">
               {foundation.body}
             </p>
-            <p className="mt-5 text-sm font-medium text-brand-deep">
+            <p className="mt-6 pl-3 inline-flex items-center gap-1.5 text-sm font-medium text-brand-primary">
               See packages
-              <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+              <span className="inline-block transition-transform group-hover:translate-x-1">
                 →
               </span>
             </p>
@@ -108,22 +110,22 @@ export default function ProductGrid() {
             <motion.div key={p.href} variants={reveal.fadeUpLg}>
               <Link
                 href={p.href}
-                className="group block h-full rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-brand-deep/30 hover:shadow-md"
+                className="group lift-card flex h-full flex-col rounded-2xl bg-brand-soft p-7 shadow-soft"
               >
                 <div className="flex items-start justify-between gap-3">
-                  <h3 className="text-xl font-semibold text-brand-deep">
+                  <h3 className="text-xl font-medium text-brand-deep tracking-tight">
                     {p.title}
                   </h3>
                   {p.badge && (
-                    <span className="rounded-full bg-brand-deep/10 px-2.5 py-1 text-[11px] font-semibold uppercase tracking-wider text-brand-deep">
+                    <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-primary bg-brand-accent rounded-md px-2.5 py-1">
                       {p.badge}
                     </span>
                   )}
                 </div>
-                <p className="mt-3 text-brand-muted leading-relaxed">{p.body}</p>
-                <p className="mt-5 text-sm font-medium text-brand-deep">
+                <p className="mt-3 flex-1 text-brand-muted leading-relaxed">{p.body}</p>
+                <p className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-primary">
                   Learn more
-                  <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                  <span className="inline-block transition-transform group-hover:translate-x-1">
                     →
                   </span>
                 </p>

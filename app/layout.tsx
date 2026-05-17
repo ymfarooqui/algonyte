@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
@@ -7,12 +7,19 @@ import Footer from "@/components/Footer";
 import { BookingProvider } from "@/components/BookingModal";
 import MotionRoot from "@/components/MotionRoot";
 import ChatWidget from "@/components/ChatWidget";
+import CookieBanner from "@/components/CookieBanner";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-sans",
+  display: "swap",
+});
+
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -109,7 +116,7 @@ const localBusinessJsonLd = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={inter.variable}>
+    <html lang="en" className={`${geist.variable} ${geistMono.variable}`}>
       <head>
         <link rel="preconnect" href="https://www.googletagmanager.com" />
         <link rel="preconnect" href="https://api.leadconnectorhq.com" />
@@ -141,15 +148,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </noscript>
       </head>
       <body>
+        <a href="#main-content" className="skip-link">
+          Skip to main content
+        </a>
         <MotionRoot>
           <BookingProvider>
             <Header />
-            <main>{children}</main>
+            <main id="main-content">{children}</main>
             <Footer />
           </BookingProvider>
         </MotionRoot>
         <Analytics />
         <ChatWidget />
+        <CookieBanner />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
