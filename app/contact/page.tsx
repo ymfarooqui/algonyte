@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import ContactContent from "./ContactContent";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Contact: AI Receptionist Consult | Chicago, Detroit, Midwest";
 const description =
@@ -22,7 +23,7 @@ export default function ContactPage() {
       <ContactContent />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

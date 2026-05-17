@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "About", path: "/about" }]);
 
@@ -35,11 +36,11 @@ export default function AboutPage() {
       <AboutContent />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(personJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

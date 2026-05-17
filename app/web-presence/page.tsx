@@ -5,6 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
 import FinalCTA from "@/components/sections/FinalCTA";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Web Presence | Websites From $279, Hosting From $99/mo";
 const description =
@@ -534,15 +535,15 @@ export default function WebPresencePage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

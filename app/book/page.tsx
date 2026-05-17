@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import BookContent from "./BookContent";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Book a Free AI Receptionist Walkthrough in 30 Minutes";
 const description =
@@ -22,7 +23,7 @@ export default function BookPage() {
       <BookContent />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Car Hub Macomb Case Study: 10 Booked Jobs in Week One";
 const description =
@@ -229,11 +230,11 @@ export default function CarHubCaseStudy() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(articleJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

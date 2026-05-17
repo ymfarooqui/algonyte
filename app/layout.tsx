@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
-import Script from "next/script";
 import { Analytics } from "@vercel/analytics/next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -8,8 +7,10 @@ import { BookingProvider } from "@/components/BookingModal";
 import MotionRoot from "@/components/MotionRoot";
 import ChatWidget from "@/components/ChatWidget";
 import CookieBanner from "@/components/CookieBanner";
+import ConsentAnalytics from "@/components/Analytics";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const geist = Geist({
   subsets: ["latin"],
@@ -122,27 +123,27 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://api.leadconnectorhq.com" />
         <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com" />
         <link rel="dns-prefetch" href="https://link.msgsndr.com" />
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-449SQXFKS9"
-          strategy="afterInteractive"
+        {/* GA4 Consent Mode v2 — default-denied state must execute before any
+            tracking call. Inline in head so it runs synchronously at parse
+            time, ahead of the deferred Script tags below. Static literal,
+            no user input. */}
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              window.gtag = gtag;
+              gtag('consent', 'default', {
+                analytics_storage: 'denied',
+                ad_storage: 'denied',
+                ad_user_data: 'denied',
+                ad_personalization: 'denied',
+                wait_for_update: 500
+              });
+            `,
+          }}
         />
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-449SQXFKS9');
-          `}
-        </Script>
-        <Script id="microsoft-clarity" strategy="afterInteractive">
-          {`
-            (function(c,l,a,r,i,t,y){
-              c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-              y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-            })(window, document, "clarity", "script", "wra8lxf0p0");
-          `}
-        </Script>
+        <ConsentAnalytics />
         <noscript>
           <style>{`[style*="opacity:0"]{opacity:1!important;filter:none!important;transform:none!important}`}</style>
         </noscript>
@@ -163,11 +164,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <CookieBanner />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdString(organizationJsonLd) }}
         />
         <script
           type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessJsonLd) }}
+          dangerouslySetInnerHTML={{ __html: jsonLdString(localBusinessJsonLd) }}
         />
       </body>
     </html>

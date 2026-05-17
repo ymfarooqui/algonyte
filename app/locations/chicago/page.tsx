@@ -3,6 +3,7 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "AI Receptionist in Chicago | Stop Missing Service Calls";
 const description =
@@ -292,15 +293,15 @@ export default function ChicagoLocationPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );
