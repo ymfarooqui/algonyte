@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import ServicesContent from "./ServicesContent";
 import { faqs } from "./faqs";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "AI Receptionist Services | Voice, Chat, CRM";
 const description =
@@ -33,11 +34,11 @@ export default function ServicesPage() {
       <ServicesContent />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

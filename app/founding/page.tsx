@@ -5,6 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import { plans } from "@/lib/constants";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Founding Member Program | 3 Spots Only";
 const description =
@@ -262,11 +263,11 @@ export default function FoundingPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(offerJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(offerJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );

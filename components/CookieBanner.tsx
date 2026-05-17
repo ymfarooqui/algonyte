@@ -26,6 +26,9 @@ export default function CookieBanner() {
     try {
       window.localStorage.setItem(STORAGE_KEY, value);
     } catch {}
+    window.dispatchEvent(
+      new CustomEvent("algonyte:consent", { detail: value })
+    );
     setVisible(false);
   };
 

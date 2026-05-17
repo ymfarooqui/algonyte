@@ -5,6 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
 import CursorSpotlight from "@/components/CursorSpotlight";
+import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "AI Receptionist | Answer, Qualify, and Book Every Lead 24/7";
 const description =
@@ -257,15 +258,15 @@ export default function AIReceptionistPage() {
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(faqJsonLd) }}
       />
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
     </>
   );
