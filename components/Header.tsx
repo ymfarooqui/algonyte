@@ -71,12 +71,13 @@ export default function Header() {
         >
           <div className="h-20 w-20 sm:h-24 sm:w-24 md:h-28 md:w-28 lg:h-32 lg:w-32 overflow-hidden flex items-center justify-center drop-shadow-[0_0_24px_rgba(31,79,74,0.55)]">
             <Image
-              src="/logo-mark.png"
+              src="/algonyte-labs-logo.png"
               alt="Algonyte Labs logo"
               width={320}
               height={320}
               priority
-              className="h-full w-full object-contain scale-[2.1] translate-y-3"
+              unoptimized
+              className="h-full w-full object-contain"
             />
           </div>
         </Link>
