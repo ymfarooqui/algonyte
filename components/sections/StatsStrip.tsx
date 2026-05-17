@@ -11,15 +11,14 @@ const stats = [
 
 export default function StatsStrip() {
   return (
-    <section className="relative overflow-hidden border-y border-brand-deep/10 bg-gradient-to-b from-white via-brand-accent/40 to-white">
-      {/* subtle ambient glow on either side */}
+    <section className="relative overflow-hidden border-y border-brand-line bg-brand-paper">
+      {/* Single ambient glow — petrol, off-center to break symmetry */}
       <div aria-hidden className="pointer-events-none absolute inset-0">
-        <div className="absolute -left-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-violet/20 blur-3xl" />
-        <div className="absolute -right-32 top-1/2 -translate-y-1/2 h-72 w-72 rounded-full bg-brand-primary/20 blur-3xl" />
+        <div className="absolute left-1/3 top-1/2 -translate-x-1/2 -translate-y-1/2 h-80 w-[40rem] rounded-full bg-brand-primary/[0.06] blur-3xl" />
       </div>
 
       <motion.div
-        className="relative container-page grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-brand-deep/10"
+        className="relative container-page grid grid-cols-1 sm:grid-cols-3 divide-y sm:divide-y-0 sm:divide-x divide-brand-line"
         initial="hidden"
         whileInView="visible"
         viewport={inView}
@@ -29,12 +28,12 @@ export default function StatsStrip() {
           <motion.div
             key={s.label}
             variants={reveal.fadeUpLg}
-            className="px-6 py-12 sm:py-14 text-center"
+            className="px-6 py-14 sm:py-16 text-center"
           >
-            <div className="bg-brand-gradient bg-clip-text text-transparent text-5xl sm:text-6xl font-semibold leading-none tabular-nums">
+            <div className="text-brand-deep text-5xl sm:text-6xl lg:text-7xl font-medium leading-none tracking-tightest tabular-nums">
               {s.value}
             </div>
-            <p className="mt-4 text-sm font-medium text-brand-deep/70 uppercase tracking-[0.18em]">
+            <p className="mt-5 font-mono text-[11px] uppercase tracking-[0.2em] text-brand-muted">
               {s.label}
             </p>
           </motion.div>

@@ -48,7 +48,7 @@ export default function HowItWorks() {
             className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px origin-left"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(15,76,129,0.3) 50%, transparent 50%)",
+                "linear-gradient(to right, rgba(31,79,74,0.35) 50%, transparent 50%)",
               backgroundSize: "10px 1px",
             }}
             initial={{ scaleX: 0, opacity: 0 }}
@@ -77,7 +77,7 @@ export default function HowItWorks() {
         </div>
 
         <motion.div
-          className="mt-14 rounded-2xl overflow-hidden ring-1 ring-slate-200 shadow-xl max-w-5xl mx-auto bg-white"
+          className="mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
           variants={reveal.fadeUpLg}
           role="img"
           aria-label="Unified inbox showing leads from calls, texts, Instagram DMs, and web forms with AI replies and booked appointments"
@@ -114,7 +114,7 @@ const rows = [
 function InboxMockup() {
   return (
     <div className="text-[13px] text-brand-ink">
-      <div className="flex items-center justify-between border-b border-slate-200 bg-slate-50 px-4 py-3">
+      <div className="flex items-center justify-between border-b border-brand-line bg-brand-paper px-4 py-3">
         <div className="flex items-center gap-2">
           <span className="flex h-2.5 w-2.5 rounded-full bg-rose-400" />
           <span className="flex h-2.5 w-2.5 rounded-full bg-amber-400" />
@@ -129,7 +129,7 @@ function InboxMockup() {
       </div>
 
       <div className="grid grid-cols-1 md:grid-cols-[1.4fr_1fr]">
-        <ul className="divide-y divide-slate-100">
+        <ul className="divide-y divide-brand-line">
           {rows.map((r) => (
             <li key={r.name} className="flex items-start gap-3 px-4 py-3.5 sm:px-5">
               <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-brand-accent text-brand-deep text-xs font-bold">
@@ -154,12 +154,12 @@ function InboxMockup() {
           ))}
         </ul>
 
-        <aside className="hidden md:flex flex-col gap-3 border-l border-slate-200 bg-slate-50/50 p-5">
+        <aside className="hidden md:flex flex-col gap-3 border-l border-brand-line bg-brand-paper/60 p-5">
           <div className="flex items-center gap-2">
             <span className="flex h-2 w-2 rounded-full bg-emerald-500" />
             <span className="text-xs font-semibold uppercase tracking-wider text-brand-deep">AI replying</span>
           </div>
-          <div className="rounded-xl bg-white ring-1 ring-slate-200 p-3.5">
+          <div className="rounded-xl bg-white ring-1 ring-brand-line p-3.5">
             <p className="text-xs text-slate-500">To Marcus T. · Call</p>
             <p className="mt-2 leading-relaxed">
               Hey Marcus — thanks for reaching out about the 16ft fence. I&apos;ve got
@@ -172,7 +172,7 @@ function InboxMockup() {
             </div>
           </div>
 
-          <div className="rounded-xl bg-white ring-1 ring-slate-200 p-3.5">
+          <div className="rounded-xl bg-white ring-1 ring-brand-line p-3.5">
             <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep">Today</p>
             <ul className="mt-2 space-y-1.5 text-xs">
               <li className="flex items-center justify-between">

@@ -30,7 +30,7 @@ const faqJsonLd = {
 
 export default function WhyNot() {
   return (
-    <section className="section bg-white">
+    <section className="section">
       <motion.div
         className="container-page"
         initial="hidden"

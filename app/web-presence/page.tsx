@@ -417,7 +417,7 @@ export default function WebPresencePage() {
               <Link
                 key={p.name}
                 href={p.href}
-                className="group block rounded-2xl border border-slate-200 bg-white p-6 transition-all hover:border-brand-deep/30 hover:shadow-md"
+                className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
               >
                 <div className="flex items-baseline justify-between gap-3">
                   <h3 className="text-lg font-semibold text-brand-deep">

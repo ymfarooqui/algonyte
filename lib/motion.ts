@@ -8,7 +8,7 @@ const EASE = [0.22, 1, 0.36, 1] as const;
 // feel without the post-animation flicker.
 
 export const reveal = {
-  container: (stagger = 0.11, delay = 0.1) => ({
+  container: (stagger = 0.07, delay = 0.08) => ({
     hidden: {},
     visible: {
       transition: { delayChildren: delay, staggerChildren: stagger },
@@ -19,7 +19,7 @@ export const reveal = {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.55, ease: EASE },
+      transition: { duration: 0.45, ease: EASE },
     },
   },
   fadeUpLg: {
@@ -27,7 +27,7 @@ export const reveal = {
     visible: {
       opacity: 1,
       y: 0,
-      transition: { duration: 0.7, ease: EASE },
+      transition: { duration: 0.5, ease: EASE },
     },
   },
   dropTile: {
@@ -36,7 +36,7 @@ export const reveal = {
       opacity: 1,
       y: 0,
       scale: 1,
-      transition: { duration: 0.55, ease: EASE },
+      transition: { duration: 0.5, ease: EASE },
     },
   },
 };

@@ -6,7 +6,7 @@ import StackMarquee from "@/components/StackMarquee";
 
 export default function IntegrationsStrip() {
   return (
-    <section className="relative overflow-hidden border-y border-slate-200 bg-brand-soft py-14 sm:py-16">
+    <section className="relative overflow-hidden border-y border-brand-line bg-brand-soft py-14 sm:py-16">
       <motion.div
         className="container-page"
         initial="hidden"
@@ -19,7 +19,7 @@ export default function IntegrationsStrip() {
           className="mx-auto max-w-2xl text-center"
         >
           <p className="eyebrow">Plugs into everything you already use</p>
-          <h2 className="mt-3 text-2xl sm:text-3xl font-semibold tracking-tight text-brand-ink [text-wrap:balance]">
+          <h2 className="mt-3 text-2xl sm:text-3xl font-medium tracking-tight text-brand-deep [text-wrap:balance]">
             Every channel in. Every tool out.
           </h2>
         </motion.div>

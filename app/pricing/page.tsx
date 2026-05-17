@@ -250,13 +250,13 @@ export default function PricingPage() {
     <>
       <FoundingStrip />
 
-      <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
+      <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent/60 via-brand-soft to-brand-soft">
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <p className="eyebrow mb-4">Pricing</p>
           <h1 className="h-display max-w-3xl">
             One platform.{" "}
-            <span className="text-brand-deep">Five products. No hidden fees.</span>
+            <em className="not-italic text-brand-primary">Five products. No hidden fees.</em>
           </h1>
           <p className="lede mt-6 max-w-2xl">
             Pick what fits where you are now. Move up when you outgrow it.
@@ -277,7 +277,7 @@ export default function PricingPage() {
               <Link
                 key={p.label}
                 href={p.href}
-                className="group rounded-2xl border border-slate-200 bg-white p-5 transition-all hover:border-brand-deep/30 hover:shadow-md"
+                className="group lift-card lift-sm rounded-2xl bg-brand-soft p-5 shadow-soft"
               >
                 <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/70">
                   {p.label}
@@ -300,38 +300,58 @@ export default function PricingPage() {
           <h2 className="h-section max-w-3xl mb-8">
             Answer, qualify, and book every lead 24/7.
           </h2>
-          <div className="grid gap-5 md:grid-cols-3">
+          <div className="grid gap-5 md:grid-cols-3 md:items-stretch">
             {plans.map((p) => {
               const featured = "featured" in p && p.featured;
               return (
                 <div
                   key={p.id}
-                  className={`card relative flex flex-col ${
+                  className={`relative flex h-full flex-col rounded-2xl p-7 ${
                     featured
-                      ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"
-                      : ""
+                      ? "bg-brand-deep text-brand-soft shadow-deep -translate-y-2 sm:-translate-y-4"
+                      : "lift-card bg-brand-soft shadow-soft"
                   }`}
                 >
                   {featured && (
                     <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                      <span className="pointer-events-auto rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
+                      <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
                         Most Popular
                       </span>
                     </div>
                   )}
-                  <h2 className="text-xl font-semibold text-brand-deep">{p.name}</h2>
-                  <div className="mt-3 flex items-baseline gap-1">
-                    <span className="text-5xl font-semibold text-brand-ink">
+                  <h3
+                    className={`text-xl font-medium tracking-tight ${
+                      featured ? "text-brand-soft" : "text-brand-deep"
+                    }`}
+                  >
+                    {p.name}
+                  </h3>
+                  <div className="mt-4 flex items-baseline gap-1.5">
+                    <span
+                      className={`text-5xl font-medium tracking-tightest tabular-nums ${
+                        featured ? "text-brand-soft" : "text-brand-deep"
+                      }`}
+                    >
                       ${p.price}
                     </span>
-                    <span className="text-brand-muted text-sm">/mo</span>
+                    <span
+                      className={`text-sm ${
+                        featured ? "text-brand-soft/60" : "text-brand-muted"
+                      }`}
+                    >
+                      /mo
+                    </span>
                   </div>
-                  <p className="mt-4 text-brand-muted text-sm leading-relaxed">
+                  <p
+                    className={`mt-5 min-h-[3.5rem] text-sm leading-relaxed ${
+                      featured ? "text-brand-soft/70" : "text-brand-muted"
+                    }`}
+                  >
                     {p.tagline}
                   </p>
-                  <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
+                  <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
                     {p.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2">
+                      <li key={f} className="flex items-start gap-2.5">
                         <svg
                           width="16"
                           height="16"
@@ -341,17 +361,21 @@ export default function PricingPage() {
                           strokeWidth="2.5"
                           strokeLinecap="round"
                           strokeLinejoin="round"
-                          className="mt-0.5 flex-shrink-0 text-brand-deep"
+                          className="mt-0.5 flex-shrink-0 text-brand-primary"
                         >
                           <path d="M20 6L9 17l-5-5" />
                         </svg>
-                        <span className="text-brand-muted">{f}</span>
+                        <span
+                          className={featured ? "text-brand-soft/85" : "text-brand-muted"}
+                        >
+                          {f}
+                        </span>
                       </li>
                     ))}
                   </ul>
                   <a
                     href={isPlaceholder(p.checkoutUrl) ? "/contact" : p.checkoutUrl}
-                    className="btn-primary w-full"
+                    className={featured ? "btn-primary-featured w-full" : "btn-primary w-full"}
                   >
                     {isPlaceholder(p.checkoutUrl) ? "Talk to us" : "Get Started"}
                   </a>
@@ -595,17 +619,27 @@ export default function PricingPage() {
       </section>
 
       <section className="section">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
-          <h2 className="h-section mb-10">Common questions.</h2>
-          <dl className="divide-y divide-slate-200">
-            {faqs.map((f) => (
-              <div key={f.q} className="py-6">
-                <dt className="text-lg font-semibold text-brand-deep">{f.q}</dt>
-                <dd className="mt-2 text-brand-muted leading-relaxed">{f.a}</dd>
-              </div>
-            ))}
-          </dl>
+        <div className="container-page">
+          <div className="lg:grid lg:grid-cols-12 lg:gap-10">
+            <div className="lg:col-span-4">
+              <p className="eyebrow mb-4">FAQ</p>
+              <h2 className="h-section">Common questions.</h2>
+              <p className="mt-4 text-brand-muted leading-relaxed max-w-sm">
+                Short, honest answers. If you don&rsquo;t see yours, ask us
+                directly &mdash; we&rsquo;ll get back the same day.
+              </p>
+            </div>
+            <dl className="mt-10 lg:mt-0 lg:col-span-8 divide-y divide-slate-200">
+              {faqs.map((f) => (
+                <div key={f.q} className="py-6 first:pt-0">
+                  <dt className="text-lg font-semibold text-brand-deep">{f.q}</dt>
+                  <dd className="mt-2 text-brand-muted leading-relaxed max-w-2xl">
+                    {f.a}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          </div>
         </div>
       </section>
 

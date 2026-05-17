@@ -69,33 +69,30 @@ export default function SocialProof() {
 
         {testimonials.length > 0 && (
           <motion.div
-            className="mt-8 grid gap-5 md:grid-cols-2"
+            className="mt-10"
             variants={reveal.container(0.15, 0.2)}
           >
             {testimonials.map((t) => (
               <motion.figure
                 key={t.name}
-                className="card"
+                className="relative mx-auto max-w-3xl py-10 sm:py-12"
                 variants={reveal.fadeUp}
               >
-                {/* TODO: drop /public/clients/car-hub-macomb.jpg (photo of the dealership / lot / owner) and uncomment.
-                <Image
-                  src="/clients/car-hub-macomb.jpg"
-                  alt="Car Hub Macomb"
-                  width={800}
-                  height={500}
-                  sizes="(min-width: 768px) 32rem, 100vw"
-                  className="w-full h-48 object-cover rounded-lg mb-5"
-                />
-                */}
-                <blockquote className="text-brand-ink leading-relaxed">
+                <span
+                  aria-hidden
+                  className="absolute -top-2 left-0 font-mono text-[11px] uppercase tracking-[0.2em] text-brand-primary"
+                >
+                  Customer
+                </span>
+                <blockquote className="text-2xl sm:text-3xl font-medium text-brand-deep leading-[1.25] tracking-tight [text-wrap:balance]">
                   &ldquo;{t.quote}&rdquo;
                 </blockquote>
-                <figcaption className="mt-5 text-sm">
-                  <span className="font-semibold text-brand-deep">
+                <figcaption className="mt-6 flex items-center gap-3 text-sm">
+                  <span aria-hidden className="h-px w-8 bg-brand-line" />
+                  <span className="font-medium text-brand-deep">
                     {t.name}
                   </span>
-                  <span className="text-brand-muted">, {t.role}</span>
+                  <span className="text-brand-muted">{t.role}</span>
                 </figcaption>
               </motion.figure>
             ))}
