@@ -21,6 +21,9 @@ updates:
         dependency-type: development
         patterns:
           - "*"
+        update-types:
+          - "minor"
+          - "patch"
     labels:
       - dependencies
     commit-message:
