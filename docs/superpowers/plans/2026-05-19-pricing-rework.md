@@ -15,7 +15,7 @@
 | Open | $300 | $99 | 72 hours | Month-to-month |
 | Found | $600 | $99 | 5–7 days | Month-to-month |
 | Polished | $1,000 | $99 | 7–12 days | Month-to-month |
-| Awake | $300 | $599 | 5 days | Month-to-month |
+| Awake | $329 | $749 | 5 days | Month-to-month |
 | Climbing | $500 | $1,599 all-in | 10–14 days | 6 months |
 | Scale | $500 | $2,599 + ad spend (customer's card) | 14 days | 6 mo SEO / 3 mo ads |
 
@@ -215,7 +215,7 @@ export const siteTiers: readonly SiteTier[] = [
       "Custom design pass — built for your brand, not a template variant",
       "1 conversion-optimized landing page for your top offer",
       "30 days priority support post-launch",
-      "Awake onboarding included free if you add it within 60 days ($300 value)",
+      "Awake onboarding included free if you add it within 60 days ($329 value)",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_POLISHED]",
   },
@@ -225,8 +225,8 @@ export const growthTiers: readonly GrowthTier[] = [
   {
     id: "awake",
     name: "Awake",
-    setup: 300,
-    monthly: 599,
+    setup: 329,
+    monthly: 749,
     liveIn: "5 days",
     commitment: "month-to-month",
     tagline: "You stop worrying about text, chat, and DMs going cold.",
@@ -636,7 +636,7 @@ Content brief:
 - H1: "AI Receptionist for Service Businesses"
 - Opening paragraph: what an AI receptionist is, why service businesses use one, what Algonyte's looks like.
 - Two clear CTAs:
-  - "Just text and chat? → Awake ($599/mo, live in 5 days)" → links to `/pricing#awake`
+  - "Just text and chat? → Awake ($749/mo, live in 5 days)" → links to `/pricing#awake`
   - "Voice + everything? → Climbing ($1,599/mo, live in 10–14 days)" → links to `/pricing#climbing`
 - Compare-to-Podium/Smith.ai/Goodcall block (use the table from the marketing analysis).
 - Remove every "Live in 5–7 days" mention; replace with the new tier-specific timelines.
@@ -795,8 +795,8 @@ git commit -m "feat(services): collapse to Site + Growth framing"
 
 Requirements:
 - 3 spots only.
-- 50% off setup on any tier: Open $150, Found $300, Polished $500, Awake $150, Climbing/Scale $250.
-- 30% off any Growth tier for 6 months: Awake $419.30/mo, Climbing $1,119.30/mo, Scale $1,819.30/mo + ad spend.
+- 50% off setup on any tier: Open $150, Found $300, Polished $500, Awake $165 (rounded from $164.50), Climbing/Scale $250.
+- 30% off any Growth tier for 6 months: Awake $524.30/mo, Climbing $1,119.30/mo, Scale $1,819.30/mo + ad spend.
 - After 6 months, reverts to standard pricing.
 - **Remove "white-glove onboarding" and "we build the script with you on a live call" entirely.** Replace with: *"Fast turn-around. 15-minute intake form. Awake live in 5 days, Climbing in 10–14, Scale in 14."*
 - In exchange: honest feedback, one testimonial, optional reference call.
@@ -936,7 +936,7 @@ We serve service businesses (auto, home services, trades, professional services)
 
 | Tier | Setup | Monthly | Live in | Commitment |
 |---|---|---|---|---|
-| Awake | $300 | $599 | 5 days | Month-to-month |
+| Awake | $329 | $749 | 5 days | Month-to-month |
 | Climbing | $500 | $1,599 all-in | 10–14 days | 6 months |
 | Scale | $500 | $2,599 + ad spend | 14 days | 6 mo SEO / 3 mo ads |
 
