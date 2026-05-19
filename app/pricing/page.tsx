@@ -4,7 +4,6 @@ import FinalCTA from "@/components/sections/FinalCTA";
 import FoundingStrip from "@/components/sections/FoundingStrip";
 import { siteTiers, growthTiers } from "@/lib/tiers";
 import { isPlaceholder } from "@/lib/constants";
-import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
@@ -95,7 +94,7 @@ const differentiators = [
   'Transparent pricing — every number on this page; no "book a call to learn pricing"',
 ];
 
-function CheckIcon({ featured }: { featured?: boolean }) {
+function CheckIcon() {
   return (
     <svg
       width="16"
@@ -106,7 +105,7 @@ function CheckIcon({ featured }: { featured?: boolean }) {
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-primary" : "text-brand-primary"}`}
+      className="mt-0.5 flex-shrink-0 text-brand-primary"
       aria-label="Included"
     >
       <path d="M20 6L9 17l-5-5" />
