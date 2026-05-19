@@ -54,7 +54,7 @@ describe("tier data invariants", () => {
     const text = scale.features.join(" ").toLowerCase();
     expect(text).toContain("ad spend");
     expect(text).toContain("your credit card");
-    expect(text).toContain("markup");
+    expect(text).toContain("no markup");
   });
 
   it("Climbing requires 6-month commitment, Awake does not", () => {

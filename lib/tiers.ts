@@ -172,7 +172,7 @@ export const growthTiers: readonly GrowthTier[] = [
       "AI follow-up on every ad lead via SMS + email",
       "Closed-loop tracking — every click traced through to revenue",
       "Monthly performance review — CPL, CAC, booked-rate, ROAS",
-      "You hold the ad accounts. Ad spend goes on your credit card, straight to Google and Meta — never touches us, never has a markup.",
+      "You hold the ad accounts. Ad spend goes on your credit card, straight to Google and Meta — no markup, never touches us.",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_SCALE]",
   },
