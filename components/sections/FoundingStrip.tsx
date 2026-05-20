@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function FoundingStrip() {
   return (
-    <section className="bg-brand-deep py-4 sm:py-5">
+    <section className="border-t-2 border-brand-primary/60 bg-brand-deep py-4 sm:py-5 shadow-[inset_0_1px_0_rgba(255,255,255,0.06)]">
       <div className="container-page">
         <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-center sm:gap-6 sm:text-left">
           <div>
