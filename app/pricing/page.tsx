@@ -610,26 +610,24 @@ export default function PricingPage() {
       {/* Honest answers / cheaper options */}
       <WhyNot />
 
-      {/* Founding member link */}
-      <section className="pb-16">
+      {/* Founding member — compact strip */}
+      <section className="pb-12">
         <div className="container-page">
-          <div className="rounded-2xl border border-brand-primary/30 bg-brand-accent/30 p-6 sm:p-8 max-w-2xl">
-            <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-deep/70 mb-2">
-              Founding Member
-            </p>
-            <p className="text-brand-deep font-medium mb-1">
-              3 spots. 50% off setup. 30% off any Growth tier for 6 months.
-            </p>
-            <p className="text-sm text-brand-muted mb-4">
-              After 6 months reverts to standard pricing.{" "}
-              <Link
-                href="/founding"
-                className="underline underline-offset-2 text-brand-deep hover:text-brand-primary transition-colors"
-              >
-                See the founding page &rarr;
-              </Link>
-            </p>
-          </div>
+          <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm text-brand-muted">
+            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-primary">
+              Founding
+            </span>
+            <span className="text-brand-deep font-medium">
+              3 spots open.
+            </span>
+            <span>50% off setup, 30% off Growth for 6 months.</span>
+            <Link
+              href="/founding"
+              className="underline underline-offset-2 text-brand-deep hover:text-brand-primary transition-colors"
+            >
+              See details &rarr;
+            </Link>
+          </p>
         </div>
       </section>
 
