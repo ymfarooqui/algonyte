@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
   description:
-    "AI receptionist for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7. Plans from $549/mo.",
+    "AI receptionist for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7. Plans from $99/mo with $300 setup.",
   keywords: [
     "AI lead automation",
     "missed call text back",
@@ -94,7 +94,7 @@ const localBusinessJsonLd = {
   description: siteConfig.description,
   logo: `${siteConfig.url}/algonyte-labs-logo.png`,
   image: `${siteConfig.url}/algonyte-labs-logo.png`,
-  priceRange: "$549-$1,299/mo",
+  priceRange: "$99 – $2599+/mo",
   areaServed: [
     { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
     { "@type": "City", name: "Oak Brook", containedInPlace: { "@type": "State", name: "Illinois" } },
