@@ -14,8 +14,8 @@ We serve service businesses (auto, home services, trades, professional services)
 - [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $2,599/mo + ad spend.
 - [Web Presence](https://algonyte.com/web-presence): Site product — Open ($300 + $99/mo), Found ($600 + $99/mo), Polished ($1,000 + $99/mo).
 - [AI Receptionist](https://algonyte.com/ai-receptionist): Topical landing for reception buyers — points to Awake and Climbing.
-- [Lead Generator](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
-- [Reputation Manager](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
+- [Lead Generation](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
+- [Reputation Management](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
 - [Founding Member Program](https://algonyte.com/founding): 3 spots. 50% off setup. 30% off Growth tiers for 6 months.
 - [Services overview](https://algonyte.com/services): Two products with three rungs each.
 - [Book a walkthrough](https://algonyte.com/book): Free 30-minute consult.
