@@ -2,12 +2,12 @@ import Link from "next/link";
 
 export default function FoundingStrip() {
   return (
-    <section className="bg-brand-soft py-6">
+    <section className="bg-brand-soft pt-2 pb-8">
       <div className="container-page">
         <div className="mx-auto max-w-3xl rounded-2xl bg-brand-deep px-6 py-4 shadow-soft">
           <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left">
             <div>
-              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-primary">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
                 Founding · 3 spots
               </span>
               <span className="ml-3 text-white font-medium">
