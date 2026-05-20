@@ -15,7 +15,7 @@ export default function Hero() {
       <PageHeroBackdrop />
 
       <motion.div
-        className="relative container-page pt-8 pb-16 sm:pt-12 sm:pb-20 lg:pt-16 lg:pb-24"
+        className="relative container-page pt-12 pb-16 sm:pt-16 sm:pb-20 lg:pt-20 lg:pb-24"
         initial="hidden"
         animate="visible"
         variants={reveal.container(0.12, 0.05)}
