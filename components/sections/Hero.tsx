@@ -29,7 +29,7 @@ export default function Hero() {
             className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-muted"
             variants={reveal.fadeUp}
           >
-            {["Web Presence", "AI Receptionist", "Voice Agents", "Local SEO", "Reputation Manager"].map(
+            {["Site", "Receptionist", "Voice Agents", "Local SEO", "Reputation"].map(
               (item, i) => (
                 <span key={item} className="whitespace-nowrap">
                   {i > 0 && (
@@ -57,8 +57,7 @@ export default function Hero() {
             className="lede"
             variants={reveal.fadeUp}
           >
-            AI bots that answer your leads, follow up, and book them on your
-            calendar — without you ever lifting a finger.
+            Site live in 72 hours. Reception in 5 days. Full SEO + voice in two weeks.
           </motion.p>
         </div>
 
@@ -84,7 +83,7 @@ export default function Hero() {
             </svg>
           </BookingButton>
           <a href="/pricing" className="btn-link">
-            See pricing
+            See plans
             <svg viewBox="0 0 24 24" className="h-4 w-4" fill="none" aria-hidden>
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
