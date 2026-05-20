@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
-import FoundingStrip from "@/components/sections/FoundingStrip";
 import WhyNot from "@/components/sections/WhyNot";
 import { siteTiers, growthTiers } from "@/lib/tiers";
 import { isPlaceholder } from "@/lib/constants";
@@ -117,8 +116,6 @@ function CheckIcon() {
 export default function PricingPage() {
   return (
     <>
-      <FoundingStrip />
-
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent/60 via-brand-soft to-brand-soft">
         <PageHeroBackdrop />
