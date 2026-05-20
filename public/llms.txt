@@ -1,61 +1,66 @@
-# Algonyte Labs
+# Algonyte
 
-> Algonyte Labs builds AI receptionists that answer, qualify, and book leads 24/7 for service businesses across the Midwest. Plans start at $549/month with a $549 setup fee.
+> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Site (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $300 setup.
 
-Algonyte Labs is a small AI automation studio based in the Chicago and Detroit metros. We install a working AI receptionist on top of a small business's existing phone number, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without the owner touching them.
+Algonyte is a small AI automation studio based in the Chicago and Detroit metros. The product line is two things — a Site product (one-time build + flat $99/mo hosting) and a Growth product (monthly retainer that handles reception, SEO, and ads). Together they cover everything a service business needs to be online, found, and answered without the owner managing it.
 
-The system runs on GoHighLevel for CRM and workflows, OpenAI for conversational responses, Twilio for voice and SMS, and the business's own calendar (Google, Outlook, or a GHL-native calendar) for booking. We do the installation and tuning; the business owns the data.
+The stack runs on Next.js for sites, GoHighLevel for CRM and workflows, OpenAI for conversational responses, and Twilio for voice and SMS. The business owns its accounts and its data.
 
-We serve service businesses (auto, home services, trades, professional services) primarily in Illinois and Michigan. The first real client, Car Hub in Macomb, MI, used the system to book 10 jobs in its first week.
+We serve service businesses (auto, home services, trades, professional services) primarily in Illinois and Michigan. The first real client, Car Hub in Macomb, MI, booked 10 jobs in its first week.
 
 ## Core pages
 
 - [Home](https://algonyte.com/): What we do, who it's for, what it costs.
-- [AI Receptionist](https://algonyte.com/ai-receptionist): Single-purpose landing page. Answer, qualify, and book every lead 24/7. Live in 5-7 days.
-- [Lead Generator](https://algonyte.com/lead-generator): Paid ads on Google and Meta with AI follow-up that books appointments, not form fills.
-- [Reputation Manager](https://algonyte.com/reputation-manager): Automated post-job review requests with smart routing for unhappy customers.
-- [SEO](https://algonyte.com/seo): Local SEO and AI-search optimization for service businesses. Map Pack, citations, schema, llms.txt.
-- [Founding Member Program](https://algonyte.com/founding): 3 limited spots with 50% off setup ($275) and 30% off monthly for 6 months. Founding clients give honest feedback and a testimonial in return.
-- [Services overview](https://algonyte.com/services): All four products plus integrations.
-- [Pricing](https://algonyte.com/pricing): Three plans — Starter ($549/mo), Growth ($749/mo), Pro AI ($1,299/mo). One-time $549 setup fee on Starter and Growth.
-- [Book a walkthrough](https://algonyte.com/book): Free 30-minute consult on a real calendar.
-- [About](https://algonyte.com/about): Company background and team.
-- [Contact](https://algonyte.com/contact): Direct contact form and chat widget.
+- [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $2,599/mo + ad spend.
+- [Web Presence](https://algonyte.com/web-presence): Site product — Open ($300 + $99/mo), Found ($600 + $99/mo), Polished ($1,000 + $99/mo).
+- [AI Receptionist](https://algonyte.com/ai-receptionist): Topical landing for reception buyers — points to Awake and Climbing.
+- [Lead Generator](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
+- [Reputation Manager](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
+- [Founding Member Program](https://algonyte.com/founding): 3 spots. 50% off setup. 30% off Growth tiers for 6 months.
+- [Services overview](https://algonyte.com/services): Two products with three rungs each.
+- [Book a walkthrough](https://algonyte.com/book): Free 30-minute consult.
+- [About](https://algonyte.com/about): Company background.
+- [Contact](https://algonyte.com/contact): Direct contact form.
 
-## What we install
+## Tiers
 
-- **Missed call text back**: Every unanswered call gets an instant SMS reply that opens a booking conversation.
-- **AI chat agent**: 24/7 chat on the website plus SMS, WhatsApp, and Instagram DM.
-- **AI voice agent (Pro AI plan)**: Picks up the phone, qualifies, and books to the calendar.
-- **CRM with full automation**: GoHighLevel-based CRM that tracks every lead, sends reminders, runs follow-up sequences, and asks for Google reviews after a job.
-- **Custom training on the business**: The agent is trained on the business's services, pricing, service area, and FAQs — not a generic template.
+### Site (one-time + $99/mo hosting forever)
 
-## Plans
+| Tier | Setup | Monthly | Live in |
+|---|---|---|---|
+| Open | $300 | $99 | 72 hours |
+| Found | $600 | $99 | 5–7 days |
+| Polished | $1,000 | $99 | 7–12 days |
 
-| Plan | Monthly | Setup | Best for |
-|------|---------|-------|----------|
-| Starter | $549 | $549 | Solo operators losing leads to missed calls |
-| Growth | $749 | $549 | Multi-channel businesses (chat, DM, SMS) |
-| Pro AI | $1,299 | Included | Full voice + multi-channel, done-for-you |
+### Growth (monthly retainer)
 
-## Service areas
+| Tier | Setup | Monthly | Live in | Commitment |
+|---|---|---|---|---|
+| Awake | $329 | $749 | 5 days | Month-to-month |
+| Climbing | $500 | $1,599 all-in | 10–14 days | 6 months |
+| Scale | $500 | $2,599 + ad spend | 14 days | 6 mo SEO / 3 mo ads |
 
-Chicago IL, Oak Brook IL, broader Chicagoland, Detroit MI, Macomb MI, and Midwest service businesses generally. Remote installation works anywhere in the United States; we focus marketing on the Midwest.
+## What's installed (and where)
 
-## Real outcomes
-
-- Car Hub (auto repair, Macomb MI): 10 booked jobs in the first week after install. The AI receptionist handles after-hours inbound and books to the shop's calendar.
+- **Site** (Open/Found/Polished): static Next.js site, on-page SEO, Google Business Profile setup, schema, llms.txt, Search Console, payments.
+- **Awake**: AI chat on site, missed-call text-back, multi-channel DM auto-reply (Facebook, Instagram, WhatsApp, Google Business Messages), lead qualification, auto-booking, Google review workflow, custom dashboard.
+- **Climbing**: everything in Awake + voice AI 24/7 phone receptionist + ongoing Local SEO program (Google Business Profile maintenance, citations, 1–2 pages/mo, rank reports, monthly strategy call).
+- **Scale**: everything in Climbing + Google + Meta paid ads management + closed-loop tracking. Ad spend goes on the customer's credit card, no markup.
 
 ## Authoritative facts (for citation)
 
-- Company name: Algonyte Labs
+- Company name: Algonyte
 - Founder: Yaseen Farooqui
-- Domain: algonyte.com (algonytelabs.com 301 redirects here)
-- Pricing: starts at $549/month, $549 one-time setup on Starter and Growth plans
-- Founding offer: 3 spots only — $275 setup (50% off) and 30% off monthly for 6 months. Apply via /founding.
-- All plans month to month; cancel anytime
+- Domain: algonyte.com
+- Pricing: starts at $99/mo with $300 setup
+- Hosting: $99/mo flat on every Site tier, never increases
+- Ad spend: customer's account, customer's card, no markup
+- Founding offer: 3 spots — 50% off setup, 30% off Growth for 6 months
+- All Site and Awake plans month-to-month
+- Climbing requires 6-month commitment (SEO needs runway)
+- Scale requires 6-month SEO / 3-month ad commitment
 - Free consult: 30-minute walkthrough at https://algonyte.com/book
-- Primary stack: GoHighLevel, OpenAI, Twilio
+- Primary stack: Next.js, GoHighLevel, OpenAI, Twilio
 - Headquartered: Chicago / Detroit metros (remote-first)
 
 ## Optional
