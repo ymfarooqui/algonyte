@@ -38,26 +38,38 @@ export default function ContactForm() {
 
   if (result?.ok) {
     return (
-      <div className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm">
-        <h2 className="text-xl font-semibold text-brand-deep">Got it.</h2>
-        <p className="mt-3 text-brand-muted leading-relaxed">
-          One of us will reach out within one business day on your preferred
-          channel. If you&rsquo;d rather talk live, grab a 20-minute slot below.
+      <div className="rounded-2xl border border-brand-primary/30 bg-gradient-to-br from-brand-accent/40 via-white to-white p-8 shadow-sm">
+        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-primary">
+          You&rsquo;re in
         </p>
-        <button
-          type="button"
-          onClick={open}
-          className="mt-5 inline-flex items-center justify-center rounded-lg bg-brand-primary px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-primary/90 transition"
-        >
-          Book a call instead
-        </button>
-        <button
-          type="button"
-          onClick={() => setResult(null)}
-          className="ml-3 inline-flex items-center justify-center rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium text-brand-deep hover:bg-brand-soft transition"
-        >
-          Send another
-        </button>
+        <h2 className="mt-2 text-2xl sm:text-3xl font-semibold text-brand-deep">
+          Let&rsquo;s build the engine.
+        </h2>
+        <p className="mt-4 text-brand-muted leading-relaxed">
+          Within one business day, we&rsquo;ll reach out on your preferred
+          channel with what we&rsquo;d ship first and the lever that moves
+          your numbers fastest. Your business is about to start running
+          without you.
+        </p>
+        <p className="mt-3 text-brand-muted leading-relaxed">
+          Want to talk it through live now? Grab a 20-minute slot.
+        </p>
+        <div className="mt-6 flex flex-wrap gap-3">
+          <button
+            type="button"
+            onClick={open}
+            className="inline-flex items-center justify-center rounded-lg bg-brand-deep px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-deep/90 transition"
+          >
+            Book a 20-minute call
+          </button>
+          <button
+            type="button"
+            onClick={() => setResult(null)}
+            className="inline-flex items-center justify-center rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium text-brand-deep hover:bg-brand-soft transition"
+          >
+            Send another
+          </button>
+        </div>
       </div>
     );
   }
