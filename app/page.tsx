@@ -8,7 +8,6 @@ const ProblemHook = dynamic(() => import("@/components/sections/ProblemHook"));
 const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"));
 const SocialProof = dynamic(() => import("@/components/sections/SocialProof"));
 const ProductGrid = dynamic(() => import("@/components/sections/ProductGrid"));
-const WhyNot = dynamic(() => import("@/components/sections/WhyNot"));
 const AboutSnippet = dynamic(() => import("@/components/sections/AboutSnippet"));
 
 export default function Home() {
@@ -22,7 +21,6 @@ export default function Home() {
       <HowItWorks />
       <SocialProof />
       <ProductGrid />
-      <WhyNot />
       <AboutSnippet />
     </>
   );

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
 import FoundingStrip from "@/components/sections/FoundingStrip";
+import WhyNot from "@/components/sections/WhyNot";
 import { siteTiers, growthTiers } from "@/lib/tiers";
 import { isPlaceholder } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
@@ -605,6 +606,9 @@ export default function PricingPage() {
           </div>
         </div>
       </section>
+
+      {/* Honest answers / cheaper options */}
+      <WhyNot />
 
       {/* Founding member link */}
       <section className="pb-16">
