@@ -5,13 +5,12 @@ import { isPlaceholder } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
 import { webPresenceServiceSchema } from "@/lib/schema";
 
-const title = "Web Presence | Sites From $300, Hosting Flat at $99/mo";
+const title = "Web Presence | Sites From $299, Hosting Flat at $99/mo";
 const description =
-  "End-to-end web presence for service businesses. Sites built from $300 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
+  "End-to-end web presence for service businesses. Sites built from $299 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
 
 export const metadata: Metadata = {
   title,
@@ -106,7 +105,7 @@ export default function WebPresencePage() {
             <p className="lede mt-6 max-w-2xl">
               Site live in 72 hours. Built for your brand, hosted for{" "}
               <strong>$99/mo flat</strong>, indexed on Google from day one.
-              Starting from <strong>$300</strong> one-time, then $99/mo
+              Starting from <strong>$299</strong> one-time, then $99/mo
               forever. No tiered hosting nonsense, no contracts.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -457,8 +456,6 @@ export default function WebPresencePage() {
           </div>
         </div>
       </section>
-
-      <FinalCTA title="Want to see what this looks like for your business?" />
 
       <script
         type="application/ld+json"
