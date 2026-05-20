@@ -134,11 +134,12 @@ export default function PricingPage() {
       </section>
 
       {/* Start-here wizard placeholder */}
-      <section className="pb-8 -mt-4">
+      <section className="pb-12 pt-4">
         <div className="container-page">
-          <details className="rounded-2xl border border-brand-deep/15 bg-white p-5 shadow-soft open:pb-6">
-            <summary className="cursor-pointer select-none text-brand-deep font-medium">
-              Not sure where to start? Three quick questions &rarr;
+          <details className="rounded-2xl border border-brand-deep/15 bg-white p-5 shadow-soft open:pb-8">
+            <summary className="cursor-pointer select-none text-brand-deep font-medium flex items-center justify-between gap-3 list-none">
+              <span>Not sure where to start? Three quick questions</span>
+              <span aria-hidden className="text-brand-deep/60">&#8595;</span>
             </summary>
             <div className="mt-5 space-y-5 text-sm text-brand-muted leading-relaxed">
               <div>
@@ -218,7 +219,7 @@ export default function PricingPage() {
                       <td className="py-3.5 px-5">
                         <span className="font-medium text-brand-ink">{tier.name}</span>
                         <span className="ml-2 text-[10px] font-semibold uppercase tracking-wider text-brand-deep/50 bg-brand-soft px-1.5 py-0.5 rounded">
-                          {isGrowth ? "Growth" : "Site"}
+                          {isGrowth ? "Growth" : "Presence"}
                         </span>
                       </td>
                       <td className="py-3.5 px-5 text-right tabular-nums text-brand-muted">
@@ -255,7 +256,7 @@ export default function PricingPage() {
                   <div className="flex items-center justify-between mb-3">
                     <span className="font-medium text-brand-ink">{tier.name}</span>
                     <span className="text-[10px] font-semibold uppercase tracking-wider text-brand-deep/50 bg-brand-soft px-1.5 py-0.5 rounded">
-                      {isGrowth ? "Growth" : "Site"}
+                      {isGrowth ? "Growth" : "Presence"}
                     </span>
                   </div>
                   <dl className="grid grid-cols-2 gap-y-2 text-sm">
@@ -294,17 +295,17 @@ export default function PricingPage() {
               ${siteTiers[0].monthly}/mo flat hosting. Forever. Never moves as you grow.
             </p>
             <p className="mt-3 text-brand-muted leading-relaxed max-w-2xl">
-              One-time hosting price across every Site tier. Includes SSL, daily backups, CDN,
+              One-time hosting price across every Presence tier. Includes SSL, daily backups, CDN,
               1 hour of edits per month, and a direct line when something breaks.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Site tiers */}
+      {/* Presence tiers */}
       <section id="site" className="pb-20">
         <div className="container-page">
-          <p className="eyebrow mb-4">Site</p>
+          <p className="eyebrow mb-4">Presence</p>
           <h2 className="h-section max-w-3xl mb-2">
             Your foundation on the internet.
           </h2>
@@ -324,19 +325,16 @@ export default function PricingPage() {
                 <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/50">
                   Stop worrying about {tier.stopWorryingAbout}.
                 </p>
-                <div className="mt-5 space-y-1">
-                  <div className="flex items-baseline gap-1.5">
-                    <span className="text-2xl font-medium tabular-nums text-brand-ink">
-                      ${tier.setup}
-                    </span>
-                    <span className="text-sm text-brand-muted">one-time setup</span>
-                  </div>
+                <div className="mt-5 space-y-1.5">
                   <div className="flex items-baseline gap-1.5">
                     <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
                       ${tier.monthly}
                     </span>
                     <span className="text-sm text-brand-muted">/mo hosting</span>
                   </div>
+                  <p className="text-sm text-brand-muted">
+                    + ${tier.setup} one-time setup
+                  </p>
                 </div>
                 <p className="mt-3 text-xs text-brand-muted">
                   Live in {tier.liveIn} &middot; {commitmentLabel[tier.commitment]}
@@ -366,10 +364,10 @@ export default function PricingPage() {
         <div className="container-page">
           <p className="eyebrow mb-4">Growth</p>
           <h2 className="h-section max-w-3xl mb-2">
-            Monthly retainers that compound.
+            Hand off what you hate doing.
           </h2>
           <p className="mt-2 max-w-2xl text-brand-muted mb-10">
-            Reception, SEO, and ads. Each rung handles one more part of your growth engine.
+            Reception, ranking, ads. Pick the rung that matches what&rsquo;s broken &mdash; we run it from there.
           </p>
           <div className="grid gap-5 md:grid-cols-3 md:items-stretch">
             {growthTiers.map((tier) => {
@@ -405,24 +403,8 @@ export default function PricingPage() {
                   >
                     Stop worrying about {tier.stopWorryingAbout}.
                   </p>
-                  <div className="mt-5 space-y-1">
-                    <div className="flex items-baseline gap-1.5">
-                      <span
-                        className={`text-2xl font-medium tabular-nums ${
-                          featured ? "text-brand-soft" : "text-brand-ink"
-                        }`}
-                      >
-                        ${tier.setup}
-                      </span>
-                      <span
-                        className={`text-sm ${
-                          featured ? "text-brand-soft/60" : "text-brand-muted"
-                        }`}
-                      >
-                        setup
-                      </span>
-                    </div>
-                    <div className="flex items-baseline gap-1.5">
+                  <div className="mt-5 space-y-1.5">
+                    <div className="flex items-baseline gap-1.5 flex-wrap">
                       <span
                         className={`text-4xl font-medium tracking-tight tabular-nums ${
                           featured ? "text-brand-soft" : "text-brand-deep"
@@ -437,14 +419,23 @@ export default function PricingPage() {
                       >
                         /mo
                       </span>
+                      {tier.monthlyNote && (
+                        <span
+                          className={`text-sm ${
+                            featured ? "text-brand-soft/60" : "text-brand-muted"
+                          }`}
+                        >
+                          {tier.monthlyNote}
+                        </span>
+                      )}
                     </div>
-                    {tier.monthlyNote && (
+                    {tier.setup > 0 && (
                       <p
-                        className={`text-xs font-medium ${
+                        className={`text-sm ${
                           featured ? "text-brand-soft/60" : "text-brand-muted"
                         }`}
                       >
-                        {tier.monthlyNote}
+                        + ${tier.setup} setup
                       </p>
                     )}
                   </div>

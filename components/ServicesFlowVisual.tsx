@@ -307,7 +307,7 @@ const I = {
 const STAGES: Stage[] = [
   {
     id: "site-open",
-    label: "Site — Open",
+    label: "Presence — Open",
     sub: "Live in 72 hours",
     blurb:
       "A 5-page site that gets your business online fast. Mobile-first build, on-page SEO foundations, Google Business Profile claimed, hosting included at a flat rate.",
@@ -322,7 +322,7 @@ const STAGES: Stage[] = [
   },
   {
     id: "site-found",
-    label: "Site — Found",
+    label: "Presence — Found",
     sub: "Live in 5–7 days",
     blurb:
       "Up to 8 pages with location and service coverage, structured data for AI search, and an online booking calendar so customers can book around the clock.",
@@ -337,7 +337,7 @@ const STAGES: Stage[] = [
   },
   {
     id: "site-polished",
-    label: "Site — Polished",
+    label: "Presence — Polished",
     sub: "Live in 7–12 days",
     blurb:
       "Up to 12 pages with a custom design pass built for your brand, a conversion-optimised landing page for your top offer, and 30 days priority support post-launch.",

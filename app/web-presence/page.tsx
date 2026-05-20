@@ -50,7 +50,7 @@ const faqs = [
   },
   {
     q: "Can I cancel whenever?",
-    a: "Yes. Site hosting is month-to-month with no minimum. If you cancel, you leave with your domain, your code, and your Google Business Profile fully intact.",
+    a: "Yes. Presence hosting is month-to-month with no minimum. If you cancel, you leave with your domain, your code, and your Google Business Profile fully intact.",
   },
   {
     q: "How fast can you actually get me live?",
@@ -58,7 +58,7 @@ const faqs = [
   },
   {
     q: "What about contracts? I've heard horror stories with Hibu and Scorpion.",
-    a: "No 12-month contracts on Site. No locked-in annual fee. Month-to-month from day one. You're not trapped — you're a client because we're doing the work.",
+    a: "No 12-month contracts on Presence. No locked-in annual fee. Month-to-month from day one. You're not trapped — you're a client because we're doing the work.",
   },
 ];
 

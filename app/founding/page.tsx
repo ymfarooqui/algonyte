@@ -372,7 +372,7 @@ export default function FoundingPage() {
           <p className="mt-6 text-brand-muted leading-relaxed">
             Onboarding is a 15-minute intake form. No 2-hour configuration
             call. Your Awake reception system is live in 5 days, your site in
-            72 hours to 12 days (Site tiers), or your full stack in 14 days
+            72 hours to 12 days (Presence tiers), or your full stack in 14 days
             (Scale). You fill out the form; we build it.
           </p>
           <ul className="mt-6 space-y-3 text-sm text-brand-muted">
@@ -387,7 +387,7 @@ export default function FoundingPage() {
             </li>
             <li className="flex items-start gap-3">
               <span className="mt-0.5 shrink-0 text-brand-deep font-semibold">
-                Site tiers
+                Presence tiers
               </span>
               <span>
                 Open live in 72 hours. Found in 5&ndash;7 days. Polished in

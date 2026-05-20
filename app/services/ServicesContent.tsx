@@ -269,7 +269,7 @@ export default function ServicesContent() {
             </span>
             <div>
               <motion.p className="eyebrow" variants={reveal.fadeUp}>Product 01</motion.p>
-              <motion.h2 className="h-section leading-tight" variants={reveal.fadeUp}>Site</motion.h2>
+              <motion.h2 className="h-section leading-tight" variants={reveal.fadeUp}>Presence</motion.h2>
             </div>
           </div>
 
@@ -287,7 +287,7 @@ export default function ServicesContent() {
 
           <motion.div className="mt-8 text-center" variants={reveal.fadeUp}>
             <Link href="/pricing#site" className="btn-primary inline-flex items-center gap-2">
-              Compare all Site rungs
+              Compare all Presence rungs
               <span>{Icon.arrow}</span>
             </Link>
           </motion.div>

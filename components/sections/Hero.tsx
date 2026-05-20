@@ -29,7 +29,7 @@ export default function Hero() {
             className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-muted"
             variants={reveal.fadeUp}
           >
-            {["Site", "Receptionist", "Voice Agents", "Local SEO", "Reputation"].map(
+            {["Presence", "Receptionist", "Voice Agents", "Local SEO", "Reputation"].map(
               (item, i) => (
                 <span key={item} className="whitespace-nowrap">
                   {i > 0 && (

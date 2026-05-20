@@ -26,7 +26,7 @@ export default function PricingPreview() {
           className="mt-4 max-w-2xl text-brand-muted"
           variants={reveal.fadeUp}
         >
-          Flat monthly hosting for every Site tier. Flat retainers for Growth — no
+          Flat monthly hosting for every Presence tier. Flat retainers for Growth — no
           per-minute charges, no overage fees, no usage caps.
         </motion.p>
 
@@ -37,7 +37,7 @@ export default function PricingPreview() {
           {/* Site track */}
           <motion.div variants={reveal.fadeUpLg}>
             <p className="text-xs font-semibold uppercase tracking-[0.2em] text-brand-deep/70 mb-4">
-              Site
+              Presence
             </p>
             <div className="space-y-3">
               {siteTiers.map((t) => {
@@ -109,7 +109,7 @@ export default function PricingPreview() {
           className="mt-10 text-sm text-brand-muted text-center max-w-2xl mx-auto"
           variants={reveal.fadeUp}
         >
-          Site hosting is month-to-month — <strong className="text-brand-deep">cancel anytime.</strong>{" "}
+          Presence hosting is month-to-month — <strong className="text-brand-deep">cancel anytime.</strong>{" "}
           Awake is month-to-month. Climbing and Scale have a 6-month minimum.{" "}
           30-day refund if it&rsquo;s not working out.
         </motion.p>

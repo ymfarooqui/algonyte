@@ -1,8 +1,8 @@
 # Algonyte
 
-> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Site (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $300 setup.
+> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Presence (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $300 setup.
 
-Algonyte is a small AI automation studio based in the Chicago and Detroit metros. The product line is two things — a Site product (one-time build + flat $99/mo hosting) and a Growth product (monthly retainer that handles reception, SEO, and ads). Together they cover everything a service business needs to be online, found, and answered without the owner managing it.
+Algonyte is a small AI automation studio based in the Chicago and Detroit metros. The product line is two things — a Presence product (one-time build + flat $99/mo hosting) and a Growth product (monthly retainer that handles reception, SEO, and ads). Together they cover everything a service business needs to be online, found, and answered without the owner managing it.
 
 The stack runs on Next.js for sites, GoHighLevel for CRM and workflows, OpenAI for conversational responses, and Twilio for voice and SMS. The business owns its accounts and its data.
 
@@ -12,7 +12,7 @@ We serve service businesses (auto, home services, trades, professional services)
 
 - [Home](https://algonyte.com/): What we do, who it's for, what it costs.
 - [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $2,599/mo + ad spend.
-- [Web Presence](https://algonyte.com/web-presence): Site product — Open ($300 + $99/mo), Found ($600 + $99/mo), Polished ($1,000 + $99/mo).
+- [Web Presence](https://algonyte.com/web-presence): Presence product — Open ($300 + $99/mo), Found ($600 + $99/mo), Polished ($1,000 + $99/mo).
 - [AI Receptionist](https://algonyte.com/ai-receptionist): Topical landing for reception buyers — points to Awake and Climbing.
 - [Lead Generation](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
 - [Reputation Management](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
@@ -24,7 +24,7 @@ We serve service businesses (auto, home services, trades, professional services)
 
 ## Tiers
 
-### Site (one-time + $99/mo hosting forever)
+### Presence (one-time + $99/mo hosting forever)
 
 | Tier | Setup | Monthly | Live in |
 |---|---|---|---|
@@ -42,7 +42,7 @@ We serve service businesses (auto, home services, trades, professional services)
 
 ## What's installed (and where)
 
-- **Site** (Open/Found/Polished): static Next.js site, on-page SEO, Google Business Profile setup, schema, llms.txt, Search Console, payments.
+- **Presence** (Open/Found/Polished): static Next.js site, on-page SEO, Google Business Profile setup, schema, llms.txt, Search Console, payments.
 - **Awake**: AI chat on site, missed-call text-back, multi-channel DM auto-reply (Facebook, Instagram, WhatsApp, Google Business Messages), lead qualification, auto-booking, Google review workflow, custom dashboard.
 - **Climbing**: everything in Awake + voice AI 24/7 phone receptionist + ongoing Local SEO program (Google Business Profile maintenance, citations, 1–2 pages/mo, rank reports, monthly strategy call).
 - **Scale**: everything in Climbing + Google + Meta paid ads management + closed-loop tracking. Ad spend goes on the customer's credit card, no markup.
@@ -53,10 +53,10 @@ We serve service businesses (auto, home services, trades, professional services)
 - Founder: Yaseen Farooqui
 - Domain: algonyte.com
 - Pricing: starts at $99/mo with $300 setup
-- Hosting: $99/mo flat on every Site tier, never increases
+- Hosting: $99/mo flat on every Presence tier, never increases
 - Ad spend: customer's account, customer's card, no markup
 - Founding offer: 3 spots — 50% off setup, 30% off Growth for 6 months
-- All Site and Awake plans month-to-month
+- All Presence and Awake plans month-to-month
 - Climbing requires 6-month commitment (SEO needs runway)
 - Scale requires 6-month SEO / 3-month ad commitment
 - Free consult: 30-minute walkthrough at https://algonyte.com/book

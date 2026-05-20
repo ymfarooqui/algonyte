@@ -25,7 +25,7 @@ export default function ProductGrid() {
           className="mt-4 max-w-2xl text-brand-muted"
           variants={reveal.fadeUp}
         >
-          Start with Site, layer Growth on top when you&rsquo;re ready. One
+          Start with Presence, layer Growth on top when you&rsquo;re ready. One
           team, one bill, one number to call.
         </motion.p>
 
@@ -44,7 +44,7 @@ export default function ProductGrid() {
               <div className="pl-3">
                 <div className="flex items-start justify-between gap-3">
                   <h3 className="text-2xl sm:text-3xl font-medium text-brand-deep tracking-tight">
-                    Site
+                    Presence
                   </h3>
                   <span className="font-mono text-[10px] uppercase tracking-[0.18em] text-brand-primary bg-brand-accent rounded-md px-2.5 py-1">
                     Start here
@@ -69,7 +69,7 @@ export default function ProductGrid() {
                 </p>
 
                 <p className="mt-6 inline-flex items-center gap-1.5 text-sm font-medium text-brand-primary">
-                  See Site tiers
+                  See Presence tiers
                   <span className="inline-block transition-transform group-hover:translate-x-1">→</span>
                 </p>
               </div>
