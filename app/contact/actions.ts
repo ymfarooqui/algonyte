@@ -3,8 +3,52 @@
 // Custom intake form submission. Posts to GoHighLevel Contacts API V2.
 // Token lives in LC_API_TOKEN (server-only). Sub-account in LC_LOCATION_ID.
 
-const LC_CONTACTS_ENDPOINT = "https://services.leadconnectorhq.com/contacts/";
+const LC_BASE = "https://services.leadconnectorhq.com";
+const LC_CONTACTS_ENDPOINT = `${LC_BASE}/contacts/`;
 const LC_API_VERSION = "2021-07-28";
+
+function lcHeaders(token: string): HeadersInit {
+  return {
+    Authorization: `Bearer ${token}`,
+    Version: LC_API_VERSION,
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  };
+}
+
+async function addTagsToContact(
+  token: string,
+  contactId: string,
+  tags: string[],
+): Promise<void> {
+  if (tags.length === 0) return;
+  try {
+    await fetch(`${LC_BASE}/contacts/${contactId}/tags`, {
+      method: "POST",
+      headers: lcHeaders(token),
+      body: JSON.stringify({ tags }),
+    });
+  } catch (err) {
+    console.error("Intake form: tag attach failed (non-fatal)", err);
+  }
+}
+
+async function addNoteToContact(
+  token: string,
+  contactId: string,
+  body: string,
+): Promise<void> {
+  if (!body) return;
+  try {
+    await fetch(`${LC_BASE}/contacts/${contactId}/notes`, {
+      method: "POST",
+      headers: lcHeaders(token),
+      body: JSON.stringify({ body }),
+    });
+  } catch (err) {
+    console.error("Intake form: note attach failed (non-fatal)", err);
+  }
+}
 
 // Maps "What's broken?" checkbox values to GHL tag names.
 const PROBLEM_TAGS: Record<string, string> = {
@@ -108,19 +152,40 @@ export async function submitIntake(formData: FormData): Promise<IntakeResult> {
   try {
     const res = await fetch(LC_CONTACTS_ENDPOINT, {
       method: "POST",
-      headers: {
-        Authorization: `Bearer ${token}`,
-        Version: LC_API_VERSION,
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
+      headers: lcHeaders(token),
       body: JSON.stringify(payload),
     });
 
-    if (!res.ok) {
-      const detail = await res.text().catch(() => "");
+    if (res.ok) {
+      const created = (await res.json().catch(() => null)) as
+        | { contact?: { id?: string } }
+        | null;
+      const contactId = created?.contact?.id;
+      if (contactId) {
+        await addNoteToContact(token, contactId, message);
+      }
+      return { ok: true };
+    }
+
+    // 400 with "duplicated contacts" means the email already exists in this
+    // sub-account. GHL returns the existing contactId in meta — attach the
+    // new tags and (optional) note to that contact instead of failing the
+    // submission. From the user's perspective the intake worked.
+    if (res.status === 400) {
+      const errorBody = (await res.json().catch(() => null)) as
+        | { message?: string; meta?: { contactId?: string } }
+        | null;
+      const existingId = errorBody?.meta?.contactId;
+      const isDuplicate =
+        typeof errorBody?.message === "string" &&
+        errorBody.message.toLowerCase().includes("duplicat");
+      if (isDuplicate && existingId) {
+        await addTagsToContact(token, existingId, tags);
+        await addNoteToContact(token, existingId, message);
+        return { ok: true };
+      }
       console.error(
-        `Intake form: GHL contact creation failed (${res.status}): ${detail}`,
+        `Intake form: GHL contact creation failed (400): ${JSON.stringify(errorBody)}`,
       );
       return {
         ok: false,
@@ -129,35 +194,15 @@ export async function submitIntake(formData: FormData): Promise<IntakeResult> {
       };
     }
 
-    // Attempt to attach the message as a note. Best-effort; don't fail the
-    // whole submission if the note POST errors out.
-    if (message) {
-      try {
-        const created = (await res.json().catch(() => null)) as
-          | { contact?: { id?: string } }
-          | null;
-        const contactId = created?.contact?.id;
-        if (contactId) {
-          await fetch(
-            `https://services.leadconnectorhq.com/contacts/${contactId}/notes`,
-            {
-              method: "POST",
-              headers: {
-                Authorization: `Bearer ${token}`,
-                Version: LC_API_VERSION,
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify({ body: message }),
-            },
-          );
-        }
-      } catch (noteErr) {
-        console.error("Intake form: note attach failed (non-fatal)", noteErr);
-      }
-    }
-
-    return { ok: true };
+    const detail = await res.text().catch(() => "");
+    console.error(
+      `Intake form: GHL contact creation failed (${res.status}): ${detail}`,
+    );
+    return {
+      ok: false,
+      error:
+        "Couldn't reach our intake system right now. Try again or book a call directly.",
+    };
   } catch (err) {
     console.error("Intake form: network error reaching GHL", err);
     return {
