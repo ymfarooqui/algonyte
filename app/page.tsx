@@ -1,6 +1,5 @@
 import dynamic from "next/dynamic";
 import Hero from "@/components/sections/Hero";
-import FoundingStrip from "@/components/sections/FoundingStrip";
 import StatsStrip from "@/components/sections/StatsStrip";
 import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
 
@@ -14,7 +13,6 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <FoundingStrip />
       <StatsStrip />
       <IntegrationsStrip />
       <ProblemHook />
