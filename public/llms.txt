@@ -1,6 +1,6 @@
 # Algonyte
 
-> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Presence (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $300 setup.
+> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Presence (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $299 setup.
 
 Algonyte is a small AI automation studio based in the Chicago and Detroit metros. The product line is two things — a Presence product (one-time build + flat $99/mo hosting) and a Growth product (monthly retainer that handles reception, SEO, and ads). Together they cover everything a service business needs to be online, found, and answered without the owner managing it.
 
@@ -11,8 +11,8 @@ We serve service businesses (auto, home services, trades, professional services)
 ## Core pages
 
 - [Home](https://algonyte.com/): What we do, who it's for, what it costs.
-- [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $2,599/mo + ad spend.
-- [Web Presence](https://algonyte.com/web-presence): Presence product — Open ($300 + $99/mo), Found ($600 + $99/mo), Polished ($1,000 + $99/mo).
+- [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $1,199/mo + ad spend.
+- [Web Presence](https://algonyte.com/web-presence): Presence product — Open ($299 + $99/mo), Found ($549 + $99/mo), Polished ($949 + $99/mo).
 - [AI Receptionist](https://algonyte.com/ai-receptionist): Topical landing for reception buyers — points to Awake and Climbing.
 - [Lead Generation](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
 - [Reputation Management](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
@@ -28,17 +28,17 @@ We serve service businesses (auto, home services, trades, professional services)
 
 | Tier | Setup | Monthly | Live in |
 |---|---|---|---|
-| Open | $300 | $99 | 72 hours |
-| Found | $600 | $99 | 5–7 days |
-| Polished | $1,000 | $99 | 7–12 days |
+| Open | $299 | $99 | 72 hours |
+| Found | $549 | $99 | 5–7 days |
+| Polished | $949 | $99 | 7–12 days |
 
 ### Growth (monthly retainer)
 
 | Tier | Setup | Monthly | Live in | Commitment |
 |---|---|---|---|---|
-| Awake | $329 | $749 | 5 days | Month-to-month |
-| Climbing | $500 | $1,599 all-in | 10–14 days | 6 months |
-| Scale | $500 | $2,599 + ad spend | 14 days | 6 mo SEO / 3 mo ads |
+| Awake | $199 | $549 | 5 days | Month-to-month |
+| Climbing | $499 | $749 all-in | 10–14 days | 6 months |
+| Scale | $659 | $1,199 + ad spend | 14 days | 6 mo SEO / 3 mo ads |
 
 ## What's installed (and where)
 
@@ -52,7 +52,7 @@ We serve service businesses (auto, home services, trades, professional services)
 - Company name: Algonyte
 - Founder: Yaseen Farooqui
 - Domain: algonyte.com
-- Pricing: starts at $99/mo with $300 setup
+- Pricing: starts at $99/mo with $299 setup
 - Hosting: $99/mo flat on every Presence tier, never increases
 - Ad spend: customer's account, customer's card, no markup
 - Founding offer: 3 spots — 50% off setup, 30% off Growth for 6 months

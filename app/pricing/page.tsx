@@ -14,7 +14,7 @@ const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
 const pricingTitle = "Pricing | Algonyte — Plans from $99/mo";
 const pricingDescription =
-  "Two products. Six rungs. From $99/mo to $2,599/mo. Live in 72 hours to 14 days. No long-term contracts except 6 months on SEO.";
+  "Two products. Six rungs. From $99/mo to $1,199/mo. Live in 72 hours to 14 days. No long-term contracts except 6 months on SEO.";
 
 export const metadata: Metadata = {
   title: pricingTitle,
@@ -73,7 +73,7 @@ const typicalPaths = [
   {
     label: "Full reception + SEO",
     tiers: [siteTiers[2], growthTiers[1]],
-    // Climbing is all-in (includes hosting), so $99 hosting + $1,599 Climbing = $1,698/mo
+    // Climbing is all-in (includes hosting), so hosting is bundled into Climbing's monthly
     setup: siteTiers[2].setup + growthTiers[1].setup,
     monthly: siteTiers[2].monthly + growthTiers[1].monthly,
     monthlyNote: "(Climbing all-in includes hosting)",

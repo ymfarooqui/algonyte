@@ -38,7 +38,7 @@ export const siteTiers: readonly SiteTier[] = [
   {
     id: "open",
     name: "Open",
-    setup: 300,
+    setup: 299,
     monthly: 99,
     liveIn: "72 hours",
     commitment: "month-to-month",
@@ -66,7 +66,7 @@ export const siteTiers: readonly SiteTier[] = [
   {
     id: "found",
     name: "Found",
-    setup: 600,
+    setup: 549,
     monthly: 99,
     liveIn: "5–7 days",
     commitment: "month-to-month",
@@ -88,7 +88,7 @@ export const siteTiers: readonly SiteTier[] = [
   {
     id: "polished",
     name: "Polished",
-    setup: 1000,
+    setup: 949,
     monthly: 99,
     liveIn: "7–12 days",
     commitment: "month-to-month",
@@ -100,7 +100,7 @@ export const siteTiers: readonly SiteTier[] = [
       "Custom design pass — built for your brand, not a template variant",
       "1 conversion-optimized landing page for your top offer",
       "30 days priority support post-launch",
-      "Awake onboarding included free if you add it within 60 days ($329 value)",
+      "Awake onboarding included free if you add it within 60 days ($199 value)",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_POLISHED]",
   },
@@ -110,8 +110,8 @@ export const growthTiers: readonly GrowthTier[] = [
   {
     id: "awake",
     name: "Awake",
-    setup: 329,
-    monthly: 749,
+    setup: 199,
+    monthly: 549,
     liveIn: "5 days",
     commitment: "month-to-month",
     tagline: "You stop worrying about text, chat, and DMs going cold.",
@@ -130,8 +130,8 @@ export const growthTiers: readonly GrowthTier[] = [
   {
     id: "climbing",
     name: "Climbing",
-    setup: 500,
-    monthly: 1599,
+    setup: 499,
+    monthly: 749,
     monthlyNote: "all-in (includes hosting)",
     liveIn: "10–14 days",
     commitment: "6-months",
@@ -157,8 +157,8 @@ export const growthTiers: readonly GrowthTier[] = [
   {
     id: "scale",
     name: "Scale",
-    setup: 500,
-    monthly: 2599,
+    setup: 659,
+    monthly: 1199,
     monthlyNote: "all-in + ad spend on your card",
     liveIn: "14 days",
     commitment: "6-months-seo-3-months-ads",

@@ -31,12 +31,12 @@ export function pricingSchema() {
     "@type": "Product",
     name: "Algonyte Plans",
     description:
-      "Two products — Site (web build + flat $99/mo hosting) and Growth (monthly retainers for reception, SEO, and ads). Six rungs from $99/mo to $2,599/mo.",
+      "Two products: Presence (web build + flat $99/mo hosting) and Growth (monthly retainers for reception, SEO, and ads). Six rungs from $99/mo to $1,199/mo.",
     brand: { "@type": "Brand", name: "Algonyte" },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 99,
-      highPrice: 2599,
+      highPrice: 1199,
       priceCurrency: "USD",
       offerCount: siteTiers.length + growthTiers.length,
       offers: [...siteTiers, ...growthTiers].map(tierOffer),
