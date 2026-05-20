@@ -56,3 +56,26 @@ export function foundingOfferSchema() {
     url: `${siteConfig.url}/founding`,
   };
 }
+
+export function webPresenceServiceSchema() {
+  const description =
+    "End-to-end web presence for service businesses. Sites built from $300 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/web-presence#service`,
+    serviceType: "Web Design, Hosting, and Local SEO",
+    name: "Web Presence by Algonyte",
+    provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+    description,
+    areaServed: { "@type": "Country", name: "United States" },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: siteTiers[0].setup,
+      highPrice: siteTiers[siteTiers.length - 1].setup,
+      priceCurrency: "USD",
+      offerCount: siteTiers.length,
+      offers: siteTiers.map(tierOffer),
+    },
+  };
+}
