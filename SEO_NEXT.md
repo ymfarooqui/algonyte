@@ -4,7 +4,7 @@ Last updated: 2026-05-13
 
 ## What's done
 
-- Foundation: per-page metadata + canonicals, Organization + ProfessionalService + BreadcrumbList schema across all pages, dynamic OG image, sitemap, robots (AI crawlers allowed), llms.txt.
+- Found: per-page metadata + canonicals, Organization + ProfessionalService + BreadcrumbList schema across all pages, dynamic OG image, sitemap, robots (AI crawlers allowed), llms.txt.
 - Schema gaps closed: Macomb added to `areaServed`, `FAQPage` on /services, `Article` on case study, `Person` schema on /about already had headshot.
 - Roadmap Week 1 shipped: `/locations/macomb` + `/insights/car-hub-macomb-case-study`.
 - Lighthouse CI wired (PR + main).

@@ -4,10 +4,10 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
+import { growthTiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Macomb, MI | Stop Missing Service Calls";
-const description =
-  "AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $549/mo.";
+const description = `AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $${growthTiers[0].monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +37,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: 549,
-    highPrice: 1299,
+    lowPrice: growthTiers[0].monthly,
+    highPrice: growthTiers[1].monthly,
     offerCount: 3,
   },
 };
@@ -68,7 +68,7 @@ const faqJsonLd = {
       name: "Will the AI receptionist sound like it's in Michigan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tone is configurable. We train the agent on your shop's voice — friendly, blunt, formal, whatever fits — and on local context like nearby cities, service area boundaries, and the way your customers actually describe their problems.",
+        text: "Tone is configurable. We train the agent on your shop's voice (friendly, blunt, formal, whatever fits) and on local context like nearby cities, service area boundaries, and the way your customers describe their problems.",
       },
     },
     {
@@ -87,7 +87,7 @@ export default function MacombLocationPage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Macomb County, Michigan</p>
             <h1 className="h-display">
@@ -113,13 +113,12 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why this matters in Macomb</p>
           <h2 className="h-section">Service businesses here lose money the same way: missed calls.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
               Drive Hall Road or M-59 on a Tuesday afternoon and you&rsquo;ll pass
-              dozens of small shops — auto repair, HVAC, plumbing, roofing,
-              landscaping, dental, salons — each one trying to grow with a phone
+              dozens of small shops: auto repair, HVAC, plumbing, roofing,
+              landscaping, dental, salons, each one trying to grow with a phone
               that rings when nobody can answer. The owner is under a car, on a
               roof, with a patient, or on a job site. The call goes to voicemail.
               The lead calls the next shop on Google. That&rsquo;s the leak.
@@ -127,7 +126,7 @@ export default function MacombLocationPage() {
             <p>
               You don&rsquo;t need a bigger marketing budget to fix that. You need
               the calls and form fills you already get to be answered, qualified,
-              and booked the moment they arrive — at 2pm on a Tuesday and at 11pm
+              and booked the moment they arrive, at 2pm on a Tuesday and at 11pm
               on a Sunday.
             </p>
           </div>
@@ -144,15 +143,15 @@ export default function MacombLocationPage() {
               installed the AI receptionist, after-hours calls went to voicemail
               and roughly half of new-customer leads never got a callback fast
               enough. In the first week the system was live, it booked 10 jobs
-              the shop wouldn&rsquo;t have captured otherwise — missed-call
+              the shop wouldn&rsquo;t have captured otherwise: missed-call
               text-backs that turned into appointments, late-night form fills
               that were qualified and on the calendar by the time the bay opened
               the next morning.
             </p>
             <p>
               That&rsquo;s the standard we work to. Real leads, real bookings,
-              real numbers. Nothing about the install was custom to auto repair —
-              the same workflow runs equally well for an HVAC shop in Sterling
+              real numbers. Nothing about the install was custom to auto repair.
+              The same workflow runs equally well for an HVAC shop in Sterling
               Heights, a roofer in Shelby Township, or a dental practice in
               Clinton Township.
             </p>
@@ -167,7 +166,6 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What we install</p>
           <h2 className="h-section">The system, end to end.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
@@ -186,7 +184,7 @@ export default function MacombLocationPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Pro AI plan)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Climbing plan)</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Picks up the phone when you can&rsquo;t. Qualifies, books, and
                 hands off with a full transcript so you walk into every job
@@ -197,7 +195,7 @@ export default function MacombLocationPage() {
               <h3 className="text-lg font-semibold text-brand-deep">CRM and follow-up</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Every lead is tracked. Reminders, follow-up sequences, and Google
-                review requests fire automatically — no spreadsheets, no
+                review requests fire automatically. No spreadsheets, no
                 forgotten callbacks.
               </p>
             </div>
@@ -207,13 +205,12 @@ export default function MacombLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Service area</p>
           <h2 className="h-section">Across Macomb County and the Detroit metro.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             We work with service businesses in Macomb Township, Sterling Heights,
             Warren, Clinton Township, Shelby Township, Roseville, St. Clair
             Shores, Chesterfield, Eastpointe, Fraser, New Baltimore, and the rest
-            of Macomb County — plus the wider Detroit metro. The system is
+            of Macomb County, plus the wider Detroit metro. The system is
             remote-first, so the install runs the same whether you&rsquo;re a
             single-bay shop or a multi-location operation.
           </p>
@@ -222,7 +219,6 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from Macomb-area owners.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (

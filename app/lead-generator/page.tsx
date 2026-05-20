@@ -3,13 +3,14 @@ import Link from "next/link";
 import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
-import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
-import CursorSpotlight from "@/components/CursorSpotlight";
+import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
+import { growthTiers } from "@/lib/tiers";
 
-const title = "Lead Generator | Paid Ads + AI Follow-Up That Actually Books";
-const description =
-  "Paid ads on Google and Meta plus AI follow-up that books appointments, not form fills. Landing pages, SMS sequences, closed-loop tracking to booked-job.";
+const scale = growthTiers[2];
+
+const title = "Lead Generation for Service Businesses | Google + Meta Ads";
+const description = `Paid ads on Google and Meta with AI follow-up that books appointments, not form fills. Part of Scale ($${scale.monthly.toLocaleString()}/mo + ad spend on your card). Closed-loop tracking. No markup on ad spend.`;
 
 export const metadata: Metadata = {
   title,
@@ -19,39 +20,64 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
-const breadcrumb = breadcrumbJsonLd([{ name: "Lead Generator", path: "/lead-generator" }]);
+const breadcrumb = breadcrumbJsonLd([
+  { name: "Lead Generation", path: "/lead-generator" },
+]);
 
 const serviceJsonLd = {
   "@context": "https://schema.org",
   "@type": "Service",
   "@id": `${siteConfig.url}/lead-generator#service`,
-  serviceType: "Lead Generation",
-  name: "Lead Generator by Algonyte Labs",
+  serviceType: "Paid Lead Generation Management",
+  name: `Lead Generation by Algonyte Labs, ${scale.name} tier`,
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-  description,
+  description:
+    "Google Search Ads, Local Service Ads, and Meta Ads managed for service businesses. Ad spend goes directly to Google and Meta, no markup, no bundling. Part of the Scale tier.",
   areaServed: { "@type": "Country", name: "United States" },
+  offers: {
+    "@type": "Offer",
+    name: scale.name,
+    price: scale.monthly,
+    priceCurrency: "USD",
+    priceSpecification: {
+      "@type": "UnitPriceSpecification",
+      price: scale.monthly,
+      priceCurrency: "USD",
+      unitCode: "MON",
+      referenceQuantity: { "@type": "QuantitativeValue", value: 1, unitCode: "MON" },
+    },
+    eligibleTransactionVolume: {
+      "@type": "PriceSpecification",
+      price: scale.setup,
+      priceCurrency: "USD",
+      description: `One-time setup: $${scale.setup}`,
+    },
+    availability: "https://schema.org/InStock",
+    url: `${siteConfig.url}/pricing#scale`,
+    description: `Ad spend on customer's card. No markup on ad spend.`,
+  },
 };
 
 const faqs = [
   {
-    q: "Will you run ads if I don't have the AI receptionist?",
-    a: "Yes, but we usually push back. Ads without follow-up is where most of the budget gets wasted. We'd rather fix the leak before opening the faucet.",
+    q: "How much ad spend do I need to start?",
+    a: "Honest range: $1,500–$5,000/mo is the minimum to see signal on Google Search Ads in most service markets. Below that, the auction dynamics work against you. You're competing against businesses spending 5x more per day. If you're starting at $1,500, we'll tell you which channel stretches it furthest.",
   },
   {
-    q: "What platforms?",
-    a: "Google (Search, Local Service Ads, Performance Max where it fits), Meta (Facebook and Instagram). We pick the channel from your customer behavior, not a default playbook.",
+    q: "What if my ads aren't working?",
+    a: "The first 30 days are calibration. We're building negative keyword lists, testing match types, and watching what converts. We share the numbers transparently every month. If CPL is too high after 60 days, we change the approach. If the market doesn't support ads economically for your service, we'll tell you that too.",
   },
   {
-    q: "How long until I see leads?",
-    a: "First leads usually within 2-3 weeks of going live. The honest answer: the first 30 days are calibration. Real cost-per-booked-job stabilizes in month 2.",
+    q: "How fast do I see leads?",
+    a: "First leads usually within 1–2 weeks of go-live. Campaigns launch within the first 14 days of onboarding. Month one is learning. Month two is when cost-per-booked-job starts to stabilize.",
   },
   {
-    q: "What happens to a lead once it comes in?",
-    a: "Funnels into the same AI receptionist workflow. SMS reply within seconds, qualifying conversation, booking to your calendar. No 'we'll get back to you in 24 hours.'",
+    q: "What happens to my accounts if I cancel?",
+    a: "You keep everything. The Google Ads and Meta accounts are set up in your name on your billing. The campaigns, audiences, ad creative, and conversion data all stay with you. No lock-in, no hostage accounts.",
   },
   {
-    q: "Do I own the ad accounts?",
-    a: "Yes. We build in your accounts on your billing. If we part ways, the data, audiences, and creative all stay with you.",
+    q: "Do you handle creative for the ads?",
+    a: "Yes. Meta Ads creative (static images, copy, basic video) is included. For Google Search Ads, we write and A/B test the ad copy. The 2 landing pages per quarter are built by us, not handed off to you as a template.",
   },
 ];
 
@@ -68,115 +94,243 @@ const faqJsonLd = {
 export default function LeadGeneratorPage() {
   return (
     <>
+      {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Lead Generator</p>
             <h1 className="h-display">
-              Ads that book{" "}
-              <span className="text-brand-deep">appointments,</span> not form fills.
+              Lead Generation for{" "}
+              <span className="text-brand-deep">Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              Paid ads on Google and Meta, landing pages built to convert, and
-              AI follow-up that works the lead over SMS and email until
-              there&rsquo;s a time on your calendar. Live in 5 to 7 days.
+              Google Search, Local Service Ads, Meta. Landing pages built
+              to convert, AI follow-up that books appointments. Closed-loop
+              tracking from ad click to booked job. Part of the{" "}
+              <strong className="text-brand-deep">{scale.name}</strong> tier.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
               <Link
-                href="/book"
+                href="/pricing#scale"
                 className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
               >
-                Book a 30-minute walkthrough →
+                Talk to us about {scale.name} &rarr;
               </Link>
               <Link
                 href="/web-presence"
                 className="text-sm text-brand-deep underline decoration-brand-deep/30 underline-offset-4 hover:decoration-brand-deep transition-colors"
               >
-                Don&rsquo;t have a website yet? Start here →
+                Don&rsquo;t have a website yet? Start here &rarr;
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The problem</p>
-          <h2 className="h-section">Most service businesses don&rsquo;t have a lead problem. They have a follow-up problem.</h2>
-          <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
-            <p>
-              You spend $3,000 on Google ads. You get 40 form fills. Your team
-              gets to half of them in 24 hours. By then, 70% have already
-              booked with someone else. The CPL looks fine on paper. The
-              cost-per-booked-job is brutal.
-            </p>
-            <p>
-              We don&rsquo;t run a lead-gen play unless the follow-up is
-              tight. That&rsquo;s why most of our lead-gen clients turn on
-              the AI receptionist first.
-            </p>
-          </div>
+      {/* Brand frame */}
+      <section className="section bg-brand-deep text-white">
+        <div className="container-page max-w-3xl text-center">
+          <p className="text-xl sm:text-2xl font-medium leading-snug text-white/90 italic">
+            &ldquo;Your business runs while you sleep, including the ads, the landing pages, and the follow-up.&rdquo;
+          </p>
         </div>
       </section>
 
+      {/* What it does */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The system</p>
-          <h2 className="h-section">Ads → Landing page → AI follow-up → Calendar.</h2>
+          <h2 className="h-section">The full paid-lead system.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
-              <strong className="text-brand-deep">Paid ads on the channel your customers actually use.</strong>{" "}
-              Google Search, Local Service Ads, Meta. We pick by behavior, not by what&rsquo;s trendy.
+              <strong className="text-brand-deep">Google Search Ads + Local Service Ads (LSAs).</strong>{" "}
+              Managed and A/B tested weekly. Match types, negative keywords, and bid strategy
+              tuned to cost-per-booked-job, not cost-per-click.
             </li>
             <li>
-              <strong className="text-brand-deep">Landing pages built to convert.</strong>{" "}
+              <strong className="text-brand-deep">Meta Ads (Facebook + Instagram) with creative testing.</strong>{" "}
+              Multiple ad sets, audience testing, and creative variants. We iterate
+              until CPL is tight, then scale.
+            </li>
+            <li>
+              <strong className="text-brand-deep">2 conversion-optimized landing pages per quarter.</strong>{" "}
               One offer, one CTA, fast load. Not your homepage with a form on it.
             </li>
             <li>
-              <strong className="text-brand-deep">AI follow-up the second the lead lands.</strong>{" "}
-              SMS within seconds. Conversation continues until the booking is on the calendar or the lead opts out.
+              <strong className="text-brand-deep">AI follow-up on every ad lead via SMS + email.</strong>{" "}
+              The moment a form fill lands, the lead gets an SMS. The conversation continues
+              until there&rsquo;s a time on the calendar or the lead opts out.
             </li>
             <li>
-              <strong className="text-brand-deep">Closed-loop tracking.</strong>{" "}
-              We track ad-spend to booked-job, not ad-spend to form-fill. The metric is revenue, not vanity.
+              <strong className="text-brand-deep">Closed-loop tracking: ad click &rarr; form fill &rarr; booked job &rarr; revenue.</strong>{" "}
+              We track the full funnel. The number we optimize is cost-per-booked-job, not
+              cost-per-lead.
             </li>
             <li>
-              <strong className="text-brand-deep">Monthly review with real numbers.</strong>{" "}
-              What worked, what didn&rsquo;t, what we&rsquo;d change. No spin.
+              <strong className="text-brand-deep">Monthly performance review with CPL, CAC, booked-rate, and ROAS.</strong>{" "}
+              Real numbers, no spin. What worked, what didn&rsquo;t, and what we change next month.
             </li>
           </ul>
         </div>
       </section>
 
+      {/* No markup callout */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The proof</p>
-          <h2 className="h-section">What we&rsquo;ll show you on the call.</h2>
-          <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
-            <p>
-              We&rsquo;re selective about who we run paid ads for. We&rsquo;d
-              rather walk you through a real client account on the
-              walkthrough — current ad spend, cost-per-booked-job, what we
-              changed, what it cost, what it returned — than pitch you a
-              testimonial graphic.
-            </p>
-            <p>
-              If you&rsquo;re comparing us against a generic ads agency, the
-              30-minute call will make the difference obvious. If you&rsquo;d
-              rather see the numbers in writing first, ask on the call and
-              we&rsquo;ll send them.
-            </p>
+          <div className="rounded-2xl border-2 border-brand-deep bg-brand-accent/30 p-8 sm:p-10">
+            <h2 className="h-section text-brand-deep">Ad spend is yours. Always.</h2>
+            <div className="mt-4 space-y-4 text-brand-muted leading-relaxed">
+              <p>
+                You hold the Google Ads and Meta accounts. Ad spend goes on your credit card,
+                directly to Google and Meta. Never touches us, no markup, ever.
+                The ${scale.monthly.toLocaleString()}/mo is for the work; the spend is yours.
+                You see every dollar.
+              </p>
+              <p>
+                If you ever leave us, the accounts and campaigns stay yours.
+              </p>
+              <p className="text-sm text-brand-muted/80 border-t border-brand-deep/10 pt-4">
+                Most agencies run ads through their own accounts. You never see the real
+                spend, and when you leave, the data, audiences, and campaign history
+                go with them. We don&rsquo;t do that.
+              </p>
+            </div>
           </div>
         </div>
       </section>
 
-      <IntegrationsStrip />
-
+      {/* Scale tier CTA card */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
-          <h2 className="h-section">Common questions.</h2>
+          <h2 className="h-section">Lead generation is part of {scale.name}.</h2>
+          <div className="mt-6 lift-card rounded-2xl bg-white p-8 sm:p-10 border border-slate-200">
+            <div className="flex flex-wrap items-start justify-between gap-4">
+              <div>
+                <p className="text-sm font-semibold uppercase tracking-widest text-brand-muted">
+                  Growth Tier
+                </p>
+                <p className="text-3xl font-bold text-brand-deep mt-1">{scale.name}</p>
+              </div>
+              <div className="text-right">
+                <p className="text-sm text-brand-muted">Setup</p>
+                <p className="text-2xl font-bold text-brand-deep">${scale.setup}</p>
+              </div>
+            </div>
+
+            <div className="mt-4 flex flex-wrap items-baseline gap-2">
+              <span className="text-4xl font-bold text-brand-deep">
+                ${scale.monthly.toLocaleString()}
+              </span>
+              <span className="text-brand-muted">/mo, {scale.monthlyNote}</span>
+            </div>
+
+            <div className="mt-2 flex flex-wrap gap-4 text-sm text-brand-muted">
+              <span>Live in {scale.liveIn}</span>
+              <span>&middot;</span>
+              <span>6 months on SEO work, 3 months on ad work</span>
+            </div>
+
+            <ul className="mt-6 space-y-3 text-brand-muted leading-relaxed">
+              {scale.features.slice(0, 6).map((f) => (
+                <li key={f} className="flex items-start gap-2">
+                  <span className="mt-1 text-brand-deep font-bold text-xs">&#10003;</span>
+                  <span>{f}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-8">
+              <Link
+                href="/pricing#scale"
+                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
+              >
+                Talk to us about {scale.name} &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive comparison */}
+      <section className="section">
+        <div className="container-page max-w-5xl">
+          <p className="eyebrow mb-4">How we compare</p>
+          <h2 className="h-section">Paid ads transparency, side by side.</h2>
+          <div className="mt-8 overflow-x-auto">
+            <table className="w-full text-sm text-left border-collapse">
+              <thead>
+                <tr className="border-b border-slate-200">
+                  <th className="py-3 pr-4 text-brand-muted font-medium w-40"></th>
+                  <th className="py-3 px-4 text-brand-deep font-bold bg-brand-accent/40 rounded-t-lg">
+                    Algonyte {scale.name}
+                  </th>
+                  <th className="py-3 px-4 text-brand-muted font-medium">Scorpion</th>
+                  <th className="py-3 px-4 text-brand-muted font-medium">Blue Corona</th>
+                  <th className="py-3 px-4 text-brand-muted font-medium">Hibu</th>
+                  <th className="py-3 px-4 text-brand-muted font-medium">Hook Agency</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr>
+                  <td className="py-4 pr-4 font-medium text-brand-deep">Monthly</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-medium text-brand-deep">
+                    ${scale.monthly.toLocaleString()} + ad spend
+                  </td>
+                  <td className="py-4 px-4 text-brand-muted">$2,500&ndash;$8,000+</td>
+                  <td className="py-4 px-4 text-brand-muted">$3,500&ndash;$10,000</td>
+                  <td className="py-4 px-4 text-brand-muted">$449+ (real: $1,500&ndash;$7K)</td>
+                  <td className="py-4 px-4 text-brand-muted">$3,000+</td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 font-medium text-brand-deep">Setup</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-medium text-brand-deep">
+                    ${scale.setup}
+                  </td>
+                  <td className="py-4 px-4 text-brand-muted">$5,000&ndash;$50,000</td>
+                  <td className="py-4 px-4 text-brand-muted">$2,500&ndash;$3,500 audit</td>
+                  <td className="py-4 px-4 text-brand-muted">$499</td>
+                  <td className="py-4 px-4 text-brand-muted">Custom</td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 font-medium text-brand-deep">Contract</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-medium text-brand-deep">
+                    3 months on ad work
+                  </td>
+                  <td className="py-4 px-4 text-brand-muted">12&ndash;24 months</td>
+                  <td className="py-4 px-4 text-brand-muted">Quote-based</td>
+                  <td className="py-4 px-4 text-brand-muted">12 months</td>
+                  <td className="py-4 px-4 text-brand-muted">Quote-based</td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 font-medium text-brand-deep">Ad spend on YOUR card</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-bold text-green-700">YES</td>
+                  <td className="py-4 px-4 text-brand-muted">No (their account)</td>
+                  <td className="py-4 px-4 text-brand-muted">No</td>
+                  <td className="py-4 px-4 text-brand-muted">No</td>
+                  <td className="py-4 px-4 text-brand-muted">Varies</td>
+                </tr>
+                <tr>
+                  <td className="py-4 pr-4 font-medium text-brand-deep">No markup on ad spend</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-bold text-green-700">Yes, none</td>
+                  <td className="py-4 px-4 text-brand-muted">Opaque</td>
+                  <td className="py-4 px-4 text-brand-muted">Quote-based</td>
+                  <td className="py-4 px-4 text-brand-muted">Quote-based</td>
+                  <td className="py-4 px-4 text-brand-muted">Quote-based</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-6 text-brand-muted leading-relaxed max-w-3xl">
+            Most agencies bundle ad spend into a giant retainer with opaque markups. We split
+            it: you pay us for the work, you pay Google and Meta for the clicks. No markup on
+            ad spend, ever. If you leave, the accounts and the data go with you.
+          </p>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section className="section bg-brand-soft/40">
+        <div className="container-page max-w-3xl">
+          <h2 className="h-section">Straight answers on paid lead generation.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (
               <div key={f.q} className="py-6">
@@ -188,25 +342,7 @@ export default function LeadGeneratorPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden section bg-brand-deep text-white">
-        <CursorSpotlight />
-        <div className="relative container-page max-w-3xl text-center">
-          <h2 className="h-section text-white">Ready to spend on ads that actually book jobs?</h2>
-          <p className="mt-4 text-white/80 max-w-xl mx-auto">
-            30-minute walkthrough. We&rsquo;ll look at your current spend and
-            tell you, straight, whether ads are the right move or whether to
-            fix follow-up first.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg"
-            >
-              Book a 30-minute walkthrough →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA title="Ready to run ads that book jobs?" />
 
       <script
         type="application/ld+json"
@@ -223,3 +359,6 @@ export default function LeadGeneratorPage() {
     </>
   );
 }
+
+export const dynamic = "force-static";
+

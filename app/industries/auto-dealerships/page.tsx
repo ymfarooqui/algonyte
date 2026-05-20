@@ -4,10 +4,10 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
+import { growthTiers } from "@/lib/tiers";
 
 const title = "AI Receptionist for Auto Dealerships | Book Test Drives 24/7";
-const description =
-  "AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7 — even when sales is on the lot. Plans from $549/mo.";
+const description = `AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7, even when sales is on the lot. Plans from $${growthTiers[0].monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -33,8 +33,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: 549,
-    highPrice: 1299,
+    lowPrice: growthTiers[0].monthly,
+    highPrice: growthTiers[1].monthly,
     offerCount: 3,
   },
   subjectOf: {
@@ -61,7 +61,7 @@ const faqJsonLd = {
       name: "How does it handle trade-in valuations?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "The agent asks the qualifying questions — year, make, model, trim, mileage, condition, VIN if available — and captures the answers in a clean lead record. It doesn't quote a number on the spot. Pricing stays with your team, where it belongs. You walk into the follow-up call with everything you need to value the trade.",
+        text: "The agent asks the qualifying questions (year, make, model, trim, mileage, condition, VIN if available) and captures the answers in a clean lead record. It doesn't quote a number on the spot. Pricing stays with your team, where it belongs. You walk into the follow-up call with everything you need to value the trade.",
       },
     },
     {
@@ -69,7 +69,7 @@ const faqJsonLd = {
       name: "What CRMs and tools do you integrate with?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "By default we pass qualified leads into your existing CRM via email and Zapier, which covers VinSolutions, DealerSocket, CDK, Reynolds, and most others without custom work. Direct API integrations are available on the Pro AI plan when your CRM supports it. We'd rather be honest about what's wired in day one than promise an integration that takes weeks to ship.",
+        text: "By default we pass qualified leads into your existing CRM via email and Zapier, which covers VinSolutions, DealerSocket, CDK, Reynolds, and most others without custom work. Direct API integrations are available on the Climbing plan when your CRM supports it. We'd rather be honest about what's wired in day one than promise an integration that takes weeks to ship.",
       },
     },
     {
@@ -77,7 +77,7 @@ const faqJsonLd = {
       name: "How fast does it respond to Cars.com and AutoTrader leads?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Seconds. The agent fires an SMS the moment a form fill hits your inbox or a missed call lands on your line. The conversation continues over text until the lead is qualified and a test drive is on the calendar. That speed is the entire point — internet leads decay fast, and the first dealer to respond usually wins the appointment.",
+        text: "Seconds. The agent fires an SMS the moment a form fill hits your inbox or a missed call lands on your line. The conversation continues over text until the lead is qualified and a test drive is on the calendar. That speed is the entire point. Internet leads decay fast, and the first dealer to respond usually wins the appointment.",
       },
     },
     {
@@ -85,7 +85,7 @@ const faqJsonLd = {
       name: "Will it spam customers with too many follow-ups?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Cadence is configurable per store. We tune it during onboarding — typical is two or three nudges over a week, then a hand-off to a long-term re-engagement track. The agent stops the moment a lead replies, books, or asks to be left alone. We'd rather under-message than burn your phone numbers with carriers.",
+        text: "Cadence is configurable per store. We tune it during onboarding. Typical is two or three nudges over a week, then a hand-off to a long-term re-engagement track. The agent stops the moment a lead replies, books, or asks to be left alone. We'd rather under-message than burn your phone numbers with carriers.",
       },
     },
   ],
@@ -96,7 +96,7 @@ export default function AutoDealershipsPage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Industries — Auto Dealerships</p>
             <h1 className="h-display">
@@ -106,7 +106,7 @@ export default function AutoDealershipsPage() {
             <p className="lede mt-6 max-w-2xl">
               Every Cars.com inquiry, AutoTrader form fill, and Facebook
               Marketplace message gets an instant response. Trade-ins get
-              qualified. Test drives land on your calendar — at 11pm on a
+              qualified. Test drives land on your calendar at 11pm on a
               Sunday or in the middle of a Saturday rush.
             </p>
             <div className="mt-8">
@@ -123,7 +123,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why dealers lose leads</p>
           <h2 className="h-section">The lead is gone in five minutes. Most dealerships can&rsquo;t respond that fast.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -156,9 +155,9 @@ export default function AutoDealershipsPage() {
           <h2 className="h-section">Car Hub, Macomb Township: 10 booked jobs in week one.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              Car Hub is an independent auto shop outside Detroit — different
+              Car Hub is an independent auto shop outside Detroit. Different
               business model than a new-car franchise, but the same underlying
-              problem. Before the AI receptionist went live, after-hours calls
+              problem. Before the Awake system went live, after-hours calls
               died in voicemail and new-customer leads went to the next shop
               on Google. In the first week the system was live, it booked 10
               jobs the shop wouldn&rsquo;t have captured otherwise.
@@ -183,8 +182,7 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What the AI does for a dealership</p>
-          <h2 className="h-section">Built around the way deals actually start.</h2>
+          <h2 className="h-section">Built around the way deals start.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
               <h3 className="text-lg font-semibold text-brand-deep">Instant lead response</h3>
@@ -208,14 +206,14 @@ export default function AutoDealershipsPage() {
               <h3 className="text-lg font-semibold text-brand-deep">Test-drive booking</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Once a lead is qualified, the agent books the appointment
-                directly into your sales calendar — with the vehicle of
+                directly into your sales calendar, with the vehicle of
                 interest, contact info, and trade details attached.
               </p>
             </div>
             <div>
               <h3 className="text-lg font-semibold text-brand-deep">Cold lead re-engagement</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
-                The Pro AI plan can re-engage your last 30 to 90 days of cold
+                The Climbing plan can re-engage your last 30 to 90 days of cold
                 form fills with a tailored SMS and route any replies back into
                 live conversation.
               </p>
@@ -223,17 +221,17 @@ export default function AutoDealershipsPage() {
             <div>
               <h3 className="text-lg font-semibold text-brand-deep">After-hours coverage</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
-                Evenings, weekends, holidays — the lot may be dark but leads
+                Evenings, weekends, holidays. The lot may be dark but leads
                 still come in. The agent runs the same play 24/7 so a
                 Saturday-night Cars.com lead is on Monday&rsquo;s calendar.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Bilingual handling (Pro AI)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Bilingual handling (Climbing)</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 In bilingual markets, the agent detects the caller&rsquo;s
                 language and switches to Spanish without a hand-off. Available
-                on the Pro AI plan.
+                on the Climbing plan.
               </p>
             </div>
           </div>
@@ -242,7 +240,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Integrations</p>
           <h2 className="h-section">Wired into the tools you already run.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -250,7 +247,7 @@ export default function AutoDealershipsPage() {
               That covers VinSolutions, DealerSocket, CDK, Reynolds, and the
               long tail of dealer CRMs without any custom integration work.
               For shops that need direct API hand-off, that&rsquo;s on the
-              Pro AI plan when the CRM supports it.
+              Climbing plan when the CRM supports it.
             </p>
             <p>
               On the inbound side, the agent plugs into your existing main
@@ -264,14 +261,12 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Pricing</p>
-          <h2 className="h-section">Plans starting at $549/month.</h2>
+          <h2 className="h-section">Plans starting at ${growthTiers[0].monthly}/month.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Starter is the missed-call text-back and SMS qualification flow.
-            Growth adds the 24/7 chat agent, WhatsApp and Instagram DM, and
-            branching workflows for trade-in and test-drive paths. Pro AI
-            layers in the voice agent, cold-lead re-engagement, custom
-            integrations, and bilingual handling.
+            Awake is the missed-call text-back and SMS qualification flow: chat
+            on your site, DM auto-reply, and auto-booking 24/7. Climbing adds
+            the voice AI phone receptionist, branching workflows for trade-in
+            and test-drive paths, custom integrations, and bilingual handling.
           </p>
           <p className="mt-4">
             <Link href="/pricing" className="text-brand-deep font-medium hover:underline">
@@ -283,7 +278,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from dealer principals and GMs.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (

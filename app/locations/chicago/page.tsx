@@ -4,10 +4,10 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
+import { growthTiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Chicago | Stop Missing Service Calls";
-const description =
-  "AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties. Plans from $549/mo.";
+const description = `AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties. Plans from $${growthTiers[0].monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +37,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: 549,
-    highPrice: 1299,
+    lowPrice: growthTiers[0].monthly,
+    highPrice: growthTiers[1].monthly,
     offerCount: 3,
   },
 };
@@ -52,7 +52,7 @@ const faqJsonLd = {
       name: "Do you only work with businesses inside Chicago city limits?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. The system is remote and works for any service business across Chicagoland — the city, Cook County, and the collar counties (DuPage, Lake, Will, Kane, McHenry). We highlight Chicago because the density of service businesses here means the lead leak is large and immediate.",
+        text: "No. The system is remote and works for any service business across Chicagoland: the city, Cook County, and the collar counties (DuPage, Lake, Will, Kane, McHenry). We highlight Chicago because the density of service businesses here means the lead leak is large and immediate.",
       },
     },
     {
@@ -68,7 +68,7 @@ const faqJsonLd = {
       name: "Can the agent handle Spanish-speaking callers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Bilingual handling is configurable on the Pro AI plan. The agent can detect the caller's language, switch to Spanish, and run the full qualification and booking flow without handing off. On Starter and Growth, the agent is English-only.",
+        text: "Bilingual handling is configurable on the Climbing plan. The agent can detect the caller's language, switch to Spanish, and run the full qualification and booking flow without handing off. On Awake, the agent is English-only.",
       },
     },
     {
@@ -87,7 +87,7 @@ export default function ChicagoLocationPage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Chicago, Illinois</p>
             <h1 className="h-display">
@@ -113,13 +113,12 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why this matters in Chicago</p>
           <h2 className="h-section">Service businesses here lose leads the same way the city moves: too fast to catch up to.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
               Chicago is one of the densest service-business markets in the
               country. HVAC, plumbing, roofing, auto repair, dental, legal,
-              cleaning, landscaping — every block has a small operator trying to
+              cleaning, landscaping. Every block has a small operator trying to
               answer the phone while a job is in progress. The owner is on a
               roof in Avondale, under a hood in Cicero, or with a client in the
               Loop. The call goes to voicemail. The lead taps the next Google
@@ -127,7 +126,7 @@ export default function ChicagoLocationPage() {
             </p>
             <p>
               The gap is even wider after hours. A burst pipe in Lincoln Park
-              at 11pm on a Saturday doesn&rsquo;t wait until Monday — the
+              at 11pm on a Saturday doesn&rsquo;t wait until Monday. The
               homeowner calls four plumbers and books the first one who picks
               up or texts back. If that&rsquo;s not you, the job is gone before
               you&rsquo;ve seen the missed call.
@@ -135,7 +134,7 @@ export default function ChicagoLocationPage() {
             <p>
               You don&rsquo;t need a bigger ad budget to fix that. You need the
               calls and form fills you already get to be answered, qualified,
-              and booked the moment they arrive — at 2pm on a Tuesday and at
+              and booked the moment they arrive, at 2pm on a Tuesday and at
               11pm on a Sunday.
             </p>
           </div>
@@ -152,7 +151,7 @@ export default function ChicagoLocationPage() {
               Detroit. Before the AI receptionist went live, after-hours calls
               died in voicemail and new-customer leads slipped to the next shop
               on Google. In the first week the system was live, it booked 10
-              jobs the shop wouldn&rsquo;t have captured otherwise — missed-call
+              jobs the shop wouldn&rsquo;t have captured otherwise: missed-call
               text-backs that turned into appointments, late-night form fills
               that were qualified and on the calendar by the time the bay
               opened the next morning.
@@ -160,7 +159,7 @@ export default function ChicagoLocationPage() {
             <p>
               The same workflow runs for a Chicago HVAC company, a Lincoln
               Square dental practice, or a Naperville roofer. The install
-              doesn&rsquo;t care which industry it&rsquo;s plugged into — it
+              doesn&rsquo;t care which industry it&rsquo;s plugged into. It
               cares that a lead reached you and got an answer in seconds.
             </p>
             <p>
@@ -174,7 +173,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What we install</p>
           <h2 className="h-section">The system, end to end.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
@@ -190,11 +188,11 @@ export default function ChicagoLocationPage() {
               <p className="mt-2 text-brand-muted leading-relaxed">
                 A 24/7 chat agent on your website plus SMS, WhatsApp, and
                 Instagram DM. Trained on your services, pricing, and the
-                neighborhoods you actually cover.
+                neighborhoods you cover.
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Pro AI plan)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Climbing plan)</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Picks up the phone when you can&rsquo;t. Qualifies, books, and
                 hands off with a full transcript. Bilingual English/Spanish
@@ -205,7 +203,7 @@ export default function ChicagoLocationPage() {
               <h3 className="text-lg font-semibold text-brand-deep">CRM and follow-up</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Every lead is tracked. Reminders, follow-up sequences, and
-                Google review requests fire automatically — no spreadsheets, no
+                Google review requests fire automatically. No spreadsheets, no
                 forgotten callbacks.
               </p>
             </div>
@@ -226,11 +224,10 @@ export default function ChicagoLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Service area</p>
           <h2 className="h-section">Across Chicagoland and the collar counties.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            We work with service businesses across the city of Chicago — Loop,
-            North Side, West Side, South Side, and everywhere between — plus
+            We work with service businesses across the city of Chicago: Loop,
+            North Side, West Side, South Side, and everywhere between, plus
             Cook County and the collar counties: DuPage, Lake, Will, Kane, and
             McHenry. That includes Oak Park, Evanston, Naperville, Schaumburg,
             Aurora, Joliet, Elgin, Waukegan, and the smaller markets in
@@ -250,10 +247,9 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Founding program</p>
           <h2 className="h-section">Built for solo operators and small crews.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Plans start at $549/month with a one-time $549 setup. The Founding
+            Plans start at ${growthTiers[0].monthly}/month. The Founding
             Member program offers three limited spots at 50% off setup and 30%
             off monthly for the first six months in exchange for honest
             feedback and a testimonial. If you&rsquo;re a Chicago-area
@@ -270,7 +266,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from Chicago-area owners.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (

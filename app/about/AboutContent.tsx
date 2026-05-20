@@ -36,7 +36,7 @@ export default function AboutContent() {
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <motion.div
-          className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20"
+          className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20"
           initial="hidden"
           animate="visible"
           variants={reveal.container(0.12, 0.05)}
@@ -66,9 +66,6 @@ export default function AboutContent() {
           viewport={inView}
           variants={reveal.container(0.12, 0.05)}
         >
-          <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
-            What we do
-          </motion.p>
           <motion.h2 className="h-section" variants={reveal.fadeUp}>
             A full system, not a single tool.
           </motion.h2>

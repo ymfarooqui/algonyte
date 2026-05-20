@@ -2,19 +2,24 @@
 
 import { motion } from "motion/react";
 import { reveal, inView } from "@/lib/motion";
+import { growthTiers } from "@/lib/tiers";
+
+// growthTiers[0] = Awake, growthTiers[1] = Climbing
+const awake = growthTiers[0];
+const climbing = growthTiers[1];
 
 const items = [
   {
-    q: "Why not a $99/mo AI receptionist?",
-    a: "The $99 standalone bots you see advertised answer one channel — usually voice — and stop there. No qualifying logic, no follow-up, no calendar integration, no CRM. Our AI Receptionist starts at $549/mo because it's the whole workflow: phone, SMS, chat, DM, qualifying questions, multi-day follow-up, and the booking on your calendar. (Note: $99/mo also happens to be our Web Presence hosting fee — that's the lights-on cost for your website, not an AI bot. Different product.)",
+    q: "Why not Podium ($498/mo on annual)?",
+    a: `Podium locks you into a 12-month contract. ${awake.name} at $${awake.monthly}/mo is more, but it's month-to-month, fully done-for-you, and covers every DM channel — phone, SMS, chat, Facebook, Instagram, WhatsApp, and Google Business Messages. With Podium you still configure the flows yourself.`,
   },
   {
-    q: "Why not hire a virtual assistant?",
-    a: "A VA costs $1,500-$3,000/mo, sleeps, takes vacation, and quits. Our system runs 24/7, replies in under a minute, and never forgets to follow up. If you need a human in the loop, we wire alerts to you.",
+    q: "Why not Scorpion, Blue Corona, or Hibu?",
+    a: `Those agencies run $2,500–$10,000/mo with $5K–$50K in setup and 12–24 month contracts. ${climbing.name} at $${climbing.monthly}/mo is all-in (hosting included) — 40–60% less with no annual commitment past 6 months. And on Scale, your ad spend goes straight to Google and Meta on your card. Never touches us, never has a markup.`,
   },
   {
-    q: "Why not just keep doing it myself?",
-    a: "Most owners we work with are losing 20 to 40% of leads to slow replies. The math: one missed job per month covers Starter. Two covers Growth. The plan pays for itself before the second invoice clears.",
+    q: "Why not a $59 DIY tool (Goodcall, Numa)?",
+    a: "Those are cheap because you build and maintain the system yourself. Algonyte is done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
   },
 ];
 

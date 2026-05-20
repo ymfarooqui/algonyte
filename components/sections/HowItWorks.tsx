@@ -8,7 +8,7 @@ const steps = [
   {
     n: "01",
     title: "Every inquiry, in one place",
-    body: "Calls, texts, form fills, and DMs land in a single inbox the moment they come in — nothing gets buried.",
+    body: "Calls, texts, form fills, and DMs land in a single inbox the moment they come in. Nothing gets buried.",
   },
   {
     n: "02",
@@ -18,7 +18,7 @@ const steps = [
   {
     n: "03",
     title: "Booked on your calendar",
-    body: "When they're ready to move forward, the appointment drops onto your calendar — no back-and-forth, no chasing.",
+    body: "When they're ready to move forward, the appointment drops onto your calendar. No back-and-forth, no chasing.",
   },
 ];
 
@@ -35,9 +35,6 @@ export default function HowItWorks() {
         viewport={inView}
         variants={reveal.container(0.15, 0.05)}
       >
-        <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-          How It Works
-        </motion.p>
         <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
           Every lead handled, end to end.
         </motion.h2>

@@ -1,15 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { growthTiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
-import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
-import CursorSpotlight from "@/components/CursorSpotlight";
+import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
+import { aiReceptionistServiceSchema } from "@/lib/schema";
 
-const title = "AI Receptionist | Answer, Qualify, and Book Every Lead 24/7";
-const description =
-  "An AI receptionist that answers every call, text, and form fill in seconds, qualifies the lead, and books it to your calendar. Live in 5-7 days, done for you.";
+const awake = growthTiers[0];
+const climbing = growthTiers[1];
+
+const title = "AI Receptionist for Service Businesses | Algonyte";
+const description = `AI receptionist answers, qualifies, and books your leads 24/7. Two flavors: Awake ($${awake.monthly}/mo, chat + DMs + missed-call text-back, live in ${awake.liveIn}) and Climbing ($${climbing.monthly}/mo, adds voice AI + Local SEO, live in ${climbing.liveIn}).`;
 
 export const metadata: Metadata = {
   title,
@@ -21,45 +23,30 @@ export const metadata: Metadata = {
 
 const breadcrumb = breadcrumbJsonLd([{ name: "AI Receptionist", path: "/ai-receptionist" }]);
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": `${siteConfig.url}/ai-receptionist#service`,
-  serviceType: "AI Receptionist",
-  name: "AI Receptionist by Algonyte Labs",
-  provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-  description,
-  areaServed: { "@type": "Country", name: "United States" },
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: 549,
-    highPrice: 1299,
-    offerCount: 3,
-    url: `${siteConfig.url}/pricing`,
-  },
-};
-
 const faqs = [
   {
-    q: "How fast can you get me live?",
-    a: "5 to 7 days for a standard install. We keep your existing phone number, plug into your calendar, and train the agent on your services, pricing, and service area before any leads hit it.",
+    q: "How is this different from a regular chatbot?",
+    a: "A regular chatbot answers FAQ and stops. Our AI receptionist qualifies the lead, asks the questions your business needs to triage a job, and books the appointment directly onto your calendar without a human touching it. Awake handles text and chat; Climbing adds a live voice AI that picks up calls.",
   },
   {
-    q: "Does it replace my receptionist?",
-    a: "It replaces the gap between the phone ringing and someone being free to answer it. If you have a human receptionist, the AI handles overflow, after-hours, and the moments they're on another call.",
+    q: "What if the AI can't answer a question?",
+    a: "The agent escalates. Anything flagged as a complaint, an existing-job follow-up, or a question outside its training routes to your phone or inbox with the full conversation captured so you have context before you reply.",
   },
   {
-    q: "What channels does it cover?",
-    a: "Inbound calls (Pro AI plan), missed-call text-back, website chat, SMS, WhatsApp, and Instagram DM. Every channel funnels into the same conversation and the same calendar.",
+    q: "Does it work with my existing phone number?",
+    a: "Yes. We forward your existing number; you keep it and nothing changes for your customers. Climbing adds the voice AI layer on top of your current number, so callers reach the AI first and can be transferred to you for anything it can't handle.",
   },
   {
-    q: "Will it sound like a robot?",
-    a: "No. The agent is trained on your shop's voice and uses natural language. Most customers can't tell, and the ones who do almost always continue the booking anyway because it's easier than calling back.",
+    q: "How long until I see results?",
+    a: "Most clients see bookings in the first 48 hours of going live. The missed-call text-back alone tends to recover leads the same day. Awake is live in 5 days; Climbing in 10–14 days because we layer in voice AI and start the Google Business Profile work.",
   },
   {
-    q: "What if I want a human on the call?",
-    a: "Configurable. Anything flagged as a complaint, an existing-job follow-up, or a high-value inquiry routes to your phone with full context already captured.",
+    q: "Can I take over the conversations myself?",
+    a: "Yes. Every conversation lives in your shared inbox. You can jump in at any point, take over manually, and the AI steps aside. You also get a dashboard showing every missed call handled, DM replied, and lead booked.",
+  },
+  {
+    q: "What happens to my leads if I cancel?",
+    a: "You keep everything. Your contacts, your conversation history, your calendar bookings, and your Google Business Profile are all yours. We don't hold leads hostage.",
   },
 ];
 
@@ -73,109 +60,337 @@ const faqJsonLd = {
   })),
 };
 
+function CheckIcon({ featured }: { featured?: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-soft" : "text-brand-deep"}`}
+      aria-label="Included"
+    >
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+  );
+}
+
 export default function AIReceptionistPage() {
   return (
     <>
+      {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">AI Receptionist</p>
             <h1 className="h-display">
-              Never miss another{" "}
-              <span className="text-brand-deep">booking call.</span>
+              AI Receptionist for{" "}
+              <span className="text-brand-deep">Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              An AI receptionist that answers every call, text, and form fill in
-              seconds, qualifies the lead, and books it on your calendar. After
-              hours, on weekends, while you&rsquo;re on a job. Live in 5 to 7
-              days.
-            </p>
-            <p className="mt-4 text-brand-muted">
-              <strong className="text-brand-deep">Real result:</strong> Car Hub
-              in Macomb Township booked 10 jobs in the first week after install
-              — calls they would have missed.
+              An AI that answers, qualifies, and books your leads 24/7 across
+              missed calls, website chat, SMS, and social DMs. Built for home
+              services, auto, trades, and professional service shops where the
+              phone rings while you&rsquo;re already on a job.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <Link
-                href="/book"
+              <a
+                href="#tiers"
                 className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
               >
-                Book a 30-minute walkthrough →
-              </Link>
+                See the two flavors &rarr;
+              </a>
               <Link
-                href="/web-presence"
+                href="/book"
                 className="text-sm text-brand-deep underline decoration-brand-deep/30 underline-offset-4 hover:decoration-brand-deep transition-colors"
               >
-                Don&rsquo;t have a website yet? Start here →
+                Book a 30-minute walkthrough &rarr;
               </Link>
             </div>
           </div>
         </div>
       </section>
 
+      {/* Brand frame */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The problem</p>
-          <h2 className="h-section">Service businesses lose money the same way.</h2>
+          <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-brand-soft/60 px-5 py-4 text-brand-deep leading-relaxed text-lg">
+            Your business runs while you sleep. Leads get answered, qualified,
+            and booked while you&rsquo;re on a job, asleep, or off the clock.
+          </p>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              Your phone rings when you can&rsquo;t answer it. You&rsquo;re
-              under a car, on a roof, with a patient, on a job site. The call
-              goes to voicemail. The caller dials the next shop on Google.
-              That&rsquo;s the leak.
+              The average service business misses 30&ndash;40% of inbound calls
+              because the phone rings when you&rsquo;re on a roof, under a car,
+              or with a patient. Those calls don&rsquo;t leave voicemail. They
+              dial the next shop on Google.
             </p>
             <p>
-              You don&rsquo;t need more leads. The leads are already coming in.
-              You need the ones you already get to be answered, qualified, and
-              booked in the moment, not the next morning.
+              An AI receptionist closes that gap. It doesn&rsquo;t need a lunch
+              break. It doesn&rsquo;t forget to follow up. And it doesn&rsquo;t
+              need to be trained on your business more than once.
             </p>
           </div>
         </div>
       </section>
 
+      {/* What it does */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The system</p>
-          <h2 className="h-section">One workflow. Every channel. Always on.</h2>
+          <h2 className="h-section">One system. Every channel. Always on.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
-              <strong className="text-brand-deep">Answers inbound calls instantly.</strong>{" "}
-              Picks up when you can&rsquo;t. Asks the questions you&rsquo;d ask. Books to your calendar.
+              <strong className="text-brand-deep">Missed-call text-back.</strong>{" "}
+              The moment a call goes unanswered, an SMS fires back to the caller
+              and the conversation picks up where the missed call left off.
             </li>
             <li>
-              <strong className="text-brand-deep">Texts back every missed call.</strong>{" "}
-              SMS goes out within seconds. The conversation continues until the lead is on the books.
+              <strong className="text-brand-deep">AI chat on your site, 24/7.</strong>{" "}
+              Answers questions, qualifies the job, and books the appointment
+              while visitors are still on your page.
             </li>
             <li>
-              <strong className="text-brand-deep">Handles chat, SMS, WhatsApp, Instagram DM.</strong>{" "}
-              Same agent, same context, every channel.
+              <strong className="text-brand-deep">
+                DM auto-reply across Facebook, Instagram, WhatsApp, and Google
+                Business Messages.
+              </strong>{" "}
+              Every channel funnels into the same inbox and the same qualification
+              flow.
             </li>
             <li>
-              <strong className="text-brand-deep">Qualifies before it books.</strong>{" "}
-              Year/make/model, scope of work, budget range, timing — whatever your business actually needs to triage.
+              <strong className="text-brand-deep">Lead qualification built for your business.</strong>{" "}
+              Year, make, model. Scope of work. Service area. Budget. Whatever
+              your business needs to triage a job. The AI asks it before booking.
             </li>
             <li>
-              <strong className="text-brand-deep">Escalates the right calls.</strong>{" "}
-              Complaints, existing-job follow-ups, and high-value inquiries route to your phone with full context.
+              <strong className="text-brand-deep">Auto-booking to your calendar.</strong>{" "}
+              Qualified leads book directly. No back-and-forth, no
+              &ldquo;I&rsquo;ll have someone call you&rdquo; that never happens.
             </li>
             <li>
-              <strong className="text-brand-deep">Asks for the review after the job.</strong>{" "}
-              Google review request fires automatically once the appointment is marked complete.
+              <strong className="text-brand-deep">Review requests after job completion.</strong>{" "}
+              Once an appointment is marked complete, a Google review request fires
+              automatically, no manual follow-up required.
             </li>
           </ul>
         </div>
       </section>
 
+      {/* Two-CTA fork */}
+      <section id="tiers" className="section">
+        <div className="container-page">
+          <h2 className="h-section max-w-3xl">
+            Text and chat, or voice too?
+          </h2>
+          <p className="mt-4 max-w-2xl text-brand-muted">
+            Both tiers are done-for-you installs. Pick based on whether you need
+            voice AI on the phone line, or just need the text and digital
+            channels covered first.
+          </p>
+
+          <div className="mt-12 grid gap-5 md:grid-cols-2 md:items-stretch max-w-4xl">
+            {/* Card A - Awake */}
+            <div
+              id="awake"
+              className="relative flex h-full flex-col rounded-2xl bg-brand-soft p-7 shadow-soft lift-card"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/50">
+                Text and chat?
+              </p>
+              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-deep">
+                {awake.name}
+              </h3>
+              <p className="mt-1 text-sm text-brand-muted">{awake.tagline}</p>
+              <div className="mt-5 space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-2xl font-medium tabular-nums text-brand-ink">
+                    ${awake.setup}
+                  </span>
+                  <span className="text-sm text-brand-muted">one-time setup</span>
+                </div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
+                    ${awake.monthly}
+                  </span>
+                  <span className="text-sm text-brand-muted">/mo</span>
+                </div>
+              </div>
+              <p className="mt-2 text-xs text-brand-muted">
+                Live in {awake.liveIn} &middot; Month-to-month
+              </p>
+              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
+                {awake.features.slice(0, 5).map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <CheckIcon />
+                    <span className="text-brand-muted">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/pricing#awake"
+                className="btn-primary w-full text-center"
+              >
+                See Awake &rarr;
+              </Link>
+            </div>
+
+            {/* Card B - Climbing (featured) */}
+            <div
+              id="climbing"
+              className="relative flex h-full flex-col rounded-2xl bg-brand-deep p-7 shadow-deep -translate-y-2 sm:-translate-y-4 text-brand-soft"
+            >
+              <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
+                <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
+                  Recommended
+                </span>
+              </div>
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-soft/50">
+                Want voice too?
+              </p>
+              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-soft">
+                {climbing.name}
+              </h3>
+              <p className="mt-1 text-sm text-brand-soft/70">{climbing.tagline}</p>
+              <div className="mt-5 space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-2xl font-medium tabular-nums text-brand-soft">
+                    ${climbing.setup}
+                  </span>
+                  <span className="text-sm text-brand-soft/60">one-time setup</span>
+                </div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-soft">
+                    ${climbing.monthly}
+                  </span>
+                  <span className="text-sm text-brand-soft/60">/mo</span>
+                </div>
+              </div>
+              <p className="mt-2 text-xs text-brand-soft/60">
+                {climbing.monthlyNote} &middot; Live in {climbing.liveIn}
+              </p>
+              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
+                {climbing.features.slice(1, 7).map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <CheckIcon featured />
+                    <span className="text-brand-soft/85">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/pricing#climbing"
+                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-brand-deep font-medium hover:bg-white/90 transition-colors text-base w-full text-center"
+              >
+                See Climbing &rarr;
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Competitive comparison */}
+      <section className="section bg-brand-soft/40">
+        <div className="container-page">
+          <p className="eyebrow mb-4">How it stacks up</p>
+          <h2 className="h-section max-w-3xl">
+            Done-for-you reception vs. the alternatives.
+          </h2>
+
+          <div className="mt-10 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-soft">
+            <table className="w-full min-w-[640px] text-sm">
+              <thead>
+                <tr className="border-b border-slate-100">
+                  <th className="px-5 py-4 text-left font-semibold text-brand-deep w-40"></th>
+                  <th className="px-5 py-4 text-left font-semibold text-brand-deep bg-brand-accent/40">
+                    Algonyte Awake
+                  </th>
+                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
+                    Podium Core + AI
+                  </th>
+                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
+                    Smith.ai AI
+                  </th>
+                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
+                    Goodcall
+                  </th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100">
+                <tr>
+                  <td className="px-5 py-4 font-medium text-brand-deep">Monthly</td>
+                  <td className="px-5 py-4 font-semibold text-brand-deep bg-brand-accent/20">
+                    ${awake.monthly} + ${awake.setup} setup
+                  </td>
+                  <td className="px-5 py-4 text-brand-muted">~$498 (annual contract)</td>
+                  <td className="px-5 py-4 text-brand-muted">$95 + $2.10&ndash;$2.40/call</td>
+                  <td className="px-5 py-4 text-brand-muted">$59&ndash;$99</td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-4 font-medium text-brand-deep">Contract</td>
+                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
+                    Month-to-month
+                  </td>
+                  <td className="px-5 py-4 text-brand-muted">12 months</td>
+                  <td className="px-5 py-4 text-brand-muted">Month-to-month</td>
+                  <td className="px-5 py-4 text-brand-muted">Month-to-month</td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-4 font-medium text-brand-deep">Setup</td>
+                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
+                    Done-for-you
+                  </td>
+                  <td className="px-5 py-4 text-brand-muted">DIY config</td>
+                  <td className="px-5 py-4 text-brand-muted">DIY</td>
+                  <td className="px-5 py-4 text-brand-muted">DIY</td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-4 font-medium text-brand-deep">Channels</td>
+                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
+                    Chat + voice + SMS + FB/IG/WA DM
+                  </td>
+                  <td className="px-5 py-4 text-brand-muted">Webchat + SMS</td>
+                  <td className="px-5 py-4 text-brand-muted">Per-call AI only</td>
+                  <td className="px-5 py-4 text-brand-muted">Phone only</td>
+                </tr>
+                <tr>
+                  <td className="px-5 py-4 font-medium text-brand-deep">Reviews engine</td>
+                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
+                    Included
+                  </td>
+                  <td className="px-5 py-4 text-brand-muted">Add-on</td>
+                  <td className="px-5 py-4 text-brand-muted">Not included</td>
+                  <td className="px-5 py-4 text-brand-muted">Not included</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="mt-8 max-w-3xl text-brand-muted leading-relaxed text-sm">
+            <p>
+              Goodcall is $59/mo if you want to build it yourself. Smith.ai is
+              $95/mo + per-call. Podium is $498/mo on a 12-month contract. We&rsquo;re
+              ${awake.monthly}/mo because we configure it for your business and own the result,
+              and you can walk in any month, no annual lock-in.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Case study proof */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The result</p>
-          <h2 className="h-section">10 booked jobs in week one for an independent auto shop.</h2>
+          <p className="eyebrow mb-4">Real result</p>
+          <h2 className="h-section">
+            10 booked jobs in week one for an independent auto shop.
+          </h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
               Car Hub in Macomb Township, Michigan installed the system on a
               Monday. By the end of that week the AI receptionist had booked
-              10 jobs the shop would have missed otherwise — after-hours
+              10 jobs the shop would have missed otherwise: after-hours
               text-backs, late-night form fills, calls that came in during a
               busy bay.
             </p>
@@ -183,48 +398,20 @@ export default function AIReceptionistPage() {
               Nothing about the install was unique to auto repair. The same
               workflow runs the same for an HVAC shop, a roofer, a dental
               practice, or a landscaping company.{" "}
-              <Link href="/insights/car-hub-macomb-case-study" className="text-brand-deep font-medium hover:underline">
-                Read the full Car Hub case study →
+              <Link
+                href="/insights/car-hub-macomb-case-study"
+                className="text-brand-deep font-medium hover:underline"
+              >
+                Read the full Car Hub case study &rarr;
               </Link>
             </p>
           </div>
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">How install works</p>
-          <h2 className="h-section">Design → Train → Deploy → Optimize. 5 to 7 days.</h2>
-          <ol className="mt-6 space-y-5 text-brand-muted leading-relaxed list-decimal pl-6">
-            <li>
-              <strong className="text-brand-deep">Day 1 — Design.</strong>{" "}
-              We map your services, pricing, qualifying questions, escalation
-              rules, and calendar. No template — your business, your script.
-            </li>
-            <li>
-              <strong className="text-brand-deep">Day 2-4 — Train.</strong>{" "}
-              The agent is trained on the script, tested against real-sounding
-              prospect calls, and tuned until it books cleanly.
-            </li>
-            <li>
-              <strong className="text-brand-deep">Day 5-6 — Deploy.</strong>{" "}
-              We forward your existing phone number, wire up SMS and chat
-              channels, and go live in shadow mode so you can listen in.
-            </li>
-            <li>
-              <strong className="text-brand-deep">Day 7+ — Optimize.</strong>{" "}
-              We review the first week of conversations, tighten the script,
-              and adjust qualifying questions based on what actually came in.
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      <IntegrationsStrip />
-
-      <section className="section">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Straight answers.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (
@@ -237,28 +424,11 @@ export default function AIReceptionistPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden section bg-brand-deep text-white">
-        <CursorSpotlight />
-        <div className="relative container-page max-w-3xl text-center">
-          <h2 className="h-section text-white">Stop losing leads this week.</h2>
-          <p className="mt-4 text-white/80 max-w-xl mx-auto">
-            30-minute walkthrough. We&rsquo;ll show you exactly what the system
-            looks like running on your existing phone number and calendar.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg"
-            >
-              Book a 30-minute walkthrough →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA title="Want to see what this looks like for your business?" />
 
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(aiReceptionistServiceSchema()) }}
       />
       <script
         type="application/ld+json"
@@ -271,3 +441,5 @@ export default function AIReceptionistPage() {
     </>
   );
 }
+
+export const dynamic = "force-static";

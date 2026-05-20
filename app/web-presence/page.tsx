@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { siteTiers, growthTiers } from "@/lib/tiers";
+import { isPlaceholder } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
-import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
+import { webPresenceServiceSchema } from "@/lib/schema";
 
-const title = "Web Presence | Websites From $279, Hosting From $99/mo";
+const title = "Web Presence | Sites From $299, Hosting Flat at $99/mo";
 const description =
-  "End-to-end web presence for service businesses. Websites built from $279 one-time, then $99/mo for hosting, maintenance, and SEO indexing. Grow into Local SEO, online booking, and payments when you're ready. Live in 5 to 14 days.";
+  "End-to-end web presence for service businesses. Sites built from $299 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
 
 export const metadata: Metadata = {
   title,
@@ -21,79 +22,8 @@ export const metadata: Metadata = {
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Web Presence", path: "/web-presence" }]);
 
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": `${siteConfig.url}/web-presence#service`,
-  serviceType: "Web Design, Hosting, and Local SEO",
-  name: "Web Presence by Algonyte Labs",
-  provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-  description,
-  areaServed: { "@type": "Country", name: "United States" },
-};
-
-const tiers = [
-  {
-    id: "foundation",
-    name: "Foundation",
-    setup: "279",
-    monthly: "99",
-    timeline: "Ships in 5-7 days",
-    tagline:
-      "You don't have a website, or the one you have is broken. We build a fast, mobile-first 5-page site and get it indexed on Google.",
-    features: [
-      "5-page site: Home, Services, About, Reviews, Contact",
-      "Mobile-first, Core Web Vitals tuned",
-      "On-page SEO + LocalBusiness schema",
-      "Google Search Console + sitemap submitted",
-      "Google Business Profile baseline setup",
-      "Contact form + click-to-call",
-      "Stripe or Square payment link",
-    ],
-    cta: "Start here",
-    featured: false,
-  },
-  {
-    id: "growth",
-    name: "Growth",
-    setup: "549",
-    monthly: "99",
-    timeline: "Ships in 7-10 days",
-    tagline:
-      "Foundation plus the pieces that turn a site into a system: more pages, AI search optimization, real online booking, and full checkout.",
-    features: [
-      "Everything in Foundation",
-      "Up to 8 pages with location + service pages",
-      "FAQ + Review schema + author bylines",
-      "AI search optimization (llms.txt, answer-first content)",
-      "Full Google Business Profile rebuild",
-      "Online booking calendar integrated",
-      "Stripe + Square — full checkout, invoices, deposits",
-    ],
-    cta: "Most businesses pick this",
-    featured: true,
-  },
-  {
-    id: "command",
-    name: "Command",
-    setup: "799",
-    monthly: "99",
-    timeline: "Ships in 10-14 days",
-    tagline:
-      "Growth plus the automation hooks. Up to 12 pages, custom design, AI receptionist widget wired in, and a landing page for paid campaigns.",
-    features: [
-      "Everything in Growth",
-      "Up to 12 pages — full location + industry coverage",
-      "Custom design pass (not a template variant)",
-      "AI Receptionist widget wired in (chat + missed-call text-back)",
-      "Review engine wired in, ready to activate",
-      "1 conversion-optimized landing page",
-      "30 days of priority support post-launch",
-    ],
-    cta: "Talk to us",
-    featured: false,
-  },
-];
+// Found (index 1) is the featured tier — most service businesses pick it.
+const featuredTierId = "found";
 
 const monthlyIncludes = [
   "Managed hosting, SSL, CDN, daily backups",
@@ -104,121 +34,30 @@ const monthlyIncludes = [
   "Direct line when something breaks",
 ];
 
-const ongoingPrograms = [
-  {
-    name: "Local SEO program",
-    price: "From $1,500/mo",
-    body:
-      "Active citation cleanup, monthly content cadence, GBP posts and photos, Map Pack ranking work.",
-    href: "/pricing#local-seo",
-  },
-  {
-    name: "Lead Generator",
-    price: "From $1,500/mo + ad spend",
-    body:
-      "Google + Meta paid ads, conversion landing pages, AI follow-up that books appointments.",
-    href: "/lead-generator",
-  },
-  {
-    name: "Reputation Manager",
-    price: "$299/mo",
-    body:
-      "Automated post-job review requests with smart routing for unhappy customers.",
-    href: "/reputation-manager",
-  },
-  {
-    name: "AI Receptionist",
-    price: "From $549/mo",
-    body:
-      "Phone, SMS, chat, and DM coverage 24/7. Answers, qualifies, books — never sleeps.",
-    href: "/ai-receptionist",
-  },
-];
-
-const pillars = [
-  {
-    title: "Build",
-    body:
-      "We design and build a modern site for your business. No drag-and-drop themes, no Wix. Fast, clean, and built to convert.",
-  },
-  {
-    title: "Host",
-    body:
-      "We host, secure, back up, and update everything. SSL, CDN, daily backups. You never touch a control panel.",
-  },
-  {
-    title: "Rank",
-    body:
-      "Local SEO that gets you into the Google Map Pack and AI search. GBP, citations, schema, content, llms.txt.",
-  },
-  {
-    title: "Book",
-    body:
-      "Calendar booking that drops into your CRM. Customers self-schedule and we follow up automatically until they show.",
-  },
-  {
-    title: "Get Paid",
-    body:
-      "Stripe or Square wired up for deposits, invoices, recurring, and one-tap checkout. Money in the bank, not in a back-and-forth.",
-  },
-  {
-    title: "Run It",
-    body:
-      "Monthly review with real numbers: leads, bookings, revenue, rank. We change what's not working. No spin.",
-  },
-];
-
-const timeline = [
-  {
-    label: "Days 1-3",
-    body:
-      "Discovery call, brand audit, content inventory. We pull your current GBP, site, and search standing live so you can see the gaps.",
-  },
-  {
-    label: "Days 4-10",
-    body:
-      "We build the site, set up hosting and payments, and ship the technical SEO foundation. You review one draft, we revise once.",
-  },
-  {
-    label: "Days 11-14",
-    body:
-      "Site goes live. Google Business Profile rebuild ships. Booking and payment flows tested with a real transaction.",
-  },
-  {
-    label: "Month 2 onward",
-    body:
-      "Content cadence, citation cleanup, AI search work, and a monthly review meeting where we show what moved.",
-  },
-];
-
 const faqs = [
   {
+    q: "What does the $99/mo cover?",
+    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, a quarterly health check, and a direct line when something breaks. The price is flat and identical across all three tiers: Open, Found, and Polished.",
+  },
+  {
     q: "I already have a website. Do I have to replace it?",
-    a: "No. If your site is solid we keep it and migrate it to our hosting (or stay where you are). If it's hurting you — slow, ugly on mobile, no schema — we rebuild. We'll tell you straight on the discovery call.",
+    a: "No. If your site is solid we can migrate it to our hosting. If it's hurting you (slow, broken on mobile, no schema, nowhere on Google), we rebuild. We'll tell you straight on the discovery call.",
   },
   {
     q: "Who owns the website when I leave?",
-    a: "You do. The domain, the code, the content, the GBP, the Stripe and Square accounts — all yours and stay yours. We don't hold anything hostage.",
+    a: "You do. The domain, the code, the content, the Google Business Profile, and your Stripe or Square accounts are all yours. We don't hold anything hostage.",
   },
   {
-    q: "How does the payment piece work?",
-    a: "We set up Stripe or Square (or both) under your business name and bank account. We wire checkout, deposits, recurring, and invoicing into your site and booking flow. Money lands in your account, not ours.",
+    q: "Can I cancel whenever?",
+    a: "Yes. Presence hosting is month-to-month with no minimum. If you cancel, you leave with your domain, your code, and your Google Business Profile fully intact.",
   },
   {
-    q: "What about Google Ads or Meta Ads?",
-    a: "Ad spend is separate from our fee on the Command plan. We manage the accounts, build the landing pages, and tie ads to AI follow-up that books appointments instead of collecting form fills.",
+    q: "How fast can you get me live?",
+    a: "Open ships in 72 hours from a signed brief. Found is 5–7 days. Polished is 7–12 days because it includes a full custom design pass. We hold ourselves to these. They're public numbers.",
   },
   {
-    q: "How long until I see results?",
-    a: "Site live in 5 to 14 days. Booking and payment flows live in the same window. Google Map Pack movement starts in 30-60 days. Organic ranking for non-branded keywords takes 3-6 months. Anyone promising faster is selling you something else.",
-  },
-  {
-    q: "Can you guarantee rankings?",
-    a: "No. We guarantee the work — site shipped, GBP rebuilt, citations cleaned, content shipped, payments live. Rankings are downstream of consistent execution, not a contract clause.",
-  },
-  {
-    q: "What's the contract?",
-    a: "Month to month after the build period. 6-month minimum on Growth and Command because SEO and ads need time to compound. 30-day money-back on the subscription if we're not a fit.",
+    q: "What about contracts? I've heard horror stories with Hibu and Scorpion.",
+    a: "No 12-month contracts on Presence. No locked-in annual fee. Month-to-month from day one. You're a client because we're doing the work.",
   },
 ];
 
@@ -232,23 +71,42 @@ const faqJsonLd = {
   })),
 };
 
+function CheckIcon({ featured }: { featured?: boolean }) {
+  return (
+    <svg
+      width="16"
+      height="16"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-soft" : "text-brand-deep"}`}
+      aria-label="Included"
+    >
+      <path d="M20 6L9 17l-5-5" />
+    </svg>
+  );
+}
+
 export default function WebPresencePage() {
   return (
     <>
+      {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Web Presence</p>
-            <h1 className="h-display">
-              Your entire web presence,{" "}
-              <span className="text-brand-deep">run by one team.</span>
-            </h1>
+            <h1 className="h-display">Web Presence</h1>
+            <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">
+              Your business runs while you sleep, starting with a site that gets you found.
+            </p>
             <p className="lede mt-6 max-w-2xl">
-              We build the site, host it, get it indexed on Google, and run it
-              for you month to month. Builds from <strong>$279</strong>{" "}
-              one-time. Hosting + maintenance + edits at a flat{" "}
-              <strong>$99/mo</strong> on every tier. Live in 5 to 14 days.
+              Site live in 72 hours. Built for your brand, hosted for{" "}
+              <strong>$99/mo flat</strong>, indexed on Google from day one.
+              Starting from <strong>$299</strong> one-time, then $99/mo
+              forever. No tiered hosting nonsense, no contracts.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -268,114 +126,153 @@ export default function WebPresencePage() {
         </div>
       </section>
 
+      {/* Problem framing */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The problem</p>
           <h2 className="h-section">
             Your customers won&rsquo;t buy from a business they can&rsquo;t find online.
           </h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              You&rsquo;ve probably stitched a presence together: a site
-              someone&rsquo;s nephew built five years ago, a GoDaddy host
-              you&rsquo;re afraid to log into, a Facebook page, a Stripe
-              account you set up once and forgot, a GBP that&rsquo;s 40%
-              filled in.
+              You&rsquo;ve probably stitched something together: a site a
+              nephew built five years ago, a GoDaddy host you&rsquo;re afraid
+              to log into, a Facebook page, a Stripe account you set up once and
+              forgot, a Google Business Profile that&rsquo;s 40% filled in.
             </p>
             <p>
-              It&rsquo;s not that the pieces are wrong. It&rsquo;s that
-              nobody&rsquo;s running them as a system. The site doesn&rsquo;t
-              talk to the booking calendar. The calendar doesn&rsquo;t talk to
-              payments. None of it ranks. And every month you keep paying
-              three different vendors who all blame each other.
+              The pieces work fine. Nobody&rsquo;s running them as a system.
+              The site doesn&rsquo;t rank. Customers can&rsquo;t book.
+              Nobody&rsquo;s watching what breaks. And every month you pay
+              vendors who blame each other.
             </p>
             <p>
-              We replace the whole stack. One team, one bill, one operator
-              responsible for whether the phone rings.
+              We replace the whole stack. One team, one bill, one number
+              responsible for whether the phone rings, and a site that gets
+              you found from day one.
             </p>
           </div>
         </div>
       </section>
 
+      {/* Tier cards */}
       <section id="packages" className="section bg-brand-soft/40">
         <div className="container-page">
-          <p className="eyebrow mb-4">Build packages</p>
           <h2 className="h-section max-w-3xl">
             Pick a build. Pay it once. Monthly stays $99 forever.
           </h2>
           <p className="mt-4 max-w-2xl text-brand-muted">
             The setup fee covers the build. The $99/mo covers hosting,
             maintenance, edits, and the line you call when something breaks.
-            Upgrade by paying a build invoice — your monthly never moves.
+            Need more later? Upgrade by paying a new build invoice. Your
+            monthly never moves.
           </p>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3">
-            {tiers.map((t) => (
-              <div
-                key={t.id}
-                className={`card relative flex flex-col ${
-                  t.featured
-                    ? "ring-2 ring-brand-deep border-brand-deep/20 shadow-md"
-                    : ""
-                }`}
-              >
-                {t.featured && (
-                  <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                    <span className="pointer-events-auto rounded-full bg-brand-deep px-3 py-1 text-[11px] font-semibold uppercase tracking-wider text-white shadow-sm">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                <h3 className="text-xl font-semibold text-brand-deep">
-                  {t.name}
-                </h3>
-                <div className="mt-3 flex items-baseline gap-1">
-                  <span className="text-5xl font-semibold text-brand-ink">
-                    ${t.setup}
-                  </span>
-                  <span className="text-brand-muted text-sm">one-time</span>
-                </div>
-                <p className="mt-1 text-sm text-brand-deep font-medium">
-                  + ${t.monthly}/mo hosting &amp; maintenance
-                </p>
-                <p className="mt-1 text-xs text-brand-muted">{t.timeline}</p>
-                <p className="mt-4 text-brand-muted text-sm leading-relaxed min-h-[4.5rem]">
-                  {t.tagline}
-                </p>
-                <ul className="mt-5 mb-7 space-y-2 text-sm flex-1">
-                  {t.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2">
-                      <svg
-                        width="16"
-                        height="16"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2.5"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="mt-0.5 flex-shrink-0 text-brand-deep"
+          <div className="mt-12 grid gap-5 md:grid-cols-3 md:items-stretch">
+            {siteTiers.map((tier) => {
+              const featured = tier.id === featuredTierId;
+              return (
+                <div
+                  key={tier.id}
+                  id={tier.id}
+                  className={`relative flex h-full flex-col rounded-2xl p-7 ${
+                    featured
+                      ? "bg-brand-deep text-brand-soft shadow-deep -translate-y-2 sm:-translate-y-4"
+                      : "lift-card bg-brand-soft shadow-soft"
+                  }`}
+                >
+                  {featured && (
+                    <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
+                      <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
+                  <h3
+                    className={`text-xl font-medium tracking-tight ${
+                      featured ? "text-brand-soft" : "text-brand-deep"
+                    }`}
+                  >
+                    {tier.name}
+                  </h3>
+                  <p
+                    className={`mt-1 text-xs font-semibold uppercase tracking-[0.18em] ${
+                      featured ? "text-brand-soft/50" : "text-brand-deep/50"
+                    }`}
+                  >
+                    Stop worrying about {tier.stopWorryingAbout}.
+                  </p>
+                  <div className="mt-5 space-y-1">
+                    <div className="flex items-baseline gap-1.5">
+                      <span
+                        className={`text-2xl font-medium tabular-nums ${
+                          featured ? "text-brand-soft" : "text-brand-ink"
+                        }`}
                       >
-                        <path d="M20 6L9 17l-5-5" />
-                      </svg>
-                      <span className="text-brand-muted">{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                <Link href="/book" className="btn-primary w-full text-center">
-                  {t.cta}
-                </Link>
-              </div>
-            ))}
+                        ${tier.setup}
+                      </span>
+                      <span
+                        className={`text-sm ${
+                          featured ? "text-brand-soft/60" : "text-brand-muted"
+                        }`}
+                      >
+                        one-time setup
+                      </span>
+                    </div>
+                    <div className="flex items-baseline gap-1.5">
+                      <span
+                        className={`text-4xl font-medium tracking-tight tabular-nums ${
+                          featured ? "text-brand-soft" : "text-brand-deep"
+                        }`}
+                      >
+                        ${tier.monthly}
+                      </span>
+                      <span
+                        className={`text-sm ${
+                          featured ? "text-brand-soft/60" : "text-brand-muted"
+                        }`}
+                      >
+                        /mo hosting
+                      </span>
+                    </div>
+                  </div>
+                  <p
+                    className={`mt-3 text-xs ${
+                      featured ? "text-brand-soft/60" : "text-brand-muted"
+                    }`}
+                  >
+                    Live in {tier.liveIn} &middot; Month-to-month
+                  </p>
+                  <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
+                    {tier.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2.5">
+                        <CheckIcon featured={featured} />
+                        <span
+                          className={featured ? "text-brand-soft/85" : "text-brand-muted"}
+                        >
+                          {f}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                  <a
+                    href={isPlaceholder(tier.checkoutUrl) ? "/contact" : tier.checkoutUrl}
+                    className={`${featured ? "btn-primary-featured" : "btn-primary"} w-full text-center`}
+                  >
+                    {isPlaceholder(tier.checkoutUrl) ? "Talk to us" : "Get started"}
+                  </a>
+                </div>
+              );
+            })}
           </div>
 
+          {/* $99/mo callout */}
           <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
             <div className="flex flex-wrap items-baseline justify-between gap-3">
               <h3 className="text-xl font-semibold text-brand-deep">
                 What the $99/mo covers
               </h3>
               <p className="text-sm text-brand-muted">
-                Same across every tier. No tiered hosting nonsense.
+                Identical across every tier. No tiered hosting nonsense.
               </p>
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
@@ -391,6 +288,7 @@ export default function WebPresencePage() {
                     strokeLinecap="round"
                     strokeLinejoin="round"
                     className="mt-0.5 flex-shrink-0 text-brand-deep"
+                    aria-label="Included"
                   >
                     <path d="M20 6L9 17l-5-5" />
                   </svg>
@@ -402,101 +300,128 @@ export default function WebPresencePage() {
         </div>
       </section>
 
+      {/* Ready for more — upgrade path */}
       <section className="section">
         <div className="container-page">
-          <p className="eyebrow mb-4">Run programs</p>
           <h2 className="h-section max-w-3xl">
             Add a growth engine when you&rsquo;re ready.
           </h2>
           <p className="mt-4 max-w-2xl text-brand-muted">
-            The build gets you online and indexed. These programs make the
-            phone ring. They&rsquo;re optional, priced separately, and you can
-            start them whenever — week one or year two.
+            Your site gets you online and indexed. These programs make the
+            phone ring. Each one removes another thing from your plate. Optional,
+            priced separately. Start week one or add them later.
           </p>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {ongoingPrograms.map((p) => (
-              <Link
-                key={p.name}
-                href={p.href}
-                className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
-              >
-                <div className="flex items-baseline justify-between gap-3">
-                  <h3 className="text-lg font-semibold text-brand-deep">
-                    {p.name}
-                  </h3>
-                  <span className="text-sm font-medium text-brand-ink">
-                    {p.price}
-                  </span>
-                </div>
-                <p className="mt-2 text-brand-muted leading-relaxed">
-                  {p.body}
-                </p>
-                <p className="mt-4 text-sm font-medium text-brand-deep">
-                  Learn more
-                  <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                    →
-                  </span>
-                </p>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
 
-      <section className="section">
-        <div className="container-page">
-          <p className="eyebrow mb-4">What we run</p>
-          <h2 className="h-section max-w-3xl">
-            Six jobs. One team. One bill.
-          </h2>
-          <p className="mt-4 max-w-2xl text-brand-muted">
-            Each piece is a thing most owners hire a different vendor for. We
-            do all of it under one roof, on purpose, because the handoffs are
-            where the leads die.
-          </p>
-          <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {pillars.map((p) => (
-              <div
-                key={p.title}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
-              >
-                <h3 className="text-lg font-semibold text-brand-deep">
-                  {p.title}
-                </h3>
-                <p className="mt-2 text-brand-muted leading-relaxed">
-                  {p.body}
-                </p>
+          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+            {/* Awake */}
+            <Link
+              href="/pricing#awake"
+              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
+                Need reception?
+              </p>
+              <div className="flex items-baseline justify-between gap-3">
+                <h3 className="text-lg font-semibold text-brand-deep">Awake</h3>
+                <span className="text-sm font-medium text-brand-ink">
+                  ${growthTiers[0].setup} + ${growthTiers[0].monthly}/mo
+                </span>
               </div>
-            ))}
+              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
+                AI chat on your site, missed-call text-back, and DM auto-reply
+                24/7. Answers, qualifies, and books while you sleep.
+              </p>
+              <p className="mt-4 text-sm font-medium text-brand-deep">
+                See Awake
+                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </p>
+            </Link>
+
+            {/* Climbing */}
+            <Link
+              href="/pricing#climbing"
+              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
+                Want to rank on Google?
+              </p>
+              <div className="flex items-baseline justify-between gap-3 flex-wrap gap-y-1">
+                <h3 className="text-lg font-semibold text-brand-deep">Climbing</h3>
+                <span className="text-sm font-medium text-brand-ink">
+                  ${growthTiers[1].setup} + ${growthTiers[1].monthly}/mo
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-brand-muted">all-in (includes hosting)</p>
+              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
+                Reception plus ongoing Google Business Profile work, citation
+                cleanup, content cadence, and AI search optimization.
+              </p>
+              <p className="mt-4 text-sm font-medium text-brand-deep">
+                See Climbing
+                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </p>
+            </Link>
+
+            {/* Scale */}
+            <Link
+              href="/pricing#scale"
+              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
+            >
+              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
+                Want a predictable lead pipeline?
+              </p>
+              <div className="flex items-baseline justify-between gap-3 flex-wrap gap-y-1">
+                <h3 className="text-lg font-semibold text-brand-deep">Scale</h3>
+                <span className="text-sm font-medium text-brand-ink">
+                  ${growthTiers[2].setup} + ${growthTiers[2].monthly}/mo
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-brand-muted">+ ad spend</p>
+              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
+                Everything in Climbing plus Google and Meta ads managed weekly,
+                with AI follow-up on every ad lead.
+              </p>
+              <p className="mt-4 text-sm font-medium text-brand-deep">
+                See Scale
+                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                  →
+                </span>
+              </p>
+            </Link>
           </div>
         </div>
       </section>
 
+      {/* Why not Hibu / Scorpion callout */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Timeline</p>
-          <h2 className="h-section">From handshake to live, in two weeks.</h2>
-          <ol className="mt-8 space-y-6">
-            {timeline.map((step) => (
-              <li
-                key={step.label}
-                className="rounded-2xl border border-slate-200 bg-white p-6"
-              >
-                <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep">
-                  {step.label}
-                </p>
-                <p className="mt-2 text-brand-muted leading-relaxed">
-                  {step.body}
-                </p>
-              </li>
-            ))}
-          </ol>
+          <h2 className="h-section">
+            No annual contracts. No surprise rate hikes. No vendor runaround.
+          </h2>
+          <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
+            <p>
+              Hibu, Scorpion, and their competitors lock you in for 12 months,
+              bundle in services you didn&rsquo;t ask for, and raise your rate on
+              renewal. When something breaks, your account manager&rsquo;s
+              manager&rsquo;s manager calls you back in four business days.
+            </p>
+            <p>
+              We ship in 72 hours to 12 days, charge $99/mo flat (the price
+              doesn&rsquo;t move when you add pages, when we rebuild, or when
+              you add a product), and you get a direct line. Month-to-month. No
+              12-month trap.
+            </p>
+          </div>
         </div>
       </section>
 
+      {/* FAQ */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (
@@ -509,6 +434,7 @@ export default function WebPresencePage() {
         </div>
       </section>
 
+      {/* Final CTA banner */}
       <section className="relative overflow-hidden section bg-brand-deep text-white">
         <CursorSpotlight />
         <div className="relative container-page max-w-3xl text-center">
@@ -516,9 +442,9 @@ export default function WebPresencePage() {
             Stop running four vendors.
           </h2>
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
-            30-minute walkthrough. We&rsquo;ll pull your current site, GBP,
-            and search standing live, show you the gaps, and tell you straight
-            what to fix first.
+            30-minute walkthrough. We&rsquo;ll pull your current site, Google
+            Business Profile, and search standing live, show you the gaps, and
+            tell you straight what to fix first.
           </p>
           <div className="mt-8">
             <Link
@@ -531,11 +457,9 @@ export default function WebPresencePage() {
         </div>
       </section>
 
-      <FinalCTA title="Want to see what this looks like for your business?" />
-
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(webPresenceServiceSchema()) }}
       />
       <script
         type="application/ld+json"
@@ -548,3 +472,5 @@ export default function WebPresencePage() {
     </>
   );
 }
+
+export const dynamic = "force-static";
