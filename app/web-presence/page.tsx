@@ -99,7 +99,6 @@ export default function WebPresencePage() {
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Web Presence</p>
             <h1 className="h-display">Web Presence</h1>
             <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">
               Your business runs while you sleep, starting with a site that gets you found.
