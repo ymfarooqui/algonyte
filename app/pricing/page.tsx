@@ -610,27 +610,6 @@ export default function PricingPage() {
       {/* Honest answers / cheaper options */}
       <WhyNot />
 
-      {/* Founding member — compact strip */}
-      <section className="pb-12">
-        <div className="container-page">
-          <p className="flex flex-wrap items-baseline gap-x-2 gap-y-1 text-sm text-brand-muted">
-            <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-primary">
-              Founding
-            </span>
-            <span className="text-brand-deep font-medium">
-              3 spots open.
-            </span>
-            <span>50% off setup, 30% off Growth for 6 months.</span>
-            <Link
-              href="/founding"
-              className="underline underline-offset-2 text-brand-deep hover:text-brand-primary transition-colors"
-            >
-              See details &rarr;
-            </Link>
-          </p>
-        </div>
-      </section>
-
       <FinalCTA title="Get started." />
 
       <script
