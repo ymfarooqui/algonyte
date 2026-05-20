@@ -52,7 +52,7 @@ const faqJsonLd = {
       name: "Do you only work with businesses inside Chicago city limits?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "No. The system is remote and works for any service business across Chicagoland — the city, Cook County, and the collar counties (DuPage, Lake, Will, Kane, McHenry). We highlight Chicago because the density of service businesses here means the lead leak is large and immediate.",
+        text: "No. The system is remote and works for any service business across Chicagoland: the city, Cook County, and the collar counties (DuPage, Lake, Will, Kane, McHenry). We highlight Chicago because the density of service businesses here means the lead leak is large and immediate.",
       },
     },
     {
@@ -119,7 +119,7 @@ export default function ChicagoLocationPage() {
             <p>
               Chicago is one of the densest service-business markets in the
               country. HVAC, plumbing, roofing, auto repair, dental, legal,
-              cleaning, landscaping — every block has a small operator trying to
+              cleaning, landscaping. Every block has a small operator trying to
               answer the phone while a job is in progress. The owner is on a
               roof in Avondale, under a hood in Cicero, or with a client in the
               Loop. The call goes to voicemail. The lead taps the next Google
@@ -127,7 +127,7 @@ export default function ChicagoLocationPage() {
             </p>
             <p>
               The gap is even wider after hours. A burst pipe in Lincoln Park
-              at 11pm on a Saturday doesn&rsquo;t wait until Monday — the
+              at 11pm on a Saturday doesn&rsquo;t wait until Monday. The
               homeowner calls four plumbers and books the first one who picks
               up or texts back. If that&rsquo;s not you, the job is gone before
               you&rsquo;ve seen the missed call.
@@ -135,7 +135,7 @@ export default function ChicagoLocationPage() {
             <p>
               You don&rsquo;t need a bigger ad budget to fix that. You need the
               calls and form fills you already get to be answered, qualified,
-              and booked the moment they arrive — at 2pm on a Tuesday and at
+              and booked the moment they arrive, at 2pm on a Tuesday and at
               11pm on a Sunday.
             </p>
           </div>
@@ -152,7 +152,7 @@ export default function ChicagoLocationPage() {
               Detroit. Before the AI receptionist went live, after-hours calls
               died in voicemail and new-customer leads slipped to the next shop
               on Google. In the first week the system was live, it booked 10
-              jobs the shop wouldn&rsquo;t have captured otherwise — missed-call
+              jobs the shop wouldn&rsquo;t have captured otherwise: missed-call
               text-backs that turned into appointments, late-night form fills
               that were qualified and on the calendar by the time the bay
               opened the next morning.
@@ -160,7 +160,7 @@ export default function ChicagoLocationPage() {
             <p>
               The same workflow runs for a Chicago HVAC company, a Lincoln
               Square dental practice, or a Naperville roofer. The install
-              doesn&rsquo;t care which industry it&rsquo;s plugged into — it
+              doesn&rsquo;t care which industry it&rsquo;s plugged into. It
               cares that a lead reached you and got an answer in seconds.
             </p>
             <p>
@@ -190,7 +190,7 @@ export default function ChicagoLocationPage() {
               <p className="mt-2 text-brand-muted leading-relaxed">
                 A 24/7 chat agent on your website plus SMS, WhatsApp, and
                 Instagram DM. Trained on your services, pricing, and the
-                neighborhoods you actually cover.
+                neighborhoods you cover.
               </p>
             </div>
             <div>
@@ -205,7 +205,7 @@ export default function ChicagoLocationPage() {
               <h3 className="text-lg font-semibold text-brand-deep">CRM and follow-up</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Every lead is tracked. Reminders, follow-up sequences, and
-                Google review requests fire automatically — no spreadsheets, no
+                Google review requests fire automatically. No spreadsheets, no
                 forgotten callbacks.
               </p>
             </div>
@@ -229,8 +229,8 @@ export default function ChicagoLocationPage() {
           <p className="eyebrow mb-4">Service area</p>
           <h2 className="h-section">Across Chicagoland and the collar counties.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            We work with service businesses across the city of Chicago — Loop,
-            North Side, West Side, South Side, and everywhere between — plus
+            We work with service businesses across the city of Chicago: Loop,
+            North Side, West Side, South Side, and everywhere between, plus
             Cook County and the collar counties: DuPage, Lake, Will, Kane, and
             McHenry. That includes Oak Park, Evanston, Naperville, Schaumburg,
             Aurora, Joliet, Elgin, Waukegan, and the smaller markets in

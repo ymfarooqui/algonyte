@@ -8,7 +8,7 @@ const steps = [
   {
     n: "01",
     title: "Every inquiry, in one place",
-    body: "Calls, texts, form fills, and DMs land in a single inbox the moment they come in — nothing gets buried.",
+    body: "Calls, texts, form fills, and DMs land in a single inbox the moment they come in. Nothing gets buried.",
   },
   {
     n: "02",
@@ -18,7 +18,7 @@ const steps = [
   {
     n: "03",
     title: "Booked on your calendar",
-    body: "When they're ready to move forward, the appointment drops onto your calendar — no back-and-forth, no chasing.",
+    body: "When they're ready to move forward, the appointment drops onto your calendar. No back-and-forth, no chasing.",
   },
 ];
 

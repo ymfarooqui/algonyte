@@ -314,7 +314,7 @@ const STAGES: Stage[] = [
     bullets: [
       "5 pages: Home, Services, About, Reviews, Contact",
       "On-page SEO foundations from day one",
-      "Flat monthly hosting — no surprises",
+      "Flat monthly hosting, no surprises",
     ],
     stat: { value: "72h", label: "to live" },
     card: <FormCard />,
@@ -342,7 +342,7 @@ const STAGES: Stage[] = [
     blurb:
       "Up to 12 pages with a custom design pass built for your brand, a conversion-optimised landing page for your top offer, and 30 days priority support post-launch.",
     bullets: [
-      "Custom design — not a template variant",
+      "Custom design, not a template variant",
       "Conversion-optimised landing page included",
       "30 days priority post-launch support",
     ],
@@ -355,7 +355,7 @@ const STAGES: Stage[] = [
     label: "Growth — Awake",
     sub: "Live in 5 days",
     blurb:
-      "AI chat on your site, missed-call text-back, DM auto-reply on every platform, and auto-booking onto your calendar — so no lead goes cold after hours.",
+      "AI chat on your site, missed-call text-back, DM auto-reply on every platform, and auto-booking onto your calendar. No lead goes cold after hours.",
     bullets: [
       "Missed-call text-back in seconds",
       "DM auto-reply across all platforms",
@@ -370,7 +370,7 @@ const STAGES: Stage[] = [
     label: "Growth — Climbing",
     sub: "Live in 10–14 days",
     blurb:
-      "Everything in Awake plus a voice AI phone receptionist, ongoing local SEO, and monthly strategy calls — so you show up on Google and every call gets answered.",
+      "Everything in Awake plus a voice AI phone receptionist, ongoing local SEO, and monthly strategy calls, so you show up on Google and every call gets answered.",
     bullets: [
       "Voice AI answers, qualifies, and books calls",
       "Weekly Google Business Profile posts",

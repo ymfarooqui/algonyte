@@ -29,10 +29,10 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/lead-generator#service`,
   serviceType: "Paid Lead Generation Management",
-  name: `Lead Generation by Algonyte Labs — ${scale.name} tier`,
+  name: `Lead Generation by Algonyte Labs, ${scale.name} tier`,
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description:
-    "Google Search Ads, Local Service Ads, and Meta Ads managed for service businesses. Ad spend goes directly to Google and Meta — no markup, no bundling. Part of the Scale tier.",
+    "Google Search Ads, Local Service Ads, and Meta Ads managed for service businesses. Ad spend goes directly to Google and Meta, no markup, no bundling. Part of the Scale tier.",
   areaServed: { "@type": "Country", name: "United States" },
   offers: {
     "@type": "Offer",
@@ -61,11 +61,11 @@ const serviceJsonLd = {
 const faqs = [
   {
     q: "How much ad spend do I need to start?",
-    a: "Honest range: $1,500–$5,000/mo is the minimum to see signal on Google Search Ads in most service markets. Below that, the auction dynamics work against you — you're competing against businesses spending 5x more per day. If you're starting at $1,500, we'll tell you which channel stretches it furthest.",
+    a: "Honest range: $1,500–$5,000/mo is the minimum to see signal on Google Search Ads in most service markets. Below that, the auction dynamics work against you. You're competing against businesses spending 5x more per day. If you're starting at $1,500, we'll tell you which channel stretches it furthest.",
   },
   {
     q: "What if my ads aren't working?",
-    a: "The first 30 days are calibration — we're building negative keyword lists, testing match types, and watching what actually converts. We share the numbers transparently every month. If CPL is too high after 60 days, we change the approach. If the market doesn't support ads economically for your service, we'll tell you that too.",
+    a: "The first 30 days are calibration. We're building negative keyword lists, testing match types, and watching what converts. We share the numbers transparently every month. If CPL is too high after 60 days, we change the approach. If the market doesn't support ads economically for your service, we'll tell you that too.",
   },
   {
     q: "How fast do I see leads?",
@@ -73,11 +73,11 @@ const faqs = [
   },
   {
     q: "What happens to my accounts if I cancel?",
-    a: "You keep everything. The Google Ads and Meta accounts are set up in your name on your billing. The campaigns, audiences, ad creative, conversion data — all of it stays with you. No lock-in, no hostage accounts.",
+    a: "You keep everything. The Google Ads and Meta accounts are set up in your name on your billing. The campaigns, audiences, ad creative, and conversion data all stay with you. No lock-in, no hostage accounts.",
   },
   {
     q: "Do you handle creative for the ads?",
-    a: "Yes. Meta Ads creative (static images, copy, basic video) is included. For Google Search Ads, we write and A/B test the ad copy. The 2 landing pages per quarter are built by us — not handed off to you as a template.",
+    a: "Yes. Meta Ads creative (static images, copy, basic video) is included. For Google Search Ads, we write and A/B test the ad copy. The 2 landing pages per quarter are built by us, not handed off to you as a template.",
   },
 ];
 
@@ -105,7 +105,7 @@ export default function LeadGeneratorPage() {
               <span className="text-brand-deep">Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              Google Search, Local Service Ads, Meta &mdash; landing pages built
+              Google Search, Local Service Ads, Meta. Landing pages built
               to convert, AI follow-up that books appointments. Closed-loop
               tracking from ad click to booked job. Part of the{" "}
               <strong className="text-brand-deep">{scale.name}</strong> tier.
@@ -132,7 +132,7 @@ export default function LeadGeneratorPage() {
       <section className="section bg-brand-deep text-white">
         <div className="container-page max-w-3xl text-center">
           <p className="text-xl sm:text-2xl font-medium leading-snug text-white/90 italic">
-            &ldquo;Your business runs while you sleep &mdash; including the ads, the landing pages, and the follow-up.&rdquo;
+            &ldquo;Your business runs while you sleep, including the ads, the landing pages, and the follow-up.&rdquo;
           </p>
         </div>
       </section>
@@ -183,7 +183,7 @@ export default function LeadGeneratorPage() {
             <div className="mt-4 space-y-4 text-brand-muted leading-relaxed">
               <p>
                 You hold the Google Ads and Meta accounts. Ad spend goes on your credit card,
-                directly to Google and Meta &mdash; never touches us, no markup, ever.
+                directly to Google and Meta. Never touches us, no markup, ever.
                 The ${scale.monthly.toLocaleString()}/mo is for the work; the spend is yours.
                 You see every dollar.
               </p>
@@ -223,7 +223,7 @@ export default function LeadGeneratorPage() {
               <span className="text-4xl font-bold text-brand-deep">
                 ${scale.monthly.toLocaleString()}
               </span>
-              <span className="text-brand-muted">/mo &mdash; {scale.monthlyNote}</span>
+              <span className="text-brand-muted">/mo, {scale.monthlyNote}</span>
             </div>
 
             <div className="mt-2 flex flex-wrap gap-4 text-sm text-brand-muted">
@@ -313,7 +313,7 @@ export default function LeadGeneratorPage() {
                 </tr>
                 <tr>
                   <td className="py-4 pr-4 font-medium text-brand-deep">No markup on ad spend</td>
-                  <td className="py-4 px-4 bg-brand-accent/20 font-bold text-green-700">Yes &mdash; none</td>
+                  <td className="py-4 px-4 bg-brand-accent/20 font-bold text-green-700">Yes, none</td>
                   <td className="py-4 px-4 text-brand-muted">Opaque</td>
                   <td className="py-4 px-4 text-brand-muted">Quote-based</td>
                   <td className="py-4 px-4 text-brand-muted">Quote-based</td>
@@ -325,7 +325,7 @@ export default function LeadGeneratorPage() {
           <p className="mt-6 text-brand-muted leading-relaxed max-w-3xl">
             Most agencies bundle ad spend into a giant retainer with opaque markups. We split
             it: you pay us for the work, you pay Google and Meta for the clicks. No markup on
-            ad spend &mdash; ever. If you leave, the accounts and the data go with you.
+            ad spend, ever. If you leave, the accounts and the data go with you.
           </p>
         </div>
       </section>
@@ -346,7 +346,7 @@ export default function LeadGeneratorPage() {
         </div>
       </section>
 
-      <FinalCTA title="Ready to run ads that actually book jobs?" />
+      <FinalCTA title="Ready to run ads that book jobs?" />
 
       <script
         type="application/ld+json"

@@ -61,8 +61,7 @@ export default function FoundingPage() {
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
           <p className="lede text-brand-deep font-medium">
-            Your business runs while you sleep. The price drops, the value
-            compounds, the work stays the same.
+            Your business runs while you sleep. 50% off setup and 30% off Growth for 6 months. The work doesn&rsquo;t change.
           </p>
         </div>
       </section>
@@ -75,7 +74,7 @@ export default function FoundingPage() {
 
           {/* Setup discounts */}
           <h3 className="mt-10 text-lg font-semibold text-brand-deep">
-            {founding.setupDiscountPct}% off setup &mdash; every tier
+            {founding.setupDiscountPct}% off setup, every tier
           </h3>
 
           {/* Mobile: stacked cards */}
@@ -199,13 +198,12 @@ export default function FoundingPage() {
 
           {/* Monthly discount on Growth tiers */}
           <h3 className="mt-10 text-lg font-semibold text-brand-deep">
-            {founding.growthDiscountPct}% off monthly retainer &mdash; Growth
+            {founding.growthDiscountPct}% off monthly retainer, Growth
             tiers only, first {founding.discountDurationMonths} months
           </h3>
           <p className="mt-2 text-sm text-brand-muted">
             After {founding.discountDurationMonths} months, all founding members
-            revert to standard pricing. No lock-in trap &mdash; you can cancel
-            anytime once the promotional period ends.
+            revert to standard pricing. You can cancel anytime once the promotional period ends.
           </p>
 
           {/* Mobile: stacked cards */}
@@ -329,8 +327,7 @@ export default function FoundingPage() {
             </table>
           </div>
           <p className="mt-3 text-xs text-brand-muted">
-            Scale ad spend goes on your card directly to Google and Meta &mdash;
-            no markup, never touches Algonyte.
+            Scale ad spend goes on your card directly to Google and Meta. No markup, never touches Algonyte.
           </p>
         </div>
       </section>
@@ -344,13 +341,12 @@ export default function FoundingPage() {
             <li>
               <strong className="text-brand-deep">Honest feedback.</strong>{" "}
               Tell us what&rsquo;s working, what isn&rsquo;t, what to build
-              next. You&rsquo;re shaping the product, not just buying it.
+              next. You&rsquo;re shaping the product.
             </li>
             <li>
               <strong className="text-brand-deep">One testimonial.</strong>{" "}
               Once the system is producing results for you, a quote and a number
-              we can share. No pressure on timing &mdash; when you&rsquo;re
-              ready.
+              we can share. When you&rsquo;re ready.
             </li>
             <li>
               <strong className="text-brand-deep">
@@ -381,7 +377,7 @@ export default function FoundingPage() {
                 Awake
               </span>
               <span>
-                Live in 5 days &mdash; reception, missed-call text-back, DM
+                Live in 5 days: reception, missed-call text-back, DM
                 auto-reply, review workflow.
               </span>
             </li>
@@ -411,11 +407,10 @@ export default function FoundingPage() {
           <h2 className="h-section">Case studies. References. Real data.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Algonyte is early. We have the infrastructure, the processes, and
-            the conviction &mdash; but we don&rsquo;t yet have documented
-            results from paying clients to show the next business owner who
-            asks. Founding members fix that. You get a real discount on a real
-            product; we get the proof that earns us the next client at full
-            price. No mystery, no spin.
+            the conviction, but no documented results from paying clients to
+            show the next business owner who asks. Founding members fix that.
+            You get a significant discount on a working product; we get the
+            proof that earns us the next client at full price. No mystery, no spin.
           </p>
         </div>
       </section>
@@ -431,7 +426,7 @@ export default function FoundingPage() {
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
             Tell us about your business. The founder responds within 24 hours
             with whether you&rsquo;re a fit. Spots are first-come,
-            first-served &mdash; once they&rsquo;re gone, they&rsquo;re gone.
+            first-served. Once they&rsquo;re gone, they&rsquo;re gone.
           </p>
           <div className="mt-8">
             <Link

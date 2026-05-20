@@ -37,28 +37,28 @@ const monthlyIncludes = [
 
 const faqs = [
   {
-    q: "What does the $99/mo actually cover?",
-    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, a quarterly health check, and a direct line when something breaks. The price is flat and identical across all three tiers — Open, Found, and Polished.",
+    q: "What does the $99/mo cover?",
+    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, a quarterly health check, and a direct line when something breaks. The price is flat and identical across all three tiers: Open, Found, and Polished.",
   },
   {
     q: "I already have a website. Do I have to replace it?",
-    a: "No. If your site is solid we can migrate it to our hosting. If it's hurting you — slow, broken on mobile, no schema, nowhere on Google — we rebuild. We'll tell you straight on the discovery call.",
+    a: "No. If your site is solid we can migrate it to our hosting. If it's hurting you (slow, broken on mobile, no schema, nowhere on Google), we rebuild. We'll tell you straight on the discovery call.",
   },
   {
     q: "Who owns the website when I leave?",
-    a: "You do. The domain, the code, the content, the Google Business Profile, and your Stripe or Square accounts — all yours, always. We don't hold anything hostage.",
+    a: "You do. The domain, the code, the content, the Google Business Profile, and your Stripe or Square accounts are all yours. We don't hold anything hostage.",
   },
   {
     q: "Can I cancel whenever?",
     a: "Yes. Presence hosting is month-to-month with no minimum. If you cancel, you leave with your domain, your code, and your Google Business Profile fully intact.",
   },
   {
-    q: "How fast can you actually get me live?",
-    a: "Open ships in 72 hours from a signed brief. Found is 5–7 days. Polished is 7–12 days because it includes a full custom design pass. We hold ourselves to these — they're public numbers.",
+    q: "How fast can you get me live?",
+    a: "Open ships in 72 hours from a signed brief. Found is 5–7 days. Polished is 7–12 days because it includes a full custom design pass. We hold ourselves to these. They're public numbers.",
   },
   {
     q: "What about contracts? I've heard horror stories with Hibu and Scorpion.",
-    a: "No 12-month contracts on Presence. No locked-in annual fee. Month-to-month from day one. You're not trapped — you're a client because we're doing the work.",
+    a: "No 12-month contracts on Presence. No locked-in annual fee. Month-to-month from day one. You're a client because we're doing the work.",
   },
 ];
 
@@ -102,13 +102,13 @@ export default function WebPresencePage() {
             <p className="eyebrow mb-4">Web Presence</p>
             <h1 className="h-display">Web Presence</h1>
             <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">
-              Your business runs while you sleep — starting with a real site that gets you found.
+              Your business runs while you sleep, starting with a site that gets you found.
             </p>
             <p className="lede mt-6 max-w-2xl">
               Site live in 72 hours. Built for your brand, hosted for{" "}
               <strong>$99/mo flat</strong>, indexed on Google from day one.
-              Starting from <strong>$300</strong> one-time — then $99/mo
-              forever, no tiered hosting nonsense, no contracts.
+              Starting from <strong>$300</strong> one-time, then $99/mo
+              forever. No tiered hosting nonsense, no contracts.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Link
@@ -143,15 +143,14 @@ export default function WebPresencePage() {
               forgot, a Google Business Profile that&rsquo;s 40% filled in.
             </p>
             <p>
-              It&rsquo;s not that the pieces are wrong. It&rsquo;s that
-              nobody&rsquo;s running them as a system. The site
-              doesn&rsquo;t rank. Customers can&rsquo;t book. Nobody&rsquo;s
-              watching what breaks. And every month you pay vendors who blame each
-              other.
+              The pieces work fine. Nobody&rsquo;s running them as a system.
+              The site doesn&rsquo;t rank. Customers can&rsquo;t book.
+              Nobody&rsquo;s watching what breaks. And every month you pay
+              vendors who blame each other.
             </p>
             <p>
               We replace the whole stack. One team, one bill, one number
-              responsible for whether the phone rings — and a site that gets
+              responsible for whether the phone rings, and a site that gets
               you found from day one.
             </p>
           </div>
@@ -168,7 +167,7 @@ export default function WebPresencePage() {
           <p className="mt-4 max-w-2xl text-brand-muted">
             The setup fee covers the build. The $99/mo covers hosting,
             maintenance, edits, and the line you call when something breaks.
-            Need more later? Upgrade by paying a new build invoice — your
+            Need more later? Upgrade by paying a new build invoice. Your
             monthly never moves.
           </p>
 
@@ -315,7 +314,7 @@ export default function WebPresencePage() {
           <p className="mt-4 max-w-2xl text-brand-muted">
             Your site gets you online and indexed. These programs make the
             phone ring. Each one removes another thing from your plate. Optional,
-            priced separately, start whenever — week one or year two.
+            priced separately. Start week one or add them later.
           </p>
 
           <div className="mt-12 grid gap-5 sm:grid-cols-3">
@@ -335,7 +334,7 @@ export default function WebPresencePage() {
               </div>
               <p className="mt-2 text-brand-muted leading-relaxed text-sm">
                 AI chat on your site, missed-call text-back, and DM auto-reply
-                24/7. Answers, qualifies, and books — while you sleep.
+                24/7. Answers, qualifies, and books while you sleep.
               </p>
               <p className="mt-4 text-sm font-medium text-brand-deep">
                 See Awake
@@ -417,7 +416,7 @@ export default function WebPresencePage() {
               manager&rsquo;s manager calls you back in four business days.
             </p>
             <p>
-              We ship in 72 hours to 12 days, charge $99/mo flat (forever — it
+              We ship in 72 hours to 12 days, charge $99/mo flat (the price
               doesn&rsquo;t move when you add pages, when we rebuild, or when
               you add a product), and you get a direct line. Month-to-month. No
               12-month trap.

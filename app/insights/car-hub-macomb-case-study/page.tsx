@@ -96,7 +96,7 @@ export default function CarHubCaseStudy() {
             <p className="mt-4">
               The leak wasn&rsquo;t marketing. They were ranking fine locally
               and getting plenty of inbound. The leak was the gap between the
-              call coming in and somebody being free to answer it — and the gap
+              call coming in and somebody being free to answer it, and the gap
               between an after-hours form fill and the next morning, by which
               point the lead had already booked somewhere else.
             </p>
@@ -116,8 +116,8 @@ export default function CarHubCaseStudy() {
               </li>
               <li>
                 The agent is trained on Car Hub&rsquo;s services, pricing
-                ranges, service area, hours, and the questions that actually
-                qualify a job (year/make/model, what&rsquo;s wrong, how soon
+                ranges, service area, hours, and the questions that qualify
+                a job (year/make/model, what&rsquo;s wrong, how soon
                 they need it).
               </li>
               <li>
@@ -142,7 +142,7 @@ export default function CarHubCaseStudy() {
             <p className="mt-4">
               Ten jobs on the calendar that the shop wouldn&rsquo;t have
               captured otherwise. Some were straightforward missed-call
-              text-backs — caller didn&rsquo;t leave a voicemail, would have
+              text-backs where the caller didn&rsquo;t leave a voicemail, would have
               been lost, instead got a text within seconds and was on the books
               ten minutes later. Others were late-night form fills from the
               website that were qualified and scheduled before the bay opened

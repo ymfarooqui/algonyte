@@ -27,23 +27,23 @@ const breadcrumb = breadcrumbJsonLd([{ name: "Reputation Management", path: "/re
 const faqs = [
   {
     q: "Is this Google-only?",
-    a: `On ${awake.name}, yes — the review workflow triggers on job completion and sends customers to your Google Business Profile. On ${climbing.name}, review requests go to Google, Yelp, and Facebook, with smart routing for unhappy customers on all three platforms.`,
+    a: `On ${awake.name}, yes. The review workflow triggers on job completion and sends customers to your Google Business Profile. On ${climbing.name}, review requests go to Google, Yelp, and Facebook, with smart routing for unhappy customers on all three platforms.`,
   },
   {
     q: "What if someone leaves a bad review?",
-    a: `Before the public review link goes out, the customer is asked how the job went. Anyone who responds with a low rating is routed to a private feedback form first. That gives you a chance to fix the issue before it becomes a public one-star. On ${climbing.name}, this routing logic covers all platforms — Google, Yelp, and Facebook.`,
+    a: `Before the public review link goes out, the customer is asked how the job went. Anyone who responds with a low rating is routed to a private feedback form first. That gives you a chance to fix the issue before it becomes a public one-star. On ${climbing.name}, this routing logic covers all platforms: Google, Yelp, and Facebook.`,
   },
   {
     q: "Do I need to write the review request messages?",
-    a: "No. We build the message templates for you. They're customized to your service type and your brand voice — not generic copy-paste. If you do a specific kind of job (HVAC, plumbing, electrical, landscaping), we tailor the language to match.",
+    a: "No. We build the message templates for you. They're customized to your service type and your brand voice, not generic copy-paste. If you do a specific kind of job (HVAC, plumbing, electrical, landscaping), we tailor the language to match.",
   },
   {
     q: "How long until my rating moves?",
-    a: "Most service businesses see meaningful movement inside 60 days. The math: 50 jobs/month at a 20% response rate = 10 new reviews per month. That compounds. A business sitting at 3.8 with 30 reviews can realistically be at 4.6 inside 90 days of consistent post-job requests.",
+    a: "Most service businesses see meaningful movement inside 60 days. The math: 50 jobs/month at a 20% response rate = 10 new reviews per month. A business sitting at 3.8 with 30 reviews can realistically reach 4.6 inside 90 days of consistent post-job requests.",
   },
   {
     q: "Can I see the metrics?",
-    a: `Yes. Both ${awake.name} and ${climbing.name} include a dashboard with the numbers that actually matter: five-star count, average rating trend, and request-to-review response rate by channel. ${climbing.name} adds trend lines over time so you can see the curve moving.`,
+    a: `Yes. Both ${awake.name} and ${climbing.name} include a dashboard with five-star count, average rating trend, and request-to-review response rate by channel. ${climbing.name} adds trend lines over time so you can see the curve moving.`,
   },
 ];
 
@@ -102,7 +102,7 @@ export default function ReputationManagerPage() {
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl mx-auto text-center">
           <p className="text-2xl sm:text-3xl font-semibold text-brand-deep leading-snug italic">
-            &ldquo;Your business runs while you sleep &mdash; including the
+            &ldquo;Your business runs while you sleep, including the
             steady drip of new reviews that move your rating.&rdquo;
           </p>
         </div>
@@ -112,17 +112,17 @@ export default function ReputationManagerPage() {
       <section className="section">
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">The system</p>
-          <h2 className="h-section">What reputation management actually does.</h2>
+          <h2 className="h-section">How the reputation system works.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
               <strong className="text-brand-deep">Triggers automatically on job completion.</strong>{" "}
               SMS goes out within an hour of the job being marked done. That window is
-              where the five-stars live &mdash; customers are still in the good feeling.
+              where the five-stars live. Customers are still in the good feeling.
             </li>
             <li>
               <strong className="text-brand-deep">Smart routing catches unhappy customers first.</strong>{" "}
               Ratings of 4&ndash;5 stars proceed to the public review link. Ratings of
-              1&ndash;3 stars route to a private feedback form &mdash; giving you a
+              1&ndash;3 stars route to a private feedback form, giving you a
               shot to fix it before it hits your public profile.
             </li>
             <li>
@@ -135,16 +135,16 @@ export default function ReputationManagerPage() {
             <li>
               <strong className="text-brand-deep">Polite drip for slow responders.</strong>{" "}
               A second nudge goes out three days later if there&rsquo;s no response.
-              Stops automatically once the review lands &mdash; no spam, no repeat asks.
+              Stops automatically once the review lands. No spam, no repeat asks.
             </li>
             <li>
               <strong className="text-brand-deep">Dashboard with the metric that matters.</strong>{" "}
               Five-star count, response rate, and average rating trend over time. Not
-              vanity counts &mdash; the numbers that show whether the system is working.
+              vanity counts. These are the numbers that show whether the system is working.
             </li>
             <li>
               <strong className="text-brand-deep">Custom message templates per service type.</strong>{" "}
-              HVAC, plumbing, electrical, landscaping &mdash; the request is written to
+              HVAC, plumbing, electrical, landscaping. The request is written to
               match what you just did, not a generic &ldquo;review us on Google&rdquo; blast.
             </li>
           </ul>
@@ -217,7 +217,7 @@ export default function ReputationManagerPage() {
                 </p>
                 <p className="mt-3 text-white/80 leading-relaxed text-sm">
                   Multi-platform review requests plus smart routing for unhappy
-                  customers &mdash; Google, Yelp, and Facebook, all in one workflow.
+                  customers on Google, Yelp, and Facebook, all in one workflow.
                 </p>
               </div>
               <ul className="space-y-2 text-sm text-white/80 flex-1">
@@ -263,22 +263,22 @@ export default function ReputationManagerPage() {
             <p>
               A service business running 50 jobs per month with a 20% review-request
               response rate generates 10 new reviews per month. At a starting average
-              of 4.7, that&rsquo;s a year of compounding social proof &mdash; the kind
-              that moves you past every competitor sitting on a stale 4.2 from three
+              of 4.7, that&rsquo;s a year of compounding social proof that
+              moves you past every competitor sitting on a stale 4.2 from three
               years ago.
             </p>
             <p>
-              The smart-routing piece matters because of how ratings actually work.
+              The smart-routing piece matters because of how ratings work.
               Customers who rate 4&ndash;5 stars on the internal satisfaction question
               get sent straight to the public review link. Customers who rate 1&ndash;3
               stars get routed to a private feedback form first. You get notified, you
               fix the issue, and the conversation stays off your public profile. It
-              doesn&rsquo;t eliminate bad reviews entirely &mdash; but it removes the
+              doesn&rsquo;t eliminate bad reviews entirely, but it removes the
               ones that come from an unresolved complaint you never knew about.
             </p>
             <p>
               The reason reputation management lives inside the tiers instead of as a
-              separate product: reception and reputation are the same job &mdash;
+              separate product: reception and reputation are the same job,
               handling what happens after the lead. Splitting them into separate line
               items was an artifact of how the product grew. Bundled is more honest.
               You already need someone answering the phone and following up after jobs.

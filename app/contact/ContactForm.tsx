@@ -40,8 +40,7 @@ export default function ContactForm() {
           Prefer to talk live?
         </p>
         <p className="mt-1 text-sm text-brand-ink/80">
-          Grab a 20-minute intro call. No pitch, just a real conversation about
-          what you&rsquo;re trying to fix.
+          Book a 20-minute call. No pitch. We&rsquo;ll talk about what you&rsquo;re trying to fix.
         </p>
         <button
           type="button"

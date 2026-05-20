@@ -19,14 +19,13 @@ export default function ProductGrid() {
           What we run
         </motion.p>
         <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
-          Get found. Get the call. Get paid. We run all of it.
+          We get you found, take the call, and book the job.
         </motion.h2>
         <motion.p
           className="mt-4 max-w-2xl text-brand-muted"
           variants={reveal.fadeUp}
         >
-          Start with Presence, layer Growth on top when you&rsquo;re ready. One
-          team, one bill, one number to call.
+          Start with Presence, layer Growth on top when you&rsquo;re ready. One team, one bill, one person to call.
         </motion.p>
 
         {/* Two-product grid */}

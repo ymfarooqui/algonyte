@@ -26,7 +26,7 @@ const breadcrumb = breadcrumbJsonLd([{ name: "AI Receptionist", path: "/ai-recep
 const faqs = [
   {
     q: "How is this different from a regular chatbot?",
-    a: "A regular chatbot answers FAQ and stops. Our AI receptionist qualifies the lead, asks the questions your business needs to triage a job, and books the appointment directly onto your calendar — all without a human touching it. Awake handles text and chat; Climbing adds a live voice AI that picks up calls.",
+    a: "A regular chatbot answers FAQ and stops. Our AI receptionist qualifies the lead, asks the questions your business needs to triage a job, and books the appointment directly onto your calendar without a human touching it. Awake handles text and chat; Climbing adds a live voice AI that picks up calls.",
   },
   {
     q: "What if the AI can't answer a question?",
@@ -34,11 +34,11 @@ const faqs = [
   },
   {
     q: "Does it work with my existing phone number?",
-    a: "Yes. We forward your existing number — you keep it, nothing changes for your customers. Climbing adds the voice AI layer on top of your current number, so callers reach the AI first and can be transferred to you for anything it can't handle.",
+    a: "Yes. We forward your existing number; you keep it and nothing changes for your customers. Climbing adds the voice AI layer on top of your current number, so callers reach the AI first and can be transferred to you for anything it can't handle.",
   },
   {
     q: "How long until I see results?",
-    a: "Most clients see bookings in the first 48 hours of going live — the missed-call text-back alone tends to recover leads the same day. Awake is live in 5 days; Climbing in 10–14 days because we layer in voice AI and start the Google Business Profile work.",
+    a: "Most clients see bookings in the first 48 hours of going live. The missed-call text-back alone tends to recover leads the same day. Awake is live in 5 days; Climbing in 10–14 days because we layer in voice AI and start the Google Business Profile work.",
   },
   {
     q: "Can I take over the conversations myself?",
@@ -46,7 +46,7 @@ const faqs = [
   },
   {
     q: "What happens to my leads if I cancel?",
-    a: "You keep everything. Your contacts, your conversation history, your calendar bookings, and your Google Business Profile — all yours. We don't hold leads hostage.",
+    a: "You keep everything. Your contacts, your conversation history, your calendar bookings, and your Google Business Profile are all yours. We don't hold leads hostage.",
   },
 ];
 
@@ -93,7 +93,7 @@ export default function AIReceptionistPage() {
               <span className="text-brand-deep">Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              An AI that answers, qualifies, and books your leads 24/7 — across
+              An AI that answers, qualifies, and books your leads 24/7 across
               missed calls, website chat, SMS, and social DMs. Built for home
               services, auto, trades, and professional service shops where the
               phone rings while you&rsquo;re already on a job.
@@ -120,12 +120,12 @@ export default function AIReceptionistPage() {
       <section className="section">
         <div className="container-page max-w-3xl">
           <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-brand-soft/60 px-5 py-4 text-brand-deep leading-relaxed text-lg">
-            Your business runs while you sleep &mdash; leads get answered, qualified,
+            Your business runs while you sleep. Leads get answered, qualified,
             and booked while you&rsquo;re on a job, asleep, or off the clock.
           </p>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              The average service business misses 30&ndash;40% of inbound calls &mdash;
+              The average service business misses 30&ndash;40% of inbound calls
               because the phone rings when you&rsquo;re on a roof, under a car,
               or with a patient. Those calls don&rsquo;t leave voicemail. They
               dial the next shop on Google.
@@ -166,7 +166,7 @@ export default function AIReceptionistPage() {
             <li>
               <strong className="text-brand-deep">Lead qualification built for your business.</strong>{" "}
               Year, make, model. Scope of work. Service area. Budget. Whatever
-              your business needs to triage a job &mdash; the AI asks it before booking.
+              your business needs to triage a job. The AI asks it before booking.
             </li>
             <li>
               <strong className="text-brand-deep">Auto-booking to your calendar.</strong>{" "}
@@ -176,7 +176,7 @@ export default function AIReceptionistPage() {
             <li>
               <strong className="text-brand-deep">Review requests after job completion.</strong>{" "}
               Once an appointment is marked complete, a Google review request fires
-              automatically &mdash; no manual follow-up required.
+              automatically, no manual follow-up required.
             </li>
           </ul>
         </div>
@@ -375,7 +375,7 @@ export default function AIReceptionistPage() {
             <p>
               Goodcall is $59/mo if you want to build it yourself. Smith.ai is
               $95/mo + per-call. Podium is $498/mo on a 12-month contract. We&rsquo;re
-              ${awake.monthly}/mo because we configure it for your business and own the result &mdash;
+              ${awake.monthly}/mo because we configure it for your business and own the result,
               and you can walk in any month, no annual lock-in.
             </p>
           </div>
@@ -393,7 +393,7 @@ export default function AIReceptionistPage() {
             <p>
               Car Hub in Macomb Township, Michigan installed the system on a
               Monday. By the end of that week the AI receptionist had booked
-              10 jobs the shop would have missed otherwise &mdash; after-hours
+              10 jobs the shop would have missed otherwise: after-hours
               text-backs, late-night form fills, calls that came in during a
               busy bay.
             </p>

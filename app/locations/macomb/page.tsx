@@ -68,7 +68,7 @@ const faqJsonLd = {
       name: "Will the AI receptionist sound like it's in Michigan?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Tone is configurable. We train the agent on your shop's voice — friendly, blunt, formal, whatever fits — and on local context like nearby cities, service area boundaries, and the way your customers actually describe their problems.",
+        text: "Tone is configurable. We train the agent on your shop's voice (friendly, blunt, formal, whatever fits) and on local context like nearby cities, service area boundaries, and the way your customers describe their problems.",
       },
     },
     {
@@ -118,8 +118,8 @@ export default function MacombLocationPage() {
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
               Drive Hall Road or M-59 on a Tuesday afternoon and you&rsquo;ll pass
-              dozens of small shops — auto repair, HVAC, plumbing, roofing,
-              landscaping, dental, salons — each one trying to grow with a phone
+              dozens of small shops: auto repair, HVAC, plumbing, roofing,
+              landscaping, dental, salons, each one trying to grow with a phone
               that rings when nobody can answer. The owner is under a car, on a
               roof, with a patient, or on a job site. The call goes to voicemail.
               The lead calls the next shop on Google. That&rsquo;s the leak.
@@ -127,7 +127,7 @@ export default function MacombLocationPage() {
             <p>
               You don&rsquo;t need a bigger marketing budget to fix that. You need
               the calls and form fills you already get to be answered, qualified,
-              and booked the moment they arrive — at 2pm on a Tuesday and at 11pm
+              and booked the moment they arrive, at 2pm on a Tuesday and at 11pm
               on a Sunday.
             </p>
           </div>
@@ -144,15 +144,15 @@ export default function MacombLocationPage() {
               installed the AI receptionist, after-hours calls went to voicemail
               and roughly half of new-customer leads never got a callback fast
               enough. In the first week the system was live, it booked 10 jobs
-              the shop wouldn&rsquo;t have captured otherwise — missed-call
+              the shop wouldn&rsquo;t have captured otherwise: missed-call
               text-backs that turned into appointments, late-night form fills
               that were qualified and on the calendar by the time the bay opened
               the next morning.
             </p>
             <p>
               That&rsquo;s the standard we work to. Real leads, real bookings,
-              real numbers. Nothing about the install was custom to auto repair —
-              the same workflow runs equally well for an HVAC shop in Sterling
+              real numbers. Nothing about the install was custom to auto repair.
+              The same workflow runs equally well for an HVAC shop in Sterling
               Heights, a roofer in Shelby Township, or a dental practice in
               Clinton Township.
             </p>
@@ -197,7 +197,7 @@ export default function MacombLocationPage() {
               <h3 className="text-lg font-semibold text-brand-deep">CRM and follow-up</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Every lead is tracked. Reminders, follow-up sequences, and Google
-                review requests fire automatically — no spreadsheets, no
+                review requests fire automatically. No spreadsheets, no
                 forgotten callbacks.
               </p>
             </div>
@@ -213,7 +213,7 @@ export default function MacombLocationPage() {
             We work with service businesses in Macomb Township, Sterling Heights,
             Warren, Clinton Township, Shelby Township, Roseville, St. Clair
             Shores, Chesterfield, Eastpointe, Fraser, New Baltimore, and the rest
-            of Macomb County — plus the wider Detroit metro. The system is
+            of Macomb County, plus the wider Detroit metro. The system is
             remote-first, so the install runs the same whether you&rsquo;re a
             single-bay shop or a multi-location operation.
           </p>

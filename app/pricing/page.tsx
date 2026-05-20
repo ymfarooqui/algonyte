@@ -88,11 +88,11 @@ const typicalPaths = [
 ];
 
 const differentiators = [
-  "No annual contracts — 6 months only on SEO and ads",
-  `$${siteTiers[0].monthly}/mo hosting forever — flat, never increases`,
+  "No annual contracts. 6 months only on SEO and ads",
+  `$${siteTiers[0].monthly}/mo hosting forever, flat, never increases`,
   "Ad spend is yours: your card, your accounts, no markup",
-  "Fast turnaround — site in 72 hours, reception in 5 days",
-  'Transparent pricing — every number on this page; no "book a call to learn pricing"',
+  "Fast turnaround: site in 72 hours, reception in 5 days",
+  'Transparent pricing: every number on this page. No "book a call to learn pricing"',
 ];
 
 function CheckIcon() {
@@ -166,7 +166,7 @@ export default function PricingPage() {
                 </ul>
               </div>
               <p className="pt-2 text-brand-deep/70 italic">
-                Interactive wizard coming soon. For now, browse the tiers below &mdash; or{" "}
+                Interactive wizard coming soon. For now, browse the tiers below, or{" "}
                 <Link href="/contact" className="underline underline-offset-2 text-brand-deep hover:text-brand-primary transition-colors">
                   book a 30-min call
                 </Link>{" "}
@@ -368,7 +368,7 @@ export default function PricingPage() {
             Hand off what you hate doing.
           </h2>
           <p className="mt-2 max-w-2xl text-brand-muted mb-10">
-            Reception, ranking, ads. Pick the rung that matches what&rsquo;s broken &mdash; we run it from there.
+            Reception, ranking, ads. Pick the rung that matches what&rsquo;s broken. We run it from there.
           </p>
           <div className="grid gap-5 md:grid-cols-3 md:items-stretch">
             {growthTiers.map((tier) => {
@@ -451,7 +451,7 @@ export default function PricingPage() {
                   {/* Tier-specific callout lines */}
                   {tier.id === "scale" && (
                     <p className="mt-4 text-sm font-medium rounded-lg bg-brand-deep/5 text-brand-deep px-3 py-2">
-                      Ad spend goes on your credit card, straight to Google and Meta &mdash; never touches us, never has a markup.
+                      Ad spend goes on your credit card, straight to Google and Meta. Never touches us, never has a markup.
                     </p>
                   )}
 
@@ -571,7 +571,7 @@ export default function PricingPage() {
 
           <p className="mt-6 text-xs text-brand-muted max-w-lg">
             Climbing is all-in: its ${growthTiers[1].monthly}/mo already includes hosting. The &ldquo;Full reception +
-            SEO&rdquo; path&rsquo;s ${siteTiers[2].monthly + growthTiers[1].monthly}/mo reflects that &mdash; no double-charging.
+            SEO&rdquo; path&rsquo;s ${siteTiers[2].monthly + growthTiers[1].monthly}/mo reflects that. No double-charging.
           </p>
         </div>
       </section>
