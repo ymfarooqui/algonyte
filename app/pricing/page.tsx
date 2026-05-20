@@ -448,17 +448,6 @@ export default function PricingPage() {
                   </p>
 
                   {/* Tier-specific callout lines */}
-                  {tier.id === "climbing" && (
-                    <p
-                      className={`mt-4 text-sm font-medium rounded-lg px-3 py-2 ${
-                        featured
-                          ? "bg-white/10 text-brand-soft"
-                          : "bg-brand-deep/5 text-brand-deep"
-                      }`}
-                    >
-                      6 months. SEO compounds &mdash; anything shorter is throwing money at it.
-                    </p>
-                  )}
                   {tier.id === "scale" && (
                     <p className="mt-4 text-sm font-medium rounded-lg bg-brand-deep/5 text-brand-deep px-3 py-2">
                       Ad spend goes on your credit card, straight to Google and Meta &mdash; never touches us, never has a markup.
