@@ -67,8 +67,8 @@ export default function ReputationManagerPage() {
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Reputation Management</p>
             <h1 className="h-display">
-              Reputation management{" "}
-              <span className="text-brand-deep">for service businesses.</span>
+              Reputation Management{" "}
+              <span className="text-brand-deep">for Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
               Job completes &rarr; SMS goes out &rarr; happy customers post
@@ -322,3 +322,6 @@ export default function ReputationManagerPage() {
     </>
   );
 }
+
+export const dynamic = "force-static";
+
