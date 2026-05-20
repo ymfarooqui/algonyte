@@ -17,11 +17,20 @@ const links = [
   { href: "/contact", label: "Contact" },
 ];
 
+// Header reveals on scroll up, hides on scroll down. Never hides:
+//   - within the first 120px of the page
+//   - while the mobile menu is open
+//   - while a focusable element inside the header has focus
+const HIDE_THRESHOLD_PX = 120;
+const SCROLL_DELTA_PX = 6;
+
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const [hidden, setHidden] = useState(false);
   const [prevPathname, setPrevPathname] = useState<string | null>(null);
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement | null>(null);
+  const lastYRef = useRef(0);
 
   // Reset the open menu when the route changes. Following React's
   // "adjusting state on prop change" pattern (setState during render is
@@ -48,10 +57,45 @@ export default function Header() {
     };
   }, [open]);
 
+  // Smart-sticky scroll behavior.
+  useEffect(() => {
+    let frame = 0;
+    lastYRef.current = window.scrollY;
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(() => {
+        frame = 0;
+        const y = window.scrollY;
+        const delta = y - lastYRef.current;
+
+        if (open) {
+          setHidden(false);
+        } else if (y < HIDE_THRESHOLD_PX) {
+          setHidden(false);
+        } else if (delta > SCROLL_DELTA_PX) {
+          setHidden(true);
+        } else if (delta < -SCROLL_DELTA_PX) {
+          setHidden(false);
+        }
+
+        lastYRef.current = y;
+      });
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll);
+      if (frame) window.cancelAnimationFrame(frame);
+    };
+  }, [open]);
+
   return (
     <header
       ref={headerRef}
-      className="sticky top-0 z-50 border-b border-white/5 backdrop-blur"
+      className={`sticky top-0 z-50 border-b border-white/5 backdrop-blur transition-transform duration-300 ease-out ${
+        hidden ? "-translate-y-full" : "translate-y-0"
+      }`}
       style={{
         background:
           "linear-gradient(90deg, #131211 0%, #1A1816 50%, #131211 100%)",
