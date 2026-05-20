@@ -57,6 +57,56 @@ export function foundingOfferSchema() {
   };
 }
 
+export function aiReceptionistServiceSchema() {
+  const awake = growthTiers[0];
+  const climbing = growthTiers[1];
+  const description =
+    "AI receptionist that answers, qualifies, and books leads 24/7 — across chat, SMS, missed-call text-back, and voice. Two tiers: Awake (text/chat/DMs) and Climbing (adds voice AI + Local SEO).";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/ai-receptionist#service`,
+    serviceType: "AI Receptionist",
+    name: "AI Receptionist by Algonyte",
+    provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+    description,
+    areaServed: { "@type": "Country", name: "United States" },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: awake.monthly,
+      highPrice: climbing.monthly,
+      priceCurrency: "USD",
+      offerCount: 2,
+      offers: [awake, climbing].map(tierOffer),
+    },
+  };
+}
+
+export function reputationManagementServiceSchema() {
+  const awake = growthTiers[0];
+  const climbing = growthTiers[1];
+  const description =
+    "Automated post-job review requests with smart routing for unhappy customers. Google-only on Awake; multi-platform (Google, Yelp, Facebook) plus smart routing on Climbing.";
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteConfig.url}/reputation-manager#service`,
+    serviceType: "Reputation Management",
+    name: "Reputation Management by Algonyte",
+    provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
+    description,
+    areaServed: { "@type": "Country", name: "United States" },
+    offers: {
+      "@type": "AggregateOffer",
+      lowPrice: awake.monthly,
+      highPrice: climbing.monthly,
+      priceCurrency: "USD",
+      offerCount: 2,
+      offers: [awake, climbing].map(tierOffer),
+    },
+  };
+}
+
 export function webPresenceServiceSchema() {
   const description =
     "End-to-end web presence for service businesses. Sites built from $300 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
