@@ -10,144 +10,172 @@ import ServicesHeroStack from "@/components/ServicesHeroStack";
 import StackMarquee from "@/components/StackMarquee";
 import { faqs } from "./faqs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import { siteTiers, growthTiers } from "@/lib/tiers";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
 
+/* ---- helpers ---- */
+
+function fmt(n: number) {
+  return "$" + n.toLocaleString("en-US");
+}
+
+/* ---- icons ---- */
+
 const Icon = {
-  platform: (
+  site: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
       <rect x="3" y="3" width="18" height="18" rx="2" />
       <path d="M3 9h18M9 21V9" />
     </svg>
   ),
-  voice: (
+  growth: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 2a3 3 0 00-3 3v6a3 3 0 006 0V5a3 3 0 00-3-3z" />
-      <path d="M19 11a7 7 0 01-14 0M12 18v3M8 21h8" />
+      <path d="M3 17l6-6 4 4 8-8" />
+      <path d="M14 7h7v7" />
     </svg>
   ),
-  agent: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <circle cx="12" cy="8" r="4" />
-      <path d="M4 21a8 8 0 0116 0" />
-      <circle cx="9.5" cy="8" r="0.6" fill="currentColor" />
-      <circle cx="14.5" cy="8" r="0.6" fill="currentColor" />
+  check: (
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+      <path d="M20 6L9 17l-5-5" />
     </svg>
   ),
-  crm: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 6h18M3 12h18M3 18h18" />
-      <circle cx="6" cy="6" r="1" fill="currentColor" />
-      <circle cx="10" cy="12" r="1" fill="currentColor" />
-      <circle cx="14" cy="18" r="1" fill="currentColor" />
-    </svg>
-  ),
-  ads: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 11l16-7v16L3 13z" />
-      <path d="M7 12v5a2 2 0 004 0v-3" />
-    </svg>
-  ),
-  custom: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M14.7 6.3l3 3-9.7 9.7H5v-3z" />
-      <path d="M3 21h18" />
+  arrow: (
+    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
+      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
   ),
 };
 
-const services = [
-  {
-    icon: Icon.voice,
-    eyebrow: "24/7 phone",
-    title: "Voice AI Agent",
-    body:
-      "A phone agent that picks up around the clock, qualifies the lead the way you would, and books the meeting. No more voicemails.",
-    bullets: [
-      "Answers in under two rings",
-      "Qualifies on tone, urgency, and service area",
-      "Books straight to your calendar",
-      "Hands warm calls to a human if you want",
-    ],
-    cta: { label: "Hear a demo", href: "/contact" },
-  },
-  {
-    icon: Icon.platform,
-    eyebrow: "Full system",
-    title: "AI Receptionist Platform",
-    body:
-      "Missed-call text back, instant SMS and DM reply, auto-booking, and follow-ups across every channel. Pick a plan, we set it up.",
-    bullets: [
-      "Missed call text back, instant SMS and DM reply",
-      "Auto booking to your calendar",
-      "Appointment reminders and review requests",
-      "One inbox for every channel",
-    ],
-    cta: { label: "See the plans", href: "/pricing" },
-    featured: true,
-  },
-  {
-    icon: Icon.agent,
-    eyebrow: "Trained on your business",
-    title: "Custom AI Agents",
-    body:
-      "Chat or voice agents trained on your business. Your scripts, your edge cases, your tone. Tested on real conversations before launch.",
-    bullets: [
-      "Custom training on your services and pricing",
-      "Lead qualification tuned to your edge cases",
-      "Inbound and outbound flows",
-      "Reviewed against real call transcripts",
-    ],
-    cta: { label: "Book a discovery call", href: "/book" },
-  },
-  {
-    icon: Icon.crm,
-    eyebrow: "Pipeline",
-    title: "CRM & Pipeline",
-    body:
-      "Every lead, call, and message lands in one place with the right tags and stages. So nothing falls through the cracks.",
-    bullets: [
-      "Pipeline stages built around your sales motion",
-      "Auto-tagging by source, service, and value",
-      "Clean handoff to whoever closes the deal",
-      "Reporting you can actually read",
-    ],
-    cta: { label: "Tell us about your setup", href: "/contact" },
-  },
-  {
-    icon: Icon.ads,
-    eyebrow: "Retainer",
-    title: "Paid Ads & Landing Pages",
-    body:
-      "Once the system catches leads cleanly, we run the campaigns that fill it. Google, Meta, and pages built to convert.",
-    bullets: [
-      "Google and Meta campaigns end-to-end",
-      "Landing pages designed for conversion",
-      "Monthly performance reviews with real numbers",
-      "We tell you what to keep and what to cut",
-    ],
-    cta: { label: "Talk about a retainer", href: "/contact" },
-  },
-  {
-    icon: Icon.custom,
-    eyebrow: "Project work",
-    title: "Custom Builds & Integrations",
-    body:
-      "If your workflow doesn't fit a template, we build it. Integrations between tools, multi-step sequences, anything you can describe.",
-    bullets: [
-      "Connect tools that don't usually talk",
-      "Multi-step workflows with branching logic",
-      "API hookups and webhooks",
-      "Move you off legacy tools cleanly",
-    ],
-    cta: { label: "Tell us what you need", href: "/contact" },
-  },
-];
+/* ---- Site rung card ---- */
+
+function SiteRungCard({ tier, index }: { tier: (typeof siteTiers)[number]; index: number }) {
+  return (
+    <motion.div
+      variants={reveal.fadeUpLg}
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 240, damping: 22 }}
+      className="relative flex flex-col rounded-2xl bg-white p-7 ring-1 ring-slate-200 shadow-sm hover:shadow-md"
+    >
+      <div className="flex items-center justify-between gap-3">
+        <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg bg-brand-accent text-brand-deep font-semibold text-sm">
+          {String(index + 1).padStart(2, "0")}
+        </span>
+        <span className="rounded-full bg-brand-soft px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
+          {tier.liveIn}
+        </span>
+      </div>
+
+      <h3 className="mt-5 text-[1.25rem] font-semibold text-brand-deep leading-tight">
+        {tier.name}
+      </h3>
+      <p className="mt-1.5 text-sm text-brand-muted leading-relaxed">
+        {tier.tagline}
+      </p>
+
+      <div className="mt-5 flex items-baseline gap-2">
+        <span className="text-2xl font-bold text-brand-deep tabular-nums">{fmt(tier.setup)}</span>
+        <span className="text-sm text-brand-muted">setup</span>
+        <span className="ml-2 text-sm text-brand-muted">+ {fmt(tier.monthly)}/mo hosting</span>
+      </div>
+
+      <div className="mt-5 border-t border-slate-100 pt-4">
+        <Link
+          href="/pricing#site"
+          className="group/cta btn-secondary inline-flex w-full items-center justify-center gap-1.5"
+        >
+          See what&rsquo;s included
+          <span className="transition-transform group-hover/cta:translate-x-0.5">{Icon.arrow}</span>
+        </Link>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ---- Growth rung card ---- */
+
+function GrowthRungCard({ tier, index }: { tier: (typeof growthTiers)[number]; index: number }) {
+  const featured = tier.featured === true;
+  const href = `/pricing#${tier.id}`;
+
+  return (
+    <motion.div
+      variants={reveal.fadeUpLg}
+      whileHover={{ y: -4 }}
+      transition={{ type: "spring", stiffness: 240, damping: 22 }}
+      className={`relative flex flex-col rounded-2xl bg-white p-7 transition-shadow ${
+        featured
+          ? "ring-2 ring-brand-deep shadow-xl shadow-brand-deep/15"
+          : "ring-1 ring-slate-200 shadow-sm hover:shadow-md"
+      }`}
+    >
+      {featured && (
+        <>
+          <span className="absolute -top-3 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-brand-deep px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-md shadow-brand-deep/30">
+            <svg viewBox="0 0 24 24" className="h-3 w-3 text-brand-primary" fill="currentColor">
+              <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" />
+            </svg>
+            Most Popular
+          </span>
+          <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
+            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-primary/10 blur-2xl" />
+            <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-brand-accent blur-3xl" />
+          </div>
+        </>
+      )}
+
+      <div className="relative flex flex-1 flex-col">
+        <div className="flex items-center justify-between gap-3">
+          <span className={`inline-flex h-9 w-9 items-center justify-center rounded-lg font-semibold text-sm ${featured ? "bg-brand-deep text-white" : "bg-brand-accent text-brand-deep"}`}>
+            {String(index + 1).padStart(2, "0")}
+          </span>
+          <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${featured ? "bg-brand-deep/10 text-brand-deep" : "bg-brand-soft text-brand-muted"}`}>
+            {tier.liveIn}
+          </span>
+        </div>
+
+        <h3 className="mt-5 text-[1.25rem] font-semibold text-brand-deep leading-tight">
+          {tier.name}
+        </h3>
+        <p className="mt-1.5 text-sm text-brand-muted leading-relaxed">
+          {tier.tagline}
+        </p>
+
+        <div className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
+          {tier.setup > 0 && (
+            <>
+              <span className="text-2xl font-bold text-brand-deep tabular-nums">{fmt(tier.setup)}</span>
+              <span className="text-sm text-brand-muted">setup</span>
+              <span className="text-brand-muted/50 mx-1">·</span>
+            </>
+          )}
+          <span className="text-2xl font-bold text-brand-deep tabular-nums">{fmt(tier.monthly)}/mo</span>
+          {tier.monthlyNote && (
+            <span className="text-xs text-brand-muted">({tier.monthlyNote})</span>
+          )}
+        </div>
+
+        <div className="mt-5 border-t border-slate-100 pt-4">
+          <Link
+            href={href}
+            className={`group/cta inline-flex w-full items-center justify-center gap-1.5 ${featured ? "btn-primary" : "btn-secondary"}`}
+          >
+            See what&rsquo;s included
+            <span className="transition-transform group-hover/cta:translate-x-0.5">{Icon.arrow}</span>
+          </Link>
+        </div>
+      </div>
+    </motion.div>
+  );
+}
+
+/* ---- main component ---- */
 
 export default function ServicesContent() {
   const { s } = useAnimSpeed();
   return (
     <>
+      {/* ---- HERO ---- */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
@@ -156,13 +184,16 @@ export default function ServicesContent() {
             animate="visible"
             variants={reveal.container(0.12, 0.05)}
           >
+            <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
+              Two products. Six rungs. One ladder.
+            </motion.p>
             <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
-              Pick how much we{" "}
-              <span className="text-brand-deep">do for you.</span>
+              What we{" "}
+              <span className="text-brand-deep">build for you.</span>
             </motion.h1>
             <motion.p className="lede mt-6 max-w-xl" variants={reveal.fadeUp}>
-              Some clients want the platform and run it themselves. Others hand
-              us the keys top to bottom. Both work.
+              Start with a site that gets found. Layer on growth that runs while
+              you sleep. Every rung is a defined scope — no surprises.
             </motion.p>
 
             <motion.div className="mt-8 lg:hidden" variants={reveal.fadeUp}>
@@ -174,20 +205,17 @@ export default function ServicesContent() {
               variants={reveal.container(0.06, 0.05)}
             >
               {[
-                "8 channels covered",
-                "Live in 5 to 7 days",
-                "Month-to-month",
-                "Built on your stack",
+                "Site live in days",
+                "Month-to-month on Site",
+                "Your business runs 24/7",
+                "No long-term lock-in to start",
               ].map((item) => (
                 <motion.li
                   key={item}
                   variants={reveal.fadeUp}
                   className="inline-flex items-center gap-2 rounded-full border border-brand-deep/15 bg-white px-3 py-1 text-xs font-medium text-brand-deep"
                 >
-                  <span
-                    className="h-1.5 w-1.5 rounded-full bg-brand-primary"
-                    aria-hidden
-                  />
+                  <span className="h-1.5 w-1.5 rounded-full bg-brand-primary" aria-hidden />
                   {item}
                 </motion.li>
               ))}
@@ -205,6 +233,7 @@ export default function ServicesContent() {
         </div>
       </section>
 
+      {/* ---- FLOW VISUAL ---- */}
       <section className="relative bg-gradient-to-b from-white to-brand-soft">
         <motion.div
           className="container-page pb-28 pt-8 sm:pb-36"
@@ -213,24 +242,19 @@ export default function ServicesContent() {
           viewport={inView}
           variants={reveal.container(0.1, 0.05)}
         >
-          <motion.div
-            className="mx-auto max-w-5xl text-center"
-            variants={reveal.fadeUp}
-          >
-            <p className="eyebrow mb-3">End-to-end automated business system</p>
+          <motion.div className="mx-auto max-w-5xl text-center" variants={reveal.fadeUp}>
+            <p className="eyebrow mb-3">How the system works</p>
             <h2 className="h-section">
-              Every step from first click to repeat customer.
+              From first contact to booked revenue.
             </h2>
           </motion.div>
-          <motion.div
-            className="mt-20 sm:mt-24 px-2 sm:px-6"
-            variants={reveal.fadeUpLg}
-          >
+          <motion.div className="mt-20 sm:mt-24 px-2 sm:px-6" variants={reveal.fadeUpLg}>
             <ServicesFlowVisual />
           </motion.div>
         </motion.div>
       </section>
 
+      {/* ---- SITE PRODUCT ---- */}
       <section className="section">
         <motion.div
           className="container-page"
@@ -239,131 +263,47 @@ export default function ServicesContent() {
           viewport={inView}
           variants={reveal.container(0.1, 0.05)}
         >
-          <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-            What we offer
-          </motion.p>
-          <motion.h2 className="h-section max-w-2xl" variants={reveal.fadeUp}>
-            Six services. One team running them.
-          </motion.h2>
-
-          <div className="mt-14 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {services.map((s) => {
-              const featured = "featured" in s && s.featured;
-              return (
-                <motion.div
-                  key={s.title}
-                  variants={reveal.fadeUpLg}
-                  whileHover={{ y: -4 }}
-                  transition={{ type: "spring", stiffness: 240, damping: 22 }}
-                  className={`relative flex flex-col rounded-2xl bg-white p-7 transition-shadow ${
-                    featured
-                      ? "ring-2 ring-brand-deep shadow-xl shadow-brand-deep/15"
-                      : "ring-1 ring-slate-200 shadow-sm hover:shadow-md"
-                  }`}
-                >
-                  {featured && (
-                    <>
-                      <span className="absolute -top-3 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-brand-deep px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-md shadow-brand-deep/30">
-                        <svg
-                          viewBox="0 0 24 24"
-                          className="h-3 w-3 text-brand-primary"
-                          fill="currentColor"
-                        >
-                          <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" />
-                        </svg>
-                        Most Popular
-                      </span>
-                      <div
-                        aria-hidden
-                        className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl"
-                      >
-                        <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-primary/10 blur-2xl" />
-                        <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-brand-accent blur-3xl" />
-                      </div>
-                    </>
-                  )}
-
-                  <div className="relative flex flex-1 flex-col">
-                    <div className="flex items-start justify-between gap-3">
-                      <span
-                        className={`inline-flex h-14 w-14 items-center justify-center rounded-xl ${
-                          featured
-                            ? "bg-brand-deep text-white shadow-md shadow-brand-deep/25"
-                            : "bg-brand-accent text-brand-deep"
-                        }`}
-                      >
-                        <span className="block h-6 w-6">{s.icon}</span>
-                      </span>
-                      <span
-                        className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${
-                          featured
-                            ? "bg-brand-deep/10 text-brand-deep"
-                            : "bg-brand-soft text-brand-muted"
-                        }`}
-                      >
-                        {s.eyebrow}
-                      </span>
-                    </div>
-
-                    <h3 className="mt-6 text-[1.35rem] font-semibold text-brand-deep leading-tight">
-                      {s.title}
-                    </h3>
-                    <p className="mt-3 text-sm text-brand-muted leading-relaxed">
-                      {s.body}
-                    </p>
-
-                    <ul className="mt-5 space-y-2.5 text-sm flex-1">
-                      {s.bullets.map((b) => (
-                        <li key={b} className="flex items-start gap-2.5">
-                          <svg
-                            width="16"
-                            height="16"
-                            viewBox="0 0 24 24"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="2.5"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                            className="mt-0.5 flex-shrink-0 text-brand-deep"
-                          >
-                            <path d="M20 6L9 17l-5-5" />
-                          </svg>
-                          <span className="text-brand-ink/80">{b}</span>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <div className="mt-6 border-t border-slate-100 pt-5">
-                      <Link
-                        href={s.cta.href}
-                        className={`group/cta inline-flex w-full items-center justify-center gap-1.5 ${
-                          featured ? "btn-primary" : "btn-secondary"
-                        }`}
-                      >
-                        {s.cta.label}
-                        <svg
-                          viewBox="0 0 24 24"
-                          className="h-3.5 w-3.5 transition-transform group-hover/cta:translate-x-0.5"
-                          fill="none"
-                        >
-                          <path
-                            d="M5 12h14M13 6l6 6-6 6"
-                            stroke="currentColor"
-                            strokeWidth="2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          />
-                        </svg>
-                      </Link>
-                    </div>
-                  </div>
-                </motion.div>
-              );
-            })}
+          <div className="flex items-center gap-4 mb-8">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-deep text-white">
+              <span className="block h-6 w-6">{Icon.site}</span>
+            </span>
+            <div>
+              <motion.p className="eyebrow" variants={reveal.fadeUp}>Product 01</motion.p>
+              <motion.h2 className="h-section leading-tight" variants={reveal.fadeUp}>Site</motion.h2>
+            </div>
           </div>
+
+          <motion.p className="lede max-w-2xl mb-12" variants={reveal.fadeUp}>
+            A professionally built, hosted, and maintained web presence. One-time
+            setup fee. Flat {fmt(99)}/mo for hosting, updates, and support — forever.
+            Pick the rung that matches where your business is today.
+          </motion.p>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {siteTiers.map((tier, i) => (
+              <SiteRungCard key={tier.id} tier={tier} index={i} />
+            ))}
+          </div>
+
+          <motion.div className="mt-8 text-center" variants={reveal.fadeUp}>
+            <Link href="/pricing#site" className="btn-primary inline-flex items-center gap-2">
+              Compare all Site rungs
+              <span>{Icon.arrow}</span>
+            </Link>
+          </motion.div>
         </motion.div>
       </section>
 
+      {/* ---- LADDER CONNECTOR ---- */}
+      <div className="relative flex flex-col items-center py-10 gap-3" aria-hidden>
+        <div className="h-12 w-px bg-gradient-to-b from-brand-deep/20 to-brand-primary/60" />
+        <span className="rounded-full border border-brand-primary/30 bg-brand-accent px-4 py-1.5 text-xs font-semibold uppercase tracking-wider text-brand-deep">
+          Then layer on Growth
+        </span>
+        <div className="h-12 w-px bg-gradient-to-b from-brand-primary/60 to-brand-deep/20" />
+      </div>
+
+      {/* ---- GROWTH PRODUCT ---- */}
       <section className="section bg-brand-soft">
         <motion.div
           className="container-page"
@@ -372,11 +312,48 @@ export default function ServicesContent() {
           viewport={inView}
           variants={reveal.container(0.1, 0.05)}
         >
-          <motion.div
-            className="mx-auto max-w-3xl text-center"
-            variants={reveal.fadeUp}
-          >
-            <p className="eyebrow mb-3">Channels & tools</p>
+          <div className="flex items-center gap-4 mb-8">
+            <span className="inline-flex h-12 w-12 items-center justify-center rounded-xl bg-brand-deep text-white">
+              <span className="block h-6 w-6">{Icon.growth}</span>
+            </span>
+            <div>
+              <motion.p className="eyebrow" variants={reveal.fadeUp}>Product 02</motion.p>
+              <motion.h2 className="h-section leading-tight" variants={reveal.fadeUp}>Growth</motion.h2>
+            </div>
+          </div>
+
+          <motion.p className="lede max-w-2xl mb-12" variants={reveal.fadeUp}>
+            Monthly retainer that handles reception, local SEO, and paid ads so
+            your business runs while you sleep. Each rung stacks on the last —
+            start at Awake, climb when you&rsquo;re ready.
+          </motion.p>
+
+          <div className="grid gap-6 md:grid-cols-3">
+            {growthTiers.map((tier, i) => (
+              <GrowthRungCard key={tier.id} tier={tier} index={i} />
+            ))}
+          </div>
+
+          <motion.div className="mt-8 text-center" variants={reveal.fadeUp}>
+            <Link href="/pricing" className="btn-primary inline-flex items-center gap-2">
+              Compare all Growth rungs
+              <span>{Icon.arrow}</span>
+            </Link>
+          </motion.div>
+        </motion.div>
+      </section>
+
+      {/* ---- STACK / INTEGRATIONS ---- */}
+      <section className="section">
+        <motion.div
+          className="container-page"
+          initial="hidden"
+          whileInView="visible"
+          viewport={inView}
+          variants={reveal.container(0.1, 0.05)}
+        >
+          <motion.div className="mx-auto max-w-3xl text-center" variants={reveal.fadeUp}>
+            <p className="eyebrow mb-3">Channels &amp; tools</p>
             <h2 className="h-section">
               Plays nice with everything you already use.
             </h2>
@@ -386,15 +363,13 @@ export default function ServicesContent() {
             </p>
           </motion.div>
 
-          <motion.div
-            className="mx-auto mt-12 max-w-5xl"
-            variants={reveal.fadeUpLg}
-          >
+          <motion.div className="mx-auto mt-12 max-w-5xl" variants={reveal.fadeUpLg}>
             <StackMarquee />
           </motion.div>
         </motion.div>
       </section>
 
+      {/* ---- FAQ ---- */}
       <section className="section bg-brand-soft">
         <motion.div
           className="container-page max-w-3xl"
@@ -409,31 +384,17 @@ export default function ServicesContent() {
           <motion.h2 className="h-section mb-10" variants={reveal.fadeUp}>
             Common questions about services.
           </motion.h2>
-          {/*
-            EXPANDABLE CARDS (optional): swap the <dl> below for native <details>/<summary>
-            elements if you want each Q to collapse. Useful once the FAQ list grows past 4 or 5.
-          */}
           <dl className="divide-y divide-slate-200">
             {faqs.map((f) => (
-              <motion.div
-                key={f.q}
-                variants={reveal.fadeUp}
-                className="py-6"
-              >
+              <motion.div key={f.q} variants={reveal.fadeUp} className="py-6">
                 <dt className="text-lg font-semibold text-brand-deep">{f.q}</dt>
                 <dd className="mt-2 text-brand-muted leading-relaxed">{f.a}</dd>
               </motion.div>
             ))}
           </dl>
-          <motion.p
-            className="mt-10 text-brand-muted"
-            variants={reveal.fadeUp}
-          >
+          <motion.p className="mt-10 text-brand-muted" variants={reveal.fadeUp}>
             Want to see plans and pricing?{" "}
-            <Link
-              href="/pricing"
-              className="text-brand-deep font-medium hover:underline"
-            >
+            <Link href="/pricing" className="text-brand-deep font-medium hover:underline">
               See pricing →
             </Link>
           </motion.p>

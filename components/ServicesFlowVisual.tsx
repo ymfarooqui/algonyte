@@ -306,90 +306,90 @@ const I = {
 
 const STAGES: Stage[] = [
   {
-    id: "capture",
-    label: "Lead Capture",
-    sub: "Form, call, or DM",
+    id: "site-open",
+    label: "Site — Open",
+    sub: "Live in 72 hours",
     blurb:
-      "Every inbound (phone, web form, SMS, IG DM, web chat) drops into one inbox automatically. Nothing gets lost.",
+      "A 5-page site that gets your business online fast. Mobile-first build, on-page SEO foundations, Google Business Profile claimed, hosting included at a flat rate.",
     bullets: [
-      "Pulls from 8 channels into one place",
-      "Tags the source and service automatically",
-      "Routes after-hours leads without missing them",
+      "5 pages: Home, Services, About, Reviews, Contact",
+      "On-page SEO foundations from day one",
+      "Flat monthly hosting — no surprises",
     ],
-    stat: { value: "8", label: "channels covered" },
+    stat: { value: "72h", label: "to live" },
     card: <FormCard />,
     icon: I.capture,
   },
   {
-    id: "reply",
-    label: "Instant AI Response",
-    sub: "Reply in seconds",
+    id: "site-found",
+    label: "Site — Found",
+    sub: "Live in 5–7 days",
     blurb:
-      "An AI assistant replies in under five seconds, by text, DM, or voice, using your tone and your scripts.",
+      "Up to 8 pages with location and service coverage, structured data for AI search, and an online booking calendar so customers can book around the clock.",
     bullets: [
-      "First response in under 5 seconds",
-      "Works across SMS, DM, chat, and phone",
-      "Trained on your business, not a template",
+      "Location + service pages for AI Overviews",
+      "Online booking calendar embedded",
+      "Structured data for Google and AI search",
     ],
-    stat: { value: "<5s", label: "first response" },
+    stat: { value: "8", label: "pages covered" },
     card: <ChatReplyCard />,
     icon: I.reply,
   },
   {
-    id: "qualify",
-    label: "Qualification",
-    sub: "Right fit, right job",
+    id: "site-polished",
+    label: "Site — Polished",
+    sub: "Live in 7–12 days",
     blurb:
-      "It asks the same questions you would: service area, urgency, budget, decision maker. Junk gets filtered, real leads get scored.",
+      "Up to 12 pages with a custom design pass built for your brand, a conversion-optimised landing page for your top offer, and 30 days priority support post-launch.",
     bullets: [
-      "Custom qualification logic per service",
-      "Scores intent and urgency in real time",
-      "Filters tire kickers before they hit your calendar",
+      "Custom design — not a template variant",
+      "Conversion-optimised landing page included",
+      "30 days priority post-launch support",
     ],
-    stat: { value: "70%", label: "less time on bad leads" },
+    stat: { value: "12", label: "pages max" },
     card: <QualifyCard />,
     icon: I.qualify,
   },
   {
-    id: "book",
-    label: "Booking",
-    sub: "Auto on calendar",
+    id: "growth-awake",
+    label: "Growth — Awake",
+    sub: "Live in 5 days",
     blurb:
-      "When the lead is qualified, the meeting goes straight on your calendar, with buffer, travel time, and crew availability respected.",
+      "AI chat on your site, missed-call text-back, DM auto-reply on every platform, and auto-booking onto your calendar — so no lead goes cold after hours.",
     bullets: [
-      "Real-time calendar sync",
-      "Respects buffer and travel time",
-      "Re-routes if a slot fills mid-conversation",
+      "Missed-call text-back in seconds",
+      "DM auto-reply across all platforms",
+      "Auto-booking to your calendar, 24/7",
     ],
-    stat: { value: "24/7", label: "booking live" },
+    stat: { value: "24/7", label: "reception live" },
     card: <CalendarCard />,
     icon: I.book,
   },
   {
-    id: "confirm",
-    label: "Confirmation",
-    sub: "SMS + email",
+    id: "growth-climbing",
+    label: "Growth — Climbing",
+    sub: "Live in 10–14 days",
     blurb:
-      "Confirmation goes out instantly. Reminders fire 24h and 1h before. Reschedules and cancellations handle themselves.",
+      "Everything in Awake plus a voice AI phone receptionist, ongoing local SEO, and monthly strategy calls — so you show up on Google and every call gets answered.",
     bullets: [
-      "Instant confirmation across SMS + email",
-      "Automatic 24h and 1h reminders",
-      "Self-serve reschedule link",
+      "Voice AI answers, qualifies, and books calls",
+      "Weekly Google Business Profile posts",
+      "1–2 new SEO pages per month",
     ],
-    stat: { value: "−60%", label: "no-show rate" },
+    stat: { value: "<5s", label: "first response" },
     card: <ConfirmCard />,
     icon: I.confirm,
   },
   {
-    id: "growth",
-    label: "Revenue & Growth",
-    sub: "Reported monthly",
+    id: "growth-scale",
+    label: "Growth — Scale",
+    sub: "Live in 14 days",
     blurb:
-      "Every booking, every conversion, every channel gets tracked. You get a monthly report with what to keep, what to cut, and what changed.",
+      "Everything in Climbing plus Google Search Ads, Local Service Ads, and Meta Ads managed end-to-end. Every click traced through to revenue. You hold the ad accounts.",
     bullets: [
-      "Pipeline and revenue dashboards",
-      "Channel-by-channel attribution",
-      "Monthly review with our team",
+      "Google + Meta ads managed weekly",
+      "2 conversion landing pages per quarter",
+      "Closed-loop tracking from click to revenue",
     ],
     stat: { value: "+38%", label: "booked revenue (avg)" },
     card: <GrowthCard />,
@@ -464,7 +464,7 @@ function OrbitTile({
             <span className="block h-5 w-5">{stage.icon}</span>
           </span>
           <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
-            Step {String(index + 1).padStart(2, "0")} / {STAGES.length}
+            Rung {String(index + 1).padStart(2, "0")} / {STAGES.length}
           </span>
         </div>
 
@@ -660,7 +660,7 @@ export default function ServicesFlowVisual({
                     <span className="block h-5 w-5">{stage.icon}</span>
                   </span>
                   <span className="font-mono text-[10px] font-semibold uppercase tracking-wider text-brand-muted">
-                    Step {String(i + 1).padStart(2, "0")} / {STAGES.length}
+                    Rung {String(i + 1).padStart(2, "0")} / {STAGES.length}
                   </span>
                 </div>
                 <h3 className="mt-4 text-lg font-semibold text-brand-deep leading-tight">
@@ -697,7 +697,7 @@ export default function ServicesFlowVisual({
             <button
               key={i}
               onClick={() => setActive(i)}
-              aria-label={`Go to stage ${i + 1}`}
+              aria-label={`Go to rung ${i + 1}`}
               aria-pressed={i === active}
               className={`h-1.5 rounded-full transition-[width,background-color] duration-200 ease-out ${
                 i === active
