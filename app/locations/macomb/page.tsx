@@ -4,10 +4,10 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
+import { growthTiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Macomb, MI | Stop Missing Service Calls";
-const description =
-  "AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $549/mo.";
+const description = `AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $${growthTiers[0].monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +37,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: 549,
-    highPrice: 1299,
+    lowPrice: growthTiers[0].monthly,
+    highPrice: growthTiers[1].monthly,
     offerCount: 3,
   },
 };
@@ -186,7 +186,7 @@ export default function MacombLocationPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Pro AI plan)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Climbing plan)</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Picks up the phone when you can&rsquo;t. Qualifies, books, and
                 hands off with a full transcript so you walk into every job
