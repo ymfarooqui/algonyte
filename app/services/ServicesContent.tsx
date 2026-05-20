@@ -178,7 +178,7 @@ export default function ServicesContent() {
       {/* ---- HERO ---- */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
           <motion.div
             initial="hidden"
             animate="visible"

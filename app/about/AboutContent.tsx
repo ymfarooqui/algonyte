@@ -36,7 +36,7 @@ export default function AboutContent() {
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <motion.div
-          className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20"
+          className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20"
           initial="hidden"
           animate="visible"
           variants={reveal.container(0.12, 0.05)}

@@ -119,7 +119,7 @@ export default function PricingPage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent/60 via-brand-soft to-brand-soft">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <h1 className="h-display max-w-3xl">Pricing</h1>
           <p className="lede mt-6 max-w-2xl">
             Two products. Six rungs. One question: how far up are you ready to go?

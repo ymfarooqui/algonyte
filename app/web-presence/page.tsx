@@ -96,7 +96,7 @@ export default function WebPresencePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <h1 className="h-display">Web Presence</h1>
             <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">

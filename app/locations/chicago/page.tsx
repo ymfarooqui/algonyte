@@ -87,7 +87,7 @@ export default function ChicagoLocationPage() {
     <>
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <p className="eyebrow mb-4">Chicago, Illinois</p>
             <h1 className="h-display">
