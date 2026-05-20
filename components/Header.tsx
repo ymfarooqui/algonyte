@@ -9,7 +9,7 @@ import CursorSpotlight from "@/components/CursorSpotlight";
 
 const links = [
   { href: "/ai-receptionist", label: "AI Receptionist" },
-  { href: "/lead-generator", label: "Lead Generator" },
+  { href: "/lead-generator", label: "Lead Generation" },
   { href: "/web-presence", label: "Web Presence" },
   { href: "/pricing", label: "Pricing" },
   { href: "/founding", label: "Founding" },

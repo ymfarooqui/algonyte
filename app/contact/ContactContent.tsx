@@ -52,7 +52,7 @@ function ContactBody() {
                 </motion.li>
                 <motion.li className="flex gap-3" variants={reveal.fadeUp}>
                   <span aria-hidden className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />
-                  50% off setup ($275) + 30% off monthly for 6 months.
+                  50% off setup on any tier + 30% off Growth for 6 months.
                 </motion.li>
                 <motion.li className="flex gap-3" variants={reveal.fadeUp}>
                   <span aria-hidden className="mt-2 h-1.5 w-1.5 rounded-full bg-brand-primary" />

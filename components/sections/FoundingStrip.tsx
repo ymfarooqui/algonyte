@@ -69,7 +69,7 @@ export default function FoundingStrip() {
               }}
             >
               <span className="text-sm sm:text-base">
-                ★ White-Glove Onboarding Included ★
+                ★ Live in 72 Hours to 14 Days ★
               </span>
             </div>
           </div>
