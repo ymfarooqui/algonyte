@@ -363,3 +363,6 @@ export default function LeadGeneratorPage() {
     </>
   );
 }
+
+export const dynamic = "force-static";
+
