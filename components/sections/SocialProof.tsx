@@ -38,9 +38,6 @@ export default function SocialProof() {
         viewport={inView}
         variants={reveal.container(0.12, 0.05)}
       >
-        <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-          Results
-        </motion.p>
         <motion.h2 className="h-section max-w-2xl" variants={reveal.fadeUp}>
           What this looks like in real businesses.
         </motion.h2>

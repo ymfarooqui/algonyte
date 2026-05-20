@@ -35,9 +35,6 @@ export default function HowItWorks() {
         viewport={inView}
         variants={reveal.container(0.15, 0.05)}
       >
-        <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-          How It Works
-        </motion.p>
         <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
           Every lead handled, end to end.
         </motion.h2>

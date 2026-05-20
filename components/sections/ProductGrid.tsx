@@ -15,9 +15,6 @@ export default function ProductGrid() {
         viewport={inView}
         variants={reveal.container(0.12, 0.05)}
       >
-        <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-          What we run
-        </motion.p>
         <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
           We get you found, take the call, and book the job.
         </motion.h2>
