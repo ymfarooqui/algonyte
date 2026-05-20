@@ -87,7 +87,6 @@ export default function AIReceptionistPage() {
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">AI Receptionist</p>
             <h1 className="h-display">
               AI Receptionist for{" "}
               <span className="text-brand-deep">Service Businesses</span>
@@ -142,7 +141,6 @@ export default function AIReceptionistPage() {
       {/* What it does */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What it does</p>
           <h2 className="h-section">One system. Every channel. Always on.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
@@ -185,7 +183,6 @@ export default function AIReceptionistPage() {
       {/* Two-CTA fork */}
       <section id="tiers" className="section">
         <div className="container-page">
-          <p className="eyebrow mb-4">Two flavors</p>
           <h2 className="h-section max-w-3xl">
             Text and chat, or voice too?
           </h2>
@@ -415,7 +412,6 @@ export default function AIReceptionistPage() {
       {/* FAQ */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Straight answers.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (

@@ -123,7 +123,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why dealers lose leads</p>
           <h2 className="h-section">The lead is gone in five minutes. Most dealerships can&rsquo;t respond that fast.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -183,7 +182,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What the AI does for a dealership</p>
           <h2 className="h-section">Built around the way deals start.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
@@ -242,7 +240,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Integrations</p>
           <h2 className="h-section">Wired into the tools you already run.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -264,7 +261,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Pricing</p>
           <h2 className="h-section">Plans starting at ${growthTiers[0].monthly}/month.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Awake is the missed-call text-back and SMS qualification flow: chat
@@ -282,7 +278,6 @@ export default function AutoDealershipsPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from dealer principals and GMs.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (

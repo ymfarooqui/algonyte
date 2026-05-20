@@ -65,7 +65,6 @@ export default function ReputationManagerPage() {
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Reputation Management</p>
             <h1 className="h-display">
               Reputation Management{" "}
               <span className="text-brand-deep">for Service Businesses</span>
@@ -111,7 +110,6 @@ export default function ReputationManagerPage() {
       {/* ── What it does ─────────────────────────────────────────────────── */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The system</p>
           <h2 className="h-section">How the reputation system works.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
@@ -257,7 +255,6 @@ export default function ReputationManagerPage() {
       {/* ── Why this matters ──────────────────────────────────────────────── */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why it matters</p>
           <h2 className="h-section">The math behind a moving rating.</h2>
           <div className="mt-6 space-y-6 text-brand-muted leading-relaxed">
             <p>
@@ -291,7 +288,6 @@ export default function ReputationManagerPage() {
       {/* ── FAQs ──────────────────────────────────────────────────────────── */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (

@@ -113,7 +113,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why this matters in Chicago</p>
           <h2 className="h-section">Service businesses here lose leads the same way the city moves: too fast to catch up to.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -174,7 +173,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What we install</p>
           <h2 className="h-section">The system, end to end.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
@@ -226,7 +224,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Service area</p>
           <h2 className="h-section">Across Chicagoland and the collar counties.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             We work with service businesses across the city of Chicago: Loop,
@@ -250,7 +247,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Founding program</p>
           <h2 className="h-section">Built for solo operators and small crews.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Plans start at ${growthTiers[0].monthly}/month. The Founding
@@ -270,7 +266,6 @@ export default function ChicagoLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from Chicago-area owners.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (

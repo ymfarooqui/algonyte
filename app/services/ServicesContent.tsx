@@ -243,7 +243,6 @@ export default function ServicesContent() {
           variants={reveal.container(0.1, 0.05)}
         >
           <motion.div className="mx-auto max-w-5xl text-center" variants={reveal.fadeUp}>
-            <p className="eyebrow mb-3">How the system works</p>
             <h2 className="h-section">
               From first contact to booked revenue.
             </h2>
@@ -353,7 +352,6 @@ export default function ServicesContent() {
           variants={reveal.container(0.1, 0.05)}
         >
           <motion.div className="mx-auto max-w-3xl text-center" variants={reveal.fadeUp}>
-            <p className="eyebrow mb-3">Channels &amp; tools</p>
             <h2 className="h-section">
               Plays nice with everything you already use.
             </h2>
@@ -378,9 +376,6 @@ export default function ServicesContent() {
           viewport={inView}
           variants={reveal.container(0.1, 0.05)}
         >
-          <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-            FAQ
-          </motion.p>
           <motion.h2 className="h-section mb-10" variants={reveal.fadeUp}>
             Common questions about services.
           </motion.h2>

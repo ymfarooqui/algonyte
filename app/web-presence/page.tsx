@@ -130,7 +130,6 @@ export default function WebPresencePage() {
       {/* Problem framing */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The problem</p>
           <h2 className="h-section">
             Your customers won&rsquo;t buy from a business they can&rsquo;t find online.
           </h2>
@@ -159,7 +158,6 @@ export default function WebPresencePage() {
       {/* Tier cards */}
       <section id="packages" className="section bg-brand-soft/40">
         <div className="container-page">
-          <p className="eyebrow mb-4">Build packages</p>
           <h2 className="h-section max-w-3xl">
             Pick a build. Pay it once. Monthly stays $99 forever.
           </h2>
@@ -306,7 +304,6 @@ export default function WebPresencePage() {
       {/* Ready for more — upgrade path */}
       <section className="section">
         <div className="container-page">
-          <p className="eyebrow mb-4">Ready for more?</p>
           <h2 className="h-section max-w-3xl">
             Add a growth engine when you&rsquo;re ready.
           </h2>
@@ -403,7 +400,6 @@ export default function WebPresencePage() {
       {/* Why not Hibu / Scorpion callout */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why this is different</p>
           <h2 className="h-section">
             No annual contracts. No surprise rate hikes. No vendor runaround.
           </h2>
@@ -427,7 +423,6 @@ export default function WebPresencePage() {
       {/* FAQ */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (

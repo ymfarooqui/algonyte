@@ -99,7 +99,6 @@ export default function LeadGeneratorPage() {
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Lead Generation</p>
             <h1 className="h-display">
               Lead Generation for{" "}
               <span className="text-brand-deep">Service Businesses</span>
@@ -140,7 +139,6 @@ export default function LeadGeneratorPage() {
       {/* What it does */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What&rsquo;s included</p>
           <h2 className="h-section">The full paid-lead system.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
@@ -203,7 +201,6 @@ export default function LeadGeneratorPage() {
       {/* Scale tier CTA card */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The offer</p>
           <h2 className="h-section">Lead generation is part of {scale.name}.</h2>
           <div className="mt-6 lift-card rounded-2xl bg-white p-8 sm:p-10 border border-slate-200">
             <div className="flex flex-wrap items-start justify-between gap-4">
@@ -333,7 +330,6 @@ export default function LeadGeneratorPage() {
       {/* FAQ */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Straight answers on paid lead generation.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqs.map((f) => (

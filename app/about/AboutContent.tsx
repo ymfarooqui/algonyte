@@ -66,9 +66,6 @@ export default function AboutContent() {
           viewport={inView}
           variants={reveal.container(0.12, 0.05)}
         >
-          <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
-            What we do
-          </motion.p>
           <motion.h2 className="h-section" variants={reveal.fadeUp}>
             A full system, not a single tool.
           </motion.h2>

@@ -69,7 +69,6 @@ export default function FoundingPage() {
       {/* ── What you get: discount tables ────────────────────────────── */}
       <section className="section">
         <div className="container-page max-w-4xl">
-          <p className="eyebrow mb-4">What you get</p>
           <h2 className="h-section">The founding pricing breakdown.</h2>
 
           {/* Setup discounts */}
@@ -363,7 +362,6 @@ export default function FoundingPage() {
       {/* ── Fast turnaround (no live-call build) ─────────────────────── */}
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Onboarding</p>
           <h2 className="h-section">15-minute form. No 2-hour call.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Onboarding is a 15-minute intake form. No 2-hour configuration
@@ -403,7 +401,6 @@ export default function FoundingPage() {
       {/* ── Why we&rsquo;re doing this ────────────────────────────────── */}
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why we&rsquo;re doing this</p>
           <h2 className="h-section">Case studies. References. Real data.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Algonyte is early. We have the infrastructure, the processes, and

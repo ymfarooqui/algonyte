@@ -113,7 +113,6 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Why this matters in Macomb</p>
           <h2 className="h-section">Service businesses here lose money the same way: missed calls.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
@@ -167,7 +166,6 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">What we install</p>
           <h2 className="h-section">The system, end to end.</h2>
           <div className="mt-6 grid gap-6 sm:grid-cols-2">
             <div>
@@ -207,7 +205,6 @@ export default function MacombLocationPage() {
 
       <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">Service area</p>
           <h2 className="h-section">Across Macomb County and the Detroit metro.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             We work with service businesses in Macomb Township, Sterling Heights,
@@ -222,7 +219,6 @@ export default function MacombLocationPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions from Macomb-area owners.</h2>
           <dl className="mt-6 divide-y divide-slate-200">
             {faqJsonLd.mainEntity.map((q) => (
