@@ -19,7 +19,12 @@ const CONTACT_METHODS = [
   { value: "email", label: "Email" },
 ] as const;
 
-export default function ContactForm() {
+type ContactFormProps = {
+  onSubmitted?: () => void;
+  onReset?: () => void;
+};
+
+export default function ContactForm({ onSubmitted, onReset }: ContactFormProps = {}) {
   const { open } = useBooking();
   const [pending, startTransition] = useTransition();
   const [result, setResult] = useState<IntakeResult | null>(null);
@@ -32,8 +37,14 @@ export default function ContactForm() {
       setResult(r);
       if (r.ok) {
         e.currentTarget?.reset?.();
+        onSubmitted?.();
       }
     });
+  };
+
+  const handleReset = () => {
+    setResult(null);
+    onReset?.();
   };
 
   if (result?.ok) {
@@ -64,7 +75,7 @@ export default function ContactForm() {
           </button>
           <button
             type="button"
-            onClick={() => setResult(null)}
+            onClick={handleReset}
             className="inline-flex items-center justify-center rounded-lg border border-slate-200 px-5 py-2.5 text-sm font-medium text-brand-deep hover:bg-brand-soft transition"
           >
             Send another
