@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteConfig } from "@/lib/site";
+import { growthTiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
-import CursorSpotlight from "@/components/CursorSpotlight";
+import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
+import { reputationManagementServiceSchema } from "@/lib/schema";
 
-const title = "Reputation Manager | More 5-Star Google Reviews on Autopilot";
+const awake = growthTiers[0];
+const climbing = growthTiers[1];
+
+const title = "Reputation Management for Service Businesses | Algonyte";
 const description =
-  "Automated post-job review requests with smart routing for unhappy customers. Move your Google rating in 60 days. Setup in 5 to 7 days.";
+  `Automated post-job review requests with smart routing for unhappy customers. Now included in ${awake.name} ($${awake.monthly}/mo, Google reviews) and ${climbing.name} ($${climbing.monthly}/mo, multi-platform). Move your rating in 60 days.`;
 
 export const metadata: Metadata = {
   title,
@@ -18,39 +22,28 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
-const breadcrumb = breadcrumbJsonLd([{ name: "Reputation Manager", path: "/reputation-manager" }]);
-
-const serviceJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "@id": `${siteConfig.url}/reputation-manager#service`,
-  serviceType: "Reputation Management",
-  name: "Reputation Manager by Algonyte Labs",
-  provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-  description,
-  areaServed: { "@type": "Country", name: "United States" },
-};
+const breadcrumb = breadcrumbJsonLd([{ name: "Reputation Management", path: "/reputation-manager" }]);
 
 const faqs = [
   {
-    q: "How do you get more reviews?",
-    a: "Every completed job triggers an SMS asking for a review within an hour of finishing the work. Timing matters more than the message — that's when customers are happiest.",
+    q: "Is this Google-only?",
+    a: `On ${awake.name}, yes — the review workflow triggers on job completion and sends customers to your Google Business Profile. On ${climbing.name}, review requests go to Google, Yelp, and Facebook, with smart routing for unhappy customers on all three platforms.`,
   },
   {
-    q: "What about unhappy customers?",
-    a: "The system asks how the job went before sending the review link. Anyone who responds with a complaint or low rating gets routed to you privately instead of being pushed to leave a public review.",
+    q: "What if someone leaves a bad review?",
+    a: `Before the public review link goes out, the customer is asked how the job went. Anyone who responds with a low rating is routed to a private feedback form first. That gives you a chance to fix the issue before it becomes a public one-star. On ${climbing.name}, this routing logic covers all platforms — Google, Yelp, and Facebook.`,
   },
   {
-    q: "Will Google flag this as review gating?",
-    a: "We don't gate. Every customer can leave a public review if they want — we just make sure the unhappy ones get heard internally first, which is allowed under Google's policy.",
+    q: "Do I need to write the review request messages?",
+    a: "No. We build the message templates for you. They're customized to your service type and your brand voice — not generic copy-paste. If you do a specific kind of job (HVAC, plumbing, electrical, landscaping), we tailor the language to match.",
   },
   {
-    q: "Does it work for businesses with a bad rating?",
-    a: "Yes, and that's usually where it moves the most. A shop sitting at 3.6 with 40 reviews can be at 4.5 inside 60-90 days of consistent post-job requests.",
+    q: "How long until my rating moves?",
+    a: "Most service businesses see meaningful movement inside 60 days. The math: 50 jobs/month at a 20% response rate = 10 new reviews per month. That compounds. A business sitting at 3.8 with 30 reviews can realistically be at 4.6 inside 90 days of consistent post-job requests.",
   },
   {
-    q: "Does it integrate with my CRM?",
-    a: "We build on GoHighLevel, so trigger-after-job is built in. If you use a different CRM, we either integrate (most common ones work) or run it in parallel with a job-completion signal from your team.",
+    q: "Can I see the metrics?",
+    a: `Yes. Both ${awake.name} and ${climbing.name} include a dashboard with the numbers that actually matter: five-star count, average rating trend, and request-to-review response rate by channel. ${climbing.name} adds trend lines over time so you can see the curve moving.`,
   },
 ];
 
@@ -67,82 +60,236 @@ const faqJsonLd = {
 export default function ReputationManagerPage() {
   return (
     <>
+      {/* ── Hero ─────────────────────────────────────────────────────────── */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <div className="container-page pt-20 pb-16 sm:pt-28 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Reputation Manager</p>
+            <p className="eyebrow mb-4">Reputation Management</p>
             <h1 className="h-display">
-              More 5-star reviews,{" "}
-              <span className="text-brand-deep">without asking for them.</span>
+              Reputation management{" "}
+              <span className="text-brand-deep">for service businesses.</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              Automated review requests after every job, intelligent routing
-              for unhappy customers, and a dashboard that shows what&rsquo;s
-              actually moving your Google rating. Live in 5 to 7 days.
+              Job completes &rarr; SMS goes out &rarr; happy customers post
+              Google reviews &rarr; unhappy ones get routed to a private
+              feedback flow before they go public. Automated, running on
+              every job, moving your rating in 60 days.
             </p>
-            <div className="mt-8">
+            <p className="mt-4 text-brand-muted">
+              Now bundled into <strong className="text-brand-deep">Awake</strong>{" "}
+              (Google reviews, $
+              {awake.monthly}/mo) and{" "}
+              <strong className="text-brand-deep">Climbing</strong>{" "}
+              (multi-platform + smart routing, ${climbing.monthly}/mo all-in).
+            </p>
+            <div className="mt-8 flex flex-wrap gap-4">
+              <Link href="/pricing#awake" className="btn-primary">
+                See Awake &rarr;
+              </Link>
               <Link
-                href="/book"
-                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
+                href="/pricing#climbing"
+                className="inline-flex items-center justify-center rounded-full border-2 border-brand-deep px-8 py-4 text-brand-deep font-medium hover:bg-brand-deep hover:text-white transition-colors text-lg"
               >
-                Book a 30-minute walkthrough →
+                See Climbing &rarr;
               </Link>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="section">
-        <div className="container-page max-w-3xl">
-          <p className="eyebrow mb-4">The problem</p>
-          <h2 className="h-section">Your happiest customers don&rsquo;t leave reviews. Your unhappy ones do.</h2>
-          <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
-            <p>
-              The customer whose job went perfectly drives home and forgets.
-              The customer who had a problem opens Google before they&rsquo;re
-              out of the parking lot. That&rsquo;s why most service businesses
-              are stuck below 4.5 stars even when 95% of their work is great.
-            </p>
-            <p>
-              The fix is asking — at the right moment, in the right channel,
-              with a smart escape hatch for the small share of customers who
-              had a real complaint.
-            </p>
-          </div>
+      {/* ── Brand frame ──────────────────────────────────────────────────── */}
+      <section className="section bg-brand-soft/40">
+        <div className="container-page max-w-3xl mx-auto text-center">
+          <p className="text-2xl sm:text-3xl font-semibold text-brand-deep leading-snug italic">
+            &ldquo;Your business runs while you sleep &mdash; including the
+            steady drip of new reviews that move your rating.&rdquo;
+          </p>
         </div>
       </section>
 
-      <section className="section bg-brand-soft/40">
+      {/* ── What it does ─────────────────────────────────────────────────── */}
+      <section className="section">
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">The system</p>
-          <h2 className="h-section">Ask. Route. Track.</h2>
+          <h2 className="h-section">What reputation management actually does.</h2>
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
-              <strong className="text-brand-deep">Trigger on job completion.</strong>{" "}
-              SMS goes out within an hour of the work being marked done. That window is where the 5-stars live.
+              <strong className="text-brand-deep">Triggers automatically on job completion.</strong>{" "}
+              SMS goes out within an hour of the job being marked done. That window is
+              where the five-stars live &mdash; customers are still in the good feeling.
             </li>
             <li>
-              <strong className="text-brand-deep">Smart routing for unhappy customers.</strong>{" "}
-              Anyone who responds negatively gets routed to you privately, not pushed to a public review form.
+              <strong className="text-brand-deep">Smart routing catches unhappy customers first.</strong>{" "}
+              Ratings of 4&ndash;5 stars proceed to the public review link. Ratings of
+              1&ndash;3 stars route to a private feedback form &mdash; giving you a
+              shot to fix it before it hits your public profile.
             </li>
             <li>
-              <strong className="text-brand-deep">Multi-platform requests.</strong>{" "}
-              Google primarily, with Yelp, Facebook, or industry-specific platforms (BBB, Angi, etc.) layered in.
+              <strong className="text-brand-deep">
+                Multi-platform on {climbing.name}; Google-only on {awake.name}.
+              </strong>{" "}
+              {awake.name} sends Google review requests. {climbing.name} adds Yelp and
+              Facebook, with smart routing active on all three.
             </li>
             <li>
-              <strong className="text-brand-deep">Drip for the slow responders.</strong>{" "}
-              Polite second nudge 3 days later. Stops automatically once the review lands.
+              <strong className="text-brand-deep">Polite drip for slow responders.</strong>{" "}
+              A second nudge goes out three days later if there&rsquo;s no response.
+              Stops automatically once the review lands &mdash; no spam, no repeat asks.
             </li>
             <li>
               <strong className="text-brand-deep">Dashboard with the metric that matters.</strong>{" "}
-              Reviews-per-job-completed, average rating trend, response-rate by channel. Not vanity counts.
+              Five-star count, response rate, and average rating trend over time. Not
+              vanity counts &mdash; the numbers that show whether the system is working.
+            </li>
+            <li>
+              <strong className="text-brand-deep">Custom message templates per service type.</strong>{" "}
+              HVAC, plumbing, electrical, landscaping &mdash; the request is written to
+              match what you just did, not a generic &ldquo;review us on Google&rdquo; blast.
             </li>
           </ul>
         </div>
       </section>
 
+      {/* ── Two-tier fork ─────────────────────────────────────────────────── */}
+      <section className="section bg-brand-soft/40">
+        <div className="container-page">
+          <p className="eyebrow mb-4 text-center">Where reputation management lives now</p>
+          <h2 className="h-section text-center mb-10">
+            Two tiers. Pick the one that matches your operation.
+          </h2>
+          <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
+
+            {/* Card A — Awake */}
+            <div className="lift-card p-8 flex flex-col gap-6">
+              <div>
+                <p className="eyebrow mb-2">{awake.name}</p>
+                <p className="text-3xl font-bold text-brand-deep">
+                  ${awake.monthly}
+                  <span className="text-base font-normal text-brand-muted">/mo</span>
+                </p>
+                <p className="text-sm text-brand-muted mt-1">
+                  ${awake.setup} one-time setup &middot; live in {awake.liveIn}
+                </p>
+                <p className="mt-3 text-brand-muted leading-relaxed text-sm">
+                  Google review requests triggered on every job completion. The
+                  right ask at the right moment, on autopilot.
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm text-brand-muted flex-1">
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Google review request workflow
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Triggers automatically on job completion
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Basic dashboard (five-star count, response rate)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Custom message templates for your service type
+                </li>
+              </ul>
+              <Link href="/pricing#awake" className="btn-primary text-center">
+                See {awake.name} &rarr;
+              </Link>
+            </div>
+
+            {/* Card B — Climbing (featured) */}
+            <div className="bg-brand-deep text-white rounded-2xl p-8 flex flex-col gap-6 shadow-xl">
+              <div>
+                <div className="flex items-center gap-3 mb-2">
+                  <p className="eyebrow text-white/70">{climbing.name}</p>
+                  <span className="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full font-medium">
+                    Most complete
+                  </span>
+                </div>
+                <p className="text-3xl font-bold text-white">
+                  ${climbing.monthly}
+                  <span className="text-base font-normal text-white/70">/mo</span>
+                </p>
+                <p className="text-sm text-white/60 mt-1">
+                  ${climbing.setup} one-time setup &middot; live in {climbing.liveIn}
+                </p>
+                <p className="mt-3 text-white/80 leading-relaxed text-sm">
+                  Multi-platform review requests plus smart routing for unhappy
+                  customers &mdash; Google, Yelp, and Facebook, all in one workflow.
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm text-white/80 flex-1">
+                <li className="flex items-start gap-2">
+                  <span className="text-white mt-0.5">&#10003;</span>
+                  Everything in {awake.name}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-white mt-0.5">&#10003;</span>
+                  Multi-platform requests (Google + Yelp + Facebook)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-white mt-0.5">&#10003;</span>
+                  Smart routing for unhappy customers on all platforms
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-white mt-0.5">&#10003;</span>
+                  Custom dashboard with average rating trend lines
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-white mt-0.5">&#10003;</span>
+                  Also includes: Voice AI receptionist, Local SEO, citation cleanup
+                </li>
+              </ul>
+              <Link
+                href="/pricing#climbing"
+                className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg text-center"
+              >
+                See {climbing.name} &rarr;
+              </Link>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* ── Why this matters ──────────────────────────────────────────────── */}
       <section className="section">
+        <div className="container-page max-w-3xl">
+          <p className="eyebrow mb-4">Why it matters</p>
+          <h2 className="h-section">The math behind a moving rating.</h2>
+          <div className="mt-6 space-y-6 text-brand-muted leading-relaxed">
+            <p>
+              A service business running 50 jobs per month with a 20% review-request
+              response rate generates 10 new reviews per month. At a starting average
+              of 4.7, that&rsquo;s a year of compounding social proof &mdash; the kind
+              that moves you past every competitor sitting on a stale 4.2 from three
+              years ago.
+            </p>
+            <p>
+              The smart-routing piece matters because of how ratings actually work.
+              Customers who rate 4&ndash;5 stars on the internal satisfaction question
+              get sent straight to the public review link. Customers who rate 1&ndash;3
+              stars get routed to a private feedback form first. You get notified, you
+              fix the issue, and the conversation stays off your public profile. It
+              doesn&rsquo;t eliminate bad reviews entirely &mdash; but it removes the
+              ones that come from an unresolved complaint you never knew about.
+            </p>
+            <p>
+              The reason reputation management lives inside the tiers instead of as a
+              separate product: reception and reputation are the same job &mdash;
+              handling what happens after the lead. Splitting them into separate line
+              items was an artifact of how the product grew. Bundled is more honest.
+              You already need someone answering the phone and following up after jobs.
+              The review workflow is part of that same operating loop.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQs ──────────────────────────────────────────────────────────── */}
+      <section className="section bg-brand-soft/40">
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">FAQ</p>
           <h2 className="h-section">Common questions.</h2>
@@ -157,29 +304,12 @@ export default function ReputationManagerPage() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden section bg-brand-deep text-white">
-        <CursorSpotlight />
-        <div className="relative container-page max-w-3xl text-center">
-          <h2 className="h-section text-white">Move your Google rating in 60 days.</h2>
-          <p className="mt-4 text-white/80 max-w-xl mx-auto">
-            30-minute walkthrough. We&rsquo;ll show you the trigger flow, the
-            unhappy-customer routing, and the dashboard so you can decide if
-            it fits your operation.
-          </p>
-          <div className="mt-8">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg"
-            >
-              Book a 30-minute walkthrough →
-            </Link>
-          </div>
-        </div>
-      </section>
+      <FinalCTA title="Want to see what reputation management looks like for your business?" />
 
+      {/* jsonLdString sanitizes all XSS-sensitive bytes — see lib/jsonLd.ts */}
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdString(serviceJsonLd) }}
+        dangerouslySetInnerHTML={{ __html: jsonLdString(reputationManagementServiceSchema()) }}
       />
       <script
         type="application/ld+json"
