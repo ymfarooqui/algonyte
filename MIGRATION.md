@@ -88,7 +88,7 @@ For `farooquidigital.com`: leave DNS unchanged. Vercel handles the 301 at the pl
 
 ### 2.2 Business listings
 
-- [ ] **Google Business Profile:** edit URL from farooquidigital.com to algonyte.com. **Warning:** GBP can flag rapid changes — be prepared for a 24-72 hour review.
+- [ ] **Google Business Profile:** edit URL from farooquidigital.com to algonyte.com. **Warning:** Google Business Profile can flag rapid changes — be prepared for a 24-72 hour review.
 - [ ] **Bing Places:** same update
 - [ ] **Apple Maps Connect:** same update
 - [ ] Any industry-specific directories (Yelp, BBB, Angi, etc.) where the business is listed

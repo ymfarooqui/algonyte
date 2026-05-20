@@ -15,8 +15,8 @@ All pre-deploy must-do items are complete. Site is deployed on Vercel, DNS is li
 ### 1. Wire the GHL checkout URLs
 - **Where:** `lib/constants.ts` → `plans[].checkoutUrl`
 - **Today:** Pricing CTAs gracefully fall back to "Talk to us" → `/contact` while placeholders are present, so the site is not broken — but you can't capture self-serve subscriptions until these are real.
-- **You:** Set up the three SaaS plans in GHL with Stripe ($549 / $749 / $1,299), get the checkout URLs.
-- **Me:** Drop them into the constants once you have them. While you're at it, configure the **$399 setup fee** as a one-time charge on the first invoice for Starter and Growth (Pro AI rolls setup into month 1).
+- **You:** Set up the six SaaS plans in GHL with Stripe, get the checkout URLs.
+- **Me:** Drop them into the constants once you have them. Confirm setup fees are configured per tier: Open ($300), Found ($600), Polished ($1,000), Awake ($329), Climbing ($500), Scale ($500).
 
 ### 2. SocialProof metrics — finish softening
 - **Where:** `components/sections/SocialProof.tsx`
