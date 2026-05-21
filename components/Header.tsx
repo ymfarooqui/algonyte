@@ -156,7 +156,7 @@ export default function Header() {
                 key={l.href}
                 href={l.href}
                 onClick={() => setOpen(false)}
-                className="py-1 hover:text-brand-primary focus:outline-none focus-visible:text-brand-primary nav-link"
+                className="py-2.5 hover:text-brand-primary focus:outline-none focus-visible:text-brand-primary nav-link"
               >
                 {l.label}
               </Link>

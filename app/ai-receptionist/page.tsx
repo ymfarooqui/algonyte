@@ -10,6 +10,35 @@ import { aiReceptionistServiceSchema } from "@/lib/schema";
 const awake = tiers.find((t) => t.id === "awake")!;
 const climbing = tiers.find((t) => t.id === "climbing")!;
 
+const comparison = {
+  attributes: ["Monthly", "Contract", "Setup", "Channels", "Reviews engine"],
+  competitors: [
+    {
+      name: "AlgoNyte Awake",
+      featured: true,
+      values: [
+        `$${awake.monthly} + $${awake.setup} setup`,
+        "Month-to-month",
+        "Done-for-you",
+        "Chat + voice + SMS + FB/IG/WA DM",
+        "Included",
+      ],
+    },
+    {
+      name: "Podium Core + AI",
+      values: ["~$498 (annual contract)", "12 months", "DIY config", "Webchat + SMS", "Add-on"],
+    },
+    {
+      name: "Smith.ai AI",
+      values: ["$95 + $2.10–$2.40/call", "Month-to-month", "DIY", "Per-call AI only", "Not included"],
+    },
+    {
+      name: "Goodcall",
+      values: ["$59–$99", "Month-to-month", "DIY", "Phone only", "Not included"],
+    },
+  ],
+};
+
 const title = "AI Receptionist for Service Businesses | AlgoNyte";
 const description = `AI receptionist answers, qualifies, and books your leads 24/7. Two flavors: Awake ($${awake.monthly}/mo, chat + DMs + missed-call text-back, live in ${awake.liveIn}) and Climbing ($${climbing.monthly}/mo, adds voice AI + Local SEO, live in ${climbing.liveIn}).`;
 
@@ -299,73 +328,76 @@ export default function AIReceptionistPage() {
             Done-for-you reception vs. the alternatives.
           </h2>
 
-          <div className="mt-10 overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-soft">
-            <table className="w-full min-w-[640px] text-sm">
+          {/* Desktop: full comparison table */}
+          <div className="mt-10 hidden sm:block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
+            <table className="w-full border-collapse text-sm">
               <thead>
                 <tr className="border-b border-slate-100">
                   <th className="px-5 py-4 text-left font-semibold text-brand-deep w-40"></th>
-                  <th className="px-5 py-4 text-left font-semibold text-brand-deep bg-brand-accent/40">
-                    AlgoNyte Awake
-                  </th>
-                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
-                    Podium Core + AI
-                  </th>
-                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
-                    Smith.ai AI
-                  </th>
-                  <th className="px-5 py-4 text-left font-semibold text-brand-muted">
-                    Goodcall
-                  </th>
+                  {comparison.competitors.map((c) => (
+                    <th
+                      key={c.name}
+                      className={`px-5 py-4 text-left font-semibold ${
+                        c.featured ? "text-brand-deep bg-brand-accent/40" : "text-brand-muted"
+                      }`}
+                    >
+                      {c.name}
+                    </th>
+                  ))}
                 </tr>
               </thead>
               <tbody className="divide-y divide-slate-100">
-                <tr>
-                  <td className="px-5 py-4 font-medium text-brand-deep">Monthly</td>
-                  <td className="px-5 py-4 font-semibold text-brand-deep bg-brand-accent/20">
-                    ${awake.monthly} + ${awake.setup} setup
-                  </td>
-                  <td className="px-5 py-4 text-brand-muted">~$498 (annual contract)</td>
-                  <td className="px-5 py-4 text-brand-muted">$95 + $2.10&ndash;$2.40/call</td>
-                  <td className="px-5 py-4 text-brand-muted">$59&ndash;$99</td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-medium text-brand-deep">Contract</td>
-                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
-                    Month-to-month
-                  </td>
-                  <td className="px-5 py-4 text-brand-muted">12 months</td>
-                  <td className="px-5 py-4 text-brand-muted">Month-to-month</td>
-                  <td className="px-5 py-4 text-brand-muted">Month-to-month</td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-medium text-brand-deep">Setup</td>
-                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
-                    Done-for-you
-                  </td>
-                  <td className="px-5 py-4 text-brand-muted">DIY config</td>
-                  <td className="px-5 py-4 text-brand-muted">DIY</td>
-                  <td className="px-5 py-4 text-brand-muted">DIY</td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-medium text-brand-deep">Channels</td>
-                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
-                    Chat + voice + SMS + FB/IG/WA DM
-                  </td>
-                  <td className="px-5 py-4 text-brand-muted">Webchat + SMS</td>
-                  <td className="px-5 py-4 text-brand-muted">Per-call AI only</td>
-                  <td className="px-5 py-4 text-brand-muted">Phone only</td>
-                </tr>
-                <tr>
-                  <td className="px-5 py-4 font-medium text-brand-deep">Reviews engine</td>
-                  <td className="px-5 py-4 text-brand-deep bg-brand-accent/20">
-                    Included
-                  </td>
-                  <td className="px-5 py-4 text-brand-muted">Add-on</td>
-                  <td className="px-5 py-4 text-brand-muted">Not included</td>
-                  <td className="px-5 py-4 text-brand-muted">Not included</td>
-                </tr>
+                {comparison.attributes.map((attr, ri) => (
+                  <tr key={attr}>
+                    <td className="px-5 py-4 font-medium text-brand-deep">{attr}</td>
+                    {comparison.competitors.map((c) => (
+                      <td
+                        key={c.name}
+                        className={`px-5 py-4 ${
+                          c.featured
+                            ? "font-medium text-brand-deep bg-brand-accent/20"
+                            : "text-brand-muted"
+                        }`}
+                      >
+                        {c.values[ri]}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
               </tbody>
             </table>
+          </div>
+
+          {/* Mobile: one card per option, no sideways scrolling */}
+          <div className="mt-8 space-y-4 sm:hidden">
+            {comparison.competitors.map((c) => (
+              <div
+                key={c.name}
+                className={`rounded-2xl border p-5 ${
+                  c.featured
+                    ? "border-brand-deep/30 bg-brand-accent/20 shadow-soft"
+                    : "border-slate-200 bg-white"
+                }`}
+              >
+                <p className={`font-semibold ${c.featured ? "text-brand-deep" : "text-brand-ink"}`}>
+                  {c.name}
+                </p>
+                <dl className="mt-3 divide-y divide-slate-200/70 text-sm">
+                  {comparison.attributes.map((attr, ri) => (
+                    <div key={attr} className="flex justify-between gap-4 py-2">
+                      <dt className="text-brand-muted">{attr}</dt>
+                      <dd
+                        className={`text-right font-medium ${
+                          c.featured ? "text-brand-deep" : "text-brand-ink"
+                        }`}
+                      >
+                        {c.values[ri]}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </div>
+            ))}
           </div>
 
           <div className="mt-8 max-w-3xl text-brand-muted leading-relaxed text-sm">
