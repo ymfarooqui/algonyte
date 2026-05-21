@@ -36,6 +36,11 @@ const nextConfig: NextConfig = {
         destination: "/web-presence",
         permanent: true,
       },
+      {
+        source: "/founding",
+        destination: "/pricing",
+        permanent: true,
+      },
     ];
   },
 };

@@ -90,37 +90,7 @@ export default function Hero() {
           </a>
         </motion.div>
 
-        <motion.div
-          className="mt-8 mx-auto max-w-2xl"
-          variants={reveal.fadeUp}
-        >
-          <div className="rounded-2xl bg-brand-deep px-6 py-4 shadow-soft">
-            <div className="flex flex-col items-center gap-3 text-center sm:flex-row sm:justify-between sm:gap-6 sm:text-left">
-              <div>
-                <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-brand-accent">
-                  Founding · 3 spots
-                </span>
-                <span className="ml-3 text-white font-medium">
-                  50% off setup. 30% off Growth for 6 months.
-                </span>
-              </div>
-              <div className="flex items-center gap-4">
-                <a
-                  href="/contact?topic=founding"
-                  className="inline-flex items-center justify-center rounded-full bg-brand-primary px-5 py-2 text-sm text-brand-deep font-semibold hover:bg-white transition-colors whitespace-nowrap"
-                >
-                  Apply &rarr;
-                </a>
-                <a
-                  href="/founding"
-                  className="text-white/80 hover:text-white underline underline-offset-4 text-sm whitespace-nowrap"
-                >
-                  Details
-                </a>
-              </div>
-            </div>
-          </div>
-        </motion.div>
+
       </motion.div>
 
     </section>
