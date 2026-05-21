@@ -36,7 +36,6 @@ const commitmentLabel: Record<string, string> = {
   "month-to-month": "Month-to-month",
 };
 
-
 const differentiators = [
   "No long-term contracts. Ever.",
   `$${HOSTING_FLAT}/mo flat hosting on Found. Forever. Never increases.`,
@@ -351,20 +350,7 @@ export default function PricingPage() {
             <ul className="space-y-3">
               {differentiators.map((d) => (
                 <li key={d} className="flex items-start gap-3 text-sm text-brand-muted leading-relaxed">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mt-0.5 flex-shrink-0 text-brand-primary"
-                    aria-label="Included"
-                  >
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
+                  <CheckIcon />
                   <span>{d}</span>
                 </li>
               ))}
@@ -382,7 +368,7 @@ export default function PricingPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdString(pricingSchema()) }}
       />
-<script
+      <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
       />
