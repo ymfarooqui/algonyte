@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { reveal, inView } from "@/lib/motion";
+import Reveal from "@/components/Reveal";
 import CountUp from "@/components/CountUp";
 
 type Metric = {
@@ -31,23 +30,14 @@ const testimonials: Testimonial[] = [
 export default function SocialProof() {
   return (
     <section className="section bg-brand-soft">
-      <motion.div
-        className="container-page"
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        variants={reveal.container(0.12, 0.05)}
-      >
-        <motion.h2 className="h-section max-w-2xl" variants={reveal.fadeUp}>
+      <div className="container-page">
+        <Reveal as="h2" className="h-section max-w-2xl" delay={0.05}>
           What this looks like in real businesses.
-        </motion.h2>
+        </Reveal>
 
-        <motion.div
-          className="mt-12 grid gap-5 sm:grid-cols-3"
-          variants={reveal.container(0.15, 0.1)}
-        >
-          {metrics.map((m) => (
-            <motion.div key={m.label} variants={reveal.fadeUpLg}>
+        <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          {metrics.map((m, i) => (
+            <Reveal key={m.label} y={24} delay={0.1 + i * 0.15}>
               <div className="card text-center h-full">
                 <CountUp
                   to={m.to}
@@ -60,20 +50,18 @@ export default function SocialProof() {
                   {m.label}
                 </p>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
-        </motion.div>
+        </div>
 
         {testimonials.length > 0 && (
-          <motion.div
-            className="mt-10"
-            variants={reveal.container(0.15, 0.2)}
-          >
+          <div className="mt-10">
             {testimonials.map((t) => (
-              <motion.figure
+              <Reveal
+                as="figure"
                 key={t.name}
                 className="relative mx-auto max-w-3xl py-10 sm:py-12"
-                variants={reveal.fadeUp}
+                delay={0.1}
               >
                 <span
                   aria-hidden
@@ -86,16 +74,14 @@ export default function SocialProof() {
                 </blockquote>
                 <figcaption className="mt-6 flex items-center gap-3 text-sm">
                   <span aria-hidden className="h-px w-8 bg-brand-line" />
-                  <span className="font-medium text-brand-deep">
-                    {t.name}
-                  </span>
+                  <span className="font-medium text-brand-deep">{t.name}</span>
                   <span className="text-brand-muted">{t.role}</span>
                 </figcaption>
-              </motion.figure>
+              </Reveal>
             ))}
-          </motion.div>
+          </div>
         )}
-      </motion.div>
+      </div>
     </section>
   );
 }

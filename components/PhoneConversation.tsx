@@ -1,9 +1,7 @@
 "use client";
 
-import { motion } from "motion/react";
+import Reveal from "@/components/Reveal";
 import { useAnimSpeed } from "@/lib/useAnimSpeed";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
 
 function CarWashIcon({ className }: { className?: string }) {
   return (
@@ -146,11 +144,10 @@ function Bubble({ msg, index }: { msg: Msg; index: number }) {
   const { s } = useAnimSpeed();
 
   return (
-    <motion.div
-      initial={{ opacity: 0, y: 8 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.3 }}
-      transition={{ duration: s(0.45), delay: s(index * 0.12), ease: EASE }}
+    <Reveal
+      y={8}
+      duration={s(0.45)}
+      delay={s(index * 0.12)}
       className={`flex items-end gap-1.5 ${isThem ? "justify-start" : "justify-end"}`}
     >
       {isThem && (
@@ -190,14 +187,14 @@ function Bubble({ msg, index }: { msg: Msg; index: number }) {
           <CarWashIcon className="h-3.5 w-3.5" />
         </span>
       )}
-    </motion.div>
+    </Reveal>
   );
 }
 
 function PhoneFrame() {
   return (
     <div className="relative mx-auto w-full max-w-[300px] sm:max-w-[340px]">
-      <div className="relative rounded-[2.5rem] border-[8px] border-slate-900 bg-white shadow-2xl ring-1 ring-slate-900/10 overflow-hidden">
+      <div className="relative isolate rounded-[2.5rem] border-[8px] border-slate-900 bg-white shadow-2xl ring-1 ring-slate-900/10 overflow-hidden">
         {/* dynamic island */}
         <div
           aria-hidden
@@ -275,11 +272,12 @@ function Annotation({
   const style = annotationStyles[a.color];
   const { s } = useAnimSpeed();
   return (
-    <motion.li
-      initial={{ opacity: 0, x: 10 }}
-      whileInView={{ opacity: 1, x: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: s(0.5), delay: s(0.2 + index * 0.15), ease: EASE }}
+    <Reveal
+      as="li"
+      x={10}
+      y={0}
+      duration={s(0.5)}
+      delay={s(0.2 + index * 0.15)}
       className="relative flex items-start gap-3"
     >
       <span
@@ -293,7 +291,7 @@ function Annotation({
         </p>
         <p className="mt-1 text-sm text-brand-muted leading-relaxed">{a.body}</p>
       </div>
-    </motion.li>
+    </Reveal>
   );
 }
 

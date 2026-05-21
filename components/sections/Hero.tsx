@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { reveal } from "@/lib/motion";
+import Reveal from "@/components/Reveal";
 import { BookingButton } from "@/components/BookingModal";
 import HeroVisual from "@/components/HeroVisual";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
@@ -14,20 +13,16 @@ export default function Hero() {
     >
       <PageHeroBackdrop />
 
-      <motion.div
-        className="relative container-page pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24"
-        initial="hidden"
-        animate="visible"
-        variants={reveal.container(0.12, 0.05)}
-      >
+      <div className="relative container-page pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
         <div className="max-w-3xl mx-auto text-center px-2 sm:px-0">
-          <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
+          <Reveal as="h1" className="h-display" y={24} delay={0.05}>
             Your business should run{" "}
             <em className="not-italic text-brand-primary">while you sleep.</em>
-          </motion.h1>
-          <motion.p
+          </Reveal>
+          <Reveal
+            as="p"
             className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-muted"
-            variants={reveal.fadeUp}
+            delay={0.17}
           >
             {["Presence", "Receptionist", "Voice Agents", "Local SEO", "Reputation"].map(
               (item, i) => (
@@ -42,29 +37,20 @@ export default function Hero() {
                 </span>
               )
             )}
-          </motion.p>
+          </Reveal>
         </div>
 
-        <motion.div
-          className="mt-12 mx-auto max-w-4xl"
-          variants={reveal.fadeUp}
-        >
+        <Reveal className="mt-12 mx-auto max-w-4xl" delay={0.29}>
           <HeroVisual />
-        </motion.div>
+        </Reveal>
 
         <div className="mt-10 mx-auto max-w-2xl text-center px-2 sm:px-0">
-          <motion.p
-            className="lede"
-            variants={reveal.fadeUp}
-          >
+          <Reveal as="p" className="lede" delay={0.41}>
             Site live in 5–7 days. Reception in 5 days. Full SEO + voice in two weeks.
-          </motion.p>
+          </Reveal>
         </div>
 
-        <motion.div
-          className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3"
-          variants={reveal.fadeUp}
-        >
+        <Reveal className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3" delay={0.53}>
           <BookingButton className="group btn-primary">
             Show me what this looks like for my business
             <svg
@@ -88,11 +74,8 @@ export default function Hero() {
               <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
           </a>
-        </motion.div>
-
-
-      </motion.div>
-
+        </Reveal>
+      </div>
     </section>
   );
 }
