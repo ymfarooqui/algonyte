@@ -158,92 +158,92 @@ export default function ReputationManagerPage() {
           </h2>
           <div className="grid sm:grid-cols-2 gap-6 max-w-4xl mx-auto">
 
-            {/* Card A — Awake */}
-            <div className="lift-card p-8 flex flex-col gap-6">
-              <div>
-                <p className="eyebrow mb-2">{awake.name}</p>
-                <p className="text-3xl font-bold text-brand-deep">
-                  ${awake.monthly}
-                  <span className="text-base font-normal text-brand-muted">/mo</span>
-                </p>
-                <p className="text-sm text-brand-muted mt-1">
-                  ${awake.setup} one-time setup &middot; live in {awake.liveIn}
-                </p>
-                <p className="mt-3 text-brand-muted leading-relaxed text-sm">
-                  Google review requests triggered on every job completion. The
-                  right ask at the right moment, on autopilot.
-                </p>
-              </div>
-              <ul className="space-y-2 text-sm text-brand-muted flex-1">
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-deep mt-0.5">&#10003;</span>
-                  Google review request workflow
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-deep mt-0.5">&#10003;</span>
-                  Triggers automatically on job completion
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-deep mt-0.5">&#10003;</span>
-                  Basic dashboard (five-star count, response rate)
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-brand-deep mt-0.5">&#10003;</span>
-                  Custom message templates for your service type
-                </li>
-              </ul>
-              <Link href="/pricing#awake" className="btn-primary text-center">
-                See {awake.name} &rarr;
-              </Link>
-            </div>
-
-            {/* Card B — Climbing (featured) */}
+            {/* Card A — Awake (most popular) */}
             <div className="bg-brand-deep text-white rounded-2xl p-8 flex flex-col gap-6 shadow-xl">
               <div>
                 <div className="flex items-center gap-3 mb-2">
-                  <p className="eyebrow text-white/70">{climbing.name}</p>
+                  <p className="eyebrow text-white/70">{awake.name}</p>
                   <span className="text-xs bg-white/20 text-white px-2 py-0.5 rounded-full font-medium">
-                    Most complete
+                    Most Popular
                   </span>
                 </div>
                 <p className="text-3xl font-bold text-white">
-                  ${climbing.monthly}
+                  ${awake.monthly}
                   <span className="text-base font-normal text-white/70">/mo</span>
                 </p>
                 <p className="text-sm text-white/60 mt-1">
-                  ${climbing.setup} one-time setup &middot; live in {climbing.liveIn}
+                  ${awake.setup} one-time setup &middot; live in {awake.liveIn}
                 </p>
                 <p className="mt-3 text-white/80 leading-relaxed text-sm">
-                  Multi-platform review requests plus smart routing for unhappy
-                  customers on Google, Yelp, and Facebook, all in one workflow.
+                  Google review requests triggered on every job completion. The
+                  right ask at the right moment, on autopilot.
                 </p>
               </div>
               <ul className="space-y-2 text-sm text-white/80 flex-1">
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Everything in {awake.name}
+                  Google review request workflow
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Multi-platform requests (Google + Yelp + Facebook)
+                  Triggers automatically on job completion
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Smart routing for unhappy customers on all platforms
+                  Basic dashboard (five-star count, response rate)
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Custom dashboard with average rating trend lines
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-white mt-0.5">&#10003;</span>
-                  Also includes: Voice AI receptionist, Local SEO, ongoing technical SEO
+                  Custom message templates for your service type
                 </li>
               </ul>
               <Link
-                href="/pricing#climbing"
+                href="/pricing#awake"
                 className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg text-center"
               >
+                See {awake.name} &rarr;
+              </Link>
+            </div>
+
+            {/* Card B — Climbing (upgrade) */}
+            <div className="lift-card p-8 flex flex-col gap-6">
+              <div>
+                <p className="eyebrow mb-2">{climbing.name}</p>
+                <p className="text-3xl font-bold text-brand-deep">
+                  ${climbing.monthly}
+                  <span className="text-base font-normal text-brand-muted">/mo</span>
+                </p>
+                <p className="text-sm text-brand-muted mt-1">
+                  ${climbing.setup} one-time setup &middot; live in {climbing.liveIn}
+                </p>
+                <p className="mt-3 text-brand-muted leading-relaxed text-sm">
+                  Multi-platform review requests plus smart routing for unhappy
+                  customers on Google, Yelp, and Facebook, all in one workflow.
+                </p>
+              </div>
+              <ul className="space-y-2 text-sm text-brand-muted flex-1">
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Everything in {awake.name}
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Multi-platform requests (Google + Yelp + Facebook)
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Smart routing for unhappy customers on all platforms
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Custom dashboard with average rating trend lines
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-brand-deep mt-0.5">&#10003;</span>
+                  Also includes: Voice AI receptionist, Local SEO, ongoing technical SEO
+                </li>
+              </ul>
+              <Link href="/pricing#climbing" className="btn-primary text-center">
                 See {climbing.name} &rarr;
               </Link>
             </div>

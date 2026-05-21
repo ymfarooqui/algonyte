@@ -222,87 +222,42 @@ export default function AIReceptionistPage() {
           </p>
 
           <div className="mt-12 grid gap-5 md:grid-cols-2 md:items-stretch max-w-4xl">
-            {/* Card A - Awake */}
+            {/* Card A - Awake (most popular) */}
             <div
               id="awake"
-              className="relative flex h-full flex-col rounded-2xl bg-brand-soft p-7 shadow-soft lift-card"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/50">
-                Text and chat?
-              </p>
-              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-deep">
-                {awake.name}
-              </h3>
-              <p className="mt-1 text-sm text-brand-muted">{awake.tagline}</p>
-              <div className="mt-5 space-y-1">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-medium tabular-nums text-brand-ink">
-                    ${awake.setup}
-                  </span>
-                  <span className="text-sm text-brand-muted">one-time setup</span>
-                </div>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
-                    ${awake.monthly}
-                  </span>
-                  <span className="text-sm text-brand-muted">/mo</span>
-                </div>
-              </div>
-              <p className="mt-2 text-xs text-brand-muted">
-                Live in {awake.liveIn} &middot; Month-to-month
-              </p>
-              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                {awake.features.slice(0, 5).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckIcon />
-                    <span className="text-brand-muted">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/pricing#awake"
-                className="btn-primary w-full text-center"
-              >
-                See Awake &rarr;
-              </Link>
-            </div>
-
-            {/* Card B - Climbing (featured) */}
-            <div
-              id="climbing"
               className="relative flex h-full flex-col rounded-2xl bg-brand-deep p-7 shadow-deep -translate-y-2 sm:-translate-y-4 text-brand-soft"
             >
               <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
                 <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
-                  Recommended
+                  Most Popular
                 </span>
               </div>
               <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-soft/50">
-                Want voice too?
+                Text and chat
               </p>
               <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-soft">
-                {climbing.name}
+                {awake.name}
               </h3>
-              <p className="mt-1 text-sm text-brand-soft/70">{climbing.tagline}</p>
+              <p className="mt-1 text-sm text-brand-soft/70">{awake.tagline}</p>
               <div className="mt-5 space-y-1">
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-2xl font-medium tabular-nums text-brand-soft">
-                    ${climbing.setup}
+                    ${awake.setup}
                   </span>
                   <span className="text-sm text-brand-soft/60">one-time setup</span>
                 </div>
                 <div className="flex items-baseline gap-1.5">
                   <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-soft">
-                    ${climbing.monthly}
+                    ${awake.monthly}
                   </span>
                   <span className="text-sm text-brand-soft/60">/mo</span>
                 </div>
               </div>
               <p className="mt-2 text-xs text-brand-soft/60">
-                {climbing.monthlyNote} &middot; Live in {climbing.liveIn}
+                Live in {awake.liveIn} &middot; Month-to-month
               </p>
               <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                {climbing.features.slice(1, 7).map((f) => (
+                {awake.features.slice(0, 5).map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
                     <CheckIcon featured />
                     <span className="text-brand-soft/85">{f}</span>
@@ -310,8 +265,53 @@ export default function AIReceptionistPage() {
                 ))}
               </ul>
               <Link
-                href="/pricing#climbing"
+                href="/pricing#awake"
                 className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-brand-deep font-medium hover:bg-white/90 transition-colors text-base w-full text-center"
+              >
+                See Awake &rarr;
+              </Link>
+            </div>
+
+            {/* Card B - Climbing (upgrade) */}
+            <div
+              id="climbing"
+              className="relative flex h-full flex-col rounded-2xl bg-brand-soft p-7 shadow-soft lift-card"
+            >
+              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/50">
+                Want voice too?
+              </p>
+              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-deep">
+                {climbing.name}
+              </h3>
+              <p className="mt-1 text-sm text-brand-muted">{climbing.tagline}</p>
+              <div className="mt-5 space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-2xl font-medium tabular-nums text-brand-ink">
+                    ${climbing.setup}
+                  </span>
+                  <span className="text-sm text-brand-muted">one-time setup</span>
+                </div>
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
+                    ${climbing.monthly}
+                  </span>
+                  <span className="text-sm text-brand-muted">/mo</span>
+                </div>
+              </div>
+              <p className="mt-2 text-xs text-brand-muted">
+                {climbing.monthlyNote} &middot; Live in {climbing.liveIn}
+              </p>
+              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
+                {climbing.features.slice(1, 7).map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <CheckIcon />
+                    <span className="text-brand-muted">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <Link
+                href="/pricing#climbing"
+                className="btn-primary w-full text-center"
               >
                 See Climbing &rarr;
               </Link>
