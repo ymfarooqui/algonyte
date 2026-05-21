@@ -104,7 +104,7 @@ export default function Header() {
             width={96}
             height={96}
             unoptimized
-            className="h-10 w-10 object-contain"
+            className="h-[2.5em] w-[2.5em] object-contain"
           />
           AlgoNyte
         </Link>
