@@ -74,7 +74,7 @@ export default function HowItWorks() {
         </div>
 
         <motion.div
-          className="mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
+          className="gpu-stable mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
           variants={reveal.fadeUpLg}
           role="img"
           aria-label="Unified inbox showing leads from calls, texts, Instagram DMs, and web forms with AI replies and booked appointments"
