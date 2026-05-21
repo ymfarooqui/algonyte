@@ -1,16 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { tiers } from "@/lib/tiers";
-
-const found = tiers.find((t) => t.id === "found")!;
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
 import { isPlaceholder } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
 import { jsonLdString } from "@/lib/jsonLd";
 import { webPresenceServiceSchema } from "@/lib/schema";
+
+const found = tiers.find((t) => t.id === "found")!;
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
 
 const title = "Web Presence | Sites From $299, Hosting Flat at $99/mo";
 const description =
@@ -25,9 +25,6 @@ export const metadata: Metadata = {
 };
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Web Presence", path: "/web-presence" }]);
-
-// Found (index 1) is the featured tier — most service businesses pick it.
-const featuredTierId = "found";
 
 const monthlyIncludes = [
   "Managed hosting, SSL, CDN, daily backups",
@@ -174,51 +171,46 @@ export default function WebPresencePage() {
           <div className="mt-12 max-w-md mx-auto">
             <div
               id={found.id}
-              className="relative flex h-full flex-col rounded-2xl p-7 bg-brand-deep text-brand-soft shadow-deep"
+              className="relative flex h-full flex-col rounded-2xl p-7 bg-brand-soft shadow-soft"
             >
-              <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
-                  Most Popular
-                </span>
-              </div>
-              <h3 className="text-xl font-medium tracking-tight text-brand-soft">
+              <h3 className="text-xl font-medium tracking-tight text-brand-deep">
                 {found.name}
               </h3>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-soft/50">
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
                 Stop worrying about {found.stopWorryingAbout}.
               </p>
               <div className="mt-5 space-y-1">
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-medium tabular-nums text-brand-soft">
+                  <span className="text-2xl font-medium tabular-nums text-brand-deep">
                     ${found.setup}
                   </span>
-                  <span className="text-sm text-brand-soft/60">
+                  <span className="text-sm text-brand-muted">
                     one-time setup
                   </span>
                 </div>
                 <div className="flex items-baseline gap-1.5">
-                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-soft">
+                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
                     ${found.monthly}
                   </span>
-                  <span className="text-sm text-brand-soft/60">
+                  <span className="text-sm text-brand-muted">
                     /mo hosting
                   </span>
                 </div>
               </div>
-              <p className="mt-3 text-xs text-brand-soft/60">
+              <p className="mt-3 text-xs text-brand-muted">
                 Live in {found.liveIn} &middot; Month-to-month
               </p>
               <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
                 {found.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
-                    <CheckIcon featured />
-                    <span className="text-brand-soft/85">{f}</span>
+                    <CheckIcon />
+                    <span className="text-brand-muted">{f}</span>
                   </li>
                 ))}
               </ul>
               <a
                 href={isPlaceholder(found.checkoutUrl) ? "/contact" : found.checkoutUrl}
-                className="btn-primary-featured w-full text-center"
+                className="btn-primary w-full text-center"
               >
                 {isPlaceholder(found.checkoutUrl) ? "Talk to us" : "Get started"}
               </a>
