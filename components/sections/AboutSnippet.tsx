@@ -51,14 +51,9 @@ function LogoMarquee({
     <div className="overflow-hidden relative" aria-hidden="true">
       <div className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-brand-soft to-transparent z-10" />
       <div className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-brand-soft to-transparent z-10" />
-      <motion.div
-        className="flex gap-4 w-max"
-        animate={{ x: reverse ? ["-50%", "0%"] : ["0%", "-50%"] }}
-        transition={{
-          duration,
-          ease: "linear",
-          repeat: Infinity,
-        }}
+      <div
+        className={`flex gap-4 w-max ${reverse ? "marquee-track-reverse" : "marquee-track"}`}
+        style={{ animationDuration: `${duration}s` }}
       >
         {loop.map((c, i) => (
           <div
@@ -73,7 +68,7 @@ function LogoMarquee({
             />
           </div>
         ))}
-      </motion.div>
+      </div>
     </div>
   );
 }

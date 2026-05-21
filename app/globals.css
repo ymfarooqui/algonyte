@@ -250,6 +250,26 @@ body {
 .aurora-b { background: radial-gradient(closest-side, rgb(var(--accent-deep)) 0%, transparent 70%); animation: aurora-drift-b 32s ease-in-out infinite; opacity: 0.22; }
 .aurora-c { background: radial-gradient(closest-side, #94A3B8 0%, transparent 70%); animation: aurora-drift-c 38s ease-in-out infinite; opacity: 0.16; }
 
+/* Continuous logo/channel marquees. CSS-driven (not Framer Motion) so they keep
+   scrolling on touch devices where MotionRoot reduces JS motion. The duration is
+   set inline per row; prefers-reduced-motion zeroes it via the global rule. */
+@keyframes marquee-left {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+.marquee-track {
+  animation: marquee-left linear infinite;
+  will-change: transform;
+}
+.marquee-track-reverse {
+  animation: marquee-right linear infinite;
+  will-change: transform;
+}
+
 .grain {
   position: absolute;
   inset: 0;

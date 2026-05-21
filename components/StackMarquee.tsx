@@ -1,7 +1,5 @@
 "use client";
 
-import { motion } from "motion/react";
-
 const Glyphs = {
   phone: (
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
@@ -171,9 +169,6 @@ function Row({
   variant: "in" | "out";
   duration?: number;
 }) {
-  const xFrom = direction === "left" ? "0%" : "-50%";
-  const xTo = direction === "left" ? "-50%" : "0%";
-
   return (
     <div className="relative overflow-hidden">
       {/* edge fades */}
@@ -186,15 +181,16 @@ function Row({
         className="pointer-events-none absolute inset-y-0 right-0 z-10 w-16 bg-gradient-to-l from-brand-soft to-transparent sm:w-24"
       />
 
-      <motion.ul
-        className="flex w-max gap-3"
-        animate={{ x: [xFrom, xTo] }}
-        transition={{ duration, repeat: Infinity, ease: "linear" }}
+      <ul
+        className={`flex w-max gap-3 ${
+          direction === "left" ? "marquee-track" : "marquee-track-reverse"
+        }`}
+        style={{ animationDuration: `${duration}s` }}
       >
         {[...items, ...items, ...items].map((item, i) => (
           <Chip key={`${variant}-${i}`} item={item} variant={variant} />
         ))}
-      </motion.ul>
+      </ul>
     </div>
   );
 }
