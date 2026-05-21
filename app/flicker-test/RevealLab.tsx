@@ -1,51 +1,24 @@
 "use client";
 
 import { motion } from "motion/react";
-import { useEffect, useRef, useState } from "react";
 
-const EASE_CSS = "cubic-bezier(0.22, 1, 0.36, 1)";
 const EASE_ARR = [0.22, 1, 0.36, 1] as const;
 
-// Tiny IntersectionObserver hook for the CSS-transition techniques (no Framer).
-function useInView<T extends HTMLElement>(amount = 0.4) {
-  const ref = useRef<T>(null);
-  const [inView, setInView] = useState(false);
-  useEffect(() => {
-    const el = ref.current;
-    if (!el) return;
-    const io = new IntersectionObserver(
-      (entries) => {
-        for (const e of entries) {
-          if (e.isIntersecting) {
-            setInView(true);
-            io.unobserve(e.target);
-          }
-        }
-      },
-      { threshold: amount },
-    );
-    io.observe(el);
-    return () => io.disconnect();
-  }, [amount]);
-  return { ref, inView };
-}
-
-// A prominent shadow maximises the chance of reproducing the flash.
-const CARD = "rounded-2xl bg-white p-7 shadow-xl ring-1 ring-slate-200/70";
+const SHADOW = "rounded-2xl bg-white p-7 shadow-xl ring-1 ring-slate-200/70";
+const FLAT = "rounded-2xl bg-white p-7 border-2 border-slate-300";
 
 function CardBody({ id, note }: { id: string; note: string }) {
   return (
     <>
       <div className="flex items-center justify-between">
-        <span className="rounded-full bg-emerald-100 text-emerald-700 px-2.5 py-0.5 text-xs font-semibold">
-          CARD {id}
+        <span className="rounded-full bg-slate-900 text-white px-2.5 py-0.5 text-xs font-semibold">
+          TILE {id}
         </span>
         <span className="text-xs text-slate-400">{note}</span>
       </div>
       <h3 className="mt-4 text-2xl font-semibold text-slate-900">Tile {id}</h3>
       <p className="mt-2 text-slate-500 leading-relaxed">
-        Watch the instant this whole tile and its shadow appear. If it blinks
-        once, this technique still flickers on your device.
+        Watch this tile the moment it scrolls into view. Does it blink once?
       </p>
     </>
   );
@@ -73,136 +46,64 @@ function Block({
   );
 }
 
-// A — CONTROL: Framer Motion (Web Animations API), opacity + slide. Current site.
-function TechA() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5, ease: EASE_ARR }}
-      className={CARD}
-    >
-      <CardBody id="A" note="Framer Motion (current)" />
-    </motion.div>
-  );
-}
-
-// B — Framer Motion + persistent compositor hint (backface-visibility, which
-// Framer never overwrites, unlike transform/will-change).
-function TechB() {
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 24 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.4 }}
-      transition={{ duration: 0.5, ease: EASE_ARR }}
-      style={{ WebkitBackfaceVisibility: "hidden", backfaceVisibility: "hidden" }}
-      className={CARD}
-    >
-      <CardBody id="B" note="Framer + backface-visibility" />
-    </motion.div>
-  );
-}
-
-// C — Native CSS transition (no WAAPI), opacity + slide, on a persistent GPU layer.
-function TechC() {
-  const { ref, inView } = useInView<HTMLDivElement>();
-  return (
-    <div
-      ref={ref}
-      className={CARD}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 0.5s ${EASE_CSS}, transform 0.5s ${EASE_CSS}`,
-        willChange: "transform, opacity",
-        WebkitBackfaceVisibility: "hidden",
-        backfaceVisibility: "hidden",
-      }}
-    >
-      <CardBody id="C" note="CSS transition + GPU layer" />
-    </div>
-  );
-}
-
-// D — Native CSS transition, opacity ONLY (no transform), persistent GPU layer.
-function TechD() {
-  const { ref, inView } = useInView<HTMLDivElement>();
-  return (
-    <div
-      ref={ref}
-      className={CARD}
-      style={{
-        opacity: inView ? 1 : 0,
-        transition: `opacity 0.5s ${EASE_CSS}`,
-        willChange: "opacity",
-        WebkitBackfaceVisibility: "hidden",
-        backfaceVisibility: "hidden",
-      }}
-    >
-      <CardBody id="D" note="CSS transition, opacity-only" />
-    </div>
-  );
-}
-
-// E — Native CSS transition, opacity + slide, with NO GPU promotion at all.
-// Tests whether forcing compositor layers is itself the cause.
-function TechE() {
-  const { ref, inView } = useInView<HTMLDivElement>();
-  return (
-    <div
-      ref={ref}
-      className={CARD}
-      style={{
-        opacity: inView ? 1 : 0,
-        transform: inView ? "translateY(0)" : "translateY(24px)",
-        transition: `opacity 0.5s ${EASE_CSS}, transform 0.5s ${EASE_CSS}`,
-      }}
-    >
-      <CardBody id="E" note="CSS transition, no GPU hint" />
-    </div>
-  );
-}
+const reveal = {
+  initial: { opacity: 0, y: 24 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.4 },
+  transition: { duration: 0.5, ease: EASE_ARR },
+} as const;
 
 export default function RevealLab() {
   return (
     <div className="mx-auto max-w-md px-5 pb-40">
       <div className="min-h-screen flex flex-col justify-center">
-        <h1 className="text-3xl font-bold text-slate-900">Reveal flicker test</h1>
+        <h1 className="text-3xl font-bold text-slate-900">Flicker test — round 2</h1>
         <p className="mt-4 text-slate-600 leading-relaxed">
-          Scroll down slowly on your iPhone. Five tiles (A–E) each appear using a
-          different technique. Note which letters <strong>flash or blink once</strong> as
-          they appear, and which are <strong>completely clean</strong>.
+          Four tiles. Two variables: <strong>animated vs. static</strong> and{" "}
+          <strong>shadow vs. no shadow</strong>. This pins down exactly what
+          causes the flash.
         </p>
+        <ul className="mt-4 text-slate-600 leading-relaxed list-disc pl-5 space-y-1">
+          <li><strong>A</strong> — static card with a shadow (does NOT animate)</li>
+          <li><strong>B</strong> — animated card with a shadow</li>
+          <li><strong>C</strong> — animated card, NO shadow</li>
+          <li><strong>D</strong> — static card, NO shadow</li>
+        </ul>
         <p className="mt-4 text-slate-600 leading-relaxed">
-          Then tell me the result — e.g. <em>“A and B flash, C/D/E are clean.”</em>
-        </p>
-        <p className="mt-6 text-sm text-slate-400">
-          Tip: pull-to-refresh and scroll again to re-watch any tile.
+          Scroll slowly and tell me which letters flash. Even the static ones
+          (A, D) — just scroll them into view and watch.
         </p>
       </div>
 
-      <Block id="A" desc="Framer Motion, opacity + slide. This is exactly the current site behaviour — the control.">
-        <TechA />
+      <Block id="A" desc="STATIC + shadow. Does not animate at all — if this flashes as you scroll past, the cause is iOS repainting the shadow during scroll, not the reveal.">
+        <div className={SHADOW}>
+          <CardBody id="A" note="static · shadow" />
+        </div>
       </Block>
-      <Block id="B" desc="Framer Motion + a persistent GPU layer (backface-visibility).">
-        <TechB />
+
+      <Block id="B" desc="ANIMATED + shadow. Fades and slides in (this is the current site behaviour).">
+        <motion.div {...reveal} className={SHADOW}>
+          <CardBody id="B" note="animated · shadow" />
+        </motion.div>
       </Block>
-      <Block id="C" desc="Native CSS transition (no Framer), opacity + slide, on a persistent GPU layer.">
-        <TechC />
+
+      <Block id="C" desc="ANIMATED + NO shadow (flat border instead). If this is clean but B flashes, the shadow is the culprit.">
+        <motion.div {...reveal} className={FLAT}>
+          <CardBody id="C" note="animated · no shadow" />
+        </motion.div>
       </Block>
-      <Block id="D" desc="Native CSS transition, fade only (no slide), persistent GPU layer.">
-        <TechD />
-      </Block>
-      <Block id="E" desc="Native CSS transition, opacity + slide, with NO GPU layer forced.">
-        <TechE />
+
+      <Block id="D" desc="STATIC + NO shadow. Baseline — this should be perfectly clean.">
+        <div className={FLAT}>
+          <CardBody id="D" note="static · no shadow" />
+        </div>
       </Block>
 
       <div className="min-h-[50vh] flex flex-col justify-center">
         <p className="text-slate-600">
-          That’s all five. Report which letters flashed and which were clean, and
-          I’ll roll the winning technique out across the whole site.
+          Report which letters flashed. That tells me whether it&rsquo;s the
+          shadow, the reveal, or something global — and I&rsquo;ll fix the right
+          thing.
         </p>
       </div>
     </div>

@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function FlickerTestPage() {
   return (
-    <section className="section">
+    <section className="section bg-slate-100">
       <RevealLab />
     </section>
   );
