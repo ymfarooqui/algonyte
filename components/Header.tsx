@@ -88,7 +88,7 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-50 border-b border-brand-line/70 bg-brand-soft/85 backdrop-blur transition-transform duration-300 ease-out ${
+      className={`sticky top-0 z-50 border-b border-brand-line/70 bg-brand-soft transition-transform duration-300 ease-out ${
         hidden ? "-translate-y-full" : "translate-y-0"
       }`}
     >
