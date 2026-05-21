@@ -47,7 +47,7 @@ export default function SocialProof() {
           variants={reveal.container(0.15, 0.1)}
         >
           {metrics.map((m) => (
-            <motion.div key={m.label} variants={reveal.fadeUpLg}>
+            <motion.div key={m.label} variants={reveal.fadeUpLg} className="reveal-static">
               <div className="card text-center h-full">
                 <CountUp
                   to={m.to}

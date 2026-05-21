@@ -54,7 +54,7 @@ export default function WhyNot() {
           variants={reveal.container(0.12, 0.1)}
         >
           {items.map((item) => (
-            <motion.div key={item.q} variants={reveal.fadeUpLg}>
+            <motion.div key={item.q} variants={reveal.fadeUpLg} className="reveal-static">
               <div className="card h-full">
                 <dt className="font-semibold text-brand-deep">{item.q}</dt>
                 <dd className="mt-3 text-sm text-brand-muted leading-relaxed">

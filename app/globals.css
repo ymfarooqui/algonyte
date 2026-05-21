@@ -196,6 +196,18 @@ body {
   }
 }
 
+/* On touch devices (iPhone/iPad) the Framer Motion entrance reveal makes a
+   shadowed card blink once on load — iOS Safari mis-composites the box-shadow
+   while opacity/transform animate in. Skip the entrance on touch: the !important
+   overrides Motion's inline styles so cards render in their final visible state
+   with no fade. Pointer devices keep the reveals. */
+@media (hover: none) and (pointer: coarse) {
+  .reveal-static {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
 
 @keyframes aurora-drift-a {
   0%, 100% { transform: translate3d(-10%, -10%, 0) scale(1); }
