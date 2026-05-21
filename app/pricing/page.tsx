@@ -122,117 +122,8 @@ export default function PricingPage() {
         </div>
       </section>
 
-      {/* At-a-glance table */}
-      <section className="pb-16">
-        <div className="container-page">
-          <p className="eyebrow mb-4">At a glance</p>
-          <h2 className="h-section mb-8 max-w-2xl">Three offerings. Every number on the table.</h2>
-
-          {/* Desktop table */}
-          <div className="hidden sm:block rounded-2xl border border-slate-200 bg-white overflow-hidden">
-            <table className="w-full border-collapse text-sm">
-              <thead>
-                <tr className="border-b border-slate-200 bg-brand-soft/50">
-                  <th className="text-left py-3.5 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                    Offering
-                  </th>
-                  <th className="text-right py-3.5 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                    Setup
-                  </th>
-                  <th className="text-right py-3.5 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                    Monthly
-                  </th>
-                  <th className="text-left py-3.5 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                    Live in
-                  </th>
-                  <th className="text-left py-3.5 px-5 text-xs font-semibold uppercase tracking-wider text-brand-muted">
-                    Commitment
-                  </th>
-                </tr>
-              </thead>
-              <tbody>
-                {tiers.map((tier) => (
-                  <tr
-                    key={tier.id}
-                    className={`border-b border-slate-100 last:border-0 ${
-                      tier.featured ? "bg-brand-accent/20" : ""
-                    }`}
-                  >
-                    <td className="py-3.5 px-5">
-                      <span className="font-medium text-brand-ink">{tier.name}</span>
-                    </td>
-                    <td className="py-3.5 px-5 text-right tabular-nums text-brand-muted">
-                      ${tier.setup}
-                    </td>
-                    <td className="py-3.5 px-5 text-right tabular-nums font-medium text-brand-ink">
-                      ${tier.monthly}/mo
-                      {tier.monthlyNote && (
-                        <span className="block text-xs font-normal text-brand-muted">
-                          {tier.monthlyNote}
-                        </span>
-                      )}
-                    </td>
-                    <td className="py-3.5 px-5 text-brand-muted">{tier.liveIn}</td>
-                    <td className="py-3.5 px-5 text-brand-muted">
-                      {commitmentLabel[tier.commitment]}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
-          {/* Mobile cards */}
-          <div className="sm:hidden space-y-3">
-            {tiers.map((tier) => (
-              <div key={tier.id} className="rounded-xl border border-slate-200 bg-white p-4">
-                <div className="flex items-center justify-between mb-3">
-                  <span className="font-medium text-brand-ink">{tier.name}</span>
-                </div>
-                <dl className="grid grid-cols-2 gap-y-2 text-sm">
-                  <dt className="text-brand-muted">Setup</dt>
-                  <dd className="text-right tabular-nums text-brand-ink font-medium">
-                    ${tier.setup}
-                  </dd>
-                  <dt className="text-brand-muted">Monthly</dt>
-                  <dd className="text-right tabular-nums text-brand-ink font-medium">
-                    ${tier.monthly}/mo
-                    {tier.monthlyNote && (
-                      <span className="block text-xs font-normal text-brand-muted">
-                        {tier.monthlyNote}
-                      </span>
-                    )}
-                  </dd>
-                  <dt className="text-brand-muted">Live in</dt>
-                  <dd className="text-right text-brand-muted">{tier.liveIn}</dd>
-                  <dt className="text-brand-muted">Commitment</dt>
-                  <dd className="text-right text-brand-muted">
-                    {commitmentLabel[tier.commitment]}
-                  </dd>
-                </dl>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Hosting callout */}
-      <section className="pb-16">
-        <div className="container-page">
-          <div className="rounded-2xl border border-brand-deep/20 bg-gradient-to-br from-brand-accent/40 via-white to-white p-6 sm:p-8">
-            <p className="text-lg font-semibold text-brand-deep">
-              ${HOSTING_FLAT}/mo flat hosting on Found. Forever. Never moves as you grow.
-            </p>
-            <p className="mt-3 text-brand-muted leading-relaxed max-w-2xl">
-              One flat hosting price on Found. Includes SSL, CDN, 1 hour of edits per month,
-              and a direct line when something breaks. Climbing is all-in (hosting included).
-            </p>
-          </div>
-        </div>
-      </section>
-
       {/* Offerings grid */}
-      <section className="pb-20">
+      <section className="pb-12">
         <div className="container-page">
           <p className="eyebrow mb-4">Offerings</p>
           <h2 className="h-section max-w-3xl mb-10">
@@ -337,6 +228,17 @@ export default function PricingPage() {
                 </div>
               );
             })}
+          </div>
+
+          {/* Hosting callout — under the cards */}
+          <div className="mt-8 rounded-2xl border border-brand-deep/20 bg-gradient-to-br from-brand-accent/40 via-white to-white p-6 sm:p-8">
+            <p className="text-lg font-semibold text-brand-deep">
+              ${HOSTING_FLAT}/mo flat hosting on Found. Forever. Never moves as you grow.
+            </p>
+            <p className="mt-3 text-brand-muted leading-relaxed max-w-2xl">
+              One flat hosting price on Found. Includes SSL, CDN, 1 hour of edits per month,
+              and a direct line when something breaks. Climbing is all-in (hosting included).
+            </p>
           </div>
         </div>
       </section>
