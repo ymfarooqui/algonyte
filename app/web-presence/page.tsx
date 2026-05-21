@@ -1,6 +1,10 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { siteTiers, growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
+
+const found = tiers.find((t) => t.id === "found")!;
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
 import { isPlaceholder } from "@/lib/constants";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
@@ -10,7 +14,7 @@ import { webPresenceServiceSchema } from "@/lib/schema";
 
 const title = "Web Presence | Sites From $299, Hosting Flat at $99/mo";
 const description =
-  "End-to-end web presence for service businesses. Sites built from $299 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
+  "End-to-end web presence for service businesses. Found from $449 one-time, then $99/mo flat hosting forever. Live in 5–7 days. Google Business Profile setup included.";
 
 export const metadata: Metadata = {
   title,
@@ -37,7 +41,7 @@ const monthlyIncludes = [
 const faqs = [
   {
     q: "What does the $99/mo cover?",
-    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, a quarterly health check, and a direct line when something breaks. The price is flat and identical across all three tiers: Open, Found, and Polished.",
+    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, and a quarterly health check. Flat $99/mo on Found.",
   },
   {
     q: "I already have a website. Do I have to replace it?",
@@ -53,7 +57,7 @@ const faqs = [
   },
   {
     q: "How fast can you get me live?",
-    a: "Open ships in 72 hours from a signed brief. Found is 5–7 days. Polished is 7–12 days because it includes a full custom design pass. We hold ourselves to these. They're public numbers.",
+    a: "Found is 5–7 days from a signed brief. We hold ourselves to that. It's a public number.",
   },
   {
     q: "What about contracts? I've heard horror stories with Hibu and Scorpion.",
@@ -103,7 +107,7 @@ export default function WebPresencePage() {
               Your business runs while you sleep, starting with a site that gets you found.
             </p>
             <p className="lede mt-6 max-w-2xl">
-              Site live in 72 hours. Built for your brand, hosted for{" "}
+              Site live in 5–7 days. Built for your brand, hosted for{" "}
               <strong>$99/mo flat</strong>, indexed on Google from day one.
               Starting from <strong>$299</strong> one-time, then $99/mo
               forever. No tiered hosting nonsense, no contracts.
@@ -167,102 +171,58 @@ export default function WebPresencePage() {
             monthly never moves.
           </p>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-3 md:items-stretch">
-            {siteTiers.map((tier) => {
-              const featured = tier.id === featuredTierId;
-              return (
-                <div
-                  key={tier.id}
-                  id={tier.id}
-                  className={`relative flex h-full flex-col rounded-2xl p-7 ${
-                    featured
-                      ? "bg-brand-deep text-brand-soft shadow-deep -translate-y-2 sm:-translate-y-4"
-                      : "lift-card bg-brand-soft shadow-soft"
-                  }`}
-                >
-                  {featured && (
-                    <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                      <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
-                  <h3
-                    className={`text-xl font-medium tracking-tight ${
-                      featured ? "text-brand-soft" : "text-brand-deep"
-                    }`}
-                  >
-                    {tier.name}
-                  </h3>
-                  <p
-                    className={`mt-1 text-xs font-semibold uppercase tracking-[0.18em] ${
-                      featured ? "text-brand-soft/50" : "text-brand-deep/50"
-                    }`}
-                  >
-                    Stop worrying about {tier.stopWorryingAbout}.
-                  </p>
-                  <div className="mt-5 space-y-1">
-                    <div className="flex items-baseline gap-1.5">
-                      <span
-                        className={`text-2xl font-medium tabular-nums ${
-                          featured ? "text-brand-soft" : "text-brand-ink"
-                        }`}
-                      >
-                        ${tier.setup}
-                      </span>
-                      <span
-                        className={`text-sm ${
-                          featured ? "text-brand-soft/60" : "text-brand-muted"
-                        }`}
-                      >
-                        one-time setup
-                      </span>
-                    </div>
-                    <div className="flex items-baseline gap-1.5">
-                      <span
-                        className={`text-4xl font-medium tracking-tight tabular-nums ${
-                          featured ? "text-brand-soft" : "text-brand-deep"
-                        }`}
-                      >
-                        ${tier.monthly}
-                      </span>
-                      <span
-                        className={`text-sm ${
-                          featured ? "text-brand-soft/60" : "text-brand-muted"
-                        }`}
-                      >
-                        /mo hosting
-                      </span>
-                    </div>
-                  </div>
-                  <p
-                    className={`mt-3 text-xs ${
-                      featured ? "text-brand-soft/60" : "text-brand-muted"
-                    }`}
-                  >
-                    Live in {tier.liveIn} &middot; Month-to-month
-                  </p>
-                  <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                    {tier.features.map((f) => (
-                      <li key={f} className="flex items-start gap-2.5">
-                        <CheckIcon featured={featured} />
-                        <span
-                          className={featured ? "text-brand-soft/85" : "text-brand-muted"}
-                        >
-                          {f}
-                        </span>
-                      </li>
-                    ))}
-                  </ul>
-                  <a
-                    href={isPlaceholder(tier.checkoutUrl) ? "/contact" : tier.checkoutUrl}
-                    className={`${featured ? "btn-primary-featured" : "btn-primary"} w-full text-center`}
-                  >
-                    {isPlaceholder(tier.checkoutUrl) ? "Talk to us" : "Get started"}
-                  </a>
+          <div className="mt-12 max-w-md mx-auto">
+            <div
+              id={found.id}
+              className="relative flex h-full flex-col rounded-2xl p-7 bg-brand-deep text-brand-soft shadow-deep"
+            >
+              <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
+                <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
+                  Most Popular
+                </span>
+              </div>
+              <h3 className="text-xl font-medium tracking-tight text-brand-soft">
+                {found.name}
+              </h3>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-soft/50">
+                Stop worrying about {found.stopWorryingAbout}.
+              </p>
+              <div className="mt-5 space-y-1">
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-2xl font-medium tabular-nums text-brand-soft">
+                    ${found.setup}
+                  </span>
+                  <span className="text-sm text-brand-soft/60">
+                    one-time setup
+                  </span>
                 </div>
-              );
-            })}
+                <div className="flex items-baseline gap-1.5">
+                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-soft">
+                    ${found.monthly}
+                  </span>
+                  <span className="text-sm text-brand-soft/60">
+                    /mo hosting
+                  </span>
+                </div>
+              </div>
+              <p className="mt-3 text-xs text-brand-soft/60">
+                Live in {found.liveIn} &middot; Month-to-month
+              </p>
+              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
+                {found.features.map((f) => (
+                  <li key={f} className="flex items-start gap-2.5">
+                    <CheckIcon featured />
+                    <span className="text-brand-soft/85">{f}</span>
+                  </li>
+                ))}
+              </ul>
+              <a
+                href={isPlaceholder(found.checkoutUrl) ? "/contact" : found.checkoutUrl}
+                className="btn-primary-featured w-full text-center"
+              >
+                {isPlaceholder(found.checkoutUrl) ? "Talk to us" : "Get started"}
+              </a>
+            </div>
           </div>
 
           {/* $99/mo callout */}
@@ -312,7 +272,7 @@ export default function WebPresencePage() {
             priced separately. Start week one or add them later.
           </p>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-3">
+          <div className="mt-12 grid gap-5 sm:grid-cols-2">
             {/* Awake */}
             <Link
               href="/pricing#awake"
@@ -324,7 +284,7 @@ export default function WebPresencePage() {
               <div className="flex items-baseline justify-between gap-3">
                 <h3 className="text-lg font-semibold text-brand-deep">Awake</h3>
                 <span className="text-sm font-medium text-brand-ink">
-                  ${growthTiers[0].setup} + ${growthTiers[0].monthly}/mo
+                  ${awake.setup} + ${awake.monthly}/mo
                 </span>
               </div>
               <p className="mt-2 text-brand-muted leading-relaxed text-sm">
@@ -350,7 +310,7 @@ export default function WebPresencePage() {
               <div className="flex items-baseline justify-between gap-3 flex-wrap gap-y-1">
                 <h3 className="text-lg font-semibold text-brand-deep">Climbing</h3>
                 <span className="text-sm font-medium text-brand-ink">
-                  ${growthTiers[1].setup} + ${growthTiers[1].monthly}/mo
+                  ${climbing.setup} + ${climbing.monthly}/mo
                 </span>
               </div>
               <p className="mt-1 text-xs text-brand-muted">all-in (includes hosting)</p>
@@ -360,33 +320,6 @@ export default function WebPresencePage() {
               </p>
               <p className="mt-4 text-sm font-medium text-brand-deep">
                 See Climbing
-                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </p>
-            </Link>
-
-            {/* Scale */}
-            <Link
-              href="/pricing#scale"
-              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
-                Want a predictable lead pipeline?
-              </p>
-              <div className="flex items-baseline justify-between gap-3 flex-wrap gap-y-1">
-                <h3 className="text-lg font-semibold text-brand-deep">Scale</h3>
-                <span className="text-sm font-medium text-brand-ink">
-                  ${growthTiers[2].setup} + ${growthTiers[2].monthly}/mo
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-brand-muted">+ ad spend</p>
-              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
-                Everything in Climbing plus Google and Meta ads managed weekly,
-                with AI follow-up on every ad lead.
-              </p>
-              <p className="mt-4 text-sm font-medium text-brand-deep">
-                See Scale
                 <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
                   →
                 </span>
@@ -410,7 +343,7 @@ export default function WebPresencePage() {
               manager&rsquo;s manager calls you back in four business days.
             </p>
             <p>
-              We ship in 72 hours to 12 days, charge $99/mo flat (the price
+              We ship in 5–7 days, charge $99/mo flat (the price
               doesn&rsquo;t move when you add pages, when we rebuild, or when
               you add a product), and you get a direct line. Month-to-month. No
               12-month trap.
