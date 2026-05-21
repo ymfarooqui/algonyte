@@ -10,7 +10,7 @@ import { aiReceptionistServiceSchema } from "@/lib/schema";
 const awake = growthTiers[0];
 const climbing = growthTiers[1];
 
-const title = "AI Receptionist for Service Businesses | Algonyte";
+const title = "AI Receptionist for Service Businesses | AlgoNyte";
 const description = `AI receptionist answers, qualifies, and books your leads 24/7. Two flavors: Awake ($${awake.monthly}/mo, chat + DMs + missed-call text-back, live in ${awake.liveIn}) and Climbing ($${climbing.monthly}/mo, adds voice AI + Local SEO, live in ${climbing.liveIn}).`;
 
 export const metadata: Metadata = {
@@ -305,7 +305,7 @@ export default function AIReceptionistPage() {
                 <tr className="border-b border-slate-100">
                   <th className="px-5 py-4 text-left font-semibold text-brand-deep w-40"></th>
                   <th className="px-5 py-4 text-left font-semibold text-brand-deep bg-brand-accent/40">
-                    Algonyte Awake
+                    AlgoNyte Awake
                   </th>
                   <th className="px-5 py-4 text-left font-semibold text-brand-muted">
                     Podium Core + AI

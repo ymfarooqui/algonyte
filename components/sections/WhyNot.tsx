@@ -19,7 +19,7 @@ const items = [
   },
   {
     q: "Why not a $59 DIY tool (Goodcall, Numa)?",
-    a: "Those are cheap because you build and maintain the system yourself. Algonyte is done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
+    a: "Those are cheap because you build and maintain the system yourself. AlgoNyte is done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
   },
 ];
 

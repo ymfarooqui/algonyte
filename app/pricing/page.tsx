@@ -11,7 +11,7 @@ import { pricingSchema, foundingOfferSchema } from "@/lib/schema";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
-const pricingTitle = "Pricing | Algonyte — Plans from $99/mo";
+const pricingTitle = "Pricing | AlgoNyte — Plans from $99/mo";
 const pricingDescription =
   "Two products. Six rungs. From $99/mo to $1,199/mo. Live in 72 hours to 14 days. No long-term contracts except 6 months on SEO.";
 
@@ -575,7 +575,7 @@ export default function PricingPage() {
       {/* What makes this different */}
       <section className="pb-20">
         <div className="container-page">
-          <p className="eyebrow mb-4">Why Algonyte</p>
+          <p className="eyebrow mb-4">Why AlgoNyte</p>
           <h2 className="h-section max-w-2xl mb-8">What makes this different.</h2>
           <div className="max-w-xl rounded-2xl border border-brand-deep/15 bg-white p-6 sm:p-8">
             <ul className="space-y-3">

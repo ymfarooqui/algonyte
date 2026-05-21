@@ -1,15 +1,15 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Terms of Service | Algonyte Labs",
+  title: "Terms of Service | AlgoNyte",
   description:
-    "The terms that govern your use of the Algonyte Labs website, AI receptionist services, automation builds, and monthly subscription plans.",
+    "The terms that govern your use of the AlgoNyte website, AI receptionist services, automation builds, and monthly subscription plans.",
   alternates: { canonical: "/terms" },
   robots: { index: true, follow: true },
 };
 
 const LAST_UPDATED = "May 9, 2026";
-const ENTITY = "Algonyte Labs";
+const ENTITY = "AlgoNyte";
 const ADDRESS = "545 N McClurg Ct, Chicago, IL 60611";
 const LEGAL_EMAIL = "yaseen@algonyte.com";
 
@@ -24,7 +24,7 @@ export default function TermsPage() {
         <div className="mt-12 space-y-6 text-brand-ink/90 leading-relaxed [&_h2]:text-2xl [&_h2]:font-semibold [&_h2]:text-brand-deep [&_h2]:mt-12 [&_h2]:mb-4 [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-2 [&_a]:text-brand-deep [&_a]:font-medium [&_a]:underline">
           <p>
             These Terms of Service (&ldquo;Terms&rdquo;) form a binding agreement between you and{" "}
-            {ENTITY} (&ldquo;Algonyte Labs,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
+            {ENTITY} (&ldquo;AlgoNyte,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or
             &ldquo;our&rdquo;) and govern your use of{" "}
             <a href="https://algonyte.com">algonyte.com</a> and any services we
             provide (collectively, the &ldquo;Services&rdquo;). By using the Services you agree to
@@ -40,7 +40,7 @@ export default function TermsPage() {
 
           <h2>2. The Services</h2>
           <p>
-            Algonyte Labs provides AI-driven business automation services, which may include CRM
+            AlgoNyte provides AI-driven business automation services, which may include CRM
             setup, voice agents, automated follow-up, content generation, and related consulting
             and implementation work. The specific scope, deliverables, and timing of any engagement
             are described in your selected subscription plan or in a separate written statement of
@@ -196,7 +196,7 @@ export default function TermsPage() {
 
           <h2>14. Indemnification</h2>
           <p>
-            You will defend, indemnify, and hold harmless Algonyte Labs and its owners,
+            You will defend, indemnify, and hold harmless AlgoNyte and its owners,
             employees, and contractors from any claim, loss, or expense (including reasonable
             attorneys&rsquo; fees) arising out of (a) your use of the Services in violation of
             these Terms, (b) your Customer Content, or (c) your violation of any law or third-party

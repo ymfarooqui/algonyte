@@ -29,10 +29,10 @@ export function pricingSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Product",
-    name: "Algonyte Plans",
+    name: "AlgoNyte Plans",
     description:
       "Two products: Presence (web build + flat $99/mo hosting) and Growth (monthly retainers for reception, SEO, and ads). Six rungs from $99/mo to $1,199/mo.",
-    brand: { "@type": "Brand", name: "Algonyte" },
+    brand: { "@type": "Brand", name: "AlgoNyte" },
     offers: {
       "@type": "AggregateOffer",
       lowPrice: 99,
@@ -48,7 +48,7 @@ export function foundingOfferSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Offer",
-    name: "Algonyte Founding Member",
+    name: "AlgoNyte Founding Member",
     description:
       "3 founding spots. 50% off setup. 30% off any Growth tier for 6 months. After 6 months reverts to standard pricing.",
     availability: "https://schema.org/LimitedAvailability",
@@ -67,7 +67,7 @@ export function aiReceptionistServiceSchema() {
     "@type": "Service",
     "@id": `${siteConfig.url}/ai-receptionist#service`,
     serviceType: "AI Receptionist",
-    name: "AI Receptionist by Algonyte",
+    name: "AI Receptionist by AlgoNyte",
     provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     description,
     areaServed: { "@type": "Country", name: "United States" },
@@ -92,7 +92,7 @@ export function reputationManagementServiceSchema() {
     "@type": "Service",
     "@id": `${siteConfig.url}/reputation-manager#service`,
     serviceType: "Reputation Management",
-    name: "Reputation Management by Algonyte",
+    name: "Reputation Management by AlgoNyte",
     provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     description,
     areaServed: { "@type": "Country", name: "United States" },
@@ -115,7 +115,7 @@ export function webPresenceServiceSchema() {
     "@type": "Service",
     "@id": `${siteConfig.url}/web-presence#service`,
     serviceType: "Web Design, Hosting, and Local SEO",
-    name: "Web Presence by Algonyte",
+    name: "Web Presence by AlgoNyte",
     provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     description,
     areaServed: { "@type": "Country", name: "United States" },

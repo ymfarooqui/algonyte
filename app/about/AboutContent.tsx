@@ -43,14 +43,14 @@ export default function AboutContent() {
         >
           <div className="max-w-3xl">
             <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-              About Algonyte Labs
+              About AlgoNyte
             </motion.p>
             <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
               We run the hard parts of your business{" "}
               <span className="text-brand-deep">so you don&rsquo;t have to.</span>
             </motion.h1>
             <motion.p className="lede mt-6 max-w-2xl" variants={reveal.fadeUp}>
-              Algonyte Labs is a small team that handles AI, marketing, and
+              AlgoNyte is a small team that handles AI, marketing, and
               the systems behind them for businesses that don&rsquo;t have time
               to figure it out themselves.
             </motion.p>
@@ -135,7 +135,7 @@ export default function AboutContent() {
             <motion.div className="relative" variants={reveal.fadeUpLg}>
               <Image
                 src="/yf-headshot.jpg"
-                alt="Yaseen Farooqui, founder of Algonyte Labs, AI receptionist for service businesses"
+                alt="Yaseen Farooqui, founder of AlgoNyte, AI receptionist for service businesses"
                 width={480}
                 height={480}
                 className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover object-top aspect-square"
@@ -157,7 +157,7 @@ export default function AboutContent() {
                   AI-Enablement and Quality and Release, who has spent years
                   building AI systems for large insurance carriers, enterprise
                   tech platforms, and businesses across retail and service
-                  industries. He founded Algonyte Labs to bring the same tools
+                  industries. He founded AlgoNyte to bring the same tools
                   these companies rely on to any business that gets leads and
                   books appointments.
                 </motion.p>
@@ -172,7 +172,7 @@ export default function AboutContent() {
                   variants={reveal.fadeUp}
                 >
                   This isn&rsquo;t a marketing agency that added &ldquo;AI&rdquo;
-                  to the name. The systems Algonyte Labs builds are the same
+                  to the name. The systems AlgoNyte builds are the same
                   ones running in production today.
                 </motion.p>
               </motion.div>

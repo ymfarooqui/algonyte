@@ -5,7 +5,7 @@ import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Contact: AI Receptionist Consult | Chicago, Detroit, Midwest";
 const description =
-  "Talk to Algonyte Labs about an AI receptionist for your business. We work with service businesses in Chicago, Detroit, and across the Midwest.";
+  "Talk to AlgoNyte about an AI receptionist for your business. We work with service businesses in Chicago, Detroit, and across the Midwest.";
 
 export const metadata: Metadata = {
   title,
