@@ -53,77 +53,6 @@ function FormCard() {
   );
 }
 
-function ChatReplyCard() {
-  const { s } = useAnimSpeed();
-  return (
-    <div className="flex h-full flex-col justify-around gap-2">
-      <motion.div
-        initial={{ opacity: 0, x: -8 }}
-        animate={{ opacity: 1, x: 0 }}
-        transition={{ duration: s(0.5), ease: EASE }}
-        className="self-start max-w-[80%] rounded-2xl rounded-bl-sm bg-slate-100 px-3 py-2"
-      >
-        <p className="text-[10px] text-slate-700">Hi, do you do roof inspections?</p>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: 6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: s(0.6), duration: s(0.5), ease: EASE }}
-        className="self-end max-w-[85%] rounded-2xl rounded-br-sm bg-brand-deep px-3 py-2"
-      >
-        <p className="text-[10px] text-white leading-snug">
-          Yes! I can have someone out this week. What&rsquo;s the address?
-        </p>
-      </motion.div>
-      <div className="flex items-center gap-1 self-end text-[9px] text-emerald-600">
-        <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
-        Replied in 4s
-      </div>
-    </div>
-  );
-}
-
-function QualifyCard() {
-  const { s } = useAnimSpeed();
-  const items = [
-    { label: "Service area", ok: true },
-    { label: "Budget fit", ok: true },
-    { label: "Timeline", ok: true },
-    { label: "Decision maker", ok: true },
-  ];
-  return (
-    <div className="flex h-full flex-col gap-1.5">
-      <div className="flex flex-1 flex-col justify-evenly gap-1.5">
-        {items.map((it, i) => (
-          <motion.div
-            key={it.label}
-            initial={{ opacity: 0, x: -8 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ delay: s(0.15 + i * 0.18), duration: s(0.4), ease: EASE }}
-            className="flex items-center gap-2 rounded-md bg-slate-50 px-2 py-2 ring-1 ring-slate-100"
-          >
-            <span className="flex h-3.5 w-3.5 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-              <svg viewBox="0 0 24 24" className="h-2 w-2" fill="none">
-                <path
-                  d="m5 12 4.5 4.5L19 7"
-                  stroke="currentColor"
-                  strokeWidth="3"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                />
-              </svg>
-            </span>
-            <p className="text-[10px] text-slate-700">{it.label}</p>
-          </motion.div>
-        ))}
-      </div>
-      <div className="flex items-center justify-between rounded-md bg-emerald-50 px-2 py-2 ring-1 ring-emerald-100">
-        <span className="text-[10px] font-semibold text-emerald-700">Qualified</span>
-        <span className="text-[10px] font-mono text-emerald-700">8/10</span>
-      </div>
-    </div>
-  );
-}
 
 function CalendarCard() {
   const { s } = useAnimSpeed();
@@ -178,53 +107,6 @@ function CalendarCard() {
   );
 }
 
-function ConfirmCard() {
-  const { s } = useAnimSpeed();
-  return (
-    <div className="flex h-full flex-col justify-evenly gap-2">
-      <motion.div
-        initial={{ opacity: 0, y: -6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: s(0.2), duration: s(0.5), ease: EASE }}
-        className="flex items-start gap-2 rounded-md bg-emerald-50 ring-1 ring-emerald-100 px-2 py-2"
-      >
-        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white">
-          <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none">
-            <path d="M3 7l3-3h12l3 3M3 7v12h18V7M3 7l9 7 9-7" stroke="currentColor" strokeWidth="2" />
-          </svg>
-        </span>
-        <div className="flex-1 min-w-0">
-          <p className="text-[10px] font-semibold text-emerald-900">Email sent</p>
-          <p className="text-[9px] text-emerald-700">Confirmation + calendar invite</p>
-        </div>
-      </motion.div>
-      <motion.div
-        initial={{ opacity: 0, y: -6 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: s(0.5), duration: s(0.5), ease: EASE }}
-        className="flex items-start gap-2 rounded-md bg-sky-50 ring-1 ring-sky-100 px-2 py-2"
-      >
-        <span className="flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-sky-500 text-white">
-          <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none">
-            <path
-              d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
-              stroke="currentColor"
-              strokeWidth="2"
-            />
-          </svg>
-        </span>
-        <div className="flex-1 min-w-0">
-          <p className="text-[10px] font-semibold text-sky-900">SMS reminder</p>
-          <p className="text-[9px] text-sky-700">24h before appointment</p>
-        </div>
-      </motion.div>
-      <div className="flex items-center gap-1 text-[9px] font-medium text-brand-muted">
-        <span className="h-1.5 w-1.5 rounded-full bg-brand-primary" />
-        No-shows down 60%
-      </div>
-    </div>
-  );
-}
 
 function GrowthCard() {
   const { s } = useAnimSpeed();
