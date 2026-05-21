@@ -4,10 +4,13 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist for Auto Dealerships | Book Test Drives 24/7";
-const description = `AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7, even when sales is on the lot. Plans from $${growthTiers[0].monthly}/mo.`;
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
+
+const description = `AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7, even when sales is on the lot. Plans from $${awake.monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -33,8 +36,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: growthTiers[0].monthly,
-    highPrice: growthTiers[1].monthly,
+    lowPrice: awake.monthly,
+    highPrice: climbing.monthly,
     offerCount: 3,
   },
   subjectOf: {
@@ -261,7 +264,7 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <h2 className="h-section">Plans starting at ${growthTiers[0].monthly}/month.</h2>
+          <h2 className="h-section">Plans starting at ${awake.monthly}/month.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Awake is the missed-call text-back and SMS qualification flow: chat
             on your site, DM auto-reply, and auto-booking 24/7. Climbing adds

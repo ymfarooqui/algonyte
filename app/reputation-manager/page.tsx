@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
 import { reputationManagementServiceSchema } from "@/lib/schema";
 
-const awake = growthTiers[0];
-const climbing = growthTiers[1];
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
 
 const title = "Reputation Management for Service Businesses | AlgoNyte";
 const description =

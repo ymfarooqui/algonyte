@@ -306,23 +306,8 @@ const I = {
 
 const STAGES: Stage[] = [
   {
-    id: "site-open",
-    label: "Presence — Open",
-    sub: "Live in 72 hours",
-    blurb:
-      "A 5-page site that gets your business online fast. Mobile-first build, on-page SEO foundations, Google Business Profile claimed, hosting included at a flat rate.",
-    bullets: [
-      "5 pages: Home, Services, About, Reviews, Contact",
-      "On-page SEO foundations from day one",
-      "Flat monthly hosting, no surprises",
-    ],
-    stat: { value: "72h", label: "to live" },
-    card: <FormCard />,
-    icon: I.capture,
-  },
-  {
-    id: "site-found",
-    label: "Presence — Found",
+    id: "found",
+    label: "Found",
     sub: "Live in 5–7 days",
     blurb:
       "Up to 8 pages with location and service coverage, structured data for AI search, and an online booking calendar so customers can book around the clock.",
@@ -332,27 +317,12 @@ const STAGES: Stage[] = [
       "Structured data for Google and AI search",
     ],
     stat: { value: "8", label: "pages covered" },
-    card: <ChatReplyCard />,
-    icon: I.reply,
+    card: <FormCard />,
+    icon: I.capture,
   },
   {
-    id: "site-polished",
-    label: "Presence — Polished",
-    sub: "Live in 7–12 days",
-    blurb:
-      "Up to 12 pages with a custom design pass built for your brand, a conversion-optimised landing page for your top offer, and 30 days priority support post-launch.",
-    bullets: [
-      "Custom design, not a template variant",
-      "Conversion-optimised landing page included",
-      "30 days priority post-launch support",
-    ],
-    stat: { value: "12", label: "pages max" },
-    card: <QualifyCard />,
-    icon: I.qualify,
-  },
-  {
-    id: "growth-awake",
-    label: "Growth — Awake",
+    id: "awake",
+    label: "Awake",
     sub: "Live in 5 days",
     blurb:
       "AI chat on your site, missed-call text-back, DM auto-reply on every platform, and auto-booking onto your calendar. No lead goes cold after hours.",
@@ -366,32 +336,17 @@ const STAGES: Stage[] = [
     icon: I.book,
   },
   {
-    id: "growth-climbing",
-    label: "Growth — Climbing",
+    id: "climbing",
+    label: "Climbing",
     sub: "Live in 10–14 days",
     blurb:
       "Everything in Awake plus a voice AI phone receptionist, ongoing local SEO, and monthly strategy calls, so you show up on Google and every call gets answered.",
     bullets: [
       "Voice AI answers, qualifies, and books calls",
-      "Weekly Google Business Profile posts",
-      "1–2 new SEO pages per month",
+      "Ongoing Google Business Profile work",
+      "Monthly rank tracking + traffic report",
     ],
     stat: { value: "<5s", label: "first response" },
-    card: <ConfirmCard />,
-    icon: I.confirm,
-  },
-  {
-    id: "growth-scale",
-    label: "Growth — Scale",
-    sub: "Live in 14 days",
-    blurb:
-      "Everything in Climbing plus Google Search Ads, Local Service Ads, and Meta Ads managed end-to-end. Every click traced through to revenue. You hold the ad accounts.",
-    bullets: [
-      "Google + Meta ads managed weekly",
-      "2 conversion landing pages per quarter",
-      "Closed-loop tracking from click to revenue",
-    ],
-    stat: { value: "+38%", label: "booked revenue (avg)" },
     card: <GrowthCard />,
     icon: I.growth,
   },
