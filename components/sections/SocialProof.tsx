@@ -31,13 +31,13 @@ export default function SocialProof() {
   return (
     <section className="section bg-brand-soft">
       <div className="container-page">
-        <Reveal as="h2" className="h-section max-w-2xl" delay={0.05}>
+        <Reveal as="h2" className="h-section max-w-2xl">
           What this looks like in real businesses.
         </Reveal>
 
         <div className="mt-12 grid gap-5 sm:grid-cols-3">
           {metrics.map((m, i) => (
-            <Reveal key={m.label} y={24} delay={0.1 + i * 0.15}>
+            <Reveal key={m.label} delay={i * 0.06}>
               <div className="card text-center h-full">
                 <CountUp
                   to={m.to}
@@ -61,7 +61,6 @@ export default function SocialProof() {
                 as="figure"
                 key={t.name}
                 className="relative mx-auto max-w-3xl py-10 sm:py-12"
-                delay={0.1}
               >
                 <span
                   aria-hidden

@@ -20,8 +20,7 @@ export default function StatsStrip() {
         {stats.map((s, i) => (
           <Reveal
             key={s.label}
-            y={24}
-            delay={0.05 + i * 0.12}
+            delay={i * 0.06}
             className="px-6 py-14 sm:py-16 text-center"
           >
             <div className="text-brand-deep text-5xl sm:text-6xl lg:text-7xl font-medium leading-none tracking-tightest tabular-nums">

@@ -15,14 +15,14 @@ export default function Hero() {
 
       <div className="relative container-page pt-10 pb-16 sm:pt-14 sm:pb-20 lg:pt-16 lg:pb-24">
         <div className="max-w-3xl mx-auto text-center px-2 sm:px-0">
-          <Reveal as="h1" className="h-display" y={24} delay={0.05}>
+          <Reveal as="h1" className="h-display" delay={0.04}>
             Your business should run{" "}
             <em className="not-italic text-brand-primary">while you sleep.</em>
           </Reveal>
           <Reveal
             as="p"
             className="mt-6 font-mono text-xs uppercase tracking-[0.2em] text-brand-muted"
-            delay={0.17}
+            delay={0.1}
           >
             {["Presence", "Receptionist", "Voice Agents", "Local SEO", "Reputation"].map(
               (item, i) => (
@@ -40,17 +40,17 @@ export default function Hero() {
           </Reveal>
         </div>
 
-        <Reveal className="mt-12 mx-auto max-w-4xl" delay={0.29}>
+        <Reveal className="mt-12 mx-auto max-w-4xl" delay={0.16}>
           <HeroVisual />
         </Reveal>
 
         <div className="mt-10 mx-auto max-w-2xl text-center px-2 sm:px-0">
-          <Reveal as="p" className="lede" delay={0.41}>
+          <Reveal as="p" className="lede" delay={0.22}>
             Site live in 5–7 days. Reception in 5 days. Full SEO + voice in two weeks.
           </Reveal>
         </div>
 
-        <Reveal className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3" delay={0.53}>
+        <Reveal className="mt-10 flex flex-wrap justify-center items-center gap-x-6 gap-y-3" delay={0.28}>
           <BookingButton className="group btn-primary">
             Show me what this looks like for my business
             <svg
