@@ -69,6 +69,7 @@ export const tiers: readonly Tier[] = [
       "Custom dashboard: missed calls handled, DMs replied, leads booked",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_AWAKE]",
+    featured: true,
   },
   {
     id: "climbing",
@@ -92,7 +93,6 @@ export const tiers: readonly Tier[] = [
       "Quarterly strategy call",
     ],
     checkoutUrl: "[PLACEHOLDER_GHL_CHECKOUT_CLIMBING]",
-    featured: true,
   },
 ] as const;
 
