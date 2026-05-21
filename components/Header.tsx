@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 import { usePathname } from "next/navigation";
 import { BookingButton } from "@/components/BookingModal";
@@ -95,8 +96,16 @@ export default function Header() {
         <Link
           href="/"
           aria-label="AlgoNyte home"
-          className="font-medium tracking-tight text-brand-deep text-lg sm:text-xl"
+          className="flex items-center gap-2.5 font-medium tracking-tight text-brand-deep text-lg sm:text-xl"
         >
+          <Image
+            src="/algonyte-labs-logo.png"
+            alt="AlgoNyte logo"
+            width={96}
+            height={96}
+            unoptimized
+            className="h-[2.5em] w-[2.5em] object-contain"
+          />
           AlgoNyte
         </Link>
 
