@@ -28,7 +28,7 @@ export default function StatsStrip() {
           <motion.div
             key={s.label}
             variants={reveal.fadeUpLg}
-            className="px-6 py-14 sm:py-16 text-center"
+            className="gpu-stable px-6 py-14 sm:py-16 text-center"
           >
             <div className="text-brand-deep text-5xl sm:text-6xl lg:text-7xl font-medium leading-none tracking-tightest tabular-nums">
               {s.value}

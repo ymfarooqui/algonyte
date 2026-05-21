@@ -19,7 +19,7 @@ export default function ProblemHook() {
           The Problem
         </motion.p>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <motion.div variants={reveal.fadeUpLg}>
+          <motion.div variants={reveal.fadeUpLg} className="gpu-stable">
             <CountUp
               to={67}
               suffix="%"
@@ -53,7 +53,7 @@ export default function ProblemHook() {
           </motion.div>
         </div>
 
-        <motion.div className="mt-16 max-w-4xl mx-auto" variants={reveal.fadeUpLg}>
+        <motion.div className="gpu-stable mt-16 max-w-4xl mx-auto" variants={reveal.fadeUpLg}>
           <PhoneConversation />
         </motion.div>
       </motion.div>

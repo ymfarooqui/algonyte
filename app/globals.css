@@ -86,6 +86,12 @@ body {
   .card {
     @apply rounded-2xl bg-brand-soft p-7 shadow-soft;
     transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
+    /* iOS Safari tears down a tile's GPU layer the instant its reveal
+       animation ends and re-rasterizes it — a one-frame flicker. Pin the
+       tile to its own stable compositor layer so the teardown never happens. */
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .card-inset {
@@ -104,10 +110,26 @@ body {
 
   .logo-card {
     transition: box-shadow 200ms var(--ease-out);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
   }
 
   .lift-card {
     transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+
+  /* For reveal-animated tiles that aren't .card (Framer Motion controls their
+     inline transform, so translateZ(0) can't persist there). backface-visibility
+     keeps WebKit compositing the element, preventing the post-animation
+     re-rasterization flicker on iOS Safari. */
+  .gpu-stable {
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
   }
 
   .btn-primary-featured {
