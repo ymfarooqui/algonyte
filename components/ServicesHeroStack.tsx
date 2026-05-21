@@ -1,10 +1,25 @@
 "use client";
 
 import { motion, useInView } from "motion/react";
-import { useRef } from "react";
+import { useRef, type CSSProperties } from "react";
 import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
-const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE_CSS = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+// CSS-transition reveal (flicker-free on iOS, unlike Framer opacity).
+function reveal(
+  shown: boolean,
+  hidden: string,
+  shownT = "none",
+  dur = 0.5,
+  delay = 0,
+): CSSProperties {
+  return {
+    opacity: shown ? 1 : 0,
+    transform: shown ? shownT : hidden,
+    transition: `opacity ${dur}s ${EASE_CSS} ${delay}s, transform ${dur}s ${EASE_CSS} ${delay}s`,
+  };
+}
 
 const INBOX = [
   {
@@ -30,7 +45,6 @@ const INBOX = [
 const DAYS = ["Mon", "Tue", "Wed", "Thu", "Fri"];
 
 function Bubbles() {
-  const { s } = useAnimSpeed();
   const dots = [
     { top: "8%", left: "6%", size: 14, opacity: 0.35 },
     { top: "22%", left: "92%", size: 10, opacity: 0.3 },
@@ -44,16 +58,14 @@ function Bubbles() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0">
       {dots.map((d, i) => (
-        <motion.span
+        <span
           key={i}
-          initial={{ opacity: 0, scale: 0.6 }}
-          animate={{ opacity: d.opacity, scale: 1 }}
-          transition={{ duration: s(0.8), delay: s(0.05 * i), ease: EASE }}
           style={{
             top: d.top,
             left: d.left,
             width: d.size,
             height: d.size,
+            opacity: d.opacity,
           }}
           className="absolute rounded-full bg-brand-primary"
         />
@@ -104,10 +116,8 @@ export default function ServicesHeroStack({
       <Bubbles />
 
       {/* Back card: Phone call */}
-      <motion.div
-        initial={{ opacity: 0, y: 20, rotate: -3 }}
-        animate={inView ? { opacity: 1, y: 0, rotate: -2 } : {}}
-        transition={{ duration: s(0.8), delay: s(0.1), ease: EASE }}
+      <div
+        style={reveal(inView, "translateY(20px) rotate(-3deg)", "rotate(-2deg)", s(0.8), s(0.1))}
         className="absolute left-[6%] top-[4%] w-[58%] rounded-2xl bg-white p-3 shadow-xl ring-1 ring-slate-200/70 sm:p-4"
       >
         <div className="flex items-center gap-2">
@@ -135,13 +145,11 @@ export default function ServicesHeroStack({
         <div className="mt-3">
           <Waveform />
         </div>
-      </motion.div>
+      </div>
 
       {/* Middle card: Calendar */}
-      <motion.div
-        initial={{ opacity: 0, y: 24, rotate: 4 }}
-        animate={inView ? { opacity: 1, y: 0, rotate: 2 } : {}}
-        transition={{ duration: s(0.85), delay: s(0.25), ease: EASE }}
+      <div
+        style={reveal(inView, "translateY(24px) rotate(4deg)", "rotate(2deg)", s(0.85), s(0.25))}
         className="absolute right-[4%] top-[14%] w-[60%] rounded-2xl bg-white p-3 shadow-xl ring-1 ring-slate-200/70 sm:p-4"
       >
         <div className="flex items-center justify-between">
@@ -179,15 +187,9 @@ export default function ServicesHeroStack({
           {DAYS.map((d, i) => {
             const isBooked = i === 2;
             return (
-              <motion.div
+              <div
                 key={`slot-${d}`}
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={inView ? { opacity: 1, scale: 1 } : {}}
-                transition={{
-                  duration: s(0.4),
-                  delay: s(0.5 + i * 0.06),
-                  ease: EASE,
-                }}
+                style={reveal(inView, "scale(0.8)", "none", s(0.4), s(0.5 + i * 0.06))}
                 className={`h-6 rounded-md ${
                   isBooked
                     ? "bg-brand-primary shadow-sm shadow-brand-primary/40"
@@ -205,27 +207,19 @@ export default function ServicesHeroStack({
             />
           ))}
         </div>
-      </motion.div>
+      </div>
 
       {/* Front card: Unified inbox */}
-      <motion.div
-        initial={{ opacity: 0, y: 28 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: s(0.9), delay: s(0.4), ease: EASE }}
+      <div
+        style={reveal(inView, "translateY(28px)", "none", s(0.9), s(0.4))}
         className="absolute bottom-[4%] left-[10%] w-[78%] rounded-2xl bg-white p-4 shadow-2xl ring-1 ring-slate-200/70 sm:p-5"
       >
         <p className="text-xs font-semibold text-brand-ink">Unified inbox</p>
         <ul className="mt-3 space-y-2">
           {INBOX.map((item, i) => (
-            <motion.li
+            <li
               key={item.channel}
-              initial={{ opacity: 0, x: -10 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{
-                duration: s(0.5),
-                delay: s(0.6 + i * 0.15),
-                ease: EASE,
-              }}
+              style={reveal(inView, "translateX(-10px)", "none", s(0.5), s(0.6 + i * 0.15))}
               className="flex items-center gap-2.5 rounded-xl bg-slate-50 px-2.5 py-2 ring-1 ring-slate-100"
             >
               <span
@@ -244,10 +238,10 @@ export default function ServicesHeroStack({
               <span className="shrink-0 rounded-full bg-brand-deep px-2 py-0.5 text-[9px] font-semibold uppercase tracking-wider text-white">
                 AI replied
               </span>
-            </motion.li>
+            </li>
           ))}
         </ul>
-      </motion.div>
+      </div>
     </div>
   );
 }

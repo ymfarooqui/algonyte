@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { reveal, inView } from "@/lib/motion";
+import Reveal from "@/components/Reveal";
 import { tiers } from "@/lib/tiers";
 
 const awake = tiers.find((t) => t.id === "awake")!;
@@ -35,36 +34,25 @@ const faqJsonLd = {
 export default function WhyNot() {
   return (
     <section className="section">
-      <motion.div
-        className="container-page"
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        variants={reveal.container(0.12, 0.05)}
-      >
-        <motion.p className="eyebrow mb-4" variants={reveal.fadeUp}>
-          Honest answers
-        </motion.p>
-        <motion.h2 className="h-section max-w-2xl" variants={reveal.fadeUp}>
+      <div className="container-page">
+        <p className="eyebrow mb-4">Honest answers</p>
+        <Reveal as="h2" className="h-section max-w-2xl">
           What about the cheaper options?
-        </motion.h2>
+        </Reveal>
 
-        <motion.dl
-          className="mt-10 grid gap-5 md:grid-cols-3"
-          variants={reveal.container(0.12, 0.1)}
-        >
-          {items.map((item) => (
-            <motion.div key={item.q} variants={reveal.fadeUpLg}>
+        <dl className="mt-10 grid gap-5 md:grid-cols-3">
+          {items.map((item, i) => (
+            <Reveal key={item.q} delay={i * 0.06}>
               <div className="card h-full">
                 <dt className="font-semibold text-brand-deep">{item.q}</dt>
                 <dd className="mt-3 text-sm text-brand-muted leading-relaxed">
                   {item.a}
                 </dd>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
-        </motion.dl>
-      </motion.div>
+        </dl>
+      </div>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}

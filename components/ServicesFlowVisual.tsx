@@ -55,7 +55,6 @@ function FormCard() {
 
 
 function CalendarCard() {
-  const { s } = useAnimSpeed();
   const days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
   return (
     <div className="flex h-full flex-col gap-1.5">
@@ -80,11 +79,8 @@ function CalendarCard() {
           </div>
         ))}
         {days.map((d, i) => (
-          <motion.div
+          <div
             key={`s1-${d}`}
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: s(0.2 + i * 0.06), duration: s(0.4), ease: EASE }}
             className={`rounded-sm ${
               i === 2 ? "bg-brand-primary shadow-sm shadow-brand-primary/40" : "bg-slate-100"
             }`}
@@ -262,12 +258,11 @@ function OrbitTile({
   const front = (1 + Math.cos(theta)) / 2;
   const scale = 0.4 + 0.7 * front * front;
   const opacity = 0.06 + 0.94 * Math.pow(front, 1.4);
-  const blur = (1 - front) * 3.2;
   const z = Math.round(front * 100);
   const isFront = index === active;
 
   return (
-    <motion.button
+    <button
       type="button"
       onClick={() => setActive(index)}
       aria-label={`Show ${stage.label}`}
@@ -279,9 +274,11 @@ function OrbitTile({
         marginLeft: -TILE_W / 2,
         marginTop: -TILE_H / 2,
         zIndex: z,
+        opacity,
+        transform: `translate(${x}px, ${y}px) scale(${scale})`,
+        transition:
+          "transform 0.7s cubic-bezier(0.22,1,0.36,1), opacity 0.7s cubic-bezier(0.22,1,0.36,1)",
       }}
-      animate={{ x, y, scale, opacity, filter: `blur(${blur}px)` }}
-      transition={{ duration: 0.7, ease: EASE }}
     >
       <div
         className={`relative flex h-full flex-col rounded-3xl bg-white p-6 ring-1 transition-shadow ${
@@ -324,8 +321,7 @@ function OrbitTile({
         </div>
 
         {isFront && (
-          <motion.div
-            layoutId="orbit-active-glow"
+          <div
             className="pointer-events-none absolute -inset-2 rounded-[2rem]"
             style={{
               background:
@@ -335,7 +331,7 @@ function OrbitTile({
           />
         )}
       </div>
-    </motion.button>
+    </button>
   );
 }
 
