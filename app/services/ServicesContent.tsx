@@ -1,9 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { motion } from "motion/react";
-import { reveal, inView } from "@/lib/motion";
-import { useAnimSpeed } from "@/lib/useAnimSpeed";
+import Reveal from "@/components/Reveal";
 import FinalCTA from "@/components/sections/FinalCTA";
 import ServicesFlowVisual from "@/components/ServicesFlowVisual";
 import ServicesHeroStack from "@/components/ServicesHeroStack";
@@ -12,8 +10,6 @@ import { faqs } from "./faqs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { tiers } from "@/lib/tiers";
 import type { Tier } from "@/lib/tiers";
-
-const EASE = [0.22, 1, 0.36, 1] as const;
 
 /* ---- helpers ---- */
 
@@ -24,23 +20,6 @@ function fmt(n: number) {
 /* ---- icons ---- */
 
 const Icon = {
-  site: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <rect x="3" y="3" width="18" height="18" rx="2" />
-      <path d="M3 9h18M9 21V9" />
-    </svg>
-  ),
-  growth: (
-    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M3 17l6-6 4 4 8-8" />
-      <path d="M14 7h7v7" />
-    </svg>
-  ),
-  check: (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M20 6L9 17l-5-5" />
-    </svg>
-  ),
   arrow: (
     <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
       <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -55,10 +34,8 @@ function TierCard({ tier, index }: { tier: Tier; index: number }) {
   const href = `/pricing#${tier.id}`;
 
   return (
-    <motion.div
-      variants={reveal.fadeUpLg}
-      whileHover={{ y: -4 }}
-      transition={{ type: "spring", stiffness: 240, damping: 22 }}
+    <Reveal
+      delay={index * 0.06}
       className={`relative flex flex-col rounded-2xl bg-white p-7 transition-shadow ${
         featured
           ? "ring-2 ring-brand-deep shadow-xl shadow-brand-deep/15"
@@ -121,109 +98,79 @@ function TierCard({ tier, index }: { tier: Tier; index: number }) {
           </Link>
         </div>
       </div>
-    </motion.div>
+    </Reveal>
   );
 }
 
 /* ---- main component ---- */
 
 export default function ServicesContent() {
-  const { s } = useAnimSpeed();
   return (
     <>
       {/* ---- HERO ---- */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
-          <motion.div
-            initial="hidden"
-            animate="visible"
-            variants={reveal.container(0.12, 0.05)}
-          >
-            <motion.p className="eyebrow mb-3" variants={reveal.fadeUp}>
-              Three offerings. One clear ladder.
-            </motion.p>
-            <motion.h1 className="h-display" variants={reveal.fadeUpLg}>
+          <div>
+            <p className="eyebrow mb-3">Three offerings. One clear ladder.</p>
+            <Reveal as="h1" className="h-display" delay={0.04}>
               What we{" "}
               <span className="text-brand-deep">build for you.</span>
-            </motion.h1>
-            <motion.p className="lede mt-6 max-w-xl" variants={reveal.fadeUp}>
+            </Reveal>
+            <p className="lede mt-6 max-w-xl">
               Start with Found — a site that gets discovered. Layer on Awake or
               Climbing to answer, qualify, and book every lead while you sleep.
               Each tier is a defined scope — no surprises.
-            </motion.p>
+            </p>
 
-            <motion.div className="mt-8 lg:hidden" variants={reveal.fadeUp}>
+            <div className="mt-8 lg:hidden">
               <ServicesHeroStack />
-            </motion.div>
+            </div>
 
-            <motion.ul
-              className="mt-8 flex flex-wrap gap-2"
-              variants={reveal.container(0.06, 0.05)}
-            >
+            <ul className="mt-8 flex flex-wrap gap-2">
               {[
                 "Site live in days",
                 "Month-to-month on Site",
                 "Your business runs 24/7",
                 "No long-term lock-in to start",
               ].map((item) => (
-                <motion.li
+                <li
                   key={item}
-                  variants={reveal.fadeUp}
                   className="inline-flex items-center gap-2 rounded-full border border-brand-deep/15 bg-white px-3 py-1 text-xs font-medium text-brand-deep"
                 >
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-primary" aria-hidden />
                   {item}
-                </motion.li>
+                </li>
               ))}
-            </motion.ul>
-          </motion.div>
+            </ul>
+          </div>
 
-          <motion.div
-            className="relative hidden lg:block"
-            initial={{ opacity: 0, y: 24, scale: 0.98 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            transition={{ duration: s(0.9), delay: s(0.25), ease: EASE }}
-          >
+          <div className="relative hidden lg:block">
             <ServicesHeroStack />
-          </motion.div>
+          </div>
         </div>
       </section>
 
       {/* ---- FLOW VISUAL ---- */}
       <section className="relative bg-gradient-to-b from-white to-brand-soft">
-        <motion.div
-          className="container-page pb-28 pt-8 sm:pb-36"
-          initial="hidden"
-          whileInView="visible"
-          viewport={inView}
-          variants={reveal.container(0.1, 0.05)}
-        >
-          <motion.div className="mx-auto max-w-5xl text-center" variants={reveal.fadeUp}>
-            <h2 className="h-section">
-              From first contact to booked revenue.
-            </h2>
-          </motion.div>
-          <motion.div className="mt-20 sm:mt-24 px-2 sm:px-6" variants={reveal.fadeUpLg}>
+        <div className="container-page pb-28 pt-8 sm:pb-36">
+          <Reveal className="mx-auto max-w-5xl text-center">
+            <h2 className="h-section">From first contact to booked revenue.</h2>
+          </Reveal>
+          <div className="mt-20 sm:mt-24 px-2 sm:px-6">
             <ServicesFlowVisual />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ---- THREE OFFERINGS ---- */}
       <section className="section">
-        <motion.div
-          className="container-page"
-          initial="hidden"
-          whileInView="visible"
-          viewport={inView}
-          variants={reveal.container(0.1, 0.05)}
-        >
-          <motion.p className="lede max-w-2xl mb-12" variants={reveal.fadeUp}>
+        <div className="container-page">
+          <p className="lede max-w-2xl mb-12">
             Three offerings, each a defined scope. Start at Found to get
             discovered. Add Awake or Climbing to answer, qualify, and book
             every lead — on text, chat, DM, or voice — while you sleep.
-          </motion.p>
+          </p>
 
           <div className="grid gap-6 md:grid-cols-3">
             {tiers.map((tier, i) => (
@@ -231,25 +178,19 @@ export default function ServicesContent() {
             ))}
           </div>
 
-          <motion.div className="mt-8 text-center" variants={reveal.fadeUp}>
+          <div className="mt-8 text-center">
             <Link href="/pricing" className="btn-primary inline-flex items-center gap-2">
               Compare all three offerings
               <span>{Icon.arrow}</span>
             </Link>
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ---- STACK / INTEGRATIONS ---- */}
       <section className="section">
-        <motion.div
-          className="container-page"
-          initial="hidden"
-          whileInView="visible"
-          viewport={inView}
-          variants={reveal.container(0.1, 0.05)}
-        >
-          <motion.div className="mx-auto max-w-3xl text-center" variants={reveal.fadeUp}>
+        <div className="container-page">
+          <Reveal className="mx-auto max-w-3xl text-center">
             <h2 className="h-section">
               Plays nice with everything you already use.
             </h2>
@@ -257,41 +198,35 @@ export default function ServicesContent() {
               Eight channels in, every major tool out. If it has an API or a
               webhook, we plug into it.
             </p>
-          </motion.div>
+          </Reveal>
 
-          <motion.div className="mx-auto mt-12 max-w-5xl" variants={reveal.fadeUpLg}>
+          <div className="mx-auto mt-12 max-w-5xl">
             <StackMarquee />
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
       </section>
 
       {/* ---- FAQ ---- */}
       <section className="section bg-brand-soft">
-        <motion.div
-          className="container-page max-w-3xl"
-          initial="hidden"
-          whileInView="visible"
-          viewport={inView}
-          variants={reveal.container(0.1, 0.05)}
-        >
-          <motion.h2 className="h-section mb-10" variants={reveal.fadeUp}>
+        <div className="container-page max-w-3xl">
+          <Reveal as="h2" className="h-section mb-10">
             Common questions about services.
-          </motion.h2>
+          </Reveal>
           <dl className="divide-y divide-slate-200">
             {faqs.map((f) => (
-              <motion.div key={f.q} variants={reveal.fadeUp} className="py-6">
+              <div key={f.q} className="py-6">
                 <dt className="text-lg font-semibold text-brand-deep">{f.q}</dt>
                 <dd className="mt-2 text-brand-muted leading-relaxed">{f.a}</dd>
-              </motion.div>
+              </div>
             ))}
           </dl>
-          <motion.p className="mt-10 text-brand-muted" variants={reveal.fadeUp}>
+          <p className="mt-10 text-brand-muted">
             Want to see plans and pricing?{" "}
             <Link href="/pricing" className="text-brand-deep font-medium hover:underline">
               See pricing →
             </Link>
-          </motion.p>
-        </motion.div>
+          </p>
+        </div>
       </section>
 
       <FinalCTA />
