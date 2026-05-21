@@ -110,7 +110,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: s(0.7), ease: EASE }}
-        className="reveal-static gpu-stable flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
+        className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center rounded-full bg-rose-100 text-rose-700 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide">
@@ -177,7 +177,7 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
         initial={{ opacity: 0, y: 16 }}
         animate={inView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: s(0.7), delay: s(0.15), ease: EASE }}
-        className="reveal-static gpu-stable flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
+        className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
           <span className="inline-flex items-center rounded-full bg-emerald-100 text-emerald-700 px-2.5 py-0.5 text-[11px] font-semibold tracking-wide">

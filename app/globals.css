@@ -86,12 +86,6 @@ body {
   .card {
     @apply rounded-2xl bg-brand-soft p-7 shadow-soft;
     transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
-    /* iOS Safari tears down a tile's GPU layer the instant its reveal
-       animation ends and re-rasterizes it — a one-frame flicker. Pin the
-       tile to its own stable compositor layer so the teardown never happens. */
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
 
   .card-inset {
@@ -110,26 +104,10 @@ body {
 
   .logo-card {
     transition: box-shadow 200ms var(--ease-out);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
   }
 
   .lift-card {
     transition: transform 280ms var(--ease-out), box-shadow 280ms var(--ease-out);
-    transform: translateZ(0);
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-  }
-
-  /* For reveal-animated tiles that aren't .card (Framer Motion controls their
-     inline transform, so translateZ(0) can't persist there). backface-visibility
-     keeps WebKit compositing the element, preventing the post-animation
-     re-rasterization flicker on iOS Safari. */
-  .gpu-stable {
-    -webkit-backface-visibility: hidden;
-    backface-visibility: hidden;
-    transform: translateZ(0);
   }
 
   .btn-primary-featured {
@@ -195,19 +173,6 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-/* On touch devices (iPhone/iPad) the Framer Motion entrance reveal makes a
-   shadowed card blink once on load — iOS Safari mis-composites the box-shadow
-   while opacity/transform animate in. Skip the entrance on touch: the !important
-   overrides Motion's inline styles so cards render in their final visible state
-   with no fade. Pointer devices keep the reveals. */
-@media (hover: none) and (pointer: coarse) {
-  .reveal-static {
-    opacity: 1 !important;
-    transform: none !important;
-  }
-}
-
 
 @keyframes aurora-drift-a {
   0%, 100% { transform: translate3d(-10%, -10%, 0) scale(1); }
