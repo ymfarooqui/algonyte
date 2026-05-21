@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
 import { aiReceptionistServiceSchema } from "@/lib/schema";
 
-const awake = growthTiers[0];
-const climbing = growthTiers[1];
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
 
 const title = "AI Receptionist for Service Businesses | AlgoNyte";
 const description = `AI receptionist answers, qualifies, and books your leads 24/7. Two flavors: Awake ($${awake.monthly}/mo, chat + DMs + missed-call text-back, live in ${awake.liveIn}) and Climbing ($${climbing.monthly}/mo, adds voice AI + Local SEO, live in ${climbing.liveIn}).`;

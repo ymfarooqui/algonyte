@@ -1,7 +1,7 @@
-import { siteTiers, growthTiers, type SiteTier, type GrowthTier } from "./tiers";
+import { tiers, type Tier } from "./tiers";
 import { siteConfig } from "./site";
 
-function tierOffer(tier: SiteTier | GrowthTier) {
+function tierOffer(tier: Tier) {
   return {
     "@type": "Offer",
     name: tier.name,
@@ -26,40 +26,31 @@ function tierOffer(tier: SiteTier | GrowthTier) {
 }
 
 export function pricingSchema() {
+  const lowPrice = Math.min(...tiers.map((t) => t.monthly));
+  const highPrice = Math.max(...tiers.map((t) => t.monthly));
   return {
     "@context": "https://schema.org",
     "@type": "Product",
     name: "AlgoNyte Plans",
     description:
-      "Two products: Presence (web build + flat $99/mo hosting) and Growth (monthly retainers for reception, SEO, and ads). Six rungs from $99/mo to $1,199/mo.",
+      "Three offerings: a site that gets found, reception that never sleeps, and full management. From $99/mo to $749/mo. Month-to-month, no long-term contracts.",
     brand: { "@type": "Brand", name: "AlgoNyte" },
     offers: {
       "@type": "AggregateOffer",
-      lowPrice: 99,
-      highPrice: 1199,
+      lowPrice,
+      highPrice,
       priceCurrency: "USD",
-      offerCount: siteTiers.length + growthTiers.length,
-      offers: [...siteTiers, ...growthTiers].map(tierOffer),
+      offerCount: tiers.length,
+      offers: tiers.map(tierOffer),
     },
   };
 }
 
-export function foundingOfferSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Offer",
-    name: "AlgoNyte Founding Member",
-    description:
-      "3 founding spots. 50% off setup. 30% off any Growth tier for 6 months. After 6 months reverts to standard pricing.",
-    availability: "https://schema.org/LimitedAvailability",
-    inventoryLevel: { "@type": "QuantitativeValue", value: 3 },
-    url: `${siteConfig.url}/founding`,
-  };
-}
+// foundingOfferSchema removed — founding offer no longer exists.
 
 export function aiReceptionistServiceSchema() {
-  const awake = growthTiers[0];
-  const climbing = growthTiers[1];
+  const awake = tiers.find((t) => t.id === "awake")!;
+  const climbing = tiers.find((t) => t.id === "climbing")!;
   const description =
     "AI receptionist that answers, qualifies, and books leads 24/7 — across chat, SMS, missed-call text-back, and voice. Two tiers: Awake (text/chat/DMs) and Climbing (adds voice AI + Local SEO).";
   return {
@@ -83,10 +74,10 @@ export function aiReceptionistServiceSchema() {
 }
 
 export function reputationManagementServiceSchema() {
-  const awake = growthTiers[0];
-  const climbing = growthTiers[1];
+  const awake = tiers.find((t) => t.id === "awake")!;
+  const climbing = tiers.find((t) => t.id === "climbing")!;
   const description =
-    "Automated post-job review requests with smart routing for unhappy customers. Google-only on Awake; multi-platform (Google, Yelp, Facebook) plus smart routing on Climbing.";
+    "Automated post-job review requests. Google-only on Awake; multi-platform (Google, Yelp, Facebook) on Climbing.";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -108,8 +99,9 @@ export function reputationManagementServiceSchema() {
 }
 
 export function webPresenceServiceSchema() {
+  const found = tiers.find((t) => t.id === "found")!;
   const description =
-    "End-to-end web presence for service businesses. Sites built from $300 one-time, then $99/mo flat hosting forever. Live in 72 hours to 12 days. Google Business Profile setup included.";
+    "End-to-end web presence for service businesses. Built on Found from $449 one-time, then $99/mo flat hosting forever. Live in 5–7 days. Google Business Profile setup included.";
   return {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -119,13 +111,6 @@ export function webPresenceServiceSchema() {
     provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     description,
     areaServed: { "@type": "Country", name: "United States" },
-    offers: {
-      "@type": "AggregateOffer",
-      lowPrice: siteTiers[0].setup,
-      highPrice: siteTiers[siteTiers.length - 1].setup,
-      priceCurrency: "USD",
-      offerCount: siteTiers.length,
-      offers: siteTiers.map(tierOffer),
-    },
+    offers: tierOffer(found),
   };
 }

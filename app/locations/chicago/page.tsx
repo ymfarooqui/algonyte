@@ -4,10 +4,13 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Chicago | Stop Missing Service Calls";
-const description = `AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties. Plans from $${growthTiers[0].monthly}/mo.`;
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
+
+const description = `AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties. Plans from $${awake.monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +40,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: growthTiers[0].monthly,
-    highPrice: growthTiers[1].monthly,
+    lowPrice: awake.monthly,
+    highPrice: climbing.monthly,
     offerCount: 3,
   },
 };
@@ -249,16 +252,12 @@ export default function ChicagoLocationPage() {
         <div className="container-page max-w-3xl">
           <h2 className="h-section">Built for solo operators and small crews.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Plans start at ${growthTiers[0].monthly}/month. The Founding
-            Member program offers three limited spots at 50% off setup and 30%
-            off monthly for the first six months in exchange for honest
-            feedback and a testimonial. If you&rsquo;re a Chicago-area
-            operator who wants to be in early, that&rsquo;s the cheapest way
-            in.
+            Plans start at ${awake.monthly}/month on Awake, all the way to Climbing at ${climbing.monthly}/month
+            with voice AI and ongoing Local SEO included. Month-to-month — no annual lock-in.
           </p>
           <p className="mt-4">
-            <Link href="/founding" className="text-brand-deep font-medium hover:underline">
-              See the founding program →
+            <Link href="/pricing" className="text-brand-deep font-medium hover:underline">
+              See full pricing →
             </Link>
           </p>
         </div>

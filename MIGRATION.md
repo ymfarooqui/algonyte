@@ -146,6 +146,22 @@ If traffic on `algonyte.com` is still <70% of baseline by day 60:
 
 ---
 
+## 2026-05-20 — Pricing rework: collapse to 3 standalone offerings
+
+The 6-tier "Two products, six rungs" model is replaced by 3 standalone offerings: Found, Awake, Climbing.
+
+**Removed:** Open and Polished (Presence), Scale (Growth), the Presence/Growth product grouping, all 6-month and 3-month commitments, the founding offer (page + component + badges + nav link), the typical-paths table on /pricing.
+
+**Renamed/restructured:** `lib/tiers.ts` collapses `siteTiers` + `growthTiers` into one `tiers` array; Tier types unified into a single `Tier`. `TierId` narrowed to `"found" | "awake" | "climbing"`. `Commitment` narrowed to `"month-to-month"`.
+
+**Redirects:** `/founding` → `/pricing` (301).
+
+**Schema:** `foundingOfferSchema` removed; `pricingSchema` low/high updated to 99 / 749; `webPresenceServiceSchema` switched from `AggregateOffer` (3 tiers) to single `Offer` (Found only).
+
+**SEO impact:** `/founding` loses its standalone URL; consolidated into `/pricing`. `/pricing` description meta and lede rewritten. Some inbound queries for "AlgoNyte Open" or "AlgoNyte Polished" will lose specificity — accept and monitor.
+
+---
+
 ## What I (the dev) need from you next
 
 In rough order:

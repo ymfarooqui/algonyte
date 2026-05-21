@@ -4,10 +4,13 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Macomb, MI | Stop Missing Service Calls";
-const description = `AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $${growthTiers[0].monthly}/mo.`;
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
+
+const description = `AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $${awake.monthly}/mo.`;
 
 export const metadata: Metadata = {
   title,
@@ -37,8 +40,8 @@ const serviceJsonLd = {
   offers: {
     "@type": "AggregateOffer",
     priceCurrency: "USD",
-    lowPrice: growthTiers[0].monthly,
-    highPrice: growthTiers[1].monthly,
+    lowPrice: awake.monthly,
+    highPrice: climbing.monthly,
     offerCount: 3,
   },
 };

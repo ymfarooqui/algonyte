@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { growthTiers } from "@/lib/tiers";
+import { tiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
 import { reputationManagementServiceSchema } from "@/lib/schema";
 
-const awake = growthTiers[0];
-const climbing = growthTiers[1];
+const awake = tiers.find((t) => t.id === "awake")!;
+const climbing = tiers.find((t) => t.id === "climbing")!;
 
 const title = "Reputation Management for Service Businesses | AlgoNyte";
 const description =
@@ -237,7 +237,7 @@ export default function ReputationManagerPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Also includes: Voice AI receptionist, Local SEO, citation cleanup
+                  Also includes: Voice AI receptionist, Local SEO, ongoing technical SEO
                 </li>
               </ul>
               <Link

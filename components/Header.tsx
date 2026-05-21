@@ -13,7 +13,6 @@ const primaryLinks = [
 
 const secondaryLinks = [
   { href: "/lead-generator", label: "Lead Generation" },
-  { href: "/founding", label: "Founding" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];

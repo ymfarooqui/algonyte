@@ -13,10 +13,10 @@ All pre-deploy must-do items are complete. Site is deployed on Vercel, DNS is li
 ## Should-do soon after launch (week 1)
 
 ### 1. Wire the GHL checkout URLs
-- **Where:** `lib/constants.ts` → `plans[].checkoutUrl`
+- **Where:** `lib/tiers.ts` → `tiers[].checkoutUrl`
 - **Today:** Pricing CTAs gracefully fall back to "Talk to us" → `/contact` while placeholders are present, so the site is not broken — but you can't capture self-serve subscriptions until these are real.
-- **You:** Set up the six SaaS plans in GHL with Stripe, get the checkout URLs.
-- **Me:** Drop them into the constants once you have them. Confirm setup fees are configured per tier: Open ($300), Found ($600), Polished ($1,000), Awake ($329), Climbing ($500), Scale ($500).
+- **You:** Set up the three plans in GHL with Stripe, get the checkout URLs.
+- **Me:** Drop them into the constants once you have them. Confirm setup fees are configured per tier: Found ($449), Awake ($749), Climbing ($899).
 
 ### 2. SocialProof metrics — finish softening
 - **Where:** `components/sections/SocialProof.tsx`
@@ -104,7 +104,7 @@ Add PostHog or Plausible events on the booking button + pricing-tile CTAs if you
 ### SEO & schema
 - Organization + LocalBusiness JSON-LD in layout ✅
 - Person JSON-LD for founder on `/about` ✅
-- Service + Offer + AggregateOffer JSON-LD on `/pricing` (per-plan, with monthly + setup fee specs) ✅
+- Product + AggregateOffer JSON-LD on `/pricing` (3 tiers, with monthly + setup fee specs) ✅
 - All page metadata (title, description, canonical, OG, Twitter) configured ✅
 - OG image generated via `app/opengraph-image.tsx` ✅
 - `/insights` noindexed and removed from sitemap (placeholder page) ✅
@@ -121,4 +121,4 @@ Add PostHog or Plausible events on the booking button + pricing-tile CTAs if you
 - **Homepage sections:** `components/sections/`
 - **Header / Footer:** `components/Header.tsx`, `components/Footer.tsx`
 - **Sitemap / Robots / OG image:** `app/sitemap.ts`, `app/robots.ts`, `app/opengraph-image.tsx`
-- **JSON-LD schemas:** Organization + LocalBusiness in `app/layout.tsx`; Person in `app/about/page.tsx`; Service/Offer/AggregateOffer in `app/pricing/page.tsx`
+- **JSON-LD schemas:** Organization + LocalBusiness in `app/layout.tsx`; Person in `app/about/page.tsx`; Product/AggregateOffer in `app/pricing/page.tsx`
