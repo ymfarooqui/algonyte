@@ -12,7 +12,7 @@ const found = tiers.find((t) => t.id === "found")!;
 const awake = tiers.find((t) => t.id === "awake")!;
 const climbing = tiers.find((t) => t.id === "climbing")!;
 
-const title = "Web Presence | Sites From $299, Hosting Flat at $99/mo";
+const title = "Web Presence | Sites From $449, Hosting Flat at $99/mo";
 const description =
   "End-to-end web presence for service businesses. Found from $449 one-time, then $99/mo flat hosting forever. Live in 5–7 days. Google Business Profile setup included.";
 
@@ -106,7 +106,7 @@ export default function WebPresencePage() {
             <p className="lede mt-6 max-w-2xl">
               Site live in 5–7 days. Built for your brand, hosted for{" "}
               <strong>$99/mo flat</strong>, indexed on Google from day one.
-              Starting from <strong>$299</strong> one-time, then $99/mo
+              Starting from <strong>$449</strong> one-time, then $99/mo
               forever. No tiered hosting nonsense, no contracts.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -224,7 +224,7 @@ export default function WebPresencePage() {
                 What the $99/mo covers
               </h3>
               <p className="text-sm text-brand-muted">
-                Identical across every tier. No tiered hosting nonsense.
+                Flat hosting price. No tiered nonsense, no upgrade traps.
               </p>
             </div>
             <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">

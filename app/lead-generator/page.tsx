@@ -171,11 +171,6 @@ export default function LeadGeneratorPage() {
               Cuts no-shows. Sent on a schedule that matches your job type.
             </li>
             <li>
-              <strong className="text-brand-deep">Smart routing for unhappy customers.</strong>{" "}
-              Negative sentiment routes to you privately instead of going public on Google.
-              Catches problems before they turn into reviews.
-            </li>
-            <li>
               <strong className="text-brand-deep">Custom dashboard.</strong>{" "}
               Missed calls handled, DMs replied, leads booked, no-shows recovered.
               Real numbers, in one view.

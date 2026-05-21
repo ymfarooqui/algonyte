@@ -14,7 +14,7 @@ const items = [
   },
   {
     q: "Why not Scorpion, Blue Corona, or Hibu?",
-    a: `Those agencies run $2,500–$10,000/mo with $5K–$50K in setup and 12–24 month contracts. ${climbing.name} at $${climbing.monthly}/mo is all-in (hosting included) — 40–60% less with no annual commitment past 6 months. Your ad spend goes straight to Google and Meta on your card. Never touches us, never has a markup.`,
+    a: `Those agencies run $2,500–$10,000/mo with $5K–$50K in setup and 12–24 month contracts. ${climbing.name} at $${climbing.monthly}/mo is all-in (hosting included) — 40–60% less, month-to-month, no long-term commitment. Your ad spend goes straight to Google and Meta on your card. Never touches us, never has a markup.`,
   },
   {
     q: "Why not a $59 DIY tool (Goodcall, Numa)?",

@@ -237,7 +237,7 @@ export default function ReputationManagerPage() {
                 </li>
                 <li className="flex items-start gap-2">
                   <span className="text-white mt-0.5">&#10003;</span>
-                  Also includes: Voice AI receptionist, Local SEO, citation cleanup
+                  Also includes: Voice AI receptionist, Local SEO, ongoing technical SEO
                 </li>
               </ul>
               <Link

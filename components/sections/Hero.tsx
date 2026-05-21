@@ -57,7 +57,7 @@ export default function Hero() {
             className="lede"
             variants={reveal.fadeUp}
           >
-            Site live in 72 hours. Reception in 5 days. Full SEO + voice in two weeks.
+            Site live in 5–7 days. Reception in 5 days. Full SEO + voice in two weeks.
           </motion.p>
         </div>
 
