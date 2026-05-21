@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "motion/react";
-import { Suspense, useState } from "react";
+import { useState } from "react";
 import { reveal, inView } from "@/lib/motion";
 import ContactForm from "./ContactForm";
 
@@ -65,9 +65,5 @@ function ContactBody() {
 }
 
 export default function ContactContent() {
-  return (
-    <Suspense fallback={null}>
-      <ContactBody />
-    </Suspense>
-  );
+  return <ContactBody />;
 }
