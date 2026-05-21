@@ -54,7 +54,7 @@ export default function HowItWorks() {
             transition={{ duration: s(1.1), delay: s(0.5), ease: EASE }}
           />
           {steps.map((s) => (
-            <motion.div key={s.n} variants={reveal.fadeUp} className="reveal-static h-full">
+            <motion.div key={s.n} variants={reveal.fadeUp} className="h-full">
               <div className="card relative h-full">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
@@ -74,7 +74,7 @@ export default function HowItWorks() {
         </div>
 
         <motion.div
-          className="reveal-static gpu-stable mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
+          className="mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
           variants={reveal.fadeUpLg}
           role="img"
           aria-label="Unified inbox showing leads from calls, texts, Instagram DMs, and web forms with AI replies and booked appointments"
