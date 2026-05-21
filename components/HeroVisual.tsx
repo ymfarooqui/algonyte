@@ -1,10 +1,30 @@
 "use client";
 
 import { motion, useInView, useMotionValue, useTransform, animate } from "motion/react";
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type CSSProperties } from "react";
 import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const EASE = [0.22, 1, 0.36, 1] as const;
+const EASE_CSS = "cubic-bezier(0.22, 1, 0.36, 1)";
+
+// CSS-transition reveal (fade + slide/scale). Deliberately not Framer Motion:
+// Framer auto-promotes elements to a GPU layer and animating opacity on that
+// layer flashes once on iOS Safari. A native CSS transition is flicker-free.
+function revealStyle(
+  shown: boolean,
+  opts: { y?: number; x?: number; scale?: number; dur?: number; delay?: number } = {},
+): CSSProperties {
+  const { y = 0, x = 0, scale, dur = 0.5, delay = 0 } = opts;
+  const hidden: string[] = [];
+  if (x) hidden.push(`translateX(${x}px)`);
+  if (y) hidden.push(`translateY(${y}px)`);
+  if (scale != null) hidden.push(`scale(${scale})`);
+  return {
+    opacity: shown ? 1 : 0,
+    transform: shown ? "none" : hidden.join(" ") || "none",
+    transition: `opacity ${dur}s ${EASE_CSS} ${delay}s, transform ${dur}s ${EASE_CSS} ${delay}s`,
+  };
+}
 
 const MISSED = [
   { name: "James W.", job: "Roof inspection", time: "2:42 PM" },
@@ -62,19 +82,19 @@ function CheckIcon({ className }: { className?: string }) {
 
 function Arrow() {
   const { s } = useAnimSpeed();
+  const ref = useRef<HTMLDivElement>(null);
+  const shown = useInView(ref, { once: true, amount: 0.2 });
   return (
     <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 flex items-center justify-center">
-      <motion.div
-        initial={{ scale: 0, opacity: 0 }}
-        whileInView={{ scale: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: s(0.5), delay: s(0.4), ease: EASE }}
+      <div
+        ref={ref}
+        style={revealStyle(shown, { scale: 0, dur: s(0.5), delay: s(0.4) })}
         className="h-10 w-10 rounded-full bg-brand-primary text-white shadow-lg shadow-brand-primary/40 flex items-center justify-center"
       >
         <svg viewBox="0 0 24 24" className="h-5 w-5 md:rotate-0 rotate-90" fill="none" aria-hidden>
           <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>
-      </motion.div>
+      </div>
     </div>
   );
 }
@@ -106,10 +126,8 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
       <Arrow />
 
       {/* BEFORE */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: s(0.7), ease: EASE }}
+      <div
+        style={revealStyle(inView, { y: 16, dur: s(0.7) })}
         className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
@@ -121,20 +139,16 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
 
         <ul className="mt-4 space-y-2.5">
           {MISSED.map((m, i) => (
-            <motion.li
+            <li
               key={m.name}
-              initial={{ opacity: 0, x: -10 }}
-              animate={inView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: s(0.45), delay: s(0.15 + i * 0.18), ease: EASE }}
+              style={revealStyle(inView, { x: -10, dur: s(0.45), delay: s(0.15 + i * 0.18) })}
               className="flex items-center gap-3 rounded-xl bg-rose-50/70 ring-1 ring-rose-100 px-3 py-2.5"
             >
               <span className="relative flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-rose-100 text-rose-600">
                 <PhoneIcon className="h-4 w-4" />
-                <motion.span
-                  className="absolute inset-0 rounded-full ring-2 ring-rose-400/60"
-                  initial={{ opacity: 0, scale: 0.8 }}
-                  animate={inView ? { opacity: [0, 1, 0], scale: [0.8, 1.4, 1.6] } : {}}
-                  transition={{ duration: s(1.4), delay: s(0.3 + i * 0.18), repeat: Infinity, repeatDelay: s(1.6) }}
+                <span
+                  className="absolute inset-0 rounded-full ring-2 ring-rose-400/60 animate-ping"
+                  style={{ animationDelay: `${i * 0.25}s` }}
                 />
               </span>
               <div className="min-w-0 flex-1">
@@ -147,15 +161,13 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
               <span className="shrink-0 rounded-md bg-rose-600 text-white text-[10px] font-bold tracking-wide px-1.5 py-0.5">
                 MISSED
               </span>
-            </motion.li>
+            </li>
           ))}
         </ul>
 
         <div className="mt-auto pt-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: s(0.6), delay: s(0.9), ease: EASE }}
+          <div
+            style={revealStyle(inView, { y: 8, dur: s(0.6), delay: s(0.9) })}
             className="rounded-xl border border-rose-200 bg-rose-50 px-3 py-3 flex items-center gap-3"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-rose-500 ring-1 ring-rose-200 text-lg">
@@ -168,15 +180,13 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
               <p className="text-xs font-medium text-rose-900">Leads went cold. Revenue left behind.</p>
               <Money value={950} prefix="-" className="text-lg font-bold text-rose-600 tabular-nums" />
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
 
       {/* AFTER */}
-      <motion.div
-        initial={{ opacity: 0, y: 16 }}
-        animate={inView ? { opacity: 1, y: 0 } : {}}
-        transition={{ duration: s(0.7), delay: s(0.15), ease: EASE }}
+      <div
+        style={revealStyle(inView, { y: 16, dur: s(0.7), delay: s(0.15) })}
         className="flex flex-col rounded-2xl bg-white shadow-xl ring-1 ring-slate-200/70 p-4 sm:p-5"
       >
         <div className="flex items-center justify-between">
@@ -201,26 +211,20 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
             const on = i < revealed;
             return (
               <li key={step.title} className="relative flex items-start gap-3">
-                <motion.span
-                  initial={{ scale: 0.4, opacity: 0 }}
-                  animate={on ? { scale: 1, opacity: 1 } : { scale: 0.4, opacity: 0 }}
-                  transition={{ duration: s(0.45), ease: EASE }}
+                <span
+                  style={revealStyle(on, { scale: 0.4, dur: s(0.45) })}
                   className="relative z-10 flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-emerald-500 text-white shadow-sm shadow-emerald-500/30"
                 >
                   <CheckIcon className="h-4 w-4" />
                   {on && i === revealed - 1 && (
-                    <motion.span
+                    <span
                       className="absolute inset-0 rounded-full ring-2 ring-emerald-400"
-                      initial={{ opacity: 0.8, scale: 1 }}
-                      animate={{ opacity: 0, scale: 1.9 }}
-                      transition={{ duration: s(1), ease: "easeOut" }}
+                      style={{ animation: `ripple-out ${s(1)}s ease-out forwards` }}
                     />
                   )}
-                </motion.span>
-                <motion.div
-                  initial={{ opacity: 0, x: -6 }}
-                  animate={on ? { opacity: 1, x: 0 } : { opacity: 0, x: -6 }}
-                  transition={{ duration: s(0.4), ease: EASE }}
+                </span>
+                <div
+                  style={revealStyle(on, { x: -6, dur: s(0.4) })}
                   className="flex-1 min-w-0 flex items-center justify-between gap-3 pt-0.5"
                 >
                   <p className="min-w-0 text-sm font-semibold text-slate-900 leading-tight">
@@ -229,17 +233,15 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
                   <span className="shrink-0 text-[10px] font-mono text-emerald-700 bg-emerald-50 ring-1 ring-emerald-100 rounded px-1.5 py-0.5 tabular-nums">
                     {step.t}
                   </span>
-                </motion.div>
+                </div>
               </li>
             );
           })}
         </ol>
 
         <div className="mt-auto pt-4">
-          <motion.div
-            initial={{ opacity: 0, y: 8 }}
-            animate={revealed >= STEPS.length ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: s(0.6), ease: EASE }}
+          <div
+            style={revealStyle(revealed >= STEPS.length, { y: 8, dur: s(0.6) })}
             className="rounded-xl border border-emerald-200 bg-emerald-50 px-3 py-3 flex items-center gap-3"
           >
             <span className="flex h-9 w-9 items-center justify-center rounded-full bg-white text-emerald-600 ring-1 ring-emerald-200">
@@ -254,9 +256,9 @@ export default function HeroVisual({ className = "" }: { className?: string }) {
                 <Money value={950} prefix="+" className="text-lg font-bold text-emerald-600 tabular-nums" />
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

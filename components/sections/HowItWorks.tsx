@@ -1,7 +1,8 @@
 "use client";
 
 import { motion } from "motion/react";
-import { reveal, inView } from "@/lib/motion";
+import { inView } from "@/lib/motion";
+import Reveal from "@/components/Reveal";
 import { useAnimSpeed } from "@/lib/useAnimSpeed";
 
 const steps = [
@@ -28,16 +29,10 @@ export default function HowItWorks() {
   const { s } = useAnimSpeed();
   return (
     <section className="section bg-brand-soft">
-      <motion.div
-        className="container-page"
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        variants={reveal.container(0.15, 0.05)}
-      >
-        <motion.h2 className="h-section max-w-3xl" variants={reveal.fadeUp}>
+      <div className="container-page">
+        <Reveal as="h2" className="h-section max-w-3xl" delay={0.05}>
           Every lead handled, end to end.
-        </motion.h2>
+        </Reveal>
 
         <div className="relative mt-12 grid gap-6 md:grid-cols-3 md:gap-5">
           <motion.div
@@ -48,13 +43,13 @@ export default function HowItWorks() {
                 "linear-gradient(to right, rgba(4,120,87,0.35) 50%, transparent 50%)",
               backgroundSize: "10px 1px",
             }}
-            initial={{ scaleX: 0, opacity: 0 }}
-            whileInView={{ scaleX: 1, opacity: 1 }}
+            initial={{ scaleX: 0 }}
+            whileInView={{ scaleX: 1 }}
             viewport={inView}
             transition={{ duration: s(1.1), delay: s(0.5), ease: EASE }}
           />
-          {steps.map((s) => (
-            <motion.div key={s.n} variants={reveal.fadeUp} className="h-full">
+          {steps.map((s, i) => (
+            <Reveal key={s.n} delay={0.1 + i * 0.15} className="h-full">
               <div className="card relative h-full">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
@@ -69,19 +64,19 @@ export default function HowItWorks() {
                 </h3>
                 <p className="mt-3 text-brand-muted leading-relaxed">{s.body}</p>
               </div>
-            </motion.div>
+            </Reveal>
           ))}
         </div>
 
-        <motion.div
+        <Reveal
+          y={24}
           className="mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
-          variants={reveal.fadeUpLg}
           role="img"
           aria-label="Unified inbox showing leads from calls, texts, Instagram DMs, and web forms with AI replies and booked appointments"
         >
           <InboxMockup />
-        </motion.div>
-      </motion.div>
+        </Reveal>
+      </div>
     </section>
   );
 }

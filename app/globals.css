@@ -174,6 +174,13 @@ body {
   }
 }
 
+/* One-shot ripple for the hero "step complete" check. CSS (not Framer) so the
+   opacity change doesn't flash on iOS Safari. */
+@keyframes ripple-out {
+  from { opacity: 0.8; transform: scale(1); }
+  to   { opacity: 0; transform: scale(1.9); }
+}
+
 @keyframes aurora-drift-a {
   0%, 100% { transform: translate3d(-10%, -10%, 0) scale(1); }
   33%      { transform: translate3d(20%, 10%, 0) scale(1.2); }

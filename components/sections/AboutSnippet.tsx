@@ -1,7 +1,6 @@
 "use client";
 
-import { motion } from "motion/react";
-import { reveal, inView } from "@/lib/motion";
+import Reveal from "@/components/Reveal";
 import { BookingButton } from "@/components/BookingModal";
 
 const companiesRow1 = [
@@ -76,48 +75,29 @@ function LogoMarquee({
 export default function AboutSnippet() {
   return (
     <section className="section">
-      <motion.div
-        className="container-page"
-        initial="hidden"
-        whileInView="visible"
-        viewport={inView}
-        variants={reveal.container(0.12, 0.05)}
-      >
+      <div className="container-page">
         <div className="max-w-3xl">
-          <motion.h2 className="h-section" variants={reveal.fadeUpLg}>
+          <Reveal as="h2" className="h-section" y={24} delay={0.05}>
             The big players already made the move.
-          </motion.h2>
-          <motion.p className="lede mt-6" variants={reveal.fadeUp}>
+          </Reveal>
+          <Reveal as="p" className="lede mt-6" delay={0.12}>
             Every company you order from, every brand you scroll past, every
             app on your phone is using AI to talk to customers. Some have been
             doing it for years.
-          </motion.p>
-          <motion.p
-            className="mt-4 text-brand-ink font-medium text-lg"
-            variants={reveal.fadeUp}
-          >
+          </Reveal>
+          <Reveal as="p" className="mt-4 text-brand-ink font-medium text-lg" delay={0.19}>
             The same tools are now in reach for businesses your size.
-          </motion.p>
+          </Reveal>
         </div>
 
-        <motion.div
-          className="mt-12 space-y-4"
-          variants={reveal.fadeUp}
-        >
+        <Reveal className="mt-12 space-y-4" delay={0.1}>
           <LogoMarquee items={companiesRow1} duration={80} />
           <LogoMarquee items={companiesRow2} reverse duration={95} />
-        </motion.div>
+        </Reveal>
 
-        <motion.ul
-          className="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl"
-          variants={reveal.container(0.12, 0.2)}
-        >
-          {examples.map((ex) => (
-            <motion.li
-              key={ex.company}
-              variants={reveal.fadeUp}
-              className="flex gap-4"
-            >
+        <ul className="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl">
+          {examples.map((ex, i) => (
+            <Reveal as="li" key={ex.company} className="flex gap-4" delay={0.1 + i * 0.12}>
               <span className="mt-2 h-2 w-2 rounded-full bg-brand-primary flex-shrink-0" />
               <p className="text-brand-muted leading-relaxed">
                 <span className="font-semibold text-brand-deep">
@@ -125,25 +105,22 @@ export default function AboutSnippet() {
                 </span>{" "}
                 {ex.note}
               </p>
-            </motion.li>
+            </Reveal>
           ))}
-        </motion.ul>
+        </ul>
 
         <div className="mt-12 text-center">
-          <motion.p
-            className="text-brand-ink font-medium text-lg"
-            variants={reveal.fadeUp}
-          >
+          <Reveal as="p" className="text-brand-ink font-medium text-lg" delay={0.1}>
             If they&rsquo;re using AI to talk to customers, your business can too.
-          </motion.p>
+          </Reveal>
 
-          <motion.div className="mt-8" variants={reveal.fadeUp}>
+          <Reveal className="mt-8" delay={0.17}>
             <BookingButton className="btn-primary">
               Show me what this looks like for my business
             </BookingButton>
-          </motion.div>
+          </Reveal>
         </div>
-      </motion.div>
+      </div>
     </section>
   );
 }
