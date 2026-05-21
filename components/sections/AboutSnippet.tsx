@@ -77,27 +77,27 @@ export default function AboutSnippet() {
     <section className="section">
       <div className="container-page">
         <div className="max-w-3xl">
-          <Reveal as="h2" className="h-section" y={24} delay={0.05}>
+          <Reveal as="h2" className="h-section">
             The big players already made the move.
           </Reveal>
-          <Reveal as="p" className="lede mt-6" delay={0.12}>
+          <p className="lede mt-6">
             Every company you order from, every brand you scroll past, every
             app on your phone is using AI to talk to customers. Some have been
             doing it for years.
-          </Reveal>
-          <Reveal as="p" className="mt-4 text-brand-ink font-medium text-lg" delay={0.19}>
+          </p>
+          <p className="mt-4 text-brand-ink font-medium text-lg">
             The same tools are now in reach for businesses your size.
-          </Reveal>
+          </p>
         </div>
 
-        <Reveal className="mt-12 space-y-4" delay={0.1}>
+        <div className="mt-12 space-y-4">
           <LogoMarquee items={companiesRow1} duration={80} />
           <LogoMarquee items={companiesRow2} reverse duration={95} />
-        </Reveal>
+        </div>
 
         <ul className="mt-12 grid md:grid-cols-3 gap-6 max-w-5xl">
-          {examples.map((ex, i) => (
-            <Reveal as="li" key={ex.company} className="flex gap-4" delay={0.1 + i * 0.12}>
+          {examples.map((ex) => (
+            <li key={ex.company} className="flex gap-4">
               <span className="mt-2 h-2 w-2 rounded-full bg-brand-primary flex-shrink-0" />
               <p className="text-brand-muted leading-relaxed">
                 <span className="font-semibold text-brand-deep">
@@ -105,20 +105,20 @@ export default function AboutSnippet() {
                 </span>{" "}
                 {ex.note}
               </p>
-            </Reveal>
+            </li>
           ))}
         </ul>
 
         <div className="mt-12 text-center">
-          <Reveal as="p" className="text-brand-ink font-medium text-lg" delay={0.1}>
+          <p className="text-brand-ink font-medium text-lg">
             If they&rsquo;re using AI to talk to customers, your business can too.
-          </Reveal>
+          </p>
 
-          <Reveal className="mt-8" delay={0.17}>
+          <div className="mt-8">
             <BookingButton className="btn-primary">
               Show me what this looks like for my business
             </BookingButton>
-          </Reveal>
+          </div>
         </div>
       </div>
     </section>

@@ -8,11 +8,9 @@ export default function ProblemHook() {
   return (
     <section className="section">
       <div className="container-page">
-        <Reveal as="p" className="eyebrow mb-4" delay={0.05}>
-          The Problem
-        </Reveal>
+        <p className="eyebrow mb-4">The Problem</p>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
-          <Reveal y={24} delay={0.1}>
+          <Reveal>
             <CountUp
               to={67}
               suffix="%"
@@ -24,23 +22,23 @@ export default function ProblemHook() {
             </p>
           </Reveal>
           <div className="space-y-5 text-brand-muted text-lg leading-relaxed">
-            <Reveal as="p" delay={0.15}>
+            <p>
               Someone fills out your form. You&rsquo;re busy. By the time you
               get back to them, they&rsquo;ve already called the next shop on
               their list.
-            </Reveal>
-            <Reveal as="p" className="text-brand-ink font-medium text-xl" delay={0.25}>
+            </p>
+            <p className="text-brand-ink font-medium text-xl">
               You don&rsquo;t need more leads. You need to stop losing the ones
               you already have.
-            </Reveal>
-            <Reveal as="p" delay={0.35}>
+            </p>
+            <p>
               We set up a system that texts them back in seconds and gets the
               meeting booked before you ever pick up the phone.
-            </Reveal>
+            </p>
           </div>
         </div>
 
-        <Reveal y={24} className="mt-16 max-w-4xl mx-auto">
+        <Reveal className="mt-16 max-w-4xl mx-auto">
           <PhoneConversation />
         </Reveal>
       </div>

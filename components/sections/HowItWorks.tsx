@@ -30,7 +30,7 @@ export default function HowItWorks() {
   return (
     <section className="section bg-brand-soft">
       <div className="container-page">
-        <Reveal as="h2" className="h-section max-w-3xl" delay={0.05}>
+        <Reveal as="h2" className="h-section max-w-3xl">
           Every lead handled, end to end.
         </Reveal>
 
@@ -49,7 +49,7 @@ export default function HowItWorks() {
             transition={{ duration: s(1.1), delay: s(0.5), ease: EASE }}
           />
           {steps.map((s, i) => (
-            <Reveal key={s.n} delay={0.1 + i * 0.15} className="h-full">
+            <Reveal key={s.n} delay={i * 0.06} className="h-full">
               <div className="card relative h-full">
                 <div className="flex items-center justify-between">
                   <span className="font-mono text-xs font-medium uppercase tracking-wider text-brand-deep">
@@ -69,7 +69,6 @@ export default function HowItWorks() {
         </div>
 
         <Reveal
-          y={24}
           className="mt-14 rounded-2xl overflow-hidden ring-1 ring-brand-line shadow-deep max-w-5xl mx-auto bg-brand-soft"
           role="img"
           aria-label="Unified inbox showing leads from calls, texts, Instagram DMs, and web forms with AI replies and booked appointments"

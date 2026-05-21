@@ -38,9 +38,9 @@ type RevealProps = {
 export default function Reveal({
   as: Tag = "div",
   delay = 0,
-  y = 18,
+  y = 12,
   x = 0,
-  duration = 0.5,
+  duration = 0.45,
   className,
   style,
   children,

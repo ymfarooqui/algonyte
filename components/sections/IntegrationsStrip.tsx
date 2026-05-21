@@ -14,9 +14,9 @@ export default function IntegrationsStrip() {
           </h2>
         </Reveal>
 
-        <Reveal delay={0.17} className="mt-10">
+        <div className="mt-10">
           <StackMarquee />
-        </Reveal>
+        </div>
       </div>
     </section>
   );
