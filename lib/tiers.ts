@@ -1,5 +1,6 @@
 // lib/tiers.ts
 
+// Single value today; type kept as a union so future tier commitments can be added without changing the Tier shape.
 export type Commitment = "month-to-month";
 
 export type TierId = "found" | "awake" | "climbing";
@@ -94,7 +95,5 @@ export const tiers: readonly Tier[] = [
     featured: true,
   },
 ] as const;
-
-export const allTiers = tiers;
 
 export const HOSTING_FLAT = 99;

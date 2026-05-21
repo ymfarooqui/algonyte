@@ -1,10 +1,9 @@
 import { describe, it, expect } from "vitest";
-import { tiers, allTiers, HOSTING_FLAT } from "@/lib/tiers";
+import { tiers, HOSTING_FLAT } from "@/lib/tiers";
 
 describe("tier data invariants", () => {
   it("has exactly 3 tiers", () => {
     expect(tiers).toHaveLength(3);
-    expect(allTiers).toHaveLength(3);
   });
 
   it("tier ids are found, awake, climbing in that order", () => {
@@ -12,8 +11,8 @@ describe("tier data invariants", () => {
   });
 
   it("Found uses the flat hosting price", () => {
-    const found = tiers.find((t) => t.id === "found");
-    expect(found?.monthly).toBe(HOSTING_FLAT);
+    const found = tiers.find((t) => t.id === "found")!;
+    expect(found.monthly).toBe(HOSTING_FLAT);
   });
 
   it("monthly prices ladder up: Found < Awake < Climbing", () => {
