@@ -29,7 +29,7 @@ const serviceJsonLd = {
   "@type": "Service",
   "@id": `${siteConfig.url}/lead-generator#service`,
   serviceType: "Paid Lead Generation Management",
-  name: `Lead Generation by Algonyte Labs, ${scale.name} tier`,
+  name: `Lead Generation by AlgoNyte, ${scale.name} tier`,
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   description:
     "Google Search Ads, Local Service Ads, and Meta Ads managed for service businesses. Ad spend goes directly to Google and Meta, no markup, no bundling. Part of the Scale tier.",
@@ -261,7 +261,7 @@ export default function LeadGeneratorPage() {
                 <tr className="border-b border-slate-200">
                   <th className="py-3 pr-4 text-brand-muted font-medium w-40"></th>
                   <th className="py-3 px-4 text-brand-deep font-bold bg-brand-accent/40 rounded-t-lg">
-                    Algonyte {scale.name}
+                    AlgoNyte {scale.name}
                   </th>
                   <th className="py-3 px-4 text-brand-muted font-medium">Scorpion</th>
                   <th className="py-3 px-4 text-brand-muted font-medium">Blue Corona</th>

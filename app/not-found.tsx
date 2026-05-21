@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 export const metadata: Metadata = {
-  title: "Page not found — Algonyte Labs",
+  title: "Page not found — AlgoNyte",
   description:
     "We can't find that page. Head back home or explore our AI receptionist, voice agents, and web presence services.",
   robots: { index: false, follow: true },

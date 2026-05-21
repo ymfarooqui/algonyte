@@ -10,7 +10,7 @@ import { reputationManagementServiceSchema } from "@/lib/schema";
 const awake = growthTiers[0];
 const climbing = growthTiers[1];
 
-const title = "Reputation Management for Service Businesses | Algonyte";
+const title = "Reputation Management for Service Businesses | AlgoNyte";
 const description =
   `Automated post-job review requests with smart routing for unhappy customers. Now included in ${awake.name} ($${awake.monthly}/mo, Google reviews) and ${climbing.name} ($${climbing.monthly}/mo, multi-platform). Move your rating in 60 days.`;
 

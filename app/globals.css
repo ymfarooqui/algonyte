@@ -3,10 +3,10 @@
 
 :root {
   color-scheme: light;
-  --accent: 31 79 74;
-  --accent-deep: 20 53 52;
-  --paper: 250 247 242;
-  --ink: 26 24 22;
+  --accent: 4 120 87;
+  --accent-deep: 6 95 70;
+  --paper: 246 247 249;
+  --ink: 15 23 42;
 
   --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
   --ease-in-out: cubic-bezier(0.77, 0, 0.175, 1);
@@ -128,19 +128,19 @@ body {
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
     background-color: rgb(var(--accent-deep));
-    box-shadow: 0 8px 24px -8px rgba(31, 79, 74, 0.18), 0 2px 6px rgba(26, 24, 22, 0.04);
+    box-shadow: 0 8px 24px -8px rgba(4, 120, 87, 0.20), 0 2px 6px rgba(15, 23, 42, 0.04);
     transform: translateY(-1px);
   }
   .btn-secondary:hover {
-    background-color: rgb(242 238 230);
-    border-color: rgba(26, 24, 22, 0.3);
+    background-color: rgb(236 238 242);
+    border-color: rgba(15, 23, 42, 0.3);
   }
   .btn-link:hover {
     gap: 0.625rem;
     text-decoration-line: underline;
   }
   .card:hover {
-    box-shadow: 0 8px 24px -8px rgba(31, 79, 74, 0.18), 0 2px 6px rgba(26, 24, 22, 0.04);
+    box-shadow: 0 8px 24px -8px rgba(4, 120, 87, 0.20), 0 2px 6px rgba(15, 23, 42, 0.04);
     transform: translateY(-4px);
   }
   .card-inset:hover {
@@ -150,10 +150,10 @@ body {
     text-decoration-color: rgb(var(--accent));
   }
   .logo-card:hover {
-    box-shadow: 0 8px 24px -8px rgba(31, 79, 74, 0.18), 0 2px 6px rgba(26, 24, 22, 0.04);
+    box-shadow: 0 8px 24px -8px rgba(4, 120, 87, 0.20), 0 2px 6px rgba(15, 23, 42, 0.04);
   }
   .lift-card:hover {
-    box-shadow: 0 8px 24px -8px rgba(31, 79, 74, 0.18), 0 2px 6px rgba(26, 24, 22, 0.04);
+    box-shadow: 0 8px 24px -8px rgba(4, 120, 87, 0.20), 0 2px 6px rgba(15, 23, 42, 0.04);
     transform: translateY(-4px);
   }
   .lift-card.lift-sm:hover {
@@ -214,7 +214,7 @@ body {
 }
 .aurora-a { background: radial-gradient(closest-side, rgb(var(--accent)) 0%, transparent 70%); animation: aurora-drift-a 26s ease-in-out infinite; }
 .aurora-b { background: radial-gradient(closest-side, rgb(var(--accent-deep)) 0%, transparent 70%); animation: aurora-drift-b 32s ease-in-out infinite; opacity: 0.22; }
-.aurora-c { background: radial-gradient(closest-side, #C9A876 0%, transparent 70%); animation: aurora-drift-c 38s ease-in-out infinite; opacity: 0.16; }
+.aurora-c { background: radial-gradient(closest-side, #94A3B8 0%, transparent 70%); animation: aurora-drift-c 38s ease-in-out infinite; opacity: 0.16; }
 
 .grain {
   position: absolute;
@@ -236,8 +236,8 @@ body {
   pointer-events: none;
   background: radial-gradient(
     600px circle at var(--mx, 50%) var(--my, 50%),
-    rgba(31, 79, 74, 0.10),
-    rgba(31, 79, 74, 0.04) 35%,
+    rgba(4, 120, 87, 0.10),
+    rgba(4, 120, 87, 0.04) 35%,
     transparent 60%
   );
   transition: background 200ms var(--ease-out);

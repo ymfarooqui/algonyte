@@ -45,7 +45,7 @@ export default function HowItWorks() {
             className="hidden md:block absolute top-12 left-[16%] right-[16%] h-px origin-left"
             style={{
               backgroundImage:
-                "linear-gradient(to right, rgba(31,79,74,0.35) 50%, transparent 50%)",
+                "linear-gradient(to right, rgba(4,120,87,0.35) 50%, transparent 50%)",
               backgroundSize: "10px 1px",
             }}
             initial={{ scaleX: 0, opacity: 0 }}

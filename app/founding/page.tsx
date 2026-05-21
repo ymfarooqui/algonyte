@@ -10,7 +10,7 @@ import { jsonLdString } from "@/lib/jsonLd";
 const title =
   "Founding Member Program | 3 Spots, 50% Off Setup, 30% Off for 6 Months";
 const description =
-  "Join one of three Algonyte founding spots. 50% off any setup fee. 30% off Awake, Climbing, or Scale for 6 months. In exchange: feedback and one testimonial.";
+  "Join one of three AlgoNyte founding spots. 50% off any setup fee. 30% off Awake, Climbing, or Scale for 6 months. In exchange: feedback and one testimonial.";
 
 export const metadata: Metadata = {
   title,
@@ -39,7 +39,7 @@ export default function FoundingPage() {
             </h1>
             <p className="lede mt-6 max-w-2xl">
               We&rsquo;re selecting {founding.spots} founding clients to build
-              Algonyte&rsquo;s first case studies with. In exchange for honest
+              AlgoNyte&rsquo;s first case studies with. In exchange for honest
               feedback and a testimonial when you have results, you get{" "}
               {founding.setupDiscountPct}% off your setup fee on any tier, plus{" "}
               {founding.growthDiscountPct}% off any Growth retainer for your
@@ -326,7 +326,7 @@ export default function FoundingPage() {
             </table>
           </div>
           <p className="mt-3 text-xs text-brand-muted">
-            Scale ad spend goes on your card directly to Google and Meta. No markup, never touches Algonyte.
+            Scale ad spend goes on your card directly to Google and Meta. No markup, never touches AlgoNyte.
           </p>
         </div>
       </section>
@@ -403,7 +403,7 @@ export default function FoundingPage() {
         <div className="container-page max-w-3xl">
           <h2 className="h-section">Case studies. References. Real data.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Algonyte is early. We have the infrastructure, the processes, and
+            AlgoNyte is early. We have the infrastructure, the processes, and
             the conviction, but no documented results from paying clients to
             show the next business owner who asks. Founding members fix that.
             You get a significant discount on a working product; we get the
