@@ -20,8 +20,8 @@ All pre-deploy must-do items are complete. Site is deployed on Vercel, DNS is li
 
 ### 2. SocialProof metrics — finish softening
 - **Where:** `components/sections/SocialProof.tsx`
-- **Today:** $60K stat is now anchored to "one client's first year" ✅. The other two (72% faster reply / 60-sec response) are still presented as raw facts. If those came from research/aspirational data rather than your own measurements, soften them the same way.
-- **You:** Confirm the source for 72% and 60 sec, or label them similarly.
+- **Today:** $60K stat is now anchored to "one client's first year" ✅. The other two (72% faster reply / 15-sec response) are still presented as raw facts. If those came from research/aspirational data rather than your own measurements, soften them the same way.
+- **You:** Confirm the source for 72% and 15 sec, or label them similarly.
 
 ### 3. Decide on the trust-block companies
 - **Where:** `components/sections/AboutSnippet.tsx` — two marquee rows of 12 brand logos plus three example claims (Amazon / Walmart / Klarna).

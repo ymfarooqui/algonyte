@@ -12,7 +12,7 @@ type Metric = {
 
 const metrics: Metric[] = [
   { to: 72, suffix: "%", label: "Faster reply to a new lead" },
-  { to: 60, suffix: " sec", label: "From form to first response" },
+  { to: 15, suffix: " sec", label: "From form to first response" },
   { prefix: "$", to: 60, suffix: "K+", label: "Saved in one client's first year" },
 ];
 

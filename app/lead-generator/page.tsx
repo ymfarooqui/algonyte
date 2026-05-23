@@ -64,7 +64,7 @@ const faqs = [
   },
   {
     q: "How fast do leads get a response?",
-    a: "Seconds. A missed call triggers an SMS the moment it disconnects. A DM on Instagram or Facebook gets a reply before the lead switches tabs. A form fill kicks off an immediate text. Speed-to-lead is the single biggest predictor of who books — we keep it under a minute.",
+    a: "Seconds. A missed call triggers an SMS the moment it disconnects. A DM on Instagram or Facebook gets a reply before the lead switches tabs. A form fill kicks off an immediate text. Speed-to-lead is the single biggest predictor of who books — we keep it under 15 seconds.",
   },
   {
     q: "What if the AI can't handle a call or message?",

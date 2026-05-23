@@ -3,7 +3,7 @@
 import Reveal from "@/components/Reveal";
 
 const stats = [
-  { value: "60 sec", label: "From new lead to first reply" },
+  { value: "15 sec", label: "From new lead to first reply" },
   { value: "24/7", label: "Answering, qualifying, booking" },
   { value: "0", label: "Missed leads, ever" },
 ];
