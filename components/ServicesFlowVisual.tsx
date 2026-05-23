@@ -224,7 +224,7 @@ const STAGES: Stage[] = [
       "Ongoing Google Business Profile work",
       "Monthly rank tracking + traffic report",
     ],
-    stat: { value: "<5s", label: "first response" },
+    stat: { value: "15s", label: "first response" },
     card: <GrowthCard />,
     icon: I.growth,
   },
