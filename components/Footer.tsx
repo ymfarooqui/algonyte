@@ -13,6 +13,9 @@ export default function Footer() {
           &copy; {new Date().getFullYear()} AlgoNyte. All rights reserved.
         </p>
         <nav className="flex justify-center sm:justify-end gap-6 text-sm text-brand-muted">
+          <Link href="/about" className="nav-link hover:text-brand-deep">
+            About
+          </Link>
           <Link href="/privacy" className="nav-link hover:text-brand-deep">
             Privacy
           </Link>
