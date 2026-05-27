@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
+import InstagramSection from "@/components/sections/InstagramSection";
 
 const values = [
   {
@@ -173,6 +174,8 @@ export default function AboutContent() {
           </div>
         </div>
       </section>
+
+      <InstagramSection />
     </>
   );
 }
