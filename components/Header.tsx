@@ -9,11 +9,16 @@ import { BookingButton } from "@/components/BookingModal";
 const primaryLinks = [
   { href: "/ai-receptionist", label: "AI Receptionist" },
   { href: "/web-presence", label: "Web Presence" },
+  { href: "/industries", label: "Industries" },
   { href: "/pricing", label: "Pricing" },
 ];
 
 const secondaryLinks = [
+  { href: "/locations", label: "Locations" },
   { href: "/lead-generator", label: "Lead Generation" },
+  { href: "/database-reactivation", label: "Reactivation" },
+  { href: "/instant-booking", label: "Instant Booking" },
+  { href: "/ad-management", label: "Ad Management" },
   { href: "/about", label: "About" },
   { href: "/contact", label: "Contact" },
 ];
