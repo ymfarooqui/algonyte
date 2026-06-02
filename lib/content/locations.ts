@@ -391,6 +391,310 @@ export const locations: LandingContent[] = [
     serviceType: "AI Receptionist & Lead Automation",
     geo: { kind: "neighborhood", name: "West Loop", city: "Chicago", state: "Illinois" },
   },
+
+  {
+    slug: "evanston",
+    kind: "location",
+    indexTitle: "Evanston",
+    indexBlurb:
+      "A dense North Shore market of vintage homes, a university crowd, and busy professional households.",
+    metaTitle: "AI Receptionist in Evanston, IL | Stop Missing Service Calls",
+    metaDescription:
+      "AI receptionist for Evanston, IL service businesses. Answer, qualify, and book leads 24/7 across the North Shore and the north lakefront. From $549/mo.",
+    eyebrow: "Evanston, Illinois",
+    h1: { pre: "AI receptionist for", accent: "Evanston, IL", post: " service businesses." },
+    heroSub:
+      "We install an AI receptionist on top of your existing phone, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked without you touching them.",
+    problem: {
+      heading: "A university town of old homes and busy schedules — and a phone that rings mid-task.",
+      paragraphs: [
+        "Evanston packs a lot into a few square miles: Northwestern students and faculty, longtime North Shore families, and a dense rental market, all in housing that skews old — vintage homes, walk-ups, and lakefront condos that keep contractors, and every other service business, busy. The demand is steady; the catch is that these residents are busy and quick to book whoever answers first.",
+        "The rhythm here is its own challenge. Move-in and move-out waves around the university, summer projects while families travel, and the evening-and-weekend window when commuters who work in the city finally deal with home and appointments. That window is exactly when most local businesses send calls to voicemail.",
+        "You don't need more visibility in a market this compact. You need the calls, forms, and messages you already get answered the moment they arrive, so the lead books with you instead of the business one block north in Wilmette.",
+      ],
+    },
+    proof: {
+      heading: "Car Hub, Macomb Township: 10 booked jobs in week one.",
+      paragraphs: [
+        "Our first client is an independent auto shop outside Detroit. Before the AI receptionist went live, after-hours calls died in voicemail and new-customer leads slipped to the next shop on Google. In the first week the system was live, it booked 10 jobs the shop wouldn't have captured otherwise.",
+        "The same workflow runs for an Evanston contractor working on a century-old home, a dental practice downtown, or a tutor near campus. The install doesn't care which industry it's plugged into — it cares that a lead reached you and got an answer in seconds.",
+      ],
+    },
+    system: [
+      {
+        title: "Missed-call text-back",
+        body: "Every unanswered call triggers an SMS within seconds. The conversation continues over text until the lead is qualified and a time is on your calendar.",
+      },
+      {
+        title: "AI chat on your site",
+        body: "A 24/7 chat agent on your website plus SMS, WhatsApp, and Instagram DM, trained on your services and the North Shore neighborhoods you cover.",
+      },
+      {
+        title: "Voice AI (Climbing plan)",
+        body: "Picks up the phone when you can't. Qualifies, books, and hands off with a full transcript. Bilingual English/Spanish handling is available on this plan.",
+      },
+      {
+        title: "CRM and follow-up",
+        body: "Every lead tracked. Reminders, follow-up sequences, and Google review requests fire automatically — no spreadsheets, no forgotten callbacks.",
+      },
+    ],
+    local: {
+      heading: "Evanston, the North Shore, and the north lakefront.",
+      paragraphs: [
+        "We work with service businesses across Evanston — downtown, the neighborhoods around campus, and the lakefront residential streets — plus Skokie, Wilmette, and the bordering Rogers Park lakefront in the city. The system is remote-first and runs the same for a solo operator or a small practice.",
+        "Old housing brings its own qualifying questions — age, access, parking, unit type — and the agent captures them up front so a job is scoped before anyone navigates Evanston's dense streets and permit-parking blocks.",
+        "Run a specific trade? See how this works for home-services contractors, dental practices, and restaurants — or step back to the Chicago overview for the full metro picture.",
+      ],
+    },
+    faqs: [
+      {
+        q: "Do you only work with businesses inside Evanston?",
+        a: "No. The system is remote and serves the North Shore and the north lakefront — Evanston, Skokie, Wilmette, and the bordering Rogers Park neighborhoods in the city. We highlight Evanston because its mix of old homes, a university population, and busy professional households generates a steady stream of leads that voicemail loses.",
+      },
+      {
+        q: "Can the agent ask questions specific to older homes?",
+        a: "Yes. We train the qualification flow on your trade. For contractors working Evanston's vintage housing, that means capturing the home's age, the system involved, access, and parking up front — so the job is properly scoped before your tech drives out.",
+      },
+      {
+        q: "How fast can an Evanston business go live?",
+        a: "Most installs go live in 5 to 7 days. We forward your existing number, connect your calendar, and train the agent on your services and service area before any real leads reach it. The Climbing plan with voice AI takes 10 to 14 days.",
+      },
+      {
+        q: "Can it handle Spanish-speaking callers?",
+        a: "Bilingual handling is available on the Climbing plan. The agent detects the caller's language, switches to Spanish, and runs the full qualification and booking flow without a hand-off. On Awake, the agent is English-only.",
+      },
+    ],
+    serviceType: "AI Receptionist & Lead Automation",
+    geo: { kind: "suburb", city: "Evanston", state: "Illinois" },
+  },
+
+  {
+    slug: "aurora",
+    kind: "location",
+    indexTitle: "Aurora",
+    indexBlurb:
+      "Illinois' second-largest city — a big, diverse Fox Valley market with strong bilingual demand.",
+    metaTitle: "AI Receptionist in Aurora, IL | Stop Missing Service Calls",
+    metaDescription:
+      "AI receptionist for Aurora, IL service businesses. Answer, qualify, and book leads 24/7 across the Fox Valley — bilingual English and Spanish. From $549/mo.",
+    eyebrow: "Aurora, Illinois",
+    h1: { pre: "AI receptionist for", accent: "Aurora, IL", post: " service businesses." },
+    heroSub:
+      "We install an AI receptionist on top of your existing phone, website, and inbox so missed calls, after-hours leads, and form fills get answered, qualified, and booked — in English or Spanish — without you touching them.",
+    problem: {
+      heading: "Illinois' second-largest city is a big market — and a lot of it goes to voicemail.",
+      paragraphs: [
+        "Aurora is the second-largest city in Illinois and one of the most diverse, spread across the Fox Valley from a historic downtown to fast-growing subdivisions on the far east and west sides. That scale means real volume for service businesses — home services, auto, restaurants, trades — and real competition, where the lead goes to whoever answers first.",
+        "A big, spread-out market makes two things matter: covering a wide service area without driving across it for nothing, and serving a large Spanish-speaking population in the language they're most comfortable in. A lot of local businesses lose leads on both counts — calls outside the zone and callers an English-only line can't fully help.",
+        "The fix isn't more marketing into a competitive market. It's answering every lead the second it arrives, qualifying it by location, and handling it in the caller's language — so the demand you already have actually converts.",
+      ],
+    },
+    proof: {
+      heading: "Car Hub, Macomb Township: 10 booked jobs in week one.",
+      paragraphs: [
+        "Our first client is an independent auto shop outside Detroit. Before the AI receptionist went live, after-hours calls died in voicemail and new-customer leads slipped to the next shop on Google. In the first week the system was live, it booked 10 jobs the shop wouldn't have captured otherwise.",
+        "The same workflow runs for an Aurora HVAC company covering the Fox Valley, a restaurant taking catering orders, or an auto shop on the east side — in English or Spanish. The install doesn't care which industry it's plugged into; it cares that a lead reached you and got an answer in seconds.",
+      ],
+    },
+    system: [
+      {
+        title: "Missed-call text-back",
+        body: "Every unanswered call triggers an SMS within seconds. The conversation continues over text until the lead is qualified and a time is on your calendar.",
+      },
+      {
+        title: "Bilingual handling (Climbing)",
+        body: "A real edge in Aurora: the agent detects Spanish and runs the full qualification and booking flow in-language on the Climbing plan, so you capture leads an English-only line would lose.",
+      },
+      {
+        title: "Service-area routing",
+        body: "Trained on your boundaries across the Fox Valley, the agent qualifies the address and routes by ZIP, so a wide territory doesn't mean chasing jobs across the metro.",
+      },
+      {
+        title: "CRM and follow-up",
+        body: "Every lead tracked. Reminders, follow-up sequences, and Google review requests fire automatically — no spreadsheets, no forgotten callbacks.",
+      },
+    ],
+    local: {
+      heading: "Aurora and the Fox Valley.",
+      paragraphs: [
+        "We work with service businesses across Aurora — downtown, the east and west sides, and out toward Naperville, Oswego, Montgomery, North Aurora, and Batavia — across Kane, DuPage, Kendall, and Will County. The system is remote-first and scales from one location to a multi-site operation.",
+        "It's trained on your service area and routes by ZIP, so a wide Fox Valley territory doesn't mean fielding leads from across the metro, and bilingual handling on Climbing means Spanish-speaking customers get the same fast, complete service as everyone else.",
+        "Run a specific trade? See how this works for home-services contractors, auto dealerships, and restaurants — or step back to the Chicago overview for the full metro picture.",
+      ],
+    },
+    faqs: [
+      {
+        q: "Can the agent handle Spanish-speaking callers?",
+        a: "Yes, on the Climbing plan — and in Aurora it's one of the strongest reasons to run it. The agent detects the caller's language, switches to Spanish, and runs the full qualification and booking flow without a hand-off, so you capture leads an English-only line would lose. On Awake, the agent is English-only.",
+      },
+      {
+        q: "Do you only work with businesses inside Aurora city limits?",
+        a: "No. The system is remote and covers the Fox Valley — Aurora, North Aurora, Montgomery, Oswego, Batavia, and out toward Naperville — across Kane, DuPage, Kendall, and Will County. We highlight Aurora because its size and diversity mean a lot of leads, and a lot of them currently go to voicemail.",
+      },
+      {
+        q: "Can it route leads across a wide service area?",
+        a: "Yes. The agent qualifies the address or ZIP during the conversation and routes by your rules, so a spread-out Fox Valley territory only produces the in-area jobs you actually want to drive to.",
+      },
+      {
+        q: "How fast can an Aurora business go live?",
+        a: "Most installs go live in 5 to 7 days. We forward your existing number, connect your calendar, and train the agent on your services and service area before any real leads reach it. The Climbing plan with voice AI and bilingual handling takes 10 to 14 days.",
+      },
+    ],
+    serviceType: "AI Receptionist & Lead Automation",
+    geo: { kind: "suburb", city: "Aurora", state: "Illinois" },
+  },
+
+  {
+    slug: "lakeview",
+    kind: "location",
+    indexTitle: "Lakeview",
+    indexBlurb:
+      "One of Chicago's densest neighborhoods — a huge small-business economy from Wrigleyville to Southport.",
+    metaTitle: "AI Receptionist in Lakeview, Chicago | Never Miss a Lead",
+    metaDescription:
+      "AI receptionist for Lakeview and Wrigleyville businesses. Answer calls, texts, and DMs 24/7 across Chicago's dense North Side. From $549/mo.",
+    eyebrow: "Lakeview, Chicago",
+    h1: { pre: "AI receptionist for", accent: "Lakeview", post: " businesses." },
+    heroSub:
+      "We install an AI receptionist on top of your existing phone, website, and social inboxes so calls, texts, and DMs get answered, qualified, and booked without you touching them.",
+    problem: {
+      heading: "One of the city's densest neighborhoods means more leads — and more slipping away.",
+      paragraphs: [
+        "Lakeview is wall-to-wall small business: the bars and restaurants of Wrigleyville, the boutiques and cafes of the Southport Corridor, Northalsted, and a service economy — salons, fitness studios, dental, med spa, home services for rehabbed three-flats — packed into one of Chicago's densest, youngest neighborhoods. The volume of potential customers is enormous, and so is the competition one storefront over.",
+        "This crowd runs on its phone. They DM on Instagram, text, and book online late at night between plans, and if they hit a slow inbox or a voicemail, the next option is half a block away. On a Cubs game day, the normal chaos doubles and the phone never stops.",
+        "You don't need more foot traffic in Lakeview. You need every call, text, and DM answered the instant it lands, so the lead books with you instead of the place down Clark Street.",
+      ],
+    },
+    proof: {
+      heading: "Car Hub, Macomb Township: 10 booked jobs in week one.",
+      paragraphs: [
+        "Our first client is an independent auto shop outside Detroit. Before the AI receptionist went live, after-hours calls died in voicemail and new-customer leads slipped to the next shop on Google. In the first week the system was live, it booked 10 jobs the shop wouldn't have captured otherwise.",
+        "The same workflow runs for a Lakeview salon, a Southport dental practice, or a restaurant near Wrigley. The install doesn't care which industry it's plugged into — it cares that a lead reached you and got an answer in seconds.",
+      ],
+    },
+    system: [
+      {
+        title: "DM auto-reply",
+        body: "Instagram and Facebook are where Lakeview customers actually message local businesses. The agent replies in seconds with answers, pricing, and a booking link instead of letting the DM sit unread.",
+      },
+      {
+        title: "Missed-call text-back",
+        body: "Every unanswered call triggers an instant SMS. The conversation continues over text until the lead is qualified and a time is on your calendar.",
+      },
+      {
+        title: "Voice AI (Climbing plan)",
+        body: "Picks up the phone when you can't. Qualifies, books, and hands off with a full transcript. Bilingual English/Spanish handling is available on this plan.",
+      },
+      {
+        title: "CRM and follow-up",
+        body: "Every lead tracked. Reminders, follow-up sequences, and Google review requests fire automatically — the reviews that win a comparison-shopping neighbor.",
+      },
+    ],
+    local: {
+      heading: "Lakeview, Wrigleyville, and the North Side.",
+      paragraphs: [
+        "We work with businesses across Lakeview — Wrigleyville, the Southport Corridor, Northalsted, and West Lakeview — and the surrounding North Side from Lincoln Park to Uptown. The system is remote-first, for a single location or a small group.",
+        "Dense neighborhood work has its own questions — access, parking, unit type, timing around events — and the agent captures them up front so jobs are scoped and game-day surges don't bury your team.",
+        "Run a restaurant or a service business? See how this works for restaurants, dental practices, and med spas — or step back to the Chicago overview for the full metro picture.",
+      ],
+    },
+    faqs: [
+      {
+        q: "Most of my leads come through Instagram DMs. Does it handle that?",
+        a: "Yes. DM auto-reply covers Instagram, Facebook, WhatsApp, and Google Business Messages. The agent answers in seconds with the info the customer asked for and a way to book, instead of the message waiting hours for someone to see it.",
+      },
+      {
+        q: "Do you only work with businesses physically in Lakeview?",
+        a: "No. The system is remote and serves the North Side — Lakeview, Wrigleyville, the Southport Corridor, Lincoln Park, and up toward Uptown. We highlight Lakeview because its density means a constant flow of leads that voicemail and slow inboxes quietly lose.",
+      },
+      {
+        q: "Can it handle the surge on a Cubs game day?",
+        a: "Yes — that's when it earns its keep. The agent answers every call, text, and DM in parallel and never goes to voicemail, so a game-day rush doesn't cost you the bookings coming in at the same time.",
+      },
+      {
+        q: "How fast can a Lakeview business go live?",
+        a: "Most installs go live in 5 to 7 days. We forward your existing number, connect your booking system, and train the agent on your services and neighborhood before any real leads reach it. The Climbing plan with voice AI takes 10 to 14 days.",
+      },
+    ],
+    serviceType: "AI Receptionist & Lead Automation",
+    geo: { kind: "neighborhood", name: "Lakeview", city: "Chicago", state: "Illinois" },
+  },
+
+  {
+    slug: "wicker-park",
+    kind: "location",
+    indexTitle: "Wicker Park",
+    indexBlurb:
+      "A trendy near-northwest hub of restaurants, boutiques, and service businesses with a digital-first crowd.",
+    metaTitle: "AI Receptionist in Wicker Park, Chicago | Never Miss a Lead",
+    metaDescription:
+      "AI receptionist for Wicker Park and Bucktown businesses. Answer calls, texts, and DMs 24/7 across Chicago's near-northwest side. From $549/mo.",
+    eyebrow: "Wicker Park, Chicago",
+    h1: { pre: "AI receptionist for", accent: "Wicker Park", post: " businesses." },
+    heroSub:
+      "We install an AI receptionist on top of your existing phone, website, and social inboxes so calls, texts, and DMs get answered, qualified, and booked without you touching them.",
+    problem: {
+      heading: "A trendy, digital-first neighborhood where a slow reply loses the booking.",
+      paragraphs: [
+        "Wicker Park and the blocks around the Six Corners of Milwaukee, North, and Damen are some of the busiest in the city for small business: restaurants and bars, boutiques, salons and barbershops, fitness, and the trades rehabbing old two-flats and outfitting new construction. The customers skew young, creative, and online — and they decide fast.",
+        "This crowd reaches out the way they do everything else: an Instagram DM, a quick text, an online booking at midnight. If that message waits hours for someone to notice, they've already booked the spot one block down Milwaukee Avenue. The neighborhood's density means there's always another option within walking distance.",
+        "You don't need more buzz in Wicker Park. You need every DM, text, and call answered the second it arrives, so the lead books with you instead of a competitor a Blue Line stop away.",
+      ],
+    },
+    proof: {
+      heading: "Car Hub, Macomb Township: 10 booked jobs in week one.",
+      paragraphs: [
+        "Our first client is an independent auto shop outside Detroit. Before the AI receptionist went live, after-hours calls died in voicemail and new-customer leads slipped to the next shop on Google. In the first week the system was live, it booked 10 jobs the shop wouldn't have captured otherwise.",
+        "The same workflow runs for a Wicker Park restaurant fielding reservations, a salon on Division Street, or a contractor scoping a vintage rehab. The install doesn't care which industry it's plugged into — it cares that a lead reached you and got an answer in seconds.",
+      ],
+    },
+    system: [
+      {
+        title: "DM auto-reply",
+        body: "Instagram and Facebook are where this neighborhood reaches out. The agent replies in seconds with answers, pricing, and a booking link instead of letting the DM sit unread until tomorrow.",
+      },
+      {
+        title: "Missed-call text-back",
+        body: "Every unanswered call triggers an instant SMS. The conversation continues over text until the lead is qualified and a time is on your calendar.",
+      },
+      {
+        title: "Voice AI (Climbing plan)",
+        body: "Picks up the phone when you can't. Qualifies, books, and hands off with a full transcript. Bilingual English/Spanish handling is available on this plan.",
+      },
+      {
+        title: "CRM and follow-up",
+        body: "Every lead tracked. Reminders, follow-up sequences, and Google review requests fire automatically — no spreadsheets, no forgotten callbacks.",
+      },
+    ],
+    local: {
+      heading: "Wicker Park, Bucktown, and the near-northwest side.",
+      paragraphs: [
+        "We work with businesses across Wicker Park — the Six Corners, Division Street, and the Damen corridor — plus Bucktown, Ukrainian Village, and Logan Square next door. The system is remote-first, for one location or a small group.",
+        "Whether it's a restaurant fielding reservations and events or a contractor scoping a vintage rehab, the agent captures the right details up front — access, timing, unit type — so jobs are scoped and inquiries don't sit unread.",
+        "Run a restaurant or a service business? See how this works for restaurants, med spas, and home-services contractors — or step back to the Chicago overview for the full metro picture.",
+      ],
+    },
+    faqs: [
+      {
+        q: "We get most of our inquiries by DM and text. Does it handle those?",
+        a: "Yes. The agent covers Instagram, Facebook, WhatsApp, Google Business Messages, and SMS, replying in seconds with the answer and a booking link — instead of the message sitting unread while the customer books somewhere else.",
+      },
+      {
+        q: "Do you only work with businesses inside Wicker Park?",
+        a: "No. The system is remote and serves the near-northwest side — Wicker Park, Bucktown, Ukrainian Village, and Logan Square. We highlight Wicker Park because its dense mix of restaurants, retail, and service businesses generates more inbound demand than most teams can answer live.",
+      },
+      {
+        q: "Can it capture the details a vintage rehab job needs?",
+        a: "Yes. We train the qualification flow to ask what matters for the work — building age, access, unit type, parking, and timing — so a job in Wicker Park's old housing stock is scoped before anyone is dispatched.",
+      },
+      {
+        q: "How fast can a Wicker Park business go live?",
+        a: "Most installs go live in 5 to 7 days. We forward your existing number, connect your booking system, and train the agent on your services and neighborhood before any real leads reach it. The Climbing plan with voice AI takes 10 to 14 days.",
+      },
+    ],
+    serviceType: "AI Receptionist & Lead Automation",
+    geo: { kind: "neighborhood", name: "Wicker Park", city: "Chicago", state: "Illinois" },
+  },
 ];
 
 export function getLocation(slug: string): LandingContent | undefined {
@@ -403,55 +707,44 @@ export type LocationGroup =
   | "Suburbs & collar counties"
   | "Detroit metro";
 
-/** Hub + sitemap registry. Includes the static `chicago` and `macomb` routes. */
+// Metadata for locations served by a hand-written static route rather than the
+// dynamic [slug] route (their full content lives in app/locations/...).
+const STATIC_LOCATION_META: Record<string, { title: string; blurb: string }> = {
+  chicago: {
+    title: "Chicago",
+    blurb: "The full metro overview — Chicagoland, Cook County, and the collar counties.",
+  },
+  macomb: {
+    title: "Macomb, MI",
+    blurb: "Our home market in the Detroit metro — where Car Hub booked 10 jobs in week one.",
+  },
+};
+
+// Display order + group for the hub, footer, and sitemap. Must list every
+// dynamic slug (content.test.ts enforces coverage) plus the static-route slugs.
+const LOCATION_ORDER: { slug: string; group: LocationGroup }[] = [
+  { slug: "chicago", group: "Chicago" },
+  { slug: "lincoln-park", group: "Chicago neighborhoods" },
+  { slug: "lakeview", group: "Chicago neighborhoods" },
+  { slug: "west-loop", group: "Chicago neighborhoods" },
+  { slug: "wicker-park", group: "Chicago neighborhoods" },
+  { slug: "naperville", group: "Suburbs & collar counties" },
+  { slug: "oak-park", group: "Suburbs & collar counties" },
+  { slug: "schaumburg", group: "Suburbs & collar counties" },
+  { slug: "evanston", group: "Suburbs & collar counties" },
+  { slug: "aurora", group: "Suburbs & collar counties" },
+  { slug: "macomb", group: "Detroit metro" },
+];
+
+/** Hub + sitemap registry. Resolves each slug to dynamic content or a static route. */
 export const locationIndex: {
   slug: string;
   title: string;
   blurb: string;
   group: LocationGroup;
-}[] = [
-  {
-    slug: "chicago",
-    title: "Chicago",
-    blurb:
-      "The full metro overview — Chicagoland, Cook County, and the collar counties.",
-    group: "Chicago",
-  },
-  {
-    slug: "lincoln-park",
-    title: "Lincoln Park",
-    blurb: locations.find((l) => l.slug === "lincoln-park")!.indexBlurb,
-    group: "Chicago neighborhoods",
-  },
-  {
-    slug: "west-loop",
-    title: "West Loop",
-    blurb: locations.find((l) => l.slug === "west-loop")!.indexBlurb,
-    group: "Chicago neighborhoods",
-  },
-  {
-    slug: "naperville",
-    title: "Naperville",
-    blurb: locations.find((l) => l.slug === "naperville")!.indexBlurb,
-    group: "Suburbs & collar counties",
-  },
-  {
-    slug: "oak-park",
-    title: "Oak Park",
-    blurb: locations.find((l) => l.slug === "oak-park")!.indexBlurb,
-    group: "Suburbs & collar counties",
-  },
-  {
-    slug: "schaumburg",
-    title: "Schaumburg",
-    blurb: locations.find((l) => l.slug === "schaumburg")!.indexBlurb,
-    group: "Suburbs & collar counties",
-  },
-  {
-    slug: "macomb",
-    title: "Macomb, MI",
-    blurb:
-      "Our home market in the Detroit metro — where Car Hub booked 10 jobs in week one.",
-    group: "Detroit metro",
-  },
-];
+}[] = LOCATION_ORDER.map(({ slug, group }) => {
+  const c = getLocation(slug);
+  if (c) return { slug, title: c.indexTitle, blurb: c.indexBlurb, group };
+  const s = STATIC_LOCATION_META[slug];
+  return { slug, title: s.title, blurb: s.blurb, group };
+});
