@@ -1,5 +1,58 @@
 import Link from "next/link";
 import Image from "next/image";
+import { industryIndex } from "@/lib/content/industries";
+import { locationIndex } from "@/lib/content/locations";
+
+const solutionLinks = [
+  { href: "/ai-receptionist", label: "AI Receptionist" },
+  { href: "/web-presence", label: "Web Presence" },
+  { href: "/lead-generator", label: "Lead Generation" },
+  { href: "/instant-booking", label: "Instant Booking" },
+  { href: "/database-reactivation", label: "Database Reactivation" },
+  { href: "/ad-management", label: "Ad Management" },
+  { href: "/reputation-manager", label: "Reputation Management" },
+];
+
+const companyLinks = [
+  { href: "/pricing", label: "Pricing" },
+  { href: "/services", label: "Services" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
+  { href: "/book", label: "Book a call" },
+];
+
+function LinkColumn({
+  heading,
+  headingHref,
+  links,
+}: {
+  heading: string;
+  headingHref?: string;
+  links: { href: string; label: string }[];
+}) {
+  return (
+    <div>
+      <h3 className="text-xs font-mono uppercase tracking-[0.16em] text-brand-muted">
+        {headingHref ? (
+          <Link href={headingHref} className="nav-link hover:text-brand-deep">
+            {heading}
+          </Link>
+        ) : (
+          heading
+        )}
+      </h3>
+      <ul className="mt-4 space-y-2.5">
+        {links.map((l) => (
+          <li key={l.href}>
+            <Link href={l.href} className="text-sm text-brand-muted nav-link hover:text-brand-deep">
+              {l.label}
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
 
 export default function Footer() {
   return (
@@ -79,26 +132,44 @@ export default function Footer() {
         </div>
       </div>
 
+      {/* ── Link columns ── */}
+      <div className="container-page py-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <LinkColumn heading="Solutions" links={solutionLinks} />
+        <LinkColumn
+          heading="Industries"
+          headingHref="/industries"
+          links={industryIndex.map((it) => ({ href: `/industries/${it.slug}`, label: it.title }))}
+        />
+        <LinkColumn
+          heading="Areas served"
+          headingHref="/locations"
+          links={locationIndex.map((it) => ({ href: `/locations/${it.slug}`, label: it.title }))}
+        />
+        <LinkColumn heading="Company" links={companyLinks} />
+      </div>
+
       {/* ── Bottom bar ── */}
-      <div className="container-page py-6 grid grid-cols-1 sm:grid-cols-3 items-center gap-4 text-center sm:text-left">
-        <div className="flex items-center gap-2.5 justify-center sm:justify-start">
-          <Image src="/algonyte-labs-logo.png" alt="AlgoNyte logo" width={96} height={96} unoptimized className="h-10 w-10 object-contain" />
-          <p className="font-medium text-brand-deep tracking-tight">AlgoNyte</p>
+      <div className="border-t border-brand-line">
+        <div className="container-page py-6 grid grid-cols-1 sm:grid-cols-3 items-center gap-4 text-center sm:text-left">
+          <div className="flex items-center gap-2.5 justify-center sm:justify-start">
+            <Image src="/algonyte-labs-logo.png" alt="AlgoNyte logo" width={96} height={96} unoptimized className="h-10 w-10 object-contain" />
+            <p className="font-medium text-brand-deep tracking-tight">AlgoNyte</p>
+          </div>
+          <p className="font-mono text-[11px] text-brand-muted sm:text-center tracking-wide">
+            &copy; {new Date().getFullYear()} AlgoNyte. All rights reserved.
+          </p>
+          <nav className="flex justify-center sm:justify-end gap-6 text-sm text-brand-muted">
+            <Link href="/about" className="nav-link hover:text-brand-deep">
+              About
+            </Link>
+            <Link href="/privacy" className="nav-link hover:text-brand-deep">
+              Privacy
+            </Link>
+            <Link href="/terms" className="nav-link hover:text-brand-deep">
+              Terms
+            </Link>
+          </nav>
         </div>
-        <p className="font-mono text-[11px] text-brand-muted sm:text-center tracking-wide">
-          &copy; {new Date().getFullYear()} AlgoNyte. All rights reserved.
-        </p>
-        <nav className="flex justify-center sm:justify-end gap-6 text-sm text-brand-muted">
-          <Link href="/about" className="nav-link hover:text-brand-deep">
-            About
-          </Link>
-          <Link href="/privacy" className="nav-link hover:text-brand-deep">
-            Privacy
-          </Link>
-          <Link href="/terms" className="nav-link hover:text-brand-deep">
-            Terms
-          </Link>
-        </nav>
       </div>
 
     </footer>

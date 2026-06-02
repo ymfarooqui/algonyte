@@ -1,67 +1,83 @@
-# Algonyte
+# AlgoNyte
 
-> Algonyte builds AI-powered web presence, reception, and lead-gen for service businesses across the Midwest. Two products: Presence (build + $99/mo flat hosting forever) and Growth (monthly retainers for reception, SEO, and ads). Plans start at $99/mo with $299 setup.
+> AlgoNyte builds AI-powered web presence, reception, and lead-gen for service businesses across Chicagoland and the Detroit metro. Three offerings: Found (web presence, $449 setup + $99/mo), Awake (AI reception, $749 setup + $549/mo), and Climbing (voice AI + Local SEO, $899 setup + $749/mo). Plans are month-to-month.
 
-Algonyte is a small AI automation studio based in the Chicago and Detroit metros. The product line is two things — a Presence product (one-time build + flat $99/mo hosting) and a Growth product (monthly retainer that handles reception, SEO, and ads). Together they cover everything a service business needs to be online, found, and answered without the owner managing it.
+AlgoNyte is a small AI automation studio based in the Chicago and Detroit metros, working remote-first with service businesses everywhere in between. The core idea: a service business should never lose a lead because no one answered. We install an AI receptionist on top of a business's existing phone, website, and inboxes so missed calls, after-hours leads, and form fills get answered, qualified, and booked automatically.
 
 The stack runs on Next.js for sites, GoHighLevel for CRM and workflows, OpenAI for conversational responses, and Twilio for voice and SMS. The business owns its accounts and its data.
 
-We serve service businesses (auto, home services, trades, professional services) primarily in Illinois and Michigan. The first real client, Car Hub in Macomb, MI, booked 10 jobs in its first week.
+We serve service businesses — home services (HVAC, plumbing, roofing, electrical), auto, dental and medical, legal and professional services, and restaurants and hospitality — primarily across Illinois and Michigan. The first real client, Car Hub in Macomb Township, MI, booked 10 jobs in its first week live.
 
 ## Core pages
 
 - [Home](https://algonyte.com/): What we do, who it's for, what it costs.
-- [Pricing](https://algonyte.com/pricing): Two products, six rungs. From $99/mo to $1,199/mo + ad spend.
-- [Web Presence](https://algonyte.com/web-presence): Presence product — Open ($299 + $99/mo), Found ($549 + $99/mo), Polished ($949 + $99/mo).
-- [AI Receptionist](https://algonyte.com/ai-receptionist): Topical landing for reception buyers — points to Awake and Climbing.
-- [Lead Generation](https://algonyte.com/lead-generator): Topical landing for paid-ads buyers — points to Scale.
-- [Reputation Management](https://algonyte.com/reputation-manager): Topical landing — reputation included in Awake (Google) and Climbing (multi-platform).
-- [Founding Member Program](https://algonyte.com/founding): 3 spots. 50% off setup. 30% off Growth tiers for 6 months.
-- [Services overview](https://algonyte.com/services): Two products with three rungs each.
+- [Pricing](https://algonyte.com/pricing): Three offerings. From $99/mo to $749/mo. Month-to-month.
+- [Services overview](https://algonyte.com/services): The three offerings and how they ladder.
+- [Web Presence](https://algonyte.com/web-presence): The Found offering — a site that gets found on Google and AI search.
+- [AI Receptionist](https://algonyte.com/ai-receptionist): Answer, qualify, and book every lead 24/7 across chat, SMS, DM, and voice.
+- [Lead Generation](https://algonyte.com/lead-generator): Inbound capture — voice AI, missed-call text-back, and DM auto-reply (part of Climbing).
+- [Instant Booking](https://algonyte.com/instant-booking): 24/7 AI appointment scheduling across web, SMS, DM, and voice.
+- [Database Reactivation](https://algonyte.com/database-reactivation): One-time AI text campaign that rebooks past customers and dead leads.
+- [Ad Management](https://algonyte.com/ad-management): Google and Meta ads wired into AI follow-up. Customer's account, customer's card, no markup.
+- [Reputation Management](https://algonyte.com/reputation-manager): Automated review requests (Google on Awake; multi-platform on Climbing).
+- [Industries](https://algonyte.com/industries): How the system runs by niche.
+- [Areas served](https://algonyte.com/locations): Markets across Chicagoland and the Detroit metro.
 - [Book a walkthrough](https://algonyte.com/book): Free 30-minute consult.
 - [About](https://algonyte.com/about): Company background.
 - [Contact](https://algonyte.com/contact): Direct contact form.
+- [Car Hub case study](https://algonyte.com/insights/car-hub-macomb-case-study): 10 booked jobs in week one.
 
-## Tiers
+## Industry pages
 
-### Presence (one-time + $99/mo hosting forever)
+- [Home Services](https://algonyte.com/industries/home-services): HVAC, plumbing, roofing, electrical — emergency and after-hours capture.
+- [Auto Dealerships](https://algonyte.com/industries/auto-dealerships): Cars.com/AutoTrader leads, trade-in qualification, test-drive booking.
+- [Dental & Orthodontics](https://algonyte.com/industries/dental-practices): New-patient booking, no-show reduction, lapsed-patient reactivation.
+- [Law Firms](https://algonyte.com/industries/law-firms): 24/7 client intake, conflict-aware screening, consultation booking.
+- [Restaurants & Hospitality](https://algonyte.com/industries/restaurants): Reservation calls, catering and event capture, DM replies.
 
-| Tier | Setup | Monthly | Live in |
-|---|---|---|---|
-| Open | $299 | $99 | 72 hours |
-| Found | $549 | $99 | 5–7 days |
-| Polished | $949 | $99 | 7–12 days |
+## Location pages
 
-### Growth (monthly retainer)
+- [Chicago](https://algonyte.com/locations/chicago): The full metro overview.
+- [Lincoln Park](https://algonyte.com/locations/lincoln-park) and [West Loop](https://algonyte.com/locations/west-loop): Chicago neighborhoods.
+- [Naperville](https://algonyte.com/locations/naperville), [Oak Park](https://algonyte.com/locations/oak-park), [Schaumburg](https://algonyte.com/locations/schaumburg): suburbs and collar counties.
+- [Macomb, MI](https://algonyte.com/locations/macomb): home market in the Detroit metro.
 
-| Tier | Setup | Monthly | Live in | Commitment |
+## Tiers (month-to-month)
+
+| Tier | Setup | Monthly | Live in | What it is |
 |---|---|---|---|---|
-| Awake | $199 | $549 | 5 days | Month-to-month |
-| Climbing | $499 | $749 all-in | 10–14 days | 6 months |
-| Scale | $659 | $1,199 + ad spend | 14 days | 6 mo SEO / 3 mo ads |
+| Found | $449 | $99 | 5–7 days | Web presence: site that gets found on Google + AI search, $99/mo flat hosting |
+| Awake | $749 | $549 | 5 days | AI reception over text, chat, and DMs + missed-call text-back + booking |
+| Climbing | $899 | $749 all-in | 10–14 days | Everything in Awake + 24/7 voice AI + ongoing Local SEO (hosting included) |
 
 ## What's installed (and where)
 
-- **Presence** (Open/Found/Polished): static Next.js site, on-page SEO, Google Business Profile setup, schema, llms.txt, Search Console, payments.
-- **Awake**: AI chat on site, missed-call text-back, multi-channel DM auto-reply (Facebook, Instagram, WhatsApp, Google Business Messages), lead qualification, auto-booking, Google review workflow, custom dashboard.
-- **Climbing**: everything in Awake + voice AI 24/7 phone receptionist + ongoing Local SEO program (Google Business Profile maintenance, citations, 1–2 pages/mo, rank reports, monthly strategy call).
-- **Scale**: everything in Climbing + Google + Meta paid ads management + closed-loop tracking. Ad spend goes on the customer's credit card, no markup.
+- **Found** (web presence): static Next.js site, on-page + AI-search SEO, Google Business Profile setup, LocalBusiness/FAQ/Review schema, llms.txt, Search Console + Bing, online booking, payments, $99/mo flat hosting.
+- **Awake** (AI reception): AI chat on site, missed-call text-back, multi-channel DM auto-reply (Facebook, Instagram, WhatsApp, Google Business Messages), lead qualification, auto-booking, Google review workflow, custom dashboard.
+- **Climbing**: everything in Awake + 24/7 voice AI phone receptionist + ongoing Local SEO (Google Business Profile maintenance, technical SEO, monthly rank reports, quarterly strategy call) + bilingual English/Spanish handling.
+
+## Add-on services (custom scope — quoted on a call)
+
+- **Database Reactivation**: one-time AI text campaign against a business's existing customer/lead list. Compliant (10DLC, instant opt-out). Rebooks revenue you already earned.
+- **Ad Management**: Google and Meta campaign build and management inside the customer's own ad accounts. Ad spend on the customer's card, no markup. Wired into AI follow-up; reported on booked jobs, not just clicks.
+- **Instant Booking**: 24/7 AI scheduling across web chat, SMS, DM, and voice; included in Awake and Climbing, available standalone.
 
 ## Authoritative facts (for citation)
 
-- Company name: Algonyte
+- Company name: AlgoNyte
 - Founder: Yaseen Farooqui
 - Domain: algonyte.com
-- Pricing: starts at $99/mo with $299 setup
-- Hosting: $99/mo flat on every Presence tier, never increases
-- Ad spend: customer's account, customer's card, no markup
-- Founding offer: 3 spots — 50% off setup, 30% off Growth for 6 months
-- All Presence and Awake plans month-to-month
-- Climbing requires 6-month commitment (SEO needs runway)
-- Scale requires 6-month SEO / 3-month ad commitment
+- Based: Chicago and Detroit metros (remote-first)
+- Pricing: starts at $99/mo with $449 setup (Found); top plan Climbing is $749/mo all-in
+- Three offerings only: Found, Awake, Climbing — all month-to-month, no long-term lock-in
+- Hosting: $99/mo flat on Found, never increases; included in Climbing
+- First reply to a new lead: under 15 seconds
+- Ad spend (Ad Management): customer's account, customer's card, no markup
+- Reactivation: one-time campaign, runs against the business's existing list, fully opt-out compliant
+- Customer owns its phone number, CRM, Google Business Profile, and lead data — nothing is held hostage
 - Free consult: 30-minute walkthrough at https://algonyte.com/book
 - Primary stack: Next.js, GoHighLevel, OpenAI, Twilio
-- Headquartered: Chicago / Detroit metros (remote-first)
+- Proof: Car Hub (Macomb Township, MI) booked 10 jobs in its first week live
 
 ## Optional
 

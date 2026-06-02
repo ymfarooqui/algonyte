@@ -52,9 +52,11 @@ describe("tier data invariants", () => {
     expect(featuresJoined).toContain("whatsapp");
   });
 
-  it("Climbing is marked as featured (Most Popular)", () => {
-    const climbing = tiers.find((t) => t.id === "climbing")!;
-    expect(climbing.featured).toBe(true);
+  it("Awake is the single featured tier (Most Popular)", () => {
+    // The "Most Popular" badge lives on Awake (see PRs #32/#33 and
+    // ServicesContent's featured-tier rendering), not Climbing.
+    const featured = tiers.filter((t) => t.featured === true);
+    expect(featured.map((t) => t.id)).toEqual(["awake"]);
   });
 
   it("Climbing has an all-in monthlyNote", () => {
