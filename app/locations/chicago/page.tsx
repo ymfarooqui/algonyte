@@ -21,7 +21,7 @@ export const metadata: Metadata = {
 };
 
 const breadcrumb = breadcrumbJsonLd([
-  { name: "Locations", path: "/locations/chicago" },
+  { name: "Locations", path: "/locations" },
   { name: "Chicago, IL", path: "/locations/chicago" },
 ]);
 
