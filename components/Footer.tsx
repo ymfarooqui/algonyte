@@ -165,7 +165,7 @@ export default function Footer() {
             Done-for-you AI that answers, qualifies, and books your leads — so you never lose
             another job to a missed call.
           </p>
-          <Link href="/book" className="btn-primary mt-6">
+          <Link href="/book" className="btn-primary-featured mt-6">
             Book a call
           </Link>
         </div>

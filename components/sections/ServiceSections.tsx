@@ -103,67 +103,73 @@ function Check() {
   );
 }
 
-/** The dynamic, gently-floating glass stat card that sits beside each service. */
+/** The dynamic, futuristic stat card that sits beside each service. */
 function ServiceVisual({ service }: { service: Service }) {
   const featured = service.popular === true;
   const tags = [service.tagline, categoryLabel[service.category], "Done-for-you"];
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-ink to-brand-deep p-8 text-brand-soft ring-1 ring-inset ring-white/10 animate-float sm:p-10 ${
-        featured
-          ? "shadow-[0_24px_60px_-16px_rgba(4,120,87,0.55)]"
-          : "shadow-[0_24px_60px_-18px_rgba(6,11,23,0.55)]"
-      }`}
+      className="animate-float rounded-[27px] p-px shadow-[0_28px_64px_-18px_rgba(6,11,23,0.65)]"
+      style={{
+        backgroundImage:
+          "linear-gradient(135deg, rgba(99,102,241,0.65), rgba(16,185,129,0.4) 45%, rgba(139,92,246,0.65))",
+      }}
     >
-      {/* shiny glass highlights */}
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
-      />
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/10 via-white/[0.02] to-transparent"
-      />
-      {/* emerald glow */}
-      <div
-        aria-hidden
-        className={`pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full blur-3xl ${
-          featured ? "bg-brand-primary/40" : "bg-brand-primary/20"
-        }`}
-      />
+      <div className="relative overflow-hidden rounded-[26px] bg-gradient-to-br from-brand-ink via-brand-deep to-[#0a1330] p-8 text-brand-soft sm:p-10">
+        {/* glossy highlights */}
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 bg-gradient-to-b from-white/10 via-white/[0.02] to-transparent"
+        />
+        {/* duotone futuristic glows */}
+        <div
+          aria-hidden
+          className={`pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full blur-3xl ${
+            featured ? "bg-emerald-500/35" : "bg-emerald-500/25"
+          }`}
+        />
+        <div
+          aria-hidden
+          className="pointer-events-none absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-indigo-500/30 blur-3xl"
+        />
 
-      <div className="relative z-10 flex items-center justify-between">
-        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-brand-soft ring-1 ring-inset ring-white/15">
-          <ServiceIcon id={service.icon} className="h-6 w-6" />
-        </span>
-        <span className="inline-flex items-center gap-1.5 text-xs font-medium">
-          <span className="relative flex h-2 w-2">
-            <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+        <div className="relative z-10 flex items-center justify-between">
+          <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-brand-soft shadow-[inset_0_1px_0_rgba(255,255,255,0.25)] ring-1 ring-inset ring-white/15">
+            <ServiceIcon id={service.icon} className="h-6 w-6" />
           </span>
-          <span className="text-brand-soft/70">Live</span>
-        </span>
-      </div>
-
-      <div className="relative z-10 mt-9">
-        <div className="text-6xl font-semibold tracking-tight tabular-nums text-white">
-          {service.stat.value}
-        </div>
-        <div className="mt-2 text-sm uppercase tracking-wider text-brand-soft/60">
-          {service.stat.label}
-        </div>
-      </div>
-
-      <div className="relative z-10 mt-8 flex flex-wrap gap-2">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-soft/80 ring-1 ring-inset ring-white/10"
-          >
-            {tag}
+          <span className="inline-flex items-center gap-1.5 text-xs font-medium">
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
+            </span>
+            <span className="text-brand-soft/70">Live</span>
           </span>
-        ))}
+        </div>
+
+        <div className="relative z-10 mt-9">
+          <div className="bg-gradient-to-b from-white to-brand-subtle bg-clip-text text-6xl font-semibold tracking-tight tabular-nums text-transparent">
+            {service.stat.value}
+          </div>
+          <div className="mt-2 text-sm uppercase tracking-wider text-brand-soft/60">
+            {service.stat.label}
+          </div>
+        </div>
+
+        <div className="relative z-10 mt-8 flex flex-wrap gap-2">
+          {tags.map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-soft/80 ring-1 ring-inset ring-white/10"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
       </div>
     </div>
   );

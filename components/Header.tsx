@@ -140,7 +140,7 @@ export default function Header() {
                   {l.label}
                 </Link>
               ))}
-              <BookingButton className="rounded-full bg-brand-primary px-4 py-1.5 text-sm font-medium text-brand-soft shadow-[0_0_20px_-4px_rgba(4,120,87,0.7)] ring-1 ring-inset ring-white/20 hover:bg-brand-violet transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+              <BookingButton className="rounded-full bg-gradient-to-br from-emerald-400 to-brand-primary px-4 py-1.5 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_22px_-6px_rgba(4,120,87,0.8)] ring-1 ring-inset ring-white/30 transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
                 Book a call
               </BookingButton>
             </nav>

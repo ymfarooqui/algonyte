@@ -74,7 +74,7 @@ export default function PricingPage() {
             business runs while you sleep.
           </p>
           <div className="mt-8">
-            <Link href="/book" className="btn-primary">
+            <Link href="/book" className="btn-primary-featured">
               Book a 30-minute call
             </Link>
           </div>
