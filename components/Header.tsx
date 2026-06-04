@@ -98,15 +98,19 @@ export default function Header() {
     >
       <div className="container-page pt-3 sm:pt-4">
         {/* Floating glass pill */}
-        <div className="relative rounded-full border border-white/15 bg-brand-deep/65 px-5 py-3 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.45),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/10 backdrop-blur-xl backdrop-saturate-150 sm:px-7">
+        <div className="relative rounded-full border border-white/20 bg-gradient-to-b from-brand-deep/65 to-brand-deep/82 px-5 py-3 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.45),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/15 backdrop-blur-sm backdrop-saturate-150 sm:px-7">
           {/* glass highlights */}
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
+            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent"
           />
           <div
             aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent"
+            className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/25 via-white/5 to-transparent"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-6 -bottom-px h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
           />
 
           <div className="relative z-10 flex items-center justify-between gap-6">
@@ -167,10 +171,14 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden relative mt-2 rounded-3xl border border-white/15 bg-brand-deep/80 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.40),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/10 backdrop-blur-xl backdrop-saturate-150">
+          <div className="md:hidden relative mt-2 rounded-3xl border border-white/20 bg-gradient-to-b from-brand-deep/78 to-brand-deep/88 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.40),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/15 backdrop-blur-sm backdrop-saturate-150">
             <div
               aria-hidden
-              className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"
+              className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/15 via-white/[0.03] to-transparent"
             />
             <nav className="relative z-10 flex flex-col p-4 gap-1 text-base text-brand-soft">
               {allLinks.map((l) => (
