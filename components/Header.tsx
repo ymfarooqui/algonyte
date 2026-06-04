@@ -97,66 +97,82 @@ export default function Header() {
       }`}
     >
       <div className="container-page pt-3 sm:pt-4">
-        {/* Floating pill */}
-        <div className="flex items-center justify-between gap-6 rounded-full border border-white/10 bg-brand-deep/90 px-5 py-3 shadow-deep backdrop-blur-md sm:px-7">
-          <Link
-            href="/"
-            aria-label="AlgoNyte home"
-            className="flex items-center gap-2.5 font-medium tracking-tight text-brand-soft text-lg sm:text-xl"
-          >
-            <Image
-              src="/algonyte-labs-logo.png"
-              alt="AlgoNyte logo"
-              width={96}
-              height={96}
-              unoptimized
-              className="h-[2.5em] w-[2.5em] object-contain"
-            />
-            AlgoNyte
-          </Link>
+        {/* Floating glass pill */}
+        <div className="relative rounded-full border border-white/15 bg-brand-deep/65 px-5 py-3 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.45),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/10 backdrop-blur-xl backdrop-saturate-150 sm:px-7">
+          {/* glass highlights */}
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
+          />
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/10 to-transparent"
+          />
 
-          <nav className="hidden md:flex items-center gap-7 text-sm text-brand-soft/70">
-            {primaryLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                className="nav-link hover:text-brand-soft focus:outline-none focus-visible:text-brand-soft"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <BookingButton className="rounded-full bg-brand-primary px-4 py-1.5 text-sm font-medium text-brand-soft hover:bg-brand-violet transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2">
-              Book a call
-            </BookingButton>
-          </nav>
-
-          <button
-            aria-label="Toggle menu"
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-brand-soft hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 nav-link"
-          >
-            <span className="sr-only">Menu</span>
-            <svg
-              width="22"
-              height="22"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
+          <div className="relative z-10 flex items-center justify-between gap-6">
+            <Link
+              href="/"
+              aria-label="AlgoNyte home"
+              className="flex items-center gap-2.5 font-medium tracking-tight text-brand-soft text-lg sm:text-xl"
             >
-              {open ? (
-                <path d="M6 6l12 12M18 6L6 18" />
-              ) : (
-                <path d="M4 7h16M4 12h16M4 17h16" />
-              )}
-            </svg>
-          </button>
+              <Image
+                src="/algonyte-labs-logo.png"
+                alt="AlgoNyte logo"
+                width={96}
+                height={96}
+                unoptimized
+                className="h-[2.5em] w-[2.5em] object-contain"
+              />
+              AlgoNyte
+            </Link>
+
+            <nav className="hidden md:flex items-center gap-7 text-sm text-brand-soft/70">
+              {primaryLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="nav-link hover:text-brand-soft focus:outline-none focus-visible:text-brand-soft"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <BookingButton className="rounded-full bg-brand-primary px-4 py-1.5 text-sm font-medium text-brand-soft shadow-[0_0_20px_-4px_rgba(4,120,87,0.7)] ring-1 ring-inset ring-white/20 hover:bg-brand-violet transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                Book a call
+              </BookingButton>
+            </nav>
+
+            <button
+              aria-label="Toggle menu"
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-brand-soft hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep nav-link"
+            >
+              <span className="sr-only">Menu</span>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                {open ? (
+                  <path d="M6 6l12 12M18 6L6 18" />
+                ) : (
+                  <path d="M4 7h16M4 12h16M4 17h16" />
+                )}
+              </svg>
+            </button>
+          </div>
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 overflow-hidden rounded-3xl border border-white/10 bg-brand-deep/95 shadow-deep backdrop-blur-md">
-            <nav className="flex flex-col p-4 gap-1 text-base text-brand-soft">
+          <div className="md:hidden relative mt-2 rounded-3xl border border-white/15 bg-brand-deep/80 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.40),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/10 backdrop-blur-xl backdrop-saturate-150">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/50 to-transparent"
+            />
+            <nav className="relative z-10 flex flex-col p-4 gap-1 text-base text-brand-soft">
               {allLinks.map((l) => (
                 <Link
                   key={l.href}
