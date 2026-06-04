@@ -66,6 +66,18 @@ const icons: Record<ServiceIconId, ReactNode> = {
       <circle cx="12" cy="12" r="1" fill="currentColor" />
     </>
   ),
+  send: (
+    <>
+      <path
+        d="m22 2-7 20-4-9-9-4 20-7Z"
+        stroke="currentColor"
+        strokeWidth="1.7"
+        strokeLinejoin="round"
+        strokeLinecap="round"
+      />
+      <path d="M22 2 11 13" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" />
+    </>
+  ),
 };
 
 const categoryLabel: Record<Service["category"], string> = {

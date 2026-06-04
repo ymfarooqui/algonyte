@@ -17,7 +17,8 @@ export type ServiceId =
   | "reactivation"
   | "web-presence"
   | "reviews"
-  | "ads";
+  | "ads"
+  | "outreach";
 
 export type ServiceCategory = "reception" | "growth" | "presence";
 
@@ -27,7 +28,8 @@ export type ServiceIconId =
   | "revive"
   | "globe"
   | "star"
-  | "target";
+  | "target"
+  | "send";
 
 export type Service = {
   id: ServiceId;
@@ -149,7 +151,7 @@ export const services: readonly Service[] = [
   {
     id: "ads",
     name: "Ads That Book Jobs, Not Just Clicks",
-    tagline: "Google & Meta ad management",
+    tagline: "Lead-gen ads, booked instantly",
     category: "growth",
     job: "Google and Meta ads with AI follow-up that books, not just clicks.",
     summary:
@@ -163,6 +165,24 @@ export const services: readonly Service[] = [
     ],
     href: "/ad-management",
     icon: "target",
+  },
+  {
+    id: "outreach",
+    name: "Bring In Customers Who Don't Know You Yet",
+    tagline: "Done-for-you cold outreach",
+    category: "growth",
+    job: "Starts conversations with brand-new prospects and books the interested ones.",
+    summary:
+      "Waiting for the phone to ring only gets you so far. We find the people most likely to need you, reach out by text and email in a voice that sounds like yours, and start a real conversation — then the AI works every reply and books the ones who bite. It's a steady stream of brand-new customers who'd never have found you on their own.",
+    stat: { value: "Net-new", label: "customers in your pipeline" },
+    features: [
+      "We build a focused list of the prospects who actually need what you do",
+      "Texts and emails that read like a person wrote them",
+      "The AI handles every reply and books the interested ones for you",
+      "New conversations every week without you picking up the phone",
+    ],
+    href: "/book",
+    icon: "send",
   },
 ] as const;
 
