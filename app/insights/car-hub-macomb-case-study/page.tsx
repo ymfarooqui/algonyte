@@ -206,9 +206,9 @@ export default function CarHubCaseStudy() {
               Want the same setup for your shop?
             </h2>
             <p className="mt-3">
-              We install in 5 days (Awake) or 10–14 days (Climbing), keep
+              We install in about a week — a little longer when voice AI is included — keep
               your existing phone number and calendar, and train the agent on
-              your specific business. Reception plans start at $749/month.
+              your specific business.
             </p>
             <div className="mt-5 flex flex-wrap gap-3">
               <Link
