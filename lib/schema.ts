@@ -16,7 +16,7 @@ export function pricingSchema() {
     provider,
     areaServed,
     description:
-      "Done-for-you AI services for local service businesses — AI receptionist, website chat and social DM replies, database reactivation, web presence and local SEO, reviews, ads, and cold outreach. Pick the services you need, no packages. 30-day money-back, no long-term contracts.",
+      "Done-for-you AI services for local service businesses: AI receptionist, website chat and social DM replies, database reactivation, web presence and local SEO, reviews, ads, and cold outreach. Pick the services you need or bundle a few. 30-day money-back, no long-term contracts.",
   };
 }
 

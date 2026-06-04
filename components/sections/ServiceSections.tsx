@@ -244,7 +244,7 @@ type Props = {
 export default function ServiceSections({
   eyebrow = "What we do",
   heading = "Pick the services you need. Stack the ones you don't.",
-  subhead = "Each one is a done-for-you install that runs while you sleep. Start with one, add more whenever you're ready — no packages, no lock-in.",
+  subhead = "Each one is a done-for-you install that runs while you sleep. Start with one, or bundle a few, and add more whenever you're ready.",
   className = "bg-white",
 }: Props) {
   return (
