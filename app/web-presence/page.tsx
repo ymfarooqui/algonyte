@@ -1,20 +1,17 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tiers } from "@/lib/tiers";
-import { isPlaceholder } from "@/lib/constants";
+import { services } from "@/lib/services";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import CursorSpotlight from "@/components/CursorSpotlight";
 import { jsonLdString } from "@/lib/jsonLd";
 import { webPresenceServiceSchema } from "@/lib/schema";
 
-const found = tiers.find((t) => t.id === "found")!;
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
+const growthServices = services.filter((s) => s.id !== "web-presence");
 
-const title = "Web Presence | Sites From $449, Hosting Flat at $99/mo";
+const title = "Web Presence | A Site That Gets You Found — and Books the Work";
 const description =
-  "End-to-end web presence for service businesses. Found from $449 one-time, then $99/mo flat hosting forever. Live in 5–7 days. Google Business Profile setup included.";
+  "A fast, mobile-first website plus the local SEO and Google Business setup that gets you found — on Google and on AI search. Live in about a week, with booking and your CRM wired in. Built for you, managed for you.";
 
 export const metadata: Metadata = {
   title,
@@ -26,39 +23,37 @@ export const metadata: Metadata = {
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Web Presence", path: "/web-presence" }]);
 
-const monthlyIncludes = [
-  "Managed hosting, SSL, CDN, daily backups",
-  "Domain + email forwarding",
-  "1 hour of content edits per month",
-  "Search Console + indexing monitoring",
-  "Quarterly health check",
-  "Direct line when something breaks",
+// What you walk away with — the build plus the ongoing care. No prices here;
+// we scope and price the whole thing on a quick call.
+const included = [
+  "A fast, mobile-first site built around how customers find and book you",
+  "Local SEO and a Google Business Profile set up and verified",
+  "Structured for Google and AI search from day one",
+  "Online booking and a contact form wired straight into your CRM",
+  "Managed hosting, SSL, CDN, and daily backups — handled for you",
+  "Content edits when you need them, plus a direct line when something breaks",
 ];
 
 const faqs = [
   {
-    q: "What does the $99/mo cover?",
-    a: "Managed hosting, SSL certificate, global CDN, daily backups, domain and email forwarding, 1 hour of content edits per month, Search Console monitoring, and a quarterly health check. Flat $99/mo on Found.",
+    q: "How fast can you get me live?",
+    a: "About 5–7 days from a signed brief. We hold ourselves to that — it's a public number, not a hopeful estimate.",
   },
   {
     q: "I already have a website. Do I have to replace it?",
-    a: "No. If your site is solid we can migrate it to our hosting. If it's hurting you (slow, broken on mobile, no schema, nowhere on Google), we rebuild. We'll tell you straight on the discovery call.",
+    a: "Not always. If your site is solid, we can keep it and take over the parts that aren't working. If it's slow, broken on mobile, or invisible on Google, we rebuild. We'll tell you straight on the call.",
   },
   {
-    q: "Who owns the website when I leave?",
-    a: "You do. The domain, the code, the content, the Google Business Profile, and your Stripe or Square accounts are all yours. We don't hold anything hostage.",
+    q: "Who owns everything when I leave?",
+    a: "You do. The domain, the code, the content, the Google Business Profile, your Stripe or Square accounts — all yours. We don't hold anything hostage.",
   },
   {
-    q: "Can I cancel whenever?",
-    a: "Yes. Presence hosting is month-to-month with no minimum. If you cancel, you leave with your domain, your code, and your Google Business Profile fully intact.",
+    q: "Am I locked into a contract?",
+    a: "No long-term contract. You stay because the work is working, not because a 12-month agreement says you have to. Cancel and you leave with your domain, your code, and your profile intact.",
   },
   {
-    q: "How fast can you get me live?",
-    a: "Found is 5–7 days from a signed brief. We hold ourselves to that. It's a public number.",
-  },
-  {
-    q: "What about contracts? I've heard horror stories with Hibu and Scorpion.",
-    a: "No 12-month contracts on Presence. No locked-in annual fee. Month-to-month from day one. You're a client because we're doing the work.",
+    q: "I've had bad experiences with Hibu and Scorpion. How are you different?",
+    a: "No annual lock-in, no bundling in services you didn't ask for, no surprise rate hike on renewal. One team, one number responsible for whether the phone rings, and a real person who answers when something breaks.",
   },
 ];
 
@@ -72,18 +67,18 @@ const faqJsonLd = {
   })),
 };
 
-function CheckIcon({ featured }: { featured?: boolean }) {
+function CheckIcon() {
   return (
     <svg
-      width="16"
-      height="16"
+      width="18"
+      height="18"
       viewBox="0 0 24 24"
       fill="none"
       stroke="currentColor"
       strokeWidth="2.5"
       strokeLinecap="round"
       strokeLinejoin="round"
-      className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-soft" : "text-brand-deep"}`}
+      className="mt-0.5 flex-shrink-0 text-brand-primary"
       aria-label="Included"
     >
       <path d="M20 6L9 17l-5-5" />
@@ -99,28 +94,22 @@ export default function WebPresencePage() {
         <PageHeroBackdrop />
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
-            <h1 className="h-display">Web Presence</h1>
+            <h1 className="h-display">A site that gets you found.</h1>
             <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">
-              Your business runs while you sleep, starting with a site that gets you found.
+              Most of your next customers check you out online before they ever call. We make
+              sure what they find earns the call.
             </p>
             <p className="lede mt-6 max-w-2xl">
-              Site live in 5–7 days. Built for your brand, hosted for{" "}
-              <strong>$99/mo flat</strong>, indexed on Google from day one.
-              Starting from <strong>$449</strong> one-time, then $99/mo
-              forever. No tiered hosting nonsense, no contracts.
+              A fast, mobile-first website that gets you found on Google and AI search, live in
+              about a week — with booking and your CRM wired in, and the whole thing managed for
+              you after launch.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
-              <Link
-                href="/book"
-                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
-              >
-                Book a 30-minute walkthrough →
+              <Link href="/book" className="btn-primary-featured">
+                Book a 30-minute walkthrough
               </Link>
-              <a
-                href="#packages"
-                className="inline-flex items-center justify-center rounded-full border border-brand-deep/20 bg-white px-8 py-4 text-brand-deep font-medium hover:border-brand-deep/40 transition-colors text-lg"
-              >
-                See packages
+              <a href="#included" className="btn-secondary">
+                See what&rsquo;s included
               </a>
             </div>
           </div>
@@ -135,188 +124,91 @@ export default function WebPresencePage() {
           </h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              You&rsquo;ve probably stitched something together: a site a
-              nephew built five years ago, a GoDaddy host you&rsquo;re afraid
-              to log into, a Facebook page, a Stripe account you set up once and
-              forgot, a Google Business Profile that&rsquo;s 40% filled in.
+              You&rsquo;ve probably stitched something together over the years: a site a nephew
+              built, a host you&rsquo;re afraid to log into, a Facebook page, a Stripe account you
+              set up once and forgot, a Google Business Profile that&rsquo;s half filled in.
             </p>
             <p>
-              The pieces work fine. Nobody&rsquo;s running them as a system.
-              The site doesn&rsquo;t rank. Customers can&rsquo;t book.
-              Nobody&rsquo;s watching what breaks. And every month you pay
-              vendors who blame each other.
+              Each piece works on its own. Nobody&rsquo;s running them as a system. So the site
+              doesn&rsquo;t rank, customers can&rsquo;t book, and every month you pay vendors who
+              point fingers at each other when something goes wrong.
             </p>
             <p>
-              We replace the whole stack. One team, one bill, one number
-              responsible for whether the phone rings, and a site that gets
-              you found from day one.
+              We replace the whole tangle with one setup, one team, and one number that&rsquo;s
+              responsible for whether the phone actually rings.
             </p>
           </div>
         </div>
       </section>
 
-      {/* Tier cards */}
-      <section id="packages" className="section bg-brand-soft/40">
+      {/* What's included */}
+      <section id="included" className="section bg-brand-soft/40">
         <div className="container-page">
-          <h2 className="h-section max-w-3xl">
-            Pick a build. Pay it once. Monthly stays $99 forever.
-          </h2>
-          <p className="mt-4 max-w-2xl text-brand-muted">
-            The setup fee covers the build. The $99/mo covers hosting,
-            maintenance, edits, and the line you call when something breaks.
-            Need more later? Upgrade by paying a new build invoice. Your
-            monthly never moves.
+          <h2 className="h-section max-w-3xl">Everything it takes to get found, in one place.</h2>
+          <p className="mt-4 max-w-2xl text-brand-muted leading-relaxed">
+            We build it, launch it, and look after it — so the site keeps earning instead of
+            quietly breaking. We scope the build to your business and give you one clear number
+            on a quick call.
           </p>
 
-          <div className="mt-12 max-w-md mx-auto">
-            <div
-              id={found.id}
-              className="relative flex h-full flex-col rounded-2xl p-7 bg-brand-soft shadow-soft"
-            >
-              <h3 className="text-xl font-medium tracking-tight text-brand-deep">
-                {found.name}
-              </h3>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.18em] text-brand-muted">
-                Stop worrying about {found.stopWorryingAbout}.
-              </p>
-              <div className="mt-5 space-y-1">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-medium tabular-nums text-brand-deep">
-                    ${found.setup}
-                  </span>
-                  <span className="text-sm text-brand-muted">
-                    one-time setup
-                  </span>
-                </div>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
-                    ${found.monthly}
-                  </span>
-                  <span className="text-sm text-brand-muted">
-                    /mo hosting
-                  </span>
-                </div>
-              </div>
-              <p className="mt-3 text-xs text-brand-muted">
-                Live in {found.liveIn} &middot; Month-to-month
-              </p>
-              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                {found.features.map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckIcon />
-                    <span className="text-brand-muted">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <a
-                href={isPlaceholder(found.checkoutUrl) ? "/contact" : found.checkoutUrl}
-                className="btn-primary w-full text-center"
-              >
-                {isPlaceholder(found.checkoutUrl) ? "Talk to us" : "Get started"}
-              </a>
-            </div>
-          </div>
-
-          {/* $99/mo callout */}
-          <div className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
-            <div className="flex flex-wrap items-baseline justify-between gap-3">
-              <h3 className="text-xl font-semibold text-brand-deep">
-                What the $99/mo covers
-              </h3>
-              <p className="text-sm text-brand-muted">
-                Flat hosting price. No tiered nonsense, no upgrade traps.
-              </p>
-            </div>
-            <ul className="mt-6 grid gap-3 sm:grid-cols-2 lg:grid-cols-3 text-sm">
-              {monthlyIncludes.map((item) => (
-                <li key={item} className="flex items-start gap-2">
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="mt-0.5 flex-shrink-0 text-brand-deep"
-                    aria-label="Included"
-                  >
-                    <path d="M20 6L9 17l-5-5" />
-                  </svg>
-                  <span className="text-brand-muted">{item}</span>
+          <div className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 sm:p-8">
+            <ul className="grid gap-x-8 gap-y-3 text-sm sm:grid-cols-2">
+              {included.map((item) => (
+                <li key={item} className="flex items-start gap-2.5">
+                  <CheckIcon />
+                  <span className="text-brand-muted leading-relaxed">{item}</span>
                 </li>
               ))}
             </ul>
+            <div className="mt-7 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <Link href="/book" className="btn-primary-featured">
+                Book a 30-minute walkthrough
+              </Link>
+              <span className="text-sm text-brand-muted">
+                30-day money-back &middot; no long-term contract
+              </span>
+            </div>
           </div>
         </div>
       </section>
 
-      {/* Ready for more — upgrade path */}
+      {/* Growth engine — the à la carte services */}
       <section className="section">
         <div className="container-page">
-          <h2 className="h-section max-w-3xl">
-            Add a growth engine when you&rsquo;re ready.
-          </h2>
-          <p className="mt-4 max-w-2xl text-brand-muted">
-            Your site gets you online and indexed. These programs make the
-            phone ring. Each one removes another thing from your plate. Optional,
-            priced separately. Start week one or add them later.
+          <h2 className="h-section max-w-3xl">Add a growth engine when you&rsquo;re ready.</h2>
+          <p className="mt-4 max-w-2xl text-brand-muted leading-relaxed">
+            Your site gets you found. These make the phone ring and the calendar fill. Add one,
+            add a few — each runs while you sleep, and each stands on its own.
           </p>
 
-          <div className="mt-12 grid gap-5 sm:grid-cols-2">
-            {/* Awake */}
-            <Link
-              href="/pricing#awake"
-              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
-                Need reception?
-              </p>
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="text-lg font-semibold text-brand-deep">Awake</h3>
-                <span className="text-sm font-medium text-brand-ink">
-                  ${awake.setup} + ${awake.monthly}/mo
-                </span>
-              </div>
-              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
-                AI chat on your site, missed-call text-back, and DM auto-reply
-                24/7. Answers, qualifies, and books while you sleep.
-              </p>
-              <p className="mt-4 text-sm font-medium text-brand-deep">
-                See Awake
-                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </p>
-            </Link>
-
-            {/* Climbing */}
-            <Link
-              href="/pricing#climbing"
-              className="group lift-card lift-sm block rounded-2xl bg-brand-soft p-6 shadow-soft"
-            >
-              <p className="text-xs font-semibold uppercase tracking-wider text-brand-deep/60 mb-2">
-                Want to rank on Google?
-              </p>
-              <div className="flex items-baseline justify-between gap-3 flex-wrap gap-y-1">
-                <h3 className="text-lg font-semibold text-brand-deep">Climbing</h3>
-                <span className="text-sm font-medium text-brand-ink">
-                  ${climbing.setup} + ${climbing.monthly}/mo
-                </span>
-              </div>
-              <p className="mt-1 text-xs text-brand-muted">all-in (includes hosting)</p>
-              <p className="mt-2 text-brand-muted leading-relaxed text-sm">
-                Reception plus ongoing Google Business Profile work, citation
-                cleanup, content cadence, and AI search optimization.
-              </p>
-              <p className="mt-4 text-sm font-medium text-brand-deep">
-                See Climbing
-                <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
-                  →
-                </span>
-              </p>
-            </Link>
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            {growthServices.map((service) => (
+              <Link
+                key={service.id}
+                href={`/services#${service.id}`}
+                className="group relative flex flex-col overflow-hidden rounded-2xl border border-white/10 bg-gradient-to-br from-brand-ink to-brand-deep p-6 text-brand-soft shadow-xl shadow-black/30 ring-1 ring-inset ring-white/10 transition hover:ring-white/20"
+              >
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+                />
+                <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-brand-soft/45">
+                  {service.tagline}
+                </p>
+                <h3 className="mt-2 text-lg font-semibold leading-tight text-white">
+                  {service.name}
+                </h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-brand-soft/70">
+                  {service.job}
+                </p>
+                <p className="mt-4 text-sm font-medium text-brand-soft">
+                  Explore
+                  <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">
+                    →
+                  </span>
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>
@@ -329,16 +221,13 @@ export default function WebPresencePage() {
           </h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              Hibu, Scorpion, and their competitors lock you in for 12 months,
-              bundle in services you didn&rsquo;t ask for, and raise your rate on
-              renewal. When something breaks, your account manager&rsquo;s
-              manager&rsquo;s manager calls you back in four business days.
+              Hibu, Scorpion, and the rest lock you in for a year, bundle in things you never
+              asked for, and quietly raise your rate at renewal. When something breaks, your
+              account manager&rsquo;s manager calls you back in four business days.
             </p>
             <p>
-              We ship in 5–7 days, charge $99/mo flat (the price
-              doesn&rsquo;t move when you add pages, when we rebuild, or when
-              you add a product), and you get a direct line. Month-to-month. No
-              12-month trap.
+              We ship in about a week, manage the whole thing for you, and give you a direct
+              line. No 12-month trap — you stay because it&rsquo;s working.
             </p>
           </div>
         </div>
@@ -363,20 +252,14 @@ export default function WebPresencePage() {
       <section className="relative overflow-hidden section bg-brand-deep text-white">
         <CursorSpotlight />
         <div className="relative container-page max-w-3xl text-center">
-          <h2 className="h-section text-white">
-            Stop running four vendors.
-          </h2>
+          <h2 className="h-section text-white">Stop running four vendors.</h2>
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
-            30-minute walkthrough. We&rsquo;ll pull your current site, Google
-            Business Profile, and search standing live, show you the gaps, and
-            tell you straight what to fix first.
+            Give us 30 minutes. We&rsquo;ll pull up your current site, your Google Business
+            Profile, and where you stand in search — then tell you straight what to fix first.
           </p>
           <div className="mt-8">
-            <Link
-              href="/book"
-              className="inline-flex items-center justify-center rounded-full bg-white px-8 py-4 text-brand-deep font-medium hover:bg-white/90 transition-colors text-lg"
-            >
-              Book a 30-minute walkthrough →
+            <Link href="/book" className="btn-primary-featured">
+              Book a 30-minute walkthrough
             </Link>
           </div>
         </div>
