@@ -97,21 +97,24 @@ export default function Header() {
       }`}
     >
       <div className="container-page pt-3 sm:pt-4">
-        {/* Floating glass pill */}
-        <div className="relative rounded-full border border-white/20 bg-gradient-to-b from-brand-deep/65 to-brand-deep/82 px-5 py-3 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.45),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/15 backdrop-blur-sm backdrop-saturate-150 sm:px-7">
-          {/* glass highlights */}
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/80 to-transparent"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/25 via-white/5 to-transparent"
-          />
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-x-6 -bottom-px h-px bg-gradient-to-r from-transparent via-white/15 to-transparent"
-          />
+        {/* Floating futuristic pill */}
+        <div
+          className="rounded-full p-px shadow-[0_18px_50px_-12px_rgba(99,102,241,0.5),0_8px_22px_-8px_rgba(6,11,23,0.6)]"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, rgba(99,102,241,0.7), rgba(16,185,129,0.45) 45%, rgba(139,92,246,0.7))",
+          }}
+        >
+          <div className="relative rounded-full bg-gradient-to-br from-brand-ink via-brand-deep to-[#0a1330] px-5 py-3 sm:px-7">
+            {/* glossy highlights */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/12 via-white/[0.02] to-transparent"
+            />
 
           <div className="relative z-10 flex items-center justify-between gap-6">
             <Link
@@ -167,11 +170,12 @@ export default function Header() {
                 )}
               </svg>
             </button>
+            </div>
           </div>
         </div>
 
         {open && (
-          <div className="md:hidden relative mt-2 rounded-3xl border border-white/20 bg-gradient-to-b from-brand-deep/78 to-brand-deep/88 shadow-[0_16px_50px_-12px_rgba(4,120,87,0.40),0_6px_18px_rgba(6,11,23,0.40)] ring-1 ring-inset ring-white/15 backdrop-blur-sm backdrop-saturate-150">
+          <div className="md:hidden relative mt-2 rounded-3xl border border-indigo-400/30 bg-gradient-to-br from-brand-ink via-brand-deep to-[#0a1330] shadow-[0_18px_50px_-12px_rgba(99,102,241,0.45),0_8px_22px_-8px_rgba(6,11,23,0.55)] ring-1 ring-inset ring-white/10">
             <div
               aria-hidden
               className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
