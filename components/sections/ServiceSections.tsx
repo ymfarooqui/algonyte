@@ -1,9 +1,7 @@
 import type { ReactNode } from "react";
 import Reveal from "@/components/Reveal";
-import { BookingButton } from "@/components/BookingModal";
 import {
   services,
-  GUARANTEE_SHORT,
   type Service,
   type ServiceIconId,
 } from "@/lib/services";
@@ -213,14 +211,6 @@ function ServiceRow({ service, index }: { service: Service; index: number }) {
             </li>
           ))}
         </ul>
-
-        <div className="mt-9 flex flex-wrap items-center gap-x-5 gap-y-3">
-          <BookingButton className="btn-primary">Book a call</BookingButton>
-          <span className="inline-flex items-center gap-2 text-sm text-brand-muted">
-            <Check />
-            {GUARANTEE_SHORT}
-          </span>
-        </div>
       </Reveal>
 
       {/* ── Dynamic visual ── */}

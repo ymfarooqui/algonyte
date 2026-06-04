@@ -98,11 +98,11 @@ export default function Header() {
     >
       <div className="container-page pt-3 sm:pt-4">
         {/* Floating pill */}
-        <div className="flex items-center justify-between gap-6 rounded-2xl border border-brand-line/70 bg-brand-soft/85 px-4 py-3 shadow-soft backdrop-blur-md sm:px-6">
+        <div className="flex items-center justify-between gap-6 rounded-full border border-white/10 bg-brand-deep/90 px-5 py-3 shadow-deep backdrop-blur-md sm:px-7">
           <Link
             href="/"
             aria-label="AlgoNyte home"
-            className="flex items-center gap-2.5 font-medium tracking-tight text-brand-deep text-lg sm:text-xl"
+            className="flex items-center gap-2.5 font-medium tracking-tight text-brand-soft text-lg sm:text-xl"
           >
             <Image
               src="/algonyte-labs-logo.png"
@@ -115,12 +115,12 @@ export default function Header() {
             AlgoNyte
           </Link>
 
-          <nav className="hidden md:flex items-center gap-7 text-sm text-brand-muted">
+          <nav className="hidden md:flex items-center gap-7 text-sm text-brand-soft/70">
             {primaryLinks.map((l) => (
               <Link
                 key={l.href}
                 href={l.href}
-                className="nav-link hover:text-brand-deep focus:outline-none focus-visible:text-brand-deep"
+                className="nav-link hover:text-brand-soft focus:outline-none focus-visible:text-brand-soft"
               >
                 {l.label}
               </Link>
@@ -134,7 +134,7 @@ export default function Header() {
             aria-label="Toggle menu"
             aria-expanded={open}
             onClick={() => setOpen((v) => !v)}
-            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-line text-brand-deep hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 nav-link"
+            className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-brand-soft hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 nav-link"
           >
             <span className="sr-only">Menu</span>
             <svg
@@ -155,8 +155,8 @@ export default function Header() {
         </div>
 
         {open && (
-          <div className="md:hidden mt-2 overflow-hidden rounded-2xl border border-brand-line/70 bg-brand-soft/95 shadow-soft backdrop-blur-md">
-            <nav className="flex flex-col p-4 gap-1 text-base text-brand-deep">
+          <div className="md:hidden mt-2 overflow-hidden rounded-3xl border border-white/10 bg-brand-deep/95 shadow-deep backdrop-blur-md">
+            <nav className="flex flex-col p-4 gap-1 text-base text-brand-soft">
               {allLinks.map((l) => (
                 <Link
                   key={l.href}
@@ -168,7 +168,7 @@ export default function Header() {
                 </Link>
               ))}
               <BookingButton
-                className="btn-primary mt-3"
+                className="btn-primary-featured mt-3 w-full"
                 onBeforeOpen={() => setOpen(false)}
               >
                 Book a call
