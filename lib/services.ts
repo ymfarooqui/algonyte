@@ -62,8 +62,8 @@ export const services: readonly Service[] = [
     category: "reception",
     job: "Answers every call, qualifies the job, and books it — 24/7.",
     summary:
-      "An AI receptionist that answers every inbound call in under 30 seconds — nights, weekends, and holidays included. It greets the caller, answers their questions, qualifies the job, and books it straight onto your calendar, so a missed call never turns into a lost customer again.",
-    stat: { value: "<30s", label: "to pick up, day or night" },
+      "An AI receptionist that answers every inbound call in under 5 seconds — nights, weekends, and holidays included. It greets the caller, answers their questions, qualifies the job, and books it straight onto your calendar, so a missed call never turns into a lost customer again.",
+    stat: { value: "<5s", label: "to pick up, day or night" },
     features: [
       "Answers inbound calls 24/7, including nights and weekends",
       "Qualifies the lead and books straight onto your calendar",

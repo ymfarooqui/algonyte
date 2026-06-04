@@ -103,33 +103,38 @@ function Check() {
   );
 }
 
-/** The dynamic, gently-floating stat card that sits beside each service. */
+/** The dynamic, gently-floating glass stat card that sits beside each service. */
 function ServiceVisual({ service }: { service: Service }) {
   const featured = service.popular === true;
   const tags = [service.tagline, categoryLabel[service.category], "Done-for-you"];
 
   return (
     <div
-      className={`group relative overflow-hidden rounded-3xl p-8 sm:p-10 animate-float ${
+      className={`group relative overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-ink to-brand-deep p-8 text-brand-soft ring-1 ring-inset ring-white/10 animate-float sm:p-10 ${
         featured
-          ? "bg-brand-deep text-brand-soft shadow-deep"
-          : "bg-white text-brand-deep ring-1 ring-slate-200/80 shadow-soft"
+          ? "shadow-[0_24px_60px_-16px_rgba(4,120,87,0.55)]"
+          : "shadow-[0_24px_60px_-18px_rgba(6,11,23,0.55)]"
       }`}
     >
-      {/* decorative glow */}
+      {/* shiny glass highlights */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/60 to-transparent"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/10 via-white/[0.02] to-transparent"
+      />
+      {/* emerald glow */}
       <div
         aria-hidden
         className={`pointer-events-none absolute -right-16 -top-20 h-56 w-56 rounded-full blur-3xl ${
-          featured ? "bg-brand-primary/30" : "bg-brand-accent/70"
+          featured ? "bg-brand-primary/40" : "bg-brand-primary/20"
         }`}
       />
 
-      <div className="relative flex items-center justify-between">
-        <span
-          className={`inline-flex h-12 w-12 items-center justify-center rounded-2xl ${
-            featured ? "bg-white/10 text-brand-soft" : "bg-brand-accent text-brand-deep"
-          }`}
-        >
+      <div className="relative z-10 flex items-center justify-between">
+        <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10 text-brand-soft ring-1 ring-inset ring-white/15">
           <ServiceIcon id={service.icon} className="h-6 w-6" />
         </span>
         <span className="inline-flex items-center gap-1.5 text-xs font-medium">
@@ -137,34 +142,24 @@ function ServiceVisual({ service }: { service: Service }) {
             <span className="absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75 animate-ping" />
             <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-500" />
           </span>
-          <span className={featured ? "text-brand-soft/70" : "text-brand-muted"}>Live</span>
+          <span className="text-brand-soft/70">Live</span>
         </span>
       </div>
 
-      <div className="relative mt-9">
-        <div
-          className={`text-6xl font-semibold tracking-tight tabular-nums ${
-            featured ? "text-white" : "text-brand-deep"
-          }`}
-        >
+      <div className="relative z-10 mt-9">
+        <div className="text-6xl font-semibold tracking-tight tabular-nums text-white">
           {service.stat.value}
         </div>
-        <div
-          className={`mt-2 text-sm uppercase tracking-wider ${
-            featured ? "text-brand-soft/60" : "text-brand-muted"
-          }`}
-        >
+        <div className="mt-2 text-sm uppercase tracking-wider text-brand-soft/60">
           {service.stat.label}
         </div>
       </div>
 
-      <div className="relative mt-8 flex flex-wrap gap-2">
+      <div className="relative z-10 mt-8 flex flex-wrap gap-2">
         {tags.map((tag) => (
           <span
             key={tag}
-            className={`rounded-full px-3 py-1 text-xs font-medium ${
-              featured ? "bg-white/10 text-brand-soft/80" : "bg-brand-soft text-brand-muted"
-            }`}
+            className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-brand-soft/80 ring-1 ring-inset ring-white/10"
           >
             {tag}
           </span>
