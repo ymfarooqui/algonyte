@@ -3,7 +3,7 @@ import Reveal from "@/components/Reveal";
 import FinalCTA from "@/components/sections/FinalCTA";
 import ServicesFlowVisual from "@/components/ServicesFlowVisual";
 import StackMarquee from "@/components/StackMarquee";
-import SolutionsGrid from "@/components/sections/SolutionsGrid";
+import ServiceSections from "@/components/sections/ServiceSections";
 import GuaranteeStrip from "@/components/sections/GuaranteeStrip";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { faqs } from "./faqs";
@@ -41,7 +41,7 @@ export default function ServicesContent() {
       </section>
 
       {/* ---- SERVICES CATALOG ---- */}
-      <SolutionsGrid
+      <ServiceSections
         eyebrow="The services"
         heading="Six ways to stop losing leads."
         subhead="Pick one. Pick a few. They share one inbox and one calendar, so they work better together — but every one stands on its own."

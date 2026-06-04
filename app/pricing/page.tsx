@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import FinalCTA from "@/components/sections/FinalCTA";
 import WhyNot from "@/components/sections/WhyNot";
-import SolutionsGrid from "@/components/sections/SolutionsGrid";
+import ServiceSections from "@/components/sections/ServiceSections";
 import GuaranteeStrip from "@/components/sections/GuaranteeStrip";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
@@ -82,7 +82,7 @@ export default function PricingPage() {
       </section>
 
       {/* Services */}
-      <SolutionsGrid
+      <ServiceSections
         eyebrow="The services"
         heading="What you can put to work."
         subhead="Start with one. Stack more whenever you're ready. We'll scope and price the build to your business on a quick call."

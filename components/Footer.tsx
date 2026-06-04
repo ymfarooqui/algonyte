@@ -1,7 +1,5 @@
 import Link from "next/link";
 import Image from "next/image";
-import { industryIndex } from "@/lib/content/industries";
-import { locationIndex } from "@/lib/content/locations";
 
 const solutionLinks = [
   { href: "/ai-receptionist", label: "AI Receptionist" },
@@ -151,17 +149,27 @@ export default function Footer() {
 
       {/* ── Link columns ── */}
       <div className="container-page py-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
+        <div className="col-span-2">
+          <Link href="/" aria-label="AlgoNyte home" className="flex items-center gap-2.5">
+            <Image
+              src="/algonyte-labs-logo.png"
+              alt="AlgoNyte logo"
+              width={96}
+              height={96}
+              unoptimized
+              className="h-9 w-9 object-contain"
+            />
+            <span className="text-lg font-medium tracking-tight text-brand-deep">AlgoNyte</span>
+          </Link>
+          <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-muted">
+            Done-for-you AI that answers, qualifies, and books your leads — so you never lose
+            another job to a missed call.
+          </p>
+          <Link href="/book" className="btn-primary mt-6">
+            Book a call
+          </Link>
+        </div>
         <LinkColumn heading="Solutions" links={solutionLinks} />
-        <LinkColumn
-          heading="Industries"
-          headingHref="/industries"
-          links={industryIndex.map((it) => ({ href: `/industries/${it.slug}`, label: it.title }))}
-        />
-        <LinkColumn
-          heading="Areas served"
-          headingHref="/locations"
-          links={locationIndex.map((it) => ({ href: `/locations/${it.slug}`, label: it.title }))}
-        />
         <LinkColumn heading="Company" links={companyLinks} />
       </div>
 

@@ -181,6 +181,18 @@ body {
   to   { opacity: 0; transform: scale(1.9); }
 }
 
+/* Gentle, continuous float for the service-section visuals. CSS-driven so it
+   keeps running on touch devices; the global prefers-reduced-motion rule zeroes
+   it for users who opt out. */
+@keyframes float-soft {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-10px); }
+}
+.animate-float {
+  animation: float-soft 6s ease-in-out infinite;
+  will-change: transform;
+}
+
 @keyframes aurora-drift-a {
   0%, 100% { transform: translate3d(-10%, -10%, 0) scale(1); }
   33%      { transform: translate3d(20%, 10%, 0) scale(1.2); }
