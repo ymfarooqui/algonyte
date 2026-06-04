@@ -4,13 +4,11 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Chicago | Stop Missing Service Calls";
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
 
-const description = `AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties. Plans from $${awake.monthly}/mo.`;
+const description =
+  "AI receptionist for service businesses in Chicago, IL. Answer, qualify, and book leads 24/7 across Chicagoland and the collar counties.";
 
 export const metadata: Metadata = {
   title,
@@ -37,13 +35,6 @@ const serviceJsonLd = {
     containedInPlace: { "@type": "State", name: "Illinois" },
   },
   description,
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: awake.monthly,
-    highPrice: climbing.monthly,
-    offerCount: 3,
-  },
 };
 
 const faqJsonLd = {
@@ -71,7 +62,7 @@ const faqJsonLd = {
       name: "Can the agent handle Spanish-speaking callers?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Bilingual handling is configurable on the Climbing plan. The agent can detect the caller's language, switch to Spanish, and run the full qualification and booking flow without handing off. On Awake, the agent is English-only.",
+        text: "Bilingual handling is configurable. The agent can detect the caller's language, switch to Spanish, and run the full qualification and booking flow without handing off. By default it runs in English until you switch Spanish on.",
       },
     },
     {
@@ -195,7 +186,7 @@ export default function ChicagoLocationPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Climbing plan)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Voice AI</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Picks up the phone when you can&rsquo;t. Qualifies, books, and
                 hands off with a full transcript. Bilingual English/Spanish
@@ -252,8 +243,8 @@ export default function ChicagoLocationPage() {
         <div className="container-page max-w-3xl">
           <h2 className="h-section">Built for solo operators and small crews.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Plans start at ${awake.monthly}/month on Awake, all the way to Climbing at ${climbing.monthly}/month
-            with voice AI and ongoing Local SEO included. Month-to-month — no annual lock-in.
+            Add what you need, from missed-call text-back and SMS qualification up to a full
+            voice AI receptionist with ongoing Local SEO. Month-to-month — no annual lock-in.
           </p>
           <p className="mt-4">
             <Link href="/pricing" className="text-brand-deep font-medium hover:underline">

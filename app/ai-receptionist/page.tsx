@@ -1,46 +1,43 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { tiers } from "@/lib/tiers";
+import { services } from "@/lib/services";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import FinalCTA from "@/components/sections/FinalCTA";
 import { jsonLdString } from "@/lib/jsonLd";
 import { aiReceptionistServiceSchema } from "@/lib/schema";
 
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
+const voice = services.find((s) => s.id === "voice-ai")!;
+const chat = services.find((s) => s.id === "ai-chat-dm")!;
 
+// Competitive comparison — no prices (we scope on a call); the contrast is
+// done-for-you + every channel + month-to-month vs. DIY tools and annual locks.
 const comparison = {
-  attributes: ["Monthly", "Contract", "Setup", "Channels", "Reviews engine"],
+  attributes: ["Setup", "Contract", "Channels", "Reviews engine"],
   competitors: [
     {
-      name: "AlgoNyte Awake",
+      name: "AlgoNyte",
       featured: true,
-      values: [
-        `$${awake.monthly} + $${awake.setup} setup`,
-        "Month-to-month",
-        "Done-for-you",
-        "Chat + voice + SMS + FB/IG/WA DM",
-        "Included",
-      ],
+      values: ["Done-for-you", "Month-to-month", "Phone + chat + SMS + FB/IG/WA DM", "Included"],
     },
     {
       name: "Podium Core + AI",
-      values: ["~$498 (annual contract)", "12 months", "DIY config", "Webchat + SMS", "Add-on"],
+      values: ["DIY config", "12 months", "Webchat + SMS", "Add-on"],
     },
     {
       name: "Smith.ai AI",
-      values: ["$95 + $2.10–$2.40/call", "Month-to-month", "DIY", "Per-call AI only", "Not included"],
+      values: ["DIY", "Month-to-month", "Per-call AI only", "Not included"],
     },
     {
       name: "Goodcall",
-      values: ["$59–$99", "Month-to-month", "DIY", "Phone only", "Not included"],
+      values: ["DIY", "Month-to-month", "Phone only", "Not included"],
     },
   ],
 };
 
 const title = "AI Receptionist for Service Businesses | AlgoNyte";
-const description = `AI receptionist answers, qualifies, and books your leads 24/7. Two flavors: Awake ($${awake.monthly}/mo, chat + DMs + missed-call text-back, live in ${awake.liveIn}) and Climbing ($${climbing.monthly}/mo, adds voice AI + Local SEO, live in ${climbing.liveIn}).`;
+const description =
+  "An AI receptionist that answers, qualifies, and books your leads 24/7 — across missed calls, website chat, SMS, and social DMs. Done for you, live in days, no long-term contract.";
 
 export const metadata: Metadata = {
   title,
@@ -55,23 +52,23 @@ const breadcrumb = breadcrumbJsonLd([{ name: "AI Receptionist", path: "/ai-recep
 const faqs = [
   {
     q: "How is this different from a regular chatbot?",
-    a: "A regular chatbot answers FAQ and stops. Our AI receptionist qualifies the lead, asks the questions your business needs to triage a job, and books the appointment directly onto your calendar without a human touching it. Awake handles text and chat; Climbing adds a live voice AI that picks up calls.",
+    a: "A regular chatbot answers a FAQ and stops. Our AI receptionist qualifies the lead, asks the questions your business needs to triage a job, and books the appointment straight onto your calendar without a human touching it. It covers text and chat, and a live voice AI can answer the phone too.",
   },
   {
     q: "What if the AI can't answer a question?",
-    a: "The agent escalates. Anything flagged as a complaint, an existing-job follow-up, or a question outside its training routes to your phone or inbox with the full conversation captured so you have context before you reply.",
+    a: "It escalates. Anything flagged as a complaint, an existing-job follow-up, or a question outside its training routes to your phone or inbox with the full conversation attached, so you have the context before you reply.",
   },
   {
     q: "Does it work with my existing phone number?",
-    a: "Yes. We forward your existing number; you keep it and nothing changes for your customers. Climbing adds the voice AI layer on top of your current number, so callers reach the AI first and can be transferred to you for anything it can't handle.",
+    a: "Yes. We forward your existing number — you keep it and nothing changes for your customers. The voice AI layer sits on top, so callers reach the agent first and get transferred to you for anything it can't handle.",
   },
   {
     q: "How long until I see results?",
-    a: "Most clients see bookings in the first 48 hours of going live. The missed-call text-back alone tends to recover leads the same day. Awake is live in 5 days; Climbing in 10–14 days because we layer in voice AI and start the Google Business Profile work.",
+    a: "Most clients see bookings in the first 48 hours. The missed-call text-back alone tends to recover leads the same day. Text and chat go live in a few days; adding voice AI takes a little longer because we tune it to how your calls actually go.",
   },
   {
     q: "Can I take over the conversations myself?",
-    a: "Yes. Every conversation lives in your shared inbox. You can jump in at any point, take over manually, and the AI steps aside. You also get a dashboard showing every missed call handled, DM replied, and lead booked.",
+    a: "Anytime. Every conversation lives in your shared inbox — jump in, take over, and the AI steps aside. You also get a dashboard showing every missed call handled, DM replied to, and lead booked.",
   },
   {
     q: "What happens to my leads if I cancel?",
@@ -89,22 +86,55 @@ const faqJsonLd = {
   })),
 };
 
-function CheckIcon({ featured }: { featured?: boolean }) {
+function Check() {
   return (
     <svg
+      viewBox="0 0 24 24"
       width="16"
       height="16"
-      viewBox="0 0 24 24"
       fill="none"
-      stroke="currentColor"
-      strokeWidth="2.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className={`mt-0.5 flex-shrink-0 ${featured ? "text-brand-soft" : "text-brand-deep"}`}
-      aria-label="Included"
+      className="mt-0.5 shrink-0 text-emerald-400"
+      aria-hidden
     >
-      <path d="M20 6L9 17l-5-5" />
+      <path d="M20 6 9 17l-5-5" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
     </svg>
+  );
+}
+
+function ServiceTile({
+  service,
+  kicker,
+}: {
+  service: typeof voice;
+  kicker: string;
+}) {
+  return (
+    <Link
+      href={`/services#${service.id}`}
+      className="group relative flex h-full flex-col overflow-hidden rounded-3xl border border-white/10 bg-gradient-to-br from-brand-ink to-brand-deep p-7 text-brand-soft shadow-xl shadow-black/30 ring-1 ring-inset ring-white/10 transition hover:ring-white/20"
+    >
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-x-6 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent"
+      />
+      <p className="font-mono text-[10px] font-semibold uppercase tracking-wider text-brand-soft/45">
+        {kicker}
+      </p>
+      <h3 className="mt-2 text-2xl font-semibold leading-tight text-white">{service.name}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-brand-soft/70">{service.summary}</p>
+      <ul className="mt-5 mb-7 flex-1 space-y-2.5 text-sm">
+        {service.features.map((f) => (
+          <li key={f} className="flex items-start gap-2.5 text-brand-soft/80">
+            <Check />
+            <span>{f}</span>
+          </li>
+        ))}
+      </ul>
+      <p className="text-sm font-medium text-brand-soft">
+        Explore
+        <span className="ml-1 inline-block transition-transform group-hover:translate-x-1">→</span>
+      </p>
+    </Link>
   );
 }
 
@@ -117,28 +147,20 @@ export default function AIReceptionistPage() {
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
             <h1 className="h-display">
-              AI Receptionist for{" "}
-              <span className="text-brand-deep">Service Businesses</span>
+              AI Receptionist for <span className="text-brand-deep">Service Businesses</span>
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              An AI that answers, qualifies, and books your leads 24/7 across
-              missed calls, website chat, SMS, and social DMs. Built for home
-              services, auto, trades, and professional service shops where the
-              phone rings while you&rsquo;re already on a job.
+              An AI that answers, qualifies, and books your leads 24/7 across missed calls,
+              website chat, SMS, and social DMs. Built for home services, auto, trades, and
+              the professional shops where the phone rings while you&rsquo;re already on a job.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
-              <a
-                href="#tiers"
-                className="inline-flex items-center justify-center rounded-full bg-brand-deep px-8 py-4 text-white font-medium hover:bg-brand-deep/90 transition-colors text-lg"
-              >
-                See the two flavors &rarr;
-              </a>
-              <Link
-                href="/book"
-                className="text-sm text-brand-deep underline decoration-brand-deep/30 underline-offset-4 hover:decoration-brand-deep transition-colors"
-              >
-                Book a 30-minute walkthrough &rarr;
+              <Link href="/book" className="btn-primary-featured">
+                Book a 30-minute walkthrough
               </Link>
+              <a href="#ways" className="btn-secondary">
+                See how it works
+              </a>
             </div>
           </div>
         </div>
@@ -148,20 +170,18 @@ export default function AIReceptionistPage() {
       <section className="section">
         <div className="container-page max-w-3xl">
           <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-brand-soft/60 px-5 py-4 text-brand-deep leading-relaxed text-lg">
-            Your business runs while you sleep. Leads get answered, qualified,
-            and booked while you&rsquo;re on a job, asleep, or off the clock.
+            Your business runs while you sleep. Leads get answered, qualified, and booked while
+            you&rsquo;re on a job, asleep, or off the clock.
           </p>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              The average service business misses 30&ndash;40% of inbound calls
-              because the phone rings when you&rsquo;re on a roof, under a car,
-              or with a patient. Those calls don&rsquo;t leave voicemail. They
-              dial the next shop on Google.
+              The average service business misses 30&ndash;40% of inbound calls because the phone
+              rings when you&rsquo;re on a roof, under a car, or with a patient. Those calls
+              don&rsquo;t leave a voicemail. They dial the next shop on Google.
             </p>
             <p>
-              An AI receptionist closes that gap. It doesn&rsquo;t need a lunch
-              break. It doesn&rsquo;t forget to follow up. And it doesn&rsquo;t
-              need to be trained on your business more than once.
+              An AI receptionist closes that gap. It doesn&rsquo;t take a lunch break, it
+              doesn&rsquo;t forget to follow up, and it only needs to learn your business once.
             </p>
           </div>
         </div>
@@ -174,148 +194,51 @@ export default function AIReceptionistPage() {
           <ul className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <li>
               <strong className="text-brand-deep">Missed-call text-back.</strong>{" "}
-              The moment a call goes unanswered, an SMS fires back to the caller
-              and the conversation picks up where the missed call left off.
+              The moment a call goes unanswered, a text fires back to the caller and the
+              conversation picks up where the missed call left off.
             </li>
             <li>
               <strong className="text-brand-deep">AI chat on your site, 24/7.</strong>{" "}
-              Answers questions, qualifies the job, and books the appointment
-              while visitors are still on your page.
+              Answers questions, qualifies the job, and books the appointment while visitors are
+              still on your page.
             </li>
             <li>
               <strong className="text-brand-deep">
-                DM auto-reply across Facebook, Instagram, WhatsApp, and Google
-                Business Messages.
+                DM auto-reply across Facebook, Instagram, WhatsApp, and Google Business Messages.
               </strong>{" "}
-              Every channel funnels into the same inbox and the same qualification
-              flow.
+              Every channel funnels into one inbox and one qualification flow.
             </li>
             <li>
               <strong className="text-brand-deep">Lead qualification built for your business.</strong>{" "}
-              Year, make, model. Scope of work. Service area. Budget. Whatever
-              your business needs to triage a job. The AI asks it before booking.
+              Year, make, model. Scope of work. Service area. Whatever you need to triage a job —
+              the AI asks it before booking.
             </li>
             <li>
               <strong className="text-brand-deep">Auto-booking to your calendar.</strong>{" "}
-              Qualified leads book directly. No back-and-forth, no
-              &ldquo;I&rsquo;ll have someone call you&rdquo; that never happens.
+              Qualified leads book directly. No back-and-forth, no &ldquo;I&rsquo;ll have someone
+              call you&rdquo; that never happens.
             </li>
             <li>
-              <strong className="text-brand-deep">Review requests after job completion.</strong>{" "}
-              Once an appointment is marked complete, a Google review request fires
-              automatically, no manual follow-up required.
+              <strong className="text-brand-deep">Review requests after the job.</strong>{" "}
+              Once an appointment is marked complete, a review request fires automatically — no
+              manual follow-up.
             </li>
           </ul>
         </div>
       </section>
 
-      {/* Two-CTA fork */}
-      <section id="tiers" className="section">
+      {/* Two ways — à la carte services */}
+      <section id="ways" className="section">
         <div className="container-page">
-          <h2 className="h-section max-w-3xl">
-            Text and chat, or voice too?
-          </h2>
+          <h2 className="h-section max-w-3xl">Start with text and chat, add voice, or do both.</h2>
           <p className="mt-4 max-w-2xl text-brand-muted">
-            Both tiers are done-for-you installs. Pick based on whether you need
-            voice AI on the phone line, or just need the text and digital
-            channels covered first.
+            Each is a done-for-you install that stands on its own. Start with the one costing you
+            the most missed work, then add the other whenever you&rsquo;re ready.
           </p>
 
-          <div className="mt-12 grid gap-5 md:grid-cols-2 md:items-stretch max-w-4xl">
-            {/* Card A - Awake (most popular) */}
-            <div
-              id="awake"
-              className="relative flex h-full flex-col rounded-2xl bg-brand-deep p-7 shadow-deep -translate-y-2 sm:-translate-y-4 text-brand-soft"
-            >
-              <div className="pointer-events-none absolute -top-3 inset-x-0 flex justify-center">
-                <span className="pointer-events-auto rounded-md bg-brand-primary px-3 py-1 font-mono text-[10px] uppercase tracking-[0.2em] text-brand-soft">
-                  Most Popular
-                </span>
-              </div>
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-soft/50">
-                Text and chat
-              </p>
-              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-soft">
-                {awake.name}
-              </h3>
-              <p className="mt-1 text-sm text-brand-soft/70">{awake.tagline}</p>
-              <div className="mt-5 space-y-1">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-medium tabular-nums text-brand-soft">
-                    ${awake.setup}
-                  </span>
-                  <span className="text-sm text-brand-soft/60">one-time setup</span>
-                </div>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-soft">
-                    ${awake.monthly}
-                  </span>
-                  <span className="text-sm text-brand-soft/60">/mo</span>
-                </div>
-              </div>
-              <p className="mt-2 text-xs text-brand-soft/60">
-                Live in {awake.liveIn} &middot; Month-to-month
-              </p>
-              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                {awake.features.slice(0, 5).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckIcon featured />
-                    <span className="text-brand-soft/85">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/pricing#awake"
-                className="inline-flex items-center justify-center rounded-full bg-white px-6 py-3 text-brand-deep font-medium hover:bg-white/90 transition-colors text-base w-full text-center"
-              >
-                See Awake &rarr;
-              </Link>
-            </div>
-
-            {/* Card B - Climbing (upgrade) */}
-            <div
-              id="climbing"
-              className="relative flex h-full flex-col rounded-2xl bg-brand-soft p-7 shadow-soft lift-card"
-            >
-              <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brand-deep/50">
-                Want voice too?
-              </p>
-              <h3 className="mt-1 text-2xl font-medium tracking-tight text-brand-deep">
-                {climbing.name}
-              </h3>
-              <p className="mt-1 text-sm text-brand-muted">{climbing.tagline}</p>
-              <div className="mt-5 space-y-1">
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-2xl font-medium tabular-nums text-brand-ink">
-                    ${climbing.setup}
-                  </span>
-                  <span className="text-sm text-brand-muted">one-time setup</span>
-                </div>
-                <div className="flex items-baseline gap-1.5">
-                  <span className="text-4xl font-medium tracking-tight tabular-nums text-brand-deep">
-                    ${climbing.monthly}
-                  </span>
-                  <span className="text-sm text-brand-muted">/mo</span>
-                </div>
-              </div>
-              <p className="mt-2 text-xs text-brand-muted">
-                {climbing.monthlyNote} &middot; Live in {climbing.liveIn}
-              </p>
-              <ul className="mt-5 mb-7 space-y-2.5 text-sm flex-1">
-                {climbing.features.slice(1, 7).map((f) => (
-                  <li key={f} className="flex items-start gap-2.5">
-                    <CheckIcon />
-                    <span className="text-brand-muted">{f}</span>
-                  </li>
-                ))}
-              </ul>
-              <Link
-                href="/pricing#climbing"
-                className="btn-primary w-full text-center"
-              >
-                See Climbing &rarr;
-              </Link>
-            </div>
+          <div className="mt-12 grid max-w-4xl gap-5 md:grid-cols-2 md:items-stretch">
+            <ServiceTile service={voice} kicker="Answer the phone" />
+            <ServiceTile service={chat} kicker="Answer chat & DMs" />
           </div>
         </div>
       </section>
@@ -324,9 +247,7 @@ export default function AIReceptionistPage() {
       <section className="section bg-brand-soft/40">
         <div className="container-page">
           <p className="eyebrow mb-4">How it stacks up</p>
-          <h2 className="h-section max-w-3xl">
-            Done-for-you reception vs. the alternatives.
-          </h2>
+          <h2 className="h-section max-w-3xl">Done-for-you reception vs. the alternatives.</h2>
 
           {/* Desktop: full comparison table */}
           <div className="mt-10 hidden sm:block overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-soft">
@@ -402,10 +323,9 @@ export default function AIReceptionistPage() {
 
           <div className="mt-8 max-w-3xl text-brand-muted leading-relaxed text-sm">
             <p>
-              Goodcall is $59/mo if you want to build it yourself. Smith.ai is
-              $95/mo + per-call. Podium is $498/mo on a 12-month contract. We&rsquo;re
-              ${awake.monthly}/mo because we configure it for your business and own the result,
-              and you can walk in any month, no annual lock-in.
+              Most of the alternatives are build-it-yourself, cover one channel, or lock you into
+              a 12-month contract. We configure the whole thing for your business, cover every
+              channel, and own the result — and you can walk any month, no annual lock-in.
             </p>
           </div>
         </div>
@@ -415,21 +335,17 @@ export default function AIReceptionistPage() {
       <section className="section">
         <div className="container-page max-w-3xl">
           <p className="eyebrow mb-4">Real result</p>
-          <h2 className="h-section">
-            10 booked jobs in week one for an independent auto shop.
-          </h2>
+          <h2 className="h-section">10 booked jobs in week one for an independent auto shop.</h2>
           <div className="mt-6 space-y-5 text-brand-muted leading-relaxed">
             <p>
-              Car Hub in Macomb Township, Michigan installed the system on a
-              Monday. By the end of that week the AI receptionist had booked
-              10 jobs the shop would have missed otherwise: after-hours
-              text-backs, late-night form fills, calls that came in during a
-              busy bay.
+              Car Hub in Macomb Township, Michigan installed the system on a Monday. By the end of
+              that week the AI receptionist had booked 10 jobs the shop would have missed
+              otherwise: after-hours text-backs, late-night form fills, calls that came in during
+              a busy bay.
             </p>
             <p>
-              Nothing about the install was unique to auto repair. The same
-              workflow runs the same for an HVAC shop, a roofer, a dental
-              practice, or a landscaping company.{" "}
+              Nothing about the install was unique to auto repair. The same workflow runs the same
+              for an HVAC shop, a roofer, a dental practice, or a landscaping company.{" "}
               <Link
                 href="/insights/car-hub-macomb-case-study"
                 className="text-brand-deep font-medium hover:underline"

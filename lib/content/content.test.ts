@@ -134,12 +134,10 @@ describe("slug registries", () => {
 });
 
 describe("JSON-LD builders", () => {
-  it("builds an industry Service with audience and priced offers", () => {
+  it("builds an industry Service with audience and no price", () => {
     const ld = landingServiceJsonLd(industries[0]) as Record<string, unknown>;
     expect(ld["@type"]).toBe("Service");
-    const offers = ld.offers as Record<string, unknown>;
-    expect(offers["@type"]).toBe("AggregateOffer");
-    expect(Number(offers.lowPrice)).toBeLessThanOrEqual(Number(offers.highPrice));
+    expect(ld.offers).toBeUndefined();
     expect(ld.audience).toBeTruthy();
     expect(ld.areaServed).toBeUndefined();
   });

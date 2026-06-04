@@ -7,14 +7,13 @@ import { usePathname } from "next/navigation";
 import { BookingButton } from "@/components/BookingModal";
 
 const primaryLinks = [
+  { href: "/services", label: "Services" },
   { href: "/ai-receptionist", label: "AI Receptionist" },
   { href: "/web-presence", label: "Web Presence" },
-  { href: "/industries", label: "Industries" },
   { href: "/pricing", label: "Pricing" },
 ];
 
 const secondaryLinks = [
-  { href: "/locations", label: "Locations" },
   { href: "/lead-generator", label: "Lead Generation" },
   { href: "/database-reactivation", label: "Reactivation" },
   { href: "/instant-booking", label: "Instant Booking" },
@@ -93,88 +92,119 @@ export default function Header() {
   return (
     <header
       ref={headerRef}
-      className={`sticky top-0 z-50 border-b border-brand-line/70 bg-brand-soft transition-transform duration-300 ease-out ${
-        hidden ? "-translate-y-full" : "translate-y-0"
+      className={`sticky top-0 z-50 transition-transform duration-300 ease-out ${
+        hidden ? "-translate-y-[150%]" : "translate-y-0"
       }`}
     >
-      <div className="container-page flex items-center justify-between gap-6 py-4">
-        <Link
-          href="/"
-          aria-label="AlgoNyte home"
-          className="flex items-center gap-2.5 font-medium tracking-tight text-brand-deep text-lg sm:text-xl"
+      <div className="container-page pt-3 sm:pt-4">
+        {/* Floating futuristic pill */}
+        <div
+          className="rounded-full p-px shadow-[0_18px_50px_-12px_rgba(99,102,241,0.5),0_8px_22px_-8px_rgba(6,11,23,0.6)]"
+          style={{
+            backgroundImage:
+              "linear-gradient(135deg, rgba(99,102,241,0.7), rgba(16,185,129,0.45) 45%, rgba(139,92,246,0.7))",
+          }}
         >
-          <Image
-            src="/algonyte-labs-logo.png"
-            alt="AlgoNyte logo"
-            width={96}
-            height={96}
-            unoptimized
-            className="h-[2.5em] w-[2.5em] object-contain"
-          />
-          AlgoNyte
-        </Link>
+          <div className="relative rounded-full bg-gradient-to-br from-brand-ink via-brand-deep to-[#0a1330] px-5 py-3 sm:px-7">
+            {/* glossy highlights */}
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-b from-white/12 via-white/[0.02] to-transparent"
+            />
 
-        <nav className="hidden md:flex items-center gap-7 text-sm text-brand-muted">
-          {primaryLinks.map((l) => (
+          <div className="relative z-10 flex items-center justify-between gap-6">
             <Link
-              key={l.href}
-              href={l.href}
-              className="nav-link hover:text-brand-deep focus:outline-none focus-visible:text-brand-deep"
+              href="/"
+              aria-label="AlgoNyte home"
+              className="flex items-center gap-2.5 font-medium tracking-tight text-brand-soft text-lg sm:text-xl"
             >
-              {l.label}
+              <Image
+                src="/algonyte-labs-logo.png"
+                alt="AlgoNyte logo"
+                width={96}
+                height={96}
+                unoptimized
+                className="h-[2.5em] w-[2.5em] object-contain"
+              />
+              AlgoNyte
             </Link>
-          ))}
-          <BookingButton className="rounded-full bg-brand-primary px-4 py-1.5 text-sm font-medium text-brand-soft hover:bg-brand-violet transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2">
-            Book a call
-          </BookingButton>
-        </nav>
 
-        <button
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((v) => !v)}
-          className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-md border border-brand-line text-brand-deep hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 nav-link"
-        >
-          <span className="sr-only">Menu</span>
-          <svg
-            width="22"
-            height="22"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            strokeWidth="2"
-          >
-            {open ? (
-              <path d="M6 6l12 12M18 6L6 18" />
-            ) : (
-              <path d="M4 7h16M4 12h16M4 17h16" />
-            )}
-          </svg>
-        </button>
-      </div>
+            <nav className="hidden md:flex items-center gap-7 text-sm text-brand-soft/70">
+              {primaryLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  className="nav-link hover:text-brand-soft focus:outline-none focus-visible:text-brand-soft"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <BookingButton className="rounded-full bg-gradient-to-br from-emerald-400 to-brand-primary px-4 py-1.5 text-sm font-medium text-white shadow-[inset_0_1px_0_rgba(255,255,255,0.45),0_8px_22px_-6px_rgba(4,120,87,0.8)] ring-1 ring-inset ring-white/30 transition hover:brightness-110 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep">
+                Book a call
+              </BookingButton>
+            </nav>
 
-      {open && (
-        <div className="md:hidden border-t border-brand-line/70 bg-brand-soft">
-          <nav className="container-page flex flex-col py-6 gap-4 text-base text-brand-deep">
-            {allLinks.map((l) => (
-              <Link
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="py-2.5 hover:text-brand-primary focus:outline-none focus-visible:text-brand-primary nav-link"
-              >
-                {l.label}
-              </Link>
-            ))}
-            <BookingButton
-              className="btn-primary mt-3"
-              onBeforeOpen={() => setOpen(false)}
+            <button
+              aria-label="Toggle menu"
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="md:hidden inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/15 text-brand-soft hover:border-brand-primary hover:text-brand-primary focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 focus-visible:ring-offset-brand-deep nav-link"
             >
-              Book a call
-            </BookingButton>
-          </nav>
+              <span className="sr-only">Menu</span>
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+              >
+                {open ? (
+                  <path d="M6 6l12 12M18 6L6 18" />
+                ) : (
+                  <path d="M4 7h16M4 12h16M4 17h16" />
+                )}
+              </svg>
+            </button>
+            </div>
+          </div>
         </div>
-      )}
+
+        {open && (
+          <div className="md:hidden relative mt-2 rounded-3xl border border-indigo-400/30 bg-gradient-to-br from-brand-ink via-brand-deep to-[#0a1330] shadow-[0_18px_50px_-12px_rgba(99,102,241,0.45),0_8px_22px_-8px_rgba(6,11,23,0.55)] ring-1 ring-inset ring-white/10">
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-white/70 to-transparent"
+            />
+            <div
+              aria-hidden
+              className="pointer-events-none absolute inset-0 rounded-3xl bg-gradient-to-b from-white/15 via-white/[0.03] to-transparent"
+            />
+            <nav className="relative z-10 flex flex-col p-4 gap-1 text-base text-brand-soft">
+              {allLinks.map((l) => (
+                <Link
+                  key={l.href}
+                  href={l.href}
+                  onClick={() => setOpen(false)}
+                  className="py-2.5 hover:text-brand-primary focus:outline-none focus-visible:text-brand-primary nav-link"
+                >
+                  {l.label}
+                </Link>
+              ))}
+              <BookingButton
+                className="btn-primary-featured mt-3 w-full"
+                onBeforeOpen={() => setOpen(false)}
+              >
+                Book a call
+              </BookingButton>
+            </nav>
+          </div>
+        )}
+      </div>
     </header>
   );
 }

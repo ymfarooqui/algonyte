@@ -4,13 +4,10 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist for Auto Dealerships | Book Test Drives 24/7";
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
-
-const description = `AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7, even when sales is on the lot. Plans from $${awake.monthly}/mo.`;
+const description =
+  "AI receptionist built for auto dealers. Answer every Cars.com, AutoTrader, and Facebook Marketplace lead, qualify trade-ins, and book test drives 24/7, even when sales is on the lot.";
 
 export const metadata: Metadata = {
   title,
@@ -33,13 +30,6 @@ const serviceJsonLd = {
   provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
   audience: { "@type": "BusinessAudience", audienceType: "Auto Dealerships" },
   description,
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: awake.monthly,
-    highPrice: climbing.monthly,
-    offerCount: 3,
-  },
   subjectOf: {
     "@type": "CreativeWork",
     name: "Car Hub Macomb case study",
@@ -72,7 +62,7 @@ const faqJsonLd = {
       name: "What CRMs and tools do you integrate with?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "By default we pass qualified leads into your existing CRM via email and Zapier, which covers VinSolutions, DealerSocket, CDK, Reynolds, and most others without custom work. Direct API integrations are available on the Climbing plan when your CRM supports it. We'd rather be honest about what's wired in day one than promise an integration that takes weeks to ship.",
+        text: "By default we pass qualified leads into your existing CRM via email and Zapier, which covers VinSolutions, DealerSocket, CDK, Reynolds, and most others without custom work. Direct API integrations are available when your CRM supports it. We'd rather be honest about what's wired in day one than promise an integration that takes weeks to ship.",
       },
     },
     {
@@ -160,7 +150,7 @@ export default function AutoDealershipsPage() {
             <p>
               Car Hub is an independent auto shop outside Detroit. Different
               business model than a new-car franchise, but the same underlying
-              problem. Before the Awake system went live, after-hours calls
+              problem. Before the system went live, after-hours calls
               died in voicemail and new-customer leads went to the next shop
               on Google. In the first week the system was live, it booked 10
               jobs the shop wouldn&rsquo;t have captured otherwise.
@@ -216,7 +206,7 @@ export default function AutoDealershipsPage() {
             <div>
               <h3 className="text-lg font-semibold text-brand-deep">Cold lead re-engagement</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
-                The Climbing plan can re-engage your last 30 to 90 days of cold
+                We can re-engage your last 30 to 90 days of cold
                 form fills with a tailored SMS and route any replies back into
                 live conversation.
               </p>
@@ -230,11 +220,10 @@ export default function AutoDealershipsPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Bilingual handling (Climbing)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Bilingual handling</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 In bilingual markets, the agent detects the caller&rsquo;s
-                language and switches to Spanish without a hand-off. Available
-                on the Climbing plan.
+                language and switches to Spanish without a hand-off.
               </p>
             </div>
           </div>
@@ -249,8 +238,8 @@ export default function AutoDealershipsPage() {
               Day one, qualified leads land in your CRM via email and Zapier.
               That covers VinSolutions, DealerSocket, CDK, Reynolds, and the
               long tail of dealer CRMs without any custom integration work.
-              For shops that need direct API hand-off, that&rsquo;s on the
-              Climbing plan when the CRM supports it.
+              For shops that need direct API hand-off, that&rsquo;s available
+              when the CRM supports it.
             </p>
             <p>
               On the inbound side, the agent plugs into your existing main
@@ -264,12 +253,12 @@ export default function AutoDealershipsPage() {
 
       <section className="section">
         <div className="container-page max-w-3xl">
-          <h2 className="h-section">Plans starting at ${awake.monthly}/month.</h2>
+          <h2 className="h-section">Built around how dealers actually sell.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Awake is the missed-call text-back and SMS qualification flow: chat
-            on your site, DM auto-reply, and auto-booking 24/7. Climbing adds
-            the voice AI phone receptionist, branching workflows for trade-in
-            and test-drive paths, custom integrations, and bilingual handling.
+            Start with missed-call text-back and SMS qualification — chat on your site, DM
+            auto-reply, and auto-booking 24/7 — then add the voice AI phone receptionist,
+            branching workflows for trade-in and test-drive paths, custom integrations, and
+            bilingual handling whenever you&rsquo;re ready.
           </p>
           <p className="mt-4">
             <Link href="/pricing" className="text-brand-deep font-medium hover:underline">

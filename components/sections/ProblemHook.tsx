@@ -8,7 +8,7 @@ export default function ProblemHook() {
   return (
     <section className="section">
       <div className="container-page">
-        <p className="eyebrow mb-4">The Problem</p>
+        <p className="eyebrow mb-4">The revenue leak</p>
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-start">
           <Reveal>
             <CountUp

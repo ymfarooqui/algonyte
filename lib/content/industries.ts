@@ -20,7 +20,7 @@ export const industries: LandingContent[] = [
       "HVAC, plumbing, roofing, electrical, cleaning, and landscaping — capture every emergency call and after-hours lead.",
     metaTitle: "AI Receptionist for Home Services | HVAC, Plumbing, Roofing",
     metaDescription:
-      "AI receptionist for HVAC, plumbing, roofing, and electrical pros. Answer emergency and after-hours calls, qualify jobs, and book service 24/7. From $549/mo.",
+      "AI receptionist for HVAC, plumbing, roofing, and electrical pros. Answer emergency and after-hours calls, qualify jobs, and book service 24/7.",
     eyebrow: "Industries — Home Services",
     h1: {
       pre: "AI lead automation for",
@@ -112,7 +112,7 @@ export const industries: LandingContent[] = [
       "Fill the schedule, recover no-shows, and reactivate lapsed patients without adding front-desk staff.",
     metaTitle: "AI Receptionist for Dental Practices | Book New Patients 24/7",
     metaDescription:
-      "AI front desk for dental and orthodontic practices. Book new patients 24/7, cut no-shows, and reactivate lapsed patients — without adding staff. From $549/mo.",
+      "AI front desk for dental and orthodontic practices. Book new patients 24/7, cut no-shows, and reactivate lapsed patients — without adding staff.",
     eyebrow: "Industries — Dental & Orthodontics",
     h1: {
       pre: "AI front desk for",
@@ -204,7 +204,7 @@ export const industries: LandingContent[] = [
       "Intake every potential client the moment they call — the firm that answers first signs the case.",
     metaTitle: "AI Receptionist for Law Firms | 24/7 Legal Intake & Booking",
     metaDescription:
-      "AI intake for law firms. Answer every potential-client call 24/7, screen the matter, and book consultations before they call the next attorney. From $549/mo.",
+      "AI intake for law firms. Answer every potential-client call 24/7, screen the matter, and book consultations before they call the next attorney.",
     eyebrow: "Industries — Law Firms",
     h1: {
       pre: "AI client intake for",
@@ -296,7 +296,7 @@ export const industries: LandingContent[] = [
       "Answer reservation calls, catering inquiries, and DMs during the dinner rush — without pulling staff off the floor.",
     metaTitle: "AI Receptionist for Restaurants | Reservations & Catering 24/7",
     metaDescription:
-      "AI phone and DM agent for restaurants. Answer reservation calls during the rush and capture catering and event leads 24/7 — staff stay on the floor. From $549/mo.",
+      "AI phone and DM agent for restaurants. Answer reservation calls during the rush and capture catering and event leads 24/7 — staff stay on the floor.",
     eyebrow: "Industries — Restaurants & Hospitality",
     h1: {
       pre: "AI reservations and inquiries for",
@@ -388,7 +388,7 @@ export const industries: LandingContent[] = [
       "Answer Instagram DMs, book treatments 24/7, and rebook clients on their Botox and filler cycles.",
     metaTitle: "AI Receptionist for Med Spas | Book Treatments 24/7",
     metaDescription:
-      "AI front desk for med spas. Answer Instagram DMs, book treatments and consults 24/7, cut no-shows, and rebook clients on their cycle. From $549/mo.",
+      "AI front desk for med spas. Answer Instagram DMs, book treatments and consults 24/7, cut no-shows, and rebook clients on their cycle.",
     eyebrow: "Industries — Med Spas & Aesthetics",
     h1: { pre: "AI front desk for", accent: "med spas", post: " and aesthetic clinics." },
     heroSub:
@@ -476,7 +476,7 @@ export const industries: LandingContent[] = [
       "Catch every burst-pipe and after-hours emergency call — the highest-margin jobs you can't get to.",
     metaTitle: "AI Receptionist for Plumbers | Capture Every Emergency Call",
     metaDescription:
-      "AI receptionist for plumbers. Answer emergency and after-hours calls, triage urgency, and book jobs 24/7 — even when you're under a sink. From $549/mo.",
+      "AI receptionist for plumbers. Answer emergency and after-hours calls, triage urgency, and book jobs 24/7 — even when you're under a sink.",
     eyebrow: "Industries — Plumbers",
     h1: { pre: "AI lead capture for", accent: "plumbers", post: "." },
     heroSub:
@@ -564,7 +564,7 @@ export const industries: LandingContent[] = [
       "Win the post-storm race: instant lead response, inspection booking, and estimate follow-up.",
     metaTitle: "AI Receptionist for Roofers | Never Miss a Storm Lead",
     metaDescription:
-      "AI receptionist for roofers. Capture every storm lead in seconds, book inspections, qualify insurance claims, and follow up estimates 24/7. From $549/mo.",
+      "AI receptionist for roofers. Capture every storm lead in seconds, book inspections, qualify insurance claims, and follow up estimates 24/7.",
     eyebrow: "Industries — Roofers",
     h1: { pre: "AI lead capture for", accent: "roofers", post: "." },
     heroSub:
@@ -652,7 +652,7 @@ export const industries: LandingContent[] = [
       "Answer new-client calls through tax season and book consultations without adding seasonal staff.",
     metaTitle: "AI Receptionist for Accounting Firms | Book Clients 24/7",
     metaDescription:
-      "AI receptionist for accounting and CPA firms. Answer new-client calls through tax season, book consultations 24/7, and reactivate past clients. From $549/mo.",
+      "AI receptionist for accounting and CPA firms. Answer new-client calls through tax season, book consultations 24/7, and reactivate past clients.",
     eyebrow: "Industries — Accounting & CPA Firms",
     h1: { pre: "AI client intake for", accent: "accounting firms", post: "." },
     heroSub:
@@ -740,7 +740,7 @@ export const industries: LandingContent[] = [
       "Answer portal leads in seconds and book showings — an ISA that never sleeps.",
     metaTitle: "AI Lead Response for Real Estate | Answer Leads in Seconds",
     metaDescription:
-      "AI lead response for real estate agents and teams. Answer portal leads in seconds, qualify buyers and sellers, and book showings 24/7. From $549/mo.",
+      "AI lead response for real estate agents and teams. Answer portal leads in seconds, qualify buyers and sellers, and book showings 24/7.",
     eyebrow: "Industries — Real Estate",
     h1: { pre: "AI lead response for", accent: "real estate", post: " agents and teams." },
     heroSub:

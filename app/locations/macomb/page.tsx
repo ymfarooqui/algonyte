@@ -4,13 +4,11 @@ import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 import { jsonLdString } from "@/lib/jsonLd";
-import { tiers } from "@/lib/tiers";
 
 const title = "AI Receptionist in Macomb, MI | Stop Missing Service Calls";
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
 
-const description = `AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro. Plans from $${awake.monthly}/mo.`;
+const description =
+  "AI receptionist for service businesses in Macomb, MI. Answer, qualify, and book leads 24/7 across Macomb County and the Detroit metro.";
 
 export const metadata: Metadata = {
   title,
@@ -37,13 +35,6 @@ const serviceJsonLd = {
     containedInPlace: { "@type": "State", name: "Michigan" },
   },
   description,
-  offers: {
-    "@type": "AggregateOffer",
-    priceCurrency: "USD",
-    lowPrice: awake.monthly,
-    highPrice: climbing.monthly,
-    offerCount: 3,
-  },
 };
 
 const faqJsonLd = {
@@ -187,7 +178,7 @@ export default function MacombLocationPage() {
               </p>
             </div>
             <div>
-              <h3 className="text-lg font-semibold text-brand-deep">Voice AI (Climbing plan)</h3>
+              <h3 className="text-lg font-semibold text-brand-deep">Voice AI</h3>
               <p className="mt-2 text-brand-muted leading-relaxed">
                 Picks up the phone when you can&rsquo;t. Qualifies, books, and
                 hands off with a full transcript so you walk into every job
