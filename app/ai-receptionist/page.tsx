@@ -10,7 +10,7 @@ import { aiReceptionistServiceSchema } from "@/lib/schema";
 const voice = services.find((s) => s.id === "voice-ai")!;
 const chat = services.find((s) => s.id === "ai-chat-dm")!;
 
-// Competitive comparison — no prices (we scope on a call); the contrast is
+// Competitive comparison, no prices (we scope on a call); the contrast is
 // done-for-you + every channel + month-to-month vs. DIY tools and annual locks.
 const comparison = {
   attributes: ["Setup", "Contract", "Channels", "Reviews engine"],
@@ -37,7 +37,7 @@ const comparison = {
 
 const title = "AI Receptionist for Service Businesses | AlgoNyte";
 const description =
-  "An AI receptionist that answers, qualifies, and books your leads 24/7 — across missed calls, website chat, SMS, and social DMs. Done for you, live in days, no long-term contract.";
+  "An AI receptionist that answers, qualifies, and books your leads 24/7, across missed calls, website chat, SMS, and social DMs. Done for you, live in days, no long-term contract.";
 
 export const metadata: Metadata = {
   title,
@@ -60,7 +60,7 @@ const faqs = [
   },
   {
     q: "Does it work with my existing phone number?",
-    a: "Yes. We forward your existing number — you keep it and nothing changes for your customers. The voice AI layer sits on top, so callers reach the agent first and get transferred to you for anything it can't handle.",
+    a: "Yes. We forward your existing number, you keep it and nothing changes for your customers. The voice AI layer sits on top, so callers reach the agent first and get transferred to you for anything it can't handle.",
   },
   {
     q: "How long until I see results?",
@@ -68,7 +68,7 @@ const faqs = [
   },
   {
     q: "Can I take over the conversations myself?",
-    a: "Anytime. Every conversation lives in your shared inbox — jump in, take over, and the AI steps aside. You also get a dashboard showing every missed call handled, DM replied to, and lead booked.",
+    a: "Anytime. Every conversation lives in your shared inbox, jump in, take over, and the AI steps aside. You also get a dashboard showing every missed call handled, DM replied to, and lead booked.",
   },
   {
     q: "What happens to my leads if I cancel?",
@@ -210,7 +210,7 @@ export default function AIReceptionistPage() {
             </li>
             <li>
               <strong className="text-brand-deep">Lead qualification built for your business.</strong>{" "}
-              Year, make, model. Scope of work. Service area. Whatever you need to triage a job —
+              Year, make, model. Scope of work. Service area. Whatever you need to triage a job,
               the AI asks it before booking.
             </li>
             <li>
@@ -220,14 +220,14 @@ export default function AIReceptionistPage() {
             </li>
             <li>
               <strong className="text-brand-deep">Review requests after the job.</strong>{" "}
-              Once an appointment is marked complete, a review request fires automatically — no
+              Once an appointment is marked complete, a review request fires automatically, no
               manual follow-up.
             </li>
           </ul>
         </div>
       </section>
 
-      {/* Two ways — à la carte services */}
+      {/* Two ways, à la carte services */}
       <section id="ways" className="section">
         <div className="container-page">
           <h2 className="h-section max-w-3xl">Start with text and chat, add voice, or do both.</h2>
@@ -325,7 +325,7 @@ export default function AIReceptionistPage() {
             <p>
               Most of the alternatives are build-it-yourself, cover one channel, or lock you into
               a 12-month contract. We configure the whole thing for your business, cover every
-              channel, and own the result — and you can walk any month, no annual lock-in.
+              channel, and own the result, and you can walk any month, no annual lock-in.
             </p>
           </div>
         </div>

@@ -91,7 +91,7 @@ export default function AutoDealershipsPage() {
         <PageHeroBackdrop />
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <div className="max-w-3xl">
-            <p className="eyebrow mb-4">Industries — Auto Dealerships</p>
+            <p className="eyebrow mb-4">Industries, Auto Dealerships</p>
             <h1 className="h-display">
               AI lead automation for{" "}
               <span className="text-brand-deep">auto dealerships</span>.
@@ -255,8 +255,8 @@ export default function AutoDealershipsPage() {
         <div className="container-page max-w-3xl">
           <h2 className="h-section">Built around how dealers actually sell.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
-            Start with missed-call text-back and SMS qualification — chat on your site, DM
-            auto-reply, and auto-booking 24/7 — then add the voice AI phone receptionist,
+            Start with missed-call text-back and SMS qualification, chat on your site, DM
+            auto-reply, and auto-booking 24/7, then add the voice AI phone receptionist,
             branching workflows for trade-in and test-drive paths, custom integrations, and
             bilingual handling whenever you&rsquo;re ready.
           </p>

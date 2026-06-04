@@ -9,7 +9,7 @@
  * Escaping all five keeps the JSON parseable but neutralizes the
  * sandbox-escape bytes.
  *
- * Inputs today are all hardcoded — this is defense in depth.
+ * Inputs today are all hardcoded, this is defense in depth.
  */
 const ESCAPES: Record<string, string> = {
   "<": "\\u003c",

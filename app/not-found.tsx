@@ -3,7 +3,7 @@ import Link from "next/link";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
 
 export const metadata: Metadata = {
-  title: "Page not found — AlgoNyte",
+  title: "Page not found, AlgoNyte",
   description:
     "We can't find that page. Head back home or explore our AI receptionist, voice agents, and web presence services.",
   robots: { index: false, follow: true },
@@ -18,7 +18,7 @@ const POPULAR = [
   {
     label: "Web Presence",
     href: "/web-presence",
-    note: "Sites, hosting, and indexing — done right.",
+    note: "Sites, hosting, and indexing, done right.",
   },
   {
     label: "Pricing",
@@ -52,7 +52,7 @@ export default function NotFound() {
             </h1>
             <p className="lede mt-6">
               The link may be old, or the page may have moved. Try one of
-              these — or head back to the homepage.
+              these, or head back to the homepage.
             </p>
 
             <div className="mt-8 flex flex-wrap items-center gap-x-6 gap-y-3">

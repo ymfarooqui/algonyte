@@ -10,7 +10,7 @@ import { jsonLdString } from "@/lib/jsonLd";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
-const pricingTitle = "Pricing | AlgoNyte — Done-for-you AI services";
+const pricingTitle = "Pricing | AlgoNyte, Done-for-you AI services";
 const pricingDescription =
   "Done-for-you AI services for service businesses. Pick what you need or bundle a few. 30-day money-back, no long-term contracts. Book a call for a scoped quote.";
 
@@ -35,7 +35,7 @@ const differentiators = [
   "Done-for-you: we build it, launch it, and run it.",
   "30-day money-back. If it isn't working, you don't pay.",
   "No long-term contracts. Add or drop a service any month.",
-  "Ad spend stays on your card — no markup, ever.",
+  "Ad spend stays on your card, no markup, ever.",
 ];
 
 function CheckIcon() {

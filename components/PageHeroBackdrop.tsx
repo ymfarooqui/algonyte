@@ -3,11 +3,11 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Decorative backdrop for page hero sections — aurora gradient blobs + film
+ * Decorative backdrop for page hero sections, aurora gradient blobs + film
  * grain. Drop inside any section with `relative overflow-hidden`.
  *
  * Pauses the aurora animations when scrolled off-screen via IntersectionObserver
- * — three 80px-blurred radials drain GPU even when invisible.
+ *, three 80px-blurred radials drain GPU even when invisible.
  */
 export default function PageHeroBackdrop() {
   const ref = useRef<HTMLDivElement | null>(null);
@@ -16,7 +16,7 @@ export default function PageHeroBackdrop() {
     const el = ref.current;
     if (!el) return;
 
-    // Honor reduced-motion — leave layers paused.
+    // Honor reduced-motion, leave layers paused.
     if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
     const io = new IntersectionObserver(

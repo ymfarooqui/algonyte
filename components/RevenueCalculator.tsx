@@ -137,7 +137,7 @@ export default function RevenueCalculator() {
 
         <p className="mt-6 max-w-2xl text-xs text-brand-muted">
           Estimate only, from the numbers you enter. Recovery assumes we capture half the leads
-          you currently miss — your results depend on your market and follow-up.
+          you currently miss, your results depend on your market and follow-up.
         </p>
       </div>
     </section>

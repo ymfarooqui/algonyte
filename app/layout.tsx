@@ -94,7 +94,6 @@ const localBusinessJsonLd = {
   description: siteConfig.description,
   logo: `${siteConfig.url}/algonyte-labs-logo.png`,
   image: `${siteConfig.url}/algonyte-labs-logo.png`,
-  priceRange: "$99 – $2599+/mo",
   areaServed: [
     { "@type": "City", name: "Chicago", containedInPlace: { "@type": "State", name: "Illinois" } },
     { "@type": "City", name: "Naperville", containedInPlace: { "@type": "State", name: "Illinois" } },
@@ -130,7 +129,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="preconnect" href="https://api.leadconnectorhq.com" />
         <link rel="dns-prefetch" href="https://widgets.leadconnectorhq.com" />
         <link rel="dns-prefetch" href="https://link.msgsndr.com" />
-        {/* GA4 Consent Mode v2 — default-denied state must execute before any
+        {/* GA4 Consent Mode v2, default-denied state must execute before any
             tracking call. Inline in head so it runs synchronously at parse
             time, ahead of the deferred Script tags below. Static literal,
             no user input. */}

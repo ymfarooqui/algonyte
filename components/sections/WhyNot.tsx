@@ -5,15 +5,15 @@ import Reveal from "@/components/Reveal";
 const items = [
   {
     q: "Why not Podium?",
-    a: "Podium locks you into a 12-month contract and still leaves you configuring the flows yourself. We're month-to-month, fully done-for-you, and cover every channel — phone, SMS, web chat, Facebook, Instagram, WhatsApp, and Google Business Messages.",
+    a: "Podium locks you into a 12-month contract and still leaves you configuring the flows yourself. We're month-to-month, fully done-for-you, and cover every channel, phone, SMS, web chat, Facebook, Instagram, WhatsApp, and Google Business Messages.",
   },
   {
     q: "Why not Scorpion, Blue Corona, or Hibu?",
-    a: "Those agencies run $2,500–$10,000/mo with heavy setup fees and 12–24 month contracts. We're a fraction of that, month-to-month, with no long-term commitment — and your ad spend goes straight to Google and Meta on your own card. It never touches us, and it never has a markup.",
+    a: "Those agencies run $2,500–$10,000/mo with heavy setup fees and 12–24 month contracts. We're a fraction of that, month-to-month, with no long-term commitment, and your ad spend goes straight to Google and Meta on your own card. It never touches us, and it never has a markup.",
   },
   {
     q: "Why not a cheap DIY tool (Goodcall, Numa)?",
-    a: "Those are cheap because you build and maintain the system yourself. We're done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
+    a: "Those are cheap because you build and maintain the system yourself. We're done-for-you, we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
   },
 ];
 

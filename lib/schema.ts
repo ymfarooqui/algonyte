@@ -1,7 +1,7 @@
 import { siteConfig } from "./site";
 
 // Service / Product JSON-LD. Prices are intentionally omitted everywhere (the
-// site no longer publishes tier prices — scoped on a call), so these describe
+// site no longer publishes tier prices, scoped on a call), so these describe
 // the offerings without asserting any price.
 
 const provider = { "@type": "Organization", name: siteConfig.name, url: siteConfig.url };
@@ -11,7 +11,7 @@ export function pricingSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AlgoNyte — Done-for-you AI services",
+    name: "AlgoNyte, Done-for-you AI services",
     serviceType: "AI automation for service businesses",
     provider,
     areaServed,
@@ -30,7 +30,7 @@ export function aiReceptionistServiceSchema() {
     provider,
     areaServed,
     description:
-      "An AI receptionist that answers, qualifies, and books leads 24/7 — across phone, website chat, SMS missed-call text-back, and social DMs.",
+      "An AI receptionist that answers, qualifies, and books leads 24/7, across phone, website chat, SMS missed-call text-back, and social DMs.",
   };
 }
 

@@ -128,7 +128,7 @@ export async function submitIntake(formData: FormData): Promise<IntakeResult> {
     return {
       ok: false,
       error:
-        "Our intake system is having a moment. Book a call directly — link below.",
+        "Our intake system is having a moment. Book a call directly, link below.",
     };
   }
 
@@ -168,7 +168,7 @@ export async function submitIntake(formData: FormData): Promise<IntakeResult> {
     }
 
     // 400 with "duplicated contacts" means the email already exists in this
-    // sub-account. GHL returns the existing contactId in meta — attach the
+    // sub-account. GHL returns the existing contactId in meta, attach the
     // new tags and (optional) note to that contact instead of failing the
     // submission. From the user's perspective the intake worked.
     if (res.status === 400) {

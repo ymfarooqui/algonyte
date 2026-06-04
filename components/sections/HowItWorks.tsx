@@ -98,7 +98,7 @@ const rows = [
   { name: "Marcus T.", channel: "Call", preview: "Wants quote on a 16ft fence install", time: "Just now", status: "New" },
   { name: "Priya N.", channel: "SMS", preview: "Asked about Saturday availability", time: "2 min", status: "Replied" },
   { name: "Jordan B.", channel: "Instagram DM", preview: "Need pricing for full roof tear-off", time: "6 min", status: "Replied" },
-  { name: "Sofia R.", channel: "Web form", preview: "Booked 3pm Thursday — driveway repair", time: "12 min", status: "Booked" },
+  { name: "Sofia R.", channel: "Web form", preview: "Booked 3pm Thursday, driveway repair", time: "12 min", status: "Booked" },
   { name: "Aaron K.", channel: "Email", preview: "Forwarded estimate to spouse", time: "26 min", status: "Replied" },
 ];
 
@@ -153,7 +153,7 @@ function InboxMockup() {
           <div className="rounded-xl bg-white ring-1 ring-brand-line p-3.5">
             <p className="text-xs text-slate-500">To Marcus T. · Call</p>
             <p className="mt-2 leading-relaxed">
-              Hey Marcus — thanks for reaching out about the 16ft fence. I&apos;ve got
+              Hey Marcus, thanks for reaching out about the 16ft fence. I&apos;ve got
               a window Thursday at 2pm or Friday at 10am for a free on-site
               estimate. Which works better?
             </p>
