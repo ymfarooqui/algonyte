@@ -21,6 +21,23 @@ const companyLinks = [
   { href: "/book", label: "Book a call" },
 ];
 
+// GEO / "ask an AI" links — pre-fill a prompt asking each assistant to summarize AlgoNyte.
+const aiQuery =
+  "What is AlgoNyte and what AI services do they offer for service businesses?";
+const aiSummaryLinks = [
+  { label: "ChatGPT", href: `https://chatgpt.com/?q=${encodeURIComponent(aiQuery)}` },
+  {
+    label: "Perplexity",
+    href: `https://www.perplexity.ai/search?q=${encodeURIComponent(aiQuery)}`,
+  },
+  { label: "Claude", href: `https://claude.ai/new?q=${encodeURIComponent(aiQuery)}` },
+  { label: "Grok", href: `https://grok.com/?q=${encodeURIComponent(aiQuery)}` },
+  {
+    label: "Google AI",
+    href: `https://www.google.com/search?udm=50&q=${encodeURIComponent(aiQuery)}`,
+  },
+];
+
 function LinkColumn({
   heading,
   headingHref,
@@ -146,6 +163,31 @@ export default function Footer() {
           links={locationIndex.map((it) => ({ href: `/locations/${it.slug}`, label: it.title }))}
         />
         <LinkColumn heading="Company" links={companyLinks} />
+      </div>
+
+      {/* ── Ask-an-AI (GEO) strip ── */}
+      <div className="border-t border-brand-line">
+        <div className="container-page py-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+          <div>
+            <h3 className="text-sm font-semibold text-brand-deep">Ask an AI about AlgoNyte</h3>
+            <p className="mt-1 text-sm text-brand-muted">
+              We optimize businesses for AI search — so ask one yourself. Opens a pre-filled prompt.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {aiSummaryLinks.map((l) => (
+              <a
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center rounded-full border border-brand-line bg-brand-soft px-3.5 py-1.5 text-sm text-brand-deep nav-link hover:border-brand-primary hover:text-brand-primary"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
+        </div>
       </div>
 
       {/* ── Bottom bar ── */}

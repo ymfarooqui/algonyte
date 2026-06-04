@@ -1,108 +1,12 @@
-"use client";
-
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import FinalCTA from "@/components/sections/FinalCTA";
 import ServicesFlowVisual from "@/components/ServicesFlowVisual";
-import ServicesHeroStack from "@/components/ServicesHeroStack";
 import StackMarquee from "@/components/StackMarquee";
-import { faqs } from "./faqs";
+import SolutionsGrid from "@/components/sections/SolutionsGrid";
+import GuaranteeStrip from "@/components/sections/GuaranteeStrip";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
-import { tiers } from "@/lib/tiers";
-import type { Tier } from "@/lib/tiers";
-
-/* ---- helpers ---- */
-
-function fmt(n: number) {
-  return "$" + n.toLocaleString("en-US");
-}
-
-/* ---- icons ---- */
-
-const Icon = {
-  arrow: (
-    <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none">
-      <path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-    </svg>
-  ),
-};
-
-/* ---- Tier card ---- */
-
-function TierCard({ tier, index }: { tier: Tier; index: number }) {
-  const featured = tier.featured === true;
-  const href = `/pricing#${tier.id}`;
-
-  return (
-    <Reveal
-      delay={index * 0.06}
-      className={`relative flex flex-col rounded-2xl bg-white p-7 transition-shadow ${
-        featured
-          ? "ring-2 ring-brand-deep shadow-xl shadow-brand-deep/15"
-          : "ring-1 ring-slate-200 shadow-sm hover:shadow-md"
-      }`}
-    >
-      {featured && (
-        <>
-          <span className="absolute -top-3 left-1/2 z-10 inline-flex -translate-x-1/2 items-center gap-1.5 rounded-full bg-brand-deep px-3.5 py-1.5 text-[10px] font-semibold uppercase tracking-wider text-white shadow-md shadow-brand-deep/30">
-            <svg viewBox="0 0 24 24" className="h-3 w-3 text-brand-primary" fill="currentColor">
-              <path d="M12 2l1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8z" />
-            </svg>
-            Most Popular
-          </span>
-          <div aria-hidden className="pointer-events-none absolute inset-0 overflow-hidden rounded-2xl">
-            <div className="absolute -right-12 -top-12 h-40 w-40 rounded-full bg-brand-primary/10 blur-2xl" />
-            <div className="absolute -bottom-16 -left-16 h-40 w-40 rounded-full bg-brand-accent blur-3xl" />
-          </div>
-        </>
-      )}
-
-      <div className="relative flex flex-1 flex-col">
-        <div className="flex items-center justify-between gap-3">
-          <span className={`inline-flex h-9 w-9 items-center justify-center rounded-lg font-semibold text-sm ${featured ? "bg-brand-deep text-white" : "bg-brand-accent text-brand-deep"}`}>
-            {String(index + 1).padStart(2, "0")}
-          </span>
-          <span className={`rounded-full px-2.5 py-1 text-[10px] font-semibold uppercase tracking-wider ${featured ? "bg-brand-deep/10 text-brand-deep" : "bg-brand-soft text-brand-muted"}`}>
-            {tier.liveIn}
-          </span>
-        </div>
-
-        <h3 className="mt-5 text-[1.25rem] font-semibold text-brand-deep leading-tight">
-          {tier.name}
-        </h3>
-        <p className="mt-1.5 text-sm text-brand-muted leading-relaxed">
-          {tier.tagline}
-        </p>
-
-        <div className="mt-5 flex flex-wrap items-baseline gap-x-2 gap-y-1">
-          {tier.setup > 0 && (
-            <>
-              <span className="text-2xl font-bold text-brand-deep tabular-nums">{fmt(tier.setup)}</span>
-              <span className="text-sm text-brand-muted">setup</span>
-              <span className="text-brand-muted/50 mx-1">·</span>
-            </>
-          )}
-          <span className="text-2xl font-bold text-brand-deep tabular-nums">{fmt(tier.monthly)}/mo</span>
-          {tier.monthlyNote && (
-            <span className="text-xs text-brand-muted">({tier.monthlyNote})</span>
-          )}
-        </div>
-
-        <div className="mt-5 border-t border-slate-100 pt-4">
-          <Link
-            href={href}
-            className={`group/cta inline-flex w-full items-center justify-center gap-1.5 ${featured ? "btn-primary" : "btn-secondary"}`}
-          >
-            See what&rsquo;s included
-            <span className="transition-transform group-hover/cta:translate-x-0.5">{Icon.arrow}</span>
-          </Link>
-        </div>
-      </div>
-    </Reveal>
-  );
-}
-
-/* ---- main component ---- */
+import { faqs } from "./faqs";
 
 export default function ServicesContent() {
   return (
@@ -110,30 +14,19 @@ export default function ServicesContent() {
       {/* ---- HERO ---- */}
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
-        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20 grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
-            <p className="eyebrow mb-3">Three offerings. One clear ladder.</p>
-            <Reveal as="h1" className="h-display" delay={0.04}>
-              What we{" "}
-              <span className="text-brand-deep">build for you.</span>
-            </Reveal>
-            <p className="lede mt-6 max-w-xl">
-              Start with Found — a site that gets discovered. Layer on Awake or
-              Climbing to answer, qualify, and book every lead while you sleep.
-              Each tier is a defined scope — no surprises.
-            </p>
-
-            <div className="mt-8 lg:hidden">
-              <ServicesHeroStack />
-            </div>
-
-            <ul className="mt-8 flex flex-wrap gap-2">
-              {[
-                "Site live in days",
-                "Month-to-month on Site",
-                "Your business runs 24/7",
-                "No long-term lock-in to start",
-              ].map((item) => (
+        <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20 text-center max-w-3xl mx-auto">
+          <p className="eyebrow mb-3">Individual services. No packages.</p>
+          <Reveal as="h1" className="h-display" delay={0.04}>
+            What we <span className="text-brand-deep">build for you.</span>
+          </Reveal>
+          <p className="lede mt-6 mx-auto">
+            Every service is a done-for-you install that runs while you sleep — answering,
+            qualifying, and booking your leads. Start with the one thing costing you most,
+            then add the rest whenever you&rsquo;re ready.
+          </p>
+          <ul className="mt-8 flex flex-wrap justify-center gap-2">
+            {["Done-for-you", "Live in days", "30-day money-back", "No long-term lock-in"].map(
+              (item) => (
                 <li
                   key={item}
                   className="inline-flex items-center gap-2 rounded-full border border-brand-deep/15 bg-white px-3 py-1 text-xs font-medium text-brand-deep"
@@ -141,15 +34,21 @@ export default function ServicesContent() {
                   <span className="h-1.5 w-1.5 rounded-full bg-brand-primary" aria-hidden />
                   {item}
                 </li>
-              ))}
-            </ul>
-          </div>
-
-          <div className="relative hidden lg:block">
-            <ServicesHeroStack />
-          </div>
+              )
+            )}
+          </ul>
         </div>
       </section>
+
+      {/* ---- SERVICES CATALOG ---- */}
+      <SolutionsGrid
+        eyebrow="The services"
+        heading="Six ways to stop losing leads."
+        subhead="Pick one. Pick a few. They share one inbox and one calendar, so they work better together — but every one stands on its own."
+        className="bg-white"
+      />
+
+      <GuaranteeStrip />
 
       {/* ---- FLOW VISUAL ---- */}
       <section className="relative bg-gradient-to-b from-white to-brand-soft">
@@ -163,43 +62,16 @@ export default function ServicesContent() {
         </div>
       </section>
 
-      {/* ---- THREE OFFERINGS ---- */}
-      <section className="section">
-        <div className="container-page">
-          <p className="lede max-w-2xl mb-12">
-            Three offerings, each a defined scope. Start at Found to get
-            discovered. Add Awake or Climbing to answer, qualify, and book
-            every lead — on text, chat, DM, or voice — while you sleep.
-          </p>
-
-          <div className="grid gap-6 md:grid-cols-3">
-            {tiers.map((tier, i) => (
-              <TierCard key={tier.id} tier={tier} index={i} />
-            ))}
-          </div>
-
-          <div className="mt-8 text-center">
-            <Link href="/pricing" className="btn-primary inline-flex items-center gap-2">
-              Compare all three offerings
-              <span>{Icon.arrow}</span>
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* ---- STACK / INTEGRATIONS ---- */}
       <section className="section">
         <div className="container-page">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <h2 className="h-section">
-              Plays nice with everything you already use.
-            </h2>
+            <h2 className="h-section">Plays nice with everything you already use.</h2>
             <p className="mt-5 text-brand-muted leading-relaxed">
-              Eight channels in, every major tool out. If it has an API or a
-              webhook, we plug into it.
+              Eight channels in, every major tool out. If it has an API or a webhook, we plug
+              into it.
             </p>
           </Reveal>
-
           <div className="mx-auto mt-12 max-w-5xl">
             <StackMarquee />
           </div>
@@ -221,9 +93,9 @@ export default function ServicesContent() {
             ))}
           </dl>
           <p className="mt-10 text-brand-muted">
-            Want to see plans and pricing?{" "}
-            <Link href="/pricing" className="text-brand-deep font-medium hover:underline">
-              See pricing →
+            Ready to start?{" "}
+            <Link href="/book" className="text-brand-deep font-medium hover:underline">
+              Book a 30-minute call &rarr;
             </Link>
           </p>
         </div>

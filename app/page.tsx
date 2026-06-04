@@ -4,9 +4,10 @@ import StatsStrip from "@/components/sections/StatsStrip";
 import IntegrationsStrip from "@/components/sections/IntegrationsStrip";
 
 const ProblemHook = dynamic(() => import("@/components/sections/ProblemHook"));
+const RevenueCalculator = dynamic(() => import("@/components/RevenueCalculator"));
 const HowItWorks = dynamic(() => import("@/components/sections/HowItWorks"));
 const SocialProof = dynamic(() => import("@/components/sections/SocialProof"));
-const ProductGrid = dynamic(() => import("@/components/sections/ProductGrid"));
+const SolutionsGrid = dynamic(() => import("@/components/sections/SolutionsGrid"));
 const IndustriesAreas = dynamic(() => import("@/components/sections/IndustriesAreas"));
 const AboutSnippet = dynamic(() => import("@/components/sections/AboutSnippet"));
 
@@ -17,9 +18,10 @@ export default function Home() {
       <StatsStrip />
       <IntegrationsStrip />
       <ProblemHook />
+      <RevenueCalculator />
       <HowItWorks />
       <SocialProof />
-      <ProductGrid />
+      <SolutionsGrid />
       <IndustriesAreas />
       <AboutSnippet />
     </>
