@@ -1,23 +1,19 @@
 "use client";
 
 import Reveal from "@/components/Reveal";
-import { tiers } from "@/lib/tiers";
-
-const awake = tiers.find((t) => t.id === "awake")!;
-const climbing = tiers.find((t) => t.id === "climbing")!;
 
 const items = [
   {
-    q: "Why not Podium ($498/mo on annual)?",
-    a: `Podium locks you into a 12-month contract. ${awake.name} at $${awake.monthly}/mo is more, but it's month-to-month, fully done-for-you, and covers every DM channel — phone, SMS, chat, Facebook, Instagram, WhatsApp, and Google Business Messages. With Podium you still configure the flows yourself.`,
+    q: "Why not Podium?",
+    a: "Podium locks you into a 12-month contract and still leaves you configuring the flows yourself. We're month-to-month, fully done-for-you, and cover every channel — phone, SMS, web chat, Facebook, Instagram, WhatsApp, and Google Business Messages.",
   },
   {
     q: "Why not Scorpion, Blue Corona, or Hibu?",
-    a: `Those agencies run $2,500–$10,000/mo with $5K–$50K in setup and 12–24 month contracts. ${climbing.name} at $${climbing.monthly}/mo is all-in (hosting included) — 40–60% less, month-to-month, no long-term commitment. Your ad spend goes straight to Google and Meta on your card. Never touches us, never has a markup.`,
+    a: "Those agencies run $2,500–$10,000/mo with heavy setup fees and 12–24 month contracts. We're a fraction of that, month-to-month, with no long-term commitment — and your ad spend goes straight to Google and Meta on your own card. It never touches us, and it never has a markup.",
   },
   {
-    q: "Why not a $59 DIY tool (Goodcall, Numa)?",
-    a: "Those are cheap because you build and maintain the system yourself. AlgoNyte is done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
+    q: "Why not a cheap DIY tool (Goodcall, Numa)?",
+    a: "Those are cheap because you build and maintain the system yourself. We're done-for-you — we set up the flows, write the scripts, connect the channels, and keep it running. If something breaks at 11pm, we fix it. Not you.",
   },
 ];
 

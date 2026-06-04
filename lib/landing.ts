@@ -1,5 +1,4 @@
 import { siteConfig } from "@/lib/site";
-import { tiers } from "@/lib/tiers";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 
 /**
@@ -93,9 +92,6 @@ function areaServedJsonLd(geo: LocationGeo) {
 }
 
 export function landingServiceJsonLd(c: LandingContent) {
-  const awake = tiers.find((t) => t.id === "awake")!;
-  const climbing = tiers.find((t) => t.id === "climbing")!;
-
   const base = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -103,13 +99,6 @@ export function landingServiceJsonLd(c: LandingContent) {
     serviceType: c.serviceType,
     provider: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
     description: c.metaDescription,
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "USD",
-      lowPrice: awake.monthly,
-      highPrice: climbing.monthly,
-      offerCount: 3,
-    },
   } as const;
 
   if (c.kind === "location" && c.geo) {

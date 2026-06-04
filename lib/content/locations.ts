@@ -20,7 +20,7 @@ export const locations: LandingContent[] = [
       "DuPage's largest market — affluent homeowners and a dense professional-services base that decides fast.",
     metaTitle: "AI Receptionist in Naperville, IL | Stop Missing Service Calls",
     metaDescription:
-      "AI receptionist for Naperville, IL service businesses. Answer, qualify, and book leads 24/7 across DuPage County and the I-88 corridor. Plans from $549/mo.",
+      "AI receptionist for Naperville, IL service businesses. Answer, qualify, and book leads 24/7 across DuPage County and the I-88 corridor.",
     eyebrow: "Naperville, Illinois",
     h1: { pre: "AI receptionist for", accent: "Naperville, IL", post: " service businesses." },
     heroSub:
@@ -96,7 +96,7 @@ export const locations: LandingContent[] = [
       "A dense, walkable near-west market of century-old homes and busy professional households.",
     metaTitle: "AI Receptionist in Oak Park, IL | Stop Missing Service Calls",
     metaDescription:
-      "AI receptionist for Oak Park, IL service businesses. Answer, qualify, and book leads 24/7 across the near-west suburbs and into the city. Plans from $549/mo.",
+      "AI receptionist for Oak Park, IL service businesses. Answer, qualify, and book leads 24/7 across the near-west suburbs and into the city.",
     eyebrow: "Oak Park, Illinois",
     h1: { pre: "AI receptionist for", accent: "Oak Park, IL", post: " service businesses." },
     heroSub:
@@ -172,7 +172,7 @@ export const locations: LandingContent[] = [
       "The northwest suburbs' commercial hub — retail, hospitality, and corporate-corridor service demand.",
     metaTitle: "AI Receptionist in Schaumburg, IL | Stop Missing Service Calls",
     metaDescription:
-      "AI receptionist for Schaumburg, IL service businesses. Answer, qualify, and book leads 24/7 across the northwest suburbs and the I-90 corridor. Plans from $549/mo.",
+      "AI receptionist for Schaumburg, IL service businesses. Answer, qualify, and book leads 24/7 across the northwest suburbs and the I-90 corridor.",
     eyebrow: "Schaumburg, Illinois",
     h1: { pre: "AI receptionist for", accent: "Schaumburg, IL", post: " service businesses." },
     heroSub:
@@ -248,7 +248,7 @@ export const locations: LandingContent[] = [
       "A dense, affluent North Side neighborhood with a busy renovation economy and high-value local services.",
     metaTitle: "AI Receptionist in Lincoln Park, Chicago | Never Miss a Lead",
     metaDescription:
-      "AI receptionist for Lincoln Park service businesses. Answer, qualify, and book leads 24/7 across Chicago's North Side. Plans from $549/mo.",
+      "AI receptionist for Lincoln Park service businesses. Answer, qualify, and book leads 24/7 across Chicago's North Side.",
     eyebrow: "Lincoln Park, Chicago",
     h1: { pre: "AI receptionist for", accent: "Lincoln Park", post: " service businesses." },
     heroSub:
@@ -324,7 +324,7 @@ export const locations: LandingContent[] = [
       "Fulton Market and Restaurant Row — hospitality, tech offices, and new-build residents who book on their phones.",
     metaTitle: "AI Receptionist in West Loop, Chicago | Never Miss a Lead",
     metaDescription:
-      "AI receptionist for West Loop and Fulton Market businesses. Answer reservations, inquiries, and service calls 24/7 across the near-west side. From $549/mo.",
+      "AI receptionist for West Loop and Fulton Market businesses. Answer reservations, inquiries, and service calls 24/7 across the near-west side.",
     eyebrow: "West Loop, Chicago",
     h1: { pre: "AI receptionist for", accent: "West Loop", post: " businesses." },
     heroSub:
@@ -400,7 +400,7 @@ export const locations: LandingContent[] = [
       "A dense North Shore market of vintage homes, a university crowd, and busy professional households.",
     metaTitle: "AI Receptionist in Evanston, IL | Stop Missing Service Calls",
     metaDescription:
-      "AI receptionist for Evanston, IL service businesses. Answer, qualify, and book leads 24/7 across the North Shore and the north lakefront. From $549/mo.",
+      "AI receptionist for Evanston, IL service businesses. Answer, qualify, and book leads 24/7 across the North Shore and the north lakefront.",
     eyebrow: "Evanston, Illinois",
     h1: { pre: "AI receptionist for", accent: "Evanston, IL", post: " service businesses." },
     heroSub:
@@ -476,7 +476,7 @@ export const locations: LandingContent[] = [
       "Illinois' second-largest city — a big, diverse Fox Valley market with strong bilingual demand.",
     metaTitle: "AI Receptionist in Aurora, IL | Stop Missing Service Calls",
     metaDescription:
-      "AI receptionist for Aurora, IL service businesses. Answer, qualify, and book leads 24/7 across the Fox Valley — bilingual English and Spanish. From $549/mo.",
+      "AI receptionist for Aurora, IL service businesses. Answer, qualify, and book leads 24/7 across the Fox Valley — bilingual English and Spanish.",
     eyebrow: "Aurora, Illinois",
     h1: { pre: "AI receptionist for", accent: "Aurora, IL", post: " service businesses." },
     heroSub:
@@ -552,7 +552,7 @@ export const locations: LandingContent[] = [
       "One of Chicago's densest neighborhoods — a huge small-business economy from Wrigleyville to Southport.",
     metaTitle: "AI Receptionist in Lakeview, Chicago | Never Miss a Lead",
     metaDescription:
-      "AI receptionist for Lakeview and Wrigleyville businesses. Answer calls, texts, and DMs 24/7 across Chicago's dense North Side. From $549/mo.",
+      "AI receptionist for Lakeview and Wrigleyville businesses. Answer calls, texts, and DMs 24/7 across Chicago's dense North Side.",
     eyebrow: "Lakeview, Chicago",
     h1: { pre: "AI receptionist for", accent: "Lakeview", post: " businesses." },
     heroSub:
@@ -628,7 +628,7 @@ export const locations: LandingContent[] = [
       "A trendy near-northwest hub of restaurants, boutiques, and service businesses with a digital-first crowd.",
     metaTitle: "AI Receptionist in Wicker Park, Chicago | Never Miss a Lead",
     metaDescription:
-      "AI receptionist for Wicker Park and Bucktown businesses. Answer calls, texts, and DMs 24/7 across Chicago's near-northwest side. From $549/mo.",
+      "AI receptionist for Wicker Park and Bucktown businesses. Answer calls, texts, and DMs 24/7 across Chicago's near-northwest side.",
     eyebrow: "Wicker Park, Chicago",
     h1: { pre: "AI receptionist for", accent: "Wicker Park", post: " businesses." },
     heroSub:
