@@ -11,7 +11,7 @@ import JsonLd from "@/components/landing/JsonLd";
 
 const title = "Database Reactivation | Rebook Past Customers With AI Texts";
 const description =
-  "A one-time AI text campaign that re-engages past customers and dead leads in your CRM and rebooks them — the cheapest revenue you can turn on.";
+  "A one-time AI text campaign that re-engages past customers and dead leads in your CRM and rebooks them, the cheapest revenue you can turn on.";
 
 export const metadata: Metadata = {
   title,
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const faqs = [
   {
     q: "What exactly is a database reactivation campaign?",
-    a: "It's a one-time, AI-driven text campaign sent to the past customers and old leads already sitting in your CRM, phone, or spreadsheets. The agent opens a real conversation, re-qualifies interest, and books appointments — turning a dormant list you already paid to build into booked revenue, usually within days.",
+    a: "It's a one-time, AI-driven text campaign sent to the past customers and old leads already sitting in your CRM, phone, or spreadsheets. The agent opens a real conversation, re-qualifies interest, and books appointments, turning a dormant list you already paid to build into booked revenue, usually within days.",
   },
   {
     q: "Isn't mass-texting my list spammy or risky?",
@@ -32,7 +32,7 @@ const faqs = [
   },
   {
     q: "How big does my list need to be?",
-    a: "It works at almost any size — even a few hundred past customers can produce booked jobs, because these people already know and trust you. Larger lists obviously yield more, but the value is in the relationship, not just the volume.",
+    a: "It works at almost any size, even a few hundred past customers can produce booked jobs, because these people already know and trust you. Larger lists obviously yield more, but the value is in the relationship, not just the volume.",
   },
   {
     q: "What do I need to provide?",
@@ -69,16 +69,16 @@ export default function DatabaseReactivationPage() {
       <LandingHero
         eyebrow="Database Reactivation"
         title={{ pre: "Turn your old customer list into", accent: "booked revenue", post: "." }}
-        lede="A one-time AI text campaign that re-engages the past customers and dead leads already sitting in your CRM, your phone, and your inbox — and books them straight back onto your calendar."
+        lede="A one-time AI text campaign that re-engages the past customers and dead leads already sitting in your CRM, your phone, and your inbox, and books them straight back onto your calendar."
         secondary={{ href: "/ai-receptionist", label: "See the always-on follow-up system →" }}
       />
 
       <ProseSection
         heading="You're sitting on revenue you already paid for."
         paragraphs={[
-          "Every service business has it: a list of past customers who haven't been back, quotes that never closed, and leads that went cold because nobody followed up in time. You spent real money — ads, referrals, years of work — to earn those contacts. Then they went quiet, and you moved on to chasing new ones.",
-          "New leads are the most expensive way to grow. The people who already know you, already bought from you, or already raised their hand are far cheaper to convert — they just need a timely, personal nudge. The problem is nobody has time to text hundreds of old contacts one by one, so the list sits there doing nothing.",
-          "Reactivation fixes that. Instead of buying more new leads, you mine the goldmine you already own — and it's usually the fastest revenue a business can turn on.",
+          "Every service business has it: a list of past customers who haven't been back, quotes that never closed, and leads that went cold because nobody followed up in time. You spent real money, ads, referrals, years of work, to earn those contacts. Then they went quiet, and you moved on to chasing new ones.",
+          "New leads are the most expensive way to grow. The people who already know you, already bought from you, or already raised their hand are far cheaper to convert, they just need a timely, personal nudge. The problem is nobody has time to text hundreds of old contacts one by one, so the list sits there doing nothing.",
+          "Reactivation fixes that. Instead of buying more new leads, you mine the goldmine you already own, and it's usually the fastest revenue a business can turn on.",
         ]}
       />
 
@@ -92,7 +92,7 @@ export default function DatabaseReactivationPage() {
           },
           {
             title: "Craft the offer & copy",
-            body: "A reason to come back — a check-up, a seasonal offer, a 'we miss you' — written to sound like you, not a blast. Personalized per segment.",
+            body: "A reason to come back, a check-up, a seasonal offer, a 'we miss you', written to sound like you, not a blast. Personalized per segment.",
           },
           {
             title: "AI runs the conversation",
@@ -100,7 +100,7 @@ export default function DatabaseReactivationPage() {
           },
           {
             title: "Book & hand off",
-            body: "Interested contacts get booked straight onto your calendar. Anything that needs a human — a complaint, a complex job — routes to you with the full thread.",
+            body: "Interested contacts get booked straight onto your calendar. Anything that needs a human, a complaint, a complex job, routes to you with the full thread.",
           },
           {
             title: "Compliant by design",
@@ -108,7 +108,7 @@ export default function DatabaseReactivationPage() {
           },
           {
             title: "Measured, not guessed",
-            body: "You see exactly how many contacts replied, how many booked, and what it's worth — so you know what the dormant list was actually hiding.",
+            body: "You see exactly how many contacts replied, how many booked, and what it's worth, so you know what the dormant list was actually hiding.",
           },
         ]}
       />
@@ -118,8 +118,8 @@ export default function DatabaseReactivationPage() {
         eyebrow="Why it works"
         heading="The follow-up engine that booked 10 jobs in week one for Car Hub."
         paragraphs={[
-          "Our first client is an independent auto shop outside Detroit. In its first week live, the AI follow-up system booked 10 jobs the shop would otherwise have lost to voicemail and slow replies. The thing that made it work — instant, persistent, qualified follow-up — is the exact same engine that powers a reactivation campaign.",
-          "The only difference is direction: instead of catching new leads as they come in, reactivation reaches back out to the ones you've already earned. Same speed, same conversational quality, same result — appointments on the calendar.",
+          "Our first client is an independent auto shop outside Detroit. In its first week live, the AI follow-up system booked 10 jobs the shop would otherwise have lost to voicemail and slow replies. The thing that made it work, instant, persistent, qualified follow-up, is the exact same engine that powers a reactivation campaign.",
+          "The only difference is direction: instead of catching new leads as they come in, reactivation reaches back out to the ones you've already earned. Same speed, same conversational quality, same result, appointments on the calendar.",
         ]}
       >
         <p>

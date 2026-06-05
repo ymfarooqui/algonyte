@@ -91,7 +91,7 @@ export default function ContactForm({ onSubmitted, onReset }: ContactFormProps =
   return (
     <div className="rounded-2xl border border-slate-200 bg-white p-6 sm:p-8 shadow-sm">
       <form onSubmit={onSubmit} noValidate className="space-y-5">
-        {/* Honeypot — hidden from humans, visible to bots */}
+        {/* Honeypot, hidden from humans, visible to bots */}
         <label className="sr-only" aria-hidden="true">
           Website (leave blank)
           <input

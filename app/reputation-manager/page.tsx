@@ -36,11 +36,11 @@ const faqs = [
   },
   {
     q: "What if someone leaves a bad review?",
-    a: "Before the public review link goes out, the customer is asked how the job went. Anyone who responds with a low rating is routed to a private feedback form first — so you get a chance to fix the issue before it becomes a public one-star. The routing covers every platform we run.",
+    a: "Before the public review link goes out, the customer is asked how the job went. Anyone who responds with a low rating is routed to a private feedback form first, so you get a chance to fix the issue before it becomes a public one-star. The routing covers every platform we run.",
   },
   {
     q: "Do I need to write the review request messages?",
-    a: "No. We build the message templates for you, customized to your service type and your brand voice — not generic copy-paste. If you do a specific kind of job (HVAC, plumbing, electrical, landscaping), we tailor the language to match.",
+    a: "No. We build the message templates for you, customized to your service type and your brand voice, not generic copy-paste. If you do a specific kind of job (HVAC, plumbing, electrical, landscaping), we tailor the language to match.",
   },
   {
     q: "How long until my rating moves?",
@@ -120,7 +120,7 @@ export default function ReputationManagerPage() {
             <li>
               <strong className="text-brand-deep">Triggers automatically on job completion.</strong>{" "}
               A text goes out within an hour of the job being marked done. That window is where
-              the five-stars live — customers are still in the good feeling.
+              the five-stars live, customers are still in the good feeling.
             </li>
             <li>
               <strong className="text-brand-deep">Smart routing catches unhappy customers first.</strong>{" "}
@@ -140,7 +140,7 @@ export default function ReputationManagerPage() {
             </li>
             <li>
               <strong className="text-brand-deep">Dashboard with the metric that matters.</strong>{" "}
-              Five-star count, response rate, and average rating trend over time — not vanity
+              Five-star count, response rate, and average rating trend over time, not vanity
               counts. These are the numbers that show whether the system is working.
             </li>
             <li>
@@ -203,7 +203,7 @@ export default function ReputationManagerPage() {
               removes the ones that come from an unresolved complaint you never knew about.
             </p>
             <p>
-              Reception and reputation are really the same job — handling what happens around the
+              Reception and reputation are really the same job, handling what happens around the
               lead. You can add reviews on its own, or run it alongside the receptionist; either
               way it works on the same loop. You already need someone following up after jobs.
               This is that, done for you.
@@ -229,7 +229,7 @@ export default function ReputationManagerPage() {
 
       <FinalCTA title="Want to see what reputation management looks like for your business?" />
 
-      {/* jsonLdString sanitizes all XSS-sensitive bytes — see lib/jsonLd.ts */}
+      {/* jsonLdString sanitizes all XSS-sensitive bytes, see lib/jsonLd.ts */}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdString(reputationManagementServiceSchema()) }}

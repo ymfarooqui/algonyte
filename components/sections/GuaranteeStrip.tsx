@@ -27,7 +27,7 @@ export default function GuaranteeStrip() {
               {GUARANTEE}. If it&rsquo;s not working, you don&rsquo;t pay.
             </p>
             <p className="mt-1.5 text-brand-muted leading-relaxed">
-              We build it, launch it, and run it for you. Try any service for 30 days — if
+              We build it, launch it, and run it for you. Try any service for 30 days, if
               it isn&rsquo;t pulling its weight, get your money back. No long-term contracts.
             </p>
           </div>

@@ -8,7 +8,7 @@ import { jsonLdString } from "@/lib/jsonLd";
 
 const title = "Lead Generation for Service Businesses | Voice + SMS Automation";
 const description =
-  "Voice AI receptionist, missed-call text-back, and DM auto-reply that capture every inbound lead and book it — not just collect a form fill. Done for you, live in days.";
+  "Voice AI receptionist, missed-call text-back, and DM auto-reply that capture every inbound lead and book it, not just collect a form fill. Done for you, live in days.";
 
 export const metadata: Metadata = {
   title,
@@ -35,11 +35,11 @@ const serviceJsonLd = {
 const faqs = [
   {
     q: "How is this different from a regular answering service?",
-    a: "An answering service takes a message. Our voice AI qualifies the lead, asks the questions your business needs to triage a job, and books the appointment straight onto your calendar. SMS, DMs, and missed calls all get the same treatment — the lead doesn't wait on hold or get a callback the next day.",
+    a: "An answering service takes a message. Our voice AI qualifies the lead, asks the questions your business needs to triage a job, and books the appointment straight onto your calendar. SMS, DMs, and missed calls all get the same treatment, the lead doesn't wait on hold or get a callback the next day.",
   },
   {
     q: "How fast do leads get a response?",
-    a: "Seconds. A missed call triggers a text the moment it disconnects. A DM on Instagram or Facebook gets a reply before the lead switches tabs. A form fill kicks off an immediate text. Speed-to-lead is the single biggest predictor of who books — we keep it under 15 seconds.",
+    a: "Seconds. A missed call triggers a text the moment it disconnects. A DM on Instagram or Facebook gets a reply before the lead switches tabs. A form fill kicks off an immediate text. Speed-to-lead is the single biggest predictor of who books, we keep it under 15 seconds.",
   },
   {
     q: "What if the AI can't handle a call or message?",
@@ -47,7 +47,7 @@ const faqs = [
   },
   {
     q: "Does it work with my existing phone number?",
-    a: "Yes. We forward your existing number — you keep it and nothing changes for your customers. The voice AI picks up first and can transfer to you for anything it can't handle.",
+    a: "Yes. We forward your existing number, you keep it and nothing changes for your customers. The voice AI picks up first and can transfer to you for anything it can't handle.",
   },
   {
     q: "What happens to my leads if I cancel?",
@@ -78,7 +78,7 @@ export default function LeadGeneratorPage() {
             </h1>
             <p className="lede mt-6 max-w-2xl">
               Every call answered. Every text returned. Every DM replied. Voice AI, SMS, and DM
-              automation that captures inbound leads 24/7 and books them onto your calendar —
+              automation that captures inbound leads 24/7 and books them onto your calendar,
               not just collects a form fill that sits there.
             </p>
             <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -100,7 +100,7 @@ export default function LeadGeneratorPage() {
       <section className="section bg-brand-deep text-white">
         <div className="container-page max-w-3xl text-center">
           <p className="text-xl sm:text-2xl font-medium leading-snug text-white/90 italic">
-            &ldquo;Your business answers the phone while you sleep — and texts back the ones you
+            &ldquo;Your business answers the phone while you sleep, and texts back the ones you
             missed.&rdquo;
           </p>
         </div>
@@ -117,7 +117,7 @@ export default function LeadGeneratorPage() {
               the calls that come in while you&rsquo;re on a job. Transfers to you when it should.
             </li>
             <li>
-              <strong className="text-brand-deep">Missed-call text-back — instant SMS.</strong>{" "}
+              <strong className="text-brand-deep">Missed-call text-back, instant SMS.</strong>{" "}
               The moment a call is missed, the caller gets a text. Most lost leads are recovered
               before they finish dialing the next business on the list.
             </li>
@@ -131,7 +131,7 @@ export default function LeadGeneratorPage() {
             <li>
               <strong className="text-brand-deep">Lead qualification flow built for your business.</strong>{" "}
               The questions you&rsquo;d ask on the phone, asked in the AI&rsquo;s voice. Service
-              type, urgency, location, budget — whatever you need to triage.
+              type, urgency, location, budget, whatever you need to triage.
             </li>
             <li>
               <strong className="text-brand-deep">Auto-booking onto your calendar.</strong>{" "}
@@ -158,8 +158,8 @@ export default function LeadGeneratorPage() {
             <h2 className="h-section text-brand-deep">No lead goes cold.</h2>
             <div className="mt-4 space-y-4 text-brand-muted leading-relaxed">
               <p>
-                The leads you&rsquo;re already paying to generate — from Google, referrals, your
-                website, your truck wrap — most of them don&rsquo;t book because nobody picked up
+                The leads you&rsquo;re already paying to generate, from Google, referrals, your
+                website, your truck wrap, most of them don&rsquo;t book because nobody picked up
                 fast enough. A five-minute delay cuts conversion in half. An hour-long delay is the
                 same as not calling back.
               </p>
@@ -169,7 +169,7 @@ export default function LeadGeneratorPage() {
                 interest. The math on your existing lead flow changes the day this turns on.
               </p>
               <p className="text-sm text-brand-muted/80 border-t border-brand-deep/10 pt-4">
-                Everything stays in your accounts — your phone number, your Google Business
+                Everything stays in your accounts, your phone number, your Google Business
                 Profile, your CRM. If you ever leave, the leads and the conversation history come
                 with you.
               </p>
@@ -183,7 +183,7 @@ export default function LeadGeneratorPage() {
         <div className="container-page max-w-3xl">
           <h2 className="h-section">Add it on its own, or stack it with the rest.</h2>
           <p className="mt-4 text-brand-muted leading-relaxed">
-            Lead capture is one of our à la carte services — start here, or pair it with web
+            Lead capture is one of our à la carte services, start here, or pair it with web
             presence, reviews, ads, and reactivation as you&rsquo;re ready. We scope the build to
             your business and give you one clear number on a quick call.
           </p>

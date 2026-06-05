@@ -9,7 +9,7 @@ import { locationIndex, type LocationGroup } from "@/lib/content/locations";
 
 const title = "Areas We Serve | AI Receptionist Across Chicagoland";
 const description =
-  "AI receptionist and lead automation for service businesses across Chicago, the suburbs and collar counties, and the Detroit metro. Remote-first — live in days.";
+  "AI receptionist and lead automation for service businesses across Chicago, the suburbs and collar counties, and the Detroit metro. Remote-first, live in days.";
 
 export const metadata: Metadata = {
   title,

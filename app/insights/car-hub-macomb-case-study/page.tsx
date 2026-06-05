@@ -111,7 +111,7 @@ export default function CarHubCaseStudy() {
             <ul className="mt-4 list-disc pl-6 space-y-2">
               <li>
                 Every unanswered call triggers an SMS within a few seconds:
-                &ldquo;Hey, this is Car Hub — saw we missed you. What can we
+                &ldquo;Hey, this is Car Hub, saw we missed you. What can we
                 help with?&rdquo; The conversation continues over text.
               </li>
               <li>
@@ -206,7 +206,7 @@ export default function CarHubCaseStudy() {
               Want the same setup for your shop?
             </h2>
             <p className="mt-3">
-              We install in about a week — a little longer when voice AI is included — keep
+              We install in about a week, a little longer when voice AI is included, keep
               your existing phone number and calendar, and train the agent on
               your specific business.
             </p>

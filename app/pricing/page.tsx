@@ -10,9 +10,9 @@ import { jsonLdString } from "@/lib/jsonLd";
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Pricing", path: "/pricing" }]);
 
-const pricingTitle = "Pricing | AlgoNyte — Done-for-you AI services";
+const pricingTitle = "Pricing | AlgoNyte, Done-for-you AI services";
 const pricingDescription =
-  "Individual, done-for-you AI services for service businesses. Pick what you need — no packages. 30-day money-back, no long-term contracts. Book a call for a scoped quote.";
+  "Done-for-you AI services for service businesses. Pick what you need or bundle a few. 30-day money-back, no long-term contracts. Book a call for a scoped quote.";
 
 export const metadata: Metadata = {
   title: pricingTitle,
@@ -35,7 +35,7 @@ const differentiators = [
   "Done-for-you: we build it, launch it, and run it.",
   "30-day money-back. If it isn't working, you don't pay.",
   "No long-term contracts. Add or drop a service any month.",
-  "Ad spend stays on your card — no markup, ever.",
+  "Ad spend stays on your card, no markup, ever.",
 ];
 
 function CheckIcon() {
@@ -66,8 +66,9 @@ export default function PricingPage() {
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20">
           <h1 className="h-display max-w-3xl">Simple, and scoped to you.</h1>
           <p className="lede mt-6 max-w-2xl">
-            No packages to decode. Pick the services that fix what&rsquo;s costing you most —
-            we scope the build to your business and give you one clear number on a quick call.
+            Pick the services that fix what&rsquo;s costing you most, then bundle a few if it
+            makes sense. We scope the build to your business and give you one clear number on a
+            quick call.
           </p>
           <p className="mt-4 max-w-2xl rounded-xl border border-brand-deep/10 bg-white/60 px-5 py-4 text-brand-deep leading-relaxed">
             Every service is done-for-you and backed by a 30-day money-back guarantee. Your

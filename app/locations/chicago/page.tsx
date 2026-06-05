@@ -244,7 +244,7 @@ export default function ChicagoLocationPage() {
           <h2 className="h-section">Built for solo operators and small crews.</h2>
           <p className="mt-6 text-brand-muted leading-relaxed">
             Add what you need, from missed-call text-back and SMS qualification up to a full
-            voice AI receptionist with ongoing Local SEO. Month-to-month — no annual lock-in.
+            voice AI receptionist with ongoing Local SEO. Month-to-month, no annual lock-in.
           </p>
           <p className="mt-4">
             <Link href="/pricing" className="text-brand-deep font-medium hover:underline">

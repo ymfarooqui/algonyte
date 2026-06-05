@@ -19,7 +19,7 @@ const companyLinks = [
   { href: "/book", label: "Book a call" },
 ];
 
-// GEO / "ask an AI" links — pre-fill a prompt asking each assistant to summarize AlgoNyte.
+// GEO / "ask an AI" links, pre-fill a prompt asking each assistant to summarize AlgoNyte.
 const aiQuery =
   "What is AlgoNyte and what AI services do they offer for service businesses?";
 const aiSummaryLinks = [
@@ -162,7 +162,7 @@ export default function Footer() {
             <span className="text-lg font-medium tracking-tight text-brand-deep">AlgoNyte</span>
           </Link>
           <p className="mt-4 max-w-xs text-sm leading-relaxed text-brand-muted">
-            Done-for-you AI that answers, qualifies, and books your leads — so you never lose
+            Done-for-you AI that answers, qualifies, and books your leads, so you never lose
             another job to a missed call.
           </p>
           <Link href="/book" className="btn-primary-featured mt-6">
@@ -179,7 +179,7 @@ export default function Footer() {
           <div>
             <h3 className="text-sm font-semibold text-brand-deep">Ask an AI about AlgoNyte</h3>
             <p className="mt-1 text-sm text-brand-muted">
-              We optimize businesses for AI search — so ask one yourself. Opens a pre-filled prompt.
+              We optimize businesses for AI search, so ask one yourself. Opens a pre-filled prompt.
             </p>
           </div>
           <div className="flex flex-wrap gap-2">

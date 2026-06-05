@@ -33,12 +33,12 @@ export type ServiceIconId =
 
 export type Service = {
   id: ServiceId;
-  /** Outcome-led headline — what the owner gets, in dollars-not-bytes terms. */
+  /** Outcome-led headline, what the owner gets, in dollars-not-bytes terms. */
   name: string;
   /** Plain-English name for the thing it actually is. */
   tagline: string;
   category: ServiceCategory;
-  /** One-line outcome — what the service does for the owner. */
+  /** One-line outcome, what the service does for the owner. */
   job: string;
   /** The "what it is" paragraph, shown inline in the service section. */
   summary: string;
@@ -48,7 +48,7 @@ export type Service = {
   /** Existing deep page this service maps to (kept for sitemap/nav, not linked from the section CTA). */
   href: string;
   icon: ServiceIconId;
-  /** At most one service should set this — gets the dark "highlight" visual. */
+  /** At most one service should set this, gets the dark "highlight" visual. */
   popular?: boolean;
   // Pricing exists in the model but is intentionally unused in v1.
   setup?: number;
@@ -62,9 +62,9 @@ export const services: readonly Service[] = [
     name: "Never Miss Another Call",
     tagline: "AI phone receptionist",
     category: "reception",
-    job: "Answers every call, qualifies the job, and books it — 24/7.",
+    job: "Answers every call, qualifies the job, and books it, 24/7.",
     summary:
-      "An AI receptionist that answers every inbound call in under 5 seconds — nights, weekends, and holidays included. It greets the caller, answers their questions, qualifies the job, and books it straight onto your calendar, so a missed call never turns into a lost customer again.",
+      "An AI receptionist that answers every inbound call in under 5 seconds, nights, weekends, and holidays included. It greets the caller, answers their questions, qualifies the job, and books it straight onto your calendar, so a missed call never turns into a lost customer again.",
     stat: { value: "<5s", label: "to pick up, day or night" },
     features: [
       "Answers inbound calls 24/7, including nights and weekends",
@@ -83,7 +83,7 @@ export const services: readonly Service[] = [
     category: "reception",
     job: "Replies on your site and every social DM in seconds, and books the lead.",
     summary:
-      "One AI agent covering your website chat and every social inbox — Facebook, Instagram, WhatsApp, and Google Business. It replies in seconds while the lead is still paying attention, qualifies them with one consistent flow, and books the appointment before they move on to a competitor.",
+      "One AI agent covering your website chat and every social inbox, Facebook, Instagram, WhatsApp, and Google Business. It replies in seconds while the lead is still paying attention, qualifies them with one consistent flow, and books the appointment before they move on to a competitor.",
     stat: { value: "5 channels", label: "one inbox, instant replies" },
     features: [
       "Web chat that answers and books while visitors are still on your site",
@@ -101,7 +101,7 @@ export const services: readonly Service[] = [
     category: "growth",
     job: "Wakes up cold leads already sitting in your CRM and books the ready ones.",
     summary:
-      "You're already sitting on hundreds of leads that never closed. This wakes them up with a natural text conversation, re-qualifies the ones with real intent, and books them — turning a dead list into this month's revenue without spending a dollar on new ads.",
+      "You're already sitting on hundreds of leads that never closed. This wakes them up with a natural text conversation, re-qualifies the ones with real intent, and books them, turning a dead list into this month's revenue without spending a dollar on new ads.",
     stat: { value: "$0", label: "new ad spend to book them" },
     features: [
       "Re-opens conversations with old, cold leads automatically",
@@ -119,7 +119,7 @@ export const services: readonly Service[] = [
     category: "presence",
     job: "A fast site that gets you found on Google and AI search.",
     summary:
-      "A fast, mobile-first website plus the local SEO and Google Business setup that gets you found — by people searching Google and by AI assistants like ChatGPT and Perplexity. Booking and a CRM-wired contact form are built in, so the traffic you earn turns into booked jobs.",
+      "A fast, mobile-first website plus the local SEO and Google Business setup that gets you found, by people searching Google and by AI assistants like ChatGPT and Perplexity. Booking and a CRM-wired contact form are built in, so the traffic you earn turns into booked jobs.",
     stat: { value: "5–7 days", label: "to live and discoverable" },
     features: [
       "Mobile-first site, tuned for Core Web Vitals",
@@ -137,7 +137,7 @@ export const services: readonly Service[] = [
     category: "growth",
     job: "Turns finished jobs into 5-star reviews automatically.",
     summary:
-      "The moment a job is marked complete, this asks the customer for a review across Google, Yelp, and Facebook — and quietly routes the unhappy ones to you first. Your rating climbs on autopilot, and a higher rating is what wins the next customer's search.",
+      "The moment a job is marked complete, this asks the customer for a review across Google, Yelp, and Facebook, and quietly routes the unhappy ones to you first. Your rating climbs on autopilot, and a higher rating is what wins the next customer's search.",
     stat: { value: "Auto", label: "a request after every job" },
     features: [
       "Review request fires the moment a job is marked complete",
@@ -160,7 +160,7 @@ export const services: readonly Service[] = [
     features: [
       "Google and Meta campaigns built and managed for you",
       "Every click met by instant AI follow-up that books",
-      "Ad spend stays on your card — no markup",
+      "Ad spend stays on your card, no markup",
       "Closed-loop tracking from click to booked job",
     ],
     href: "/ad-management",
@@ -173,7 +173,7 @@ export const services: readonly Service[] = [
     category: "growth",
     job: "Starts conversations with brand-new prospects and books the interested ones.",
     summary:
-      "Waiting for the phone to ring only gets you so far. We find the people most likely to need you, reach out by text and email in a voice that sounds like yours, and start a real conversation — then the AI works every reply and books the ones who bite. It's a steady stream of brand-new customers who'd never have found you on their own.",
+      "Waiting for the phone to ring only gets you so far. We find the people most likely to need you, reach out by text and email in a voice that sounds like yours, and start a real conversation, then the AI works every reply and books the ones who bite. It's a steady stream of brand-new customers who'd never have found you on their own.",
     stat: { value: "Net-new", label: "customers in your pipeline" },
     features: [
       "We build a focused list of the prospects who actually need what you do",

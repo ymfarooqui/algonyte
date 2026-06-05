@@ -9,9 +9,9 @@ import { webPresenceServiceSchema } from "@/lib/schema";
 
 const growthServices = services.filter((s) => s.id !== "web-presence");
 
-const title = "Web Presence | A Site That Gets You Found — and Books the Work";
+const title = "Web Presence | A Site That Gets You Found, and Books the Work";
 const description =
-  "A fast, mobile-first website plus the local SEO and Google Business setup that gets you found — on Google and on AI search. Live in about a week, with booking and your CRM wired in. Built for you, managed for you.";
+  "A fast, mobile-first website plus the local SEO and Google Business setup that gets you found, on Google and on AI search. Live in about a week, with booking and your CRM wired in. Built for you, managed for you.";
 
 export const metadata: Metadata = {
   title,
@@ -23,21 +23,21 @@ export const metadata: Metadata = {
 
 const breadcrumb = breadcrumbJsonLd([{ name: "Web Presence", path: "/web-presence" }]);
 
-// What you walk away with — the build plus the ongoing care. No prices here;
+// What you walk away with, the build plus the ongoing care. No prices here;
 // we scope and price the whole thing on a quick call.
 const included = [
   "A fast, mobile-first site built around how customers find and book you",
   "Local SEO and a Google Business Profile set up and verified",
   "Structured for Google and AI search from day one",
   "Online booking and a contact form wired straight into your CRM",
-  "Managed hosting, SSL, CDN, and daily backups — handled for you",
+  "Managed hosting, SSL, CDN, and daily backups, handled for you",
   "Content edits when you need them, plus a direct line when something breaks",
 ];
 
 const faqs = [
   {
     q: "How fast can you get me live?",
-    a: "About 5–7 days from a signed brief. We hold ourselves to that — it's a public number, not a hopeful estimate.",
+    a: "About 5–7 days from a signed brief. We hold ourselves to that, it's a public number, not a hopeful estimate.",
   },
   {
     q: "I already have a website. Do I have to replace it?",
@@ -45,7 +45,7 @@ const faqs = [
   },
   {
     q: "Who owns everything when I leave?",
-    a: "You do. The domain, the code, the content, the Google Business Profile, your Stripe or Square accounts — all yours. We don't hold anything hostage.",
+    a: "You do. The domain, the code, the content, the Google Business Profile, your Stripe or Square accounts, all yours. We don't hold anything hostage.",
   },
   {
     q: "Am I locked into a contract?",
@@ -101,7 +101,7 @@ export default function WebPresencePage() {
             </p>
             <p className="lede mt-6 max-w-2xl">
               A fast, mobile-first website that gets you found on Google and AI search, live in
-              about a week — with booking and your CRM wired in, and the whole thing managed for
+              about a week, with booking and your CRM wired in, and the whole thing managed for
               you after launch.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
@@ -146,7 +146,7 @@ export default function WebPresencePage() {
         <div className="container-page">
           <h2 className="h-section max-w-3xl">Everything it takes to get found, in one place.</h2>
           <p className="mt-4 max-w-2xl text-brand-muted leading-relaxed">
-            We build it, launch it, and look after it — so the site keeps earning instead of
+            We build it, launch it, and look after it, so the site keeps earning instead of
             quietly breaking. We scope the build to your business and give you one clear number
             on a quick call.
           </p>
@@ -172,13 +172,13 @@ export default function WebPresencePage() {
         </div>
       </section>
 
-      {/* Growth engine — the à la carte services */}
+      {/* Growth engine, the à la carte services */}
       <section className="section">
         <div className="container-page">
           <h2 className="h-section max-w-3xl">Add a growth engine when you&rsquo;re ready.</h2>
           <p className="mt-4 max-w-2xl text-brand-muted leading-relaxed">
             Your site gets you found. These make the phone ring and the calendar fill. Add one,
-            add a few — each runs while you sleep, and each stands on its own.
+            add a few, each runs while you sleep, and each stands on its own.
           </p>
 
           <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -227,7 +227,7 @@ export default function WebPresencePage() {
             </p>
             <p>
               We ship in about a week, manage the whole thing for you, and give you a direct
-              line. No 12-month trap — you stay because it&rsquo;s working.
+              line. No 12-month trap, you stay because it&rsquo;s working.
             </p>
           </div>
         </div>
@@ -255,7 +255,7 @@ export default function WebPresencePage() {
           <h2 className="h-section text-white">Stop running four vendors.</h2>
           <p className="mt-4 text-white/80 max-w-xl mx-auto">
             Give us 30 minutes. We&rsquo;ll pull up your current site, your Google Business
-            Profile, and where you stand in search — then tell you straight what to fix first.
+            Profile, and where you stand in search, then tell you straight what to fix first.
           </p>
           <div className="mt-8">
             <Link href="/book" className="btn-primary-featured">

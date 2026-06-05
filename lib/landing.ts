@@ -5,7 +5,7 @@ import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
  * Shared content model + JSON-LD builders for the data-driven landing pages
  * (industry + location). Each page's *content* lives in `lib/content/*`; the
  * rendering lives in `components/landing/*`. The goal is DRY infrastructure
- * with genuinely unique copy per entry — never a template-with-city-swap,
+ * with genuinely unique copy per entry, never a template-with-city-swap,
  * which Google penalizes as a doorway page.
  */
 
@@ -48,9 +48,9 @@ export type LandingContent = {
 
   /** schema.org Service.serviceType */
   serviceType: string;
-  /** industry pages only — schema.org audience */
+  /** industry pages only, schema.org audience */
   audienceType?: string;
-  /** location pages only — schema.org areaServed */
+  /** location pages only, schema.org areaServed */
   geo?: LocationGeo;
 };
 

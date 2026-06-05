@@ -71,7 +71,7 @@ export default function ChatWidget() {
   // When the widget id changes (SPA route change between pages with
   // different widgets), strip the previous chat widget's injected DOM so
   // the new loader can mount fresh. Selectors are scoped to chat-widget
-  // injected nodes only — do NOT match `api.leadconnectorhq.com/widget/form`
+  // injected nodes only, do NOT match `api.leadconnectorhq.com/widget/form`
   // iframes, since those are the embedded form widgets on /contact.
   useEffect(() => {
     return () => {

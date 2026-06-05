@@ -9,7 +9,7 @@ import { industryIndex } from "@/lib/content/industries";
 
 const title = "Industries We Serve | AI Receptionist by Niche";
 const description =
-  "AI receptionist and lead automation tailored by industry — home services, auto, dental, law firms, and restaurants. Built around how each wins work.";
+  "AI receptionist and lead automation tailored by industry, home services, auto, dental, law firms, and restaurants. Built around how each wins work.";
 
 export const metadata: Metadata = {
   title,
@@ -45,7 +45,7 @@ export default function IndustriesHub() {
               Built around how <span className="text-brand-deep">your industry</span> wins work.
             </h1>
             <p className="lede mt-6 max-w-2xl">
-              The system is the same underneath — answer every lead in seconds,
+              The system is the same underneath, answer every lead in seconds,
               qualify it, and book it. What changes is the playbook: the
               questions a plumber asks aren&rsquo;t the questions a dental front
               desk or a personal-injury firm asks. Here&rsquo;s how it runs in
@@ -74,7 +74,7 @@ export default function IndustriesHub() {
             ))}
           </div>
           <p className="mt-10 max-w-3xl text-brand-muted leading-relaxed">
-            Don&rsquo;t see your industry? It still works — the install adapts to
+            Don&rsquo;t see your industry? It still works, the install adapts to
             any service business that lives or dies on answering leads fast.{" "}
             <Link href="/book" className="text-brand-deep font-medium hover:underline">
               Book a 30-minute walkthrough

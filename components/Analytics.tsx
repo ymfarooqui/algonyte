@@ -41,7 +41,7 @@ function getServerSnapshot(): ConsentState {
  * Loads GA4 with Consent Mode v2 (all storage defaults to denied, upgrades on
  * accept) and gates Microsoft Clarity entirely behind explicit consent.
  *
- * GA4 always loads so anonymized cookieless pings flow from page 1 — that's
+ * GA4 always loads so anonymized cookieless pings flow from page 1, that's
  * the point of Consent Mode vs. a hard gate. Clarity records sessions and
  * heatmaps, which is more invasive, so it doesn't load until accept.
  *

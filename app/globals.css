@@ -129,7 +129,7 @@ body {
   }
 }
 
-/* Pointer-aware hover — only fire on devices with a real pointing device.
+/* Pointer-aware hover, only fire on devices with a real pointing device.
    Without this guard, taps on touch leave elements stuck in hover state. */
 @media (hover: hover) and (pointer: fine) {
   .btn-primary:hover {
@@ -222,7 +222,7 @@ body {
   filter: blur(80px) saturate(0.9);
   contain: layout paint;
 }
-/* Default — paused. PageHeroBackdrop toggles .is-visible via IntersectionObserver
+/* Default, paused. PageHeroBackdrop toggles .is-visible via IntersectionObserver
    so three blurred radials don't drain GPU when scrolled off-screen. */
 .aurora .aurora-layer {
   animation-play-state: paused;

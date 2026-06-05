@@ -15,12 +15,12 @@ export default function ServicesContent() {
       <section className="relative overflow-hidden bg-gradient-to-b from-brand-accent via-white to-white">
         <PageHeroBackdrop />
         <div className="container-page pt-10 pb-16 sm:pt-14 sm:pb-20 text-center max-w-3xl mx-auto">
-          <p className="eyebrow mb-3">Individual services. No packages.</p>
+          <p className="eyebrow mb-3">Pick what you need.</p>
           <Reveal as="h1" className="h-display" delay={0.04}>
             What we <span className="text-brand-deep">build for you.</span>
           </Reveal>
           <p className="lede mt-6 mx-auto">
-            Every service is a done-for-you install that runs while you sleep — answering,
+            Every service is a done-for-you install that runs while you sleep, answering,
             qualifying, and booking your leads. Start with the one thing costing you most,
             then add the rest whenever you&rsquo;re ready.
           </p>
@@ -43,8 +43,8 @@ export default function ServicesContent() {
       {/* ---- SERVICES CATALOG ---- */}
       <ServiceSections
         eyebrow="The services"
-        heading="Six ways to stop losing leads."
-        subhead="Pick one. Pick a few. They share one inbox and one calendar, so they work better together — but every one stands on its own."
+        heading="Stop losing leads."
+        subhead="Pick one, or pick a few. They share one inbox and one calendar, so they work better together, but each stands on its own."
         className="bg-white"
       />
 
