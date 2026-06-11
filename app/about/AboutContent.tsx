@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import Reveal from "@/components/Reveal";
 import PageHeroBackdrop from "@/components/PageHeroBackdrop";
@@ -42,9 +41,9 @@ export default function AboutContent() {
               <span className="text-brand-deep">so you don&rsquo;t have to.</span>
             </Reveal>
             <p className="lede mt-6 max-w-2xl">
-              AlgoNyte is a small team that handles AI, marketing, and
-              the systems behind them for businesses that don&rsquo;t have time
-              to figure it out themselves.
+              AlgoNyte handles AI, marketing, and the systems behind them
+              for businesses that don&rsquo;t have time to figure it out
+              themselves.
             </p>
           </div>
         </div>
@@ -100,50 +99,6 @@ export default function AboutContent() {
       </section>
 
       <section className="section bg-brand-soft">
-        <div className="container-page">
-          <div className="grid lg:grid-cols-[1fr_2fr] gap-10 lg:gap-14 items-center">
-            <Reveal className="relative">
-              <Image
-                src="/yf-headshot.jpg"
-                alt="Yaseen Farooqui, founder of AlgoNyte, AI receptionist for service businesses"
-                width={480}
-                height={480}
-                className="w-full max-w-sm mx-auto h-auto rounded-2xl shadow-md ring-1 ring-slate-200 object-cover object-top aspect-square"
-              />
-            </Reveal>
-            <div>
-              <p className="eyebrow mb-3">The founder</p>
-              <Reveal as="h2" className="h-section">
-                Yaseen Farooqui.
-              </Reveal>
-              <div className="mt-6 space-y-5 text-brand-muted text-lg leading-relaxed">
-                <p>
-                  Yaseen is a Digital Strategy Specialist focused on
-                  AI-Enablement and Quality and Release, who has spent years
-                  building AI systems for large insurance carriers, enterprise
-                  tech platforms, and businesses across retail and service
-                  industries. He founded AlgoNyte to bring the same tools
-                  these companies rely on to any business that gets leads and
-                  books appointments.
-                </p>
-                <p>
-                  Yaseen is the face of the company, but he isn&rsquo;t the
-                  whole company. Behind him is a team of engineers, marketers,
-                  and AI specialists who do the actual work. When you sign on,
-                  you get all of them.
-                </p>
-                <p className="text-brand-ink font-medium">
-                  This isn&rsquo;t a marketing agency that added &ldquo;AI&rdquo;
-                  to the name. The systems AlgoNyte builds are the same
-                  ones running in production today.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="section">
         <div className="container-page max-w-4xl">
           <p className="eyebrow mb-3">How we work</p>
           <Reveal as="h2" className="h-section">
