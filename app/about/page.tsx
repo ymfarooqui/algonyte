@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import AboutContent from "./AboutContent";
-import { siteConfig } from "@/lib/site";
 import { breadcrumbJsonLd } from "@/lib/breadcrumbs";
 import { jsonLdString } from "@/lib/jsonLd";
 
@@ -18,26 +17,10 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title, description },
 };
 
-const personJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Person",
-  name: "Yaseen Farooqui",
-  jobTitle: "Founder",
-  worksFor: { "@type": "Organization", name: siteConfig.name, url: siteConfig.url },
-  url: `${siteConfig.url}/about`,
-  image: `${siteConfig.url}/yf-headshot.jpg`,
-  description:
-    "Founder of AlgoNyte. Builds AI receptionists for service businesses across the Midwest and US.",
-};
-
 export default function AboutPage() {
   return (
     <>
       <AboutContent />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: jsonLdString(personJsonLd) }}
-      />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: jsonLdString(breadcrumb) }}
