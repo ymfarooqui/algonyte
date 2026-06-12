@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
-  title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
+  title: `Powering Your Business with AI | ${siteConfig.name}`,
   description:
     "AI receptionist for service businesses in Chicago, Detroit, and across the Midwest. Answer, qualify, and book every lead 24/7.",
   keywords: [
@@ -49,13 +49,13 @@ export const metadata: Metadata = {
     type: "website",
     siteName: siteConfig.name,
     url: siteConfig.url,
-    title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
+    title: `Powering Your Business with AI | ${siteConfig.name}`,
     description: siteConfig.description,
     locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
-    title: `AI Receptionist for Service Businesses | ${siteConfig.name}`,
+    title: `Powering Your Business with AI | ${siteConfig.name}`,
     description: siteConfig.description,
     ...(siteConfig.twitter ? { creator: siteConfig.twitter } : {}),
   },
